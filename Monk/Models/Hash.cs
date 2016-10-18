@@ -7,40 +7,40 @@ namespace Monk.Models
     public class Hash
     {
         
-				///<summary>
-                /// 描述：-
-                /// 默认值：-
-                /// 可空：False
-				/// </summary>
-		         public int Id {get;set;}
+        /// <summary>
+        /// Desc:- 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public int Id {get;set;}
 
-				///<summary>
-                /// 描述：-
-                /// 默认值：-
-                /// 可空：False
-				/// </summary>
-		         public string Key {get;set;}
+        /// <summary>
+        /// Desc:- 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public string Key {get;set;}
 
-				///<summary>
-                /// 描述：-
-                /// 默认值：-
-                /// 可空：False
-				/// </summary>
-		         public string Field {get;set;}
+        /// <summary>
+        /// Desc:- 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public string Field {get;set;}
 
-				///<summary>
-                /// 描述：-
-                /// 默认值：-
-                /// 可空：True
-				/// </summary>
-		         public string Value {get;set;}
+        /// <summary>
+        /// Desc:- 
+        /// Default:- 
+        /// Nullable:True 
+        /// </summary>
+        public string Value {get;set;}
 
-				///<summary>
-                /// 描述：-
-                /// 默认值：-
-                /// 可空：True
-				/// </summary>
-		         public DateTime? ExpireAt {get;set;}
+        /// <summary>
+        /// Desc:- 
+        /// Default:- 
+        /// Nullable:True 
+        /// </summary>
+        public DateTime? ExpireAt {get;set;}
 
     }
 }
