@@ -1,0 +1,26 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Xml.Linq" #>
+<#@ assembly name="System.Data" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="SqlSugar" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Web" #>
+<#@ assembly name="$(SolutionDir)\Monk\Bin\SqlSugar.dll" #>
+
+<#
+
+    //当前项目目录
+    string projectDir = Host.ResolveAssemblyReference("$(ProjectDir)");
+	//解决方案目录
+    string solutionDir = Host.ResolveAssemblyReference("$(SolutionDir)");
+	// 开始生成POCO模型
+	 using (var db = new SqlSugarClient("Server=WLN;Database=Monk.Soul;Uid=sa;Password=000000;"))
+     {
+			db.ClassGenerating.CreateClassFiles(db, projectDir+"//Models","Monk.Models");
+      };
+#>
