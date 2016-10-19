@@ -8,5 +8,10 @@ namespace Monk.Utils
     public class Keys
     {
         public const string ConnectionStringKey = "Monk.Soul";
+        public static List<string> AuthorizeArea = new List<string>()
+        {
+            "Backend",
+            "Services"
+        };
     }
 }
