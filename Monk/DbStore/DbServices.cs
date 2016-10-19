@@ -19,11 +19,6 @@ namespace Monk.DbStore
             operate(this._db); operate = null;
         }
 
-        public void Command<OutSourcing>(Action<SqlSugarClient, OutSourcing> operate) where OutSourcing : class, new()
-        {
-            operate(this._db, new OutSourcing()); operate = null;
-        }
-
         public void Dispose()
         {
             if (this._db != null) this._db.Dispose();

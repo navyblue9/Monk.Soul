@@ -1,24 +1,24 @@
 ﻿using System.Web.Mvc;
 
-namespace Monk.Areas.Backend
+namespace Monk.Areas.Services
 {
-    public class BackendAreaRegistration : AreaRegistration
+    public class ServicesAreaRegistration : AreaRegistration
     {
         public override string AreaName
         {
             get
             {
-                return "Backend";
+                return "Services";
             }
         }
 
         public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
-                "Backend_default",
-                "Backend/{controller}/{action}/{id}",
+                "Services_default",
+                "Services/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional },
-                new string[] { "Monk.Areas.Backend.Controllers" }
+                new string[] { "Monk.Areas.Services.Controllers" }
             );
         }
     }

@@ -124,6 +124,10 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SqlSugar, Version=3.1.0.9, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\sqlSugar.3.1.0.9\lib\net40\SqlSugar.dll</HintPath>
       <Private>True</Private>
@@ -209,6 +213,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Backend\BackendAreaRegistration.cs" />
     <Compile Include="Areas\Backend\Controllers\AuthorizeController.cs" />
+    <Compile Include="Areas\Services\ServicesAreaRegistration.cs" />
     <Compile Include="DbStore\DbConfig.cs" />
     <Compile Include="DbStore\DbServices.cs" />
     <Compile Include="Global.asax.cs">
@@ -259,14 +264,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Backend\Assets\Images\" />
-    <Folder Include="Areas\Backend\Assets\Libs\" />
     <Folder Include="Areas\Backend\Assets\Scripts\" />
     <Folder Include="Areas\Backend\Assets\Styles\" />
+    <Folder Include="Areas\Backend\Assets\Users\" />
+    <Folder Include="Areas\Backend\Assets\Vendors\" />
     <Folder Include="Areas\Backend\Filters\" />
-    <Folder Include="Areas\Backend\OutSourcing\" />
-    <Folder Include="Areas\Backend\Public\" />
     <Folder Include="Areas\Backend\ViewModels\" />
     <Folder Include="Areas\Backend\Views\Shared\" />
+    <Folder Include="Areas\Services\Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
