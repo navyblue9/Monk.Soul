@@ -1,35 +1,15 @@
-﻿using SqlSugar;
-using System;
-using System.Configuration;
-using System.Collections.Generic;
-using Monk.Utils;
+﻿using System;
+using SqlSugar;
 
 namespace Monk.DbStore
 {
-    public class DbServices : IDisposable
+    public partial class DbServices : IDisposable
     {
         protected SqlSugarClient _db;
         public DbServices()
         {
-            var db = new SqlSugarClient(ConfigurationManager.ConnectionStrings[Keys.ConnectionStringKey].ToString());
-            db.SetFilterFilterParas(new Dictionary<string, Func<KeyValueObj>>()
-            {
-                {
-                    "all",()=> {
-                         return new KeyValueObj(){ Key=" Del=@Del and Destroy=@Destroy " , Value=new{ Del=0,Destroy=0}};
-                    }
-                },
-                 {
-                    "admin",()=> {
-                         return new KeyValueObj(){ Key=" Destroy=@Destroy " , Value=new{Destroy=0}};
-                    }
-                },
-                {
-                    "root",()=> {
-                         return new KeyValueObj(){ Key="" , Value=new{ }};
-                    }
-                }
-            });
+            var db = new SqlSugarClient(ConnectionString);
+            db.SetFilterFilterParas(RowFilter);
             db.CurrentFilterKey = "all";
             this._db = db;
         }

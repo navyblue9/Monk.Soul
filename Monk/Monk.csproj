@@ -209,6 +209,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Backend\BackendAreaRegistration.cs" />
     <Compile Include="Areas\Backend\Controllers\AuthorizeController.cs" />
+    <Compile Include="DbStore\DbConfig.cs" />
     <Compile Include="DbStore\DbServices.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
