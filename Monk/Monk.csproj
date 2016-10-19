@@ -255,6 +255,15 @@
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config" />
     <Content Include="Areas\Backend\Views\web.config" />
+    <Content Include="Areas\Backend\Assets\Images\README.md" />
+    <Content Include="Areas\Backend\Assets\Scripts\README.md" />
+    <Content Include="Areas\Backend\Assets\Styles\README.md" />
+    <Content Include="Areas\Backend\Assets\Users\README.md" />
+    <Content Include="Areas\Backend\Assets\Vendors\README.md" />
+    <Content Include="Areas\Backend\Filters\README.md" />
+    <Content Include="Areas\Backend\ViewModels\README.md" />
+    <Content Include="Areas\Backend\Views\Shared\README.md" />
+    <Content Include="Areas\Services\Controllers\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -262,17 +271,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Areas\Backend\Assets\Images\" />
-    <Folder Include="Areas\Backend\Assets\Scripts\" />
-    <Folder Include="Areas\Backend\Assets\Styles\" />
-    <Folder Include="Areas\Backend\Assets\Users\" />
-    <Folder Include="Areas\Backend\Assets\Vendors\" />
-    <Folder Include="Areas\Backend\Filters\" />
-    <Folder Include="Areas\Backend\ViewModels\" />
-    <Folder Include="Areas\Backend\Views\Shared\" />
-    <Folder Include="Areas\Services\Controllers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
