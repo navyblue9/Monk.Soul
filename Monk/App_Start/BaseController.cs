@@ -5,10 +5,10 @@ namespace Monk
 {
     public class BaseController : Controller
     {
-        protected DbServices _services;
+        protected DbServices services;
         public BaseController(DbServices services)
         {
-            _services = services;
+            this.services = services;
         }
     }
 }

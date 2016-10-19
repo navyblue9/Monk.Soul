@@ -14,7 +14,7 @@ namespace Monk.Areas.Backend.Controllers
         public JsonResult Index()
         {
             List<Havior> list = new List<Havior>();
-            _services.Command((db) =>
+            services.Command((db) =>
             {
                 list = db.Queryable<Havior>().Where(c => true).ToList();
             });
