@@ -205,7 +205,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AutofacStartup.cs" />
-    <Compile Include="App_Start\BaseController.cs" />
+    <Compile Include="App_Code\BaseController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\HangfireStartup.cs" />
