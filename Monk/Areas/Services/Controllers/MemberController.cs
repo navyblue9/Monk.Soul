@@ -14,7 +14,7 @@ namespace Monk.Areas.Services.Controllers
         [HttpPost]
         public JsonResult Index(int pageIndex, int pageSize)
         {
-            return Json(new { success = "ok" });
+            return Json(new { success = "ok", pageIndex = pageIndex, pageSize = pageSize });
         }
     }
 }
