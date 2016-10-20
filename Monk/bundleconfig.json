@@ -1,0 +1,26 @@
+[
+  {
+    "outputFileName": "Areas/Backend/Assets/Vendors/monk.ui-0.2.8/monk.ui.min.css",
+    "inputFiles": [
+      "Areas/Backend/Assets/Vendors/monk.ui-0.2.8/monk.ui.css"
+    ]
+  },
+  {
+    "outputFileName": "Areas/Backend/Assets/Vendors/monk.ui-0.2.8/monk.ui.min.js",
+    "inputFiles": [
+      "Areas/Backend/Assets/Vendors/monk.ui-0.2.8/monk.ui.js"
+    ]
+  },
+  {
+    "outputFileName": "Areas/Backend/Assets/Vendors/validform-v5.3.2/validform-v5.3.2.min.js",
+    "inputFiles": [
+      "Areas/Backend/Assets/Vendors/validform-v5.3.2/validform-v5.3.2.js"
+    ]
+  },
+  {
+    "outputFileName": "Areas/Backend/Assets/Vendors/pace-v1.0.2/pace-theme-minimal.min.css",
+    "inputFiles": [
+      "Areas/Backend/Assets/Vendors/pace-v1.0.2/pace-theme-minimal.css"
+    ]
+  }
+]

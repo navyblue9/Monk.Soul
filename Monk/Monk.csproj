@@ -196,6 +196,47 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\monk.init.sql" />
+    <Content Include="Areas\Backend\Assets\Scripts\backend.js" />
+    <Content Include="Areas\Backend\Assets\Styles\backend.css" />
+    <Content Include="Areas\Backend\Assets\Vendors\hover-v2.0.2\hover-min.css" />
+    <Content Include="Areas\Backend\Assets\Vendors\hover-v2.0.2\hover.css" />
+    <Content Include="Areas\Backend\Assets\Vendors\jquery-3.1.1\jquery-3.1.1.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\jquery-3.1.1\jquery-3.1.1.min.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\layer-v2.4\layer.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\layer-v2.4\skin\default\icon-ext.png" />
+    <Content Include="Areas\Backend\Assets\Vendors\layer-v2.4\skin\default\icon.png" />
+    <Content Include="Areas\Backend\Assets\Vendors\layer-v2.4\skin\default\loading-0.gif" />
+    <Content Include="Areas\Backend\Assets\Vendors\layer-v2.4\skin\default\loading-1.gif" />
+    <Content Include="Areas\Backend\Assets\Vendors\layer-v2.4\skin\default\loading-2.gif" />
+    <Content Include="Areas\Backend\Assets\Vendors\layer-v2.4\skin\layer.css" />
+    <Content Include="Areas\Backend\Assets\Vendors\linq-v3.0.4\linq.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\linq-v3.0.4\linq.min.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.8\fonts\iconfont.svg" />
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.8\index.html" />
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.8\monk.ui.css" />
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.8\monk.ui.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.8\monk.ui.min.css">
+      <DependentUpon>monk.ui.css</DependentUpon>
+    </Content>
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.8\monk.ui.min.js">
+      <DependentUpon>monk.ui.js</DependentUpon>
+    </Content>
+    <Content Include="Areas\Backend\Assets\Vendors\nicescroll-v3.6.8\nicescroll.min.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\nicescroll-v3.6.8\zoomico.png" />
+    <Content Include="Areas\Backend\Assets\Vendors\pace-v1.0.2\pace-theme-minimal.min.css">
+      <DependentUpon>pace-theme-minimal.css</DependentUpon>
+    </Content>
+    <Content Include="Areas\Backend\Assets\Vendors\pace-v1.0.2\pace.min.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\pace-v1.0.2\pace-theme-minimal.css" />
+    <Content Include="Areas\Backend\Assets\Vendors\pagination-v2.0.7\pagination.css" />
+    <Content Include="Areas\Backend\Assets\Vendors\pagination-v2.0.7\pagination.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\pagination-v2.0.7\pagination.min.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\store-v1.3.20\store+json2.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\validform-v5.3.2\validform-v5.3.2.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\validform-v5.3.2\validform-v5.3.2.min.js">
+      <DependentUpon>validform-v5.3.2.js</DependentUpon>
+    </Content>
+    <Content Include="Areas\Backend\Assets\Vendors\waypoints-v4.0.1\noframework.waypoints.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Models\ModelGenerator.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -212,7 +253,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Backend\BackendAreaRegistration.cs" />
-    <Compile Include="Areas\Backend\Controllers\AuthorizeController.cs" />
+    <Compile Include="Areas\Backend\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Services\Controllers\MemberController.cs" />
     <Compile Include="Areas\Services\ServicesAreaRegistration.cs" />
     <Compile Include="DbStore\DbConfig.cs" />
@@ -258,13 +299,15 @@
     <Content Include="ApplicationInsights.config" />
     <Content Include="Areas\Backend\Views\web.config" />
     <Content Include="Areas\Backend\Assets\Images\README.md" />
-    <Content Include="Areas\Backend\Assets\Scripts\README.md" />
-    <Content Include="Areas\Backend\Assets\Styles\README.md" />
     <Content Include="Areas\Backend\Assets\Users\README.md" />
-    <Content Include="Areas\Backend\Assets\Vendors\README.md" />
     <Content Include="Areas\Backend\Filters\README.md" />
     <Content Include="Areas\Backend\ViewModels\README.md" />
     <Content Include="Areas\Backend\Views\Shared\README.md" />
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.8\fonts\iconfont.eot" />
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.8\fonts\iconfont.ttf" />
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.8\fonts\iconfont.woff" />
+    <Content Include="Areas\Backend\Assets\Vendors\jquery-3.1.1\jquery-3.1.1.min.map" />
+    <None Include="bundleconfig.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -272,7 +315,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Areas\Backend\Views\Default\" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
