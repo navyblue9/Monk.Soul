@@ -213,6 +213,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Backend\BackendAreaRegistration.cs" />
     <Compile Include="Areas\Backend\Controllers\AuthorizeController.cs" />
+    <Compile Include="Areas\Services\Controllers\MemberController.cs" />
     <Compile Include="Areas\Services\ServicesAreaRegistration.cs" />
     <Compile Include="DbStore\DbConfig.cs" />
     <Compile Include="DbStore\DbServices.cs" />
@@ -263,7 +264,6 @@
     <Content Include="Areas\Backend\Filters\README.md" />
     <Content Include="Areas\Backend\ViewModels\README.md" />
     <Content Include="Areas\Backend\Views\Shared\README.md" />
-    <Content Include="Areas\Services\Controllers\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
