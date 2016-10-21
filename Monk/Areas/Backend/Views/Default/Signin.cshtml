@@ -1,4 +1,4 @@
-﻿
+﻿@model SigninModel
 @{
     ViewBag.Title = "管理入口";
     Layout = "~/Areas/Backend/Views/Shared/_Layout.cshtml";
@@ -12,25 +12,48 @@
     </div>
     <form class="monk-form" method="post">
         <div class="monk-form-item">
-            <label for="Account" class="monk-form-label">会员账号</label>
+            @Html.LabelFor(u => u.Account, new
+       {
+           @class = "monk-form-label"
+       })
             <div class="monk-form-wrap">
                 <span class="monk-iconfont border-right icon-backend-account"></span>
-                <input type="text" class="monk-form-input" name="Account" id="Account" placeholder="请输入会员账号" />
+                @Html.TextBoxFor(u => u.Account, new
+           {
+               @class = "monk-form-input",
+               placeholder = Html.DisplayNameFor(u => u.Account)
+           })
                 <span class="monk-iconfont icon-monk-required"></span>
                 <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
             </div>
-            <div class="monk-form-tip">账号由3-16位英文字母，数字或中文组成</div>
+            <div class="monk-form-tip">@Html.DescriptionFor(u => u.Account)</div>
         </div>
         <div class="monk-form-item">
-            <label for="Password" class="monk-form-label">会员密码</label>
+            @Html.LabelFor(u => u.Password, new
+       {
+           @class = "monk-form-label"
+       })
             <div class="monk-form-wrap">
                 <span class="monk-iconfont border-right icon-backend-lock"></span>
-                <input type="password" class="monk-form-input" name="Password" id="Password" placeholder="请输入会员密码" />
+                @Html.PasswordFor(u => u.Password, new
+           {
+               @class = "monk-form-input",
+               placeholder = Html.DisplayNameFor(u => u.Password)
+           })
                 <span class="monk-iconfont icon-monk-required"></span>
                 <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
             </div>
-            <div class="monk-form-tip">密码由6-20位英文字母、数字或符号组成</div>
+            <div class="monk-form-tip">@Html.DescriptionFor(u => u.Password)</div>
         </div>
         <input type="submit" class="monk-input-button turquoise monk-form-submit width-full" value="授权登入">
     </form>
 </div>
+
+@section foot{
+    @Scripts.Render("~/Assets/Backend/Validform/Script")
+
+    <script type="text/javascript">
+        $(function () {
+        });
+    </script>
+}
