@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Monk.Utils
 {
-    public static class RazorExpressions
+    public static class RazorExtention
     {
         public static MvcHtmlString Description(this HtmlHelper htmlHelper, string name)
         {

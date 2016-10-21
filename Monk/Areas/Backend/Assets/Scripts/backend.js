@@ -77,7 +77,7 @@
             },
             ignoreHidden: false,
             dragonfly: false,
-            tipSweep: false,
+            tipSweep: true,
             label: "",
             showAllError: false,
             postonce: true,
@@ -85,20 +85,22 @@
             datatype: {},
             usePlugin: {},
             beforeCheck: function (curform) { },
-            beforeSubmit: function (curform) { },
+            beforeSubmit: function (curform) {
+                that.loadTip("正在校检数据合法性...");
+            },
             callback: function (data) {
                 if (data.status == 404) {
-                    that.errorTip("远程地址没找到。");
+                    that.errorTip("远程地址没找到");
                     return false;
                 }
                 if (data.status >= 500) {
-                    that.errorTip("应用程序异常。");
+                    that.errorTip("应用程序异常");
                     return false;
                 }
                 if (data.status == "n") {
                     that.errorTip(data.info);
-                    if (data.id && $(id)) {
-                        $(id).focus();
+                    if (data.selector && $(data.selector)) {
+                        $(data.selector).focus();
                     }
                     return false;
                 }
