@@ -17,7 +17,7 @@ namespace Monk.Areas.Backend
             context.MapRoute(
                 "Backend_default",
                 "Backend/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional },
+                new { action = "Signin", controller = "Default", id = UrlParameter.Optional },
                 new string[] { "Monk.Areas.Backend.Controllers" }
             );
         }

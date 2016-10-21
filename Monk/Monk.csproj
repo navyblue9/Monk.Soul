@@ -196,12 +196,23 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\monk.init.sql" />
+    <Content Include="Areas\Backend\Assets\favicon.ico" />
+    <Content Include="Areas\Backend\Assets\Fonts\iconfont.svg" />
+    <Content Include="Areas\Backend\Assets\Images\baisoft-logo.png" />
     <Content Include="Areas\Backend\Assets\Scripts\backend.js" />
+    <Content Include="Areas\Backend\Assets\Scripts\backend.min.js">
+      <DependentUpon>backend.js</DependentUpon>
+    </Content>
     <Content Include="Areas\Backend\Assets\Styles\backend.css" />
-    <Content Include="Areas\Backend\Assets\Vendors\hover-v2.0.2\hover-min.css" />
+    <Content Include="Areas\Backend\Assets\Styles\backend.min.css">
+      <DependentUpon>backend.css</DependentUpon>
+    </Content>
     <Content Include="Areas\Backend\Assets\Vendors\hover-v2.0.2\hover.css" />
-    <Content Include="Areas\Backend\Assets\Vendors\jquery-3.1.1\jquery-3.1.1.js" />
-    <Content Include="Areas\Backend\Assets\Vendors\jquery-3.1.1\jquery-3.1.1.min.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\hover-v2.0.2\hover.min.css">
+      <DependentUpon>hover.css</DependentUpon>
+    </Content>
+    <Content Include="Areas\Backend\Assets\Vendors\jquery-v3.1.1\jquery-3.1.1.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\jquery-v3.1.1\jquery-3.1.1.min.js" />
     <Content Include="Areas\Backend\Assets\Vendors\layer-v2.4\layer.js" />
     <Content Include="Areas\Backend\Assets\Vendors\layer-v2.4\skin\default\icon-ext.png" />
     <Content Include="Areas\Backend\Assets\Vendors\layer-v2.4\skin\default\icon.png" />
@@ -211,14 +222,14 @@
     <Content Include="Areas\Backend\Assets\Vendors\layer-v2.4\skin\layer.css" />
     <Content Include="Areas\Backend\Assets\Vendors\linq-v3.0.4\linq.js" />
     <Content Include="Areas\Backend\Assets\Vendors\linq-v3.0.4\linq.min.js" />
-    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.8\fonts\iconfont.svg" />
-    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.8\index.html" />
-    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.8\monk.ui.css" />
-    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.8\monk.ui.js" />
-    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.8\monk.ui.min.css">
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.9\fonts\iconfont.svg" />
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.9\index.html" />
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.9\monk.ui.css" />
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.9\monk.ui.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.9\monk.ui.min.css">
       <DependentUpon>monk.ui.css</DependentUpon>
     </Content>
-    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.8\monk.ui.min.js">
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.9\monk.ui.min.js">
       <DependentUpon>monk.ui.js</DependentUpon>
     </Content>
     <Content Include="Areas\Backend\Assets\Vendors\nicescroll-v3.6.8\nicescroll.min.js" />
@@ -231,7 +242,7 @@
     <Content Include="Areas\Backend\Assets\Vendors\pagination-v2.0.7\pagination.css" />
     <Content Include="Areas\Backend\Assets\Vendors\pagination-v2.0.7\pagination.js" />
     <Content Include="Areas\Backend\Assets\Vendors\pagination-v2.0.7\pagination.min.js" />
-    <Content Include="Areas\Backend\Assets\Vendors\store-v1.3.20\store+json2.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\store-v1.3.20\store_json2.min.js" />
     <Content Include="Areas\Backend\Assets\Vendors\validform-v5.3.2\validform-v5.3.2.js" />
     <Content Include="Areas\Backend\Assets\Vendors\validform-v5.3.2\validform-v5.3.2.min.js">
       <DependentUpon>validform-v5.3.2.js</DependentUpon>
@@ -298,15 +309,18 @@
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config" />
     <Content Include="Areas\Backend\Views\web.config" />
-    <Content Include="Areas\Backend\Assets\Images\README.md" />
     <Content Include="Areas\Backend\Assets\Users\README.md" />
     <Content Include="Areas\Backend\Filters\README.md" />
     <Content Include="Areas\Backend\ViewModels\README.md" />
-    <Content Include="Areas\Backend\Views\Shared\README.md" />
-    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.8\fonts\iconfont.eot" />
-    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.8\fonts\iconfont.ttf" />
-    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.8\fonts\iconfont.woff" />
-    <Content Include="Areas\Backend\Assets\Vendors\jquery-3.1.1\jquery-3.1.1.min.map" />
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.9\fonts\iconfont.eot" />
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.9\fonts\iconfont.ttf" />
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.9\fonts\iconfont.woff" />
+    <Content Include="Areas\Backend\Assets\Vendors\jquery-v3.1.1\jquery-3.1.1.min.map" />
+    <Content Include="Areas\Backend\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Backend\Views\Default\Signin.cshtml" />
+    <Content Include="Areas\Backend\Assets\Fonts\iconfont.eot" />
+    <Content Include="Areas\Backend\Assets\Fonts\iconfont.ttf" />
+    <Content Include="Areas\Backend\Assets\Fonts\iconfont.woff" />
     <None Include="bundleconfig.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -315,9 +329,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Areas\Backend\Views\Default\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

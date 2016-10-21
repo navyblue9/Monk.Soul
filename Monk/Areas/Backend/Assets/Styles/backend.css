@@ -1,1 +1,17 @@
-﻿
+﻿@font-face { font-family: "iconfont"; src: url('../Fonts/iconfont.eot'); /* IE9*/ src: url('../Fonts/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../Fonts/iconfont.woff') format('woff'), /* chrome, firefox */ url('../Fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('../Fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */ }
+.icon-backend-lock:before { content: "\e600"; }
+.icon-backend-account:before { content: "\e601"; }
+.icon-backend-vcode:before { content: "\e602"; }
+
+body { font-family: 'Microsoft YaHei','微软雅黑',SimSun,Arial; font-size: 13px; }
+.display-block { display: block; }
+.display-none { display: none; }
+.display-inline-block { display: inline-block; }
+.width-full { width: 100%; }
+
+.signin-body { background: #1abc9c; }
+.signin-container { background: #fff; position: absolute; z-index: 10; width: 300px; height: 390px; left: 50%; top: 50%; margin-left: -150px; margin-top: -195px; border-radius: 6px; overflow: hidden; }
+.signin-logo { border-bottom: 1px solid #f0f0f0; margin: 0 10px; }
+.signin-logo img { height: 50px; margin: 10px auto; }
+.signin-container .monk-form { padding: 20px 24px; position: absolute; top: 70px; bottom: 0; left: 0; right: 0; z-index: 10; }
+.signin-container .monk-form-input { width: 140px; }

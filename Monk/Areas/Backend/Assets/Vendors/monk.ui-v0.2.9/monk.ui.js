@@ -1,6 +1,6 @@
 ﻿/*!
  * monk.ui.js
- * version: 0.2.8
+ * version: 0.3.3
  * author: 百小僧（QQ：8020292）
  * site：http://www.baisoft.org
  * QQ群：123049073
@@ -18,18 +18,36 @@
     }
 }(function (HExports) {
     var exports = typeof HExports !== 'undefined' ? HExports : {};
-    exports.v = "0.2.8";
+    exports.v = "0.3.2";
+    exports.nextAll = function (el) {
+        var eles = [];
+
+        function nextCore(el) {
+            var next = el.nextElementSibling;
+            if (next) {
+                eles.push(next);
+                arguments.callee(next);
+            }
+        }
+        nextCore(el);
+        return eles;
+    };
     // 初始化文本框
     // 设置必填图标位置
     exports.setRequireIconOffset = function (parent, init) {
+        var that = this;
         var requireIcon = parent.querySelector(".monk-iconfont.icon-monk-required");
         var clearBtn = parent.querySelector(".monk-clear-input");
         if (requireIcon && clearBtn) {
             if (init) {
-                var width = requireIcon.offsetWidth;
-                var parentWidth = parent.offsetWidth - 2;
-                var offsetLeft = requireIcon.offsetLeft;
-                requireIcon.style.right = -(parentWidth - offsetLeft - width) + "px";
+                var nexts = that.nextAll(requireIcon);
+                var totalWidth = 0;
+                Array.prototype.forEach.call(nexts, function (next, i) {
+                    if (next) {
+                        totalWidth += next.offsetWidth;
+                    }
+                });
+                requireIcon.style.right = -totalWidth + "px";
             } else {
                 requireIcon.style.right = "0px";
             }
@@ -99,6 +117,19 @@
                     this.style.cssText = "visibility:hidden;";
                 });
                 ;
+            }
+            // 自适应
+            input.style.width = "";
+            var areaWidth = input.parentNode.parentNode.offsetWidth;
+            var parentWidth = input.parentNode.offsetWidth;
+            if (parentWidth >= areaWidth) {
+                var width = 0;
+                Array.prototype.filter.call(input.parentNode.children, function (child) {
+                    if (child !== input) {
+                        width += child.offsetWidth;
+                    }
+                });
+                input.style.width = areaWidth - width - 2 + "px";
             }
         });
     }();
@@ -616,43 +647,64 @@
                 }
             });
         }
-        ; reset.addEventListener("click", function () {
-            var form = getParentsForm(this);
-            if (form) {
-                form.reset();
-                // 重置输入框
-                var inputs = form.querySelectorAll(".monk-form-input,.monk-form-textarea");
-                Array.prototype.forEach.call(inputs, function (input, i) {
-                    var parent = input.parentNode;
-                    var value = input.value.trim();
-                    var clearBtn = parent.querySelector(".monk-clear-input");
-                    if (clearBtn) {
-                        if (value != "") {
-                            clearBtn.style.cssText = "visibility:visible;";
-                            exports.setRequireIconOffset(parent);
-                        } else {
-                            clearBtn.style.cssText = "visibility:hidden;";
-                            exports.setRequireIconOffset(parent, true);
+        ;
+        if (reset) {
+            reset.addEventListener("click", function () {
+                var form = getParentsForm(this);
+                if (form) {
+                    form.reset();
+                    // 重置输入框
+                    var inputs = form.querySelectorAll(".monk-form-input,.monk-form-textarea");
+                    Array.prototype.forEach.call(inputs, function (input, i) {
+                        var parent = input.parentNode;
+                        var value = input.value.trim();
+                        var clearBtn = parent.querySelector(".monk-clear-input");
+                        if (clearBtn) {
+                            if (value != "") {
+                                clearBtn.style.cssText = "visibility:visible;";
+                                exports.setRequireIconOffset(parent);
+                            } else {
+                                clearBtn.style.cssText = "visibility:hidden;";
+                                exports.setRequireIconOffset(parent, true);
+                            }
                         }
+                    });
+                    // 重置radio，checkbox，switch
+                    resetCheckboxRadio(form, "checkbox");
+                    resetCheckboxRadio(form, "switch");
+                    resetCheckboxRadio(form, "radio");
+                    // 重置时间（无需重置）
+                    // 重置下拉
+                    var selects = form.querySelectorAll(".monk-select");
+                    Array.prototype.forEach.call(selects, function (select, i) {
+                        var option = select.querySelectorAll("option")[select.selectedIndex];
+                        var selectValue = option.value;
+                        var selectText = option.textContent;
+                        var lastSelectOption = select.parentNode.querySelector(".monk-form-option[selected='selected']");
+                        lastSelectOption ? lastSelectOption.removeAttribute("selected") : "";
+                        select.parentNode.querySelector(".monk-form-option[data-value='" + selectValue + "']").setAttribute("selected", "selected");
+                        select.parentNode.parentNode.querySelector(".monk-form-select-wrap .monk-form-input").setAttribute("value", selectText);
+                    });
+                }
+            });
+        }
+    }();
+    window.onresize = function () {
+        var inputs = document.querySelectorAll(".monk-form-input,.monk-form-textarea");
+        Array.prototype.forEach.call(inputs, function (input, i) {
+            input.style.width = "";
+            // 自适应
+            var areaWidth = input.parentNode.parentNode.offsetWidth;
+            var parentWidth = input.parentNode.offsetWidth;
+            if (parentWidth >= areaWidth) {
+                var width = 0;
+                Array.prototype.filter.call(input.parentNode.children, function (child) {
+                    if (child !== input) {
+                        width += child.offsetWidth;
                     }
                 });
-                // 重置radio，checkbox，switch
-                resetCheckboxRadio(form, "checkbox");
-                resetCheckboxRadio(form, "switch");
-                resetCheckboxRadio(form, "radio");
-                // 重置时间（无需重置）
-                // 重置下拉
-                var selects = form.querySelectorAll(".monk-select");
-                Array.prototype.forEach.call(selects, function (select, i) {
-                    var option = select.querySelectorAll("option")[select.selectedIndex];
-                    var selectValue = option.value;
-                    var selectText = option.textContent;
-                    var lastSelectOption = select.parentNode.querySelector(".monk-form-option[selected='selected']");
-                    lastSelectOption ? lastSelectOption.removeAttribute("selected") : "";
-                    select.parentNode.querySelector(".monk-form-option[data-value='" + selectValue + "']").setAttribute("selected", "selected");
-                    select.parentNode.parentNode.querySelector(".monk-form-select-wrap .monk-form-input").setAttribute("value", selectText);
-                });
+                input.style.width = areaWidth - width - 2 + "px";
             }
         });
-    }();
+    };
 });

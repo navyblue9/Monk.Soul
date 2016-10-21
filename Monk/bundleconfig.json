@@ -22,5 +22,59 @@
     "inputFiles": [
       "Areas/Backend/Assets/Vendors/pace-v1.0.2/pace-theme-minimal.css"
     ]
+  },
+  {
+    "outputFileName": "Areas/Backend/Assets/Styles/backend.min.css",
+    "inputFiles": [
+      "Areas/Backend/Assets/Styles/backend.css"
+    ]
+  },
+  {
+    "outputFileName": "Areas/Backend/Assets/Scripts/backend.min.js",
+    "inputFiles": [
+      "Areas/Backend/Assets/Scripts/backend.js"
+    ]
+  },
+  {
+    "outputFileName": "Areas/Backend/Assets/Vendors/store-v1.3.20/store.min.js",
+    "inputFiles": [
+      "Areas/Backend/Assets/Vendors/store-v1.3.20/store.js"
+    ]
+  },
+  {
+    "outputFileName": "Areas/Backend/Assets/Vendors/store-v1.3.20/json2.min.js",
+    "inputFiles": [
+      "Areas/Backend/Assets/Vendors/store-v1.3.20/json2.js"
+    ]
+  },
+  {
+    "outputFileName": "Areas/Backend/Assets/Vendors/hover-v2.0.2/hover.min.css",
+    "inputFiles": [
+      "Areas/Backend/Assets/Vendors/hover-v2.0.2/hover.css"
+    ]
+  },
+  {
+    "outputFileName": "Areas/Backend/Assets/Vendors/monk.ui-v0.2.8/monk.ui.min.css",
+    "inputFiles": [
+      "Areas/Backend/Assets/Vendors/monk.ui-v0.2.8/monk.ui.css"
+    ]
+  },
+  {
+    "outputFileName": "Areas/Backend/Assets/Vendors/monk.ui-v0.2.8/monk.ui.min.js",
+    "inputFiles": [
+      "Areas/Backend/Assets/Vendors/monk.ui-v0.2.8/monk.ui.js"
+    ]
+  },
+  {
+    "outputFileName": "Areas/Backend/Assets/Vendors/monk.ui-v0.2.9/monk.ui.min.css",
+    "inputFiles": [
+      "Areas/Backend/Assets/Vendors/monk.ui-v0.2.9/monk.ui.css"
+    ]
+  },
+  {
+    "outputFileName": "Areas/Backend/Assets/Vendors/monk.ui-v0.2.9/monk.ui.min.js",
+    "inputFiles": [
+      "Areas/Backend/Assets/Vendors/monk.ui-v0.2.9/monk.ui.js"
+    ]
   }
 ]
