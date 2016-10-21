@@ -10,50 +10,56 @@
             <img src="~/Areas/Backend/Assets/Images/baisoft-logo.png" class="display-block" alt="百签软件有限公司" title="百签软件有限公司" />
         </a>
     </div>
-    <form class="monk-form" method="post">
+    @using (Html.BeginForm("Signin", "Default", FormMethod.Post, new { @class = "monk-form" }))
+    {
         <div class="monk-form-item">
-            @Html.LabelFor(u => u.Account, new
-       {
-           @class = "monk-form-label"
-       })
+            @Html.LabelFor(u => u.Account, new { @class = "monk-form-label" })
             <div class="monk-form-wrap">
                 <span class="monk-iconfont border-right icon-backend-account"></span>
-                @Html.TextBoxFor(u => u.Account, new
-           {
-               @class = "monk-form-input",
-               placeholder = Html.DisplayNameFor(u => u.Account)
-           })
+                @Html.TextBoxFor(u => u.Account,
+               new
+               {
+                   @class = "monk-form-input",
+                   placeholder = Html.DisplayNameFor(u => u.Account),
+                   datatype = "s3-16",
+                   errormsg = Html.DescriptionFor(u => u.Account),
+                   nullmsg = "请输入" + Html.DisplayNameFor(u => u.Account),
+                   sucmsg = "验证成功"
+               })
                 <span class="monk-iconfont icon-monk-required"></span>
                 <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
             </div>
             <div class="monk-form-tip">@Html.DescriptionFor(u => u.Account)</div>
         </div>
         <div class="monk-form-item">
-            @Html.LabelFor(u => u.Password, new
-       {
-           @class = "monk-form-label"
-       })
+            @Html.LabelFor(u => u.Password, new { @class = "monk-form-label" })
             <div class="monk-form-wrap">
                 <span class="monk-iconfont border-right icon-backend-lock"></span>
-                @Html.PasswordFor(u => u.Password, new
-           {
-               @class = "monk-form-input",
-               placeholder = Html.DisplayNameFor(u => u.Password)
-           })
+                @Html.PasswordFor(u => u.Password,
+               new
+               {
+                   @class = "monk-form-input",
+                   placeholder = Html.DisplayNameFor(u => u.Password),
+                   datatype = "*",
+                   errormsg = Html.DescriptionFor(u => u.Password),
+                   nullmsg = "请输入" + Html.DisplayNameFor(u => u.Password),
+                   sucmsg = "验证成功"
+               })
                 <span class="monk-iconfont icon-monk-required"></span>
                 <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
             </div>
             <div class="monk-form-tip">@Html.DescriptionFor(u => u.Password)</div>
         </div>
-        <input type="submit" class="monk-input-button turquoise monk-form-submit width-full" value="授权登入">
-    </form>
+        <input type="submit" class="monk-input-button turquoise monk-form-submit float-left" value="授权登入">
+        <input type="reset" class="monk-input-button amethyst monk-form-reset float-right" value="重置表单">
+    }
 </div>
 
 @section foot{
     @Scripts.Render("~/Assets/Backend/Validform/Script")
-
     <script type="text/javascript">
         $(function () {
+            backend.validform();
         });
     </script>
 }
