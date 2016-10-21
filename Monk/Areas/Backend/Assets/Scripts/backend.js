@@ -23,28 +23,32 @@
         options = options || {};
         var defaults = { icon: 1, offset: 0 };
         var config = $.extend({}, defaults, options);
-        layer.msg(msg, config);
+        var _layer = parent.layer ? parent.layer : layer;
+        _layer.msg(msg, config);
     };
     // 错误提示
     exports.errorTip = function (msg, options) {
         options = options || {};
         var defaults = { icon: 2, offset: 0 };
         var config = $.extend({}, defaults, options);
-        layer.msg(msg, config);
+        var _layer = parent.layer ? parent.layer : layer;
+        _layer.msg(msg, config);
     };
     // 加载提示
     exports.loadTip = function (msg, options) {
         options = options || {};
         var defaults = { icon: 16, time: 30000, offset: 0 };
         var config = $.extend({}, defaults, options);
-        layer.msg(msg, config);
+        var _layer = parent.layer ? parent.layer : layer;
+        _layer.msg(msg, config);
     };
     // 正常提示
     exports.Tip = function (msg, options) {
         options = options || {};
         var defaults = { icon: 0, offset: 0 };
         var config = $.extend({}, defaults, options);
-        layer.msg(msg, config);
+        var _layer = parent.layer ? parent.layer : layer;
+        _layer.msg(msg, config);
     };
 
     // 表单验证
