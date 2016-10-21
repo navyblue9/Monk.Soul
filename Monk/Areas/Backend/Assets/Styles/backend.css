@@ -13,5 +13,5 @@ body { font-family: 'Microsoft YaHei','微软雅黑',SimSun,Arial; font-size: 13
 .signin-container { background: #fff; position: absolute; z-index: 10; width: 312px; height: 410px; left: 50%; top: 50%; margin-left: -156px; margin-top: -205px; border-radius: 6px; overflow: hidden; }
 .signin-logo { border-bottom: 1px solid #f0f0f0; margin: 0 10px; }
 .signin-logo img { height: 50px; margin: 10px auto; }
-.signin-container .monk-form { padding: 30px; position: absolute; top: 70px; bottom: 0; left: 0; right: 0; z-index: 10; }
-.signin-container .monk-form-input { width: 140px; }
+.signin-container .monk-form { padding: 25px; position: absolute; top: 70px; bottom: 0; left: 0; right: 0; z-index: 10; }
+.signin-container .monk-form-input { width: 150px; }
