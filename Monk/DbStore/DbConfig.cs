@@ -28,5 +28,7 @@ namespace Monk.DbStore
                 }
             }
         };
+
+        private static string[] InsertColumnsFilter = new string[] { "SerialNo", "UpdateTime", "Default", "Del", "Destroy", "CreateTime" };
     }
 }

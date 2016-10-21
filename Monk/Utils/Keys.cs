@@ -13,5 +13,6 @@ namespace Monk.Utils
             "Backend",
             "Services"
         };
+        public const string SessionKey = "Monk.Soul.SessionMember";
     }
 }

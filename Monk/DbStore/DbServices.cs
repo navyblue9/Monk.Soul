@@ -10,6 +10,7 @@ namespace Monk.DbStore
         {
             var db = new SqlSugarClient(ConnectionString);
             db.SetFilterFilterParas(RowFilter);
+            db.DisableInsertColumns = InsertColumnsFilter;
             db.CurrentFilterKey = "all";
             this._db = db;
         }

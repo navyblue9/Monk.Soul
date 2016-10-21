@@ -8,6 +8,7 @@ using SqlSugar;
 using Monk.DbStore;
 using Monk.Models;
 using Monk.Utils;
+using SyntacticSugar;
 
 namespace Monk.Areas.Services.Controllers
 {
@@ -19,10 +20,30 @@ namespace Monk.Areas.Services.Controllers
         public JsonResult Signin(string account, string password)
         {
             JsonData<Member> clientResult = new JsonData<Member>() { };
-            Expression<Func<Member, bool>> expression = u => u.Account == account && u.Password == password;
+            EncryptSugar encrypt = new EncryptSugar();
+            var passwordMD5 = encrypt.MD5(password).ToLower();
+            Expression<Func<Member, bool>> expression = u => u.Account == account && u.Password == passwordMD5;
+            var logid = Guid.NewGuid();
 
             services.Command((db) =>
             {
+                // 登录日志
+                db.Insert<LoginLog>(new LoginLog()
+                {
+                    LogID = logid,
+                    Account = account,
+                    Password = password,
+                    InTime = DateTime.Now,
+                    Sucessed = false,
+                    IPAddress = RequestInfo.UserAddress,
+                    HttpMethod = Request.HttpMethod,
+                    AjaxRequest = Request.IsAjaxRequest(),
+                    MobileDevice = Request.Browser.IsMobileDevice,
+                    Platform = Request.Browser.Platform,
+                    Browser = Request.Browser.Type,
+                    LogMemberID = default(Guid)
+                });
+
                 var query = db.Queryable<Member>();
                 bool any = query.Any(expression);
                 if (any)
@@ -40,7 +61,13 @@ namespace Monk.Areas.Services.Controllers
                         }
                         else
                         {
-                            clientResult.SetClientData("y", "登录成功", member);
+                            db.Update<LoginLog>(new
+                            {
+                                Sucessed = true,
+                                member.MemberID
+                            }, u => u.LogID == logid);
+
+                            clientResult.SetClientData("y", "登录成功", member, logid);
                         }
                     }
                 }

@@ -11,16 +11,18 @@ namespace Monk.Utils
         public string info { get; set; }
         public string selector { get; set; }
         public T data { get; set; }
+        public object others { get; set; }
     }
 
     public static class JsonDataExtention
     {
-        public static void SetClientData<T>(this JsonData<T> clientResult, string status, string info, T data = default(T), string selector = null) where T : new()
+        public static void SetClientData<T>(this JsonData<T> clientResult, string status, string info, T data = default(T), object others = null, string selector = null) where T : new()
         {
             clientResult.status = status;
             clientResult.info = info;
             clientResult.data = data;
             clientResult.selector = selector;
+            clientResult.others = others;
         }
     }
 }
