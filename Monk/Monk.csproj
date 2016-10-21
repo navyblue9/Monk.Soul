@@ -266,7 +266,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Backend\BackendAreaRegistration.cs" />
     <Compile Include="Areas\Backend\Controllers\DefaultController.cs" />
-    <Compile Include="Areas\Backend\ViewModels\SigninModel.cs" />
+    <Compile Include="Areas\Backend\ViewModels\Default\SigninModel.cs" />
     <Compile Include="Areas\Services\Controllers\MemberController.cs" />
     <Compile Include="Areas\Services\ServicesAreaRegistration.cs" />
     <Compile Include="DbStore\DbConfig.cs" />
