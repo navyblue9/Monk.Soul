@@ -75,7 +75,10 @@ namespace Monk.Areas.Backend.Controllers
             {
                 logid = sessionModel.LogID
             });
-            Session[Keys.ConnectionStringKey] = null;
+            if (clientResult.status == "y")
+            {
+                Session[Keys.SessionKey] = null;
+            }
             return Json(clientResult);
         }
     }
