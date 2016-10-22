@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using Monk.Utils;
+using Monk.Areas.Backend.ViewModels;
 
 namespace Monk.Filters
 {
@@ -27,6 +28,11 @@ namespace Monk.Filters
                 {
                     filterContext.Result = new RedirectResult("~/Backend");
                 }
+            }
+            else
+            {
+                var sessionModel = filterContext.HttpContext.Session[Keys.SessionKey] as SessionMember;
+                filterContext.RouteData.DataTokens.Add("MemberInfo", sessionModel);
             }
         }
     }

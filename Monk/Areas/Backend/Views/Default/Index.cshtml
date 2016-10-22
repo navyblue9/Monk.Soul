@@ -1,6 +1,7 @@
 ﻿@{
     ViewBag.Title = "管理首页";
     Layout = "~/Areas/Backend/Views/Shared/_Layout.cshtml";
+    SessionMember memberInfo = ViewContext.RouteData.DataTokens["MemberInfo"] as SessionMember;
 }
 <div id="backend-container">
     <div id="backend-top">
@@ -114,7 +115,7 @@
         if (self != top) { top.location = self.location; }
         $(function () {
             // 模块处理
-            var moduleStatusKey = "moduleStatus";
+            var moduleStatusKey = "@memberInfo.Account" + "_moduleStatus";
             var $container = $("#backend-container");
             var $module = $("#backend-module");
             var moduleWidth = $module.outerWidth(true);
@@ -154,7 +155,7 @@
             });
 
             // 点击模块处理
-            var moduleIdKey = "moduleId";
+            var moduleIdKey = "@memberInfo.Account" + "_moduleId";
             $(".backend-module-item").on({
                 click: function () {
                     var lastModuleid = store.get(moduleIdKey);
