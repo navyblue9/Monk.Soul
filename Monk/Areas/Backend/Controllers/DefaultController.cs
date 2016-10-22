@@ -59,5 +59,11 @@ namespace Monk.Areas.Backend.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public ActionResult Console()
+        {
+            return View();
+        }
     }
 }

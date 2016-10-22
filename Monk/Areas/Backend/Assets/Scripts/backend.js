@@ -115,4 +115,19 @@
         var config = $.extend({}, defaults, options);
         $(config.form).Validform(config);
     };
+    // 美化滚动条
+    exports.nicescroll = function (jqueryObj, options) {
+        options = options || {};
+        var defaults = {
+            cursorcolor: "#9f9f9f",
+            cursoropacitymax: 1,
+            touchbehavior: false,
+            cursorwidth: "2px",
+            cursorborder: "0",
+            cursorborderradius: "2px",
+            autohidemode: true
+        };
+        var config = $.extend({}, defaults, options);
+        jqueryObj.niceScroll(config);
+    };
 });

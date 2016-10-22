@@ -328,6 +328,8 @@
     <Content Include="Areas\Backend\Assets\Fonts\iconfont.ttf" />
     <Content Include="Areas\Backend\Assets\Fonts\iconfont.woff" />
     <Content Include="Areas\Backend\Views\Default\Index.cshtml" />
+    <Content Include="Areas\Backend\Views\Default\Console.cshtml" />
+    <Content Include="Areas\Backend\Views\Shared\_Content.cshtml" />
     <None Include="bundleconfig.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

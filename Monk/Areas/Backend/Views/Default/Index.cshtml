@@ -1,8 +1,178 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "管理首页";
     Layout = "~/Areas/Backend/Views/Shared/_Layout.cshtml";
 }
+<div id="backend-container">
+    <div id="backend-top">
+        <a id="switch-module" title="更多模块" class="backend-top-menu border-right monk-iconfont icon-backend-module"></a>
+        <a title="返回前页" class="backend-top-menu border-right monk-iconfont icon-backend-back" onclick="history.go(-1);"></a>
+        <a title="刷新页面" class="backend-top-menu border-right monk-iconfont icon-backend-refresh" onclick="document.getElementById('backend-iframe').contentWindow.location.reload(true);"></a>
+        <a title="基本信息" class="backend-top-menu border-left monk-iconfont icon-backend-account float-right"></a>
+        <a href="/" target="_blank" title="查看网站" class="backend-top-menu border-left monk-iconfont icon-backend-website float-right"></a>
+    </div>
+    <div id="backend-left">
+        <div id="backend-logo">
+            <a href="http://www.baisoft.org" target="_blank" class="" title="百签软件有限公司">
+                <img src="~/Areas/Backend/Assets/Images/baisoft-logo.png" class="display-block" alt="百签软件有限公司" title="百签软件有限公司" />
+            </a>
+        </div>
+    </div>
+    <div id="backend-right">
+        <iframe frameborder="0" src="@Url.Action("Console","Default")" id="backend-iframe" name="backend-iframe"></iframe>
+    </div>
+</div>
+<div id="backend-module">
+    <div class="backend-module-item" data-moduleid="1">
+        <a title="">
+            <span class="monk-iconfont icon-backend-zhandian"></span>
+            <label>站点管理</label>
+        </a>
+    </div>
+    <div class="backend-module-item" data-moduleid="2">
+        <a title="">
+            <span class="monk-iconfont icon-backend-weixin"></span>
+            <label>微信管理</label>
+        </a>
+    </div>
+    <div class="backend-module-item" data-moduleid="3">
+        <a title="">
+            <span class="monk-iconfont icon-backend-yidong"></span>
+            <label>移动管理</label>
+        </a>
+    </div>
+    <div class="backend-module-item" data-moduleid="4">
+        <a title="">
+            <span class="monk-iconfont icon-backend-kehu"></span>
+            <label>客户管理</label>
+        </a>
+    </div>
+    <div class="backend-module-item" data-moduleid="5">
+        <a title="">
+            <span class="monk-iconfont icon-backend-qiye"></span>
+            <label>企业管理</label>
+        </a>
+    </div>
+    <div class="backend-module-item" data-moduleid="6">
+        <a title="">
+            <span class="monk-iconfont icon-backend-xiangmu"></span>
+            <label>项目管理</label>
+        </a>
+    </div>
+    <div class="backend-module-item" data-moduleid="7">
+        <a title="">
+            <span class="monk-iconfont icon-backend-luntan"></span>
+            <label>社区论坛</label>
+        </a>
+    </div>
+    <div class="backend-module-item" data-moduleid="8">
+        <a title="">
+            <span class="monk-iconfont icon-backend-wendan"></span>
+            <label>在线文档</label>
+        </a>
+    </div>
+    <div class="backend-module-item" data-moduleid="9">
+        <a title="">
+            <span class="monk-iconfont icon-backend-shouquan"></span>
+            <label>用户授权</label>
+        </a>
+    </div>
+    <div class="backend-module-item" data-moduleid="10">
+        <a title="">
+            <span class="monk-iconfont icon-backend-jishishichang"></span>
+            <label>跳蚤市场</label>
+        </a>
+    </div>
+    <div class="backend-module-item" data-moduleid="11">
+        <a title="">
+            <span class="monk-iconfont icon-backend-zhanzhanggongju"></span>
+            <label>站长工具</label>
+        </a>
+    </div>
+    <div class="backend-module-item" data-moduleid="12">
+        <a title="">
+            <span class="monk-iconfont icon-backend-shuju"></span>
+            <label>数据维护</label>
+        </a>
+    </div>
+    <div class="backend-module-item" data-moduleid="13">
+        <a title="">
+            <span class="monk-iconfont icon-backend-shangcheng"></span>
+            <label>商城管理</label>
+        </a>
+    </div>
+    <div class="backend-module-item" data-moduleid="14">
+        <a title="">
+            <span class="monk-iconfont icon-backend-xitong"></span>
+            <label>系统管理</label>
+        </a>
+    </div>
+</div>
 
-<h2>Index</h2>
+@section foot{
+    @Scripts.Render("~/Assets/Backend/Nicescroll/Script")
+    <script type="text/javascript">
+        if (self != top) { top.location = self.location; }
+        $(function () {
+            // 模块处理
+            var moduleStatusKey = "moduleStatus";
+            var $container = $("#backend-container");
+            var $module = $("#backend-module");
+            var moduleWidth = $module.outerWidth(true);
+            var speed = 300;
+            if (store.get(moduleStatusKey) == "open") {
+                $container.animate({
+                    left: moduleWidth + "px"
+                }, speed);
+                $module.animate({
+                    left: 0
+                }, speed);
+            }
+            backend.nicescroll($module);
+            $("#switch-module").on({
+                click: function () {
+                    if (!$module.is(":animated") && !$container.is(":animated")) {
+                        if (store.get(moduleStatusKey) == "open") {
+                            $container.animate({
+                                left: 0
+                            }, speed);
+                            $module.animate({
+                                left: -moduleWidth + "px"
+                            }, speed);
+                            store.set(moduleStatusKey, "close");
+                        }
+                        else {
+                            $container.animate({
+                                left: moduleWidth + "px"
+                            }, speed);
+                            $module.animate({
+                                left: 0
+                            }, speed);
+                            store.set(moduleStatusKey, "open");
+                        }
+                    }
+                }
+            });
 
+            // 点击模块处理
+            var moduleIdKey = "moduleId";
+            $(".backend-module-item").on({
+                click: function () {
+                    var lastModuleid = store.get(moduleIdKey);
+                    if (lastModuleid) {
+                        $(".backend-module-item[data-moduleid='" + lastModuleid + "']").children("a").removeClass("selected");
+                    }
+                    var that = $(this);
+                    var moduleid = that.attr("data-moduleid");
+                    that.children("a").addClass("selected");
+                    store.set(moduleIdKey, moduleid);
+                }
+            });
+            if (store.get(moduleIdKey)) {
+                $(".backend-module-item[data-moduleid='" + store.get(moduleIdKey) + "']").click();
+            }
+            else {
+                $(".backend-module-item").eq(0).click();
+            }
+        });
+    </script>
+}
