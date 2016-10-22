@@ -449,7 +449,14 @@
                 click: function () {
                     backend.loadTip("系统正在注销，请稍后...")
                     $.post("@Url.Action("Signout", "Default")", {}, function (data) {
-                        backend.successTip(data.info);
+                        backend.ajaxResultHandle(data, function (data) {
+                            if (data.status == "n") {
+                                backend.errorTip(data.info);
+                            }
+                            else if (data.status == "y") {
+                                backend.successTip(data.info);
+                            }
+                        });
                     });
                 }
             });

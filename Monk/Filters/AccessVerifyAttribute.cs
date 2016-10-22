@@ -20,7 +20,7 @@ namespace Monk.Filters
                         Data = new JsonData<object>()
                         {
                             info = "禁止未授权操作",
-                            status = "n"
+                            status = "not_allow"
                         }
                     };
                 }

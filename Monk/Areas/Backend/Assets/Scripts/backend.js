@@ -97,7 +97,7 @@
                     that.errorTip("应用程序异常");
                     return false;
                 }
-                if (data.status == "n") {
+                if (data.status == "n" || data.status == "not_allow") {
                     that.errorTip(data.info);
                     if (data.selector && $(data.selector)) {
                         $(data.selector).focus();
@@ -114,6 +114,17 @@
         };
         var config = $.extend({}, defaults, options);
         return $(config.form).Validform(config);
+    };
+    // ajax返回结果处理
+    exports.ajaxResultHandle = function (data, end) {
+        var that = this;
+        if (data.status == "not_allow") {
+            that.errorTip(data.info);
+            return false;
+        }
+        if (typeof end == "function") {
+            end(data);
+        }
     };
     // 美化滚动条
     exports.nicescroll = function (jqueryObj, options) {
