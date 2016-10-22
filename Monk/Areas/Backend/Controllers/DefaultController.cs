@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using SyntacticSugar;
 using AutoMapper;
 using AutoMapper.Configuration;
 using Monk.Models;
+using Monk.Filters;
 using Monk.Areas.Backend.ViewModels;
 using Monk.Utils;
 
@@ -16,6 +14,7 @@ namespace Monk.Areas.Backend.Controllers
     public class DefaultController : Controller
     {
         [HttpGet]
+        [Anonymous]
         public ActionResult Signin()
         {
             if (Session[Keys.SessionKey] != null)
@@ -26,6 +25,7 @@ namespace Monk.Areas.Backend.Controllers
         }
 
         [HttpPost]
+        [Anonymous]
         public JsonResult Signin(SigninModel viewModel)
         {
             RESTFul restful = new RESTFul(RequestInfo.Domain);

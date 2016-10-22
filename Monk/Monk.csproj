@@ -267,6 +267,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Backend\BackendAreaRegistration.cs" />
     <Compile Include="Areas\Backend\Controllers\DefaultController.cs" />
+    <Compile Include="Filters\AccessVerifyAttribute.cs" />
+    <Compile Include="Filters\AnonymousAttribute.cs" />
     <Compile Include="Areas\Backend\ViewModels\Default\SessionMember.cs" />
     <Compile Include="Areas\Backend\ViewModels\Default\SigninModel.cs" />
     <Compile Include="Areas\Services\Controllers\MemberController.cs" />
@@ -316,7 +318,6 @@
     <Content Include="ApplicationInsights.config" />
     <Content Include="Areas\Backend\Views\web.config" />
     <Content Include="Areas\Backend\Assets\Users\README.md" />
-    <Content Include="Areas\Backend\Filters\README.md" />
     <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.9\fonts\iconfont.eot" />
     <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.9\fonts\iconfont.ttf" />
     <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.9\fonts\iconfont.woff" />

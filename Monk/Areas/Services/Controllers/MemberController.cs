@@ -7,6 +7,7 @@ using SyntacticSugar;
 using Monk.DbStore;
 using Monk.Models;
 using Monk.Utils;
+using Monk.Filters;
 
 namespace Monk.Areas.Services.Controllers
 {
@@ -15,6 +16,7 @@ namespace Monk.Areas.Services.Controllers
         public MemberController(DbServices services) : base(services) { }
 
         [HttpPost]
+        [Anonymous]
         public JsonResult Signin(string account, string password)
         {
             JsonData<Member> clientResult = new JsonData<Member>() { };
