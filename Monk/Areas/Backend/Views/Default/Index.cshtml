@@ -454,7 +454,7 @@
                                 backend.errorTip(data.info);
                             }
                             else if (data.status == "y") {
-                                backend.successTip(data.info, { time: 2000 }, function () {
+                                backend.successTip(data.info, { time: 1000 }, function () {
                                     window.location.href = '@Url.Action("Signin", "Default")';
                                 });
                             }
