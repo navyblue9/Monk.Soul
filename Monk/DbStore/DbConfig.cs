@@ -14,17 +14,17 @@ namespace Monk.DbStore
         {
             {
                 "all",()=> {
-                     return new KeyValueObj(){ Key=" Del=@Del and Destroy=@Destroy " , Value=new{ Del=0 , Destroy=0 }};
+                     return new KeyValueObj(){ Key=" Del=@Del and Destroy=@Destroy " , Value=new { Del=0 , Destroy=0 }};
                 }
             },
              {
                 "admin",()=> {
-                     return new KeyValueObj(){ Key=" Destroy=@Destroy " , Value=new{ Destroy=0 }};
+                     return new KeyValueObj(){ Key=" Destroy=@Destroy " , Value=new { Destroy=0 }};
                 }
             },
             {
                 "root",()=> {
-                     return new KeyValueObj(){ Key="" , Value=new{ }};
+                     return new KeyValueObj(){ Key="" , Value=new { }};
                 }
             }
         };

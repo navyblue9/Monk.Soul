@@ -195,6 +195,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\monk.data.sql" />
     <Content Include="App_Data\monk.init.sql" />
     <Content Include="Areas\Backend\Assets\favicon.ico" />
     <Content Include="Areas\Backend\Assets\Fonts\iconfont.svg" />

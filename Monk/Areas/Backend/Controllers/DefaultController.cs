@@ -37,6 +37,7 @@ namespace Monk.Areas.Backend.Controllers
                 cfg.CreateMap<JsonData<Member>, JsonData<SessionMember>>();
                 Mapper.Initialize(cfg);
                 var clientResultDto = Mapper.Map<JsonData<SessionMember>>(clientResult);
+
                 clientResultDto.data.LogID = Guid.Parse(clientResultDto.others.ToString());
                 Session[Keys.SessionKey] = clientResultDto.data;
 
