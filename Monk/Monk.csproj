@@ -128,8 +128,8 @@
       <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SqlSugar, Version=3.1.0.9, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\sqlSugar.3.1.0.9\lib\net40\SqlSugar.dll</HintPath>
+    <Reference Include="SqlSugar, Version=3.1.1.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\sqlSugar.3.1.1.2\lib\net40\SqlSugar.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SyntacticSugar, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
