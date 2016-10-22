@@ -18,6 +18,10 @@ namespace Monk.Areas.Backend.Controllers
         [HttpGet]
         public ActionResult Signin()
         {
+            if (Session[Keys.SessionKey] != null)
+            {
+                return RedirectToAction("Index");
+            }
             return View();
         }
 
@@ -48,6 +52,12 @@ namespace Monk.Areas.Backend.Controllers
                 clientResult.selector = "#Account";
             }
             return Json(clientResult);
+        }
+
+        [HttpGet]
+        public ActionResult Index()
+        {
+            return View();
         }
     }
 }

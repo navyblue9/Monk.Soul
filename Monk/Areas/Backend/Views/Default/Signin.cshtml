@@ -58,7 +58,9 @@
     <script type="text/javascript">
         if (self != top) { top.location = self.location; }
         $(function () {
-            backend.validform();
+            backend.validform(function (data) {
+                window.location.href = "@Url.Action("Index","Default")";
+            });
         });
     </script>
 }

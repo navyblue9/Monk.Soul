@@ -107,7 +107,7 @@
                 if (data.status == "y") {
                     that.successTip(data.info);
                     if (typeof success == "function") {
-                        success();
+                        success(data);
                     }
                 }
             }
