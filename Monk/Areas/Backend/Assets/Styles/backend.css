@@ -78,6 +78,5 @@ body { font-family: 'Microsoft YaHei','微软雅黑',SimSun,Arial; font-size: 13
 .backend-module-item span { font-size: 30px; pointer-events: none; }
 .backend-module-item label { display: block; font-size: 12px; pointer-events: none; padding: 5px 0 0 0; color: #666; }
 .backend-module-item a.selected span, .backend-module-item a.selected label { color: #3498db; }
-
 /*内容页*/
 .backend-content { padding: 0 10px; }

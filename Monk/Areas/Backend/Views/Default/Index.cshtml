@@ -359,19 +359,17 @@
 
             // 点击模块处理
             var moduleIdKey = "@memberInfo.Account" + "_moduleId";
-            $(".backend-module-item").on({
-                click: function () {
-                    var lastModuleid = store.get(moduleIdKey);
-                    if (lastModuleid) {
-                        $(".backend-menu-item[data-moduleid='" + lastModuleid + "']").addClass("display-none");
-                        $(".backend-module-item[data-moduleid='" + lastModuleid + "']").children("a").removeClass("selected");
-                    }
-                    var that = $(this);
-                    var moduleid = that.attr("data-moduleid");
-                    $(".backend-menu-item[data-moduleid='" + moduleid + "']").removeClass("display-none");
-                    that.children("a").addClass("selected");
-                    store.set(moduleIdKey, moduleid);
+            $("#backend-module").on("click", ".backend-module-item", function () {
+                var lastModuleid = store.get(moduleIdKey);
+                if (lastModuleid) {
+                    $(".backend-menu-item[data-moduleid='" + lastModuleid + "']").addClass("display-none");
+                    $(".backend-module-item[data-moduleid='" + lastModuleid + "']").children("a").removeClass("selected");
                 }
+                var that = $(this);
+                var moduleid = that.attr("data-moduleid");
+                $(".backend-menu-item[data-moduleid='" + moduleid + "']").removeClass("display-none");
+                that.children("a").addClass("selected");
+                store.set(moduleIdKey, moduleid);
             });
             if (store.get(moduleIdKey)) {
                 $(".backend-module-item[data-moduleid='" + store.get(moduleIdKey) + "']").click();
@@ -382,43 +380,67 @@
 
             // 功能菜单处理
             var actionidKey = "@memberInfo.Account" + "_actionId";
-            $(".backend-menu-action").on({
-                click: function () {
-                    var lastActionid = store.get(actionidKey);
-                    if (lastActionid) {
-                        $(".backend-menu-action[data-actionid='" + lastActionid + "']").removeClass("selected");
+            $("#backend-left").on("click", ".backend-menu-action", function (e, data) {
+                var lastActionid = store.get(actionidKey);
+                if (lastActionid) {
+                    $(".backend-menu-action[data-actionid='" + lastActionid + "']").removeClass("selected");
+                }
+                var that = $(this);
+                var ul = that.siblings("ul");
+                var url = that.attr("data-url");
+                var actionid = that.attr("data-actionid");
+                var childrenKey = store.get(actionid + "_actionidChildrenKey");
+                var target = that.attr("target");
+                that.addClass("selected");
+                if (url) {
+                    if (target == "backend-iframe") {
+                        document.getElementById('backend-iframe').contentWindow.location.href = url;
                     }
-                    var that = $(this);
-                    var ul = that.siblings("ul");
-                    var url = that.attr("data-url");
-                    var actionid = that.attr("data-actionid");
-                    var target = that.attr("target");
-                    that.addClass("selected");
-                    if (url) {
-                        if (target == "backend-iframe") {
-                            document.getElementById('backend-iframe').contentWindow.location.href = url;
-                        }
-                        else {
-                            window.location.href = url;
-                        }
+                    else {
+                        window.location.href = url;
                     }
-                    if (ul.length > 0) {
+                }
+                if (data == "auto") {
+                    that.parents("ul").each(function () {
+                        var _menuItem = $(this).siblings(".backend-menu-action");
+                        _menuItem.children(".icon-arrow").removeClass("icon-monk-arrowdown").addClass("icon-monk-arrowup");
+                        _menuItem.children(".action-icon").removeClass("icon-backend-folder-close").addClass("icon-backend-folder-open");
+                        $(this).show();
+                    });
+                }
+                if (ul.length > 0) {
+                    if (data != "auto") {
                         if (ul.is(":visible")) {
                             that.children(".icon-arrow").removeClass("icon-monk-arrowup").addClass("icon-monk-arrowdown");
                             that.children(".action-icon").removeClass("icon-backend-folder-open").addClass("icon-backend-folder-close");
-                            ul.slideUp(0);
+                            ul.hide();
+                            store.set(actionid + "_actionidChildrenKey", "close");
                         }
                         else {
                             that.children(".icon-arrow").removeClass("icon-monk-arrowdown").addClass("icon-monk-arrowup");
                             that.children(".action-icon").removeClass("icon-backend-folder-close").addClass("icon-backend-folder-open");
-                            ul.slideDown(0);
+                            ul.show();
+                            store.set(actionid + "_actionidChildrenKey", "open");
                         }
                     }
-                    store.set(actionidKey, actionid);
+                    else {
+                        if (childrenKey == "open") {
+                            that.parent("ul").show();
+                            that.children(".icon-arrow").removeClass("icon-monk-arrowdown").addClass("icon-monk-arrowup");
+                            that.children(".action-icon").removeClass("icon-backend-folder-close").addClass("icon-backend-folder-open");
+                            ul.show();
+                        }
+                        else {
+                            that.children(".icon-arrow").removeClass("icon-monk-arrowup").addClass("icon-monk-arrowdown");
+                            that.children(".action-icon").removeClass("icon-backend-folder-open").addClass("icon-backend-folder-close");
+                            ul.hide();
+                        }
+                    }
                 }
+                store.set(actionidKey, actionid);
             });
             if (store.get(actionidKey)) {
-                $(".backend-menu-action[data-actionid='" + store.get(actionidKey) + "']").click();
+                $(".backend-menu-action[data-actionid='" + store.get(actionidKey) + "']").trigger("click", "auto");
             }
         });
     </script>
