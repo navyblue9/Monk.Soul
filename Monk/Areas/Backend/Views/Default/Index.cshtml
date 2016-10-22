@@ -393,7 +393,7 @@
                 var childrenKey = store.get(actionid + "_actionidChildrenKey");
                 var target = that.attr("target");
                 that.addClass("selected");
-                if (url) {
+                if (url && url != "#") {
                     if (target == "backend-iframe") {
                         document.getElementById('backend-iframe').contentWindow.location.href = url;
                     }
