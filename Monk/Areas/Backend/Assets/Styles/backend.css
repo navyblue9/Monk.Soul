@@ -1,4 +1,5 @@
 ﻿@font-face { font-family: "iconfont"; src: url('../Fonts/iconfont.eot'); /* IE9*/ src: url('../Fonts/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../Fonts/iconfont.woff') format('woff'), /* chrome, firefox */ url('../Fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('../Fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */ }
+.icon-backend-folder-close:before { content: "\e619"; }
 .icon-backend-yidong:before { content: "\e603"; }
 .icon-backend-xiangmu:before { content: "\e609"; }
 .icon-backend-weixin:before { content: "\e60a"; }
@@ -13,6 +14,7 @@
 .icon-backend-account:before { content: "\e601"; }
 .icon-backend-module:before { content: "\e608"; }
 .icon-backend-zhanzhanggongju:before { content: "\e60f"; }
+.icon-backend-file:before { content: "\e617"; }
 .icon-backend-kehu:before { content: "\e610"; }
 .icon-backend-qiye:before { content: "\e611"; }
 .icon-backend-shouquan:before { content: "\e612"; }
@@ -21,6 +23,7 @@
 .icon-backend-wendan:before { content: "\e614"; }
 .icon-backend-topback:before { content: "\e605"; }
 .icon-backend-zhandian:before { content: "\e615"; }
+.icon-backend-folder-open:before { content: "\e618"; }
 /*公共*/
 body { font-family: 'Microsoft YaHei','微软雅黑',SimSun,Arial; font-size: 13px; background: #fff; }
 .display-block { display: block; }
@@ -38,25 +41,43 @@ body { font-family: 'Microsoft YaHei','微软雅黑',SimSun,Arial; font-size: 13
 .signin-container .monk-form-input { width: 138px; }
 .signin-container .monk-input-button { margin-right: 0; padding: 12px 30px; }
 /*后台首页*/
-#backend-container { position: absolute; z-index: 1; top: 0; right: 0; bottom: 0; left: 0; }
+.index-body { overflow: hidden; }
+#backend-container { position: absolute; z-index: 1; top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; }
+/*顶部*/
+#backend-top { position: absolute; top: 0; right: 0; left: 200px; height: 45px; border-bottom: 1px solid #e9e9e9; z-index: 1; }
+.backend-top-menu { height: 44px; width: 44px; line-height: 44px; text-align: center; text-decoration: none; display: block; float: left; color: #aaa; font-size: 20px; cursor: pointer; }
+.backend-top-menu.float-right { float: right; }
+.backend-top-menu.border-left { border-left: 1px solid #e9e9e9; }
+.backend-top-menu.border-right { border-right: 1px solid #e9e9e9; }
+.backend-top-menu:hover { background: #f5f5f5; }
+/*左边*/
+#backend-left { position: absolute; top: 0; left: 0; width: 200px; bottom: 0; border-right: 1px solid #e9e9e9; z-index: 1; }
+#backend-logo { height: 45px; border-bottom: 1px solid #e9e9e9; padding: 5px 0 0 10px; }
+#backend-logo a { -moz-user-select: none; -webkit-user-select: none; user-select: none; -ms-user-select: none; }
+#backend-logo img { height: 35px; pointer-events: none; }
+#backend-left-menu { position: absolute; left: 0; top: 45px; overflow: hidden; bottom: 0; right: 0; z-index: 1; }
+.backend-menu-item.display-none { display: none; }
+.backend-menu-title { height: 45px; margin: 0 10px; line-height: 45px; border-bottom: 1px solid #e9e9e9; font-weight: 500; font-size: 16px; }
+.backe-menu-list { position: absolute; top: 47px; bottom: 0; left: 0; right: 0; z-index: 1; padding: 0 10px; }
+.backe-menu-list ul, .backe-menu-list li { list-style: none; margin: 0; padding: 0; clear: both; }
+.backe-menu-list > ul ul { display: none; }
+.backend-menu-action { color: #444; line-height: 32px; font-size: 13px; padding: 0 3px; border-radius: 3px; }
+.backend-menu-action:hover { background: #fafafa; cursor: pointer; }
+.backend-menu-action.selected { background: #f4f4f4; cursor: pointer; color: #3498db; }
+.backend-menu-action .space { display: inline-block; width: 18px; vertical-align: middle; pointer-events: none; }
+.backend-menu-action .action-icon { display: inline-block; vertical-align: middle; pointer-events: none; font-size: 16px; color: #444; }
+.backend-menu-action label { display: inline-block; vertical-align: middle; padding: 0 3px; pointer-events: none; }
+.backend-menu-action .icon-arrow { font-size: 12px; display: inline-block; vertical-align: middle; line-height: 35px; color: #666; }
+/*右边*/
+#backend-right { position: absolute; top: 45px; left: 200px; right: 0; bottom: 0; z-index: 0; }
+#backend-iframe { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 2; width: 100%; height: 100%; }
+/*模块菜单*/
 #backend-module { position: absolute; left: -100px; top: 0; bottom: 0; width: 100px; z-index: 10; border-right: 1px solid #e9e9e9; overflow: hidden; }
 .backend-module-item { text-align: center; height: 85px; display: table; width: 100%; padding: 0 15px; }
 .backend-module-item a { display: table-cell; vertical-align: middle; border-bottom: 1px solid #f1f1f1; cursor: pointer; -moz-user-select: none; -webkit-user-select: none; user-select: none; -ms-user-select: none; text-decoration: none; color: #9e9e9e; }
 .backend-module-item span { font-size: 30px; pointer-events: none; }
 .backend-module-item label { display: block; font-size: 12px; pointer-events: none; padding: 5px 0 0 0; color: #666; }
 .backend-module-item a.selected span, .backend-module-item a.selected label { color: #3498db; }
-#backend-top { position: absolute; top: 0; right: 0; left: 200px; height: 45px; border-bottom: 1px solid #e9e9e9; z-index: 1; }
-#backend-left { position: absolute; top: 0; left: 0; width: 200px; bottom: 0; border-right: 1px solid #e9e9e9; z-index: 1; }
-#backend-right { position: absolute; top: 45px; left: 200px; right: 0; bottom: 0; z-index: 0; }
-#backend-iframe { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 2; width: 100%; height: 100%; }
-#backend-logo { height: 45px; border-bottom: 1px solid #e9e9e9; padding: 5px 0 0 10px; }
-#backend-logo a { -moz-user-select: none; -webkit-user-select: none; user-select: none; -ms-user-select: none; }
-#backend-logo img { height: 35px; pointer-events: none; }
-.backend-top-menu { height: 44px; width: 44px; line-height: 44px; text-align: center; text-decoration: none; display: block; float: left; color: #aaa; font-size: 20px; cursor: pointer; }
-.backend-top-menu.float-right { float: right; }
-.backend-top-menu.border-left { border-left: 1px solid #e9e9e9; }
-.backend-top-menu.border-right { border-right: 1px solid #e9e9e9; }
-.backend-top-menu:hover { background: #f5f5f5; }
 
 /*内容页*/
 .backend-content { padding: 0 10px; }
