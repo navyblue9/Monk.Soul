@@ -9,8 +9,9 @@
         <a id="switch-module" title="更多模块" class="backend-top-menu border-right monk-iconfont icon-backend-module"></a>
         <a title="返回前页" class="backend-top-menu border-right monk-iconfont icon-backend-back" onclick="history.go(-1);"></a>
         <a title="刷新页面" class="backend-top-menu border-right monk-iconfont icon-backend-refresh" onclick="document.getElementById('backend-iframe').contentWindow.location.reload(true);"></a>
+        <a href="/" target="_blank" title="查看网站" class="backend-top-menu border-right monk-iconfont icon-backend-website"></a>
         <a title="基本信息" class="backend-top-menu border-left monk-iconfont icon-backend-account float-right"></a>
-        <a href="/" target="_blank" title="查看网站" class="backend-top-menu border-left monk-iconfont icon-backend-website float-right"></a>
+        <a title="退出管理" class="backend-top-menu border-left monk-iconfont icon-backend-tuichu float-right" id="signout"></a>
     </div>
     <div id="backend-left">
         <div id="backend-logo">
@@ -442,6 +443,16 @@
             if (store.get(actionidKey)) {
                 $(".backend-menu-action[data-actionid='" + store.get(actionidKey) + "']").trigger("click", "auto");
             }
+
+            // 退出系统
+            $("#signout").on({
+                click: function () {
+                    backend.loadTip("系统正在注销，请稍后...")
+                    $.post("@Url.Action("Signout", "Default")", {}, function (data) {
+                        backend.successTip(data.info);
+                    });
+                }
+            });
         });
     </script>
 }

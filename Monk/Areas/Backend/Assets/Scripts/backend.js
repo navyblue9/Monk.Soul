@@ -19,36 +19,36 @@
     exports.v = "1.0.0";
 
     // 成功提示
-    exports.successTip = function (msg, options) {
+    exports.successTip = function (msg, options, end) {
         options = options || {};
         var defaults = { icon: 1, offset: 0 };
         var config = $.extend({}, defaults, options);
         var _layer = parent.layer ? parent.layer : layer;
-        return _layer.msg(msg, config);
+        return _layer.msg(msg, config, end);
     };
     // 错误提示
-    exports.errorTip = function (msg, options) {
+    exports.errorTip = function (msg, options, end) {
         options = options || {};
         var defaults = { icon: 2, offset: 0 };
         var config = $.extend({}, defaults, options);
         var _layer = parent.layer ? parent.layer : layer;
-        return _layer.msg(msg, config);
+        return _layer.msg(msg, config, end);
     };
     // 加载提示
-    exports.loadTip = function (msg, options) {
+    exports.loadTip = function (msg, options, end) {
         options = options || {};
         var defaults = { icon: 16, time: 30000, offset: 0 };
         var config = $.extend({}, defaults, options);
         var _layer = parent.layer ? parent.layer : layer;
-        return _layer.msg(msg, config);
+        return _layer.msg(msg, config, end);
     };
     // 正常提示
-    exports.Tip = function (msg, options) {
+    exports.Tip = function (msg, options, end) {
         options = options || {};
         var defaults = { icon: 0, offset: 0 };
         var config = $.extend({}, defaults, options);
         var _layer = parent.layer ? parent.layer : layer;
-        return _layer.msg(msg, config);
+        return _layer.msg(msg, config, end);
     };
 
     // 表单验证

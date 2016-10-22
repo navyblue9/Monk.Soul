@@ -78,5 +78,22 @@ namespace Monk.Areas.Services.Controllers
             });
             return Json(clientResult);
         }
+
+        [HttpPost]
+        public JsonResult Signout(Guid logid)
+        {
+            JsonData<object> clientResult = new JsonData<object>() { };
+            services.Command((db) =>
+            {
+                db.Update<LoginLog>(new
+                {
+                    OffTime = DateTime.Now,
+                    UpdateTime = DateTime.Now
+                }, u => u.LogID == logid);
+
+                clientResult.SetClientData("y", "注销成功");
+            });
+            return Json(clientResult);
+        }
     }
 }

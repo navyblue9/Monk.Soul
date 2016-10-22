@@ -65,5 +65,18 @@ namespace Monk.Areas.Backend.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public JsonResult Signout()
+        {
+            var sessionModel = Session[Keys.SessionKey] as SessionMember;
+            RESTFul restful = new RESTFul(RequestInfo.Domain);
+            JsonData<object> clientResult = restful.Post<JsonData<object>>(Url.Action("Signout", "Member", new { area = "Services" }), new
+            {
+                logid = sessionModel.LogID
+            });
+            Session[Keys.ConnectionStringKey] = null;
+            return Json(clientResult);
+        }
     }
 }
