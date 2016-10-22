@@ -50,7 +50,6 @@ namespace Monk.Utils
         public string Execute(RestRequest request)
         {
             var client = new RestClient(this.BaseUrl);
-            client.CookieContainer = new CookieContainer();
             var response = client.Execute(request);
             if (response.ErrorException != null)
             {
@@ -64,7 +63,6 @@ namespace Monk.Utils
         public T Execute<T>(RestRequest request) where T : new()
         {
             var client = new RestClient(this.BaseUrl);
-            client.CookieContainer = new CookieContainer();
             var response = client.Execute<T>(request);
             if (response.ErrorException != null)
             {
