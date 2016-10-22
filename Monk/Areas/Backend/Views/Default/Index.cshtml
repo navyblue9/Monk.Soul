@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "管理首页";
     Layout = "~/Areas/Backend/Views/Shared/_Layout.cshtml";
-    SessionMember memberInfo = ViewContext.RouteData.DataTokens["MemberInfo"] as SessionMember;
+    SessionMember memberInfo = Session[Keys.SessionKey] as SessionMember;
 }
 <div id="backend-container">
     <div id="backend-top">

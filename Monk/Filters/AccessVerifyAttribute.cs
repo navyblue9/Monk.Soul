@@ -29,11 +29,6 @@ namespace Monk.Filters
                     filterContext.Result = new RedirectResult("~/Backend");
                 }
             }
-            else
-            {
-                var sessionModel = filterContext.HttpContext.Session[Keys.SessionKey] as SessionMember;
-                filterContext.RouteData.DataTokens.Add("MemberInfo", sessionModel);
-            }
         }
     }
 }
