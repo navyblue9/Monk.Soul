@@ -24,7 +24,7 @@
         var defaults = { icon: 1, offset: 0 };
         var config = $.extend({}, defaults, options);
         var _layer = parent.layer ? parent.layer : layer;
-        _layer.msg(msg, config);
+        return _layer.msg(msg, config);
     };
     // 错误提示
     exports.errorTip = function (msg, options) {
@@ -32,7 +32,7 @@
         var defaults = { icon: 2, offset: 0 };
         var config = $.extend({}, defaults, options);
         var _layer = parent.layer ? parent.layer : layer;
-        _layer.msg(msg, config);
+        return _layer.msg(msg, config);
     };
     // 加载提示
     exports.loadTip = function (msg, options) {
@@ -40,7 +40,7 @@
         var defaults = { icon: 16, time: 30000, offset: 0 };
         var config = $.extend({}, defaults, options);
         var _layer = parent.layer ? parent.layer : layer;
-        _layer.msg(msg, config);
+        return _layer.msg(msg, config);
     };
     // 正常提示
     exports.Tip = function (msg, options) {
@@ -48,7 +48,7 @@
         var defaults = { icon: 0, offset: 0 };
         var config = $.extend({}, defaults, options);
         var _layer = parent.layer ? parent.layer : layer;
-        _layer.msg(msg, config);
+        return _layer.msg(msg, config);
     };
 
     // 表单验证
@@ -113,7 +113,7 @@
             }
         };
         var config = $.extend({}, defaults, options);
-        $(config.form).Validform(config);
+        return $(config.form).Validform(config);
     };
     // 美化滚动条
     exports.nicescroll = function (jqueryObj, options) {
@@ -128,6 +128,6 @@
             autohidemode: true
         };
         var config = $.extend({}, defaults, options);
-        jqueryObj.niceScroll(config);
+        return jqueryObj.niceScroll(config);
     };
 });
