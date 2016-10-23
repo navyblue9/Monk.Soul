@@ -317,7 +317,7 @@
     <script type="text/javascript">
         if (self != top) { top.location = self.location; }
         $(function () {
-            backend.successTip("您好，@ViewBag.MemberInfo.Account", { offset: "auto" });
+            backend.successTip("您好，@ViewBag.MemberInfo.Account");
             // 模块处理
             var moduleStatusKey = "@ViewBag.MemberInfo.Account" + "_moduleStatus";
             var $container = $("#backend-container");
