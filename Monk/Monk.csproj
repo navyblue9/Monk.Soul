@@ -380,6 +380,7 @@
     <Content Include="Areas\Backend\Views\SysSet\Detail.cshtml" />
     <Content Include="Areas\Backend\Views\SysSet\Update.cshtml" />
     <None Include="bundleconfig.json" />
+    <Content Include="ViewModels\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
