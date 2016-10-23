@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Text;
 
-namespace Monk.Models
+namespace Monk.ViewModels
 {
-    public class SysSet
+    public class SysSetViewModel
     {
         
         /// <summary>

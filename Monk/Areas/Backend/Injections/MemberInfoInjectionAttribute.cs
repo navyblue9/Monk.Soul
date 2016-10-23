@@ -1,8 +1,5 @@
 ﻿using System.Web.Mvc;
-using System.Web.Routing;
-using SyntacticSugar;
 using Monk.Areas.Backend.ViewModels;
-using Monk.Models;
 using Monk.Utils;
 
 namespace Monk.Areas.Backend.Injections
@@ -15,16 +12,16 @@ namespace Monk.Areas.Backend.Injections
             if (filterContext.HttpContext.Session[Keys.SessionKey] != null)
             {
                 var memberInfo = SessionHelper.GetSessionInstance<SessionMember>(Keys.SessionKey);
-                ActionResult result = filterContext.Result;
+                var result = filterContext.Result;
                 if (result is ViewResult)
                 {
-                    ViewResult vresult = result as ViewResult;
+                    var vresult = result as ViewResult;
                     vresult.ViewData["MemberInfo"] = memberInfo;
                     filterContext.Result = vresult;
                 }
                 else if (result is PartialViewResult)
                 {
-                    PartialViewResult presult = result as PartialViewResult;
+                    var presult = result as PartialViewResult;
                     presult.ViewData["MemberInfo"] = memberInfo;
                     filterContext.Result = presult;
                 }

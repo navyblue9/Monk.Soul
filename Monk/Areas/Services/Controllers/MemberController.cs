@@ -2,10 +2,13 @@
 using System.Linq.Expressions;
 using System.Linq;
 using System.Web.Mvc;
+using AutoMapper;
+using AutoMapper.Configuration;
 using SqlSugar;
 using SyntacticSugar;
 using Monk.DbStore;
 using Monk.Models;
+using Monk.ViewModels;
 using Monk.Utils;
 using Monk.Filters;
 
@@ -19,7 +22,7 @@ namespace Monk.Areas.Services.Controllers
         [Anonymous]
         public JsonResult Signin(string account, string password)
         {
-            var clientResult = new JsonData<Member>() { };
+            var clientResult = new JsonData<MemberViewModel>() { };
             var encrypt = new EncryptSugar();
             var passwordMD5 = encrypt.MD5(password).ToLower();
             Expression<Func<Member, bool>> expression = u => u.Account == account && u.Password == passwordMD5;
@@ -67,7 +70,13 @@ namespace Monk.Areas.Services.Controllers
                                 member.MemberID
                             }, u => u.LogID == logid);
 
-                            clientResult.SetClientData("y", "登录成功", member, logid);
+                            // 此地方需要重点优化，后期使用autofac统一注入
+                            var cfg = new MapperConfigurationExpression();
+                            cfg.CreateMap<Member, MemberViewModel>();
+                            Mapper.Initialize(cfg);
+                            var viewModel = Mapper.Map<MemberViewModel>(member);
+
+                            clientResult.SetClientData("y", "登录成功", viewModel, logid);
                         }
                     }
                 }

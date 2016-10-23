@@ -3,7 +3,7 @@ using System.Web.Mvc;
 using SyntacticSugar;
 using AutoMapper;
 using AutoMapper.Configuration;
-using Monk.Models;
+using Monk.ViewModels;
 using Monk.Filters;
 using Monk.Areas.Backend.ViewModels;
 using Monk.Utils;
@@ -29,7 +29,7 @@ namespace Monk.Areas.Backend.Controllers
         public JsonResult Signin(SigninModel viewModel)
         {
             var restful = new RESTFul(RequestInfo.Domain);
-            var clientResult = restful.Post<JsonData<Member>>(Url.Action("Signin", "Member", new { area = "Services" }), new
+            var clientResult = restful.Post<JsonData<MemberViewModel>>(Url.Action("Signin", "Member", new { area = "Services" }), new
             {
                 account = viewModel.Account.Trim(),
                 password = viewModel.Password.Trim()
@@ -37,8 +37,8 @@ namespace Monk.Areas.Backend.Controllers
             if (clientResult.status == "y")
             {
                 var cfg = new MapperConfigurationExpression();
-                cfg.CreateMap<Member, SessionMember>();
-                cfg.CreateMap<JsonData<Member>, JsonData<SessionMember>>();
+                cfg.CreateMap<MemberViewModel, SessionMember>();
+                cfg.CreateMap<JsonData<MemberViewModel>, JsonData<SessionMember>>();
                 Mapper.Initialize(cfg);
                 var clientResultDto = Mapper.Map<JsonData<SessionMember>>(clientResult);
 

@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Text;
 
-namespace Monk.Models
+namespace Monk.ViewModels
 {
-    public class SysSet
+    public class HaviorViewModel
     {
         
         /// <summary>
@@ -12,14 +12,7 @@ namespace Monk.Models
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Guid SetID {get;set;}
-
-        /// <summary>
-        /// Desc:LOGO 
-        /// Default:- 
-        /// Nullable:True 
-        /// </summary>
-        public string Logo {get;set;}
+        public Guid HaviorID {get;set;}
 
         /// <summary>
         /// Desc:名称 
@@ -27,13 +20,6 @@ namespace Monk.Models
         /// Nullable:False 
         /// </summary>
         public string Name {get;set;}
-
-        /// <summary>
-        /// Desc:版本 
-        /// Default:- 
-        /// Nullable:False 
-        /// </summary>
-        public string Version {get;set;}
 
         /// <summary>
         /// Desc:关键字 
@@ -50,53 +36,102 @@ namespace Monk.Models
         public string Description {get;set;}
 
         /// <summary>
-        /// Desc:技术支持 
-        /// Default:('百签软件（中山）有限公司') 
+        /// Desc:路由 
+        /// Default:((1)) 
         /// Nullable:False 
         /// </summary>
-        public string Support {get;set;}
+        public Boolean Route {get;set;}
 
         /// <summary>
-        /// Desc:版权所有 
-        /// Default:('Copyright ?  2016 百签软件（中山）有限公司. All rights reserved.') 
-        /// Nullable:False 
-        /// </summary>
-        public string CopyRight {get;set;}
-
-        /// <summary>
-        /// Desc:网址 
+        /// Desc:请求地址 
         /// Default:- 
         /// Nullable:True 
         /// </summary>
-        public string Site {get;set;}
+        public string Url {get;set;}
 
         /// <summary>
-        /// Desc:页容量 
-        /// Default:((15)) 
-        /// Nullable:False 
+        /// Desc:区域 
+        /// Default:- 
+        /// Nullable:True 
         /// </summary>
-        public int PageSize {get;set;}
+        public string Area {get;set;}
 
         /// <summary>
-        /// Desc:图片最大上传大小 
-        /// Default:((2.0)) 
-        /// Nullable:False 
+        /// Desc:控制器 
+        /// Default:- 
+        /// Nullable:True 
         /// </summary>
-        public Decimal ImageMaxSize {get;set;}
+        public string Controller {get;set;}
 
         /// <summary>
-        /// Desc:视频最大上传大小 
-        /// Default:((5.0)) 
-        /// Nullable:False 
+        /// Desc:功能 
+        /// Default:- 
+        /// Nullable:True 
         /// </summary>
-        public Decimal VideoMaxSize {get;set;}
+        public string Action {get;set;}
 
         /// <summary>
-        /// Desc:附件最大上传大小 
-        /// Default:((10.0)) 
+        /// Desc:标签属性 
+        /// Default:- 
+        /// Nullable:True 
+        /// </summary>
+        public string TagAttr {get;set;}
+
+        /// <summary>
+        /// Desc:字体图标 
+        /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Decimal AttachMaxSize {get;set;}
+        public string Iconfont {get;set;}
+
+        /// <summary>
+        /// Desc:HTTP方式 
+        /// Default:('GET') 
+        /// Nullable:False 
+        /// </summary>
+        public string HttpMethod {get;set;}
+
+        /// <summary>
+        /// Desc:页头代码 
+        /// Default:- 
+        /// Nullable:True 
+        /// </summary>
+        public string HeadCode {get;set;}
+
+        /// <summary>
+        /// Desc:页脚代码 
+        /// Default:- 
+        /// Nullable:True 
+        /// </summary>
+        public string FootCode {get;set;}
+
+        /// <summary>
+        /// Desc:布局地址 
+        /// Default:- 
+        /// Nullable:True 
+        /// </summary>
+        public string Layout {get;set;}
+
+        /// <summary>
+        /// Desc:模块ID 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public Guid ModuleID {get;set;}
+
+        /// <summary>
+        /// Desc:首页 
+        /// Default:((0)) 
+        /// Nullable:False 
+        /// </summary>
+        public Boolean Index {get;set;}
+
+        /// <summary>
+        /// Desc:启用 
+        /// Default:((1)) 
+        /// Nullable:False 
+        /// </summary>
+        public Boolean Enable {get;set;}
 
         /// <summary>
         /// Desc:流水号 

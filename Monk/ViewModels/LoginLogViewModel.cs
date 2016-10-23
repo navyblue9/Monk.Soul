@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Text;
 
-namespace Monk.Models
+namespace Monk.ViewModels
 {
-    public class SysSet
+    public class LoginLogViewModel
     {
         
         /// <summary>
@@ -12,91 +12,98 @@ namespace Monk.Models
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Guid SetID {get;set;}
+        public Guid LogID {get;set;}
 
         /// <summary>
-        /// Desc:LOGO 
+        /// Desc:账号 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public string Account {get;set;}
+
+        /// <summary>
+        /// Desc:密码 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public string Password {get;set;}
+
+        /// <summary>
+        /// Desc:试登时间 
+        /// Default:(getdate()) 
+        /// Nullable:False 
+        /// </summary>
+        public DateTime InTime {get;set;}
+
+        /// <summary>
+        /// Desc:登出时间 
         /// Default:- 
         /// Nullable:True 
         /// </summary>
-        public string Logo {get;set;}
+        public DateTime? OffTime {get;set;}
 
         /// <summary>
-        /// Desc:名称 
-        /// Default:- 
+        /// Desc:成功 
+        /// Default:((0)) 
         /// Nullable:False 
         /// </summary>
-        public string Name {get;set;}
+        public Boolean Sucessed {get;set;}
 
         /// <summary>
-        /// Desc:版本 
-        /// Default:- 
-        /// Nullable:False 
-        /// </summary>
-        public string Version {get;set;}
-
-        /// <summary>
-        /// Desc:关键字 
-        /// Default:('Monk.Soul,百签软件,百小僧,baisoft,baisoft.org') 
-        /// Nullable:True 
-        /// </summary>
-        public string Keywords {get;set;}
-
-        /// <summary>
-        /// Desc:描述 
+        /// Desc:会员ID 
         /// Default:- 
         /// Nullable:True 
         /// </summary>
-        public string Description {get;set;}
+        public Guid? MemberID {get;set;}
 
         /// <summary>
-        /// Desc:技术支持 
-        /// Default:('百签软件（中山）有限公司') 
+        /// Desc:IP地址 
+        /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public string Support {get;set;}
+        public string IPAddress {get;set;}
 
         /// <summary>
-        /// Desc:版权所有 
-        /// Default:('Copyright ?  2016 百签软件（中山）有限公司. All rights reserved.') 
-        /// Nullable:False 
-        /// </summary>
-        public string CopyRight {get;set;}
-
-        /// <summary>
-        /// Desc:网址 
+        /// Desc:IP详情 
         /// Default:- 
         /// Nullable:True 
         /// </summary>
-        public string Site {get;set;}
+        public string IPDetail {get;set;}
 
         /// <summary>
-        /// Desc:页容量 
-        /// Default:((15)) 
+        /// Desc:HTTP方式 
+        /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public int PageSize {get;set;}
+        public string HttpMethod {get;set;}
 
         /// <summary>
-        /// Desc:图片最大上传大小 
-        /// Default:((2.0)) 
+        /// Desc:异步请求 
+        /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Decimal ImageMaxSize {get;set;}
+        public Boolean AjaxRequest {get;set;}
 
         /// <summary>
-        /// Desc:视频最大上传大小 
-        /// Default:((5.0)) 
+        /// Desc:移动设备 
+        /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Decimal VideoMaxSize {get;set;}
+        public Boolean MobileDevice {get;set;}
 
         /// <summary>
-        /// Desc:附件最大上传大小 
-        /// Default:((10.0)) 
+        /// Desc:操作系统 
+        /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Decimal AttachMaxSize {get;set;}
+        public string Platform {get;set;}
+
+        /// <summary>
+        /// Desc:浏览器 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public string Browser {get;set;}
 
         /// <summary>
         /// Desc:流水号 

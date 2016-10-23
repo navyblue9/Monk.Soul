@@ -2,7 +2,7 @@
 using System.Web.Routing;
 using SyntacticSugar;
 using Monk.Areas.Backend.ViewModels;
-using Monk.Models;
+using Monk.ViewModels;
 using Monk.Utils;
 
 namespace Monk.Areas.Backend.Injections
@@ -18,26 +18,26 @@ namespace Monk.Areas.Backend.Injections
             {
                 if (filterContext.HttpContext.Session[Keys.SessionKey] != null)
                 {
-                    CacheManager<SysSet> cm = CacheManager<SysSet>.GetInstance();
+                    var cm = CacheManager<SysSetViewModel>.GetInstance();
                     if (cm.Get(Keys.SysSetCacheKey) == null)
                     {
                         var sessionModel = SessionHelper.GetSessionInstance<SessionMember>(Keys.SessionKey);
                         var apiUrl = new UrlHelper(new RequestContext(filterContext.HttpContext, filterContext.RouteData)).Action("Detail", "SysSet", new { area = "Services" });
-                        RESTFul restful = new RESTFul(RequestInfo.Domain, sessionModel.MemberID.ToString(), RESTFul.GetSecretKey(sessionModel.MemberID.ToString(), Keys.Access_Token));
-                        JsonData<SysSet> clientResult = restful.Get<JsonData<SysSet>>(apiUrl);
+                        var restful = new RESTFul(RequestInfo.Domain, sessionModel.MemberID.ToString(), RESTFul.GetSecretKey(sessionModel.MemberID.ToString(), Keys.Access_Token));
+                        var clientResult = restful.Get<JsonData<SysSetViewModel>>(apiUrl);
                         if (clientResult.status == "y") cm.Add(Keys.SysSetCacheKey, clientResult.data);
                     }
                     var sysSetModel = cm.Get(Keys.SysSetCacheKey);
-                    ActionResult result = filterContext.Result;
+                    var result = filterContext.Result;
                     if (result is ViewResult)
                     {
-                        ViewResult vresult = result as ViewResult;
+                        var vresult = result as ViewResult;
                         vresult.ViewData["SysSetInfo"] = sysSetModel;
                         filterContext.Result = vresult;
                     }
                     else if (result is PartialViewResult)
                     {
-                        PartialViewResult presult = result as PartialViewResult;
+                        var presult = result as PartialViewResult;
                         presult.ViewData["SysSetInfo"] = sysSetModel;
                         filterContext.Result = presult;
                     }

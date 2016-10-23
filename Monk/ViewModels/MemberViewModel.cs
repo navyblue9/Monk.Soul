@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Text;
 
-namespace Monk.Models
+namespace Monk.ViewModels
 {
-    public class SysSet
+    public class MemberViewModel
     {
         
         /// <summary>
@@ -12,91 +12,70 @@ namespace Monk.Models
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Guid SetID {get;set;}
+        public Guid MemberID {get;set;}
 
         /// <summary>
-        /// Desc:LOGO 
-        /// Default:- 
-        /// Nullable:True 
-        /// </summary>
-        public string Logo {get;set;}
-
-        /// <summary>
-        /// Desc:名称 
+        /// Desc:账号 
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public string Name {get;set;}
+        public string Account {get;set;}
 
         /// <summary>
-        /// Desc:版本 
+        /// Desc:密码 
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public string Version {get;set;}
+        public string Password {get;set;}
 
         /// <summary>
-        /// Desc:关键字 
-        /// Default:('Monk.Soul,百签软件,百小僧,baisoft,baisoft.org') 
+        /// Desc:邮箱 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public string Email {get;set;}
+
+        /// <summary>
+        /// Desc:手机 
+        /// Default:- 
         /// Nullable:True 
         /// </summary>
-        public string Keywords {get;set;}
+        public string Phone {get;set;}
+
+        /// <summary>
+        /// Desc:照片 
+        /// Default:- 
+        /// Nullable:True 
+        /// </summary>
+        public string Photo {get;set;}
 
         /// <summary>
         /// Desc:描述 
-        /// Default:- 
+        /// Default:('亲，你还没介绍自己哦~') 
         /// Nullable:True 
         /// </summary>
-        public string Description {get;set;}
+        public string Remark {get;set;}
 
         /// <summary>
-        /// Desc:技术支持 
-        /// Default:('百签软件（中山）有限公司') 
-        /// Nullable:False 
-        /// </summary>
-        public string Support {get;set;}
-
-        /// <summary>
-        /// Desc:版权所有 
-        /// Default:('Copyright ?  2016 百签软件（中山）有限公司. All rights reserved.') 
-        /// Nullable:False 
-        /// </summary>
-        public string CopyRight {get;set;}
-
-        /// <summary>
-        /// Desc:网址 
+        /// Desc:会员组ID 
         /// Default:- 
-        /// Nullable:True 
-        /// </summary>
-        public string Site {get;set;}
-
-        /// <summary>
-        /// Desc:页容量 
-        /// Default:((15)) 
         /// Nullable:False 
         /// </summary>
-        public int PageSize {get;set;}
+        public Guid GroupID {get;set;}
 
         /// <summary>
-        /// Desc:图片最大上传大小 
-        /// Default:((2.0)) 
+        /// Desc:启用 
+        /// Default:((1)) 
         /// Nullable:False 
         /// </summary>
-        public Decimal ImageMaxSize {get;set;}
+        public Boolean Enable {get;set;}
 
         /// <summary>
-        /// Desc:视频最大上传大小 
-        /// Default:((5.0)) 
+        /// Desc:审核 
+        /// Default:((1)) 
         /// Nullable:False 
         /// </summary>
-        public Decimal VideoMaxSize {get;set;}
-
-        /// <summary>
-        /// Desc:附件最大上传大小 
-        /// Default:((10.0)) 
-        /// Nullable:False 
-        /// </summary>
-        public Decimal AttachMaxSize {get;set;}
+        public Boolean Pass {get;set;}
 
         /// <summary>
         /// Desc:流水号 

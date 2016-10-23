@@ -28,7 +28,7 @@ namespace Monk.Utils
 
         public static string GetSecretKey(string accountId, string access_token)
         {
-            EncryptSugar encrypt = new EncryptSugar();
+            var encrypt = new EncryptSugar();
             var _tokenKey = encrypt.MD5(accountId.ToUpper() + "_" + access_token + "_Monk.Soul");
             var _secretKey = string.Empty;
             for (int i = 0; i < _tokenKey.Length; i++)

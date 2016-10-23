@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Linq.Expressions;
 using System.Linq;
 using System.Web.Mvc;
+using AutoMapper;
+using AutoMapper.Configuration;
 using SqlSugar;
-using SyntacticSugar;
 using Monk.DbStore;
 using Monk.Models;
+using Monk.ViewModels;
 using Monk.Utils;
-using Monk.Filters;
 
 namespace Monk.Areas.Services.Controllers
 {
@@ -18,18 +18,26 @@ namespace Monk.Areas.Services.Controllers
         [HttpGet]
         public JsonResult Detail(Guid? setID)
         {
-            var clientResult = new JsonData<SysSet>() { };
+            var clientResult = new JsonData<SysSetViewModel>() { };
+            var sysSet = new SysSet();
             services.Command((db) =>
             {
-                if (setID != null) clientResult.SetClientData("y", "操作成功", db.Queryable<SysSet>().InSingle(setID));
-                else clientResult.SetClientData("y", "操作成功", db.Queryable<SysSet>().FirstOrDefault());
+                if (setID != null) sysSet = db.Queryable<SysSet>().InSingle(setID);
+                else sysSet = db.Queryable<SysSet>().FirstOrDefault();
             });
 
+            // 此地方需要重点优化，后期使用autofac统一注入
+            var cfg = new MapperConfigurationExpression();
+            cfg.CreateMap<SysSet, SysSetViewModel>();
+            Mapper.Initialize(cfg);
+            var viewModel = Mapper.Map<SysSetViewModel>(sysSet);
+
+            clientResult.SetClientData("y", "操作成功", viewModel);
             return Json(clientResult, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
-        public JsonResult Update(SysSet model)
+        public JsonResult Update(SysSetViewModel model)
         {
             var clientResult = new JsonData<object>() { };
             if (model.SetID == null) clientResult.SetClientData("n", "非法参数");

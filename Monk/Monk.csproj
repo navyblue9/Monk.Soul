@@ -358,6 +358,30 @@
     <Compile Include="Utils\RazorExtention.cs" />
     <Compile Include="Utils\RESTFul.cs" />
     <Compile Include="Utils\SessionHelper.cs" />
+    <Compile Include="ViewModels\ButtonViewModel.cs" />
+    <Compile Include="ViewModels\DicDataViewModel.cs" />
+    <Compile Include="ViewModels\DicTypeViewModel.cs" />
+    <Compile Include="ViewModels\GroupViewModel.cs" />
+    <Compile Include="ViewModels\Group_ButtonViewModel.cs" />
+    <Compile Include="ViewModels\Group_HaviorViewModel.cs" />
+    <Compile Include="ViewModels\Group_ModuleViewModel.cs" />
+    <Compile Include="ViewModels\Group_RoleViewModel.cs" />
+    <Compile Include="ViewModels\HaviorViewModel.cs" />
+    <Compile Include="ViewModels\HttpLogViewModel.cs" />
+    <Compile Include="ViewModels\LoginLogViewModel.cs" />
+    <Compile Include="ViewModels\MemberViewModel.cs" />
+    <Compile Include="ViewModels\Member_ButtonViewModel.cs" />
+    <Compile Include="ViewModels\Member_HaviorViewModel.cs" />
+    <Compile Include="ViewModels\Member_ModuleViewModel.cs" />
+    <Compile Include="ViewModels\Member_RoleViewModel.cs" />
+    <Compile Include="ViewModels\ModuleViewModel.cs" />
+    <Compile Include="ViewModels\OperateDetailViewModel.cs" />
+    <Compile Include="ViewModels\OperateLogViewModel.cs" />
+    <Compile Include="ViewModels\RoleViewModel.cs" />
+    <Compile Include="ViewModels\Role_ButtonViewModel.cs" />
+    <Compile Include="ViewModels\Role_HaviorViewModel.cs" />
+    <Compile Include="ViewModels\Role_ModuleViewModel.cs" />
+    <Compile Include="ViewModels\SysSetViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -380,7 +404,6 @@
     <Content Include="Areas\Backend\Views\SysSet\Detail.cshtml" />
     <Content Include="Areas\Backend\Views\SysSet\Update.cshtml" />
     <None Include="bundleconfig.json" />
-    <Content Include="ViewModels\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

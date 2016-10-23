@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Text;
 
-namespace Monk.Models
+namespace Monk.ViewModels
 {
-    public class SysSet
+    public class HttpLogViewModel
     {
         
         /// <summary>
@@ -12,91 +12,84 @@ namespace Monk.Models
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Guid SetID {get;set;}
+        public Guid LogID {get;set;}
 
         /// <summary>
-        /// Desc:LOGO 
+        /// Desc:来源地址 
         /// Default:- 
         /// Nullable:True 
         /// </summary>
-        public string Logo {get;set;}
+        public string Referrer {get;set;}
 
         /// <summary>
-        /// Desc:名称 
+        /// Desc:请求地址 
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public string Name {get;set;}
+        public string Url {get;set;}
 
         /// <summary>
-        /// Desc:版本 
-        /// Default:- 
-        /// Nullable:False 
-        /// </summary>
-        public string Version {get;set;}
-
-        /// <summary>
-        /// Desc:关键字 
-        /// Default:('Monk.Soul,百签软件,百小僧,baisoft,baisoft.org') 
-        /// Nullable:True 
-        /// </summary>
-        public string Keywords {get;set;}
-
-        /// <summary>
-        /// Desc:描述 
+        /// Desc:传输数据 
         /// Default:- 
         /// Nullable:True 
         /// </summary>
-        public string Description {get;set;}
+        public string Data {get;set;}
 
         /// <summary>
-        /// Desc:技术支持 
-        /// Default:('百签软件（中山）有限公司') 
-        /// Nullable:False 
-        /// </summary>
-        public string Support {get;set;}
-
-        /// <summary>
-        /// Desc:版权所有 
-        /// Default:('Copyright ?  2016 百签软件（中山）有限公司. All rights reserved.') 
-        /// Nullable:False 
-        /// </summary>
-        public string CopyRight {get;set;}
-
-        /// <summary>
-        /// Desc:网址 
+        /// Desc:会员ID 
         /// Default:- 
         /// Nullable:True 
         /// </summary>
-        public string Site {get;set;}
+        public Guid? MemberID {get;set;}
 
         /// <summary>
-        /// Desc:页容量 
-        /// Default:((15)) 
+        /// Desc:IP地址 
+        /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public int PageSize {get;set;}
+        public string IPAddress {get;set;}
 
         /// <summary>
-        /// Desc:图片最大上传大小 
-        /// Default:((2.0)) 
-        /// Nullable:False 
+        /// Desc:IP详情 
+        /// Default:- 
+        /// Nullable:True 
         /// </summary>
-        public Decimal ImageMaxSize {get;set;}
+        public string IPDetail {get;set;}
 
         /// <summary>
-        /// Desc:视频最大上传大小 
-        /// Default:((5.0)) 
+        /// Desc:HTTP方式 
+        /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Decimal VideoMaxSize {get;set;}
+        public string HttpMethod {get;set;}
 
         /// <summary>
-        /// Desc:附件最大上传大小 
-        /// Default:((10.0)) 
+        /// Desc:异步请求 
+        /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Decimal AttachMaxSize {get;set;}
+        public Boolean AjaxRequest {get;set;}
+
+        /// <summary>
+        /// Desc:移动设备 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public Boolean MobileDevice {get;set;}
+
+        /// <summary>
+        /// Desc:操作系统 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public string Platform {get;set;}
+
+        /// <summary>
+        /// Desc:浏览器 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public string Browser {get;set;}
 
         /// <summary>
         /// Desc:流水号 
