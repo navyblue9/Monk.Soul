@@ -235,11 +235,11 @@
     </Content>
     <Content Include="Areas\Backend\Assets\Vendors\nicescroll-v3.6.8\nicescroll.min.js" />
     <Content Include="Areas\Backend\Assets\Vendors\nicescroll-v3.6.8\zoomico.png" />
+    <Content Include="Areas\Backend\Assets\Vendors\pace-v1.0.2\pace-theme-minimal.css" />
     <Content Include="Areas\Backend\Assets\Vendors\pace-v1.0.2\pace-theme-minimal.min.css">
       <DependentUpon>pace-theme-minimal.css</DependentUpon>
     </Content>
     <Content Include="Areas\Backend\Assets\Vendors\pace-v1.0.2\pace.min.js" />
-    <Content Include="Areas\Backend\Assets\Vendors\pace-v1.0.2\pace-theme-minimal.css" />
     <Content Include="Areas\Backend\Assets\Vendors\pagination-v2.0.7\pagination.css" />
     <Content Include="Areas\Backend\Assets\Vendors\pagination-v2.0.7\pagination.js" />
     <Content Include="Areas\Backend\Assets\Vendors\pagination-v2.0.7\pagination.min.js" />
@@ -267,6 +267,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Backend\BackendAreaRegistration.cs" />
     <Compile Include="Areas\Backend\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Backend\Controllers\SysSetController.cs" />
     <Compile Include="Filters\AccessVerifyAttribute.cs" />
     <Compile Include="Filters\AnonymousAttribute.cs" />
     <Compile Include="Areas\Backend\ViewModels\Default\SessionMember.cs" />
@@ -331,6 +332,8 @@
     <Content Include="Areas\Backend\Views\Default\Index.cshtml" />
     <Content Include="Areas\Backend\Views\Default\Console.cshtml" />
     <Content Include="Areas\Backend\Views\Shared\_Content.cshtml" />
+    <Content Include="Areas\Backend\Views\Shared\_Form.cshtml" />
+    <Content Include="Areas\Backend\Views\SysSet\Detail.cshtml" />
     <None Include="bundleconfig.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -339,7 +342,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Areas\Backend\Injections\" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

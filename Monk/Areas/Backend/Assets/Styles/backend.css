@@ -5,9 +5,11 @@
 .icon-backend-xiangmu:before { content: "\e609"; }
 .icon-backend-weixin:before { content: "\e60a"; }
 .icon-backend-shuju:before { content: "\e60b"; }
+.icon-backend-crumbs:before { content: "\e61b"; }
 .icon-backend-refresh:before { content: "\e604"; }
 .icon-backend-website:before { content: "\e607"; }
 .icon-backend-shangcheng:before { content: "\e60c"; }
+.icon-backend-arrowright:before { content: "\e61a"; }
 .icon-backend-jishishichang:before { content: "\e60d"; }
 .icon-backend-back:before { content: "\e606"; }
 .icon-backend-xitong:before { content: "\e60e"; }
@@ -80,4 +82,13 @@ body { font-family: 'Microsoft YaHei','微软雅黑',SimSun,Arial; font-size: 13
 .backend-module-item label { display: block; font-size: 12px; pointer-events: none; padding: 5px 0 0 0; color: #666; }
 .backend-module-item a.selected span, .backend-module-item a.selected label { color: #3498db; }
 /*内容页*/
-.backend-content { padding: 0 10px; }
+.backend-content { position: absolute; overflow: auto; top: 55px; left: 10px; right: 10px; bottom: 65px; z-index: 10; }
+/*面包屑*/
+.backend-crumbs { height: 45px; line-height: 45px; border-bottom: 1px solid #e9e9e9; margin: 0 10px; }
+.backend-crumbs .backend-crumbs-separator, .backend-crumbs a, .backend-crumbs .monk-iconfont { float: left; display: block; vertical-align: middle; }
+.backend-crumbs .monk-iconfont { color: #999; padding-right: 6px; font-size: 15px; }
+.backend-crumbs .backend-crumbs-separator { padding: 0 6px; color: #aaa; }
+.backend-crumbs a { color: #999; text-decoration: none; cursor: pointer; }
+.backend-crumbs a:hover { color: #666; }
+/*操作*/
+.backend-operate { position: absolute; bottom: 0; left: 10px; right: 10px; z-index: 10; border-top: 1px solid #e9e9e9; height: 55px; line-height: 55px; }

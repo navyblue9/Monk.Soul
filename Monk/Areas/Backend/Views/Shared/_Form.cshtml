@@ -20,18 +20,12 @@
     <div class="backend-crumbs clear-both">
         <span class="monk-iconfont icon-backend-crumbs"></span>
         <a href="#" title="管理首页">管理首页</a>
-        <label class="backend-crumbs-separator">/</label>
-        <a href="#" title="系统管理">系统管理</a>
-        <label class="backend-crumbs-separator">/</label>
-        <a href="#" title="系统设置">系统设置</a>
-        <label class="backend-crumbs-separator">/</label>
-        <a href="#" title="查看设置">查看设置</a>
     </div>
-    <div class="backend-content clear-both">
+    <div class="backend-content">
         @RenderBody()
     </div>
     <div class="backend-operate"></div>
-    @Scripts.Render("~/Assets/Backend/Monk.UI/Script", "~/Assets/Backend/Store/Script", "~/Assets/Backend/JQuery/Script", "~/Assets/Backend/Layer/Script", "~/Assets/Backend/Script")
+    @Scripts.Render("~/Assets/Backend/Monk.UI/Script", "~/Assets/Backend/Store/Script", "~/Assets/Backend/JQuery/Script", "~/Assets/Backend/Layer/Script", "~/Assets/Backend/Validform/Script", "~/Assets/Backend/Script")
     @RenderSection("foot", false)
 </body>
 </html>

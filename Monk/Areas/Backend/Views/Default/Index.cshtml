@@ -10,7 +10,7 @@
         <a title="返回前页" class="backend-top-menu border-right monk-iconfont icon-backend-back" onclick="history.go(-1);"></a>
         <a title="刷新页面" class="backend-top-menu border-right monk-iconfont icon-backend-refresh" onclick="document.getElementById('backend-iframe').contentWindow.location.reload(true);"></a>
         <a href="/" target="_blank" title="查看网站" class="backend-top-menu border-right monk-iconfont icon-backend-website"></a>
-        <a title="基本信息" class="backend-top-menu border-left monk-iconfont icon-backend-account float-right"></a>
+        <a title="会员信息" class="backend-top-menu border-left monk-iconfont icon-backend-account float-right"></a>
         <a title="退出管理" class="backend-top-menu border-left monk-iconfont icon-backend-tuichu float-right" id="signout"></a>
     </div>
     <div id="backend-left">
@@ -213,8 +213,8 @@
                 <div class="backe-menu-list">
                     <ul>
                         <li>
-                            <div data-url="http://www.baisoft.org/public/monkui/" target="backend-iframe" class="backend-menu-action" data-actionid="xt1">
-                                <span class="monk-iconfont icon-backend-file action-icon"></span><label>基本设置</label>
+                            <div data-url="@Url.Action("Detail","SysSet")" target="backend-iframe" class="backend-menu-action" data-actionid="xt1">
+                                <span class="monk-iconfont icon-backend-file action-icon"></span><label>系统设置</label>
                             </div>
                         </li>
                     </ul>
