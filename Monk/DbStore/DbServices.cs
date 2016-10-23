@@ -9,8 +9,10 @@ namespace Monk.DbStore
         public DbServices()
         {
             var db = new SqlSugarClient(ConnectionString);
+            // 注入全局颗粒化权限控制
             db.SetFilterFilterParas(RowFilter);
             db.DisableInsertColumns = InsertColumnsFilter;
+            db.DisableUpdateColumns = UpdateColumnsFilter;
             db.CurrentFilterKey = "all";
             this._db = db;
         }

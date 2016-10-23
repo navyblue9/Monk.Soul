@@ -28,8 +28,8 @@ namespace Monk.Areas.Backend.Controllers
         [Anonymous]
         public JsonResult Signin(SigninModel viewModel)
         {
-            RESTFul restful = new RESTFul(RequestInfo.Domain);
-            JsonData<Member> clientResult = restful.Post<JsonData<Member>>(Url.Action("Signin", "Member", new { area = "Services" }), new
+            var restful = new RESTFul(RequestInfo.Domain);
+            var clientResult = restful.Post<JsonData<Member>>(Url.Action("Signin", "Member", new { area = "Services" }), new
             {
                 account = viewModel.Account.Trim(),
                 password = viewModel.Password.Trim()
@@ -70,8 +70,8 @@ namespace Monk.Areas.Backend.Controllers
         public JsonResult Signout()
         {
             var sessionModel = SessionHelper.GetSessionInstance<SessionMember>(Keys.SessionKey);
-            RESTFul restful = new RESTFul(RequestInfo.Domain, sessionModel.MemberID.ToString(), RESTFul.GetSecretKey(sessionModel.MemberID.ToString(), Keys.Access_Token));
-            JsonData<object> clientResult = restful.Post<JsonData<object>>(Url.Action("Signout", "Member", new { area = "Services" }), new
+            var restful = new RESTFul(RequestInfo.Domain, sessionModel.MemberID.ToString(), RESTFul.GetSecretKey(sessionModel.MemberID.ToString(), Keys.Access_Token));
+            var clientResult = restful.Post<JsonData<object>>(Url.Action("Signout", "Member", new { area = "Services" }), new
             {
                 logid = sessionModel.LogID
             });

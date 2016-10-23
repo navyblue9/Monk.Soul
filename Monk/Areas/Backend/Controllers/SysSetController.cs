@@ -17,9 +17,9 @@ namespace Monk.Areas.Backend.Controllers
         [HttpGet]
         public ActionResult Detail()
         {
-            SysSet model = new SysSet();
-            RESTFul restful = new RESTFul(RequestInfo.Domain, sessionModel.MemberID.ToString(), RESTFul.GetSecretKey(sessionModel.MemberID.ToString(), Keys.Access_Token));
-            JsonData<SysSet> clientResult = restful.Get<JsonData<SysSet>>(Url.Action("Detail", "SysSet", new { area = "Services" }));
+            var model = new SysSet();
+            var restful = new RESTFul(RequestInfo.Domain, sessionModel.MemberID.ToString(), RESTFul.GetSecretKey(sessionModel.MemberID.ToString(), Keys.Access_Token));
+            var clientResult = restful.Get<JsonData<SysSet>>(Url.Action("Detail", "SysSet", new { area = "Services" }));
             if (clientResult.status == "y") model = clientResult.data;
             return View(model);
         }
@@ -28,11 +28,17 @@ namespace Monk.Areas.Backend.Controllers
         public ActionResult Update(Guid? id)
         {
             if (id == null) return Content("非法参数");
-            SysSet model = new SysSet();
-            RESTFul restful = new RESTFul(RequestInfo.Domain, sessionModel.MemberID.ToString(), RESTFul.GetSecretKey(sessionModel.MemberID.ToString(), Keys.Access_Token));
-            JsonData<SysSet> clientResult = restful.Get<JsonData<SysSet>>(Url.Action("Detail", "SysSet", new { area = "Services" }), new { setID = id });
+            var model = new SysSet();
+            var restful = new RESTFul(RequestInfo.Domain, sessionModel.MemberID.ToString(), RESTFul.GetSecretKey(sessionModel.MemberID.ToString(), Keys.Access_Token));
+            var clientResult = restful.Get<JsonData<SysSet>>(Url.Action("Detail", "SysSet", new { area = "Services" }), new { setID = id });
             if (clientResult.status == "y") model = clientResult.data;
             return View(model);
+        }
+
+        [HttpPost]
+        public JsonResult Updata(SysSet model)
+        {
+            return Json(null);
         }
     }
 }

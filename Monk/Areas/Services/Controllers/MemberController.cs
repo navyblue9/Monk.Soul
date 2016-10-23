@@ -19,8 +19,8 @@ namespace Monk.Areas.Services.Controllers
         [Anonymous]
         public JsonResult Signin(string account, string password)
         {
-            JsonData<Member> clientResult = new JsonData<Member>() { };
-            EncryptSugar encrypt = new EncryptSugar();
+            var clientResult = new JsonData<Member>() { };
+            var encrypt = new EncryptSugar();
             var passwordMD5 = encrypt.MD5(password).ToLower();
             Expression<Func<Member, bool>> expression = u => u.Account == account && u.Password == passwordMD5;
             var logid = Guid.NewGuid();
@@ -82,7 +82,7 @@ namespace Monk.Areas.Services.Controllers
         [HttpPost]
         public JsonResult Signout(Guid logid)
         {
-            JsonData<object> clientResult = new JsonData<object>() { };
+            var clientResult = new JsonData<object>() { };
             services.Command((db) =>
             {
                 db.Update<LoginLog>(new
