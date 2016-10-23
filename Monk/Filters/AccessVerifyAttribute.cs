@@ -41,7 +41,8 @@ namespace Monk.Filters
             {
                 info = "禁止未授权操作",
                 status = "not_allow"
-            }
+            },
+            JsonRequestBehavior = JsonRequestBehavior.AllowGet
         };
     }
 }
