@@ -19,8 +19,7 @@ namespace Monk.Areas.Backend.Injections
                 if (filterContext.HttpContext.Session[Keys.SessionKey] != null)
                 {
                     CacheManager<SysSet> cm = CacheManager<SysSet>.GetInstance();
-                    var sysSetKey = "SysSetInfo_CacheKey";
-                    if (cm.Get(sysSetKey) == null)
+                    if (cm.Get(Keys.SysSetCacheKey) == null)
                     {
                         var sessionModel = SessionHelper.GetSessionInstance<SessionMember>(Keys.SessionKey);
                         var apiUrl = new UrlHelper(new RequestContext(filterContext.HttpContext, filterContext.RouteData)).Action("Detail", "SysSet", new { area = "Services" });
@@ -28,10 +27,10 @@ namespace Monk.Areas.Backend.Injections
                         JsonData<SysSet> clientResult = restful.Get<JsonData<SysSet>>(apiUrl);
                         if (clientResult.status == "y")
                         {
-                            cm.Add(sysSetKey, clientResult.data);
+                            cm.Add(Keys.SysSetCacheKey, clientResult.data);
                         }
                     }
-                    var sysSetModel = cm.Get(sysSetKey);
+                    var sysSetModel = cm.Get(Keys.SysSetCacheKey);
                     ActionResult result = filterContext.Result;
                     if (result is ViewResult)
                     {
