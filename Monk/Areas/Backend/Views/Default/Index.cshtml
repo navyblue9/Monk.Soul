@@ -332,7 +332,7 @@
                     left: 0
                 }, speed);
             }
-            backend.nicescroll($module.add($(".backe-menu-list")));
+            var nicescrolls = backend.nicescroll($module.add($(".backe-menu-list")));
             $("#switch-module").on({
                 click: function () {
                     if (!$module.is(":animated") && !$container.is(":animated")) {
