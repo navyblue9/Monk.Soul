@@ -30,75 +30,197 @@
         {
             @class = "monk-form-input normal",
             placeholder = "系统名称",
-            datatype = "s3-16",
-            errormsg = "",
+            datatype = "*1-50",
+            errormsg = "系统名称由6-20位英文字母、数字或符号组成",
             nullmsg = "请输入系统名称"
         })
         <span class="monk-iconfont icon-monk-required"></span>
         <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
     </div>
-    <div class="monk-form-tip">写点什么描述一下</div>
+    <div class="monk-form-tip">给你的系统起个牛逼的名字吧</div>
 </div>
 <div class="monk-form-item">
-    <label for="" class="monk-form-label">系统版本</label>
-    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
-        <text>v</text>@Model.Version
+    <label for="Version" class="monk-form-label">系统版本</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        @Html.TextBoxFor(u => u.Version,
+        new
+        {
+            @class = "monk-form-input min",
+            placeholder = "系统版本",
+            datatype = "*1-25",
+            errormsg = "系统版本由6-20位英文字母、数字或符号组成",
+            nullmsg = "请输入系统版本"
+        })
+        <span class="monk-iconfont icon-monk-required"></span>
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
     </div>
+    <div class="monk-form-tip">通常系统版本格式为：v1.0.0</div>
 </div>
 <div class="monk-form-item">
-    <label for="" class="monk-form-label">关键字</label>
-    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
-        @Model.Keywords
+    <label for="Keywords" class="monk-form-label">关键字</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input textarea-icon"></span>
+        @Html.TextAreaFor(u => u.Keywords,
+        new
+        {
+            @class = "monk-form-textarea normal",
+            placeholder = "关键字",
+            datatype = "*1-100",
+            ignore = "ignore",
+            errormsg = "关键字由1-100位英文字母、数字或符号组成",
+            nullmsg = "请输入关键字"
+        })
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input textarea-icon"></span>
     </div>
+    <div class="monk-form-tip">SEO关键字，用英文逗号隔开，方法搜索引擎收录</div>
 </div>
 <div class="monk-form-item">
-    <label for="" class="monk-form-label">系统描述</label>
-    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
-        @Model.Description
+    <label for="Description" class="monk-form-label">系统描述</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input textarea-icon"></span>
+        @Html.TextAreaFor(u => u.Description,
+        new
+        {
+            @class = "monk-form-textarea normal",
+            placeholder = "系统描述",
+            datatype = "*1-160",
+            ignore = "ignore",
+            errormsg = "系统描述由1-160位英文字母、数字或符号组成",
+            nullmsg = "请输入系统描述"
+        })
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input textarea-icon"></span>
     </div>
+    <div class="monk-form-tip">简单一句话，描述一下该系统吧。</div>
 </div>
 <div class="monk-form-item">
-    <label for="" class="monk-form-label">技术支持</label>
-    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
-        <a href="http://www.baisoft.org" style="text-decoration:none;" target="_blank" title="@Model.Support">@Model.Support</a>
+    <label for="Support" class="monk-form-label">技术支持</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        @Html.TextBoxFor(u => u.Support,
+        new
+        {
+            @class = "monk-form-input normal",
+            disabled = "disabled",
+            placeholder = "技术支持",
+            ignore = "ignore",
+            datatype = "*1-50",
+            errormsg = "技术支持由6-20位英文字母、数字或符号组成",
+            nullmsg = "请输入技术支持"
+        })
     </div>
+    <div class="monk-form-tip">毋庸置疑，只有创造她的人才更懂她~~</div>
 </div>
 <div class="monk-form-item">
-    <label for="" class="monk-form-label">版权所有</label>
-    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
-        @Model.CopyRight
+    <label for="CopyRight" class="monk-form-label">版权所有</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input textarea-icon"></span>
+        @Html.TextAreaFor(u => u.CopyRight,
+        new
+        {
+            @class = "monk-form-textarea normal",
+            placeholder = "版权所有",
+            datatype = "*1-100",
+            ignore = "ignore",
+            errormsg = "版权所有由1-100位英文字母、数字或符号组成",
+            nullmsg = "请输入版权所有"
+        })
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input textarea-icon"></span>
     </div>
+    <div class="monk-form-tip">格式通常为：Copyright ©  2016 百签软件（中山）有限公司. All rights reserved.</div>
 </div>
 <div class="monk-form-item">
-    <label for="" class="monk-form-label">官方网址</label>
-    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
-        <a href="@Model.Site" style="text-decoration:none;" target="_blank" title="官方网址">@Model.Site</a>
+    <label for="Site" class="monk-form-label">官方网址</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        @Html.TextBoxFor(u => u.Site,
+        new
+        {
+            @class = "monk-form-input normal",
+            placeholder = "官方网址",
+            datatype = "url",
+            ignore = "ignore",
+            errormsg = "请输入正确的网址",
+            nullmsg = "请输入官方网址"
+        })
+        <span class="monk-iconfont icon-monk-required"></span>
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
     </div>
+    <div class="monk-form-tip">写下你的官方网址，让大家多了解一下你。</div>
 </div>
 <div class="monk-form-item">
-    <label for="" class="monk-form-label">默认页容量</label>
-    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
-        @Model.PageSize
+    <label for="PageSize" class="monk-form-label">默认页容量</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        @Html.TextBoxFor(u => u.PageSize,
+        new
+        {
+            @class = "monk-form-input min",
+            placeholder = "默认页容量",
+            datatype = "n",
+            errormsg = "页容量必须是正整数",
+            nullmsg = "请输入默认页容量"
+        })
+        <span class="monk-iconfont icon-monk-required"></span>
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
     </div>
+    <div class="monk-form-tip">指定一下默认的数据显示条数吧</div>
 </div>
 <div class="monk-form-item">
-    <label for="" class="monk-form-label">图片最大上传大小（M）</label>
-    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
-        @Model.ImageMaxSize<text>M</text>
+    <label for="ImageMaxSize" class="monk-form-label">图片最大上传大小（M）</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        @Html.TextBoxFor(u => u.ImageMaxSize,
+        new
+        {
+            @class = "monk-form-input min",
+            placeholder = "图片最大上传大小（M）",
+            datatype = "num",
+            errormsg = "只能输入数值类型",
+            nullmsg = "请输入图片最大上传大小（M）"
+        })
+        <span class="monk-iconfont icon-monk-required"></span>
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
     </div>
+    <div class="monk-form-tip">指定该数值可以显示用户上传图片的大小</div>
 </div>
 <div class="monk-form-item">
-    <label for="" class="monk-form-label">视频最大上传大小（M）</label>
-    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
-        @Model.VideoMaxSize<text>M</text>
+    <label for="VideoMaxSize" class="monk-form-label">视频最大上传大小（M）</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        @Html.TextBoxFor(u => u.VideoMaxSize,
+        new
+        {
+            @class = "monk-form-input min",
+            placeholder = "视频最大上传大小（M）",
+            datatype = "num",
+            errormsg = "只能输入数值类型",
+            nullmsg = "请输入视频最大上传大小（M）"
+        })
+        <span class="monk-iconfont icon-monk-required"></span>
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
     </div>
+    <div class="monk-form-tip">指定该数值可以显示用户上传视频的大小</div>
 </div>
 <div class="monk-form-item">
-    <label for="" class="monk-form-label">附件最大上传大小（M）</label>
-    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
-        @Model.AttachMaxSize<text>M</text>
+    <label for="AttachMaxSize" class="monk-form-label">附件最大上传大小（M）</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        @Html.TextBoxFor(u => u.AttachMaxSize,
+        new
+        {
+            @class = "monk-form-input min",
+            placeholder = "附件最大上传大小（M）",
+            datatype = "num",
+            errormsg = "只能输入数值类型",
+            nullmsg = "请输入附件最大上传大小（M）"
+        })
+        <span class="monk-iconfont icon-monk-required"></span>
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
     </div>
+    <div class="monk-form-tip">指定该数值可以显示用户上传附件的大小</div>
 </div>
+
 
 @section operate{
     <input type="submit" class="monk-input-button turquoise monk-form-submit" value="提交保存">
@@ -107,3 +229,13 @@
 }
 
 @section endForm{@{ Html.EndForm();}}
+
+@section foot{
+    <script type="text/javascript">
+        $(function () {
+            backend.validform(function (data) {
+
+            });
+        });
+    </script>
+}
