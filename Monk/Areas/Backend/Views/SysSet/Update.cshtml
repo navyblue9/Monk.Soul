@@ -1,7 +1,7 @@
 ﻿@model SysSet
 @{
     ViewBag.Title = "系统设置";
-    Layout = "~/Areas/Backend/Views/Shared/_Content.cshtml";
+    Layout = "~/Areas/Backend/Views/Shared/_Form.cshtml";
 }
 
 @section crumbs{
@@ -10,7 +10,7 @@
     <label class="backend-crumbs-separator">/</label>
     <a href="#" title="系统设置">系统设置</a>
     <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="查看设置">查看设置</a>
+    <a href="#" title="更新设置">更新设置</a>
 }
 
 <div class="monk-form-item">
@@ -87,6 +87,8 @@
 </div>
 
 @section operate{
-    <a href="@Url.Action("Update", "SysSet", new { id = Model.SetID })" class="monk-input-button turquoise">编辑数据</a>
+    <input type="submit" class="monk-input-button turquoise monk-form-submit" value="提交保存">
+    <input type="reset" class="monk-input-button amethyst monk-form-reset" value="重置表单">
+    <input type="button" class="monk-input-button emerland monk-form-previous" value="返回前页" onclick="history.go(-1);">
 }
 

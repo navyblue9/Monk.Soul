@@ -12,40 +12,40 @@
     @using (Html.BeginForm("Signin", "Default", FormMethod.Post, new { @class = "monk-form" }))
     {
         <div class="monk-form-item">
-            @Html.LabelFor(u => u.Account, new { @class = "monk-form-label" })
+            <label class="monk-form-label" for="Account">会员账号</label>
             <div class="monk-form-wrap">
                 <span class="monk-iconfont border-right icon-backend-account"></span>
                 @Html.TextBoxFor(u => u.Account,
                new
                {
                    @class = "monk-form-input",
-                   placeholder = Html.DisplayNameFor(u => u.Account),
+                   placeholder = "会员账号",
                    datatype = "s3-16",
-                   errormsg = Html.DescriptionFor(u => u.Account),
-                   nullmsg = "请输入" + Html.DisplayNameFor(u => u.Account)
+                   errormsg = "账号由3-16位英文字母，数字或中文组成",
+                   nullmsg = "请输入会员账号"
                })
                 <span class="monk-iconfont icon-monk-required"></span>
                 <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
             </div>
-            <div class="monk-form-tip">@Html.DescriptionFor(u => u.Account)</div>
+            <div class="monk-form-tip">账号由3-16位英文字母，数字或中文组成</div>
         </div>
         <div class="monk-form-item">
-            @Html.LabelFor(u => u.Password, new { @class = "monk-form-label" })
+            <label class="monk-form-label" for="Password">会员密码</label>
             <div class="monk-form-wrap">
                 <span class="monk-iconfont border-right icon-backend-lock"></span>
                 @Html.PasswordFor(u => u.Password,
                new
                {
                    @class = "monk-form-input",
-                   placeholder = Html.DisplayNameFor(u => u.Password),
+                   placeholder = "会员密码",
                    datatype = "*6-20",
-                   errormsg = Html.DescriptionFor(u => u.Password),
-                   nullmsg = "请输入" + Html.DisplayNameFor(u => u.Password)
+                   errormsg = "密码由6-20位英文字母、数字或符号组成",
+                   nullmsg = "请输入会员密码"
                })
                 <span class="monk-iconfont icon-monk-required"></span>
                 <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
             </div>
-            <div class="monk-form-tip">@Html.DescriptionFor(u => u.Password)</div>
+            <div class="monk-form-tip">密码由6-20位英文字母、数字或符号组成</div>
         </div>
         <input type="submit" class="monk-input-button turquoise monk-form-submit float-left" value="验证登入">
         <input type="reset" class="monk-input-button amethyst monk-form-reset float-right" value="重置表单">

@@ -337,6 +337,7 @@
     <Content Include="Areas\Backend\Views\Shared\_Content.cshtml" />
     <Content Include="Areas\Backend\Views\Shared\_Form.cshtml" />
     <Content Include="Areas\Backend\Views\SysSet\Detail.cshtml" />
+    <Content Include="Areas\Backend\Views\SysSet\Update.cshtml" />
     <None Include="bundleconfig.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
