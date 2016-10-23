@@ -17,10 +17,10 @@ namespace Monk
             ));
             // Monk.UI
             bundles.Add(new StyleBundle("~/Assets/Backend/Monk.UI/Style").Include(
-                "~/Areas/Backend/Assets/Vendors/monk.ui-v0.2.9/monk.ui.min.css"
+                "~/Areas/Backend/Assets/Vendors/monk.ui-v0.3.5/monk.ui.min.css"
             ));
             bundles.Add(new ScriptBundle("~/Assets/Backend/Monk.UI/Script").Include(
-                "~/Areas/Backend/Assets/Vendors/monk.ui-v0.2.9/monk.ui.min.js"
+                "~/Areas/Backend/Assets/Vendors/monk.ui-v0.3.5/monk.ui.min.js"
             ));
             // Hover
             bundles.Add(new StyleBundle("~/Assets/Backend/Hover/Style").Include(

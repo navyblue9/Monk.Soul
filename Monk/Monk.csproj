@@ -223,14 +223,14 @@
     <Content Include="Areas\Backend\Assets\Vendors\layer-v2.4\skin\layer.css" />
     <Content Include="Areas\Backend\Assets\Vendors\linq-v3.0.4\linq.js" />
     <Content Include="Areas\Backend\Assets\Vendors\linq-v3.0.4\linq.min.js" />
-    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.9\fonts\iconfont.svg" />
-    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.9\index.html" />
-    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.9\monk.ui.css" />
-    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.9\monk.ui.js" />
-    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.9\monk.ui.min.css">
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.3.5\fonts\iconfont.svg" />
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.3.5\index.html" />
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.3.5\monk.ui.css" />
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.3.5\monk.ui.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.3.5\monk.ui.min.css">
       <DependentUpon>monk.ui.css</DependentUpon>
     </Content>
-    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.9\monk.ui.min.js">
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.3.5\monk.ui.min.js">
       <DependentUpon>monk.ui.js</DependentUpon>
     </Content>
     <Content Include="Areas\Backend\Assets\Vendors\nicescroll-v3.6.8\nicescroll.min.js" />
@@ -323,9 +323,9 @@
     <Content Include="ApplicationInsights.config" />
     <Content Include="Areas\Backend\Views\web.config" />
     <Content Include="Areas\Backend\Assets\Users\README.md" />
-    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.9\fonts\iconfont.eot" />
-    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.9\fonts\iconfont.ttf" />
-    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.2.9\fonts\iconfont.woff" />
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.3.5\fonts\iconfont.eot" />
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.3.5\fonts\iconfont.ttf" />
+    <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.3.5\fonts\iconfont.woff" />
     <Content Include="Areas\Backend\Assets\Vendors\jquery-v3.1.1\jquery-3.1.1.min.map" />
     <Content Include="Areas\Backend\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Backend\Views\Default\Signin.cshtml" />

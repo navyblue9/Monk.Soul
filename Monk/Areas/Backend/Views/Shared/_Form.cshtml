@@ -22,12 +22,14 @@
         <a href="#" title="管理首页">管理首页</a>
         @RenderSection("crumbs", false)
     </div>
+    @RenderSection("beginForm", false)
     <div class="backend-content">
         @RenderBody()
     </div>
     <div class="backend-operate">
         @RenderSection("operate", false)
     </div>
+    @RenderSection("endForm", false)
     @Scripts.Render("~/Assets/Backend/Monk.UI/Script", "~/Assets/Backend/Store/Script", "~/Assets/Backend/JQuery/Script", "~/Assets/Backend/Layer/Script", "~/Assets/Backend/Validform/Script", "~/Assets/Backend/Script")
     @RenderSection("foot", false)
 </body>

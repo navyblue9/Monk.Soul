@@ -13,6 +13,8 @@
     <a href="#" title="更新设置">更新设置</a>
 }
 
+@section beginForm{@{ Html.BeginForm("Update", "SysSet", FormMethod.Post, new { @class = "monk-form" });}}
+
 <div class="monk-form-item">
     <label for="" class="monk-form-label">系统标志</label>
     <div class="monk-form-wrap monk-form-detail-wrap monk-full">
@@ -20,10 +22,22 @@
     </div>
 </div>
 <div class="monk-form-item">
-    <label for="" class="monk-form-label">系统名称</label>
-    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
-        @Model.Name
+    <label for="Name" class="monk-form-label">系统名称</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        @Html.TextBoxFor(u => u.Name,
+        new
+        {
+            @class = "monk-form-input normal",
+            placeholder = "系统名称",
+            datatype = "s3-16",
+            errormsg = "",
+            nullmsg = "请输入系统名称"
+        })
+        <span class="monk-iconfont icon-monk-required"></span>
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
     </div>
+    <div class="monk-form-tip">写点什么描述一下</div>
 </div>
 <div class="monk-form-item">
     <label for="" class="monk-form-label">系统版本</label>
@@ -92,3 +106,4 @@
     <input type="button" class="monk-input-button emerland monk-form-previous" value="返回前页" onclick="history.go(-1);">
 }
 
+@section endForm{@{ Html.EndForm();}}
