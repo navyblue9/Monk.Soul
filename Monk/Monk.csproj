@@ -312,6 +312,7 @@
     <Compile Include="Utils\Keys.cs" />
     <Compile Include="Utils\RazorExtention.cs" />
     <Compile Include="Utils\RESTFul.cs" />
+    <Compile Include="Utils\SessionHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

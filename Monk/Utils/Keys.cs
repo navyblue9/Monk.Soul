@@ -14,5 +14,6 @@ namespace Monk.Utils
             "Services"
         };
         public const string SessionKey = "Monk.Soul.SessionMember";
+        public const string Access_Token = "C2A6315748D51DBB521F34D7533AE1CE";
     }
 }

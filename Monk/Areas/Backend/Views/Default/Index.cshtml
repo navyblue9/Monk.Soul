@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "管理首页";
     Layout = "~/Areas/Backend/Views/Shared/_Layout.cshtml";
-    SessionMember memberInfo = Session[Keys.SessionKey] as SessionMember;
+    var memberInfo = SessionHelper.GetSessionInstance<SessionMember>(Keys.SessionKey);
 }
 @section bodyAttr{ class="index-body"}
 <div id="backend-container">

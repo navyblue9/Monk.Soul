@@ -69,8 +69,8 @@ namespace Monk.Areas.Backend.Controllers
         [HttpPost]
         public JsonResult Signout()
         {
-            var sessionModel = Session[Keys.SessionKey] as SessionMember;
-            RESTFul restful = new RESTFul(RequestInfo.Domain);
+            var sessionModel = SessionHelper.GetSessionInstance<SessionMember>(Keys.SessionKey);
+            RESTFul restful = new RESTFul(RequestInfo.Domain, sessionModel.MemberID.ToString(), RESTFul.GetSecretKey(sessionModel.MemberID.ToString(), Keys.Access_Token));
             JsonData<object> clientResult = restful.Post<JsonData<object>>(Url.Action("Signout", "Member", new { area = "Services" }), new
             {
                 logid = sessionModel.LogID

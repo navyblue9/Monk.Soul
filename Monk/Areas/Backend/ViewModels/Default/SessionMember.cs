@@ -8,6 +8,7 @@ namespace Monk.Areas.Backend.ViewModels
     [Serializable]
     public class SessionMember
     {
+        public Guid MemberID { get; set; }
         public string Account { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }

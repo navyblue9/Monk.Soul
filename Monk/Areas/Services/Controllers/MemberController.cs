@@ -80,7 +80,6 @@ namespace Monk.Areas.Services.Controllers
         }
 
         [HttpPost]
-        [Anonymous]
         public JsonResult Signout(Guid logid)
         {
             JsonData<object> clientResult = new JsonData<object>() { };
