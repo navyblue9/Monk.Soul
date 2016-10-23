@@ -18,10 +18,7 @@ namespace Monk.Areas.Backend.Controllers
             var sessionModel = SessionHelper.GetSessionInstance<SessionMember>(Keys.SessionKey);
             RESTFul restful = new RESTFul(RequestInfo.Domain, sessionModel.MemberID.ToString(), RESTFul.GetSecretKey(sessionModel.MemberID.ToString(), Keys.Access_Token));
             JsonData<SysSet> clientResult = restful.Get<JsonData<SysSet>>(Url.Action("Detail", "SysSet", new { area = "Services" }));
-            if (clientResult.status == "y")
-            {
-                model = clientResult.data;
-            }
+            if (clientResult.status == "y") model = clientResult.data;
             return View(model);
         }
     }

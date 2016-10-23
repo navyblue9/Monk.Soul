@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using Monk.Filters;
+using Monk.Areas.Backend.Injections;
 
 namespace Monk
 {
@@ -7,6 +8,8 @@ namespace Monk
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
+            // 注：先进后出
+            filters.Add(new SysSetInjectionAttribute());
             filters.Add(new AccessVerifyAttribute());
         }
     }

@@ -21,14 +21,8 @@ namespace Monk.Areas.Services.Controllers
             JsonData<SysSet> clientResult = new JsonData<SysSet>() { };
             services.Command((db) =>
             {
-                if (setID != null)
-                {
-                    clientResult.SetClientData("y", "操作成功", db.Queryable<SysSet>().InSingle(setID));
-                }
-                else
-                {
-                    clientResult.SetClientData("y", "操作成功", db.Queryable<SysSet>().FirstOrDefault());
-                }
+                if (setID != null) clientResult.SetClientData("y", "操作成功", db.Queryable<SysSet>().InSingle(setID));
+                else clientResult.SetClientData("y", "操作成功", db.Queryable<SysSet>().FirstOrDefault());
             });
 
             return Json(clientResult, JsonRequestBehavior.AllowGet);
