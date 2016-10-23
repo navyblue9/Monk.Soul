@@ -39,22 +39,22 @@ namespace Monk.Utils
             return encrypt.MD5(_secretKey);
         }
 
-        public T Get<T>(string resource, object parameter) where T : new()
+        public T Get<T>(string resource, object parameter = null) where T : new()
         {
             return HttpExecute<T>(resource, parameter, Method.GET);
         }
 
-        public T Post<T>(string resource, object parameter) where T : new()
+        public T Post<T>(string resource, object parameter = null) where T : new()
         {
             return HttpExecute<T>(resource, parameter, Method.POST);
         }
 
-        public T Delete<T>(string resource, object parameter) where T : new()
+        public T Delete<T>(string resource, object parameter = null) where T : new()
         {
             return HttpExecute<T>(resource, parameter, Method.DELETE);
         }
 
-        public T Put<T>(string resource, object parameter) where T : new()
+        public T Put<T>(string resource, object parameter = null) where T : new()
         {
             return HttpExecute<T>(resource, parameter, Method.PUT);
         }
@@ -62,7 +62,7 @@ namespace Monk.Utils
         public T HttpExecute<T>(string resource, object parameter, Method method) where T : new()
         {
             var request = new RestRequest(resource, method);
-            request.AddObject(parameter);
+            if (parameter != null) request.AddObject(parameter);
             return Execute<T>(request);
         }
 

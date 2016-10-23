@@ -81,7 +81,7 @@ INSERT  INTO dbo.SysSet
           LogMemberID
         )
 VALUES  ( NEWID() , -- SetID - uniqueidentifier
-          N'' , -- Logo - nvarchar(200)
+          N'/Areas/Backend/Assets/Images/baisoft-logo.png' , -- Logo - nvarchar(200)
           N'Monk.Soul' , -- Name - nvarchar(100)
           N'1.0.0' , -- Version - nvarchar(50)
           N'Monk.Soul,百签软件,百小僧,baisoft,baisoft.org' , -- Keywords - nvarchar(200)

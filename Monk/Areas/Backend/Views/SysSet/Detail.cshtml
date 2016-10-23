@@ -1,7 +1,82 @@
-﻿
+﻿@model SysSet
 @{
     ViewBag.Title = "系统设置";
     Layout = "~/Areas/Backend/Views/Shared/_Content.cshtml";
 }
-系统设置
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">系统标志</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        <img src="@Model.Logo" alt="" onerror="this.src = '/Areas/Backend/Assets/Images/baisoft-logo.png'" height="50" />
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">系统名称</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.Name
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">系统版本</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        <text>v</text>@Model.Version
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">关键字</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.Keywords
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">系统描述</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.Description
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">技术支持</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        <a href="http://www.baisoft.org" style="text-decoration:none;" target="_blank" title="@Model.Support">@Model.Support</a>
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">版权所有</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.CopyRight
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">官方网址</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        <a href="@Model.Site" style="text-decoration:none;" target="_blank" title="官方网址">@Model.Site</a>
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">默认页容量</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.PageSize
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">图片最大上传大小（M）</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.ImageMaxSize<text>M</text>
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">视频最大上传大小（M）</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.VideoMaxSize<text>M</text>
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">附件最大上传大小（M）</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.AttachMaxSize<text>M</text>
+    </div>
+</div>
+
+@section operate{
+    <a href="@Url.Action("Update", "SysSet", new { id = Model.SetID })" class="monk-input-button turquoise">编辑数据</a>
+}
 
