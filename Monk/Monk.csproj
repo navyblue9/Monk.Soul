@@ -249,6 +249,9 @@
       <DependentUpon>validform-v5.3.2.js</DependentUpon>
     </Content>
     <Content Include="Areas\Backend\Assets\Vendors\waypoints-v4.0.1\noframework.waypoints.min.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\webuploader-v0.1.6\dist\webuploader.min.css">
+      <DependentUpon>webuploader.css</DependentUpon>
+    </Content>
     <Content Include="Areas\Backend\Assets\Vendors\webuploader-v0.1.6\examples\image-upload\icons.psd" />
     <Content Include="Areas\Backend\Assets\Vendors\webuploader-v0.1.6\examples\image-upload\progress.psd" />
     <None Include="Areas\Backend\Assets\_references.js" />

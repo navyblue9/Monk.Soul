@@ -88,5 +88,11 @@
     "inputFiles": [
       "Areas/Backend/Assets/Vendors/monk.ui-v0.3.5/monk.ui.css"
     ]
+  },
+  {
+    "outputFileName": "Areas/Backend/Assets/Vendors/webuploader-v0.1.6/dist/webuploader.min.css",
+    "inputFiles": [
+      "Areas/Backend/Assets/Vendors/webuploader-v0.1.6/dist/webuploader.css"
+    ]
   }
 ]

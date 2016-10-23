@@ -67,7 +67,14 @@ namespace Monk
             // Nicescroll
             bundles.Add(new ScriptBundle("~/Assets/Backend/Nicescroll/Script").Include(
                "~/Areas/Backend/Assets/Vendors/nicescroll-v3.6.8/nicescroll.min.js"
-           ));
+            ));
+            // WebUploader
+            bundles.Add(new StyleBundle("~/Assets/Backend/WebUploader/Style").Include(
+              "~/Areas/Backend/Assets/Vendors/webuploader-v0.1.6/dist/webuploader.min.css"
+            ));
+            bundles.Add(new ScriptBundle("~/Assets/Backend/WebUploader/Script").Include(
+                "~/Areas/Backend/Assets/Vendors/webuploader-v0.1.6/dist/webuploader.min.js"
+            ));
         }
     }
 }

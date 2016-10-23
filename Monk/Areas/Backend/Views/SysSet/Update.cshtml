@@ -16,10 +16,33 @@
 @section beginForm{@{ Html.BeginForm("Update", "SysSet", FormMethod.Post, new { @class = "monk-form" });}}
 
 <div class="monk-form-item">
-    <label for="" class="monk-form-label">系统标志</label>
-    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
-        <img src="@Model.Logo" alt="" onerror="this.src = '/Areas/Backend/Assets/Images/baisoft-logo.png'" height="50" />
+    <label for="Logo" class="monk-form-label">系统标志</label>
+    <div class="monk-form-wrap noborder">
+        <img src="@Model.Logo" alt="" class="display-block" height="50" />
     </div>
+    <div class="clear-both height-8"></div>
+    <div class="monk-form-wrap monk-form-image-wrap">
+        <div class="monk-images-selects">
+        </div>
+        <div class="monk-form-wrap bgcolor-white">
+            <span class="monk-iconfont border-right icon-monk-input"></span>
+            @Html.TextBoxFor(u => u.Logo,
+            new
+            {
+                @class = "monk-form-input normal",
+                placeholder = "系统标志",
+                datatype = "*",
+                errormsg = "系统标志必须是路径格式",
+                nullmsg = "请选择或输入图片地址作为系统标志"
+            })
+            <span class="monk-iconfont icon-monk-required"></span>
+            <span class="monk-iconfont border-left icon-monk-file"></span>
+        </div>
+        <div class="monk-file-uploadProgress"></div>
+        <div class="monk-input-button" id="selectFiles">选择图片</div>
+        <div class="monk-input-button emerland">开始上传</div>
+    </div>
+    <div class="monk-form-tip">选择你喜欢的图片作为系统标志</div>
 </div>
 <div class="monk-form-item">
     <label for="Name" class="monk-form-label">系统名称</label>
@@ -46,7 +69,7 @@
         @Html.TextBoxFor(u => u.Version,
         new
         {
-            @class = "monk-form-input min",
+            @class = "monk-form-input middle",
             placeholder = "系统版本",
             datatype = "*1-25",
             errormsg = "系统版本由6-20位英文字母、数字或符号组成",
@@ -235,6 +258,44 @@
         $(function () {
             backend.validform(function (data) {
 
+            });
+
+            // 初始化Web Uploader
+            var uploader = WebUploader.create({
+                // 选完文件后，是否自动上传。
+                auto: false,
+                // swf文件路径
+                swf: '/Areas/Backend/Assets/Vendors/webuploader-v0.1.6/dist/Uploader.swf',
+                // 文件接收服务端。
+                server: 'http://webuploader.duapp.com/server/fileupload.php',
+                // 选择文件的按钮。可选。
+                // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+                pick: {
+                    id: '#selectFiles',
+                    multiple: false
+                },
+                // 只允许选择图片文件。
+                accept: {
+                    title: '系统标志',
+                    extensions: 'gif,jpg,jpeg,bmp,png',
+                    mimeTypes: 'image/*'
+                },
+                compress: false,
+                fileSizeLimit: @ViewBag.SysSetInfo.ImageMaxSize * 1024 * 1024
+            });
+            // 当有文件添加进来的时候
+            uploader.on('fileQueued', function (file) {
+                var $li=$('<div class="monk-image-item"><img /></div>');
+                var $img=$li.find("img");
+                $(".monk-images-selects").html($li);
+                // 创建缩略图
+                uploader.makeThumb( file, function( error, src ) {
+                    if ( error ) {
+                        $img.replaceWith('<span>预览出错</span>');
+                        return;
+                    }
+                    $img.attr( 'src', src );
+                },100,50);
             });
         });
     </script>
