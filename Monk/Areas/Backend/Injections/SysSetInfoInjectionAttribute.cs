@@ -25,10 +25,7 @@ namespace Monk.Areas.Backend.Injections
                         var apiUrl = new UrlHelper(new RequestContext(filterContext.HttpContext, filterContext.RouteData)).Action("Detail", "SysSet", new { area = "Services" });
                         RESTFul restful = new RESTFul(RequestInfo.Domain, sessionModel.MemberID.ToString(), RESTFul.GetSecretKey(sessionModel.MemberID.ToString(), Keys.Access_Token));
                         JsonData<SysSet> clientResult = restful.Get<JsonData<SysSet>>(apiUrl);
-                        if (clientResult.status == "y")
-                        {
-                            cm.Add(Keys.SysSetCacheKey, clientResult.data);
-                        }
+                        if (clientResult.status == "y") cm.Add(Keys.SysSetCacheKey, clientResult.data);
                     }
                     var sysSetModel = cm.Get(Keys.SysSetCacheKey);
                     ActionResult result = filterContext.Result;
@@ -43,9 +40,6 @@ namespace Monk.Areas.Backend.Injections
                         PartialViewResult presult = result as PartialViewResult;
                         presult.ViewData["SysSetInfo"] = sysSetModel;
                         filterContext.Result = presult;
-                    }
-                    else
-                    {
                     }
                 }
             }

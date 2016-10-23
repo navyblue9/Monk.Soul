@@ -28,9 +28,6 @@ namespace Monk.Areas.Backend.Injections
                     presult.ViewData["MemberInfo"] = memberInfo;
                     filterContext.Result = presult;
                 }
-                else
-                {
-                }
             }
         }
     }
