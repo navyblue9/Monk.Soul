@@ -1,7 +1,5 @@
 ﻿using System.Web.Mvc;
 using Monk.Utils;
-using Monk.Areas.Backend.ViewModels;
-using SyntacticSugar;
 
 namespace Monk.Filters
 {
