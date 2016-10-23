@@ -268,7 +268,8 @@
     <Compile Include="Areas\Backend\BackendAreaRegistration.cs" />
     <Compile Include="Areas\Backend\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Backend\Controllers\SysSetController.cs" />
-    <Compile Include="Areas\Backend\Injections\SysSetInjectionAttribute.cs" />
+    <Compile Include="Areas\Backend\Injections\MemberInfoInjectionAttribute.cs" />
+    <Compile Include="Areas\Backend\Injections\SysSetInfoInjectionAttribute.cs" />
     <Compile Include="Areas\Services\Controllers\SysSetController.cs" />
     <Compile Include="Filters\AccessVerifyAttribute.cs" />
     <Compile Include="Filters\AnonymousAttribute.cs" />

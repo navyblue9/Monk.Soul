@@ -1,7 +1,6 @@
 ﻿@{
     ViewBag.Title = "管理首页";
     Layout = "~/Areas/Backend/Views/Shared/_Layout.cshtml";
-    var memberInfo = SessionHelper.GetSessionInstance<SessionMember>(Keys.SessionKey);
 }
 @section bodyAttr{ class="index-body"}
 <div id="backend-container">
@@ -15,8 +14,8 @@
     </div>
     <div id="backend-left">
         <div id="backend-logo">
-            <a href="@ViewBag.SysSet.Site" target="_blank" class="" title="@ViewBag.SysSet.Name">
-                <img src="@ViewBag.SysSet.Logo" class="display-block" alt="系统标志" title="系统标志" />
+            <a href="@ViewBag.SysSetInfo.Site" target="_blank" class="" title="@ViewBag.SysSetInfo.Name">
+                <img src="@ViewBag.SysSetInfo.Logo" class="display-block" alt="系统标志" title="系统标志" />
             </a>
         </div>
         <div id="backend-left-menu">
@@ -319,7 +318,7 @@
         if (self != top) { top.location = self.location; }
         $(function () {
             // 模块处理
-            var moduleStatusKey = "@memberInfo.Account" + "_moduleStatus";
+            var moduleStatusKey = "@ViewBag.MemberInfo.Account" + "_moduleStatus";
             var $container = $("#backend-container");
             var $module = $("#backend-module");
             var moduleWidth = $module.outerWidth(true);
@@ -359,7 +358,7 @@
             });
 
             // 点击模块处理
-            var moduleIdKey = "@memberInfo.Account" + "_moduleId";
+            var moduleIdKey = "@ViewBag.MemberInfo.Account" + "_moduleId";
             $("#backend-module").on("click", ".backend-module-item", function () {
                 var lastModuleid = store.get(moduleIdKey);
                 if (lastModuleid) {
@@ -380,7 +379,7 @@
             }
 
             // 功能菜单处理
-            var actionidKey = "@memberInfo.Account" + "_actionId";
+            var actionidKey = "@ViewBag.MemberInfo.Account" + "_actionId";
             $("#backend-left").on("click", ".backend-menu-action", function (e, data) {
                 var lastActionid = store.get(actionidKey);
                 if (lastActionid) {

@@ -7,7 +7,7 @@ using Monk.Utils;
 
 namespace Monk.Areas.Backend.Injections
 {
-    public class SysSetInjectionAttribute : ActionFilterAttribute
+    public class SysSetInfoInjectionAttribute : ActionFilterAttribute
     {
         public override void OnResultExecuting(ResultExecutingContext filterContext)
         {
@@ -17,7 +17,7 @@ namespace Monk.Areas.Backend.Injections
             if (area != null && area.ToString().ToLower() == "backend")
             {
                 CacheManager<SysSet> cm = CacheManager<SysSet>.GetInstance();
-                var sysSetKey = "SysSet_Key";
+                var sysSetKey = "SysSetInfo_CacheKey";
                 if (cm.Get(sysSetKey) == null)
                 {
                     var sessionModel = SessionHelper.GetSessionInstance<SessionMember>(Keys.SessionKey);
@@ -34,13 +34,13 @@ namespace Monk.Areas.Backend.Injections
                 if (result is ViewResult)
                 {
                     ViewResult vresult = result as ViewResult;
-                    vresult.ViewData["SysSet"] = sysSetModel;
+                    vresult.ViewData["SysSetInfo"] = sysSetModel;
                     filterContext.Result = vresult;
                 }
                 else if (result is PartialViewResult)
                 {
                     PartialViewResult presult = result as PartialViewResult;
-                    presult.ViewData["SysSet"] = sysSetModel;
+                    presult.ViewData["SysSetInfo"] = sysSetModel;
                     filterContext.Result = presult;
                 }
                 else
