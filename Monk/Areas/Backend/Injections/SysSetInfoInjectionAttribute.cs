@@ -9,10 +9,9 @@ namespace Monk.Areas.Backend.Injections
 {
     public class SysSetInfoInjectionAttribute : ActionFilterAttribute
     {
-        public override void OnResultExecuting(ResultExecutingContext filterContext)
+        public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            base.OnResultExecuting(filterContext);
-
+            base.OnActionExecuting(filterContext);
             if (filterContext.HttpContext.Session[Keys.SessionKey] != null)
             {
                 var cm = CacheManager<SysSetViewModel>.GetInstance();
@@ -24,8 +23,16 @@ namespace Monk.Areas.Backend.Injections
                     var clientResult = restful.Get<JsonData<SysSetViewModel>>(apiUrl);
                     if (clientResult.status == "y") cm.Add(Keys.SysSetCacheKey, clientResult.data);
                 }
-                var sysSetModel = cm.Get(Keys.SysSetCacheKey);
-                filterContext.RouteData.DataTokens.Add("SysSetInfo", sysSetModel);
+                filterContext.RouteData.DataTokens.Add("SysSetInfo", cm.Get(Keys.SysSetCacheKey));
+            }
+        }
+        public override void OnResultExecuting(ResultExecutingContext filterContext)
+        {
+            base.OnResultExecuting(filterContext);
+
+            if (filterContext.HttpContext.Session[Keys.SessionKey] != null)
+            {
+                var sysSetModel = filterContext.RouteData.DataTokens["SysSetInfo"] as SysSetViewModel;
                 var result = filterContext.Result;
                 if (result is ViewResult)
                 {

@@ -312,11 +312,16 @@
         });
         // 上传成功
         uploader.on('uploadSuccess', function (file, response) {
-            $input.val("上传成功：" + file.name).attr("data-fileId", file.id);
-            $clearbtn.removeAttr("disabled");
-            that.successTip("上传成功");
-            if (typeof config.options.uploadSuccess == "function") {
-                config.options.uploadSuccess(file, response);
+            if (response.status == "n") {
+                that.errorTip(response.info);
+            }
+            else if (response.status == "y") {
+                $input.val("上传成功：" + file.name).attr("data-fileId", file.id);
+                $clearbtn.removeAttr("disabled");
+                that.successTip(response.info);
+                if (typeof config.options.uploadSuccess == "function") {
+                    config.options.uploadSuccess(file, response);
+                }
             }
         });
         // 上传出错

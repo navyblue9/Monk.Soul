@@ -18,7 +18,7 @@
 <div class="monk-form-item">
     <label for="Logo" class="monk-form-label">系统标志</label>
     <div class="monk-form-wrap noborder">
-        <img src="@Model.Logo" alt="" class="display-block" height="50" />
+        <img src="@Model.Logo" id="image-view" alt="" class="display-block" height="50" />
     </div>
     <div class="clear-both height-8"></div>
     <div class="monk-form-wrap monk-form-image-wrap">
@@ -253,10 +253,13 @@
                 options: {
                     fileSizeLimit: @ViewBag.SysSetInfo.ImageMaxSize * 1024 * 1024,
                     uploadSuccess:function(file,response){
+                        alert(response.path);
+                        $("#image-view").attr("src",response.path);
                     }
                 },
                 data:{
-                    folderName:"SysSet"
+                    area:"@ViewContext.RouteData.DataTokens["area"]",
+                    controller:"@ViewContext.RouteData.Values["controller"]"
                 }
             });
 
