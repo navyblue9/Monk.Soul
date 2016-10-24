@@ -163,7 +163,7 @@
                     mimeTypes: 'image/*'
                 },
                 compress: false,
-                fileSizeLimit: 2 * 1024 * 1024
+                fileSingleSizeLimit: 2 * 1024 * 1024
             },
             // 显示上传状态文本框
             input: "#uploadUrl",
@@ -213,6 +213,7 @@
         uploader = WebUploader.create(config.options);
         // 当有文件添加进来的时候
         uploader.on('fileQueued', function (file) {
+            state = "pending"
             $input.val("等待上传：" + file.name).attr("data-fileId", file.id);
             $progress.css('width', '0%');
             if (typeof config.fileQueued == "function") {
@@ -285,7 +286,7 @@
                 that.errorTip("不支持该文件类型");
             }
             else if (type == "Q_EXCEED_SIZE_LIMIT") {
-                that.errorTip("该文件超过最大限制：" + (config.fileSizeLimit / 1024 / 1024) + " M");
+                that.errorTip("该文件超过最大限制：" + (config.options.fileSingleSizeLimit / 1024 / 1024) + " M");
             }
             else if (type == "Q_EXCEED_NUM_LIMIT") {
                 that.errorTip("选择文件的总数已超过可选的大小");
@@ -317,6 +318,9 @@
         // 重置
         uploader.on('reset', function () {
             that.Tip("上传组件已恢复初始值");
+            if (typeof config.fileDequeued == "function") {
+                config.fileDequeued();
+            }
             if (typeof config.reset == "function") {
                 config.reset();
             }
@@ -331,6 +335,7 @@
         });
         // 清空队列
         $rmbtn.on("click", function () {
+            $clearbtn.attr("disabled", "disabled");
             uploader.removeFile($input.attr("data-fileId"));
             $input.val("未选择文件");
         });

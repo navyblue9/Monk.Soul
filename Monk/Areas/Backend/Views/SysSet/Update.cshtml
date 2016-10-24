@@ -19,6 +19,7 @@
     <label for="Logo" class="monk-form-label">系统标志</label>
     <div class="monk-form-wrap noborder">
         <img src="@Model.Logo" id="image-view" alt="" class="display-block" height="50" />
+        @Html.HiddenFor(u => u.Logo)
     </div>
     <div class="clear-both height-8"></div>
     <div class="monk-form-wrap monk-form-image-wrap">
@@ -248,17 +249,23 @@
 @section foot{
     <script type="text/javascript">
         $(function () {
+            var src= $("#uploadUrl").attr("data-src");
             // 图片上传
             var uploader = backend.fileUpload({
                 options: {
-                    fileSizeLimit: @ViewBag.SysSetInfo.ImageMaxSize * 1024 * 1024
+                    fileSingleSizeLimit : @ViewBag.SysSetInfo.ImageMaxSize * 1024 * 1024
                 },
                 data:{
                     area:"@ViewContext.RouteData.DataTokens["area"]",
                     controller:"@ViewContext.RouteData.Values["controller"]"
                 },
+                fileDequeued:function(file){
+                    $("#image-view").attr("src",src);
+                    $("#Logo").val(src);
+                },
                 uploadSuccess:function(file,response){
                     $("#image-view").attr("src",response.data.path);
+                    $("#Logo").val(response.data.path);
                 }
             });
 

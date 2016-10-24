@@ -395,7 +395,6 @@
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config" />
     <Content Include="Areas\Backend\Views\web.config" />
-    <Content Include="Areas\Backend\Assets\Users\README.md" />
     <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.3.5\fonts\iconfont.eot" />
     <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.3.5\fonts\iconfont.ttf" />
     <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.3.5\fonts\iconfont.woff" />
@@ -419,7 +418,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Areas\Backend\Assets\Users\" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
