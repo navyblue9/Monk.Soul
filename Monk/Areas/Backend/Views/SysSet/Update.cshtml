@@ -322,6 +322,7 @@
                 else if(type=="Q_EXCEED_NUM_LIMIT"){
                     backend.errorTip("选择文件的总数已超过可选的大小");
                 }
+                $clearbtn.attr("disabled","disabled");
             });
             // 监听上传所有状态
             uploader.on( 'all', function(type) {
