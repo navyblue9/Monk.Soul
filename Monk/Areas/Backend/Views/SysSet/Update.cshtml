@@ -270,9 +270,7 @@
             });
 
             backend.validform(function (data) {
-                setTimeout(function(){
-                    window.location.href="@Url.Action("Detail","SysSet")";
-                },1000);
+                window.location.href="@Url.Action("Detail","SysSet")";
             });
         });
     </script>
