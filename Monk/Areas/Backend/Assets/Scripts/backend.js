@@ -52,7 +52,7 @@
     };
 
     // 表单验证
-    exports.validform = function (success, options) {
+    exports.validform = function (success, beforeSubmit, options) {
         var that = this;
         options = options || {};
         var defaults = {
@@ -87,6 +87,9 @@
             beforeCheck: function (curform) { },
             beforeSubmit: function (curform) {
                 that.loadTip("正在校检数据合法性...");
+                if (typeof beforeSubmit == "function") {
+                    beforeSubmit(curform);
+                }
             },
             callback: function (data) {
                 if (data.status == 404) {

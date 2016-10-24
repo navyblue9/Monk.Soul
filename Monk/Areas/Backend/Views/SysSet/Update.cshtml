@@ -26,23 +26,15 @@
         </div>
         <div class="monk-form-wrap bgcolor-white">
             <span class="monk-iconfont border-right icon-monk-input"></span>
-            @Html.TextBoxFor(u => u.Logo,
-            new
-            {
-                @class = "monk-form-input normal",
-                placeholder = "系统标志",
-                datatype = "*",
-                errormsg = "系统标志必须是路径格式",
-                nullmsg = "请选择或输入图片地址作为系统标志"
-            })
-            <span class="monk-iconfont icon-monk-required"></span>
-            <span class="monk-iconfont border-left icon-monk-file"></span>
+            <input class="monk-form-input normal" value="未选择文件" id="uploadUrl" readonly="readonly" data-src="@Model.Logo" />
+            <span class="monk-iconfont border-left icon-monk-dacha" id="removeFile"></span>
         </div>
+        <div class="monk-input-button monk-input-file" id="selectFiles">选择图片</div>
         <div class="monk-file-uploadProgress" id="uploadProgress"></div>
-        <div class="monk-input-button" id="selectFiles">选择图片</div>
         <div class="monk-input-button emerland" id="startUpload">开始上传</div>
+        <div class="monk-input-button amethyst" id="clearUpload" disabled="disabled">重置删除</div>
     </div>
-    <div class="monk-form-tip">选择你喜欢的图片作为系统标志</div>
+    <div class="monk-form-tip">若成功上传并未应用，应点击 <label class="tipcolor">重置删除</label> 按钮，服务器会删除对应文件，节省存储空间。</div>
 </div>
 <div class="monk-form-item">
     <label for="Name" class="monk-form-label">系统名称</label>
@@ -256,15 +248,14 @@
 @section foot{
     <script type="text/javascript">
         $(function () {
-            backend.validform(function (data) {
-            });
-
             // 初始化Web Uploader
             var uploader
                 ,state="pending"
-                ,$input=$("#Logo")
+                ,$input=$("#uploadUrl")
                 ,$progress=$("#uploadProgress")
-                ,$btn=$("#startUpload");
+                ,$btn=$("#startUpload")
+                ,$rmbtn=$("#removeFile")
+               ,$clearbtn=$("#clearUpload");
             uploader = WebUploader.create({
                 // 选完文件后，是否自动上传。
                 auto: false,
@@ -289,28 +280,38 @@
             });
             // 当有文件添加进来的时候
             uploader.on('fileQueued', function (file) {
-                $input.val("等待上传："+file.name);
+                $input.val("等待上传："+file.name).attr("data-fileId",file.id);
                 $progress.css( 'width', '0%' );
+            });
+            // 移除上传
+            uploader.on('fileDequeued', function (file) {
+                backend.Tip("已将该文件从上传队列中移除")
             });
             // 文件上传过程中创建进度条实时显示。
             uploader.on( 'uploadProgress', function( file, percentage ) {
                 $input.val("上传中："+file.name);
                 $progress.css( 'width', percentage * 100 + '%' );
             });
+            // 上传成功
             uploader.on( 'uploadSuccess', function( file,response) {
+                $input.val("上传成功："+file.name).attr("data-fileId",file.id);
+                $clearbtn.removeAttr("disabled");
                 backend.successTip("上传成功");
             });
+            // 上传出错
             uploader.on( 'uploadError', function( file,reason) {
                 backend.errorTip("上传出错");
             });
+            // 上传完成（包括失败，成功）
             uploader.on( 'uploadComplete', function( file ) {
                 $progress.css( 'width', '0%' );
             });
             uploader.on( 'startUpload', function() {
                 if(uploader.getStats().queueNum==0){
-                    backend.errorTip("没有检测到文件");
+                    backend.errorTip("没有检测到文件或文件已上传");
                 }
             });
+            // 文件选择错误
             uploader.on( 'error', function(type) {
                 if(type=="Q_TYPE_DENIED"){
                     backend.errorTip("不支持该文件类型");
@@ -345,6 +346,23 @@
                 } else {
                     uploader.upload();
                 }
+            });
+            // 清空队列
+            $rmbtn.on("click",function(){
+                uploader.removeFile($input.attr("data-fileId"));
+                $input.val("未选择文件");
+            });
+            // 重置上传，删除服务器文件
+            $clearbtn.on("click",function(){
+                uploader.removeFile($input.attr("data-fileId"));
+                $input.val("未选择文件");
+                $(this).attr("disabled","disabled");
+                // 发送服务器删除命令
+            });
+
+            backend.validform(function (data) {
+            },function(){
+
             });
         });
     </script>
