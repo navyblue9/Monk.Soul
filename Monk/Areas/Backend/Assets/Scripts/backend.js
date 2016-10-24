@@ -214,6 +214,9 @@
         // 当有文件添加进来的时候
         uploader.on('fileQueued', function (file) {
             state = "pending"
+            if ($input.attr("data-fileId")) {
+                uploader.removeFile($input.attr("data-fileId"));
+            }
             $input.val("等待上传：" + file.name).attr("data-fileId", file.id);
             $progress.css('width', '0%');
             if (typeof config.fileQueued == "function") {
@@ -222,7 +225,7 @@
         });
         // 移除上传
         uploader.on('fileDequeued', function (file) {
-            that.Tip("已将该文件从上传队列中移除");
+            that.Tip("已将已选择的文件从上传队列中移除");
             if (typeof config.fileDequeued == "function") {
                 config.fileDequeued(file);
             }

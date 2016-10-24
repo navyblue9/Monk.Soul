@@ -8,6 +8,7 @@ using Monk.DbStore;
 using Monk.Models;
 using Monk.ViewModels;
 using Monk.Utils;
+using SyntacticSugar;
 
 namespace Monk.Areas.Services.Controllers
 {
@@ -57,6 +58,9 @@ namespace Monk.Areas.Services.Controllers
                     model.AttachMaxSize,
                     UpdateTime = DateTime.Now
                 }, u => u.SetID == model.SetID);
+
+                var cm = CacheManager<SysSetViewModel>.GetInstance();
+                cm.Remove(Keys.SysSetCacheKey);
 
                 clientResult.SetClientData("y", "操作成功");
             });

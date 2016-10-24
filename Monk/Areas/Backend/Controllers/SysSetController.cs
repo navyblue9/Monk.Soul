@@ -36,9 +36,11 @@ namespace Monk.Areas.Backend.Controllers
         }
 
         [HttpPost]
-        public JsonResult Updata(SysSetViewModel viewModel)
+        public JsonResult Update(SysSetViewModel viewModel)
         {
-            return Json(null);
+            var restful = new RESTFul(RequestInfo.Domain, sessionModel.MemberID.ToString(), RESTFul.GetSecretKey(sessionModel.MemberID.ToString(), Keys.Access_Token));
+            var clientResult = restful.Post<JsonData<object>>(Url.Action("Update", "SysSet", new { area = "Services" }), viewModel);
+            return Json(clientResult);
         }
     }
 }
