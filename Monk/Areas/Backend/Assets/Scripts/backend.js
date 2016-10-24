@@ -246,7 +246,6 @@
         };
         var config = that.deepAssign({}, defaults, options);
         config.upload.pick.id = config.selectBtn;
-
         var $input = $(config.input)
                 , $progress = $(config.progress)
                 , $btn = $(config.startBtn)
