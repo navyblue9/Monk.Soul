@@ -18,6 +18,64 @@
     var exports = typeof HExports !== 'undefined' ? HExports : {};
     exports.v = "1.0.0";
 
+    // 对象深度拷贝（https://github.com/sindresorhus/deep-assign）
+    function isObj(x) {
+        var type = typeof x;
+        return x !== null && (type === 'object' || type === 'function');
+    }
+    var hasOwnProperty = Object.prototype.hasOwnProperty;
+    var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+    function toObject(val) {
+        if (val === null || val === undefined) {
+            throw new TypeError('Cannot convert undefined or null to object');
+        }
+        return Object(val);
+    }
+    function assignKey(to, from, key) {
+        var val = from[key];
+        if (val === undefined || val === null) {
+            return;
+        }
+        if (hasOwnProperty.call(to, key)) {
+            if (to[key] === undefined || to[key] === null) {
+                throw new TypeError('Cannot convert undefined or null to object (' + key + ')');
+            }
+        }
+        if (!hasOwnProperty.call(to, key) || !isObj(val)) {
+            to[key] = val;
+        } else {
+            to[key] = assign(Object(to[key]), from[key]);
+        }
+    }
+    function assign(to, from) {
+        if (to === from) {
+            return to;
+        }
+        from = Object(from);
+        for (var key in from) {
+            if (hasOwnProperty.call(from, key)) {
+                assignKey(to, from, key);
+            }
+        }
+        if (Object.getOwnPropertySymbols) {
+            var symbols = Object.getOwnPropertySymbols(from);
+            for (var i = 0; i < symbols.length; i++) {
+                if (propIsEnumerable.call(from, symbols[i])) {
+                    assignKey(to, from, symbols[i]);
+                }
+            }
+        }
+        return to;
+    }
+    exports.deepAssign = function (target) {
+        target = toObject(target);
+        for (var s = 1; s < arguments.length; s++) {
+            assign(target, arguments[s]);
+        }
+        return target;
+    }
+    ;
+
     // 成功提示
     exports.successTip = function (msg, options, end) {
         options = options || {};
@@ -143,5 +201,187 @@
         };
         var config = $.extend({}, defaults, options);
         return jqueryObj.niceScroll(config);
+    };
+    // 文件上传（目前只支持单文件）
+    exports.fileUpload = function (options) {
+        var that = this;
+        options = options || {};
+        var uploader, state = "pending";
+        var defaults = {
+            options: {
+                auto: false,
+                swf: '/Areas/Backend/Assets/Vendors/webuploader-v0.1.6/dist/Uploader.swf',
+                server: '/Services/Common/UploadImage ',
+                pick: {
+                    id: '',
+                    multiple: false
+                },
+                accept: {
+                    title: '已选择图片',
+                    extensions: 'gif,jpg,jpeg,bmp,png',
+                    mimeTypes: 'image/*'
+                },
+                compress: false,
+                fileSizeLimit: 2 * 1024 * 1024,
+                fileQueued: function (file) {
+                },
+                fileDequeued: function (file) {
+                },
+                startUpload: function () {
+                },
+                uploadProgress: function (file, percentage) {
+                },
+                uploadSuccess: function (file, response) {
+                },
+                uploadError: function (file, reason) {
+                },
+                uploadComplete: function (file) {
+                },
+                error: function (type) {
+                },
+                all: function (type) {
+                },
+                reset: function () {
+                }
+            },
+            // 显示上传状态文本框
+            input: "#uploadUrl",
+            // 进度条
+            progress: "#uploadProgress",
+            // 选择按钮
+            selectBtn: "#selectFiles",
+            // 开始按钮
+            startBtn: "#startUpload",
+            //移除按钮
+            removeBtn: "#removeFile",
+            // 重置按钮
+            clearBtn: "#clearUpload"
+        };
+        var config = that.deepAssign({}, defaults, options);
+        config.options.pick.id = config.selectBtn;
+
+        var $input = $(config.input)
+                , $progress = $(config.progress)
+                , $btn = $(config.startBtn)
+                , $rmbtn = $(config.removeBtn)
+               , $clearbtn = $(config.clearBtn);
+        uploader = WebUploader.create(config.options);
+        // 当有文件添加进来的时候
+        uploader.on('fileQueued', function (file) {
+            $input.val("等待上传：" + file.name).attr("data-fileId", file.id);
+            $progress.css('width', '0%');
+            if (typeof config.options.fileQueued == "function") {
+                config.options.fileQueued(file);
+            }
+        });
+        // 移除上传
+        uploader.on('fileDequeued', function (file) {
+            that.Tip("已将该文件从上传队列中移除");
+            if (typeof config.options.fileDequeued == "function") {
+                config.options.fileDequeued(file);
+            }
+        });
+        // 上传之前
+        uploader.on('startUpload', function () {
+            if (uploader.getStats().queueNum == 0) {
+                that.errorTip("没有检测到文件或文件已上传");
+            }
+            if (typeof config.options.startUpload == "function") {
+                config.options.startUpload();
+            }
+        });
+        // 文件上传过程中创建进度条实时显示。
+        uploader.on('uploadProgress', function (file, percentage) {
+            $input.val("上传中：" + file.name);
+            $progress.css('width', percentage * 100 + '%');
+            if (typeof config.options.uploadProgress == "function") {
+                config.options.uploadProgress(file, percentage);
+            }
+        });
+        // 上传成功
+        uploader.on('uploadSuccess', function (file, response) {
+            $input.val("上传成功：" + file.name).attr("data-fileId", file.id);
+            $clearbtn.removeAttr("disabled");
+            that.successTip("上传成功");
+            if (typeof config.options.uploadSuccess == "function") {
+                config.options.uploadSuccess(file, response);
+            }
+        });
+        // 上传出错
+        uploader.on('uploadError', function (file, reason) {
+            that.errorTip("上传出错" + reason);
+            if (typeof config.options.uploadError == "function") {
+                config.options.uploadError(file, reason);
+            }
+        });
+        // 上传完成（包括失败，成功）
+        uploader.on('uploadComplete', function (file) {
+            $progress.css('width', '0%');
+            if (typeof config.options.uploadComplete == "function") {
+                config.options.uploadComplete(file);
+            }
+        });
+        // 文件选择错误
+        uploader.on('error', function (type) {
+            if (type == "Q_TYPE_DENIED") {
+                that.errorTip("不支持该文件类型");
+            }
+            else if (type == "Q_EXCEED_SIZE_LIMIT") {
+                that.errorTip("该文件超过最大限制：" + (config.options.fileSizeLimit / 1024 / 1024) + " M");
+            }
+            else if (type == "Q_EXCEED_NUM_LIMIT") {
+                that.errorTip("选择文件的总数已超过可选的大小");
+            }
+            $clearbtn.attr("disabled", "disabled");
+            if (typeof config.options.error == "function") {
+                config.options.error(type);
+            }
+        });
+        // 监听上传所有状态
+        uploader.on('all', function (type) {
+            if (type === 'startUpload') {
+                state = 'uploading';
+            } else if (type === 'stopUpload') {
+                state = 'paused';
+            } else if (type === 'uploadFinished') {
+                state = 'done';
+            }
+            if (state === 'uploading') {
+                $input.val($input.val().replace("上传中：", "暂停上传："));
+                $btn.text('暂停上传');
+            } else {
+                $btn.text('开始上传');
+            }
+            if (typeof config.options.all == "function") {
+                config.options.all(type);
+            }
+        });
+        // 重置
+        uploader.on('reset', function () {
+            that.Tip("上传组件已恢复初始值");
+            if (typeof config.options.reset == "function") {
+                config.options.reset();
+            }
+        });
+        // 开始上传
+        $btn.on('click', function () {
+            if (state === 'uploading') {
+                uploader.stop();
+            } else {
+                uploader.upload();
+            }
+        });
+        // 清空队列
+        $rmbtn.on("click", function () {
+            uploader.removeFile($input.attr("data-fileId"));
+            $input.val("未选择文件");
+        });
+        // 重置上传，删除服务器文件
+        $clearbtn.on("click", function () {
+            uploader.reset();
+            $input.val("未选择文件");
+            $(this).attr("disabled", "disabled");
+        });
+        return uploader;
     };
 });

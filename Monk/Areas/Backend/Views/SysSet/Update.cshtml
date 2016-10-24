@@ -248,121 +248,17 @@
 @section foot{
     <script type="text/javascript">
         $(function () {
-            // 初始化Web Uploader
-            var uploader
-                ,state="pending"
-                ,$input=$("#uploadUrl")
-                ,$progress=$("#uploadProgress")
-                ,$btn=$("#startUpload")
-                ,$rmbtn=$("#removeFile")
-               ,$clearbtn=$("#clearUpload");
-            uploader = WebUploader.create({
-                // 选完文件后，是否自动上传。
-                auto: false,
-                // swf文件路径
-                swf: '/Areas/Backend/Assets/Vendors/webuploader-v0.1.6/dist/Uploader.swf',
-                // 文件接收服务端。
-                server: '@Url.Action("UploadImage", "Common",new {area="Services" }) ',
-                // 选择文件的按钮。可选。
-                // 内部根据当前运行是创建，可能是input元素，也可能是flash.
-                pick: {
-                    id: '#selectFiles',
-                    multiple: false
+            // 图片上传
+            var uploader = backend.fileUpload({
+                options: {
+                    fileSizeLimit: @ViewBag.SysSetInfo.ImageMaxSize * 1024 * 1024
                 },
-                // 只允许选择图片文件。
-                accept: {
-                    title: '系统标志',
-                    extensions: 'gif,jpg,jpeg,bmp,png',
-                    mimeTypes: 'image/*'
-                },
-                compress: false,
-                fileSizeLimit: @ViewBag.SysSetInfo.ImageMaxSize * 1024 * 1024
-            });
-            // 当有文件添加进来的时候
-            uploader.on('fileQueued', function (file) {
-                $input.val("等待上传："+file.name).attr("data-fileId",file.id);
-                $progress.css( 'width', '0%' );
-            });
-            // 移除上传
-            uploader.on('fileDequeued', function (file) {
-                backend.Tip("已将该文件从上传队列中移除")
-            });
-            // 文件上传过程中创建进度条实时显示。
-            uploader.on( 'uploadProgress', function( file, percentage ) {
-                $input.val("上传中："+file.name);
-                $progress.css( 'width', percentage * 100 + '%' );
-            });
-            // 上传成功
-            uploader.on( 'uploadSuccess', function( file,response) {
-                $input.val("上传成功："+file.name).attr("data-fileId",file.id);
-                $clearbtn.removeAttr("disabled");
-                backend.successTip("上传成功");
-            });
-            // 上传出错
-            uploader.on( 'uploadError', function( file,reason) {
-                backend.errorTip("上传出错");
-            });
-            // 上传完成（包括失败，成功）
-            uploader.on( 'uploadComplete', function( file ) {
-                $progress.css( 'width', '0%' );
-            });
-            uploader.on( 'startUpload', function() {
-                if(uploader.getStats().queueNum==0){
-                    backend.errorTip("没有检测到文件或文件已上传");
+                uploadSuccess:function(file,response){
                 }
-            });
-            // 文件选择错误
-            uploader.on( 'error', function(type) {
-                if(type=="Q_TYPE_DENIED"){
-                    backend.errorTip("不支持该文件类型");
-                }
-                else if(type=="Q_EXCEED_SIZE_LIMIT"){
-                    backend.errorTip("该文件超过最大限制：@ViewBag.SysSetInfo.ImageMaxSize M");
-                }
-                else if(type=="Q_EXCEED_NUM_LIMIT"){
-                    backend.errorTip("选择文件的总数已超过可选的大小");
-                }
-                $clearbtn.attr("disabled","disabled");
-            });
-            // 监听上传所有状态
-            uploader.on( 'all', function(type) {
-                if ( type === 'startUpload' ) {
-                    state = 'uploading';
-                } else if ( type === 'stopUpload' ) {
-                    state = 'paused';
-                } else if ( type === 'uploadFinished' ) {
-                    state = 'done';
-                }
-                if ( state === 'uploading' ) {
-                    $input.val($input.val().replace("上传中：","暂停上传："));
-                    $btn.text('暂停上传');
-                } else {
-                    $btn.text('开始上传');
-                }
-            });
-            // 开始上传
-            $btn.on( 'click', function() {
-                if ( state === 'uploading' ) {
-                    uploader.stop();
-                } else {
-                    uploader.upload();
-                }
-            });
-            // 清空队列
-            $rmbtn.on("click",function(){
-                uploader.removeFile($input.attr("data-fileId"));
-                $input.val("未选择文件");
-            });
-            // 重置上传，删除服务器文件
-            $clearbtn.on("click",function(){
-                uploader.removeFile($input.attr("data-fileId"));
-                $input.val("未选择文件");
-                $(this).attr("disabled","disabled");
-                // 发送服务器删除命令
             });
 
             backend.validform(function (data) {
-            },function(){
+            }, function () {
 
             });
         });
