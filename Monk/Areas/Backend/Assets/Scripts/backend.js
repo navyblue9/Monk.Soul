@@ -321,11 +321,11 @@
         // 重置
         uploader.on('reset', function () {
             that.Tip("上传组件已恢复初始值");
-            if (typeof config.fileDequeued == "function") {
-                config.fileDequeued();
-            }
             if (typeof config.reset == "function") {
                 config.reset();
+            }
+            if (typeof config.fileDequeued == "function") {
+                config.fileDequeued();
             }
         });
         // 开始上传
