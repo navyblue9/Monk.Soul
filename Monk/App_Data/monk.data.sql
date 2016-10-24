@@ -90,9 +90,9 @@ VALUES  ( NEWID() , -- SetID - uniqueidentifier
           N'Copyright ©  2016 百签软件（中山）有限公司. All rights reserved.' , -- CopyRight - nvarchar(200)
           N'http://www.baisoft.org/' , -- Site - nvarchar(200)
           15 , -- PageSize - int
-          2.0 , -- ImageMaxSize - decimal
-          5.0 , -- VideoMaxSize - decimal
-          10.0 , -- AttachMaxSize - decimal
+          2 , -- ImageMaxSize - int
+          5 , -- VideoMaxSize - int
+          10 , -- AttachMaxSize - int
           GETDATE() , -- UpdateTime - datetime
           1 , -- Default - bit
           0 , -- Del - bit

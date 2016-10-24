@@ -79,24 +79,24 @@ namespace Monk.Models
 
         /// <summary>
         /// Desc:图片最大上传大小 
-        /// Default:((2.0)) 
+        /// Default:((2)) 
         /// Nullable:False 
         /// </summary>
-        public Decimal ImageMaxSize {get;set;}
+        public int ImageMaxSize {get;set;}
 
         /// <summary>
         /// Desc:视频最大上传大小 
-        /// Default:((5.0)) 
+        /// Default:((5)) 
         /// Nullable:False 
         /// </summary>
-        public Decimal VideoMaxSize {get;set;}
+        public int VideoMaxSize {get;set;}
 
         /// <summary>
         /// Desc:附件最大上传大小 
-        /// Default:((10.0)) 
+        /// Default:((10)) 
         /// Nullable:False 
         /// </summary>
-        public Decimal AttachMaxSize {get;set;}
+        public int AttachMaxSize {get;set;}
 
         /// <summary>
         /// Desc:流水号 

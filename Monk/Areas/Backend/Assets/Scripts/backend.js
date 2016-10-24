@@ -229,6 +229,8 @@
                 },
                 startUpload: function () {
                 },
+                uploadBeforeSend: function (obj, data, headers) {
+                },
                 uploadProgress: function (file, percentage) {
                 },
                 uploadSuccess: function (file, response) {
@@ -255,7 +257,9 @@
             //移除按钮
             removeBtn: "#removeFile",
             // 重置按钮
-            clearBtn: "#clearUpload"
+            clearBtn: "#clearUpload",
+            data: {},
+            headers: {}
         };
         var config = that.deepAssign({}, defaults, options);
         config.options.pick.id = config.selectBtn;
@@ -288,6 +292,14 @@
             }
             if (typeof config.options.startUpload == "function") {
                 config.options.startUpload();
+            }
+        });
+        // 提交之前
+        uploader.on('uploadBeforeSend', function (obj, data, headers) {
+            data = that.deepAssign(data, config.data);
+            headers = that.deepAssign(headers, config.headers);
+            if (typeof config.options.uploadBeforeSend == "function") {
+                config.options.uploadBeforeSend(obj, data, headers);
             }
         });
         // 文件上传过程中创建进度条实时显示。

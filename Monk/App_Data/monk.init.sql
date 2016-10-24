@@ -471,9 +471,9 @@ CREATE TABLE dbo.[SysSet]
 	[CopyRight] NVARCHAR(200) NOT NULL DEFAULT('Copyright ©  2016 百签软件（中山）有限公司. All rights reserved.'),	-- 版权所有
 	[Site] NVARCHAR(200),	-- 网址
 	[PageSize] INT NOT NULL DEFAULT(15),	-- 页容量
-	[ImageMaxSize] DECIMAL(18,2) NOT NULL DEFAULT(2.0),	-- 图片最大上传大小
-	[VideoMaxSize] DECIMAL(18,2) NOT NULL DEFAULT(5.0),	-- 视频最大上传大小
-	[AttachMaxSize] DECIMAL(18,2) NOT NULL DEFAULT(10.0),	-- 附件最大上传大小
+	[ImageMaxSize] INT NOT NULL DEFAULT(2),	-- 图片最大上传大小
+	[VideoMaxSize] INT NOT NULL DEFAULT(5),	-- 视频最大上传大小
+	[AttachMaxSize] INT NOT NULL DEFAULT(10),	-- 附件最大上传大小
 	-- 以下为通用字段，除了UpdateTime，SerialNo，LogMemberID以外，其他禁止插入，禁止更新（但不包含软删除，硬删除）
 	[SerialNo] INT IDENTITY(1,1),	-- 流水号
 	[UpdateTime] DATETIME, -- 更新时间

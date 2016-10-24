@@ -189,8 +189,8 @@
         {
             @class = "monk-form-input min",
             placeholder = "图片最大上传大小（M）",
-            datatype = "num",
-            errormsg = "只能输入数值类型",
+            datatype = "n",
+            errormsg = "只能输入正整数",
             nullmsg = "请输入图片最大上传大小（M）"
         })
         <span class="monk-iconfont icon-monk-required"></span>
@@ -207,8 +207,8 @@
         {
             @class = "monk-form-input min",
             placeholder = "视频最大上传大小（M）",
-            datatype = "num",
-            errormsg = "只能输入数值类型",
+            datatype = "n",
+            errormsg = "只能输入正整数",
             nullmsg = "请输入视频最大上传大小（M）"
         })
         <span class="monk-iconfont icon-monk-required"></span>
@@ -225,8 +225,8 @@
         {
             @class = "monk-form-input min",
             placeholder = "附件最大上传大小（M）",
-            datatype = "num",
-            errormsg = "只能输入数值类型",
+            datatype = "n",
+            errormsg = "只能输入正整数",
             nullmsg = "请输入附件最大上传大小（M）"
         })
         <span class="monk-iconfont icon-monk-required"></span>
@@ -251,9 +251,12 @@
             // 图片上传
             var uploader = backend.fileUpload({
                 options: {
-                    fileSizeLimit: @ViewBag.SysSetInfo.ImageMaxSize * 1024 * 1024
+                    fileSizeLimit: @ViewBag.SysSetInfo.ImageMaxSize * 1024 * 1024,
+                    uploadSuccess:function(file,response){
+                    }
                 },
-                uploadSuccess:function(file,response){
+                data:{
+                    folderName:"SysSet"
                 }
             });
 

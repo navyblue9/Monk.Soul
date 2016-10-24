@@ -13,34 +13,31 @@ namespace Monk.Areas.Backend.Injections
         {
             base.OnResultExecuting(filterContext);
 
-            var area = filterContext.RouteData.DataTokens["area"];
-            if (area != null && area.ToString().ToLower() == "backend")
+            if (filterContext.HttpContext.Session[Keys.SessionKey] != null)
             {
-                if (filterContext.HttpContext.Session[Keys.SessionKey] != null)
+                var cm = CacheManager<SysSetViewModel>.GetInstance();
+                if (cm.Get(Keys.SysSetCacheKey) == null)
                 {
-                    var cm = CacheManager<SysSetViewModel>.GetInstance();
-                    if (cm.Get(Keys.SysSetCacheKey) == null)
-                    {
-                        var sessionModel = SessionHelper.GetSessionInstance<SessionMember>(Keys.SessionKey);
-                        var apiUrl = new UrlHelper(new RequestContext(filterContext.HttpContext, filterContext.RouteData)).Action("Detail", "SysSet", new { area = "Services" });
-                        var restful = new RESTFul(RequestInfo.Domain, sessionModel.MemberID.ToString(), RESTFul.GetSecretKey(sessionModel.MemberID.ToString(), Keys.Access_Token));
-                        var clientResult = restful.Get<JsonData<SysSetViewModel>>(apiUrl);
-                        if (clientResult.status == "y") cm.Add(Keys.SysSetCacheKey, clientResult.data);
-                    }
-                    var sysSetModel = cm.Get(Keys.SysSetCacheKey);
-                    var result = filterContext.Result;
-                    if (result is ViewResult)
-                    {
-                        var vresult = result as ViewResult;
-                        vresult.ViewData["SysSetInfo"] = sysSetModel;
-                        filterContext.Result = vresult;
-                    }
-                    else if (result is PartialViewResult)
-                    {
-                        var presult = result as PartialViewResult;
-                        presult.ViewData["SysSetInfo"] = sysSetModel;
-                        filterContext.Result = presult;
-                    }
+                    var sessionModel = SessionHelper.GetSessionInstance<SessionMember>(Keys.SessionKey);
+                    var apiUrl = new UrlHelper(new RequestContext(filterContext.HttpContext, filterContext.RouteData)).Action("Detail", "SysSet", new { area = "Services" });
+                    var restful = new RESTFul(RequestInfo.Domain, sessionModel.MemberID.ToString(), RESTFul.GetSecretKey(sessionModel.MemberID.ToString(), Keys.Access_Token));
+                    var clientResult = restful.Get<JsonData<SysSetViewModel>>(apiUrl);
+                    if (clientResult.status == "y") cm.Add(Keys.SysSetCacheKey, clientResult.data);
+                }
+                var sysSetModel = cm.Get(Keys.SysSetCacheKey);
+                filterContext.RouteData.DataTokens.Add("SysSetInfo", sysSetModel);
+                var result = filterContext.Result;
+                if (result is ViewResult)
+                {
+                    var vresult = result as ViewResult;
+                    vresult.ViewData["SysSetInfo"] = sysSetModel;
+                    filterContext.Result = vresult;
+                }
+                else if (result is PartialViewResult)
+                {
+                    var presult = result as PartialViewResult;
+                    presult.ViewData["SysSetInfo"] = sysSetModel;
+                    filterContext.Result = presult;
                 }
             }
         }
