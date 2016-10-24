@@ -250,7 +250,8 @@
         $(function () {
             // 图片上传
             var uploader = backend.fileUpload({
-                options: {
+                input:"#2222",
+                upload: {
                     fileSizeLimit: @ViewBag.SysSetInfo.ImageMaxSize * 1024 * 1024
                 },
                 data:{

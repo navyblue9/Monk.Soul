@@ -208,7 +208,7 @@
         options = options || {};
         var uploader, state = "pending";
         var defaults = {
-            options: {
+            upload: {
                 auto: false,
                 swf: '/Areas/Backend/Assets/Vendors/webuploader-v0.1.6/dist/Uploader.swf',
                 server: '/Services/Common/UploadImage ',
@@ -222,55 +222,37 @@
                     mimeTypes: 'image/*'
                 },
                 compress: false,
-                fileSizeLimit: 2 * 1024 * 1024
+                fileSizeLimit: 1 * 1024 * 1024
             },
-            // 显示上传状态文本框
             input: "#uploadUrl",
-            // 进度条
             progress: "#uploadProgress",
-            // 选择按钮
             selectBtn: "#selectFiles",
-            // 开始按钮
             startBtn: "#startUpload",
-            //移除按钮
             removeBtn: "#removeFile",
-            // 重置按钮
             clearBtn: "#clearUpload",
             data: {},
             headers: {},
-            fileQueued: function (file) {
-            },
-            fileDequeued: function (file) {
-            },
-            startUpload: function () {
-            },
-            uploadBeforeSend: function (obj, data, headers) {
-            },
-            uploadProgress: function (file, percentage) {
-            },
-            uploadSuccess: function (file, response) {
-            },
-            uploadError: function (file, reason) {
-            },
-            uploadComplete: function (file) {
-            },
-            error: function (type) {
-            },
-            all: function (type) {
-            },
-            reset: function () {
-            }
+            fileQueued: function (file) { },
+            fileDequeued: function (file) { },
+            startUpload: function () { },
+            uploadBeforeSend: function (obj, data, headers) { },
+            uploadProgress: function (file, percentage) { },
+            uploadSuccess: function (file, response) { },
+            uploadError: function (file, reason) { },
+            uploadComplete: function (file) { },
+            error: function (type) { },
+            all: function (type) { },
+            reset: function () { }
         };
         var config = that.deepAssign({}, defaults, options);
-        config.options.pick.id = config.selectBtn;
-        console.log(config);
+        config.upload.pick.id = config.selectBtn;
 
         var $input = $(config.input)
                 , $progress = $(config.progress)
                 , $btn = $(config.startBtn)
                 , $rmbtn = $(config.removeBtn)
                , $clearbtn = $(config.clearBtn);
-        uploader = WebUploader.create(config.options);
+        uploader = WebUploader.create(config.upload);
         // 当有文件添加进来的时候
         uploader.on('fileQueued', function (file) {
             $input.val("等待上传：" + file.name).attr("data-fileId", file.id);
