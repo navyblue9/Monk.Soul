@@ -251,15 +251,14 @@
             // 图片上传
             var uploader = backend.fileUpload({
                 options: {
-                    fileSizeLimit: @ViewBag.SysSetInfo.ImageMaxSize * 1024 * 1024,
-                    uploadSuccess:function(file,response){
-                        alert(response.path);
-                        $("#image-view").attr("src",response.path);
-                    }
+                    fileSizeLimit: @ViewBag.SysSetInfo.ImageMaxSize * 1024 * 1024
                 },
                 data:{
                     area:"@ViewContext.RouteData.DataTokens["area"]",
                     controller:"@ViewContext.RouteData.Values["controller"]"
+                },
+                uploadSuccess:function(file,response){
+                    $("#image-view").attr("src",response.path);
                 }
             });
 

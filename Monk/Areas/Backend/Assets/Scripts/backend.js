@@ -222,29 +222,7 @@
                     mimeTypes: 'image/*'
                 },
                 compress: false,
-                fileSizeLimit: 2 * 1024 * 1024,
-                fileQueued: function (file) {
-                },
-                fileDequeued: function (file) {
-                },
-                startUpload: function () {
-                },
-                uploadBeforeSend: function (obj, data, headers) {
-                },
-                uploadProgress: function (file, percentage) {
-                },
-                uploadSuccess: function (file, response) {
-                },
-                uploadError: function (file, reason) {
-                },
-                uploadComplete: function (file) {
-                },
-                error: function (type) {
-                },
-                all: function (type) {
-                },
-                reset: function () {
-                }
+                fileSizeLimit: 2 * 1024 * 1024
             },
             // 显示上传状态文本框
             input: "#uploadUrl",
@@ -259,10 +237,33 @@
             // 重置按钮
             clearBtn: "#clearUpload",
             data: {},
-            headers: {}
+            headers: {},
+            fileQueued: function (file) {
+            },
+            fileDequeued: function (file) {
+            },
+            startUpload: function () {
+            },
+            uploadBeforeSend: function (obj, data, headers) {
+            },
+            uploadProgress: function (file, percentage) {
+            },
+            uploadSuccess: function (file, response) {
+            },
+            uploadError: function (file, reason) {
+            },
+            uploadComplete: function (file) {
+            },
+            error: function (type) {
+            },
+            all: function (type) {
+            },
+            reset: function () {
+            }
         };
         var config = that.deepAssign({}, defaults, options);
         config.options.pick.id = config.selectBtn;
+        console.log(config);
 
         var $input = $(config.input)
                 , $progress = $(config.progress)
@@ -274,15 +275,15 @@
         uploader.on('fileQueued', function (file) {
             $input.val("等待上传：" + file.name).attr("data-fileId", file.id);
             $progress.css('width', '0%');
-            if (typeof config.options.fileQueued == "function") {
-                config.options.fileQueued(file);
+            if (typeof config.fileQueued == "function") {
+                config.fileQueued(file);
             }
         });
         // 移除上传
         uploader.on('fileDequeued', function (file) {
             that.Tip("已将该文件从上传队列中移除");
-            if (typeof config.options.fileDequeued == "function") {
-                config.options.fileDequeued(file);
+            if (typeof config.fileDequeued == "function") {
+                config.fileDequeued(file);
             }
         });
         // 上传之前
@@ -290,24 +291,24 @@
             if (uploader.getStats().queueNum == 0) {
                 that.errorTip("没有检测到文件或文件已上传");
             }
-            if (typeof config.options.startUpload == "function") {
-                config.options.startUpload();
+            if (typeof config.startUpload == "function") {
+                config.startUpload();
             }
         });
         // 提交之前
         uploader.on('uploadBeforeSend', function (obj, data, headers) {
             data = that.deepAssign(data, config.data);
             headers = that.deepAssign(headers, config.headers);
-            if (typeof config.options.uploadBeforeSend == "function") {
-                config.options.uploadBeforeSend(obj, data, headers);
+            if (typeof config.uploadBeforeSend == "function") {
+                config.uploadBeforeSend(obj, data, headers);
             }
         });
         // 文件上传过程中创建进度条实时显示。
         uploader.on('uploadProgress', function (file, percentage) {
             $input.val("上传中：" + file.name);
             $progress.css('width', percentage * 100 + '%');
-            if (typeof config.options.uploadProgress == "function") {
-                config.options.uploadProgress(file, percentage);
+            if (typeof config.uploadProgress == "function") {
+                config.uploadProgress(file, percentage);
             }
         });
         // 上传成功
@@ -319,23 +320,23 @@
                 $input.val("上传成功：" + file.name).attr("data-fileId", file.id);
                 $clearbtn.removeAttr("disabled");
                 that.successTip(response.info);
-                if (typeof config.options.uploadSuccess == "function") {
-                    config.options.uploadSuccess(file, response);
+                if (typeof config.uploadSuccess == "function") {
+                    config.uploadSuccess(file, response);
                 }
             }
         });
         // 上传出错
         uploader.on('uploadError', function (file, reason) {
             that.errorTip("上传出错" + reason);
-            if (typeof config.options.uploadError == "function") {
-                config.options.uploadError(file, reason);
+            if (typeof config.uploadError == "function") {
+                config.uploadError(file, reason);
             }
         });
         // 上传完成（包括失败，成功）
         uploader.on('uploadComplete', function (file) {
             $progress.css('width', '0%');
-            if (typeof config.options.uploadComplete == "function") {
-                config.options.uploadComplete(file);
+            if (typeof config.uploadComplete == "function") {
+                config.uploadComplete(file);
             }
         });
         // 文件选择错误
@@ -344,14 +345,14 @@
                 that.errorTip("不支持该文件类型");
             }
             else if (type == "Q_EXCEED_SIZE_LIMIT") {
-                that.errorTip("该文件超过最大限制：" + (config.options.fileSizeLimit / 1024 / 1024) + " M");
+                that.errorTip("该文件超过最大限制：" + (config.fileSizeLimit / 1024 / 1024) + " M");
             }
             else if (type == "Q_EXCEED_NUM_LIMIT") {
                 that.errorTip("选择文件的总数已超过可选的大小");
             }
             $clearbtn.attr("disabled", "disabled");
-            if (typeof config.options.error == "function") {
-                config.options.error(type);
+            if (typeof config.error == "function") {
+                config.error(type);
             }
         });
         // 监听上传所有状态
@@ -369,15 +370,15 @@
             } else {
                 $btn.text('开始上传');
             }
-            if (typeof config.options.all == "function") {
-                config.options.all(type);
+            if (typeof config.all == "function") {
+                config.all(type);
             }
         });
         // 重置
         uploader.on('reset', function () {
             that.Tip("上传组件已恢复初始值");
-            if (typeof config.options.reset == "function") {
-                config.options.reset();
+            if (typeof config.reset == "function") {
+                config.reset();
             }
         });
         // 开始上传
