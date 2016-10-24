@@ -1,4 +1,6 @@
-﻿INSERT  INTO dbo.Member
+﻿USE [Monk.Soul]
+GO
+INSERT  INTO dbo.Member
         ( MemberID ,
           Account ,
           Password ,

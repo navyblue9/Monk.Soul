@@ -213,8 +213,8 @@
         uploader = WebUploader.create(config.options);
         // 当有文件添加进来的时候
         uploader.on('fileQueued', function (file) {
-            state = "pending"
-            if ($input.attr("data-fileId")) {
+            state = "pending";
+            if (uploader.getStats().queueNum>0) {
                 uploader.removeFile($input.attr("data-fileId"));
             }
             $input.val("等待上传：" + file.name).attr("data-fileId", file.id);
