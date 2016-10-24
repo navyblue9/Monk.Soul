@@ -13,7 +13,7 @@ namespace Monk
                 "~/Areas/Backend/Assets/Styles/backend.min.css"
             ));
             bundles.Add(new ScriptBundle("~/Assets/Backend/Script").Include(
-                "~/Areas/Backend/Assets/Scripts/backend.js"
+                "~/Areas/Backend/Assets/Scripts/backend.min.js"
             ));
             // Monk.UI
             bundles.Add(new StyleBundle("~/Assets/Backend/Monk.UI/Style").Include(

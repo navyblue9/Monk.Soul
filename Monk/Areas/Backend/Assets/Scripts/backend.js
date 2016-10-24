@@ -17,70 +17,11 @@
 }(function (HExports) {
     var exports = typeof HExports !== 'undefined' ? HExports : {};
     exports.v = "1.0.0";
-
-    // 对象深度拷贝（https://github.com/sindresorhus/deep-assign）
-    function isObj(x) {
-        var type = typeof x;
-        return x !== null && (type === 'object' || type === 'function');
-    }
-    var hasOwnProperty = Object.prototype.hasOwnProperty;
-    var propIsEnumerable = Object.prototype.propertyIsEnumerable;
-    function toObject(val) {
-        if (val === null || val === undefined) {
-            throw new TypeError('Cannot convert undefined or null to object');
-        }
-        return Object(val);
-    }
-    function assignKey(to, from, key) {
-        var val = from[key];
-        if (val === undefined || val === null) {
-            return;
-        }
-        if (hasOwnProperty.call(to, key)) {
-            if (to[key] === undefined || to[key] === null) {
-                throw new TypeError('Cannot convert undefined or null to object (' + key + ')');
-            }
-        }
-        if (!hasOwnProperty.call(to, key) || !isObj(val)) {
-            to[key] = val;
-        } else {
-            to[key] = assign(Object(to[key]), from[key]);
-        }
-    }
-    function assign(to, from) {
-        if (to === from) {
-            return to;
-        }
-        from = Object(from);
-        for (var key in from) {
-            if (hasOwnProperty.call(from, key)) {
-                assignKey(to, from, key);
-            }
-        }
-        if (Object.getOwnPropertySymbols) {
-            var symbols = Object.getOwnPropertySymbols(from);
-            for (var i = 0; i < symbols.length; i++) {
-                if (propIsEnumerable.call(from, symbols[i])) {
-                    assignKey(to, from, symbols[i]);
-                }
-            }
-        }
-        return to;
-    }
-    exports.deepAssign = function (target) {
-        target = toObject(target);
-        for (var s = 1; s < arguments.length; s++) {
-            assign(target, arguments[s]);
-        }
-        return target;
-    }
-    ;
-
     // 成功提示
     exports.successTip = function (msg, options, end) {
         options = options || {};
         var defaults = { icon: 1, offset: 0 };
-        var config = $.extend({}, defaults, options);
+        var config = $.extend(true, defaults, options);
         var _layer = parent.layer ? parent.layer : layer;
         return _layer.msg(msg, config, end);
     };
@@ -88,7 +29,7 @@
     exports.errorTip = function (msg, options, end) {
         options = options || {};
         var defaults = { icon: 2, offset: 0 };
-        var config = $.extend({}, defaults, options);
+        var config = $.extend(true, defaults, options);
         var _layer = parent.layer ? parent.layer : layer;
         return _layer.msg(msg, config, end);
     };
@@ -96,7 +37,7 @@
     exports.loadTip = function (msg, options, end) {
         options = options || {};
         var defaults = { icon: 16, time: 30000, offset: 0 };
-        var config = $.extend({}, defaults, options);
+        var config = $.extend(true, defaults, options);
         var _layer = parent.layer ? parent.layer : layer;
         return _layer.msg(msg, config, end);
     };
@@ -104,7 +45,7 @@
     exports.Tip = function (msg, options, end) {
         options = options || {};
         var defaults = { icon: 0, offset: 0 };
-        var config = $.extend({}, defaults, options);
+        var config = $.extend(true, defaults, options);
         var _layer = parent.layer ? parent.layer : layer;
         return _layer.msg(msg, config, end);
     };
@@ -173,7 +114,7 @@
                 }
             }
         };
-        var config = $.extend({}, defaults, options);
+        var config = $.extend(true, defaults, options);
         return $(config.form).Validform(config);
     };
     // ajax返回结果处理
@@ -199,7 +140,7 @@
             cursorborderradius: "2px",
             autohidemode: true
         };
-        var config = $.extend({}, defaults, options);
+        var config = $.extend(true, defaults, options);
         return jqueryObj.niceScroll(config);
     };
     // 文件上传（目前只支持单文件）
@@ -208,7 +149,7 @@
         options = options || {};
         var uploader, state = "pending";
         var defaults = {
-            upload: {
+            options: {
                 auto: false,
                 swf: '/Areas/Backend/Assets/Vendors/webuploader-v0.1.6/dist/Uploader.swf',
                 server: '/Services/Common/UploadImage ',
@@ -222,36 +163,54 @@
                     mimeTypes: 'image/*'
                 },
                 compress: false,
-                fileSizeLimit: 1 * 1024 * 1024
+                fileSizeLimit: 2 * 1024 * 1024
             },
+            // 显示上传状态文本框
             input: "#uploadUrl",
+            // 进度条
             progress: "#uploadProgress",
+            // 选择按钮
             selectBtn: "#selectFiles",
+            // 开始按钮
             startBtn: "#startUpload",
+            //移除按钮
             removeBtn: "#removeFile",
+            // 重置按钮
             clearBtn: "#clearUpload",
             data: {},
             headers: {},
-            fileQueued: function (file) { },
-            fileDequeued: function (file) { },
-            startUpload: function () { },
-            uploadBeforeSend: function (obj, data, headers) { },
-            uploadProgress: function (file, percentage) { },
-            uploadSuccess: function (file, response) { },
-            uploadError: function (file, reason) { },
-            uploadComplete: function (file) { },
-            error: function (type) { },
-            all: function (type) { },
-            reset: function () { }
+            fileQueued: function (file) {
+            },
+            fileDequeued: function (file) {
+            },
+            startUpload: function () {
+            },
+            uploadBeforeSend: function (obj, data, headers) {
+            },
+            uploadProgress: function (file, percentage) {
+            },
+            uploadSuccess: function (file, response) {
+            },
+            uploadError: function (file, reason) {
+            },
+            uploadComplete: function (file) {
+            },
+            error: function (type) {
+            },
+            all: function (type) {
+            },
+            reset: function () {
+            }
         };
-        var config = that.deepAssign({}, defaults, options);
-        config.upload.pick.id = config.selectBtn;
+        var config = $.extend(true, defaults, options);
+        config.options.pick.id = config.selectBtn;
+
         var $input = $(config.input)
                 , $progress = $(config.progress)
                 , $btn = $(config.startBtn)
                 , $rmbtn = $(config.removeBtn)
                , $clearbtn = $(config.clearBtn);
-        uploader = WebUploader.create(config.upload);
+        uploader = WebUploader.create(config.options);
         // 当有文件添加进来的时候
         uploader.on('fileQueued', function (file) {
             $input.val("等待上传：" + file.name).attr("data-fileId", file.id);
@@ -278,8 +237,8 @@
         });
         // 提交之前
         uploader.on('uploadBeforeSend', function (obj, data, headers) {
-            data = that.deepAssign(data, config.data);
-            headers = that.deepAssign(headers, config.headers);
+            data = $.extend(true, data, config.data);
+            headers = $.extend(true, headers, config.headers);
             if (typeof config.uploadBeforeSend == "function") {
                 config.uploadBeforeSend(obj, data, headers);
             }

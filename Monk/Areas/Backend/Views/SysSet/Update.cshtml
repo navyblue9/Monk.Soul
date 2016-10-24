@@ -250,8 +250,7 @@
         $(function () {
             // 图片上传
             var uploader = backend.fileUpload({
-                input:"#2222",
-                upload: {
+                options: {
                     fileSizeLimit: @ViewBag.SysSetInfo.ImageMaxSize * 1024 * 1024
                 },
                 data:{
@@ -259,7 +258,7 @@
                     controller:"@ViewContext.RouteData.Values["controller"]"
                 },
                 uploadSuccess:function(file,response){
-                    $("#image-view").attr("src",response.path);
+                    $("#image-view").attr("src",response.data.path);
                 }
             });
 
