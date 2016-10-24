@@ -3,6 +3,7 @@
 /// <reference path="vendors/jquery-v3.1.1/jquery-3.1.1.js" />
 /// <reference path="Vendors/layer-v2.4/layer.js" />
 /// <reference path="Vendors/linq-v3.0.4/linq.js" />
+/// <reference path="vendors/md5-v2.4.0/md5.js" />
 /// <reference path="vendors/monk.ui-v0.3.5/monk.ui.js" />
 /// <reference path="Vendors/nicescroll-v3.6.8/nicescroll.min.js" />
 /// <reference path="Vendors/pace-v1.0.2/pace.min.js" />

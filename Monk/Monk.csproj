@@ -223,6 +223,8 @@
     <Content Include="Areas\Backend\Assets\Vendors\layer-v2.4\skin\layer.css" />
     <Content Include="Areas\Backend\Assets\Vendors\linq-v3.0.4\linq.js" />
     <Content Include="Areas\Backend\Assets\Vendors\linq-v3.0.4\linq.min.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\md5-v2.4.0\md5.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\md5-v2.4.0\md5.min.js" />
     <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.3.5\fonts\iconfont.svg" />
     <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.3.5\index.html" />
     <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.3.5\monk.ui.css" />
@@ -254,6 +256,7 @@
     </Content>
     <Content Include="Areas\Backend\Assets\Vendors\webuploader-v0.1.6\examples\image-upload\icons.psd" />
     <Content Include="Areas\Backend\Assets\Vendors\webuploader-v0.1.6\examples\image-upload\progress.psd" />
+    <Content Include="Areas\Backend\Assets\Vendors\md5-v2.4.0\md5.min.js.map" />
     <None Include="Areas\Backend\Assets\_references.js" />
     <Content Include="Areas\Backend\Assets\Vendors\webuploader-v0.1.6\dist\Uploader.swf" />
     <Content Include="Areas\Backend\Assets\Vendors\webuploader-v0.1.6\dist\webuploader.css" />
@@ -314,6 +317,7 @@
     <Compile Include="Areas\Backend\Controllers\SysSetController.cs" />
     <Compile Include="Areas\Backend\Injections\MemberInfoInjectionAttribute.cs" />
     <Compile Include="Areas\Backend\Injections\SysSetInfoInjectionAttribute.cs" />
+    <Compile Include="Areas\Services\Controllers\CommonController.cs" />
     <Compile Include="Areas\Services\Controllers\SysSetController.cs" />
     <Compile Include="Filters\AccessVerifyAttribute.cs" />
     <Compile Include="Filters\AnonymousAttribute.cs" />

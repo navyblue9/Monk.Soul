@@ -38,9 +38,9 @@
             <span class="monk-iconfont icon-monk-required"></span>
             <span class="monk-iconfont border-left icon-monk-file"></span>
         </div>
-        <div class="monk-file-uploadProgress"></div>
+        <div class="monk-file-uploadProgress" id="uploadProgress"></div>
         <div class="monk-input-button" id="selectFiles">选择图片</div>
-        <div class="monk-input-button emerland">开始上传</div>
+        <div class="monk-input-button emerland" id="startUpload">开始上传</div>
     </div>
     <div class="monk-form-tip">选择你喜欢的图片作为系统标志</div>
 </div>
@@ -257,17 +257,21 @@
     <script type="text/javascript">
         $(function () {
             backend.validform(function (data) {
-
             });
 
             // 初始化Web Uploader
-            var uploader = WebUploader.create({
+            var uploader
+                ,state="pending"
+                ,$input=$("#Logo")
+                ,$progress=$("#uploadProgress")
+                ,$btn=$("#startUpload");
+            uploader = WebUploader.create({
                 // 选完文件后，是否自动上传。
                 auto: false,
                 // swf文件路径
                 swf: '/Areas/Backend/Assets/Vendors/webuploader-v0.1.6/dist/Uploader.swf',
                 // 文件接收服务端。
-                server: 'http://webuploader.duapp.com/server/fileupload.php',
+                server: '@Url.Action("UploadImage", "Common",new {area="Services" }) ',
                 // 选择文件的按钮。可选。
                 // 内部根据当前运行是创建，可能是input元素，也可能是flash.
                 pick: {
@@ -285,17 +289,62 @@
             });
             // 当有文件添加进来的时候
             uploader.on('fileQueued', function (file) {
-                var $li=$('<div class="monk-image-item"><img /></div>');
-                var $img=$li.find("img");
-                $(".monk-images-selects").html($li);
-                // 创建缩略图
-                uploader.makeThumb( file, function( error, src ) {
-                    if ( error ) {
-                        $img.replaceWith('<span>预览出错</span>');
-                        return;
-                    }
-                    $img.attr( 'src', src );
-                },100,50);
+                $input.val("等待上传："+file.name);
+                $progress.css( 'width', '0%' );
+            });
+            // 文件上传过程中创建进度条实时显示。
+            uploader.on( 'uploadProgress', function( file, percentage ) {
+                $input.val("上传中："+file.name);
+                $progress.css( 'width', percentage * 100 + '%' );
+            });
+            uploader.on( 'uploadSuccess', function( file,response) {
+                backend.successTip("上传成功");
+            });
+            uploader.on( 'uploadError', function( file,reason) {
+                backend.errorTip("上传出错");
+            });
+            uploader.on( 'uploadComplete', function( file ) {
+                $progress.css( 'width', '0%' );
+            });
+            uploader.on( 'startUpload', function() {
+                if(uploader.getStats().queueNum==0){
+                    backend.errorTip("没有检测到文件");
+                }
+            });
+            uploader.on( 'error', function(type) {
+                if(type=="Q_TYPE_DENIED"){
+                    backend.errorTip("不支持该文件类型");
+                }
+                else if(type=="Q_EXCEED_SIZE_LIMIT"){
+                    backend.errorTip("该文件超过最大限制：@ViewBag.SysSetInfo.ImageMaxSize M");
+                }
+                else if(type=="Q_EXCEED_NUM_LIMIT"){
+                    backend.errorTip("选择文件的总数已超过可选的大小");
+                }
+            });
+            // 监听上传所有状态
+            uploader.on( 'all', function(type) {
+                if ( type === 'startUpload' ) {
+                    state = 'uploading';
+                } else if ( type === 'stopUpload' ) {
+                    state = 'paused';
+                } else if ( type === 'uploadFinished' ) {
+                    state = 'done';
+                }
+                if ( state === 'uploading' ) {
+                    $input.val($input.val().replace("上传中：","暂停上传："));
+                    $btn.text('暂停上传');
+                } else {
+                    $btn.text('开始上传');
+                }
+            });
+            // 开始上传
+            $btn.on( 'click', function() {
+                if ( state === 'uploading' ) {
+                    uploader.stop();
+                } else {
+                    uploader.upload();
+                }
             });
         });
     </script>
