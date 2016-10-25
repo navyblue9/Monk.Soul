@@ -57,6 +57,7 @@ namespace Monk.Areas.Services.Controllers
                     model.ImageMaxSize,
                     model.VideoMaxSize,
                     model.AttachMaxSize,
+                    model.PageSize,
                     UpdateTime = DateTime.Now
                 }, u => u.SetID == model.SetID);
 
