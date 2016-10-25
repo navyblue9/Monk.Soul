@@ -355,4 +355,40 @@
         });
         return uploader;
     };
+    // 分页
+    exports.pagination = function (url, pageSize, params, success, selector, options) {
+        selector = selector ? selector : "#page";
+        options = options || {};
+        params = params || {};
+        pageSize = Number(pageSize) ? Math.abs(Number(pageSize)) : 15;
+        var defaults = {
+            pageSize: pageSize,
+            total: 1000,
+            pageBtnCount: 7,
+            showInfo: true,
+            infoFormat: "共 {total} 条记录",
+            noInfoText: "共 0 条记录",
+            showJump: true,
+            jumpBtnText: "转到",
+            showPageSizes: true,
+            pageSizeItems: [5, 10, 15, 20, 25, 30],
+            remote: {
+                url: url,
+                params: params,
+                success: function (data) {
+                    if (typeof success == "function") {
+                        success(data);
+                    }
+                },
+                beforeSend: function (xhr) { },
+                complete: function (xhr, status) {
+
+                },
+                totalName: 'data.others.total',
+                traditional: true
+            }
+        };
+        var config = $.extend(true, defaults, options);
+        $(selector).pagination(config);
+    };
 });

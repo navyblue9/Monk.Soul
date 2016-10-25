@@ -238,6 +238,14 @@
       <DependentUpon>pace-theme-minimal.css</DependentUpon>
     </Content>
     <Content Include="Areas\Backend\Assets\Vendors\pace-v1.0.2\pace.min.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\pagination-v1.4.4\mricode.pagination.css" />
+    <Content Include="Areas\Backend\Assets\Vendors\pagination-v1.4.4\mricode.pagination.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\pagination-v1.4.4\mricode.pagination.min.css">
+      <DependentUpon>mricode.pagination.css</DependentUpon>
+    </Content>
+    <Content Include="Areas\Backend\Assets\Vendors\pagination-v1.4.4\mricode.pagination.min.js">
+      <DependentUpon>mricode.pagination.js</DependentUpon>
+    </Content>
     <Content Include="Areas\Backend\Assets\Vendors\store-v1.3.20\store_json2.min.js" />
     <Content Include="Areas\Backend\Assets\Vendors\validform-v5.3.2\validform-v5.3.2.js" />
     <Content Include="Areas\Backend\Assets\Vendors\validform-v5.3.2\validform-v5.3.2.min.js">

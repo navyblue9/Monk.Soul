@@ -7,6 +7,7 @@
 /// <reference path="vendors/monk.ui-v0.3.5/monk.ui.js" />
 /// <reference path="Vendors/nicescroll-v3.6.8/nicescroll.min.js" />
 /// <reference path="Vendors/pace-v1.0.2/pace.min.js" />
+/// <reference path="vendors/pagination-v1.4.4/mricode.pagination.js" />
 /// <reference path="vendors/store-v1.3.20/store_json2.min.js" />
 /// <reference path="Vendors/validform-v5.3.2/validform-v5.3.2.js" />
 /// <reference path="Vendors/waypoints-v4.0.1/noframework.waypoints.min.js" />

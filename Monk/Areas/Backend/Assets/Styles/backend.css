@@ -109,5 +109,3 @@ body { font-family: 'Microsoft YaHei','微软雅黑',SimSun,Arial; font-size: 13
 .monk-table table tbody tr:hover, .monk-table table tfoot tr:hover { background: #fafafa; }
 .monk-table table td.monk-td-radio { width: 80px; text-align: center; }
 .monk-table table td.monk-td-radio span.monk-iconfont { font-size: 17px; }
-/*分页*/
-#page { padding: 12px 0 0 0; }

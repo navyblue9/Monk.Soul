@@ -94,5 +94,17 @@
     "inputFiles": [
       "Areas/Backend/Assets/Vendors/webuploader-v0.1.6/dist/webuploader.css"
     ]
+  },
+  {
+    "outputFileName": "Areas/Backend/Assets/Vendors/pagination-v1.4.4/mricode.pagination.min.css",
+    "inputFiles": [
+      "Areas/Backend/Assets/Vendors/pagination-v1.4.4/mricode.pagination.css"
+    ]
+  },
+  {
+    "outputFileName": "Areas/Backend/Assets/Vendors/pagination-v1.4.4/mricode.pagination.min.js",
+    "inputFiles": [
+      "Areas/Backend/Assets/Vendors/pagination-v1.4.4/mricode.pagination.js"
+    ]
   }
 ]

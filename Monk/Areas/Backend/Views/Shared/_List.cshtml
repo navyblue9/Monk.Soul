@@ -13,7 +13,7 @@
     <meta name="copyright" content="百签软件有限公司,百小僧" />
     <link rel="shortcut icon" href="~/Areas/Backend/Assets/favicon.ico" />
     @Scripts.Render("~/Assets/Backend/Pace/Script")
-    @Styles.Render("~/Assets/Backend/Pace/Style", "~/Assets/Backend/Monk.UI/Style", "~/Assets/Backend/Style")
+    @Styles.Render("~/Assets/Backend/Pace/Style", "~/Assets/Backend/Monk.UI/Style", "~/Assets/Backend/Pagination/Style", "~/Assets/Backend/Style")
     @RenderSection("head", false)
 </head>
 <body @RenderSection("bodyAttr", false)>
@@ -28,7 +28,7 @@
     <div class="backend-operate">
         @RenderSection("operate", false)
     </div>
-    @Scripts.Render("~/Assets/Backend/Monk.UI/Script", "~/Assets/Backend/Store/Script", "~/Assets/Backend/JQuery/Script", "~/Assets/Backend/Layer/Script", "~/Assets/Backend/Script")
+    @Scripts.Render("~/Assets/Backend/Monk.UI/Script", "~/Assets/Backend/Store/Script", "~/Assets/Backend/JQuery/Script", "~/Assets/Backend/Layer/Script", "~/Assets/Backend/Pagination/Script", "~/Assets/Backend/Script")
     @RenderSection("foot", false)
 </body>
 </html>

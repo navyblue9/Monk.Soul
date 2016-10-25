@@ -72,6 +72,13 @@ namespace Monk
             bundles.Add(new ScriptBundle("~/Assets/Backend/MD5/Script").Include(
                "~/Areas/Backend/Assets/Vendors/md5-v2.4.0/md5.min.js"
             ));
+            // Pagination
+            bundles.Add(new StyleBundle("~/Assets/Backend/Pagination/Style").Include(
+               "~/Areas/Backend/Assets/Vendors/pagination-v1.4.4/mricode.pagination.min.css"
+           ));
+            bundles.Add(new ScriptBundle("~/Assets/Backend/Pagination/Script").Include(
+                "~/Areas/Backend/Assets/Vendors/pagination-v1.4.4/mricode.pagination.min.js"
+            ));
         }
     }
 }
