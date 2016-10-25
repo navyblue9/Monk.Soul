@@ -17,6 +17,34 @@
 }(function (HExports) {
     var exports = typeof HExports !== 'undefined' ? HExports : {};
     exports.v = "1.0.0";
+    exports.dateSingleAddZero = function (num) {
+        if (num < 10) {
+            return "0" + num;
+        }
+        return num;
+    };
+    exports.datetimeFormat = function (datetimeStr) {
+        if (!datetimeStr) {
+            return "";
+        }
+        var that = this;
+        var date = eval(datetimeStr.replace(/\/Date\((\d+)\)\//gi, "new Date($1)"));
+        var year = date.getFullYear();
+        var month = that.dateSingleAddZero(date.getMonth() + 1);
+        var day = that.dateSingleAddZero(date.getDate());
+        var hours = that.dateSingleAddZero(date.getHours());
+        var minute = that.dateSingleAddZero(date.getMinutes());
+        var seconds = that.dateSingleAddZero(date.getSeconds());
+        return year + "-" + month + "-" + day + " " + hours + ":" + minute + ":" + seconds;
+    };
+    exports.setStatus = function (statu) {
+        if (statu == true || statu == "true") {
+            return '<span class="monk-iconfont icon-monk-dagou tipcolor"></span>';
+        }
+        else {
+            return '<span class="monk-iconfont icon-monk-dacha"></span>';
+        }
+    };
     // 成功提示
     exports.successTip = function (msg, options, end) {
         options = options || {};
