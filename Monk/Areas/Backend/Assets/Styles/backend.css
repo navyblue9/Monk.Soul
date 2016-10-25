@@ -91,7 +91,7 @@ body { font-family: 'Microsoft YaHei','微软雅黑',SimSun,Arial; font-size: 13
 /*面包屑*/
 .backend-crumbs { height: 45px; line-height: 45px; border-bottom: 1px solid #e9e9e9; margin: 0 10px; }
 .backend-crumbs .backend-crumbs-separator, .backend-crumbs a, .backend-crumbs .monk-iconfont { float: left; display: block; vertical-align: middle; }
-.backend-crumbs .monk-iconfont { color: #999; padding-right: 6px; font-size: 15px; }
+.backend-crumbs .monk-iconfont { color: #ccc; padding-right: 6px; font-size: 15px; }
 .backend-crumbs .backend-crumbs-separator { padding: 0 6px; color: #aaa; }
 .backend-crumbs a { color: #999; text-decoration: none; cursor: pointer; }
 .backend-crumbs a:hover { color: #666; }
@@ -102,13 +102,13 @@ body { font-family: 'Microsoft YaHei','微软雅黑',SimSun,Arial; font-size: 13
 #selectFiles { padding: 0; overflow: hidden; vertical-align: top; }
 /*表格*/
 .monk-table table { width: 100%; min-width: 600px; border-collapse: collapse; border-spacing: 0; overflow: auto; position: relative; }
-.monk-table table thead th { padding: 10px; color: #000; font-size: 14px; font-weight: 500; background: #f9f9f9; line-height: 1.6em; border-bottom: 1px solid #e9e9e9; white-space: nowrap; }
-.monk-table table tbody td, .monk-table table tfoot td { padding: 10px; border-bottom: 1px solid #e9e9e9; line-height: 1.7em; color: #666; font-size: 13px; }
+.monk-table table tr { border-bottom: 1px solid #e7eaec; line-height: 1.6em; }
+.monk-table table thead tr { border-bottom: 1px solid #ddd; }
+.monk-table table thead th { padding: 10px; font-size: 14px; font-weight: 500; white-space: nowrap; font-weight: bold; color: #787b7d; }
+.monk-table table tbody td, .monk-table table tfoot td { padding: 10px; color: #757879; line-height: 1.7em; }
 .monk-table table tfoot td { font-weight: 500; text-align: center; font-size: 14px; }
-.monk-table table tr:nth-child(2n) { background: #fdfdfd; }
 .monk-table table tbody tr:hover, .monk-table table tfoot tr:hover { background: #fafafa; }
-.monk-table table td.monk-td-radio { background: #f8f8f8; width: 80px; text-align: center; color: #999; }
+.monk-table table td.monk-td-radio { width: 80px; text-align: center; }
 .monk-table table td.monk-td-radio span.monk-iconfont { font-size: 17px; }
-.monk-table table tbody tr:hover td.monk-td-radio, .monk-table table tfoot tr:hover td.monk-td-radio { background: #f6f6f6; }
 /*分页*/
 #page { padding: 12px 0 0 0; }
