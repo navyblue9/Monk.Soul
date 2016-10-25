@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>@ViewBag.Title - 百签软件有限公司</title>
+    <meta name="author" content="百签软件有限公司,百小僧">
+    <meta name="generator" content="Visual Studio" />
+    <meta name="keywords" content="@(ViewBag.Keywords)百签软件有限公司,百小僧" />
+    <meta name="description" content="@(ViewBag.Description)咨询电话：0760-88809987、18676265646" />
+    <meta name="copyright" content="百签软件有限公司,百小僧" />
+    <link rel="shortcut icon" href="~/Areas/Backend/Assets/favicon.ico" />
+    @Scripts.Render("~/Assets/Backend/Pace/Script")
+    @Styles.Render("~/Assets/Backend/Pace/Style", "~/Assets/Backend/WebUploader/Style", "~/Assets/Backend/Monk.UI/Style", "~/Assets/Backend/Style")
+    @RenderSection("head", false)
+</head>
+<body @RenderSection("bodyAttr", false)>
+    <div class="backend-crumbs clear-both">
+        <span class="monk-iconfont icon-backend-crumbs"></span>
+        <a href="#" title="管理首页">管理首页</a>
+        @RenderSection("crumbs", false)
+    </div>
+    <div class="backend-content">
+        @RenderBody()
+    </div>
+    <div class="backend-operate">
+        @RenderSection("operate", false)
+    </div>
+    @Scripts.Render("~/Assets/Backend/Monk.UI/Script", "~/Assets/Backend/Store/Script", "~/Assets/Backend/JQuery/Script", "~/Assets/Backend/Layer/Script", "~/Assets/Backend/Validform/Script", "~/Assets/Backend/WebUploader/Script", "~/Assets/Backend/Script")
+    @RenderSection("foot", false)
+</body>
+</html>
