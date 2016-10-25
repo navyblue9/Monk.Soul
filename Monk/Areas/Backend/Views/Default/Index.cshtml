@@ -38,6 +38,8 @@
                                     <div data-url="@Url.Action("Console","Default")" target="backend-iframe" class="backend-menu-action" data-actionid="3">
                                         <span class="space"></span><span class="monk-iconfont icon-backend-file action-icon"></span><label>内容分类</label>
                                     </div>
+                                </li>
+                                <li>
                                     <div data-url="@Url.Action("Console","Default")" target="backend-iframe" class="backend-menu-action" data-actionid="4">
                                         <span class="space"></span><span class="monk-iconfont icon-backend-file action-icon"></span><label>内容分类</label>
                                     </div>
@@ -54,6 +56,8 @@
                                     <div data-url="@Url.Action("Console","Default")" target="backend-iframe" class="backend-menu-action" data-actionid="6">
                                         <span class="space"></span><span class="monk-iconfont icon-backend-file action-icon"></span><label>内容分类</label>
                                     </div>
+                                </li>
+                                <li>
                                     <div data-url="@Url.Action("Console","Default")" target="backend-iframe" class="backend-menu-action" data-actionid="7">
                                         <span class="space"></span><span class="monk-iconfont icon-backend-file action-icon"></span><label>内容分类</label>
                                     </div>
@@ -171,6 +175,18 @@
                     </ul>
                 </div>
             </div>
+            <div class="backend-menu-item display-none" data-moduleid="13">
+                <h2 class="backend-menu-title">商城管理</h2>
+                <div class="backe-menu-list">
+                    <ul>
+                        <li>
+                            <div data-url="http://www.baisoft.org/public/monkui/" target="backend-iframe" class="backend-menu-action" data-actionid="sc1">
+                                <span class="monk-iconfont icon-backend-file action-icon"></span><label>基本设置</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <div class="backend-menu-item display-none" data-moduleid="11">
                 <h2 class="backend-menu-title">站长工具</h2>
                 <div class="backe-menu-list">
@@ -188,21 +204,17 @@
                 <div class="backe-menu-list">
                     <ul>
                         <li>
-                            <div data-url="http://www.baisoft.org/public/monkui/" target="backend-iframe" class="backend-menu-action" data-actionid="sj1">
-                                <span class="monk-iconfont icon-backend-file action-icon"></span><label>基本设置</label>
+                            <div data-url="@Url.Action("Console","Default")" target="backend-iframe" class="backend-menu-action" data-actionid="2ac">
+                                <span class="monk-iconfont icon-backend-folder-close action-icon"></span><label>日志管理</label>
+                                <span class="monk-iconfont icon-arrow icon-monk-arrowdown float-right"></span>
                             </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="backend-menu-item display-none" data-moduleid="13">
-                <h2 class="backend-menu-title">商城管理</h2>
-                <div class="backe-menu-list">
-                    <ul>
-                        <li>
-                            <div data-url="http://www.baisoft.org/public/monkui/" target="backend-iframe" class="backend-menu-action" data-actionid="sc1">
-                                <span class="monk-iconfont icon-backend-file action-icon"></span><label>基本设置</label>
-                            </div>
+                            <ul>
+                                <li>
+                                    <div data-url="@Url.Action("Console","Default")" target="backend-iframe" class="backend-menu-action" data-actionid="3bc">
+                                        <span class="space"></span><span class="monk-iconfont icon-backend-file action-icon"></span><label>登录日志</label>
+                                    </div>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -286,6 +298,12 @@
             <label>跳蚤市场</label>
         </a>
     </div>
+    <div class="backend-module-item" data-moduleid="13">
+        <a title="">
+            <span class="monk-iconfont icon-backend-shangcheng"></span>
+            <label>商城管理</label>
+        </a>
+    </div>
     <div class="backend-module-item" data-moduleid="11">
         <a title="">
             <span class="monk-iconfont icon-backend-zhanzhanggongju"></span>
@@ -296,12 +314,6 @@
         <a title="">
             <span class="monk-iconfont icon-backend-shuju"></span>
             <label>数据维护</label>
-        </a>
-    </div>
-    <div class="backend-module-item" data-moduleid="13">
-        <a title="">
-            <span class="monk-iconfont icon-backend-shangcheng"></span>
-            <label>商城管理</label>
         </a>
     </div>
     <div class="backend-module-item" data-moduleid="14">
