@@ -108,4 +108,7 @@ body { font-family: 'Microsoft YaHei','微软雅黑',SimSun,Arial; font-size: 13
 .monk-table table tr:nth-child(2n) { background: #fdfdfd; }
 .monk-table table tbody tr:hover, .monk-table table tfoot tr:hover { background: #fafafa; }
 .monk-table table td.monk-td-radio { background: #f8f8f8; width: 80px; text-align: center; color: #999; }
+.monk-table table td.monk-td-radio span.monk-iconfont { font-size: 17px; }
 .monk-table table tbody tr:hover td.monk-td-radio, .monk-table table tfoot tr:hover td.monk-td-radio { background: #f6f6f6; }
+/*分页*/
+#page { padding: 12px 0 0 0; }
