@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using Monk.Filters;
+using Monk.Injections;
 using Monk.Areas.Backend.Injections;
 
 namespace Monk
@@ -12,6 +13,7 @@ namespace Monk
             filters.Add(new SysSetInfoInjectionAttribute());
             filters.Add(new MemberInfoInjectionAttribute());
             filters.Add(new AccessVerifyAttribute());
+            filters.Add(new RESTfulAuthorizeAttribute());
         }
     }
 }

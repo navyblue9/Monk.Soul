@@ -178,7 +178,7 @@
             // 重置按钮
             clearBtn: "#clearUpload",
             data: {},
-            headers: {},
+            headers: { "SecretKey": "d86c2c08c8c2247ec59c4ddeaaf4598a" },
             fileQueued: function (file) {
             },
             fileDequeued: function (file) {
@@ -214,7 +214,7 @@
         // 当有文件添加进来的时候
         uploader.on('fileQueued', function (file) {
             state = "pending";
-            if (uploader.getStats().queueNum>0) {
+            if (uploader.getStats().queueNum > 0) {
                 uploader.removeFile($input.attr("data-fileId"));
             }
             $input.val("等待上传：" + file.name).attr("data-fileId", file.id);
@@ -258,6 +258,11 @@
         // 上传成功
         uploader.on('uploadSuccess', function (file, response) {
             if (response.status == "n") {
+                $input.val("上传失败：" + file.name).attr("data-fileId", file.id);
+                that.errorTip(response.info);
+            }
+            else if (response.status == "not_allow") {
+                $input.val("上传失败：" + file.name).attr("data-fileId", file.id);
                 that.errorTip(response.info);
             }
             else if (response.status == "y") {

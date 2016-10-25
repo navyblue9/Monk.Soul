@@ -8,7 +8,7 @@ using Monk.DbStore;
 using Monk.Models;
 using Monk.ViewModels;
 using Monk.Utils;
-using SyntacticSugar;
+using Monk.Injections;
 
 namespace Monk.Areas.Services.Controllers
 {
@@ -17,6 +17,7 @@ namespace Monk.Areas.Services.Controllers
         public SysSetController(DbServices services) : base(services) { }
 
         [HttpGet]
+        [ExemptionInjection]
         public JsonResult Detail(Guid? setID)
         {
             var clientResult = new JsonData<SysSetViewModel>() { };
@@ -59,9 +60,7 @@ namespace Monk.Areas.Services.Controllers
                     UpdateTime = DateTime.Now
                 }, u => u.SetID == model.SetID);
 
-                var cm = CacheManager<SysSetViewModel>.GetInstance();
-                cm.Remove(Keys.SysSetCacheKey);
-
+                HttpRuntimeCacheHelper.Remove(Keys.SysSetCacheKey);
                 clientResult.SetClientData("y", "操作成功");
             });
 

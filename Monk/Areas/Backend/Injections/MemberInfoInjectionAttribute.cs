@@ -16,13 +16,13 @@ namespace Monk.Areas.Backend.Injections
                 if (result is ViewResult)
                 {
                     var vresult = result as ViewResult;
-                    vresult.ViewData["MemberInfo"] = memberInfo;
+                    vresult.ViewData[Keys.MemberInfoInjectionKey] = memberInfo;
                     filterContext.Result = vresult;
                 }
                 else if (result is PartialViewResult)
                 {
                     var presult = result as PartialViewResult;
-                    presult.ViewData["MemberInfo"] = memberInfo;
+                    presult.ViewData[Keys.MemberInfoInjectionKey] = memberInfo;
                     filterContext.Result = presult;
                 }
             }

@@ -5,12 +5,10 @@ using System.Web.Mvc;
 using AutoMapper;
 using AutoMapper.Configuration;
 using SqlSugar;
-using SyntacticSugar;
 using Monk.DbStore;
 using Monk.Models;
 using Monk.ViewModels;
 using Monk.Utils;
-using Monk.Filters;
 
 namespace Monk.Areas.Services.Controllers
 {
@@ -19,12 +17,10 @@ namespace Monk.Areas.Services.Controllers
         public MemberController(DbServices services) : base(services) { }
 
         [HttpPost]
-        [Anonymous]
         public JsonResult Signin(string account, string password)
         {
             var clientResult = new JsonData<MemberViewModel>() { };
-            var encrypt = new EncryptSugar();
-            var passwordMD5 = encrypt.MD5(password).ToLower();
+            var passwordMD5 = password.ToMD5().ToLower();
             Expression<Func<Member, bool>> expression = u => u.Account == account && u.Password == passwordMD5;
             var logid = Guid.NewGuid();
 
@@ -38,7 +34,7 @@ namespace Monk.Areas.Services.Controllers
                     Password = StringHelper.EncryptPassword(password),
                     InTime = DateTime.Now,
                     Sucessed = false,
-                    IPAddress = RequestInfo.UserAddress,
+                    IPAddress = RequestHelper.UserAddress,
                     HttpMethod = Request.HttpMethod,
                     AjaxRequest = Request.IsAjaxRequest(),
                     MobileDevice = Request.Browser.IsMobileDevice,

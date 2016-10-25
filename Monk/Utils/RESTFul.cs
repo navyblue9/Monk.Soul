@@ -1,6 +1,5 @@
 ﻿using System.Web;
 using RestSharp;
-using SyntacticSugar;
 
 namespace Monk.Utils
 {
@@ -10,33 +9,24 @@ namespace Monk.Utils
 
         public RESTFul() { }
 
-        public RESTFul(string baseUrl, string http = "")
-        {
-            var _baseUrl = http + baseUrl;
-            if (!_baseUrl.ToLower().StartsWith("http://") || !_baseUrl.ToLower().StartsWith("https://")) _baseUrl = "http://" + _baseUrl;
-            this.BaseUrl = _baseUrl;
-        }
-
-        readonly string _accountId;
         readonly string _secretKey;
 
-        public RESTFul(string baseUrl, string accountId, string secretKey, string http = "") : this(baseUrl, http)
+        public RESTFul(string secretKey)
         {
-            _accountId = accountId;
+            this.BaseUrl = RequestHelper.Host;
             _secretKey = secretKey;
         }
 
-        public static string GetSecretKey(string accountId, string access_token)
+        public static string GetSecretKey(string access_token)
         {
-            var encrypt = new EncryptSugar();
-            var _tokenKey = encrypt.MD5(accountId.ToUpper() + "_" + access_token + "_Monk.Soul");
+            var _tokenKey = (access_token + "_Monk.Soul").ToMD5();
             var _secretKey = string.Empty;
             for (int i = 0; i < _tokenKey.Length; i++)
             {
                 if (i % 2 == 0) _secretKey += _tokenKey[i].ToString().ToUpper();
                 else _secretKey += _tokenKey[i].ToString().ToLower();
             }
-            return encrypt.MD5(_secretKey);
+            return _secretKey.ToMD5();
         }
 
         public T Get<T>(string resource, object parameter = null) where T : new()
@@ -69,9 +59,8 @@ namespace Monk.Utils
         public string Execute(RestRequest request)
         {
             var client = new RestClient(this.BaseUrl);
-            if (_accountId != null && _secretKey != null)
+            if (_secretKey != null)
             {
-                request.AddHeader("AccountId", _accountId);
                 request.AddHeader("SecretKey", _secretKey);
             }
             var response = client.Execute(request);
@@ -87,9 +76,8 @@ namespace Monk.Utils
         public T Execute<T>(RestRequest request) where T : new()
         {
             var client = new RestClient(this.BaseUrl);
-            if (_accountId != null && _secretKey != null)
+            if (_secretKey != null)
             {
-                request.AddHeader("AccountId", _accountId);
                 request.AddHeader("SecretKey", _secretKey);
             }
             var response = client.Execute<T>(request);

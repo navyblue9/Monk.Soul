@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Web.Mvc;
-using SyntacticSugar;
 using AutoMapper;
 using AutoMapper.Configuration;
 using Monk.ViewModels;
@@ -13,6 +12,8 @@ namespace Monk.Areas.Backend.Controllers
 {
     public class DefaultController : Controller
     {
+        SessionMember sessionModel = SessionHelper.GetSessionInstance<SessionMember>(Keys.SessionKey);
+
         [HttpGet]
         [Anonymous]
         public ActionResult Signin()
@@ -28,7 +29,7 @@ namespace Monk.Areas.Backend.Controllers
         [Anonymous]
         public JsonResult Signin(SigninModel viewModel)
         {
-            var restful = new RESTFul(RequestInfo.Domain);
+            var restful = new RESTFul(RESTFul.GetSecretKey(Keys.Access_Token));
             var clientResult = restful.Post<JsonData<MemberViewModel>>(Url.Action("Signin", "Member", new { area = "Services" }), new
             {
                 account = viewModel.Account.Trim(),
@@ -69,8 +70,7 @@ namespace Monk.Areas.Backend.Controllers
         [HttpPost]
         public JsonResult Signout()
         {
-            var sessionModel = SessionHelper.GetSessionInstance<SessionMember>(Keys.SessionKey);
-            var restful = new RESTFul(RequestInfo.Domain, sessionModel.MemberID.ToString(), RESTFul.GetSecretKey(sessionModel.MemberID.ToString(), Keys.Access_Token));
+            var restful = new RESTFul(RESTFul.GetSecretKey(Keys.Access_Token));
             var clientResult = restful.Post<JsonData<object>>(Url.Action("Signout", "Member", new { area = "Services" }), new
             {
                 logid = sessionModel.LogID

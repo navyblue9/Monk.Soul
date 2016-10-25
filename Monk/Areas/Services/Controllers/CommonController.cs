@@ -1,22 +1,20 @@
 ﻿using System.Web.Mvc;
 using System.IO;
-using Monk.Filters;
 using Monk.Utils;
 using Monk.ViewModels;
 using System;
 
 namespace Monk.Areas.Services.Controllers
 {
-    [Anonymous]
     public class CommonController : Controller
     {
         [HttpPost]
         public JsonResult UploadImage()
         {
             var clientResult = new JsonData<object>() { };
-            var setVewModel = RouteData.DataTokens["SysSetInfo"] as SysSetViewModel;
+            var setVewModel = RouteData.DataTokens[Keys.SysSetInfoInjectionKey] as SysSetViewModel;
 
-            if (setVewModel == null) clientResult.SetClientData("n", "非法上传");
+            if (setVewModel == null) clientResult.SetClientData("n", "非法操作");
             else
             {
                 var area = Request.Form["area"];

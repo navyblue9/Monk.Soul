@@ -75,6 +75,10 @@ namespace Monk
             bundles.Add(new ScriptBundle("~/Assets/Backend/WebUploader/Script").Include(
                 "~/Areas/Backend/Assets/Vendors/webuploader-v0.1.6/dist/webuploader.min.js"
             ));
+            // MD5
+            bundles.Add(new ScriptBundle("~/Assets/Backend/MD5/Script").Include(
+               "~/Areas/Backend/Assets/Vendors/md5-v2.4.0/md5.min.js"
+            ));
         }
     }
 }
