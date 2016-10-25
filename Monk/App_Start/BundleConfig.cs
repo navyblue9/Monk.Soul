@@ -57,13 +57,6 @@ namespace Monk
             bundles.Add(new ScriptBundle("~/Assets/Backend/Pace/Script").Include(
                 "~/Areas/Backend/Assets/Vendors/pace-v1.0.2/pace.min.js"
             ));
-            // Pagination
-            bundles.Add(new StyleBundle("~/Assets/Backend/Pagination/Style").Include(
-                "~/Areas/Backend/Assets/Vendors/pagination-v2.0.7/pagination.css"
-            ));
-            bundles.Add(new ScriptBundle("~/Assets/Backend/Pagination/Script").Include(
-                "~/Areas/Backend/Assets/Vendors/pagination-v2.0.7/pagination.min.js"
-            ));
             // Nicescroll
             bundles.Add(new ScriptBundle("~/Assets/Backend/Nicescroll/Script").Include(
                "~/Areas/Backend/Assets/Vendors/nicescroll-v3.6.8/nicescroll.min.js"

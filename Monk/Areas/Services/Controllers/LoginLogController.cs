@@ -20,24 +20,6 @@ namespace Monk.Areas.Services.Controllers
         public JsonResult Total(int? pageSize, int? pageNumber = 0, string whereString = "", object whereObj = null)
         {
             var clientResult = new JsonData<int>() { };
-            var setVewModel = RouteData.DataTokens[Keys.SysSetInfoInjectionKey] as SysSetViewModel;
-            if (setVewModel == null) clientResult.SetClientData("n", "非法操作");
-            else
-            {
-                pageSize = pageSize == null ? setVewModel.PageSize : pageSize;
-
-                services.Command((db) =>
-                {
-                    var query = db.Queryable<LoginLog>().Where(c => true).Where(whereString, whereObj);
-                    var total = query.Count();
-
-                    clientResult.SetClientData("y", "获取成功", total, new
-                    {
-                        pageSize,
-                        pageNumber
-                    });
-                });
-            }
             return Json(clientResult, JsonRequestBehavior.AllowGet);
         }
 
