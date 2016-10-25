@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
-using AutoMapper;
-using AutoMapper.Configuration;
-using SqlSugar;
-using Monk.DbStore;
-using Monk.Models;
 using Monk.ViewModels;
 using Monk.Utils;
 using System.Collections.Generic;
-using Monk.Areas.Backend.ViewModels;
 
 namespace Monk.Areas.Backend.Controllers
 {
@@ -19,6 +13,18 @@ namespace Monk.Areas.Backend.Controllers
         public ActionResult Select()
         {
             return View();
+        }
+
+        [HttpGet]
+        public JsonResult List(int pageSize, int pageIndex = 0)
+        {
+            var restful = new RESTFul(RESTFul.GetSecretKey(Keys.Access_Token));
+            var clientResult = restful.Get<JsonData<List<LoginLogViewModel>>>(Url.Action("Select", "LoginLog", new { area = "Services" }), new
+            {
+                pageSize,
+                pageIndex
+            });
+            return Json(clientResult, JsonRequestBehavior.AllowGet);
         }
     }
 }

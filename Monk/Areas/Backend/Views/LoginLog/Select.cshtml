@@ -269,7 +269,8 @@
 @section foot{
     <script type="text/javascript">
         $(function () {
-            backend.pagination();
+            backend.pagination("@Url.Action("List","LoginLog")",@ViewBag.SysSetInfo.PageSize,{},function(data){
+            });
         });
     </script>
 }

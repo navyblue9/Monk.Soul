@@ -357,6 +357,7 @@
     };
     // 分页
     exports.pagination = function (url, pageSize, params, success, selector, options) {
+        var that = this;
         selector = selector ? selector : "#page";
         options = options || {};
         params = params || {};
@@ -377,14 +378,35 @@
                 params: params,
                 success: function (data) {
                     if (typeof success == "function") {
-                        success(data);
+                        if (data.status == "y") {
+                            success(data);
+                        }
                     }
                 },
-                beforeSend: function (xhr) { },
-                complete: function (xhr, status) {
-
+                beforeSend: function (xhr) {
+                    that.loadTip("正在加载数据...");
                 },
-                totalName: 'data.others.total',
+                complete: function (xhr, status) {
+                    var result = eval("(" + xhr.responseText + ")");
+                    if (xhr.status == 404) {
+                        that.errorTip("远程地址没找到");
+                    }
+                    else if (xhr.status >= 500) {
+                        that.errorTip("应用程序异常");
+                    }
+                    else if (xhr.responseText.status == "n") {
+                        that.errorTip(xhr.responseText.info);
+                    }
+                    else if (xhr.responseText.status == "not_allow") {
+                        that.errorTip(xhr.responseText.info);
+                    }
+                    else if (result.status == "y") {
+                        that.successTip(result.info);
+                    }
+                    else {
+                    }
+                },
+                totalName: 'others.total',
                 traditional: true
             }
         };
