@@ -35,7 +35,7 @@ namespace Monk.Areas.Services.Controllers
                 {
                     LogID = logid,
                     Account = account,
-                    Password = password,
+                    Password = StringHelper.EncryptPassword(password),
                     InTime = DateTime.Now,
                     Sucessed = false,
                     IPAddress = RequestInfo.UserAddress,

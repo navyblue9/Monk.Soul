@@ -367,6 +367,7 @@
     <Compile Include="Utils\RazorExtention.cs" />
     <Compile Include="Utils\RESTFul.cs" />
     <Compile Include="Utils\SessionHelper.cs" />
+    <Compile Include="Utils\StringHelper.cs" />
     <Compile Include="ViewModels\ButtonViewModel.cs" />
     <Compile Include="ViewModels\DicDataViewModel.cs" />
     <Compile Include="ViewModels\DicTypeViewModel.cs" />
