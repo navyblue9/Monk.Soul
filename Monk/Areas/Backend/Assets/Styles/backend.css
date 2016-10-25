@@ -30,7 +30,7 @@
 .icon-backend-zhandian:before { content: "\e615"; }
 .icon-backend-folder-open:before { content: "\e618"; }
 /*公共*/
-body { font-family: 'Microsoft YaHei','微软雅黑',SimSun,Arial; font-size: 13px; background: #fff; }
+body { font-family: 'Microsoft YaHei','微软雅黑',SimSun,Arial; font-size: 13px; background: #fff; -moz-user-select: none; -webkit-user-select: none; user-select: none; -ms-user-select: none; }
 .display-block { display: block; }
 .display-none { display: none; }
 .display-inline-block { display: inline-block; }
@@ -61,7 +61,6 @@ body { font-family: 'Microsoft YaHei','微软雅黑',SimSun,Arial; font-size: 13
 /*左边*/
 #backend-left { position: absolute; top: 0; left: 0; width: 200px; bottom: 0; border-right: 1px solid #e9e9e9; z-index: 1; }
 #backend-logo { height: 45px; border-bottom: 1px solid #e9e9e9; padding: 5px 0 0 10px; background: #f9f9f9; }
-#backend-logo a { -moz-user-select: none; -webkit-user-select: none; user-select: none; -ms-user-select: none; }
 #backend-logo img { height: 35px; pointer-events: none; }
 #backend-left-menu { position: absolute; left: 0; top: 45px; overflow: hidden; bottom: 0; right: 0; z-index: 1; }
 .backend-menu-item.display-none { display: none; }
@@ -82,7 +81,7 @@ body { font-family: 'Microsoft YaHei','微软雅黑',SimSun,Arial; font-size: 13
 /*模块菜单*/
 #backend-module { position: absolute; left: -100px; top: 0; bottom: 0; width: 100px; z-index: 10; border-right: 1px solid #e9e9e9; overflow: hidden; background: #f9f9f9; }
 .backend-module-item { text-align: center; height: 85px; display: table; width: 100%; padding: 0 15px; }
-.backend-module-item a { display: table-cell; vertical-align: middle; border-bottom: 1px solid #f1f1f1; cursor: pointer; -moz-user-select: none; -webkit-user-select: none; user-select: none; -ms-user-select: none; text-decoration: none; color: #9e9e9e; }
+.backend-module-item a { display: table-cell; vertical-align: middle; border-bottom: 1px solid #f1f1f1; cursor: pointer; text-decoration: none; color: #9e9e9e; }
 .backend-module-item span { font-size: 30px; pointer-events: none; }
 .backend-module-item label { display: block; font-size: 12px; pointer-events: none; padding: 5px 0 0 0; color: #666; }
 .backend-module-item a.selected span, .backend-module-item a.selected label { color: #3498db; }
