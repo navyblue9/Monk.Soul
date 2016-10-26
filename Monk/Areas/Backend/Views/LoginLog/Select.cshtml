@@ -114,7 +114,7 @@
             }
             else{
                 backend.confirm("您确定要执行此操作吗？",null,function(index){
-                    backend.post("@Url.Action("Delete","LoginLog",new { })",{ids:ids},function(data){
+                    backend.post("@Url.Action("Delete","LoginLog",new { })",{ids:ids.toString()},function(data){
                         $("#page").pagination('remote');
                     });
                 });

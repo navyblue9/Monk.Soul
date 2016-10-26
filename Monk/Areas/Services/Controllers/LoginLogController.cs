@@ -8,7 +8,6 @@ using Monk.Models;
 using Monk.ViewModels;
 using Monk.Utils;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 namespace Monk.Areas.Services.Controllers
 {
@@ -61,27 +60,27 @@ namespace Monk.Areas.Services.Controllers
         [HttpPost]
         public JsonResult Delete(string ids)
         {
-            var list = JsonConvert.DeserializeObject<List<Guid>>(ids);
+            var list = ids.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(u => Guid.Parse(u));
             var clientResult = new JsonData<object>() { };
             services.Command((db) =>
-            {
-                db.BeginTran();
-                try
                 {
-                    db.FalseDelete<LoginLog>("Del", u => list.Contains(u.LogID));
-                    db.CommitTran();
-                    clientResult.SetClientData("y", "操作成功");
-                }
-                catch (Exception ex)
-                {
-                    db.RollbackTran();
-                    clientResult.SetClientData("n", "操作失败", null, new
+                    db.BeginTran();
+                    try
                     {
-                        ex.Message,
-                        ex.Source
-                    });
-                }
-            });
+                        db.FalseDelete<LoginLog>("Del", u => list.Contains(u.LogID));
+                        db.CommitTran();
+                        clientResult.SetClientData("y", "操作成功");
+                    }
+                    catch (Exception ex)
+                    {
+                        db.RollbackTran();
+                        clientResult.SetClientData("n", "操作失败", null, new
+                        {
+                            ex.Message,
+                            ex.Source
+                        });
+                    }
+                });
             return Json(clientResult);
         }
     }

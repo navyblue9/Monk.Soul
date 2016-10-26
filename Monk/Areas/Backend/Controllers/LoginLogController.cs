@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Linq;
 using System.Web.Mvc;
 using Monk.ViewModels;
 using Monk.Utils;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-
 
 namespace Monk.Areas.Backend.Controllers
 {
@@ -41,11 +38,11 @@ namespace Monk.Areas.Backend.Controllers
         }
 
         [HttpPost]
-        public JsonResult Delete(List<Guid> ids)
+        public JsonResult Delete(string ids)
         {
             var clientResult = restful.Post<JsonData<List<object>>>(Url.Action("Delete", "LoginLog", new { area = "Services" }), new
             {
-                ids = JsonConvert.SerializeObject(ids)
+                ids
             });
             return Json(clientResult);
         }
