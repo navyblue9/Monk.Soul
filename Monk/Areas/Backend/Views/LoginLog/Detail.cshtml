@@ -1,0 +1,91 @@
+﻿@model LoginLogViewModel
+@{
+    ViewBag.Title = "查看日志";
+    Layout = "~/Areas/Backend/Views/Shared/_Detail.cshtml";
+}
+
+@section crumbs{
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="数据管理">数据管理</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="日志管理">日志管理</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="查看日志">查看日志</a>
+}
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">登录账号</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.Account
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">登录密码</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.Password
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">登入时间</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.InTime
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">成功登入</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Html.Raw(DataToHtmlHelper.StatusHtml(Model.Sucessed))
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">退出时间</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.OffTime)
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">登录IP</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.IPAddress
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">IP详情</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.IPDetail)
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">请求方式</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.HttpMethod
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">异步请求</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Html.Raw(DataToHtmlHelper.StatusHtml(Model.AjaxRequest))
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">移动设备</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Html.Raw(DataToHtmlHelper.StatusHtml(Model.MobileDevice))
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">操作系统</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.Platform
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">浏览器类型</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.Browser
+    </div>
+</div>
+
+@section operate{
+    <a href="#" class="monk-input-button alizarin">删除记录</a>
+    <input type="button" class="monk-input-button orange monk-form-previous" value="返回前页" onclick="history.go(-1);">
+}

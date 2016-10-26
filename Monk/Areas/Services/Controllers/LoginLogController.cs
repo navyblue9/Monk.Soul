@@ -43,5 +43,22 @@ namespace Monk.Areas.Services.Controllers
             });
             return Json(clientResult, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpGet]
+        public JsonResult Detail(Guid? logId)
+        {
+            var clientResult = new JsonData<LoginLogViewModel>() { };
+            var model = new LoginLog();
+            services.Command((db) =>
+            {
+                model = db.Queryable<LoginLog>().InSingle(logId);
+            });
+
+            // 此地方需要重点优化，后期使用autofac统一注入
+            Mapper.Initialize(c => c.CreateMap<LoginLog, LoginLogViewModel>());
+
+            clientResult.SetClientData("y", "操作成功", Mapper.Map<LoginLogViewModel>(model));
+            return Json(clientResult, JsonRequestBehavior.AllowGet);
+        }
     }
 }

@@ -27,5 +27,15 @@ namespace Monk.Areas.Backend.Controllers
             });
             return Json(clientResult, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpGet]
+        public ActionResult Detail(Guid id)
+        {
+            if (id == null) return Content("非法参数");
+            var viewModel = new LoginLogViewModel();
+            var clientResult = restful.Get<JsonData<LoginLogViewModel>>(Url.Action("Detail", "LoginLog", new { area = "Services" }), new { logId = id });
+            if (clientResult.status == "y") viewModel = clientResult.data;
+            return View(viewModel);
+        }
     }
 }

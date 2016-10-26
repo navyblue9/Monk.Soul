@@ -199,6 +199,10 @@ input[type="number"] { -moz-appearance: textfield; }
 .monk-input-button.peterRiver:hover { background: #4aa3df; }
 .monk-input-button.amethyst { background: #9b59b6; color: #fff; }
 .monk-input-button.amethyst:hover { background: #a66bbe; }
+.monk-input-button.alizarin { background: #e74c3c; color: #fff; }
+.monk-input-button.alizarin:hover { background: #ea6153; }
+.monk-input-button.orange { background: #f39c12; color: #fff; }
+.monk-input-button.orange:hover { background: #f4a62a; }
 .monk-input-button.clouds { background: #ECF0F1; color: #bdc3c7; }
 .monk-input-button.clouds:hover { background: #f3f3f3; }
 .monk-input-button .monk-iconfont { padding-right: 4px; font-size: 16px; float: left; display: block; }

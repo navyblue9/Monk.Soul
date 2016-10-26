@@ -21,20 +21,17 @@ namespace Monk.Areas.Services.Controllers
         public JsonResult Detail(Guid? setID)
         {
             var clientResult = new JsonData<SysSetViewModel>() { };
-            var sysSet = new SysSet();
+            var model = new SysSet();
             services.Command((db) =>
             {
-                if (setID != null) sysSet = db.Queryable<SysSet>().InSingle(setID);
-                else sysSet = db.Queryable<SysSet>().FirstOrDefault();
+                if (setID != null) model = db.Queryable<SysSet>().InSingle(setID);
+                else model = db.Queryable<SysSet>().FirstOrDefault();
             });
 
             // 此地方需要重点优化，后期使用autofac统一注入
-            var cfg = new MapperConfigurationExpression();
-            cfg.CreateMap<SysSet, SysSetViewModel>();
-            Mapper.Initialize(cfg);
-            var viewModel = Mapper.Map<SysSetViewModel>(sysSet);
+            Mapper.Initialize(c => c.CreateMap<SysSet, SysSetViewModel>());
 
-            clientResult.SetClientData("y", "操作成功", viewModel);
+            clientResult.SetClientData("y", "操作成功", Mapper.Map<SysSetViewModel>(model));
             return Json(clientResult, JsonRequestBehavior.AllowGet);
         }
 
