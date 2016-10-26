@@ -228,6 +228,28 @@
                                 <span class="monk-iconfont icon-backend-file action-icon"></span><label>系统设置</label>
                             </div>
                         </li>
+                        <li>
+                            <div data-url="#" target="backend-iframe" class="backend-menu-action" data-actionid="mkgl1">
+                                <span class="monk-iconfont icon-backend-folder-close action-icon"></span><label>模块管理</label>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div data-url="@Url.Action("Select","Module")" target="backend-iframe" class="backend-menu-action" data-actionid="mk24">
+                                        <span class="space"></span><span class="monk-iconfont icon-backend-file action-icon"></span><label>系统栏目</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div data-url="@Url.Action("Select","Havior")" target="backend-iframe" class="backend-menu-action" data-actionid="mk14">
+                                        <span class="space"></span><span class="monk-iconfont icon-backend-file action-icon"></span><label>功能列表</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div data-url="@Url.Action("Select","Button")" target="backend-iframe" class="backend-menu-action" data-actionid="mk12">
+                                        <span class="space"></span><span class="monk-iconfont icon-backend-file action-icon"></span><label>功能按钮</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
