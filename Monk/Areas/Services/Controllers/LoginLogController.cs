@@ -17,7 +17,7 @@ namespace Monk.Areas.Services.Controllers
         public LoginLogController(DbServices services) : base(services) { }
 
         [HttpGet]
-        public JsonResult Select(int? pageSize, int? pageIndex = 0, string whereString = "", Dictionary<string, object> whereObj = null)
+        public JsonResult Select(int? pageSize, int? pageIndex = 0)
         {
             var clientResult = new JsonData<List<LoginLogViewModel>>() { };
             var setVewModel = RouteData.DataTokens[Keys.SysSetInfoInjectionKey] as SysSetViewModel;
@@ -25,10 +25,6 @@ namespace Monk.Areas.Services.Controllers
             services.Command((db) =>
             {
                 var query = db.Queryable<LoginLog>().Where(c => true);
-                if (!string.IsNullOrEmpty(whereString) && whereObj != null)
-                {
-                    query = query.Where(whereString, whereString);
-                }
                 var total = query.Count();
                 var list = query.OrderBy(u => u.InTime, OrderByType.desc).ToPageList(Convert.ToInt32(pageIndex + 1), Convert.ToInt32(pageSize));
 
