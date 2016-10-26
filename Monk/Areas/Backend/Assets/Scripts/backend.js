@@ -84,6 +84,7 @@
         var _layer = parent.layer ? parent.layer : layer;
         return _layer.confirm(msg, config, yes, cancel);
     };
+    // post提交
     exports.post = function (url, data, callback, dataType) {
         var that = this;
         that.loadTip("正在执行相关操作...");
@@ -99,6 +100,25 @@
             }
         }, dataType);
         that.ajaxError();
+    };
+    // 打开搜索
+    exports.openSearch = function () {
+        var speed = 200;
+        var $search = $(".backend-searchs");
+        var width = $search.outerWidth(true);
+        var right = Number($search.css("right").replace("px", ""));
+        if (!$search.is(":animated")) {
+            if (right < 0) {
+                $(".backend-searchs").animate({
+                    right: 0
+                }, speed, function () { });
+            }
+            else {
+                $(".backend-searchs").animate({
+                    right: -width
+                }, speed, function () { });
+            }
+        }
     };
     // 表单验证
     exports.validform = function (success, beforeSubmit, options) {

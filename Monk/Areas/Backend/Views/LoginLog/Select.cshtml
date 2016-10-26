@@ -16,9 +16,41 @@
 
 @section buttons{
     <span class="list-btn" onclick="backend.checkall(this);"><i class="monk-iconfont icon-backend-quanxuan"></i><label>全选</label></span>
-    <span class="list-btn" onclick="detail();"><i class="monk-iconfont icon-backend-details"></i><label>查看</label></span>
-    <span class="list-btn" onclick="deletes();"><i class="monk-iconfont icon-backend-delete"></i><label>删除</label></span>
-    <span class="list-btn float-right"><i class="monk-iconfont icon-backend-search-list"></i><label>搜索</label></span>
+    <span class="list-btn" onclick="detail(this);"><i class="monk-iconfont icon-backend-details"></i><label>查看</label></span>
+    <span class="list-btn" onclick="deletes(this);"><i class="monk-iconfont icon-backend-delete"></i><label>删除</label></span>
+    <span class="list-btn float-right" onclick="backend.openSearch()"><i class="monk-iconfont icon-backend-search-list"></i><label>搜索</label></span>
+}
+
+@section searchs{
+    <form onsubmit="return false;">
+        <div class="monk-form-item">
+            <label for="" class="monk-form-label">登录账号</label>
+            <div class="monk-form-wrap">
+                <span class="monk-iconfont border-right icon-monk-input"></span>
+                <input type="text" class="monk-form-input large" placeholder="登录账号" />
+                <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
+            </div>
+            <div class="monk-form-tip">支持登录账号模糊搜索</div>
+        </div>
+        <div class="monk-form-item">
+            <label for="" class="monk-form-label">登录状态</label>
+            <div class="monk-form-wrap monk-form-select-wrap">
+                <span class="monk-iconfont border-right icon-monk-input"></span>
+                <input type="text" class="monk-form-input middle" placeholder="请选择..." />
+                <span class="monk-iconfont monk-select-arrow icon-monk-arrowdown border-left"></span>
+            </div>
+            <div class="monk-form-select monk-none">
+                <select class="monk-select">
+                    <option value="" selected="selected">请选择...</option>
+                    <option value="1">成功</option>
+                    <option value="0">失败</option>
+                </select>
+            </div>
+            <div class="monk-form-tip">查询账号登录情况</div>
+        </div>
+        <input type="submit" class="monk-input-button turquoise monk-form-submit" style="margin-top:0;" value="提交搜索" />
+        <input type="reset" class="monk-input-button amethyst" style="margin-top:0;" value="重置表单" />
+    </form>
 }
 
 <div class="monk-table">
