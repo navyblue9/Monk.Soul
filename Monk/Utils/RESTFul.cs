@@ -56,6 +56,11 @@ namespace Monk.Utils
             return Execute<T>(request);
         }
 
+        public RestRequest Request(string resource, Method method)
+        {
+            return new RestRequest(resource, method);
+        }
+
         public string Execute(RestRequest request)
         {
             var client = new RestClient(this.BaseUrl);

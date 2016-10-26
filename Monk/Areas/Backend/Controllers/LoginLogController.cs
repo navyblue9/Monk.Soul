@@ -4,6 +4,8 @@ using System.Web.Mvc;
 using Monk.ViewModels;
 using Monk.Utils;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+
 
 namespace Monk.Areas.Backend.Controllers
 {
@@ -36,6 +38,16 @@ namespace Monk.Areas.Backend.Controllers
             var clientResult = restful.Get<JsonData<LoginLogViewModel>>(Url.Action("Detail", "LoginLog", new { area = "Services" }), new { logId = id });
             if (clientResult.status == "y") viewModel = clientResult.data;
             return View(viewModel);
+        }
+
+        [HttpPost]
+        public JsonResult Delete(List<Guid> ids)
+        {
+            var clientResult = restful.Post<JsonData<List<object>>>(Url.Action("Delete", "LoginLog", new { area = "Services" }), new
+            {
+                ids = JsonConvert.SerializeObject(ids)
+            });
+            return Json(clientResult);
         }
     }
 }

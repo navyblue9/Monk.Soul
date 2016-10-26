@@ -77,7 +77,29 @@
         var _layer = parent.layer ? parent.layer : layer;
         return _layer.msg(msg, config, end);
     };
-
+    // 确认提示
+    exports.confirm = function (msg, options, yes, cancel) {
+        var defaults = { icon: 3, title: "确认询问", offset: 0 };
+        var config = $.extend(true, defaults, options);
+        var _layer = parent.layer ? parent.layer : layer;
+        return _layer.confirm(msg, config, yes, cancel);
+    };
+    exports.post = function (url, data, callback, dataType) {
+        var that = this;
+        that.loadTip("正在执行相关操作...");
+        $.post(url, data, function (data) {
+            if (data.status == "y") {
+                that.successTip(data.info);
+                if (typeof callback == "function") {
+                    callback(data);
+                }
+            }
+            else {
+                that.errorTip(data.info + data.others.Message);
+            }
+        }, dataType);
+        that.ajaxError();
+    };
     // 表单验证
     exports.validform = function (success, beforeSubmit, options) {
         var that = this;
@@ -155,6 +177,21 @@
         if (typeof end == "function") {
             end(data);
         }
+    };
+    exports.ajaxError = function (callback) {
+        $(document).ajaxComplete(function (event, xhr, options) {
+            if (xhr.status == 404) {
+                backend.errorTip("远程地址没找到");
+            }
+            else if (xhr.status >= 500) {
+                backend.errorTip("应用程序异常");
+            }
+            else {
+                if (typeof callback == "function") {
+                    callback(event, xhr, options);
+                }
+            }
+        });
     };
     // 美化滚动条
     exports.nicescroll = function (jqueryObj, options) {

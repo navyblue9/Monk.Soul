@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
-using AutoMapper.Configuration;
 using SqlSugar;
 using Monk.DbStore;
 using Monk.Models;

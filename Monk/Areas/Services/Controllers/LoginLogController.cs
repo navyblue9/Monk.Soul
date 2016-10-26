@@ -2,13 +2,13 @@
 using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
-using AutoMapper.Configuration;
 using SqlSugar;
 using Monk.DbStore;
 using Monk.Models;
 using Monk.ViewModels;
 using Monk.Utils;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Monk.Areas.Services.Controllers
 {
@@ -29,12 +29,9 @@ namespace Monk.Areas.Services.Controllers
                 var list = query.OrderBy(u => u.InTime, OrderByType.desc).ToPageList(Convert.ToInt32(pageIndex + 1), Convert.ToInt32(pageSize));
 
                 // 此地方需要重点优化，后期使用autofac统一注入
-                var cfg = new MapperConfigurationExpression();
-                cfg.CreateMap<LoginLog, LoginLogViewModel>();
-                Mapper.Initialize(cfg);
+                Mapper.Initialize(c => c.CreateMap<LoginLog, LoginLogViewModel>());
 
-                var viewModels = Mapper.Map<List<LoginLogViewModel>>(list);
-                clientResult.SetClientData("y", "获取成功", viewModels, new
+                clientResult.SetClientData("y", "获取成功", Mapper.Map<List<LoginLogViewModel>>(list), new
                 {
                     pageSize,
                     pageIndex = Convert.ToInt32(pageIndex + 1),
@@ -59,6 +56,33 @@ namespace Monk.Areas.Services.Controllers
 
             clientResult.SetClientData("y", "操作成功", Mapper.Map<LoginLogViewModel>(model));
             return Json(clientResult, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult Delete(string ids)
+        {
+            var list = JsonConvert.DeserializeObject<List<Guid>>(ids);
+            var clientResult = new JsonData<object>() { };
+            services.Command((db) =>
+            {
+                db.BeginTran();
+                try
+                {
+                    db.FalseDelete<LoginLog>("Del", u => list.Contains(u.LogID));
+                    db.CommitTran();
+                    clientResult.SetClientData("y", "操作成功");
+                }
+                catch (Exception ex)
+                {
+                    db.RollbackTran();
+                    clientResult.SetClientData("n", "操作失败", null, new
+                    {
+                        ex.Message,
+                        ex.Source
+                    });
+                }
+            });
+            return Json(clientResult);
         }
     }
 }

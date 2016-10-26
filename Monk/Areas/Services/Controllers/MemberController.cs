@@ -3,7 +3,6 @@ using System.Linq.Expressions;
 using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
-using AutoMapper.Configuration;
 using SqlSugar;
 using Monk.DbStore;
 using Monk.Models;
@@ -67,12 +66,9 @@ namespace Monk.Areas.Services.Controllers
                             }, u => u.LogID == logid);
 
                             // 此地方需要重点优化，后期使用autofac统一注入
-                            var cfg = new MapperConfigurationExpression();
-                            cfg.CreateMap<Member, MemberViewModel>();
-                            Mapper.Initialize(cfg);
-                            var viewModel = Mapper.Map<MemberViewModel>(member);
+                            Mapper.Initialize(c => c.CreateMap<Member, MemberViewModel>());
 
-                            clientResult.SetClientData("y", "登录成功", viewModel, logid);
+                            clientResult.SetClientData("y", "登录成功", Mapper.Map<MemberViewModel>(member), logid);
                         }
                     }
                 }

@@ -17,7 +17,7 @@
 @section buttons{
     <span class="list-btn" onclick="backend.checkall(this);"><i class="monk-iconfont icon-backend-quanxuan"></i><label>全选</label></span>
     <span class="list-btn" onclick="detail();"><i class="monk-iconfont icon-backend-details"></i><label>查看</label></span>
-    <span class="list-btn"><i class="monk-iconfont icon-backend-delete"></i><label>删除</label></span>
+    <span class="list-btn" onclick="deletes();"><i class="monk-iconfont icon-backend-delete"></i><label>删除</label></span>
     <span class="list-btn float-right"><i class="monk-iconfont icon-backend-search-list"></i><label>搜索</label></span>
 }
 
@@ -72,7 +72,20 @@
                 window.location.href="@Url.Action("Detail","LoginLog",new { })/"+ids[0];
             }
             else{
-                backend.Tip("至多至少必须选择一条进行操作");
+                backend.Tip("只能选择一条数据进行操作");
+            }
+        }
+        function deletes(){
+            var ids=backend.getCheckIds();
+            if(ids.length<1){
+                backend.Tip("至少选择一条进行操作");
+            }
+            else{
+                backend.confirm("您确定要执行此操作吗？",null,function(index){
+                    backend.post("@Url.Action("Delete","LoginLog",new { })",{ids:ids},function(data){
+                        $("#page").pagination('remote');
+                    });
+                });
             }
         }
     </script>
