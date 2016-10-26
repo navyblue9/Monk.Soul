@@ -93,8 +93,8 @@ body { font-family: 'Microsoft YaHei','微软雅黑',SimSun,Arial; font-size: 13
 .backend-module-item a.selected span, .backend-module-item a.selected label { color: #3498db; }
 /*列表功能按钮*/
 .backend-buttons { height: 45px; border-bottom: 1px solid #e9e9e9; margin: 0 10px; line-height: 45px; }
-.list-btn { background: transparent; outline: none; white-space: nowrap; color: #666; display: block; float: left; cursor: pointer; font-size: 13px; margin: 0 10px 0 0; padding: 0 5px; }
-.list-btn.float-right { float: right; margin: 0 0 0 10px; }
+.list-btn { background: transparent; outline: none; white-space: nowrap; color: #666; display: block; float: left; cursor: pointer; font-size: 13px; margin: 0 8px 0 0; padding: 0 5px; }
+.list-btn.float-right { float: right; margin: 0 0 0 8px; }
 .list-btn i, .list-btn label { float: left; pointer-events: none; }
 .list-btn i { font-size: 15px; margin-right: 5px; color: #aaa; vertical-align: middle; }
 .list-btn:hover label { color: #000; text-decoration: underline; }
