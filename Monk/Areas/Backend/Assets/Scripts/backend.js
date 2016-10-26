@@ -454,4 +454,31 @@
             }
         });
     }();
+    exports.checkall = function (e) {
+        if ($.trim($(e).text()) == "全选") {
+            $(".monk-table .monk-td-radio .list-radio").addClass("checked");
+            $(e).children("label").text("反选");
+        }
+        else {
+            $(".monk-table .monk-td-radio .list-radio").each(function () {
+                if ($(this).hasClass("checked")) {
+                    $(this).removeClass("checked");
+                }
+                else {
+                    $(this).addClass("checked");
+                }
+            });
+            $(e).children("label").text("全选");
+        }
+    };
+    exports.getCheckIds = function () {
+        var ids = [];
+        $(".monk-table .monk-td-radio .list-radio.checked").each(function (e) {
+            var id = $(this).attr("data-id");
+            if (id) {
+                ids.push(id);
+            }
+        });
+        return ids;
+    };
 });

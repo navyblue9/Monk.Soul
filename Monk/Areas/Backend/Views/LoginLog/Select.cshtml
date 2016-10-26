@@ -15,10 +15,8 @@
 }
 
 @section buttons{
-    <span class="list-btn" onclick="checkall(this);"><i class="monk-iconfont icon-backend-quanxuan"></i><label>全选</label></span>
-    <span class="list-btn"><i class="monk-iconfont icon-backend-insert"></i><label>新增</label></span>
-    <span class="list-btn"><i class="monk-iconfont icon-backend-details"></i><label>查看</label></span>
-    <span class="list-btn"><i class="monk-iconfont icon-backend-update"></i><label>编辑</label></span>
+    <span class="list-btn" onclick="backend.checkall(this);"><i class="monk-iconfont icon-backend-quanxuan"></i><label>全选</label></span>
+    <span class="list-btn" onclick="detail();"><i class="monk-iconfont icon-backend-details"></i><label>查看</label></span>
     <span class="list-btn"><i class="monk-iconfont icon-backend-delete"></i><label>删除</label></span>
     <span class="list-btn float-right"><i class="monk-iconfont icon-backend-search-list"></i><label>搜索</label></span>
 }
@@ -68,21 +66,13 @@
 
 @section foot{
     <script type="text/javascript">
-        function checkall(e){
-            if($.trim($(e).text())=="全选"){
-                $(".monk-table .monk-td-radio .list-radio").addClass("checked");
-                $(e).children("label").text("反选");
+        function detail(){
+            var ids=backend.getCheckIds();
+            if(ids.length==1){
+                window.location.href="@Url.Action("Detail","LoginLog",new { })/"+ids[0];
             }
             else{
-                $(".monk-table .monk-td-radio .list-radio").each(function(){
-                    if($(this).hasClass("checked")){
-                        $(this).removeClass("checked");
-                    }
-                    else{
-                        $(this).addClass("checked");
-                    }
-                });
-                $(e).children("label").text("全选");
+                backend.Tip("至多至少必须选择一条进行操作");
             }
         }
     </script>
