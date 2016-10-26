@@ -441,4 +441,17 @@
         var config = $.extend(true, defaults, options);
         $(selector).pagination(config);
     };
+    // 绑定行点击
+    exports.rowClick = function () {
+        $(".monk-table table").on("click", "tr", function () {
+            var that = $(this);
+            var radio = that.children(".monk-td-radio").find(".list-radio");
+            if (radio.hasClass("checked")) {
+                radio.removeClass("checked");
+            }
+            else {
+                radio.addClass("checked");
+            }
+        });
+    }();
 });
