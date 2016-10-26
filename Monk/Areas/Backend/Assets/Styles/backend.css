@@ -93,9 +93,9 @@ body { font-family: 'Microsoft YaHei','微软雅黑',SimSun,Arial; font-size: 13
 .backend-module-item a.selected span, .backend-module-item a.selected label { color: #3498db; }
 /*列表功能按钮*/
 .backend-buttons { height: 50px; border-bottom: 1px solid #e9e9e9; margin: 0 10px; }
-.list-btn { background: #f9f9f9; border: 1px solid #e9e9e9; outline: none; white-space: nowrap; color: #444; padding: 0 8px; display: block; float: left; height: 33px; line-height: 33px; cursor: pointer; font-size: 13px; margin: 8px 8px 0 0; }
-.list-btn.float-right { float: right; margin: 8px 0 0 8px; }
-.list-btn i, .list-btn label { float: left; pointer-events: none; }
+.list-btn { background: #f9f9f9; border: 1px solid #e9e9e9; outline: none; white-space: nowrap; color: #444; padding: 0 8px; display: block; float: left; height: 32px; line-height: 32px; cursor: pointer; font-size: 13px; margin: 9px 9px 0 0; }
+.list-btn.float-right { float: right; margin: 9px 0 0 9px; }
+.list-btn i, .list-btn label { float: left; pointer-events: none; display: block; }
 .list-btn i { margin-right: 5px; color: #aaa; }
 .list-btn:hover:hover { background: #f4f4f4; }
 /*内容页*/
