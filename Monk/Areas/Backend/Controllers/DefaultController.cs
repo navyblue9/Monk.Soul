@@ -12,7 +12,7 @@ namespace Monk.Areas.Backend.Controllers
 {
     public class DefaultController : Controller
     {
-        SessionMember sessionModel = SessionHelper.GetSessionInstance<SessionMember>(Keys.SessionKey);
+        RESTFul restful = new RESTFul(RESTFul.GetSecretKey(Keys.Access_Token));
 
         [HttpGet]
         [Anonymous]
@@ -29,7 +29,6 @@ namespace Monk.Areas.Backend.Controllers
         [Anonymous]
         public JsonResult Signin(SigninModel viewModel)
         {
-            var restful = new RESTFul(RESTFul.GetSecretKey(Keys.Access_Token));
             var clientResult = restful.Post<JsonData<MemberViewModel>>(Url.Action("Signin", "Member", new { area = "Services" }), new
             {
                 account = viewModel.Account.Trim(),
@@ -70,7 +69,7 @@ namespace Monk.Areas.Backend.Controllers
         [HttpPost]
         public JsonResult Signout()
         {
-            var restful = new RESTFul(RESTFul.GetSecretKey(Keys.Access_Token));
+            var sessionModel = SessionHelper.GetSessionInstance<SessionMember>(Keys.SessionKey);
             var clientResult = restful.Post<JsonData<object>>(Url.Action("Signout", "Member", new { area = "Services" }), new
             {
                 logid = sessionModel.LogID

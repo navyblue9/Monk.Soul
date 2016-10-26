@@ -11,11 +11,12 @@ namespace Monk.Areas.Backend.Controllers
 {
     public class SysSetController : Controller
     {
+        RESTFul restful = new RESTFul(RESTFul.GetSecretKey(Keys.Access_Token));
+
         [HttpGet]
         public ActionResult Detail()
         {
             var viewModel = new SysSetViewModel();
-            var restful = new RESTFul(RESTFul.GetSecretKey(Keys.Access_Token));
             var clientResult = restful.Get<JsonData<SysSetViewModel>>(Url.Action("Detail", "SysSet", new { area = "Services" }));
             if (clientResult.status == "y") viewModel = clientResult.data;
             return View(viewModel);
@@ -26,7 +27,6 @@ namespace Monk.Areas.Backend.Controllers
         {
             if (id == null) return Content("非法参数");
             var viewModel = new SysSetViewModel();
-            var restful = new RESTFul(RESTFul.GetSecretKey(Keys.Access_Token));
             var clientResult = restful.Get<JsonData<SysSetViewModel>>(Url.Action("Detail", "SysSet", new { area = "Services" }), new { setID = id });
             if (clientResult.status == "y") viewModel = clientResult.data;
             return View(viewModel);
@@ -35,7 +35,6 @@ namespace Monk.Areas.Backend.Controllers
         [HttpPost]
         public JsonResult Update(SysSetViewModel viewModel)
         {
-            var restful = new RESTFul(RESTFul.GetSecretKey(Keys.Access_Token));
             var clientResult = restful.Post<JsonData<object>>(Url.Action("Update", "SysSet", new { area = "Services" }), viewModel);
             return Json(clientResult);
         }
