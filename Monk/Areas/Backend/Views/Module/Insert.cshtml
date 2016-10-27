@@ -113,7 +113,7 @@
         {
             @class = "monk-form-input normal",
             placeholder = "字体图标",
-            datatype = "s1-50",
+            datatype = "*1-50",
             ignore = "ignore",
             errormsg = "字体图标由1-50位英文字母、数字或符号组成",
             nullmsg = "请输入字体图标"
@@ -148,6 +148,12 @@
     <script type="text/javascript">
         $(function () {
             backend.validform(function (data) {
+                backend.confirm(data.info + "，是否继续新增？", {}, function (index) {
+                    backend.layer().close(index);
+                    window.location.reload();
+                }, function () {
+                    window.location.href = "@Url.Action("Detail","Module",new { id=""})/" + data.data.id;
+                });
             });
         });
     </script>

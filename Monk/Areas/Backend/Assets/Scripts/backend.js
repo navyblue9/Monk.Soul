@@ -54,6 +54,10 @@
         }
         return obj;
     };
+    // 获取顶级layer
+    exports.layer = function () {
+        return parent.layer ? parent.layer : layer;
+    };
     // 成功提示
     exports.successTip = function (msg, options, end) {
         options = options || {};

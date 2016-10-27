@@ -32,5 +32,24 @@ namespace Monk.Areas.Services.Controllers
             else clientResult.SetClientData("y", "获取成功", cache);
             return Json(clientResult, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public JsonResult Insert(ModuleVM viewModel)
+        {
+            var clientResult = new JsonData<object>();
+            Mapper.Initialize(u => u.CreateMap<ModuleVM, Module>());
+            var model = Mapper.Map<Module>(viewModel);
+            model.ModuleID = Guid.NewGuid();
+            model.LogMemberID = model.LogMemberID == null ? default(Guid) : model.LogMemberID;
+            model.Remark = string.IsNullOrEmpty(model.Remark) ? model.Name : model.Remark;
+
+            services.Command((db) =>
+            {
+                db.Insert<Module>(model);
+                HttpRuntimeCacheHelper.Remove("Module_CacheKey");
+                clientResult.SetClientData("y", "操作成功", new { id = model.ModuleID });
+            });
+            return Json(clientResult);
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Monk.Utils;
 using Monk.ViewModels;
 using Monk.Areas.Backend.App_Code;
+using Monk.Areas.Backend.ViewModels;
 
 namespace Monk.Areas.Backend.Controllers
 {
@@ -31,6 +32,15 @@ namespace Monk.Areas.Backend.Controllers
         {
             ViewData["ModuleList"] = Common.ModuleDropDownList(id);
             return View(new ModuleVM() { Enable = true, Iconfont = "icon-backend-file", Sort = 0 });
+        }
+
+        [HttpPost]
+        public JsonResult Insert(ModuleVM viewModel)
+        {
+            var sessionModel = Session[Keys.SessionKey] as SessionMemberVM;
+            viewModel.LogMemberID = sessionModel.MemberID;
+            var clientResult = restful.Post<JsonData<object>>(Url.Action("Insert", "Module", new { area = "Services" }), viewModel);
+            return Json(clientResult);
         }
     }
 }
