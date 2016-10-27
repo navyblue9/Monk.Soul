@@ -113,16 +113,15 @@
 
             // 美化滚动条
             var nicescrolls = backend.nicescroll($("#backend-module,.backe-menu-list"));
+            if (store.get(actionidKey)) {
+                $(".backend-menu-action[data-actionid='" + store.get(actionidKey) + "']").trigger("click", "auto");
+            }
             // 读取缓存，恢复上一次状态
             if (store.get(moduleIdKey)) {
                 $(".backend-module-item[data-moduleid='" + store.get(moduleIdKey) + "']").click();
             }
             else {
-                $(".backend-module-item").eq(0).click();
-            }
-
-            if (store.get(actionidKey)) {
-                $(".backend-menu-action[data-actionid='" + store.get(actionidKey) + "']").trigger("click", "auto");
+                $(".backend-module-item").eq(0).trigger("click");
             }
         }
 
