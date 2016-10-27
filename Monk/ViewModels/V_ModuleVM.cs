@@ -7,138 +7,146 @@ namespace Monk.ViewModels
     public class V_ModuleVM
     {
 
-        /// <summary>
-        /// Desc:-
-        /// Default:-
-        /// Nullable:False
-        /// </summary>
-        public Guid ModuleID {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public string Name {get;set;}
+        public Guid ModuleID { get; set; }
+
+        /// <summary>
+        /// Desc:-
+        /// Default:-
+        /// Nullable:False
+        /// </summary>
+        public string Name { get; set; }
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:True
         /// </summary>
-        public string Remark {get;set;}
+        public string Remark { get; set; }
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public int Sort {get;set;}
+        public int Sort { get; set; }
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:True
         /// </summary>
-        public string TagAttr {get;set;}
+        public string TagAttr { get; set; }
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public Guid ParentID {get;set;}
+        public Guid ParentID { get; set; }
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public string Iconfont {get;set;}
+        public string Iconfont { get; set; }
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public Boolean Enable {get;set;}
+        public Boolean Enable { get; set; }
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public int SerialNo {get;set;}
+        public int SerialNo { get; set; }
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:True
         /// </summary>
-        public DateTime? UpdateTime {get;set;}
+        public DateTime? UpdateTime { get; set; }
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public Boolean Default {get;set;}
+        public Boolean Default { get; set; }
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public Boolean Del {get;set;}
+        public Boolean Del { get; set; }
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public Boolean Destroy {get;set;}
+        public Boolean Destroy { get; set; }
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public DateTime CreateTime {get;set;}
+        public DateTime CreateTime { get; set; }
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public Guid LogMemberID {get;set;}
+        public Guid LogMemberID { get; set; }
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:True
         /// </summary>
-        public Guid? HaviorID {get;set;}
+        public string ParentName { get; set; }
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:True
         /// </summary>
-        public string HaviorName {get;set;}
+        public Guid? HaviorID { get; set; }
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:True
         /// </summary>
-        public string HttpMethod {get;set;}
+        public string HaviorName { get; set; }
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:True
         /// </summary>
-        public string Url {get;set;}
+        public string HttpMethod { get; set; }
+
+        /// <summary>
+        /// Desc:-
+        /// Default:-
+        /// Nullable:True
+        /// </summary>
+        public string Url { get; set; }
 
     }
 }

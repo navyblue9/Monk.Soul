@@ -961,6 +961,7 @@ GO
 CREATE VIEW dbo.[V_Module]
 AS
     SELECT  module.* ,
+            parentModule.Name AS ParentName ,
             havior.HaviorID ,
             havior.Name AS HaviorName ,
             havior.HttpMethod ,
@@ -972,5 +973,11 @@ AS
                                 AND Destroy = 0
                                 AND [Enable] = 1
                                 AND [Index] = 1
-                      ) havior ON module.ModuleID = havior.ModuleID;
+                      ) havior ON module.ModuleID = havior.ModuleID
+            LEFT JOIN ( SELECT  *
+                        FROM    dbo.Module
+                        WHERE   Del = 0
+                                AND Destroy = 0
+                                AND [Enable] = 1
+                      ) parentModule ON module.ParentID = parentModule.ModuleID;
 GO

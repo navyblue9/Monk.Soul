@@ -177,3 +177,13 @@
         </tfoot>
     </table>
 </div>
+
+@section foot{
+    <script type="text/javascript">
+        $(function () {
+            backend.get("@Url.Action("Modules","Module")", {}, function (data) {
+
+            });
+        });
+    </script>
+}

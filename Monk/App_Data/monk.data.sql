@@ -102,3 +102,189 @@ VALUES  ( NEWID() , -- SetID - uniqueidentifier
           GETDATE() , -- CreateTime - datetime
           '00000000-0000-0000-0000-000000000000'  -- LogMemberID - uniqueidentifier
         );
+INSERT INTO dbo.Module
+        ( ModuleID ,
+          Name ,
+          Remark ,
+          Sort ,
+          TagAttr ,
+          ParentID ,
+          Iconfont ,
+          Enable ,
+          UpdateTime ,
+          [Default] ,
+          Del ,
+          Destroy ,
+          CreateTime ,
+          LogMemberID
+        )
+VALUES  ( '11111111-1111-1111-1111-111111111111' , -- ModuleID - uniqueidentifier
+          N'根站点栏目' , -- Name - nvarchar(32)
+          N'顶级栏目' , -- Remark - nvarchar(200)
+          0 , -- Sort - int
+          N'' , -- TagAttr - nvarchar(200)
+          '00000000-0000-0000-0000-000000000000' , -- ParentID - uniqueidentifier
+          N'icon-backend-file' , -- Iconfont - nvarchar(100)
+          1 , -- Enable - bit
+          GETDATE() , -- UpdateTime - datetime
+          1 , -- Default - bit
+          0 , -- Del - bit
+          0 , -- Destroy - bit
+          GETDATE() , -- CreateTime - datetime
+          '00000000-0000-0000-0000-000000000000'  -- LogMemberID - uniqueidentifier
+        );
+INSERT INTO dbo.Module
+        ( ModuleID ,
+          Name ,
+          Remark ,
+          Sort ,
+          TagAttr ,
+          ParentID ,
+          Iconfont ,
+          Enable ,
+          UpdateTime ,
+          [Default] ,
+          Del ,
+          Destroy ,
+          CreateTime ,
+          LogMemberID
+        )
+VALUES  ( 'ce9c77a6-efab-4b29-adde-55102d2432c7' , -- ModuleID - uniqueidentifier
+          N'站点管理' , -- Name - nvarchar(32)
+          N'站点管理' , -- Remark - nvarchar(200)
+          0 , -- Sort - int
+          N'' , -- TagAttr - nvarchar(200)
+          '11111111-1111-1111-1111-111111111111' , -- ParentID - uniqueidentifier
+          N'icon-backend-file' , -- Iconfont - nvarchar(100)
+          1 , -- Enable - bit
+          GETDATE() , -- UpdateTime - datetime
+          1 , -- Default - bit
+          0 , -- Del - bit
+          0 , -- Destroy - bit
+          GETDATE() , -- CreateTime - datetime
+          '00000000-0000-0000-0000-000000000000'  -- LogMemberID - uniqueidentifier
+        );
+INSERT INTO dbo.Module
+        ( ModuleID ,
+          Name ,
+          Remark ,
+          Sort ,
+          TagAttr ,
+          ParentID ,
+          Iconfont ,
+          Enable ,
+          UpdateTime ,
+          [Default] ,
+          Del ,
+          Destroy ,
+          CreateTime ,
+          LogMemberID
+        )
+VALUES  ( '9762f805-c619-4a06-b294-755c4619c738' , -- ModuleID - uniqueidentifier
+          N'站点设置' , -- Name - nvarchar(32)
+          N'站点设置' , -- Remark - nvarchar(200)
+          0 , -- Sort - int
+          N'' , -- TagAttr - nvarchar(200)
+          'ce9c77a6-efab-4b29-adde-55102d2432c7' , -- ParentID - uniqueidentifier
+          N'icon-backend-file' , -- Iconfont - nvarchar(100)
+          1 , -- Enable - bit
+          GETDATE() , -- UpdateTime - datetime
+          1 , -- Default - bit
+          0 , -- Del - bit
+          0 , -- Destroy - bit
+          GETDATE() , -- CreateTime - datetime
+          '00000000-0000-0000-0000-000000000000'  -- LogMemberID - uniqueidentifier
+        );
+INSERT INTO dbo.Module
+        ( ModuleID ,
+          Name ,
+          Remark ,
+          Sort ,
+          TagAttr ,
+          ParentID ,
+          Iconfont ,
+          Enable ,
+          UpdateTime ,
+          [Default] ,
+          Del ,
+          Destroy ,
+          CreateTime ,
+          LogMemberID
+        )
+VALUES  ( '32b1b9e9-ee08-4609-98dd-d555c11decf4' , -- ModuleID - uniqueidentifier
+          N'内容管理' , -- Name - nvarchar(32)
+          N'内容管理' , -- Remark - nvarchar(200)
+          0 , -- Sort - int
+          N'' , -- TagAttr - nvarchar(200)
+          'ce9c77a6-efab-4b29-adde-55102d2432c7' , -- ParentID - uniqueidentifier
+          N'icon-backend-file' , -- Iconfont - nvarchar(100)
+          1 , -- Enable - bit
+          GETDATE() , -- UpdateTime - datetime
+          1 , -- Default - bit
+          0 , -- Del - bit
+          0 , -- Destroy - bit
+          GETDATE() , -- CreateTime - datetime
+          '00000000-0000-0000-0000-000000000000'  -- LogMemberID - uniqueidentifier
+        );
+INSERT INTO dbo.Module
+        ( ModuleID ,
+          Name ,
+          Remark ,
+          Sort ,
+          TagAttr ,
+          ParentID ,
+          Iconfont ,
+          Enable ,
+          UpdateTime ,
+          [Default] ,
+          Del ,
+          Destroy ,
+          CreateTime ,
+          LogMemberID
+        )
+VALUES  ( 'af2fb712-c886-4dc6-ae4a-a77909d3270a' , -- ModuleID - uniqueidentifier
+          N'分类管理' , -- Name - nvarchar(32)
+          N'分类管理' , -- Remark - nvarchar(200)
+          0 , -- Sort - int
+          N'' , -- TagAttr - nvarchar(200)
+          '32b1b9e9-ee08-4609-98dd-d555c11decf4' , -- ParentID - uniqueidentifier
+          N'icon-backend-file' , -- Iconfont - nvarchar(100)
+          1 , -- Enable - bit
+          GETDATE() , -- UpdateTime - datetime
+          1 , -- Default - bit
+          0 , -- Del - bit
+          0 , -- Destroy - bit
+          GETDATE() , -- CreateTime - datetime
+          '00000000-0000-0000-0000-000000000000'  -- LogMemberID - uniqueidentifier
+        );
+INSERT INTO dbo.Module
+        ( ModuleID ,
+          Name ,
+          Remark ,
+          Sort ,
+          TagAttr ,
+          ParentID ,
+          Iconfont ,
+          Enable ,
+          UpdateTime ,
+          [Default] ,
+          Del ,
+          Destroy ,
+          CreateTime ,
+          LogMemberID
+        )
+VALUES  ( '7f6407f3-6629-4542-92f1-906f98d12166' , -- ModuleID - uniqueidentifier
+          N'文章管理' , -- Name - nvarchar(32)
+          N'文章管理' , -- Remark - nvarchar(200)
+          0 , -- Sort - int
+          N'' , -- TagAttr - nvarchar(200)
+          '32b1b9e9-ee08-4609-98dd-d555c11decf4' , -- ParentID - uniqueidentifier
+          N'icon-backend-file' , -- Iconfont - nvarchar(100)
+          1 , -- Enable - bit
+          GETDATE() , -- UpdateTime - datetime
+          1 , -- Default - bit
+          0 , -- Del - bit
+          0 , -- Destroy - bit
+          GETDATE() , -- CreateTime - datetime
+          '00000000-0000-0000-0000-000000000000'  -- LogMemberID - uniqueidentifier
+        );

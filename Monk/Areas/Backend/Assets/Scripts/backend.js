@@ -101,6 +101,23 @@
         }, dataType);
         that.ajaxError();
     };
+    // get获取
+    exports.get = function (url, data, callback, dataType) {
+        var that = this;
+        that.loadTip("正在执行相关操作...");
+        $.get(url, data, function (data) {
+            if (data.status == "y") {
+                that.successTip(data.info);
+                if (typeof callback == "function") {
+                    callback(data);
+                }
+            }
+            else {
+                that.errorTip(data.info + data.others.Message);
+            }
+        }, dataType);
+        that.ajaxError();
+    };
     // 打开搜索
     exports.openSearch = function () {
         var speed = 200;

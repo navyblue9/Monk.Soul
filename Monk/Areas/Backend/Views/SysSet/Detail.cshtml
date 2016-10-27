@@ -85,6 +85,12 @@
         @Model.AttachMaxSize<text>M</text>
     </div>
 </div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">更新时间</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.UpdateTime)
+    </div>
+</div>
 
 @section operate{
     <a href="@Url.Action("Update", "SysSet", new { id = Model.SetID })" class="monk-input-button turquoise">编辑数据</a>

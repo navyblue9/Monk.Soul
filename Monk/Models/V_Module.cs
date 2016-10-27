@@ -117,6 +117,13 @@ namespace Monk.Models
         /// Default:- 
         /// Nullable:True 
         /// </summary>
+        public string ParentName {get;set;}
+
+        /// <summary>
+        /// Desc:- 
+        /// Default:- 
+        /// Nullable:True 
+        /// </summary>
         public Guid? HaviorID {get;set;}
 
         /// <summary>
