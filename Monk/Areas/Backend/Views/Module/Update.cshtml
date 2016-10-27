@@ -1,6 +1,6 @@
 ﻿@model ModuleVM
 @{
-    ViewBag.Title = "新增栏目";
+    ViewBag.Title = "更新栏目";
     Layout = "~/Areas/Backend/Views/Shared/_Form.cshtml";
 }
 
@@ -12,10 +12,10 @@
     <label class="backend-crumbs-separator">/</label>
     <a href="#" title="系统栏目">系统栏目</a>
     <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="新增栏目">新增栏目</a>
+    <a href="#" title="更新栏目">更新栏目</a>
 }
 
-@section beginForm{@{ Html.BeginForm("Insert", "Module", FormMethod.Post, new { @class = "monk-form" });}}
+@section beginForm{@{ Html.BeginForm("Update", "Module", FormMethod.Post, new { @class = "monk-form" });}}
 
 <div class="monk-form-item">
     <label for="Name" class="monk-form-label">栏目名称</label>
@@ -137,6 +137,7 @@
 </div>
 
 @section operate{
+    @Html.HiddenFor(u => u.ModuleID)
     <input type="submit" class="monk-input-button turquoise monk-form-submit" value="提交保存">
     <input type="reset" class="monk-input-button amethyst monk-form-reset" value="重置表单">
     <input type="button" class="monk-input-button orange monk-form-previous" value="返回前页" onclick="history.go(-1);">
@@ -148,12 +149,7 @@
     <script type="text/javascript">
         $(function () {
             backend.validform(function (data) {
-                backend.confirm(data.info + "，是否继续新增？", {}, function (index) {
-                    backend.layer().close(index);
-                    window.location.reload();
-                }, function () {
-                    window.location.href = "@Url.Action("Detail","Module",new { id=""})/" + data.data.id;
-                });
+                window.location.href = "@Url.Action("Detail","Module",new { id=Model.ModuleID})";
             });
         });
     </script>

@@ -1,0 +1,77 @@
+﻿@model V_ModuleVM
+@{
+    ViewBag.Title = "栏目信息";
+    Layout = "~/Areas/Backend/Views/Shared/_Detail.cshtml";
+}
+
+@section crumbs{
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="系统管理">系统管理</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="模块管理">模块管理</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="系统栏目">系统栏目</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="栏目信息">栏目信息</a>
+}
+
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">栏目名称</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.Name
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">上级栏目</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.ParentName, "无")
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">栏目描述</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.Remark, "无")
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">排序数字</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.Sort
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">标签属性</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.TagAttr, "无")
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">字体图标</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Html.Raw(DataToHtmlHelper.GetIconfont(Model.Iconfont))
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">开放状态</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Html.Raw(DataToHtmlHelper.StatusHtml(Model.Enable))
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">创建时间</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.CreateTime, "无")
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">更新时间</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.UpdateTime, "无")
+    </div>
+</div>
+
+@section operate{
+    <a href="@Url.Action("Update", "Module", new { id = Model.ModuleID })" class="monk-input-button turquoise">编辑数据</a>
+    <a href="#" class="monk-input-button alizarin" onclick="deletes();">删除记录</a>
+    <input type="button" class="monk-input-button orange monk-form-previous" value="返回前页" onclick="history.go(-1);">
+}

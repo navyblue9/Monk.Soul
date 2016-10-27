@@ -25,7 +25,8 @@
 @section buttons{
     <span class="list-btn" onclick="backend.checkall(this);"><i class="monk-iconfont icon-backend-quanxuan"></i><label>全选</label></span>
     <span class="list-btn" onclick="insert();"><i class="monk-iconfont icon-backend-insert"></i><label>新增</label></span>
-    <span class="list-btn" onclick=""><i class="monk-iconfont icon-backend-details"></i><label>查看</label></span>
+    <span class="list-btn" onclick="detail(this);"><i class="monk-iconfont icon-backend-details"></i><label>查看</label></span>
+    <span class="list-btn" onclick="update(this);"><i class="monk-iconfont icon-backend-update"></i><label>编辑</label></span>
     <span class="list-btn" onclick=""><i class="monk-iconfont icon-backend-delete"></i><label>删除</label></span>
     <span class="list-btn float-right search-btn" onclick="backend.openSearch()"><i class="monk-iconfont icon-backend-search-list"></i><label>搜索</label></span>
 }
@@ -69,6 +70,24 @@
             }
             else {
                 window.location.href = "@Url.Action("Insert","Module")";
+            }
+        }
+        function detail() {
+            var ids = backend.getCheckIds();
+            if (ids.length == 1) {
+                window.location.href = "@Url.Action("Detail","Module",new { })/" + ids[0];
+            }
+            else {
+                backend.Tip("只能选择一条数据进行操作");
+            }
+        }
+        function update() {
+            var ids = backend.getCheckIds();
+            if (ids.length == 1) {
+                window.location.href = "@Url.Action("Update","Module",new { })/" + ids[0];
+            }
+            else {
+                backend.Tip("只能选择一条数据进行操作");
             }
         }
     </script>

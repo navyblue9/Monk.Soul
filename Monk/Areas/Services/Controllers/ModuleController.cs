@@ -42,6 +42,7 @@ namespace Monk.Areas.Services.Controllers
             model.ModuleID = Guid.NewGuid();
             model.LogMemberID = model.LogMemberID == null ? default(Guid) : model.LogMemberID;
             model.Remark = string.IsNullOrEmpty(model.Remark) ? model.Name : model.Remark;
+            model.Iconfont = string.IsNullOrEmpty(model.Iconfont) ? "icon-backend-file" : model.Iconfont;
 
             services.Command((db) =>
             {
@@ -49,6 +50,51 @@ namespace Monk.Areas.Services.Controllers
                 HttpRuntimeCacheHelper.Remove("Module_CacheKey");
                 clientResult.SetClientData("y", "操作成功", new { id = model.ModuleID });
             });
+            return Json(clientResult);
+        }
+
+        [HttpGet]
+        public JsonResult Detail(Guid? moduleId)
+        {
+            var clientResult = new JsonData<V_ModuleVM>() { };
+            var model = new V_Module();
+            services.Command((db) =>
+            {
+                model = db.Queryable<V_Module>().SingleOrDefault(u => u.ModuleID == moduleId);
+            });
+
+            // 此地方需要重点优化，后期使用autofac统一注入
+            Mapper.Initialize(c => c.CreateMap<V_Module, V_ModuleVM>());
+
+            clientResult.SetClientData("y", "操作成功", Mapper.Map<V_ModuleVM>(model));
+            return Json(clientResult, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult Update(ModuleVM model)
+        {
+            var clientResult = new JsonData<object>() { };
+            if (model.ModuleID == null) clientResult.SetClientData("n", "非法参数");
+            model.Remark = string.IsNullOrEmpty(model.Remark) ? model.Name : model.Remark;
+            model.Iconfont = string.IsNullOrEmpty(model.Iconfont) ? "icon-backend-file" : model.Iconfont;
+            services.Command((db) =>
+            {
+                db.Update<Module>(new
+                {
+                    model.Enable,
+                    model.Iconfont,
+                    model.Name,
+                    model.ParentID,
+                    model.Remark,
+                    model.Sort,
+                    model.TagAttr,
+                    UpdateTime = DateTime.Now
+                }, u => u.ModuleID == model.ModuleID);
+
+                HttpRuntimeCacheHelper.Remove("Module_CacheKey");
+                clientResult.SetClientData("y", "操作成功");
+            });
+
             return Json(clientResult);
         }
     }
