@@ -288,3 +288,156 @@ VALUES  ( '7f6407f3-6629-4542-92f1-906f98d12166' , -- ModuleID - uniqueidentifie
           GETDATE() , -- CreateTime - datetime
           '00000000-0000-0000-0000-000000000000'  -- LogMemberID - uniqueidentifier
         );
+INSERT INTO dbo.Havior
+        ( HaviorID ,
+          Name ,
+          Keywords ,
+          Description ,
+          Route ,
+          Url ,
+          Area ,
+          Controller ,
+          Action ,
+          TagAttr ,
+          Iconfont ,
+          HttpMethod ,
+          HeadCode ,
+          FootCode ,
+          Layout ,
+          ModuleID ,
+          [Index] ,
+          Enable ,
+          UpdateTime ,
+          [Default] ,
+          Del ,
+          Destroy ,
+          CreateTime ,
+          LogMemberID
+        )
+VALUES  ( 'fb4f1ae2-11fc-4526-9056-121e3099b3af' , -- HaviorID - uniqueidentifier
+          N'栏目列表' , -- Name - nvarchar(32)
+          N'' , -- Keywords - nvarchar(200)
+          N'' , -- Description - nvarchar(320)
+          1 , -- Route - bit
+          N'/Backend/Module/Select/' , -- Url - nvarchar(300)
+          'Backend' , -- Area - varchar(50)
+          'Module' , -- Controller - varchar(50)
+          'Select' , -- Action - varchar(50)
+          N'' , -- TagAttr - nvarchar(200)
+          N'' , -- Iconfont - nvarchar(100)
+          'GET' , -- HttpMethod - varchar(20)
+          '' , -- HeadCode - text
+          '' , -- FootCode - text
+          '' , -- Layout - varchar(100)
+          '2B047C86-F493-47F6-A3AF-8C54707D9922' , -- ModuleID - uniqueidentifier
+          1 , -- Index - bit
+          1 , -- Enable - bit
+          GETDATE() , -- UpdateTime - datetime
+          1 , -- Default - bit
+          0 , -- Del - bit
+          0 , -- Destroy - bit
+          GETDATE() , -- CreateTime - datetime
+          '00000000-0000-0000-0000-000000000000'  -- LogMemberID - uniqueidentifier
+        );
+INSERT INTO dbo.Havior
+        ( HaviorID ,
+          Name ,
+          Keywords ,
+          Description ,
+          Route ,
+          Url ,
+          Area ,
+          Controller ,
+          Action ,
+          TagAttr ,
+          Iconfont ,
+          HttpMethod ,
+          HeadCode ,
+          FootCode ,
+          Layout ,
+          ModuleID ,
+          [Index] ,
+          Enable ,
+          UpdateTime ,
+          [Default] ,
+          Del ,
+          Destroy ,
+          CreateTime ,
+          LogMemberID
+        )
+VALUES  ( 'c4ac143b-78c7-4793-b0d4-829a3a876d1a' , -- HaviorID - uniqueidentifier
+          N'设置详情' , -- Name - nvarchar(32)
+          N'' , -- Keywords - nvarchar(200)
+          N'' , -- Description - nvarchar(320)
+          1 , -- Route - bit
+          N'/Backend/SysSet/Detail/' , -- Url - nvarchar(300)
+          'Backend' , -- Area - varchar(50)
+          'SysSet' , -- Controller - varchar(50)
+          'Detail' , -- Action - varchar(50)
+          N'' , -- TagAttr - nvarchar(200)
+          N'' , -- Iconfont - nvarchar(100)
+          'GET' , -- HttpMethod - varchar(20)
+          '' , -- HeadCode - text
+          '' , -- FootCode - text
+          '' , -- Layout - varchar(100)
+          'C4BA7501-3E5A-4CD1-84C7-F78F1E64778C' , -- ModuleID - uniqueidentifier
+          1 , -- Index - bit
+          1 , -- Enable - bit
+          GETDATE() , -- UpdateTime - datetime
+          1 , -- Default - bit
+          0 , -- Del - bit
+          0 , -- Destroy - bit
+          GETDATE() , -- CreateTime - datetime
+          '00000000-0000-0000-0000-000000000000'  -- LogMemberID - uniqueidentifier
+        );
+INSERT INTO dbo.Havior
+        ( HaviorID ,
+          Name ,
+          Keywords ,
+          Description ,
+          Route ,
+          Url ,
+          Area ,
+          Controller ,
+          Action ,
+          TagAttr ,
+          Iconfont ,
+          HttpMethod ,
+          HeadCode ,
+          FootCode ,
+          Layout ,
+          ModuleID ,
+          [Index] ,
+          Enable ,
+          UpdateTime ,
+          [Default] ,
+          Del ,
+          Destroy ,
+          CreateTime ,
+          LogMemberID
+        )
+VALUES  ( '58d60f4e-e7a0-47e7-acfa-5a628b24b637' , -- HaviorID - uniqueidentifier
+          N'日志列表' , -- Name - nvarchar(32)
+          N'' , -- Keywords - nvarchar(200)
+          N'' , -- Description - nvarchar(320)
+          1 , -- Route - bit
+          N'/Backend/LoginLog/Select/' , -- Url - nvarchar(300)
+          'Backend' , -- Area - varchar(50)
+          'LoginLog' , -- Controller - varchar(50)
+          'Select' , -- Action - varchar(50)
+          N'' , -- TagAttr - nvarchar(200)
+          N'' , -- Iconfont - nvarchar(100)
+          'GET' , -- HttpMethod - varchar(20)
+          '' , -- HeadCode - text
+          '' , -- FootCode - text
+          '' , -- Layout - varchar(100)
+          '178C3A2D-2D07-4AB8-A73E-B9136DD5EA65' , -- ModuleID - uniqueidentifier
+          1 , -- Index - bit
+          1 , -- Enable - bit
+          GETDATE() , -- UpdateTime - datetime
+          1 , -- Default - bit
+          0 , -- Del - bit
+          0 , -- Destroy - bit
+          GETDATE() , -- CreateTime - datetime
+          '00000000-0000-0000-0000-000000000000'  -- LogMemberID - uniqueidentifier
+        );

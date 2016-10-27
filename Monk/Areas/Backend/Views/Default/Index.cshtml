@@ -69,7 +69,7 @@
                     queryResult.forEach(function (x) {
                         var hasChild = hasChildren(data, x.ModuleID);
                         actionTree += '<li>';
-                        actionTree += '<div data-url="' + x.Url + '" target="backend-iframe" class="backend-menu-action" data-actionid="' + x.ModuleID + '">';
+                        actionTree += '<div data-url="' + x.Url + '" target="backend-iframe" class="backend-menu-action" data-actionid="' + x.ModuleID + '" title="' + x.Remark + '">';
                         actionTree += spaceHtml + '<span class="monk-iconfont ' + (hasChild ? ' icon-backend-folder-close ' : ' icon-backend-file ') + '  action-icon"></span><label>' + x.Name + '</label>';
                         if (hasChild) {
                             actionTree += '<span class="monk-iconfont icon-arrow icon-monk-arrowdown float-right"></span>';
@@ -101,7 +101,7 @@
             // 生成功能菜单
             var actionHtml = "";
             queryResult.forEach(function (x) {
-                actionHtml += '<div class="backend-menu-item display-none" data-moduleid="' + x.ModuleID + '">';
+                actionHtml += '<div ' + (x.TagAttr ? x.TagAttr : "  ") + ' class="backend-menu-item display-none" data-moduleid="' + x.ModuleID + '">';
                 actionHtml += '<h2 class="backend-menu-title">' + x.Name + '</h2>';
                 actionHtml += '<div class="backe-menu-list">';
                 // 内层递归循环
@@ -129,7 +129,6 @@
         $(function () {
             backend.successTip("您好，@ViewBag.MemberInfo.Account");
 
-            // 加载模块栏目
             backend.get("@Url.Action("Modules","Module")", {}, function (data) {
                 renderModule(data.data);
             });
@@ -203,7 +202,7 @@
                 var childrenKey = store.get(actionid + "_actionidChildrenKey");
                 var target = that.attr("target");
                 that.addClass("selected");
-                if (url && url != "#") {
+                if (url && url != "#" && url != "null" && url != "NULL") {
                     if (target == "backend-iframe") {
                         document.getElementById('backend-iframe').contentWindow.location.href = url;
                     }
