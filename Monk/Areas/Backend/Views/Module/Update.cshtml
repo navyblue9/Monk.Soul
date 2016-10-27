@@ -39,11 +39,11 @@
     <label for="ParentID" class="monk-form-label">上级栏目</label>
     <div class="monk-form-wrap monk-form-select-wrap">
         <span class="monk-iconfont border-right icon-monk-input"></span>
-        <input type="text" class="monk-form-input middle" placeholder="请输入或选择..." />
+        <input type="text" class="monk-form-input middle" placeholder="请输入或选择..." @(Html.Raw(Model.ModuleID == Guid.Parse("11111111-1111-1111-1111-111111111111") ? " disabled='disabled' " : "")) />
         <span class="monk-iconfont monk-select-arrow icon-monk-arrowdown border-left"></span>
     </div>
     <div class="monk-form-select monk-none">
-        <select class="monk-select" name="ParentID" datatype="*" nullmsg="请选择上级栏目" errormsg="请选择上级栏目">
+        <select class="monk-select" name="ParentID" datatype="*" nullmsg="请选择上级栏目" errormsg="请选择上级栏目" @(Html.Raw(Model.ModuleID == Guid.Parse("11111111-1111-1111-1111-111111111111") ? " ignore='ignore' " : ""))>
             <option value="">请输入或选择...</option>
             @Html.Raw(ViewData["ModuleList"])
         </select>
