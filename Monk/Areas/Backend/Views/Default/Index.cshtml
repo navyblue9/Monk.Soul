@@ -128,7 +128,7 @@
         $(function () {
             backend.successTip("您好，@ViewBag.MemberInfo.Account");
 
-            backend.get("@Url.Action("Modules","Module")", {}, function (data) {
+            backend.get("@Url.Action("Modules","Default")", {}, function (data) {
                 renderModule(data.data);
             });
 

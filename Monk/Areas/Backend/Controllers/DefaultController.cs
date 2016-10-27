@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
 using AutoMapper.Configuration;
@@ -58,6 +59,17 @@ namespace Monk.Areas.Backend.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        [HttpGet]
+        public JsonResult Modules()
+        {
+            var clientResult = restful.Get<JsonData<List<V_ModuleVM>>>(Url.Action("Modules", "Module", new { area = "Services" }));
+            if (clientResult.status == "y")
+            {
+                clientResult.data = clientResult.data.Where(u => u.Enable == true).ToList();
+            }
+            return Json(clientResult, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
