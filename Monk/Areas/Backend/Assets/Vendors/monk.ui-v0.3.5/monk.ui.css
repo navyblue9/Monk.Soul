@@ -1,6 +1,6 @@
 ﻿/*!
  * monk.ui.css
- * version: 0.3.5
+ * version: 0.3.6
  * author: 百小僧（QQ：8020292）
  * site：http://www.baisoft.org
  * QQ群：123049073
@@ -153,12 +153,12 @@ input[type="number"] { -moz-appearance: textfield; }
 .monk-radio { display: none; }
 
 /*下拉列表*/
-.monk-form-select { height: 200px; border: 1px solid #e9e9e9; position: absolute; left: 0; top: 64px; background: #fff; right: 0; z-index: 100; border-color: #1abc9c; box-shadow: 0 0 10px #1abc9c; overflow: auto; }
+.monk-form-select { max-height: 200px; border: 1px solid #e9e9e9; position: absolute; left: 0; top: 64px; background: #fff; right: 0; z-index: 100; border-color: #1abc9c; box-shadow: 0 0 10px #1abc9c; overflow: auto; }
 .monk-form-select.monk-none { display: none; }
 .monk-form-wrap.monk-form-select-wrap .monk-iconfont.monk-select-arrow { cursor: pointer; pointer-events: auto; }
 .monk-form-wrap.monk-form-select-wrap .monk-iconfont.monk-select-arrow:before { content: "\f606"; }
 .monk-form-wrap.monk-form-select-wrap.focus .monk-iconfont.monk-select-arrow:before { content: "\f602"; }
-.monk-form-option, .monk-form-optgroup { height: 40px; padding: 0 10px; line-height: 40px; font-size: 14px; }
+.monk-form-option, .monk-form-optgroup { height: 40px; padding: 0 10px; line-height: 40px; font-size: 15px; }
 .monk-form-option:hover, .monk-form-option[selected] { background: #f2f2f2; cursor: pointer; }
 .monk-form-optgroup { font-weight: bold; background: #f1f1f1; }
 .monk-select { display: none; }
