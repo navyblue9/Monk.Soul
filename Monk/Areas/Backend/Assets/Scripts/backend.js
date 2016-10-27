@@ -37,6 +37,7 @@
         var seconds = that.dateSingleAddZero(date.getSeconds());
         return year + "-" + month + "-" + day + " " + hours + ":" + minute + ":" + seconds;
     };
+    // 转换状态
     exports.setStatus = function (statu) {
         if (statu == true || statu == "true") {
             return '<span class="monk-iconfont icon-monk-dagou tipcolor"></span>';
@@ -44,6 +45,14 @@
         else {
             return '<span class="monk-iconfont icon-monk-dacha"></span>';
         }
+    };
+    // 转换空置
+    exports.setNull = function (obj, value) {
+        value = value ? value : "";
+        if (!obj) {
+            return value;
+        }
+        return obj;
     };
     // 成功提示
     exports.successTip = function (msg, options, end) {
