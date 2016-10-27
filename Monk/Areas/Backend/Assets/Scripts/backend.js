@@ -92,7 +92,13 @@
     };
     // 确认提示
     exports.confirm = function (msg, options, yes, cancel) {
-        var defaults = { icon: 3, title: "确认询问", offset: 0, shade: 0.1 };
+        var defaults = {
+            icon: 3, title: "确认询问", offset: 0, shade: 0.1, cancel: function (index) {
+                if (typeof cancel == "function") {
+                    cancel(index);
+                }
+            }
+        };
         var config = $.extend(true, defaults, options);
         var _layer = parent.layer ? parent.layer : layer;
         return _layer.confirm(msg, config, yes, cancel);

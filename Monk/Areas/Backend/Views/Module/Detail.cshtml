@@ -79,6 +79,7 @@
 @section operate{
     <a href="@Url.Action("Update", "Module", new { id = Model.ModuleID })" class="monk-input-button turquoise">编辑数据</a>
     <a href="#" class="monk-input-button alizarin" onclick="deletes();">删除记录</a>
+    <input type="reset" class="monk-input-button peterRiver" onclick="window.location.href = '@Url.Action("Select","Module")';" value="返回列表">
     <input type="button" class="monk-input-button orange monk-form-previous" value="返回前页" onclick="history.go(-1);">
 }
 
