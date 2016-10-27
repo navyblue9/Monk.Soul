@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Monk.Utils;
 using Monk.ViewModels;
+using Monk.Areas.Backend.App_Code;
 
 namespace Monk.Areas.Backend.Controllers
 {
@@ -28,6 +29,7 @@ namespace Monk.Areas.Backend.Controllers
         [HttpGet]
         public ActionResult Insert(Guid? id)
         {
+            ViewData["ModuleList"] = Common.ModuleDropDownList(id);
             return View(new ModuleVM() { Enable = true, Iconfont = "icon-backend-file", Sort = 0 });
         }
     }

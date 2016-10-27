@@ -313,6 +313,7 @@
     <Compile Include="App_Start\HangfireStartup.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Backend\App_Code\Common.cs" />
     <Compile Include="Areas\Backend\BackendAreaRegistration.cs" />
     <Compile Include="Areas\Backend\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Backend\Controllers\LoginLogController.cs" />
@@ -376,6 +377,7 @@
     <Compile Include="Utils\RazorExtention.cs" />
     <Compile Include="Utils\RequestHelper.cs" />
     <Compile Include="Utils\RESTFul.cs" />
+    <Compile Include="Utils\RouteHelper.cs" />
     <Compile Include="Utils\SessionHelper.cs" />
     <Compile Include="Utils\StringHelper.cs" />
     <Compile Include="ViewModels\ButtonVM.cs" />

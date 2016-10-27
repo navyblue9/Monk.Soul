@@ -45,17 +45,7 @@
     <div class="monk-form-select monk-none">
         <select class="monk-select" name="ParentID" datatype="*" nullmsg="请选择上级栏目" errormsg="请选择上级栏目">
             <option value="">请输入或选择...</option>
-            <option value="0">列表项目一</option>
-            <option value="1" selected="selected">列表项目二</option>
-            <option value="2">列表项目三</option>
-            <option value="3">列表项目四</option>
-            <option value="4">列表项目五</option>
-            <option value="5">列表项目六</option>
-            <optgroup label="这里是分类栏目"></optgroup>
-            <option value="6">列表项目七</option>
-            <option value="7">列表项目八</option>
-            <option value="8">列表项目九</option>
-            <option value="9">列表项目十</option>
+            @Html.Raw(ViewData["ModuleList"])
         </select>
     </div>
     <div class="monk-form-tip">选择将该模块添加到指定栏目下面</div>

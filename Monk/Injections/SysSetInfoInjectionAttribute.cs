@@ -16,9 +16,8 @@ namespace Monk.Injections
             if (filterContext.ActionDescriptor.IsDefined(typeof(ExemptionInjectionAttribute), false) || filterContext.ActionDescriptor.ControllerDescriptor.IsDefined(typeof(ExemptionInjectionAttribute), false)) { return; }
             if (HttpRuntimeCacheHelper.Get<SysSetVM>(Keys.SysSetCacheKey) == null)
             {
-                var apiUrl = new UrlHelper(new RequestContext(filterContext.HttpContext, filterContext.RouteData)).Action("Detail", "SysSet", new { area = "Services" });
                 var restful = new RESTFul(RESTFul.GetSecretKey(Keys.Access_Token));
-                var clientResult = restful.Get<JsonData<SysSetVM>>(apiUrl);
+                var clientResult = restful.Get<JsonData<SysSetVM>>(RouteHelper.RouteUrl(new { controller = "SysSet", action = "Detail" }));
                 HttpRuntimeCacheHelper.Set(Keys.SysSetCacheKey, clientResult.data);
             }
             filterContext.RouteData.DataTokens.Add(Keys.SysSetInfoInjectionKey, HttpRuntimeCacheHelper.Get<SysSetVM>(Keys.SysSetCacheKey));
