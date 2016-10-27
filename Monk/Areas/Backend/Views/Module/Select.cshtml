@@ -27,7 +27,7 @@
     <span class="list-btn" onclick="insert();"><i class="monk-iconfont icon-backend-insert"></i><label>新增</label></span>
     <span class="list-btn" onclick="detail(this);"><i class="monk-iconfont icon-backend-details"></i><label>查看</label></span>
     <span class="list-btn" onclick="update(this);"><i class="monk-iconfont icon-backend-update"></i><label>编辑</label></span>
-    <span class="list-btn" onclick=""><i class="monk-iconfont icon-backend-delete"></i><label>删除</label></span>
+    <span class="list-btn" onclick="deletes(this);"><i class="monk-iconfont icon-backend-delete"></i><label>删除</label></span>
     <span class="list-btn float-right search-btn" onclick="backend.openSearch()"><i class="monk-iconfont icon-backend-search-list"></i><label>搜索</label></span>
 }
 
@@ -88,6 +88,26 @@
             }
             else {
                 backend.Tip("只能选择一条数据进行操作");
+            }
+        }
+        function deletes() {
+            var ids = backend.getCheckIds();
+            if (ids.indexOf("11111111-1111-1111-1111-111111111111") > -1) {
+                backend.errorTip("根站点栏目属于顶级栏目，禁止删除");
+            }
+            else {
+                if (ids.length < 1) {
+                    backend.Tip("至少选择一条进行操作");
+                }
+                else {
+                    backend.confirm("您确定要执行此操作吗？", null, function (index) {
+                        backend.post("@Url.Action("Delete","Module",new { })", { ids: ids.toString() }, function (data) {
+                            backend.get("@Url.Action("Modules","Module")", {}, function (data) {
+                                $(".monk-table table tbody").html(getModuleTreeHtml(data.data));
+                            });
+                        });
+                    });
+                }
             }
         }
     </script>

@@ -81,5 +81,15 @@ namespace Monk.Areas.Backend.Controllers
             var clientResult = restful.Post<JsonData<object>>(Url.Action("Update", "Module", new { area = "Services" }), viewModel);
             return Json(clientResult);
         }
+
+        [HttpPost]
+        public JsonResult Delete(string ids)
+        {
+            var clientResult = restful.Post<JsonData<List<object>>>(Url.Action("Delete", "Module", new { area = "Services" }), new
+            {
+                ids
+            });
+            return Json(clientResult);
+        }
     }
 }

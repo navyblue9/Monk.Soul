@@ -15,7 +15,7 @@ namespace Monk.Utils
 
         public static void Set(string key, object value)
         {
-            HttpRuntime.Cache.Insert(key, value);
+            Set(key, value, null, DateTime.UtcNow.AddYears(1), Cache.NoSlidingExpiration);
         }
 
         public static void Set(string key, object value, CacheDependency dependencies)
