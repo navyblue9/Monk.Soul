@@ -316,10 +316,12 @@
     <Compile Include="Areas\Backend\BackendAreaRegistration.cs" />
     <Compile Include="Areas\Backend\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Backend\Controllers\LoginLogController.cs" />
+    <Compile Include="Areas\Backend\Controllers\ModuleController.cs" />
     <Compile Include="Areas\Backend\Controllers\SysSetController.cs" />
     <Compile Include="Areas\Backend\Injections\MemberInfoInjectionAttribute.cs" />
     <Compile Include="Areas\Services\Controllers\CommonController.cs" />
     <Compile Include="Areas\Services\Controllers\LoginLogController.cs" />
+    <Compile Include="Areas\Services\Controllers\ModuleController.cs" />
     <Compile Include="Areas\Services\Controllers\SysSetController.cs" />
     <Compile Include="Filters\AccessVerifyAttribute.cs" />
     <Compile Include="Filters\AnonymousAttribute.cs" />
@@ -422,6 +424,7 @@
     <Content Include="Areas\Backend\Views\Shared\_List.cshtml" />
     <Content Include="Areas\Backend\Views\LoginLog\Select.cshtml" />
     <Content Include="Areas\Backend\Views\LoginLog\Detail.cshtml" />
+    <Content Include="Areas\Backend\Views\Module\Select.cshtml" />
     <None Include="bundleconfig.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

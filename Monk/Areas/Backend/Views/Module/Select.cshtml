@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "系统模块";
+    Layout = "~/Areas/Backend/Views/Shared/_List.cshtml";
+}
+
+@section head{
+    <style>
+        .backend-operate { display: none; }
+        .backend-content { bottom: 0; }
+    </style>
+}
+
+@section crumbs{
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="系统管理">系统管理</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="模块管理">模块管理</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="系统栏目">系统栏目</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="栏目列表">栏目列表</a>
+}
+
+
+@section buttons{
+    <span class="list-btn" onclick="backend.checkall(this);"><i class="monk-iconfont icon-backend-quanxuan"></i><label>全选</label></span>
+    <span class="list-btn float-right search-btn" onclick="backend.openSearch()"><i class="monk-iconfont icon-backend-search-list"></i><label>搜索</label></span>
+}
+
+<div class="monk-table">
+    <table>
+        <thead>
+            <tr>
+                <th align="center" class="monk-table-status">
+                    选择
+                </th>
+                <th align="center" class="monk-table-status">
+                    图标
+                </th>
+                <th align="left">
+                    名称
+                </th>
+                <th align="left" width="10%">
+                    排序
+                </th>
+                <th align="center" class="monk-table-status">
+                    开放
+                </th>
+                <th align="center" class="monk-table-status">
+                    默认
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="monk-td-radio">
+                    <span class="monk-iconfont icon-backend-checkbox list-radio" data-id=""></span>
+                </td>
+                <td class="monk-table-status">
+                    无
+                </td>
+                <td>
+                    无
+                </td>
+                <td>
+                    无
+                </td>
+                <td class="monk-table-status">
+                    无
+                </td>
+                <td class="monk-table-status">
+                    无
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+        </tfoot>
+    </table>
+</div>
