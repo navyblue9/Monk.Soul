@@ -4,22 +4,22 @@ using System.Text;
 
 namespace Monk.ViewModels
 {
-    public class Member_HaviorViewModel
+    public class Role_ButtonVM
     {
         
         /// <summary>
-        /// Desc:会员ID 
+        /// Desc:角色ID 
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Guid MemberID {get;set;}
+        public Guid RoleID {get;set;}
 
         /// <summary>
-        /// Desc:行为ID 
+        /// Desc:按钮ID 
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Guid HaviorID {get;set;}
+        public Guid ButtonID {get;set;}
 
         /// <summary>
         /// Desc:流水号 

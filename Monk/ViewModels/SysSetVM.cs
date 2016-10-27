@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Monk.ViewModels
 {
-    public class SysSetViewModel
+    public class SysSetVM
     {
 
         /// <summary>

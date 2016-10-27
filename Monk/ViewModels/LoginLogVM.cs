@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Monk.ViewModels
 {
-    public class OperateLogViewModel
+    public class LoginLogVM
     {
         
         /// <summary>
@@ -15,25 +15,39 @@ namespace Monk.ViewModels
         public Guid LogID {get;set;}
 
         /// <summary>
-        /// Desc:表名称 
+        /// Desc:账号 
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public string TableName {get;set;}
+        public string Account {get;set;}
 
         /// <summary>
-        /// Desc:表描述 
+        /// Desc:密码 
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public string TableRemark {get;set;}
+        public string Password {get;set;}
 
         /// <summary>
-        /// Desc:操作类型 
-        /// Default:- 
+        /// Desc:试登时间 
+        /// Default:(getdate()) 
         /// Nullable:False 
         /// </summary>
-        public int HandleType {get;set;}
+        public DateTime InTime {get;set;}
+
+        /// <summary>
+        /// Desc:登出时间 
+        /// Default:- 
+        /// Nullable:True 
+        /// </summary>
+        public DateTime? OffTime {get;set;}
+
+        /// <summary>
+        /// Desc:成功 
+        /// Default:((0)) 
+        /// Nullable:False 
+        /// </summary>
+        public Boolean Sucessed {get;set;}
 
         /// <summary>
         /// Desc:会员ID 
@@ -41,6 +55,55 @@ namespace Monk.ViewModels
         /// Nullable:True 
         /// </summary>
         public Guid? MemberID {get;set;}
+
+        /// <summary>
+        /// Desc:IP地址 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public string IPAddress {get;set;}
+
+        /// <summary>
+        /// Desc:IP详情 
+        /// Default:- 
+        /// Nullable:True 
+        /// </summary>
+        public string IPDetail {get;set;}
+
+        /// <summary>
+        /// Desc:HTTP方式 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public string HttpMethod {get;set;}
+
+        /// <summary>
+        /// Desc:异步请求 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public Boolean AjaxRequest {get;set;}
+
+        /// <summary>
+        /// Desc:移动设备 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public Boolean MobileDevice {get;set;}
+
+        /// <summary>
+        /// Desc:操作系统 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public string Platform {get;set;}
+
+        /// <summary>
+        /// Desc:浏览器 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public string Browser {get;set;}
 
         /// <summary>
         /// Desc:流水号 

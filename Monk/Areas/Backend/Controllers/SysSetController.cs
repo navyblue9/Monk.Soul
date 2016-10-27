@@ -16,8 +16,8 @@ namespace Monk.Areas.Backend.Controllers
         [HttpGet]
         public ActionResult Detail()
         {
-            var viewModel = new SysSetViewModel();
-            var clientResult = restful.Get<JsonData<SysSetViewModel>>(Url.Action("Detail", "SysSet", new { area = "Services" }));
+            var viewModel = new SysSetVM();
+            var clientResult = restful.Get<JsonData<SysSetVM>>(Url.Action("Detail", "SysSet", new { area = "Services" }));
             if (clientResult.status == "y") viewModel = clientResult.data;
             return View(viewModel);
         }
@@ -26,14 +26,14 @@ namespace Monk.Areas.Backend.Controllers
         public ActionResult Update(Guid? id)
         {
             if (id == null) return Content("非法参数");
-            var viewModel = new SysSetViewModel();
-            var clientResult = restful.Get<JsonData<SysSetViewModel>>(Url.Action("Detail", "SysSet", new { area = "Services" }), new { setID = id });
+            var viewModel = new SysSetVM();
+            var clientResult = restful.Get<JsonData<SysSetVM>>(Url.Action("Detail", "SysSet", new { area = "Services" }), new { setID = id });
             if (clientResult.status == "y") viewModel = clientResult.data;
             return View(viewModel);
         }
 
         [HttpPost]
-        public JsonResult Update(SysSetViewModel viewModel)
+        public JsonResult Update(SysSetVM viewModel)
         {
             var clientResult = restful.Post<JsonData<object>>(Url.Action("Update", "SysSet", new { area = "Services" }), viewModel);
             return Json(clientResult);

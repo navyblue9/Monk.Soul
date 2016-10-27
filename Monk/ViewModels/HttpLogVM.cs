@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Monk.ViewModels
 {
-    public class HaviorViewModel
+    public class HttpLogVM
     {
         
         /// <summary>
@@ -12,126 +12,84 @@ namespace Monk.ViewModels
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Guid HaviorID {get;set;}
+        public Guid LogID {get;set;}
 
         /// <summary>
-        /// Desc:名称 
-        /// Default:- 
-        /// Nullable:False 
-        /// </summary>
-        public string Name {get;set;}
-
-        /// <summary>
-        /// Desc:关键字 
-        /// Default:('Monk.Soul,百签软件,百小僧,baisoft,baisoft.org') 
-        /// Nullable:True 
-        /// </summary>
-        public string Keywords {get;set;}
-
-        /// <summary>
-        /// Desc:描述 
+        /// Desc:来源地址 
         /// Default:- 
         /// Nullable:True 
         /// </summary>
-        public string Description {get;set;}
-
-        /// <summary>
-        /// Desc:路由 
-        /// Default:((1)) 
-        /// Nullable:False 
-        /// </summary>
-        public Boolean Route {get;set;}
+        public string Referrer {get;set;}
 
         /// <summary>
         /// Desc:请求地址 
         /// Default:- 
-        /// Nullable:True 
+        /// Nullable:False 
         /// </summary>
         public string Url {get;set;}
 
         /// <summary>
-        /// Desc:区域 
+        /// Desc:传输数据 
         /// Default:- 
         /// Nullable:True 
         /// </summary>
-        public string Area {get;set;}
+        public string Data {get;set;}
 
         /// <summary>
-        /// Desc:控制器 
+        /// Desc:会员ID 
         /// Default:- 
         /// Nullable:True 
         /// </summary>
-        public string Controller {get;set;}
+        public Guid? MemberID {get;set;}
 
         /// <summary>
-        /// Desc:功能 
-        /// Default:- 
-        /// Nullable:True 
-        /// </summary>
-        public string Action {get;set;}
-
-        /// <summary>
-        /// Desc:标签属性 
-        /// Default:- 
-        /// Nullable:True 
-        /// </summary>
-        public string TagAttr {get;set;}
-
-        /// <summary>
-        /// Desc:字体图标 
+        /// Desc:IP地址 
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public string Iconfont {get;set;}
+        public string IPAddress {get;set;}
+
+        /// <summary>
+        /// Desc:IP详情 
+        /// Default:- 
+        /// Nullable:True 
+        /// </summary>
+        public string IPDetail {get;set;}
 
         /// <summary>
         /// Desc:HTTP方式 
-        /// Default:('GET') 
+        /// Default:- 
         /// Nullable:False 
         /// </summary>
         public string HttpMethod {get;set;}
 
         /// <summary>
-        /// Desc:页头代码 
-        /// Default:- 
-        /// Nullable:True 
-        /// </summary>
-        public string HeadCode {get;set;}
-
-        /// <summary>
-        /// Desc:页脚代码 
-        /// Default:- 
-        /// Nullable:True 
-        /// </summary>
-        public string FootCode {get;set;}
-
-        /// <summary>
-        /// Desc:布局地址 
-        /// Default:- 
-        /// Nullable:True 
-        /// </summary>
-        public string Layout {get;set;}
-
-        /// <summary>
-        /// Desc:模块ID 
+        /// Desc:异步请求 
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Guid ModuleID {get;set;}
+        public Boolean AjaxRequest {get;set;}
 
         /// <summary>
-        /// Desc:首页 
-        /// Default:((0)) 
+        /// Desc:移动设备 
+        /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Boolean Index {get;set;}
+        public Boolean MobileDevice {get;set;}
 
         /// <summary>
-        /// Desc:启用 
-        /// Default:((1)) 
+        /// Desc:操作系统 
+        /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Boolean Enable {get;set;}
+        public string Platform {get;set;}
+
+        /// <summary>
+        /// Desc:浏览器 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public string Browser {get;set;}
 
         /// <summary>
         /// Desc:流水号 

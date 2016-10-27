@@ -14,5 +14,12 @@ namespace Monk.Areas.Services.Controllers
     {
         public ModuleController(DbServices services) : base(services) { }
 
+
+        [HttpGet]
+        public JsonResult Modules()
+        {
+            var clientResult = new JsonData<List<ModuleVM>>();
+            return Json(clientResult, JsonRequestBehavior.AllowGet);
+        }
     }
 }

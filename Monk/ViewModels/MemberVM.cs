@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Monk.ViewModels
 {
-    public class RoleViewModel
+    public class MemberVM
     {
         
         /// <summary>
@@ -12,21 +12,56 @@ namespace Monk.ViewModels
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Guid RoleID {get;set;}
+        public Guid MemberID {get;set;}
 
         /// <summary>
-        /// Desc:名称 
+        /// Desc:账号 
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public string Name {get;set;}
+        public string Account {get;set;}
 
         /// <summary>
-        /// Desc:描述 
+        /// Desc:密码 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public string Password {get;set;}
+
+        /// <summary>
+        /// Desc:邮箱 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public string Email {get;set;}
+
+        /// <summary>
+        /// Desc:手机 
         /// Default:- 
         /// Nullable:True 
         /// </summary>
+        public string Phone {get;set;}
+
+        /// <summary>
+        /// Desc:照片 
+        /// Default:- 
+        /// Nullable:True 
+        /// </summary>
+        public string Photo {get;set;}
+
+        /// <summary>
+        /// Desc:描述 
+        /// Default:('亲，你还没介绍自己哦~') 
+        /// Nullable:True 
+        /// </summary>
         public string Remark {get;set;}
+
+        /// <summary>
+        /// Desc:会员组ID 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public Guid GroupID {get;set;}
 
         /// <summary>
         /// Desc:启用 
@@ -34,6 +69,13 @@ namespace Monk.ViewModels
         /// Nullable:False 
         /// </summary>
         public Boolean Enable {get;set;}
+
+        /// <summary>
+        /// Desc:审核 
+        /// Default:((1)) 
+        /// Nullable:False 
+        /// </summary>
+        public Boolean Pass {get;set;}
 
         /// <summary>
         /// Desc:流水号 

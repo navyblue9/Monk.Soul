@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Monk.ViewModels
 {
-    public class Group_ButtonViewModel
+    public class Group_VM
     {
         
         /// <summary>

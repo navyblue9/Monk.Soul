@@ -19,7 +19,7 @@ namespace Monk.Areas.Services.Controllers
         [ExemptionInjection]
         public JsonResult Detail(Guid? setID)
         {
-            var clientResult = new JsonData<SysSetViewModel>() { };
+            var clientResult = new JsonData<SysSetVM>() { };
             var model = new SysSet();
             services.Command((db) =>
             {
@@ -28,14 +28,14 @@ namespace Monk.Areas.Services.Controllers
             });
 
             // 此地方需要重点优化，后期使用autofac统一注入
-            Mapper.Initialize(c => c.CreateMap<SysSet, SysSetViewModel>());
+            Mapper.Initialize(c => c.CreateMap<SysSet, SysSetVM>());
 
-            clientResult.SetClientData("y", "操作成功", Mapper.Map<SysSetViewModel>(model));
+            clientResult.SetClientData("y", "操作成功", Mapper.Map<SysSetVM>(model));
             return Json(clientResult, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
-        public JsonResult Update(SysSetViewModel model)
+        public JsonResult Update(SysSetVM model)
         {
             var clientResult = new JsonData<object>() { };
             if (model.SetID == null) clientResult.SetClientData("n", "非法参数");

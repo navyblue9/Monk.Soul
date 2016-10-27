@@ -4,57 +4,22 @@ using System.Text;
 
 namespace Monk.ViewModels
 {
-    public class OperateDetailViewModel
+    public class Member_ModuleVM
     {
         
         /// <summary>
-        /// Desc:ID 
-        /// Default:- 
-        /// Nullable:False 
-        /// </summary>
-        public Guid DetailID {get;set;}
-
-        /// <summary>
-        /// Desc:操作日志ID 
-        /// Default:- 
-        /// Nullable:False 
-        /// </summary>
-        public Guid LogID {get;set;}
-
-        /// <summary>
-        /// Desc:字段名称 
-        /// Default:- 
-        /// Nullable:False 
-        /// </summary>
-        public string ColumnName {get;set;}
-
-        /// <summary>
-        /// Desc:字段描述 
-        /// Default:- 
-        /// Nullable:False 
-        /// </summary>
-        public string ColumnRemark {get;set;}
-
-        /// <summary>
-        /// Desc:旧值 
-        /// Default:- 
-        /// Nullable:False 
-        /// </summary>
-        public string OldValue {get;set;}
-
-        /// <summary>
-        /// Desc:新值 
-        /// Default:- 
-        /// Nullable:False 
-        /// </summary>
-        public string NewValue {get;set;}
-
-        /// <summary>
         /// Desc:会员ID 
         /// Default:- 
-        /// Nullable:True 
+        /// Nullable:False 
         /// </summary>
-        public Guid? MemberID {get;set;}
+        public Guid MemberID {get;set;}
+
+        /// <summary>
+        /// Desc:模块ID 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public Guid ModuleID {get;set;}
 
         /// <summary>
         /// Desc:流水号 

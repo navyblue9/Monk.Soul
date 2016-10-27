@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Monk.ViewModels
 {
-    public class Member_ModuleViewModel
+    public class Member_RoleVM
     {
         
         /// <summary>
@@ -15,11 +15,11 @@ namespace Monk.ViewModels
         public Guid MemberID {get;set;}
 
         /// <summary>
-        /// Desc:模块ID 
+        /// Desc:角色ID 
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Guid ModuleID {get;set;}
+        public Guid RoleID {get;set;}
 
         /// <summary>
         /// Desc:流水号 

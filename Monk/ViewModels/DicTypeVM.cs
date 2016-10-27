@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Monk.ViewModels
 {
-    public class GroupViewModel
+    public class DicTypeVM
     {
         
         /// <summary>
@@ -12,7 +12,7 @@ namespace Monk.ViewModels
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Guid GroupID {get;set;}
+        public Guid TypeID {get;set;}
 
         /// <summary>
         /// Desc:名称 
@@ -27,20 +27,6 @@ namespace Monk.ViewModels
         /// Nullable:True 
         /// </summary>
         public string Remark {get;set;}
-
-        /// <summary>
-        /// Desc:上级ID 
-        /// Default:- 
-        /// Nullable:True 
-        /// </summary>
-        public Guid? ParentID {get;set;}
-
-        /// <summary>
-        /// Desc:启用 
-        /// Default:((1)) 
-        /// Nullable:False 
-        /// </summary>
-        public Boolean Enable {get;set;}
 
         /// <summary>
         /// Desc:流水号 

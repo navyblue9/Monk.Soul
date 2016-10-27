@@ -7,6 +7,7 @@
 .icon-backend-weixin:before { content: "\e60a"; }
 .icon-backend-shuju:before { content: "\e60b"; }
 .icon-backend-checkbox-checked:before { content: "\e61c"; }
+.icon-backend-tree-line:before { content: "\e624"; }
 .icon-backend-crumbs:before { content: "\e61b"; }
 .icon-backend-refresh:before { content: "\e604"; }
 .icon-backend-search-list:before { content: "\e61f"; }
@@ -77,7 +78,7 @@ body { font-family: 'Microsoft YaHei','微软雅黑',SimSun,Arial; font-size: 13
 .backend-menu-action { color: #444; line-height: 32px; font-size: 13px; padding: 0 3px; border-radius: 3px; }
 .backend-menu-action:hover { background: #fafafa; cursor: pointer; }
 .backend-menu-action.selected { background: #f4f4f4; cursor: pointer; color: #3498db; }
-.backend-menu-action .space { display: inline-block; width: 18px; vertical-align: middle; pointer-events: none; }
+.space { display: inline-block; width: 18px; vertical-align: middle; pointer-events: none; }
 .backend-menu-action .action-icon { display: inline-block; vertical-align: middle; pointer-events: none; font-size: 16px; color: #444; }
 .backend-menu-action label { display: inline-block; vertical-align: middle; padding: 0 3px; pointer-events: none; }
 .backend-menu-action .icon-arrow { font-size: 12px; display: inline-block; vertical-align: middle; line-height: 35px; color: #666; }
@@ -127,3 +128,6 @@ body { font-family: 'Microsoft YaHei','微软雅黑',SimSun,Arial; font-size: 13
 .monk-table table td.monk-td-radio span.monk-iconfont.checked:before { content: "\e61c" !important; color: #3498db; }
 .monk-table-status { width: 70px; text-align: center; }
 .monk-table table td.monk-td-radio span.monk-iconfont { font-size: 17px; }
+.list-textbox-sort { border: 1px solid #e9e9e9; outline: none; width: 40px; height: 20px; padding: 0 5px; margin: 0; }
+.list-textbox-sort:focus { border-color: #1abc9c; box-shadow: 0 0 10px #1abc9c; }
+.module-link { margin: 0 0 0 10px; }

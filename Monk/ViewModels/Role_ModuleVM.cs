@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Monk.ViewModels
 {
-    public class Role_ModuleViewModel
+    public class Role_ModuleVM
     {
         
         /// <summary>

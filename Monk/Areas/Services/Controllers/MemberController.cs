@@ -18,7 +18,7 @@ namespace Monk.Areas.Services.Controllers
         [HttpPost]
         public JsonResult Signin(string account, string password)
         {
-            var clientResult = new JsonData<MemberViewModel>() { };
+            var clientResult = new JsonData<MemberVM>() { };
             var passwordMD5 = password.ToMD5().ToLower();
             Expression<Func<Member, bool>> expression = u => u.Account == account && u.Password == passwordMD5;
             var logid = Guid.NewGuid();
@@ -66,9 +66,9 @@ namespace Monk.Areas.Services.Controllers
                             }, u => u.LogID == logid);
 
                             // 此地方需要重点优化，后期使用autofac统一注入
-                            Mapper.Initialize(c => c.CreateMap<Member, MemberViewModel>());
+                            Mapper.Initialize(c => c.CreateMap<Member, MemberVM>());
 
-                            clientResult.SetClientData("y", "登录成功", Mapper.Map<MemberViewModel>(member), logid);
+                            clientResult.SetClientData("y", "登录成功", Mapper.Map<MemberVM>(member), logid);
                         }
                     }
                 }

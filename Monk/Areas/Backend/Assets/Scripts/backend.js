@@ -500,17 +500,23 @@
     };
     // 绑定行点击
     exports.rowClick = function () {
-        $(".monk-table table").on("click", "tr", function () {
+        $(".monk-table table").on("click", "tr", function (e) {
             var that = $(this);
-            var radio = that.children(".monk-td-radio").find(".list-radio");
-            if (radio.hasClass("checked")) {
-                radio.removeClass("checked");
-            }
-            else {
-                radio.addClass("checked");
+            e = window.event || e;
+            var current = e.srcElement || e.target;
+
+            if (!$(current).is(".list-textbox-sort")) {
+                var radio = that.children(".monk-td-radio").find(".list-radio");
+                if (radio.hasClass("checked")) {
+                    radio.removeClass("checked");
+                }
+                else {
+                    radio.addClass("checked");
+                }
             }
         });
     }();
+    // 全选
     exports.checkall = function (e) {
         if ($.trim($(e).text()) == "全选") {
             $(".monk-table .monk-td-radio .list-radio").addClass("checked");
@@ -528,6 +534,7 @@
             $(e).children("label").text("全选");
         }
     };
+    // 获取选中的id
     exports.getCheckIds = function () {
         var ids = [];
         $(".monk-table .monk-td-radio .list-radio.checked").each(function (e) {

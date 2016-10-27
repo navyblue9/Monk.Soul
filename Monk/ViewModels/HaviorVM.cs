@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Monk.ViewModels
 {
-    public class LoginLogViewModel
+    public class HaviorVM
     {
         
         /// <summary>
@@ -12,98 +12,126 @@ namespace Monk.ViewModels
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Guid LogID {get;set;}
+        public Guid HaviorID {get;set;}
 
         /// <summary>
-        /// Desc:账号 
+        /// Desc:名称 
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public string Account {get;set;}
+        public string Name {get;set;}
 
         /// <summary>
-        /// Desc:密码 
-        /// Default:- 
-        /// Nullable:False 
+        /// Desc:关键字 
+        /// Default:('Monk.Soul,百签软件,百小僧,baisoft,baisoft.org') 
+        /// Nullable:True 
         /// </summary>
-        public string Password {get;set;}
+        public string Keywords {get;set;}
 
         /// <summary>
-        /// Desc:试登时间 
-        /// Default:(getdate()) 
-        /// Nullable:False 
-        /// </summary>
-        public DateTime InTime {get;set;}
-
-        /// <summary>
-        /// Desc:登出时间 
+        /// Desc:描述 
         /// Default:- 
         /// Nullable:True 
         /// </summary>
-        public DateTime? OffTime {get;set;}
+        public string Description {get;set;}
 
         /// <summary>
-        /// Desc:成功 
-        /// Default:((0)) 
+        /// Desc:路由 
+        /// Default:((1)) 
         /// Nullable:False 
         /// </summary>
-        public Boolean Sucessed {get;set;}
+        public Boolean Route {get;set;}
 
         /// <summary>
-        /// Desc:会员ID 
+        /// Desc:请求地址 
         /// Default:- 
         /// Nullable:True 
         /// </summary>
-        public Guid? MemberID {get;set;}
+        public string Url {get;set;}
 
         /// <summary>
-        /// Desc:IP地址 
-        /// Default:- 
-        /// Nullable:False 
-        /// </summary>
-        public string IPAddress {get;set;}
-
-        /// <summary>
-        /// Desc:IP详情 
+        /// Desc:区域 
         /// Default:- 
         /// Nullable:True 
         /// </summary>
-        public string IPDetail {get;set;}
+        public string Area {get;set;}
+
+        /// <summary>
+        /// Desc:控制器 
+        /// Default:- 
+        /// Nullable:True 
+        /// </summary>
+        public string Controller {get;set;}
+
+        /// <summary>
+        /// Desc:功能 
+        /// Default:- 
+        /// Nullable:True 
+        /// </summary>
+        public string Action {get;set;}
+
+        /// <summary>
+        /// Desc:标签属性 
+        /// Default:- 
+        /// Nullable:True 
+        /// </summary>
+        public string TagAttr {get;set;}
+
+        /// <summary>
+        /// Desc:字体图标 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public string Iconfont {get;set;}
 
         /// <summary>
         /// Desc:HTTP方式 
-        /// Default:- 
+        /// Default:('GET') 
         /// Nullable:False 
         /// </summary>
         public string HttpMethod {get;set;}
 
         /// <summary>
-        /// Desc:异步请求 
+        /// Desc:页头代码 
         /// Default:- 
-        /// Nullable:False 
+        /// Nullable:True 
         /// </summary>
-        public Boolean AjaxRequest {get;set;}
+        public string HeadCode {get;set;}
 
         /// <summary>
-        /// Desc:移动设备 
+        /// Desc:页脚代码 
         /// Default:- 
-        /// Nullable:False 
+        /// Nullable:True 
         /// </summary>
-        public Boolean MobileDevice {get;set;}
+        public string FootCode {get;set;}
 
         /// <summary>
-        /// Desc:操作系统 
+        /// Desc:布局地址 
         /// Default:- 
-        /// Nullable:False 
+        /// Nullable:True 
         /// </summary>
-        public string Platform {get;set;}
+        public string Layout {get;set;}
 
         /// <summary>
-        /// Desc:浏览器 
+        /// Desc:模块ID 
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public string Browser {get;set;}
+        public Guid ModuleID {get;set;}
+
+        /// <summary>
+        /// Desc:首页 
+        /// Default:((0)) 
+        /// Nullable:False 
+        /// </summary>
+        public Boolean Index {get;set;}
+
+        /// <summary>
+        /// Desc:启用 
+        /// Default:((1)) 
+        /// Nullable:False 
+        /// </summary>
+        public Boolean Enable {get;set;}
 
         /// <summary>
         /// Desc:流水号 

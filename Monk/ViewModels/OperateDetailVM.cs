@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Monk.ViewModels
 {
-    public class DicTypeViewModel
+    public class OperateDetailVM
     {
         
         /// <summary>
@@ -12,21 +12,49 @@ namespace Monk.ViewModels
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Guid TypeID {get;set;}
+        public Guid DetailID {get;set;}
 
         /// <summary>
-        /// Desc:名称 
+        /// Desc:操作日志ID 
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public string Name {get;set;}
+        public Guid LogID {get;set;}
 
         /// <summary>
-        /// Desc:描述 
+        /// Desc:字段名称 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public string ColumnName {get;set;}
+
+        /// <summary>
+        /// Desc:字段描述 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public string ColumnRemark {get;set;}
+
+        /// <summary>
+        /// Desc:旧值 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public string OldValue {get;set;}
+
+        /// <summary>
+        /// Desc:新值 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public string NewValue {get;set;}
+
+        /// <summary>
+        /// Desc:会员ID 
         /// Default:- 
         /// Nullable:True 
         /// </summary>
-        public string Remark {get;set;}
+        public Guid? MemberID {get;set;}
 
         /// <summary>
         /// Desc:流水号 

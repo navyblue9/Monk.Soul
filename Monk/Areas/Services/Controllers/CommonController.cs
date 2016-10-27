@@ -12,7 +12,7 @@ namespace Monk.Areas.Services.Controllers
         public JsonResult UploadImage()
         {
             var clientResult = new JsonData<object>() { };
-            var setVewModel = RouteData.DataTokens[Keys.SysSetInfoInjectionKey] as SysSetViewModel;
+            var setVewModel = RouteData.DataTokens[Keys.SysSetInfoInjectionKey] as SysSetVM;
 
             if (setVewModel == null) clientResult.SetClientData("n", "非法操作");
             else

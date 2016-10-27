@@ -11,7 +11,7 @@ namespace Monk.Areas.Backend.Injections
             base.OnResultExecuting(filterContext);
             if (filterContext.HttpContext.Session[Keys.SessionKey] != null)
             {
-                var memberInfo = SessionHelper.GetSessionInstance<SessionMember>(Keys.SessionKey);
+                var memberInfo = SessionHelper.GetSessionInstance<SessionMemberVM>(Keys.SessionKey);
                 var result = filterContext.Result;
                 if (result is ViewResult)
                 {

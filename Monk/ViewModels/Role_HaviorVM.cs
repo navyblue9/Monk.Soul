@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Monk.ViewModels
 {
-    public class Role_ButtonViewModel
+    public class Role_HaviorVM
     {
         
         /// <summary>
@@ -15,11 +15,11 @@ namespace Monk.ViewModels
         public Guid RoleID {get;set;}
 
         /// <summary>
-        /// Desc:按钮ID 
+        /// Desc:行为ID 
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Guid ButtonID {get;set;}
+        public Guid HaviorID {get;set;}
 
         /// <summary>
         /// Desc:流水号 

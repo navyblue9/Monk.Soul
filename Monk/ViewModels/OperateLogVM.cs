@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Monk.ViewModels
 {
-    public class MemberViewModel
+    public class OperateLogVM
     {
         
         /// <summary>
@@ -12,70 +12,35 @@ namespace Monk.ViewModels
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Guid MemberID {get;set;}
+        public Guid LogID {get;set;}
 
         /// <summary>
-        /// Desc:账号 
+        /// Desc:表名称 
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public string Account {get;set;}
+        public string TableName {get;set;}
 
         /// <summary>
-        /// Desc:密码 
+        /// Desc:表描述 
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public string Password {get;set;}
+        public string TableRemark {get;set;}
 
         /// <summary>
-        /// Desc:邮箱 
+        /// Desc:操作类型 
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public string Email {get;set;}
+        public int HandleType {get;set;}
 
         /// <summary>
-        /// Desc:手机 
-        /// Default:- 
-        /// Nullable:True 
-        /// </summary>
-        public string Phone {get;set;}
-
-        /// <summary>
-        /// Desc:照片 
+        /// Desc:会员ID 
         /// Default:- 
         /// Nullable:True 
         /// </summary>
-        public string Photo {get;set;}
-
-        /// <summary>
-        /// Desc:描述 
-        /// Default:('亲，你还没介绍自己哦~') 
-        /// Nullable:True 
-        /// </summary>
-        public string Remark {get;set;}
-
-        /// <summary>
-        /// Desc:会员组ID 
-        /// Default:- 
-        /// Nullable:False 
-        /// </summary>
-        public Guid GroupID {get;set;}
-
-        /// <summary>
-        /// Desc:启用 
-        /// Default:((1)) 
-        /// Nullable:False 
-        /// </summary>
-        public Boolean Enable {get;set;}
-
-        /// <summary>
-        /// Desc:审核 
-        /// Default:((1)) 
-        /// Nullable:False 
-        /// </summary>
-        public Boolean Pass {get;set;}
+        public Guid? MemberID {get;set;}
 
         /// <summary>
         /// Desc:流水号 

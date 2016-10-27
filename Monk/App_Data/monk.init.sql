@@ -952,3 +952,25 @@ EXEC sp_addextendedproperty N'MS_Description', N'硬删除', N'user', N'dbo', N'
 EXEC sp_addextendedproperty N'MS_Description', N'创建时间', N'user', N'dbo', N'table', N'Role_Button', N'column', N'CreateTime';
 EXEC sp_addextendedproperty N'MS_Description', N'记录会员', N'user', N'dbo', N'table', N'Role_Button', N'column', N'LogMemberID';
 GO
+
+
+-- 创建模块视图
+IF ( OBJECT_ID('dbo.[V_Module]', 'V') IS NOT NULL )
+    DROP VIEW dbo.[V_Module];
+GO
+CREATE VIEW dbo.[V_Module]
+AS
+    SELECT  module.* ,
+            havior.HaviorID ,
+            havior.Name AS HaviorName ,
+            havior.HttpMethod ,
+            havior.Url
+    FROM    dbo.Module module
+            LEFT JOIN ( SELECT  *
+                        FROM    dbo.Havior
+                        WHERE   Del = 0
+                                AND Destroy = 0
+                                AND [Enable] = 1
+                                AND [Index] = 1
+                      ) havior ON module.ModuleID = havior.ModuleID;
+GO

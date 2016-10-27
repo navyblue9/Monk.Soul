@@ -14,20 +14,20 @@ namespace Monk.Injections
         {
             base.OnActionExecuting(filterContext);
             if (filterContext.ActionDescriptor.IsDefined(typeof(ExemptionInjectionAttribute), false) || filterContext.ActionDescriptor.ControllerDescriptor.IsDefined(typeof(ExemptionInjectionAttribute), false)) { return; }
-            if (HttpRuntimeCacheHelper.Get<SysSetViewModel>(Keys.SysSetCacheKey) == null)
+            if (HttpRuntimeCacheHelper.Get<SysSetVM>(Keys.SysSetCacheKey) == null)
             {
                 var apiUrl = new UrlHelper(new RequestContext(filterContext.HttpContext, filterContext.RouteData)).Action("Detail", "SysSet", new { area = "Services" });
                 var restful = new RESTFul(RESTFul.GetSecretKey(Keys.Access_Token));
-                var clientResult = restful.Get<JsonData<SysSetViewModel>>(apiUrl);
+                var clientResult = restful.Get<JsonData<SysSetVM>>(apiUrl);
                 HttpRuntimeCacheHelper.Set(Keys.SysSetCacheKey, clientResult.data);
             }
-            filterContext.RouteData.DataTokens.Add(Keys.SysSetInfoInjectionKey, HttpRuntimeCacheHelper.Get<SysSetViewModel>(Keys.SysSetCacheKey));
+            filterContext.RouteData.DataTokens.Add(Keys.SysSetInfoInjectionKey, HttpRuntimeCacheHelper.Get<SysSetVM>(Keys.SysSetCacheKey));
         }
 
         public override void OnResultExecuting(ResultExecutingContext filterContext)
         {
             base.OnResultExecuting(filterContext);
-            var sysSetModel = filterContext.RouteData.DataTokens[Keys.SysSetInfoInjectionKey] as SysSetViewModel;
+            var sysSetModel = filterContext.RouteData.DataTokens[Keys.SysSetInfoInjectionKey] as SysSetVM;
             var result = filterContext.Result;
             if (result is ViewResult)
             {

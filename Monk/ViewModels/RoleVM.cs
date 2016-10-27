@@ -4,22 +4,36 @@ using System.Text;
 
 namespace Monk.ViewModels
 {
-    public class Group_HaviorViewModel
+    public class RoleVM
     {
         
         /// <summary>
-        /// Desc:会员组ID 
+        /// Desc:ID 
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Guid GroupID {get;set;}
+        public Guid RoleID {get;set;}
 
         /// <summary>
-        /// Desc:行为ID 
+        /// Desc:名称 
         /// Default:- 
         /// Nullable:False 
         /// </summary>
-        public Guid HaviorID {get;set;}
+        public string Name {get;set;}
+
+        /// <summary>
+        /// Desc:描述 
+        /// Default:- 
+        /// Nullable:True 
+        /// </summary>
+        public string Remark {get;set;}
+
+        /// <summary>
+        /// Desc:启用 
+        /// Default:((1)) 
+        /// Nullable:False 
+        /// </summary>
+        public Boolean Enable {get;set;}
 
         /// <summary>
         /// Desc:流水号 

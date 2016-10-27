@@ -6,7 +6,7 @@ using System.Web;
 namespace Monk.Areas.Backend.ViewModels
 {
     [Serializable]
-    public class SessionMember
+    public class SessionMemberVM
     {
         public Guid MemberID { get; set; }
         public string Account { get; set; }

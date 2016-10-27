@@ -27,9 +27,9 @@ namespace Monk.Areas.Backend.Controllers
 
         [HttpPost]
         [Anonymous]
-        public JsonResult Signin(SigninModel viewModel)
+        public JsonResult Signin(SigninModelVM viewModel)
         {
-            var clientResult = restful.Post<JsonData<MemberViewModel>>(Url.Action("Signin", "Member", new { area = "Services" }), new
+            var clientResult = restful.Post<JsonData<MemberVM>>(Url.Action("Signin", "Member", new { area = "Services" }), new
             {
                 account = viewModel.Account.Trim(),
                 password = viewModel.Password.Trim()
@@ -37,10 +37,10 @@ namespace Monk.Areas.Backend.Controllers
             if (clientResult.status == "y")
             {
                 var cfg = new MapperConfigurationExpression();
-                cfg.CreateMap<MemberViewModel, SessionMember>();
-                cfg.CreateMap<JsonData<MemberViewModel>, JsonData<SessionMember>>();
+                cfg.CreateMap<MemberVM, SessionMemberVM>();
+                cfg.CreateMap<JsonData<MemberVM>, JsonData<SessionMemberVM>>();
                 Mapper.Initialize(cfg);
-                var clientResultDto = Mapper.Map<JsonData<SessionMember>>(clientResult);
+                var clientResultDto = Mapper.Map<JsonData<SessionMemberVM>>(clientResult);
 
                 clientResultDto.data.LogID = Guid.Parse(clientResultDto.others.ToString());
                 Session[Keys.SessionKey] = clientResultDto.data;
@@ -69,7 +69,7 @@ namespace Monk.Areas.Backend.Controllers
         [HttpPost]
         public JsonResult Signout()
         {
-            var sessionModel = SessionHelper.GetSessionInstance<SessionMember>(Keys.SessionKey);
+            var sessionModel = SessionHelper.GetSessionInstance<SessionMemberVM>(Keys.SessionKey);
             var clientResult = restful.Post<JsonData<object>>(Url.Action("Signout", "Member", new { area = "Services" }), new
             {
                 logid = sessionModel.LogID
