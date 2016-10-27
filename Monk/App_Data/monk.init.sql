@@ -978,6 +978,5 @@ AS
                         FROM    dbo.Module
                         WHERE   Del = 0
                                 AND Destroy = 0
-                                AND [Enable] = 1
                       ) parentModule ON module.ParentID = parentModule.ModuleID;
 GO

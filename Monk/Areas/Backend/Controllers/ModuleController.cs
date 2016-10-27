@@ -24,5 +24,11 @@ namespace Monk.Areas.Backend.Controllers
             var clientResult = restful.Get<JsonData<List<V_ModuleVM>>>(Url.Action("Modules", "Module", new { area = "Services" }));
             return Json(clientResult, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpGet]
+        public ActionResult Insert(Guid? id)
+        {
+            return View(new ModuleVM() { Enable = true, Iconfont = "icon-backend-file", Sort = 0 });
+        }
     }
 }

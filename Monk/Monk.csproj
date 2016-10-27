@@ -427,6 +427,7 @@
     <Content Include="Areas\Backend\Views\LoginLog\Select.cshtml" />
     <Content Include="Areas\Backend\Views\LoginLog\Detail.cshtml" />
     <Content Include="Areas\Backend\Views\Module\Select.cshtml" />
+    <Content Include="Areas\Backend\Views\Module\Insert.cshtml" />
     <None Include="bundleconfig.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

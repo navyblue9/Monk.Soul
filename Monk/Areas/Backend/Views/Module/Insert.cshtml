@@ -1,0 +1,164 @@
+﻿@model ModuleVM
+@{
+    ViewBag.Title = "新增栏目";
+    Layout = "~/Areas/Backend/Views/Shared/_Form.cshtml";
+}
+
+@section crumbs{
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="系统管理">系统管理</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="模块管理">模块管理</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="系统栏目">系统栏目</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="新增栏目">新增栏目</a>
+}
+
+@section beginForm{@{ Html.BeginForm("Insert", "Module", FormMethod.Post, new { @class = "monk-form" });}}
+
+<div class="monk-form-item">
+    <label for="Name" class="monk-form-label">栏目名称</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        @Html.TextBoxFor(u => u.Name,
+        new
+        {
+            @class = "monk-form-input normal",
+            placeholder = "栏目名称",
+            datatype = "*1-16",
+            errormsg = "栏目名称由1-16位英文字母、数字或符号组成",
+            nullmsg = "请输入系统名称"
+        })
+        <span class="monk-iconfont icon-monk-required"></span>
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
+    </div>
+    <div class="monk-form-tip">通常栏目昵称不宜过长，4-6个字最为恰当</div>
+</div>
+<div class="monk-form-item">
+    <label for="ParentID" class="monk-form-label">上级栏目</label>
+    <div class="monk-form-wrap monk-form-select-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        <input type="text" class="monk-form-input middle" placeholder="请输入或选择..." />
+        <span class="monk-iconfont monk-select-arrow icon-monk-arrowdown border-left"></span>
+    </div>
+    <div class="monk-form-select monk-none">
+        <select class="monk-select" name="ParentID" datatype="*" nullmsg="请选择上级栏目" errormsg="请选择上级栏目">
+            <option value="">请输入或选择...</option>
+            <option value="0">列表项目一</option>
+            <option value="1" selected="selected">列表项目二</option>
+            <option value="2">列表项目三</option>
+            <option value="3">列表项目四</option>
+            <option value="4">列表项目五</option>
+            <option value="5">列表项目六</option>
+            <optgroup label="这里是分类栏目"></optgroup>
+            <option value="6">列表项目七</option>
+            <option value="7">列表项目八</option>
+            <option value="8">列表项目九</option>
+            <option value="9">列表项目十</option>
+        </select>
+    </div>
+    <div class="monk-form-tip">选择将该模块添加到指定栏目下面</div>
+</div>
+<div class="monk-form-item">
+    <label for="Remark" class="monk-form-label">栏目描述</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input textarea-icon"></span>
+        @Html.TextAreaFor(u => u.Remark,
+        new
+        {
+            @class = "monk-form-textarea normal",
+            placeholder = "栏目描述",
+            datatype = "*1-100",
+            ignore = "ignore",
+            errormsg = "栏目描述由1-100位英文字母、数字或符号组成",
+            nullmsg = "请输入栏目描述"
+        })
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input textarea-icon"></span>
+    </div>
+    <div class="monk-form-tip">简单一句话，描述一下该栏目吧。</div>
+</div>
+<div class="monk-form-item">
+    <label for="Sort" class="monk-form-label">排序数字</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        @Html.TextBoxFor(u => u.Sort,
+        new
+        {
+            @class = "monk-form-input min",
+            placeholder = "排序数字",
+            datatype = "n",
+            errormsg = "排序数字必须是正整数",
+            nullmsg = "请输入排序数字"
+        })
+        <span class="monk-iconfont icon-monk-required"></span>
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
+    </div>
+    <div class="monk-form-tip">数字越小，越排前面</div>
+</div>
+<div class="monk-form-item">
+    <label for="TagAttr" class="monk-form-label">标签属性</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input textarea-icon"></span>
+        @Html.TextAreaFor(u => u.TagAttr,
+        new
+        {
+            @class = "monk-form-textarea normal",
+            placeholder = "标签属性",
+            datatype = "*1-100",
+            ignore = "ignore",
+            errormsg = "标签属性由1-100位英文字母、数字或符号组成",
+            nullmsg = "请输入标签属性"
+        })
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input textarea-icon"></span>
+    </div>
+    <div class="monk-form-tip">可以为栏目标签添加HTML属性，如：style="color:#000;" data-name="xxx"</div>
+</div>
+<div class="monk-form-item">
+    <label for="Iconfont" class="monk-form-label">字体图标</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        @Html.TextBoxFor(u => u.Iconfont,
+        new
+        {
+            @class = "monk-form-input normal",
+            placeholder = "字体图标",
+            datatype = "s1-50",
+            ignore = "ignore",
+            errormsg = "字体图标由1-50位英文字母、数字或符号组成",
+            nullmsg = "请输入字体图标"
+        })
+        <span class="monk-iconfont icon-monk-required"></span>
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
+    </div>
+    <div class="monk-form-tip">目前只支持阿里图标，格式为：icon-图标class，默认为文件字体图标</div>
+</div>
+<div class="monk-form-item">
+    <label for="Enable" class="monk-form-label">开放状态</label>
+    <div class="monk-form-switch-list">
+        @Html.CheckBoxFor(u => u.Enable,
+       new
+       {
+           @class = "monk-switch",
+           text = "开放"
+       })
+    </div>
+    <div class="monk-form-tip">写点什么描述一下</div>
+</div>
+
+@section operate{
+    <input type="submit" class="monk-input-button turquoise monk-form-submit" value="提交保存">
+    <input type="reset" class="monk-input-button amethyst monk-form-reset" value="重置表单">
+    <input type="button" class="monk-input-button orange monk-form-previous" value="返回前页" onclick="history.go(-1);">
+}
+
+@section endForm{@{ Html.EndForm();}}
+
+@section foot{
+    <script type="text/javascript">
+        $(function () {
+            backend.validform(function (data) {
+            });
+        });
+    </script>
+}

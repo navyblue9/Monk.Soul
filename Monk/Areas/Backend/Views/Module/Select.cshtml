@@ -24,6 +24,9 @@
 
 @section buttons{
     <span class="list-btn" onclick="backend.checkall(this);"><i class="monk-iconfont icon-backend-quanxuan"></i><label>全选</label></span>
+    <span class="list-btn" onclick="insert();"><i class="monk-iconfont icon-backend-insert"></i><label>新增</label></span>
+    <span class="list-btn" onclick=""><i class="monk-iconfont icon-backend-details"></i><label>查看</label></span>
+    <span class="list-btn" onclick=""><i class="monk-iconfont icon-backend-delete"></i><label>删除</label></span>
     <span class="list-btn float-right search-btn" onclick="backend.openSearch()"><i class="monk-iconfont icon-backend-search-list"></i><label>搜索</label></span>
 }
 
@@ -58,6 +61,17 @@
 </div>
 
 @section foot{
+    <script type="text/javascript">
+        function insert() {
+            var ids = backend.getCheckIds();
+            if (ids.length > 0) {
+                window.location.href = "@Url.Action("Insert","Module")/" + ids[0];
+            }
+            else {
+                window.location.href = "@Url.Action("Insert","Module")";
+            }
+        }
+    </script>
     <script type="text/html" id="tpl">
         <tr>
             <td class="monk-td-radio">
@@ -81,6 +95,7 @@
         </tr>
     </script>
     <script type="text/javascript">
+        // 递归生成树
         var render = monk.tppl(document.getElementById("tpl").innerHTML);
         function getModuleTreeHtml(data) {
             var treeHtml = "";
