@@ -18,7 +18,7 @@
     <span class="list-btn" onclick="backend.checkall(this);"><i class="monk-iconfont icon-backend-quanxuan"></i><label>全选</label></span>
     <span class="list-btn" onclick="detail(this);"><i class="monk-iconfont icon-backend-details"></i><label>查看</label></span>
     <span class="list-btn" onclick="deletes(this);"><i class="monk-iconfont icon-backend-delete"></i><label>删除</label></span>
-    <span class="list-btn float-right" onclick="backend.openSearch()"><i class="monk-iconfont icon-backend-search-list"></i><label>搜索</label></span>
+    <span class="list-btn float-right search-btn" onclick="backend.openSearch()"><i class="monk-iconfont icon-backend-search-list"></i><label>搜索</label></span>
 }
 
 @section searchs{
@@ -27,7 +27,7 @@
             <label for="" class="monk-form-label">登录账号</label>
             <div class="monk-form-wrap">
                 <span class="monk-iconfont border-right icon-monk-input"></span>
-                <input type="text" class="monk-form-input large" placeholder="登录账号" />
+                <input type="text" class="monk-form-input large" name="account" placeholder="登录账号" />
                 <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
             </div>
             <div class="monk-form-tip">支持登录账号模糊搜索</div>
@@ -40,7 +40,7 @@
                 <span class="monk-iconfont monk-select-arrow icon-monk-arrowdown border-left"></span>
             </div>
             <div class="monk-form-select monk-none">
-                <select class="monk-select">
+                <select class="monk-select" name="sucessed">
                     <option value="" selected="selected">请选择...</option>
                     <option value="1">成功</option>
                     <option value="0">失败</option>
@@ -160,6 +160,17 @@
             backend.pagination("@Url.Action("List","LoginLog")",@ViewBag.SysSetInfo.PageSize,{},function(data){
                 var html=  render(data);
                 $(".monk-table table tbody").html(html);
+            });
+
+            // 搜索
+            $(".monk-form-submit").click(function(){
+                $(".search-btn").click();
+                var params={
+                    account:$("input[name='account']").val(),
+                    sucessed:$("select[name='sucessed']").val()
+                };
+                $("#page").pagination('setParams', params);
+                $("#page").pagination('remote');
             });
         });
     </script>

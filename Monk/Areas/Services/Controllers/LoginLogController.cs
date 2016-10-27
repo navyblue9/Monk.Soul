@@ -16,14 +16,16 @@ namespace Monk.Areas.Services.Controllers
         public LoginLogController(DbServices services) : base(services) { }
 
         [HttpGet]
-        public JsonResult Select(int? pageSize, int? pageIndex = 0)
+        public JsonResult Select(int? pageSize, int? pageIndex = 0, string account = "", string sucessed = null)
         {
             var clientResult = new JsonData<List<LoginLogViewModel>>() { };
+            var whereStr = "Account like @account and Sucessed like @sucessed";
+
             var setVewModel = RouteData.DataTokens[Keys.SysSetInfoInjectionKey] as SysSetViewModel;
             pageSize = pageSize == null ? setVewModel.PageSize : pageSize;
             services.Command((db) =>
             {
-                var query = db.Queryable<LoginLog>().Where(c => true);
+                var query = db.Queryable<LoginLog>().Where(c => true).Where(whereStr, new { account = "%" + account + "%", sucessed = "%" + sucessed + "%" });
                 var total = query.Count();
                 var list = query.OrderBy(u => u.InTime, OrderByType.desc).ToPageList(Convert.ToInt32(pageIndex + 1), Convert.ToInt32(pageSize));
 
@@ -60,8 +62,8 @@ namespace Monk.Areas.Services.Controllers
         [HttpPost]
         public JsonResult Delete(string ids)
         {
-            var list = ids.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(u => Guid.Parse(u));
             var clientResult = new JsonData<object>() { };
+            var list = ids.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(u => Guid.Parse(u));
             services.Command((db) =>
                 {
                     db.BeginTran();

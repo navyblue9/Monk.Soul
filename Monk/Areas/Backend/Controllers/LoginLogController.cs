@@ -17,12 +17,14 @@ namespace Monk.Areas.Backend.Controllers
         }
 
         [HttpGet]
-        public JsonResult List(int pageSize, int pageIndex = 0)
+        public JsonResult List(int pageSize, int pageIndex = 0, string account = "", string sucessed = null)
         {
             var clientResult = restful.Get<JsonData<List<LoginLogViewModel>>>(Url.Action("Select", "LoginLog", new { area = "Services" }), new
             {
                 pageSize,
-                pageIndex
+                pageIndex,
+                account,
+                sucessed
             });
             return Json(clientResult, JsonRequestBehavior.AllowGet);
         }
