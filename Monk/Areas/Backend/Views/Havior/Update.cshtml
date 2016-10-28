@@ -1,6 +1,6 @@
 ﻿@model HaviorVM
 @{
-    ViewBag.Title = "新增行为";
+    ViewBag.Title = "编辑行为";
     Layout = "~/Areas/Backend/Views/Shared/_Form.cshtml";
 }
 
@@ -16,10 +16,10 @@
     <label class="backend-crumbs-separator">/</label>
     <a href="#" title="行为管理">行为管理</a>
     <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="新增行为">新增行为</a>
+    <a href="#" title="编辑行为">编辑行为</a>
 }
 
-@section beginForm{@{ Html.BeginForm("Insert", "Havior", FormMethod.Post, new { @class = "monk-form" });}}
+@section beginForm{@{ Html.BeginForm("Update", "Havior", FormMethod.Post, new { @class = "monk-form" });}}
 
 <div class="monk-form-item">
     <label for="ModuleID" class="monk-form-label">所属模块</label>
@@ -66,10 +66,10 @@
     <div class="monk-form-select monk-none">
         <select class="monk-select" name="HttpMethod" datatype="*" nullmsg="请选择请求方式" errormsg="请选择请求方式">
             <option value="">请输入或选择...</option>
-            <option value="GET">GET</option>
-            <option value="POST">POST</option>
-            <option value="PUT">PUT</option>
-            <option value="DELETE">DELETE</option>
+            <option value="GET" @(Model.HttpMethod == "GET" ? "selected='selected'" : "")>GET</option>
+            <option value="POST" @(Model.HttpMethod == "POST" ? "selected='selected'" : "")>POST</option>
+            <option value="PUT" @(Model.HttpMethod == "PUT" ? "selected='selected'" : "")>PUT</option>
+            <option value="DELETE" @(Model.HttpMethod == "DELETE" ? "selected='selected'" : "")>DELETE</option>
         </select>
     </div>
     <div class="monk-form-tip">设置该性能请求的方式，通常选择GET、POST请求，其他请求或有兼容问题</div>
@@ -234,12 +234,12 @@
 </div>
 <div class="monk-form-item">
     <label for="HeadCode" class="monk-form-label">页头代码</label>
-    <div class="monk-editor-code" id="head-code"><textarea style="display:none;"></textarea></div>
+    <div class="monk-editor-code" id="head-code"><textarea style="display:none;">@Model.HeadCode</textarea></div>
     <div class="monk-form-tip">在这里可以添加页头代码，<label class="tipcolor">按F11可以全屏，ESC可以退出</label></div>
 </div>
 <div class="monk-form-item">
     <label for="FootCode" class="monk-form-label">页脚代码</label>
-    <div class="monk-editor-code" id="foot-code"><textarea style="display:none;"></textarea></div>
+    <div class="monk-editor-code" id="foot-code"><textarea style="display:none;">@Model.FootCode</textarea></div>
     <div class="monk-form-tip">在这里可以添加页脚代码，<label class="tipcolor">按F11可以全屏，ESC可以退出</label></div>
 </div>
 <div class="monk-form-item">
@@ -256,6 +256,7 @@
 </div>
 
 @section operate{
+    @Html.HiddenFor(u => u.HaviorID)
     <input type="submit" class="monk-input-button turquoise monk-form-submit" value="提交保存">
     <input type="reset" class="monk-input-button amethyst monk-form-reset" value="重置表单">
     <input type="reset" class="monk-input-button peterRiver" onclick="window.location.href = '@Url.Action("Select","Havior")';" value="返回列表">
@@ -271,12 +272,7 @@
             var headcode = backend.codeEditor("head-code", "HeadCode");
             var footcode = backend.codeEditor("foot-code", "FootCode");
             backend.validform(function (data) {
-                backend.confirm(data.info + "，是否继续新增？", {}, function (index) {
-                    backend.layer().close(index);
-                    window.location.reload();
-                }, function () {
-                    window.location.href = "@Url.Action("Detail","Havior",new { id=""})/" + data.data.id;
-                });
+                window.location.href = "@Url.Action("Detail","Havior",new { id=Model.HaviorID})";
             });
         });
     </script>

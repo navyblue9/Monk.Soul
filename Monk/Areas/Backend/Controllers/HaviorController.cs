@@ -1,4 +1,5 @@
-﻿using Monk.Areas.Backend.App_Code;
+﻿using AutoMapper;
+using Monk.Areas.Backend.App_Code;
 using Monk.Areas.Backend.ViewModels;
 using Monk.Utils;
 using Monk.ViewModels;
@@ -64,6 +65,36 @@ namespace Monk.Areas.Backend.Controllers
             });
             if (clientResult.status == "y") viewModel = clientResult.data;
             return View(viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult Update(Guid? id)
+        {
+            if (id == null) return Content("非法参数");
+            var viewModel = new HaviorVM();
+            var clientResult = restful.Get<JsonData<V_HaviorVM>>(Url.Action("Detail", "Havior", new { area = "Services" }), new
+            {
+                haviorId = id
+            });
+            if (clientResult.status == "y")
+            {
+                Mapper.Initialize(c => c.CreateMap<V_HaviorVM, HaviorVM>());
+                viewModel = Mapper.Map<HaviorVM>(clientResult.data);
+            };
+            ViewData["ModuleList"] = Common.ModuleDropDownList(viewModel.ModuleID);
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public JsonResult Update(HaviorVM viewModel)
+        {
+            if (viewModel.Route == true)
+            {
+                viewModel.Url = Url.Action(viewModel.Action, viewModel.Controller, new { area = viewModel.Area, id = viewModel.Parameter });
+            }
+            var clientResult = restful.Post<JsonData<object>>(Url.Action("Update", "Havior", new { area = "Services" }), viewModel);
+            return Json(clientResult);
         }
     }
 }

@@ -2582,6 +2582,7 @@
     <Content Include="Areas\Backend\Views\Havior\Select.cshtml" />
     <Content Include="Areas\Backend\Views\Havior\Insert.cshtml" />
     <Content Include="Areas\Backend\Views\Havior\Detail.cshtml" />
+    <Content Include="Areas\Backend\Views\Havior\Update.cshtml" />
     <None Include="bundleconfig.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

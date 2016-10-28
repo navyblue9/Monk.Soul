@@ -79,5 +79,46 @@ namespace Monk.Areas.Services.Controllers
             clientResult.SetClientData("y", "操作成功", Mapper.Map<V_HaviorVM>(model));
             return Json(clientResult, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public JsonResult Update(HaviorVM model)
+        {
+            var clientResult = new JsonData<object>() { };
+            if (model.HaviorID == null) clientResult.SetClientData("n", "非法参数");
+
+            services.Command((db) =>
+            {
+                if (model.Index == true)
+                {
+                    db.Update<Havior>(new { Index = false }, u => u.ModuleID == model.ModuleID);
+                }
+
+                db.Update<Havior>(new
+                {
+                    model.Action,
+                    model.Area,
+                    model.Controller,
+                    model.FootCode,
+                    model.HeadCode,
+                    model.HttpMethod,
+                    model.Index,
+                    model.Layout,
+                    model.ModuleID,
+                    model.Name,
+                    model.Parameter,
+                    model.Remark,
+                    model.Route,
+                    model.Url,
+                    model.Enable,
+                    UpdateTime = DateTime.Now
+                }, u => u.HaviorID == model.HaviorID);
+
+                HttpRuntimeCacheHelper.Remove(Keys.ModuleCacheKey);
+                clientResult.SetClientData("y", "操作成功");
+            });
+
+            return Json(clientResult);
+        }
     }
 }
