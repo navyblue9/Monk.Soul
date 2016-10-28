@@ -15,6 +15,10 @@
     @Scripts.Render("~/Assets/Backend/Pace/Script")
     @Styles.Render("~/Assets/Backend/Pace/Style", "~/Assets/Backend/Monk.UI/Style", "~/Assets/Backend/Style")
     @RenderSection("head", false)
+    <style>
+        .backend-operate { display: none; }
+        .backend-content { bottom: 0; }
+    </style>
 </head>
 <body @RenderSection("bodyAttr", false)>
     <div class="backend-crumbs clear-both">
@@ -22,15 +26,19 @@
         <a href="#" title="管理首页">管理首页</a>
         @RenderSection("crumbs", false)
     </div>
-    @RenderSection("beginForm", false)
-    <div class="backend-content">
+    <div class="backend-buttons">
+        @RenderSection("buttons", false)
+    </div>
+    <div class="backend-searchs">
+        @RenderSection("searchs", false)
+    </div>
+    <div class="backend-content list-layout">
         @RenderBody()
     </div>
     <div class="backend-operate">
         @RenderSection("operate", false)
     </div>
-    @RenderSection("endForm", false)
-    @Scripts.Render("~/Assets/Backend/Monk.UI/Script", "~/Assets/Backend/JQuery/Script", "~/Assets/Backend/Layer/Script", "~/Assets/Backend/Validform/Script", "~/Assets/Backend/Script")
+    @Scripts.Render("~/Assets/Backend/Monk.UI/Script", "~/Assets/Backend/JQuery/Script", "~/Assets/Backend/Layer/Script", "~/Assets/Backend/Script")
     @RenderSection("foot", false)
 </body>
 </html>

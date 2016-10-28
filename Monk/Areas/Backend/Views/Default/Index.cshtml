@@ -31,7 +31,7 @@
 </div>
 
 @section foot{
-    @Scripts.Render("~/Assets/Backend/Linq/Script", "~/Assets/Backend/Nicescroll/Script")
+    @Scripts.Render("~/Assets/Backend/Store/Script", "~/Assets/Backend/Linq/Script", "~/Assets/Backend/Nicescroll/Script")
     <script type="text/html" id="moduleTpl">
         <% for(var i=0; i< list.length;i++) { %>
         <div class="backend-module-item" data-moduleid="<%=list[i].ModuleID %>">

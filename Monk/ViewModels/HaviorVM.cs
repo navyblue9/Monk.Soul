@@ -75,7 +75,7 @@ namespace Monk.ViewModels
         /// Default:('GET')
         /// Nullable:False
         /// </summary>
-        public string HttpMethod {get;set;}
+        public string HttpMethod { get;set;}
 
         /// <summary>
         /// Desc:页头代码

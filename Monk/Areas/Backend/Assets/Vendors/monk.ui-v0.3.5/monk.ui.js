@@ -267,11 +267,19 @@
             list.insertAdjacentHTML("afterbegin", html);
             // 设置默认选中
             var select = list.querySelector(".monk-select");
+            var dataValue = select.getAttribute("data-value");
             var option = select.querySelectorAll("option")[select.selectedIndex];
+            if (dataValue) {
+                option = select.querySelector("option[value='" + dataValue.replace("~", "") + "']");
+                if (!option) {
+                    option = select.querySelectorAll("option")[select.selectedIndex];
+                }
+            }
             var selectValue = option.value;
             var selectText = option.textContent;
             list.querySelector(".monk-form-option[data-value='" + selectValue + "']").setAttribute("selected", "selected");
             list.parentNode.querySelector(".monk-form-select-wrap .monk-form-input").setAttribute("value", selectText);
+            select.value = selectValue;
             // 绑定事件
             var options = list.querySelectorAll(".monk-form-option");
             Array.prototype.forEach.call(options, function (option, i) {

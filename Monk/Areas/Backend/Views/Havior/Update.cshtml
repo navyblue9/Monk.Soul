@@ -64,12 +64,12 @@
         <span class="monk-iconfont monk-select-arrow icon-monk-arrowdown border-left"></span>
     </div>
     <div class="monk-form-select monk-none">
-        <select class="monk-select" name="HttpMethod" datatype="*" nullmsg="请选择请求方式" errormsg="请选择请求方式">
+        <select class="monk-select" name="HttpMethod" datatype="*" nullmsg="请选择请求方式" errormsg="请选择请求方式" data-value="@Model.HttpMethod">
             <option value="">请输入或选择...</option>
-            <option value="GET" @(Model.HttpMethod == "GET" ? "selected='selected'" : "")>GET</option>
-            <option value="POST" @(Model.HttpMethod == "POST" ? "selected='selected'" : "")>POST</option>
-            <option value="PUT" @(Model.HttpMethod == "PUT" ? "selected='selected'" : "")>PUT</option>
-            <option value="DELETE" @(Model.HttpMethod == "DELETE" ? "selected='selected'" : "")>DELETE</option>
+            <option value="GET">GET</option>
+            <option value="POST">POST</option>
+            <option value="PUT">PUT</option>
+            <option value="DELETE">DELETE</option>
         </select>
     </div>
     <div class="monk-form-tip">设置该性能请求的方式，通常选择GET、POST请求，其他请求或有兼容问题</div>
@@ -91,9 +91,10 @@
         <span class="monk-iconfont monk-select-arrow icon-monk-arrowdown border-left"></span>
     </div>
     <div class="monk-form-select monk-none">
-        <select class="monk-select">
+        <select class="monk-select" data-value="@Model.Layout">
             <option value="~/Areas/Backend/Views/Shared/_Layout.cshtml">~/Areas/Backend/Views/Shared/_Layout.cshtml</option>
             <option value="~/Areas/Backend/Views/Shared/_List.cshtml">~/Areas/Backend/Views/Shared/_List.cshtml</option>
+            <option value="~/Areas/Backend/Views/Shared/_ListNoPage.cshtml">~/Areas/Backend/Views/Shared/_ListNoPage.cshtml</option>
             <option value="~/Areas/Backend/Views/Shared/_Form.cshtml">~/Areas/Backend/Views/Shared/_Form.cshtml</option>
             <option value="~/Areas/Backend/Views/Shared/_Detail.cshtml">~/Areas/Backend/Views/Shared/_Detail.cshtml</option>
         </select>
