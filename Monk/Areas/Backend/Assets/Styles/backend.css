@@ -37,7 +37,7 @@
 .icon-backend-zhandian:before { content: "\e615"; }
 .icon-backend-folder-open:before { content: "\e618"; }
 /*公共*/
-body { font-family: 'Microsoft YaHei','微软雅黑',SimSun,Arial; font-size: 13px; background: #fff; /*禁止后台选中复制*/ -moz-user-select: none; -webkit-user-select: none; user-select: none; -ms-user-select: none; }
+body { font-family: 'Microsoft YaHei','微软雅黑',SimSun,Arial; font-size: 13px; background: #fff; /*禁止后台选中复制*/ /*-moz-user-select: none; -webkit-user-select: none; user-select: none; -ms-user-select: none;*/ }
 .display-block { display: block; }
 .display-none { display: none; }
 .display-inline-block { display: inline-block; }
