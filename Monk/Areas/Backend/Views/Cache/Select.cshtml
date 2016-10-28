@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "登录日志";
+    Layout = "~/Areas/Backend/Views/Shared/_List.cshtml";
+}
+
+@section head{
+    <style>
+        .backend-operate { display: none; }
+        .backend-content { bottom: 0; }
+    </style>
+}
+
+@section crumbs{
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="数据管理">数据管理</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="缓存管理">缓存管理</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="程序缓存">程序缓存</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="缓存列表">缓存列表</a>
+}
+
+@section buttons{
+    <span class="list-btn" onclick="backend.checkall(this);"><i class="monk-iconfont icon-backend-quanxuan"></i><label>全选</label></span>
+    <span class="list-btn" onclick="detail(this);"><i class="monk-iconfont icon-backend-details"></i><label>查看</label></span>
+    <span class="list-btn" onclick="deletes(this);"><i class="monk-iconfont icon-backend-delete"></i><label>删除</label></span>
+    <span class="list-btn float-right search-btn" onclick="backend.openSearch()"><i class="monk-iconfont icon-backend-search-list"></i><label>搜索</label></span>
+}
+
+<div class="monk-table">
+    <table>
+        <thead>
+            <tr>
+                <th align="center" class="monk-table-status">
+                    选择
+                </th>
+                <th align="left">
+                    缓存Key
+                </th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+        </tfoot>
+    </table>
+</div>
+
+@section foot{
+    <script type="text/javascript">
+        function detail() {
+            var ids = backend.getCheckIds();
+            if (ids.length == 1) {
+                backend.postLocation("@Url.Action("Detail","Cache",new { })/", { id: ids[0] })
+            }
+            else {
+                backend.Tip("只能选择一条数据进行操作");
+            }
+        }
+
+        function deletes() {
+            var ids = backend.getCheckIds();
+            if (ids.length < 1) {
+                backend.Tip("至少选择一条进行操作");
+            }
+            else {
+                backend.confirm("删除该缓存会导致数据重新加载，您确定要执行此操作吗？", null, function (index) {
+                    backend.post("@Url.Action("Delete","Cache",new { })", { ids: ids.toString() }, function (data) {
+                        backend.get("@Url.Action("RuntimeCache", "Cache")", {}, function (data) {
+                            var html = render(data);
+                            $(".monk-table table tbody").html(html);
+                        });
+                    });
+                });
+            }
+        }
+    </script>
+    <script type="text/html" id="tpl">
+        <% for(var i=0;i < data.length;i++){ %>
+        <tr>
+            <td class="monk-td-radio">
+                <span class="monk-iconfont icon-backend-checkbox list-radio" data-id="<%=data[i].Current.Key%>"></span>
+            </td>
+            <td>
+                <%=data[i].Current.Key %>
+            </td>
+        </tr>
+        <% } %>
+    </script>
+    <script type="text/javascript">
+        var render = monk.tppl(document.getElementById("tpl").innerHTML);
+        $(function () {
+            backend.get("@Url.Action("RuntimeCache", "Cache")", {}, function (data) {
+                var html = render(data);
+                $(".monk-table table tbody").html(html);
+            });
+        });
+    </script>
+}
