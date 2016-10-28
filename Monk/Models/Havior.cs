@@ -23,17 +23,10 @@ namespace Monk.Models
 
         /// <summary>
         /// Desc:关键字 
-        /// Default:('Monk.Soul,百签软件,百小僧,baisoft,baisoft.org') 
-        /// Nullable:True 
-        /// </summary>
-        public string Keywords {get;set;}
-
-        /// <summary>
-        /// Desc:描述 
         /// Default:- 
         /// Nullable:True 
         /// </summary>
-        public string Description {get;set;}
+        public string Remark {get;set;}
 
         /// <summary>
         /// Desc:路由 
@@ -71,18 +64,11 @@ namespace Monk.Models
         public string Action {get;set;}
 
         /// <summary>
-        /// Desc:标签属性 
+        /// Desc:路由参数 
         /// Default:- 
         /// Nullable:True 
         /// </summary>
-        public string TagAttr {get;set;}
-
-        /// <summary>
-        /// Desc:字体图标 
-        /// Default:- 
-        /// Nullable:False 
-        /// </summary>
-        public string Iconfont {get;set;}
+        public string Parameter {get;set;}
 
         /// <summary>
         /// Desc:HTTP方式 

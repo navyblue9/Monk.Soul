@@ -1,0 +1,252 @@
+﻿@model HaviorVM
+@{
+    ViewBag.Title = "新增行为";
+    Layout = "~/Areas/Backend/Views/Shared/_Form.cshtml";
+}
+
+@section crumbs{
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="系统管理">系统管理</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="模块管理">模块管理</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="行为管理">行为管理</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="新增行为">新增行为</a>
+}
+
+@section beginForm{@{ Html.BeginForm("Insert", "Havior", FormMethod.Post, new { @class = "monk-form" });}}
+
+<div class="monk-form-item">
+    <label for="ModuleID" class="monk-form-label">所属模块</label>
+    <div class="monk-form-wrap monk-form-select-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        <input type="text" class="monk-form-input middle" placeholder="请输入或选择..." />
+        <span class="monk-iconfont icon-monk-required"></span>
+        <span class="monk-iconfont monk-select-arrow icon-monk-arrowdown border-left"></span>
+    </div>
+    <div class="monk-form-select monk-none">
+        <select class="monk-select" name="ModuleID" datatype="*" nullmsg="请选择所属模块" errormsg="请选择所属模块">
+            <option value="">请输入或选择...</option>
+            @Html.Raw(ViewData["ModuleList"])
+        </select>
+    </div>
+    <div class="monk-form-tip">选择将该行为绑定到指定所属模块下面</div>
+</div>
+<div class="monk-form-item">
+    <label for="Name" class="monk-form-label">行为名称</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        @Html.TextBoxFor(u => u.Name,
+        new
+        {
+            @class = "monk-form-input normal",
+            placeholder = "行为名称",
+            datatype = "*1-16",
+            errormsg = "行为名称由1-16位英文字母、数字或符号组成",
+            nullmsg = "请输入行为名称"
+        })
+        <span class="monk-iconfont icon-monk-required"></span>
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
+    </div>
+    <div class="monk-form-tip">通常行为名称不宜过长，4-6个字最为恰当</div>
+</div>
+<div class="monk-form-item">
+    <label for="Layout" class="monk-form-label">布局地址</label>
+    <div class="monk-form-wrap monk-form-select-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        @Html.TextBoxFor(u => u.Layout,
+        new
+        {
+            @class = "monk-form-input large",
+            placeholder = "请选择或输入...",
+            datatype = "*",
+            ignore = "ignore",
+            errormsg = "请选择或输入布局地址",
+            nullmsg = "请选择或输入布局地址"
+        })
+        <span class="monk-iconfont monk-select-arrow icon-monk-arrowdown border-left"></span>
+    </div>
+    <div class="monk-form-select monk-none">
+        <select class="monk-select" datatype="*" nullmsg="请选择布局地址" errormsg="请选择布局地址">
+            <option value="">请输入或选择...</option>
+            <option value="~/Areas/Backend/Views/Shared/_Layout.cshtml">~/Areas/Backend/Views/Shared/_Layout.cshtml</option>
+            <option value="~/Areas/Backend/Views/Shared/_List.cshtml">~/Areas/Backend/Views/Shared/_List.cshtml</option>
+            <option value="~/Areas/Backend/Views/Shared/_Form.cshtml">~/Areas/Backend/Views/Shared/_Form.cshtml</option>
+            <option value="~/Areas/Backend/Views/Shared/_Detail.cshtml">~/Areas/Backend/Views/Shared/_Detail.cshtml</option>
+        </select>
+    </div>
+    <div class="monk-form-tip">设置该行为视图应用的Layout布局</div>
+</div>
+<div class="monk-form-item">
+    <label for="Remark" class="monk-form-label">行为描述</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input textarea-icon"></span>
+        @Html.TextAreaFor(u => u.Remark,
+        new
+        {
+            @class = "monk-form-textarea normal",
+            placeholder = "行为描述",
+            datatype = "*1-100",
+            ignore = "ignore",
+            errormsg = "行为描述由1-100位英文字母、数字或符号组成",
+            nullmsg = "请输入行为描述"
+        })
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input textarea-icon"></span>
+    </div>
+    <div class="monk-form-tip">简单一句话，描述一下该行为吧。</div>
+</div>
+<div class="monk-form-item">
+    <label for="Route" class="monk-form-label">路由格式</label>
+    <div class="monk-form-switch-list">
+        @Html.CheckBoxFor(u => u.Route,
+       new
+       {
+           @class = "monk-switch",
+           text = "是"
+       })
+    </div>
+    <div class="monk-form-tip">设置行为链接地址为路由格式，通常由 Area，Controller，Action，ID组成，参照MVC格式</div>
+</div>
+<div class="monk-form-item">
+    <label for="Url" class="monk-form-label">链接地址</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        @Html.TextBoxFor(u => u.Url,
+        new
+        {
+            @class = "monk-form-input large",
+            placeholder = "链接地址",
+            datatype = "s1-200",
+            ignore = "ignore",
+            errormsg = "区域名称由1-200位英文字母、数字组成",
+            nullmsg = "请输入链接地址"
+        })
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
+    </div>
+    <div class="monk-form-tip">如果选中<label class="tipcolor">路由格式</label>选项，则无需填此项，程序会根据下面的Area，Controller，Action，ID自动生成</div>
+</div>
+<div class="monk-form-item">
+    <label for="Area" class="monk-form-label">区域</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        @Html.TextBoxFor(u => u.Area,
+        new
+        {
+            @class = "monk-form-input middle",
+            placeholder = "区域名称",
+            datatype = "s1-25",
+            ignore = "ignore",
+            errormsg = "区域名称由1-25位英文字母、数字组成",
+            nullmsg = "请输入区域名称"
+        })
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
+    </div>
+    <div class="monk-form-tip">设置路由地址中Area名称</div>
+</div>
+<div class="monk-form-item">
+    <label for="Controller" class="monk-form-label">控制器</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        @Html.TextBoxFor(u => u.Controller,
+        new
+        {
+            @class = "monk-form-input middle",
+            placeholder = "控制器名称",
+            datatype = "s1-25",
+            ignore = "ignore",
+            errormsg = "控制器名称由1-25位英文字母、数字组成",
+            nullmsg = "请输入控制器名称"
+        })
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
+    </div>
+    <div class="monk-form-tip">设置路由地址中Controller名称</div>
+</div>
+<div class="monk-form-item">
+    <label for="Action" class="monk-form-label">行为</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        @Html.TextBoxFor(u => u.Action,
+        new
+        {
+            @class = "monk-form-input middle",
+            placeholder = "行为名称",
+            datatype = "s1-25",
+            ignore = "ignore",
+            errormsg = "行为名称由1-25位英文字母、数字组成",
+            nullmsg = "请输入行为名称"
+        })
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
+    </div>
+    <div class="monk-form-tip">设置路由地址中Action名称</div>
+</div>
+<div class="monk-form-item">
+    <label for="Parameter" class="monk-form-label">参数</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input textarea-icon"></span>
+        @Html.TextAreaFor(u => u.Parameter,
+        new
+        {
+            @class = "monk-form-textarea normal",
+            placeholder = "路由参数",
+            datatype = "s1-100",
+            ignore = "ignore",
+            errormsg = "路由参数由1-100位英文字母、数字组成",
+            nullmsg = "请输入路由"
+        })
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input textarea-icon"></span>
+    </div>
+    <div class="monk-form-tip">设置路由地址中id参数</div>
+</div>
+<div class="monk-form-item">
+    <label for="HttpMethod" class="monk-form-label">请求方式</label>
+    <div class="monk-form-wrap monk-form-select-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        <input type="text" class="monk-form-input min" placeholder="请输入或选择..." />
+        <span class="monk-iconfont icon-monk-required"></span>
+        <span class="monk-iconfont monk-select-arrow icon-monk-arrowdown border-left"></span>
+    </div>
+    <div class="monk-form-select monk-none">
+        <select class="monk-select" name="HttpMethod" datatype="*" nullmsg="请选择请求方式" errormsg="请选择请求方式">
+            <option value="">请输入或选择...</option>
+            <option value="GET" selected="selected">GET</option>
+            <option value="POST">POST</option>
+            <option value="PUT">PUT</option>
+            <option value="DELETE">DELETE</option>
+        </select>
+    </div>
+    <div class="monk-form-tip">设置该性能请求的方式，通常选择GET、POST请求，其他请求或有兼容问题</div>
+</div>
+<div class="monk-form-item">
+    <label for="Index" class="monk-form-label">默认首页</label>
+    <div class="monk-form-switch-list">
+        @Html.CheckBoxFor(u => u.Index,
+       new
+       {
+           @class = "monk-switch",
+           text = "是"
+       })
+    </div>
+    <div class="monk-form-tip">设置行为是否是所属栏目的默认行为</div>
+</div>
+<div class="monk-form-item">
+    <label for="Enable" class="monk-form-label">开放状态</label>
+    <div class="monk-form-switch-list">
+        @Html.CheckBoxFor(u => u.Enable,
+       new
+       {
+           @class = "monk-switch",
+           text = "开放"
+       })
+    </div>
+    <div class="monk-form-tip">设置该行为是否开放</div>
+</div>
+
+@section operate{
+    <input type="submit" class="monk-input-button turquoise monk-form-submit" value="提交保存">
+    <input type="reset" class="monk-input-button amethyst monk-form-reset" value="重置表单">
+    <input type="reset" class="monk-input-button peterRiver" onclick="window.location.href = '@Url.Action("Select","Havior")';" value="返回列表">
+    <input type="button" class="monk-input-button orange monk-form-previous" value="返回前页" onclick="history.go(-1);">
+}
+
+@section endForm{@{ Html.EndForm();}}

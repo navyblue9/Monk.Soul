@@ -28,18 +28,19 @@
             placeholder = "栏目名称",
             datatype = "*1-16",
             errormsg = "栏目名称由1-16位英文字母、数字或符号组成",
-            nullmsg = "请输入系统名称"
+            nullmsg = "请输入栏目名称"
         })
         <span class="monk-iconfont icon-monk-required"></span>
         <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
     </div>
-    <div class="monk-form-tip">通常栏目昵称不宜过长，4-6个字最为恰当</div>
+    <div class="monk-form-tip">通常栏目名称不宜过长，4-6个字最为恰当</div>
 </div>
 <div class="monk-form-item">
     <label for="ParentID" class="monk-form-label">上级栏目</label>
     <div class="monk-form-wrap monk-form-select-wrap">
         <span class="monk-iconfont border-right icon-monk-input"></span>
         <input type="text" class="monk-form-input middle" placeholder="请输入或选择..." />
+        <span class="monk-iconfont icon-monk-required"></span>
         <span class="monk-iconfont monk-select-arrow icon-monk-arrowdown border-left"></span>
     </div>
     <div class="monk-form-select monk-none">
@@ -118,7 +119,6 @@
             errormsg = "字体图标由1-50位英文字母、数字或符号组成",
             nullmsg = "请输入字体图标"
         })
-        <span class="monk-iconfont icon-monk-required"></span>
         <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
     </div>
     <div class="monk-form-tip">目前只支持阿里图标，格式为：icon-图标class，默认为文件字体图标</div>

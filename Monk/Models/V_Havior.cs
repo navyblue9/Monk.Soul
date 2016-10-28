@@ -26,14 +26,7 @@ namespace Monk.Models
         /// Default:- 
         /// Nullable:True 
         /// </summary>
-        public string Keywords {get;set;}
-
-        /// <summary>
-        /// Desc:- 
-        /// Default:- 
-        /// Nullable:True 
-        /// </summary>
-        public string Description {get;set;}
+        public string Remark {get;set;}
 
         /// <summary>
         /// Desc:- 
@@ -75,14 +68,7 @@ namespace Monk.Models
         /// Default:- 
         /// Nullable:True 
         /// </summary>
-        public string TagAttr {get;set;}
-
-        /// <summary>
-        /// Desc:- 
-        /// Default:- 
-        /// Nullable:False 
-        /// </summary>
-        public string Iconfont {get;set;}
+        public string Parameter {get;set;}
 
         /// <summary>
         /// Desc:- 

@@ -12,189 +12,175 @@ namespace Monk.ViewModels
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public Guid HaviorID { get; set; }
+        public Guid HaviorID {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public string Name { get; set; }
+        public string Name {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:True
         /// </summary>
-        public string Keywords { get; set; }
-
-        /// <summary>
-        /// Desc:-
-        /// Default:-
-        /// Nullable:True
-        /// </summary>
-        public string Description { get; set; }
+        public string Remark {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public Boolean Route { get; set; }
+        public Boolean Route {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:True
         /// </summary>
-        public string Url { get; set; }
+        public string Url {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:True
         /// </summary>
-        public string Area { get; set; }
+        public string Area {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:True
         /// </summary>
-        public string Controller { get; set; }
+        public string Controller {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:True
         /// </summary>
-        public string Action { get; set; }
+        public string Action {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:True
         /// </summary>
-        public string TagAttr { get; set; }
+        public string Parameter {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public string Iconfont { get; set; }
-
-        /// <summary>
-        /// Desc:-
-        /// Default:-
-        /// Nullable:False
-        /// </summary>
-        public string HttpMethod { get; set; }
+        public string HttpMethod {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:True
         /// </summary>
-        public string HeadCode { get; set; }
+        public string HeadCode {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:True
         /// </summary>
-        public string FootCode { get; set; }
+        public string FootCode {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:True
         /// </summary>
-        public string Layout { get; set; }
+        public string Layout {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public Guid ModuleID { get; set; }
+        public Guid ModuleID {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public Boolean Index { get; set; }
+        public Boolean Index {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public Boolean Enable { get; set; }
+        public Boolean Enable {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public int SerialNo { get; set; }
+        public int SerialNo {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:True
         /// </summary>
-        public DateTime? UpdateTime { get; set; }
+        public DateTime? UpdateTime {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public Boolean Default { get; set; }
+        public Boolean Default {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public Boolean Del { get; set; }
+        public Boolean Del {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public Boolean Destroy { get; set; }
+        public Boolean Destroy {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public DateTime CreateTime { get; set; }
+        public DateTime CreateTime {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:False
         /// </summary>
-        public Guid LogMemberID { get; set; }
+        public Guid LogMemberID {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:True
         /// </summary>
-        public string ModuleName { get; set; }
+        public string ModuleName {get;set;}
 
         /// <summary>
         /// Desc:-
         /// Default:-
         /// Nullable:True
         /// </summary>
-        public int? ModuleSort { get; set; }
+        public int? ModuleSort {get;set;}
 
     }
 }

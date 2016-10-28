@@ -560,15 +560,13 @@ CREATE TABLE dbo.[Havior]
 (
 	[HaviorID] UNIQUEIDENTIFIER PRIMARY KEY NOT NULL,	-- ID
 	[Name] NVARCHAR(32) NOT NULL,	-- 名称
-	[Keywords] NVARCHAR(200) DEFAULT('Monk.Soul,百签软件,百小僧,baisoft,baisoft.org'),	-- 关键字
-	[Description] NVARCHAR(320),	-- 描述
+	[Remark] NVARCHAR(200),	-- 描述
 	[Route] BIT DEFAULT(1) NOT NULL,	-- 路由
 	[Url] NVARCHAR(300),	-- 请求地址
 	[Area] VARCHAR(50),	-- 区域
 	[Controller] VARCHAR(50),	-- 控制器
 	[Action] VARCHAR(50),	-- 功能
-	[TagAttr] NVARCHAR(200),	-- 标签属性
-	[Iconfont] NVARCHAR(100) NOT NULL,	-- 字体图标
+	[Parameter] VARCHAR(200),	-- 路由参数
 	[HttpMethod] VARCHAR(20) NOT NULL DEFAULT('GET'),	-- HTTP方式
 	[HeadCode] TEXT,	-- 页头代码
 	[FootCode] TEXT,	-- 页脚代码
@@ -590,15 +588,13 @@ EXEC sp_addextendedproperty N'MS_Description', N'行为', N'user', N'dbo', N'tab
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'ID', N'user', N'dbo', N'table', N'Havior', N'column', N'HaviorID';
 EXEC sp_addextendedproperty N'MS_Description', N'名称', N'user', N'dbo', N'table', N'Havior', N'column', N'Name';
-EXEC sp_addextendedproperty N'MS_Description', N'关键字', N'user', N'dbo', N'table', N'Havior', N'column', N'Keywords';
-EXEC sp_addextendedproperty N'MS_Description', N'描述', N'user', N'dbo', N'table', N'Havior', N'column', N'Description';
+EXEC sp_addextendedproperty N'MS_Description', N'关键字', N'user', N'dbo', N'table', N'Havior', N'column', N'Remark';
 EXEC sp_addextendedproperty N'MS_Description', N'路由', N'user', N'dbo', N'table', N'Havior', N'column', N'Route';
 EXEC sp_addextendedproperty N'MS_Description', N'请求地址', N'user', N'dbo', N'table', N'Havior', N'column', N'Url';
 EXEC sp_addextendedproperty N'MS_Description', N'区域', N'user', N'dbo', N'table', N'Havior', N'column', N'Area';
 EXEC sp_addextendedproperty N'MS_Description', N'控制器', N'user', N'dbo', N'table', N'Havior', N'column', N'Controller';
 EXEC sp_addextendedproperty N'MS_Description', N'功能', N'user', N'dbo', N'table', N'Havior', N'column', N'Action';
-EXEC sp_addextendedproperty N'MS_Description', N'标签属性', N'user', N'dbo', N'table', N'Havior', N'column', N'TagAttr';
-EXEC sp_addextendedproperty N'MS_Description', N'字体图标', N'user', N'dbo', N'table', N'Havior', N'column', N'Iconfont';
+EXEC sp_addextendedproperty N'MS_Description', N'路由参数', N'user', N'dbo', N'table', N'Havior', N'column', N'Parameter';
 EXEC sp_addextendedproperty N'MS_Description', N'HTTP方式', N'user', N'dbo', N'table', N'Havior', N'column', N'HttpMethod';
 EXEC sp_addextendedproperty N'MS_Description', N'页头代码', N'user', N'dbo', N'table', N'Havior', N'column', N'HeadCode';
 EXEC sp_addextendedproperty N'MS_Description', N'页脚代码', N'user', N'dbo', N'table', N'Havior', N'column', N'FootCode';

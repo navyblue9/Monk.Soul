@@ -291,15 +291,12 @@ VALUES  ( '7f6407f3-6629-4542-92f1-906f98d12166' , -- ModuleID - uniqueidentifie
 INSERT INTO dbo.Havior
         ( HaviorID ,
           Name ,
-          Keywords ,
-          Description ,
+          Remark ,
           Route ,
           Url ,
           Area ,
           Controller ,
           Action ,
-          TagAttr ,
-          Iconfont ,
           HttpMethod ,
           HeadCode ,
           FootCode ,
@@ -316,15 +313,12 @@ INSERT INTO dbo.Havior
         )
 VALUES  ( 'fb4f1ae2-11fc-4526-9056-121e3099b3af' , -- HaviorID - uniqueidentifier
           N'栏目列表' , -- Name - nvarchar(32)
-          N'' , -- Keywords - nvarchar(200)
-          N'' , -- Description - nvarchar(320)
+          N'' , -- Remark - nvarchar(200)
           1 , -- Route - bit
           N'/Backend/Module/Select/' , -- Url - nvarchar(300)
           'Backend' , -- Area - varchar(50)
           'Module' , -- Controller - varchar(50)
           'Select' , -- Action - varchar(50)
-          N'' , -- TagAttr - nvarchar(200)
-          N'' , -- Iconfont - nvarchar(100)
           'GET' , -- HttpMethod - varchar(20)
           '' , -- HeadCode - text
           '' , -- FootCode - text
@@ -342,15 +336,12 @@ VALUES  ( 'fb4f1ae2-11fc-4526-9056-121e3099b3af' , -- HaviorID - uniqueidentifie
 INSERT INTO dbo.Havior
         ( HaviorID ,
           Name ,
-          Keywords ,
-          Description ,
+          Remark ,
           Route ,
           Url ,
           Area ,
           Controller ,
           Action ,
-          TagAttr ,
-          Iconfont ,
           HttpMethod ,
           HeadCode ,
           FootCode ,
@@ -367,15 +358,12 @@ INSERT INTO dbo.Havior
         )
 VALUES  ( 'c4ac143b-78c7-4793-b0d4-829a3a876d1a' , -- HaviorID - uniqueidentifier
           N'设置详情' , -- Name - nvarchar(32)
-          N'' , -- Keywords - nvarchar(200)
-          N'' , -- Description - nvarchar(320)
+          N'' , -- Remark - nvarchar(200)
           1 , -- Route - bit
           N'/Backend/SysSet/Detail/' , -- Url - nvarchar(300)
           'Backend' , -- Area - varchar(50)
           'SysSet' , -- Controller - varchar(50)
           'Detail' , -- Action - varchar(50)
-          N'' , -- TagAttr - nvarchar(200)
-          N'' , -- Iconfont - nvarchar(100)
           'GET' , -- HttpMethod - varchar(20)
           '' , -- HeadCode - text
           '' , -- FootCode - text
@@ -393,15 +381,12 @@ VALUES  ( 'c4ac143b-78c7-4793-b0d4-829a3a876d1a' , -- HaviorID - uniqueidentifie
 INSERT INTO dbo.Havior
         ( HaviorID ,
           Name ,
-          Keywords ,
-          Description ,
+          Remark ,
           Route ,
           Url ,
           Area ,
           Controller ,
           Action ,
-          TagAttr ,
-          Iconfont ,
           HttpMethod ,
           HeadCode ,
           FootCode ,
@@ -418,15 +403,12 @@ INSERT INTO dbo.Havior
         )
 VALUES  ( '58d60f4e-e7a0-47e7-acfa-5a628b24b637' , -- HaviorID - uniqueidentifier
           N'日志列表' , -- Name - nvarchar(32)
-          N'' , -- Keywords - nvarchar(200)
-          N'' , -- Description - nvarchar(320)
+          N'' , -- Remark - nvarchar(200)
           1 , -- Route - bit
           N'/Backend/LoginLog/Select/' , -- Url - nvarchar(300)
           'Backend' , -- Area - varchar(50)
           'LoginLog' , -- Controller - varchar(50)
           'Select' , -- Action - varchar(50)
-          N'' , -- TagAttr - nvarchar(200)
-          N'' , -- Iconfont - nvarchar(100)
           'GET' , -- HttpMethod - varchar(20)
           '' , -- HeadCode - text
           '' , -- FootCode - text
@@ -444,15 +426,12 @@ VALUES  ( '58d60f4e-e7a0-47e7-acfa-5a628b24b637' , -- HaviorID - uniqueidentifie
 INSERT INTO dbo.Havior
         ( HaviorID ,
           Name ,
-          Keywords ,
-          Description ,
+          Remark ,
           Route ,
           Url ,
           Area ,
           Controller ,
           Action ,
-          TagAttr ,
-          Iconfont ,
           HttpMethod ,
           HeadCode ,
           FootCode ,
@@ -469,15 +448,12 @@ INSERT INTO dbo.Havior
         )
 VALUES  ( '91b9c0aa-5611-410c-af35-9b15cdf49799' , -- HaviorID - uniqueidentifier
           N'缓存列表' , -- Name - nvarchar(32)
-          N'' , -- Keywords - nvarchar(200)
-          N'' , -- Description - nvarchar(320)
+          N'' , -- Remark - nvarchar(200)
           1 , -- Route - bit
           N'/Backend/Cache/Select/' , -- Url - nvarchar(300)
           'Backend' , -- Area - varchar(50)
           'Cache' , -- Controller - varchar(50)
           'Select' , -- Action - varchar(50)
-          N'' , -- TagAttr - nvarchar(200)
-          N'' , -- Iconfont - nvarchar(100)
           'GET' , -- HttpMethod - varchar(20)
           '' , -- HeadCode - text
           '' , -- FootCode - text
@@ -495,15 +471,12 @@ VALUES  ( '91b9c0aa-5611-410c-af35-9b15cdf49799' , -- HaviorID - uniqueidentifie
 INSERT INTO dbo.Havior
         ( HaviorID ,
           Name ,
-          Keywords ,
-          Description ,
+          Remark ,
           Route ,
           Url ,
           Area ,
           Controller ,
           Action ,
-          TagAttr ,
-          Iconfont ,
           HttpMethod ,
           HeadCode ,
           FootCode ,
@@ -520,15 +493,12 @@ INSERT INTO dbo.Havior
         )
 VALUES  ( '6f755f79-6402-4772-abf2-74c08ea5ebf5' , -- HaviorID - uniqueidentifier
           N'行为列表' , -- Name - nvarchar(32)
-          N'' , -- Keywords - nvarchar(200)
-          N'' , -- Description - nvarchar(320)
+          N'' , -- Remark - nvarchar(200)
           1 , -- Route - bit
           N'/Backend/Havior/Select/' , -- Url - nvarchar(300)
           'Backend' , -- Area - varchar(50)
           'Havior' , -- Controller - varchar(50)
           'Select' , -- Action - varchar(50)
-          N'' , -- TagAttr - nvarchar(200)
-          N'' , -- Iconfont - nvarchar(100)
           'GET' , -- HttpMethod - varchar(20)
           '' , -- HeadCode - text
           '' , -- FootCode - text

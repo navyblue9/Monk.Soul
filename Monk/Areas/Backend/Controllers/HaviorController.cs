@@ -1,4 +1,5 @@
-﻿using Monk.Utils;
+﻿using Monk.Areas.Backend.App_Code;
+using Monk.Utils;
 using Monk.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,13 @@ namespace Monk.Areas.Backend.Controllers
                 pageIndex
             });
             return Json(clientResult, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public ActionResult Insert()
+        {
+            ViewData["ModuleList"] = Common.ModuleDropDownList();
+            return View(new HaviorVM() { Enable = true, Route = true, Index = false });
         }
     }
 }
