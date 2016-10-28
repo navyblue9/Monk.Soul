@@ -24,7 +24,7 @@
 <div class="monk-form-item">
     <label for="" class="monk-form-label">缓存Value</label>
     <div class="monk-form-wrap monk-form-code-wrap monk-full">
-        <pre class="monk-code" data-language="JSON">@ViewBag.Value</pre>
+        <pre class="monk-code" data-language="JSON">@StringHelper.ConvertJsonString(ViewBag.Value.ToString())</pre>
     </div>
 </div>
 

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -51,6 +53,30 @@ namespace Monk.Utils
                 sBuilder.Append(data[i].ToString("x2"));
             }
             return sBuilder.ToString().ToLower();
+        }
+
+        public static string ConvertJsonString(string str)
+        {
+            var serializer = new JsonSerializer();
+            var tr = new StringReader(str);
+            var jtr = new JsonTextReader(tr);
+            object obj = serializer.Deserialize(jtr);
+            if (obj != null)
+            {
+                var textWriter = new StringWriter();
+                var jsonWriter = new JsonTextWriter(textWriter)
+                {
+                    Formatting = Formatting.Indented,
+                    Indentation = 4,
+                    IndentChar = ' '
+                };
+                serializer.Serialize(jsonWriter, obj);
+                return textWriter.ToString();
+            }
+            else
+            {
+                return str;
+            }
         }
     }
 }
