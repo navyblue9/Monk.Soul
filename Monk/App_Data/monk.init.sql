@@ -980,3 +980,18 @@ AS
                                 AND Destroy = 0
                       ) parentModule ON module.ParentID = parentModule.ModuleID;
 GO
+-- 创建行为视图
+IF ( OBJECT_ID('dbo.[V_Havior]', 'V') IS NOT NULL )
+    DROP VIEW dbo.[V_Havior];
+GO
+CREATE VIEW dbo.[V_Havior]
+AS
+    SELECT  havior.* ,
+            module.Name AS ModuleName ,
+            module.Sort AS ModuleSort
+    FROM    dbo.Havior havior
+            LEFT JOIN ( SELECT  *
+                        FROM    dbo.Module
+                        WHERE   Del = 0
+                                AND Destroy = 0
+                      ) module ON havior.ModuleID = module.ModuleID;

@@ -1,0 +1,161 @@
+﻿@{
+    ViewBag.Title = "登录日志";
+    Layout = "~/Areas/Backend/Views/Shared/_List.cshtml";
+}
+
+@section crumbs{
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="系统管理">系统管理</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="模块管理">模块管理</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="行为管理">行为管理</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="行为列表">行为列表</a>
+}
+
+@section buttons{
+    <span class="list-btn" onclick="backend.checkall(this);"><i class="monk-iconfont icon-backend-quanxuan"></i><label>全选</label></span>
+    <span class="list-btn" onclick="insert();"><i class="monk-iconfont icon-backend-insert"></i><label>新增</label></span>
+    <span class="list-btn" onclick="detail(this);"><i class="monk-iconfont icon-backend-details"></i><label>查看</label></span>
+    <span class="list-btn" onclick="update(this);"><i class="monk-iconfont icon-backend-update"></i><label>编辑</label></span>
+    <span class="list-btn" onclick="deletes(this);"><i class="monk-iconfont icon-backend-delete"></i><label>删除</label></span>
+    <span class="list-btn float-right search-btn" onclick="backend.openSearch()"><i class="monk-iconfont icon-backend-search-list"></i><label>搜索</label></span>
+}
+
+<div class="monk-table">
+    <table>
+        <thead>
+            <tr>
+                <th align="center" class="monk-table-status">
+                    选择
+                </th>
+                <th align="left" width="10%">
+                    名称
+                </th>
+                <th align="left">
+                    链接地址
+                </th>
+                <th align="left">
+                    布局地址
+                </th>
+                <th align="left" width="10%">
+                    所属栏目
+                </th>
+                <th align="center" class="monk-table-status">
+                    方式
+                </th>
+                <th align="center" class="monk-table-status">
+                    路由
+                </th>
+                <th align="center" class="monk-table-status">
+                    首页
+                </th>
+                <th align="center" class="monk-table-status">
+                    开放
+                </th>
+                <th align="center" class="monk-table-status">
+                    默认
+                </th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+        </tfoot>
+    </table>
+</div>
+
+
+@section operate{
+    <div id="page" class="m-pagination"></div>
+}
+
+@section foot{
+    <script type="text/javascript">
+        function insert() {
+            var ids = backend.getCheckIds();
+            if (ids.length > 0) {
+                window.location.href = "@Url.Action("Insert", "Havior")/" + ids[0];
+            }
+            else {
+                window.location.href = "@Url.Action("Insert", "Havior")";
+            }
+        }
+        function detail(){
+            var ids=backend.getCheckIds();
+            if(ids.length==1){
+                window.location.href="@Url.Action("Detail","Havior",new { })/"+ids[0];
+            }
+            else{
+                backend.Tip("只能选择一条数据进行操作");
+            }
+        }
+        function update() {
+            var ids = backend.getCheckIds();
+            if (ids.length == 1) {
+                window.location.href = "@Url.Action("Update", "Havior", new { })/" + ids[0];
+            }
+            else {
+                backend.Tip("只能选择一条数据进行操作");
+            }
+        }
+        function deletes(){
+            var ids=backend.getCheckIds();
+            if(ids.length<1){
+                backend.Tip("至少选择一条进行操作");
+            }
+            else{
+                backend.confirm("您确定要执行此操作吗？",null,function(index){
+                    backend.post("@Url.Action("Delete", "Havior", new { })",{ids:ids.toString()},function(data){
+                        $("#page").pagination('remote');
+                    });
+                });
+            }
+        }
+    </script>
+    <script type="text/html" id="tpl">
+        <% for(var i=0;i < data.length;i++){ %>
+        <tr>
+            <td class="monk-td-radio">
+                <span class="monk-iconfont icon-backend-checkbox list-radio" data-id="<%=data[i].HaviorID%>"></span>
+            </td>
+            <td>
+                <%=data[i].Name %>
+            </td>
+            <td>
+                <%=backend.setNull(data[i].Url,"无") %>
+            </td>
+            <td>
+                <%=backend.setNull(data[i].Layout,"无") %>
+            </td>
+            <td>
+                <%=data[i].ModuleName %>
+            </td>
+            <td class="monk-table-status">
+                <%=data[i].HttpMethod %>
+            </td>
+            <td class="monk-table-status">
+                <%=backend.setStatus(data[i].Route) %>
+            </td>
+            <td class="monk-table-status">
+                <%=backend.setStatus(data[i].Index) %>
+            </td>
+            <td class="monk-table-status">
+                <%=backend.setStatus(data[i].Enable) %>
+            </td>
+            <td class="monk-table-status">
+                <%=backend.setStatus(data[i].Default) %>
+            </td>
+        </tr>
+        <% } %>
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            var render= monk.tppl(document.getElementById("tpl").innerHTML);
+            backend.pagination("@Url.Action("List","Havior")",@ViewBag.SysSetInfo.PageSize,{},function(data){
+                var html=  render(data);
+                $(".monk-table table tbody").html(html);
+            });
+        });
+    </script>
+}

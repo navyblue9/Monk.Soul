@@ -492,3 +492,54 @@ VALUES  ( '91b9c0aa-5611-410c-af35-9b15cdf49799' , -- HaviorID - uniqueidentifie
           GETDATE() , -- CreateTime - datetime
           '00000000-0000-0000-0000-000000000000'  -- LogMemberID - uniqueidentifier
         );
+INSERT INTO dbo.Havior
+        ( HaviorID ,
+          Name ,
+          Keywords ,
+          Description ,
+          Route ,
+          Url ,
+          Area ,
+          Controller ,
+          Action ,
+          TagAttr ,
+          Iconfont ,
+          HttpMethod ,
+          HeadCode ,
+          FootCode ,
+          Layout ,
+          ModuleID ,
+          [Index] ,
+          Enable ,
+          UpdateTime ,
+          [Default] ,
+          Del ,
+          Destroy ,
+          CreateTime ,
+          LogMemberID
+        )
+VALUES  ( '6f755f79-6402-4772-abf2-74c08ea5ebf5' , -- HaviorID - uniqueidentifier
+          N'行为列表' , -- Name - nvarchar(32)
+          N'' , -- Keywords - nvarchar(200)
+          N'' , -- Description - nvarchar(320)
+          1 , -- Route - bit
+          N'/Backend/Havior/Select/' , -- Url - nvarchar(300)
+          'Backend' , -- Area - varchar(50)
+          'Havior' , -- Controller - varchar(50)
+          'Select' , -- Action - varchar(50)
+          N'' , -- TagAttr - nvarchar(200)
+          N'' , -- Iconfont - nvarchar(100)
+          'GET' , -- HttpMethod - varchar(20)
+          '' , -- HeadCode - text
+          '' , -- FootCode - text
+          '' , -- Layout - varchar(100)
+          'BD5A36CA-D6EB-4DED-99F0-911E0E734897' , -- ModuleID - uniqueidentifier
+          1 , -- Index - bit
+          1 , -- Enable - bit
+          GETDATE() , -- UpdateTime - datetime
+          1 , -- Default - bit
+          0 , -- Del - bit
+          0 , -- Destroy - bit
+          GETDATE() , -- CreateTime - datetime
+          '00000000-0000-0000-0000-000000000000'  -- LogMemberID - uniqueidentifier
+        );

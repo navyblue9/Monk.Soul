@@ -317,11 +317,13 @@
     <Compile Include="Areas\Backend\BackendAreaRegistration.cs" />
     <Compile Include="Areas\Backend\Controllers\CacheController.cs" />
     <Compile Include="Areas\Backend\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Backend\Controllers\HaviorController.cs" />
     <Compile Include="Areas\Backend\Controllers\LoginLogController.cs" />
     <Compile Include="Areas\Backend\Controllers\ModuleController.cs" />
     <Compile Include="Areas\Backend\Controllers\SysSetController.cs" />
     <Compile Include="Areas\Backend\Injections\MemberInfoInjectionAttribute.cs" />
     <Compile Include="Areas\Services\Controllers\CommonController.cs" />
+    <Compile Include="Areas\Services\Controllers\HaviorController.cs" />
     <Compile Include="Areas\Services\Controllers\LoginLogController.cs" />
     <Compile Include="Areas\Services\Controllers\ModuleController.cs" />
     <Compile Include="Areas\Services\Controllers\SysSetController.cs" />
@@ -368,6 +370,7 @@
     <Compile Include="Models\Role_Havior.cs" />
     <Compile Include="Models\Role_Module.cs" />
     <Compile Include="Models\SysSet.cs" />
+    <Compile Include="Models\V_Havior.cs" />
     <Compile Include="Models\V_Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\DataToHtmlHelper.cs" />
@@ -405,6 +408,7 @@
     <Compile Include="ViewModels\Role_HaviorVM.cs" />
     <Compile Include="ViewModels\Role_ModuleVM.cs" />
     <Compile Include="ViewModels\SysSetVM.cs" />
+    <Compile Include="ViewModels\V_HaviorVM.cs" />
     <Compile Include="ViewModels\V_ModuleVM.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -435,6 +439,7 @@
     <Content Include="Areas\Backend\Views\Module\Update.cshtml" />
     <Content Include="Areas\Backend\Views\Cache\Select.cshtml" />
     <Content Include="Areas\Backend\Views\Cache\Detail.cshtml" />
+    <Content Include="Areas\Backend\Views\Havior\Select.cshtml" />
     <None Include="bundleconfig.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
