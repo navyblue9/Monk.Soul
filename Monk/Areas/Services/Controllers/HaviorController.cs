@@ -40,5 +40,44 @@ namespace Monk.Areas.Services.Controllers
             });
             return Json(clientResult, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public JsonResult Insert(HaviorVM viewModel)
+        {
+            var clientResult = new JsonData<object>();
+            Mapper.Initialize(u => u.CreateMap<HaviorVM, Havior>());
+            var model = Mapper.Map<Havior>(viewModel);
+            model.HaviorID = Guid.NewGuid();
+            services.Command((db) =>
+            {
+                if (model.Index == true)
+                {
+                    db.Update<Havior>(new { Index = false }, u => u.ModuleID == model.ModuleID);
+                }
+                db.Insert<Havior>(model);
+
+                HttpRuntimeCacheHelper.Remove(Keys.ModuleCacheKey);
+                clientResult.SetClientData("y", "操作成功", new { id = model.HaviorID });
+            });
+            return Json(clientResult);
+        }
+
+        [HttpGet]
+        public JsonResult Detail(Guid? haviorId)
+        {
+            var clientResult = new JsonData<V_HaviorVM>() { };
+            var model = new V_Havior();
+            services.Command((db) =>
+            {
+                model = db.Queryable<V_Havior>().SingleOrDefault(u => u.HaviorID == haviorId);
+            });
+
+            // 此地方需要重点优化，后期使用autofac统一注入
+            Mapper.Initialize(c => c.CreateMap<V_Havior, V_HaviorVM>());
+
+            clientResult.SetClientData("y", "操作成功", Mapper.Map<V_HaviorVM>(model));
+            return Json(clientResult, JsonRequestBehavior.AllowGet);
+        }
     }
 }

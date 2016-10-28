@@ -1,0 +1,126 @@
+﻿@model V_HaviorVM
+@{
+    ViewBag.Title = "查看行为";
+    Layout = "~/Areas/Backend/Views/Shared/_Detail.cshtml";
+}
+
+@section crumbs{
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="系统管理">系统管理</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="模块管理">模块管理</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="行为管理">行为管理</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="查看行为">查看行为</a>
+}
+
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">所属模块</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.ModuleName
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">行为名称</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.Name
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">请求方式</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.HttpMethod
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">布局地址</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.Layout, "无")
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">行为描述</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.Remark, "无")
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">路由格式</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Html.Raw(DataToHtmlHelper.StatusHtml(Model.Route))
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">链接地址</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.Url, "无")
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">区域</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.Area, "无")
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">控制器</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.Controller, "无")
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">行为</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.Action, "无")
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">参数</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.Parameter, "无")
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">默认首页</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Html.Raw(DataToHtmlHelper.StatusHtml(Model.Index))
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">页头代码</label>
+    <div class="monk-form-wrap monk-form-code-wrap monk-full">
+        <pre class="monk-code" data-language="HTML">@Model.HeadCode</pre>
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">页脚代码</label>
+    <div class="monk-form-wrap monk-form-code-wrap monk-full">
+        <pre class="monk-code" data-language="HTML">@Model.FootCode</pre>
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">开放状态</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Html.Raw(DataToHtmlHelper.StatusHtml(Model.Enable))
+    </div>
+</div>
+
+@section operate{
+    <a href="@Url.Action("Update", "Havior", new { id = Model.HaviorID })" class="monk-input-button turquoise">编辑数据</a>
+    <a href="#" class="monk-input-button alizarin" onclick="deletes();">删除记录</a>
+    <input type="reset" class="monk-input-button peterRiver" onclick="window.location.href = '@Url.Action("Select","Havior")';" value="返回列表">
+    <input type="button" class="monk-input-button orange monk-form-previous" value="返回前页" onclick="history.go(-1);">
+}
+
+@section foot{
+    <script type="text/javascript">
+        function deletes() {
+            backend.confirm("您确定要执行此操作吗？", null, function (index) {
+                backend.post("@Url.Action("Delete","Havior",new { })", { ids: "@Model.HaviorID" }, function (data) {
+                    window.location.href = "@Url.Action("Select", "Havior")";
+                });
+            });
+        }
+    </script>
+}

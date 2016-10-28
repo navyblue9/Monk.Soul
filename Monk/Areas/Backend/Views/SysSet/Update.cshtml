@@ -4,6 +4,10 @@
     Layout = "~/Areas/Backend/Views/Shared/_Form.cshtml";
 }
 
+@section head{
+    @Styles.Render("~/Assets/Backend/WebUploader/Style")
+}
+
 @section crumbs{
     <label class="backend-crumbs-separator">/</label>
     <a href="#" title="系统管理">系统管理</a>
@@ -247,6 +251,7 @@
 @section endForm{@{ Html.EndForm();}}
 
 @section foot{
+    @Scripts.Render("~/Assets/Backend/WebUploader/Script")
     <script type="text/javascript">
         $(function () {
             var src= $("#uploadUrl").attr("data-src");

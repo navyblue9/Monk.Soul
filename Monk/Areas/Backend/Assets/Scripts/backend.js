@@ -597,7 +597,26 @@
         form.submit();
         document.body.removeChild(form[0]);
     };
-    // json格式化
-    exports.formatJson = function (json, options) {
+    // 代码编辑器
+    exports.codeEditor = function (idSelector, name, mode, options) {
+        options = options || {};
+        mode = mode ? mode : "text/html";
+        var defaults = {
+            name: name,
+            autoFocus: false,
+            width: "100%",
+            height: 400,
+            watch: false,
+            toolbar: false,
+            codeFold: true,
+            searchReplace: true,
+            placeholder: "",
+            value: "",
+            theme: "default",
+            mode: mode,
+            path: '/Areas/Backend/Assets/Vendors/editor.md-v1.5.0/lib/'
+        };
+        var config = $.extend(true, defaults, options);
+        return editormd(idSelector, config);
     };
 });

@@ -4,6 +4,10 @@
     Layout = "~/Areas/Backend/Views/Shared/_Form.cshtml";
 }
 
+@section head{
+    @Styles.Render("~/Assets/Backend/Editor.MD/Style")
+}
+
 @section crumbs{
     <label class="backend-crumbs-separator">/</label>
     <a href="#" title="系统管理">系统管理</a>
@@ -52,6 +56,25 @@
     <div class="monk-form-tip">通常行为名称不宜过长，4-6个字最为恰当</div>
 </div>
 <div class="monk-form-item">
+    <label for="HttpMethod" class="monk-form-label">请求方式</label>
+    <div class="monk-form-wrap monk-form-select-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        <input type="text" class="monk-form-input middle" placeholder="请输入或选择..." />
+        <span class="monk-iconfont icon-monk-required"></span>
+        <span class="monk-iconfont monk-select-arrow icon-monk-arrowdown border-left"></span>
+    </div>
+    <div class="monk-form-select monk-none">
+        <select class="monk-select" name="HttpMethod" datatype="*" nullmsg="请选择请求方式" errormsg="请选择请求方式">
+            <option value="">请输入或选择...</option>
+            <option value="GET">GET</option>
+            <option value="POST">POST</option>
+            <option value="PUT">PUT</option>
+            <option value="DELETE">DELETE</option>
+        </select>
+    </div>
+    <div class="monk-form-tip">设置该性能请求的方式，通常选择GET、POST请求，其他请求或有兼容问题</div>
+</div>
+<div class="monk-form-item">
     <label for="Layout" class="monk-form-label">布局地址</label>
     <div class="monk-form-wrap monk-form-select-wrap">
         <span class="monk-iconfont border-right icon-monk-input"></span>
@@ -68,8 +91,7 @@
         <span class="monk-iconfont monk-select-arrow icon-monk-arrowdown border-left"></span>
     </div>
     <div class="monk-form-select monk-none">
-        <select class="monk-select" datatype="*" nullmsg="请选择布局地址" errormsg="请选择布局地址">
-            <option value="">请输入或选择...</option>
+        <select class="monk-select">
             <option value="~/Areas/Backend/Views/Shared/_Layout.cshtml">~/Areas/Backend/Views/Shared/_Layout.cshtml</option>
             <option value="~/Areas/Backend/Views/Shared/_List.cshtml">~/Areas/Backend/Views/Shared/_List.cshtml</option>
             <option value="~/Areas/Backend/Views/Shared/_Form.cshtml">~/Areas/Backend/Views/Shared/_Form.cshtml</option>
@@ -107,24 +129,6 @@
        })
     </div>
     <div class="monk-form-tip">设置行为链接地址为路由格式，通常由 Area，Controller，Action，ID组成，参照MVC格式</div>
-</div>
-<div class="monk-form-item">
-    <label for="Url" class="monk-form-label">链接地址</label>
-    <div class="monk-form-wrap">
-        <span class="monk-iconfont border-right icon-monk-input"></span>
-        @Html.TextBoxFor(u => u.Url,
-        new
-        {
-            @class = "monk-form-input large",
-            placeholder = "链接地址",
-            datatype = "s1-200",
-            ignore = "ignore",
-            errormsg = "区域名称由1-200位英文字母、数字组成",
-            nullmsg = "请输入链接地址"
-        })
-        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
-    </div>
-    <div class="monk-form-tip">如果选中<label class="tipcolor">路由格式</label>选项，则无需填此项，程序会根据下面的Area，Controller，Action，ID自动生成</div>
 </div>
 <div class="monk-form-item">
     <label for="Area" class="monk-form-label">区域</label>
@@ -199,23 +203,22 @@
     <div class="monk-form-tip">设置路由地址中id参数</div>
 </div>
 <div class="monk-form-item">
-    <label for="HttpMethod" class="monk-form-label">请求方式</label>
-    <div class="monk-form-wrap monk-form-select-wrap">
+    <label for="Url" class="monk-form-label">链接地址</label>
+    <div class="monk-form-wrap">
         <span class="monk-iconfont border-right icon-monk-input"></span>
-        <input type="text" class="monk-form-input min" placeholder="请输入或选择..." />
-        <span class="monk-iconfont icon-monk-required"></span>
-        <span class="monk-iconfont monk-select-arrow icon-monk-arrowdown border-left"></span>
+        @Html.TextBoxFor(u => u.Url,
+        new
+        {
+            @class = "monk-form-input large",
+            placeholder = "链接地址",
+            datatype = "s1-200",
+            ignore = "ignore",
+            errormsg = "区域名称由1-200位英文字母、数字组成",
+            nullmsg = "请输入链接地址"
+        })
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
     </div>
-    <div class="monk-form-select monk-none">
-        <select class="monk-select" name="HttpMethod" datatype="*" nullmsg="请选择请求方式" errormsg="请选择请求方式">
-            <option value="">请输入或选择...</option>
-            <option value="GET" selected="selected">GET</option>
-            <option value="POST">POST</option>
-            <option value="PUT">PUT</option>
-            <option value="DELETE">DELETE</option>
-        </select>
-    </div>
-    <div class="monk-form-tip">设置该性能请求的方式，通常选择GET、POST请求，其他请求或有兼容问题</div>
+    <div class="monk-form-tip">如果选中<label class="tipcolor">路由格式</label>选项，则无需填此项，程序会根据下面的Area，Controller，Action，ID自动生成</div>
 </div>
 <div class="monk-form-item">
     <label for="Index" class="monk-form-label">默认首页</label>
@@ -228,6 +231,16 @@
        })
     </div>
     <div class="monk-form-tip">设置行为是否是所属栏目的默认行为</div>
+</div>
+<div class="monk-form-item">
+    <label for="HeadCode" class="monk-form-label">页头代码</label>
+    <div class="monk-editor-code" id="head-code"><textarea style="display:none;"></textarea></div>
+    <div class="monk-form-tip">在这里可以添加页头代码，<label class="tipcolor">按F11可以全屏，ESC可以退出</label></div>
+</div>
+<div class="monk-form-item">
+    <label for="FootCode" class="monk-form-label">页脚代码</label>
+    <div class="monk-editor-code" id="foot-code"><textarea style="display:none;"></textarea></div>
+    <div class="monk-form-tip">在这里可以添加页脚代码，<label class="tipcolor">按F11可以全屏，ESC可以退出</label></div>
 </div>
 <div class="monk-form-item">
     <label for="Enable" class="monk-form-label">开放状态</label>
@@ -250,3 +263,21 @@
 }
 
 @section endForm{@{ Html.EndForm();}}
+
+@section foot{
+    @Scripts.Render("~/Assets/Backend/Editor.MD/Script")
+    <script type="text/javascript">
+        $(function () {
+            var headcode = backend.codeEditor("head-code", "HeadCode");
+            var footcode = backend.codeEditor("foot-code", "FootCode");
+            backend.validform(function (data) {
+                backend.confirm(data.info + "，是否继续新增？", {}, function (index) {
+                    backend.layer().close(index);
+                    window.location.reload();
+                }, function () {
+                    window.location.href = "@Url.Action("Detail","Havior",new { id=""})/" + data.data.id;
+                });
+            });
+        });
+    </script>
+}

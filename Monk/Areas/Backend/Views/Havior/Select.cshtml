@@ -132,7 +132,7 @@
                 <%=data[i].ModuleName %>
             </td>
             <td class="monk-table-status">
-                <%=data[i].HttpMethod %>
+                <label <%=data[i].HttpMethod=="POST"?" class='tipcolor' ":"" %>><%=data[i].HttpMethod %></label>
             </td>
             <td class="monk-table-status">
                 <%=backend.setStatus(data[i].Route) %>
