@@ -10,9 +10,9 @@ namespace Monk
     {
         public void Configuration(IAppBuilder app)
         {
-            GlobalConfiguration.Configuration.UseSqlServerStorage(Keys.ConnectionStringKey);
-            app.UseHangfireDashboard();
-            app.UseHangfireServer();
+            //GlobalConfiguration.Configuration.UseSqlServerStorage(Keys.ConnectionStringKey);
+            //app.UseHangfireDashboard();
+            //app.UseHangfireServer();
         }
     }
 }

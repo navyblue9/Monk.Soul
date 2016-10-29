@@ -128,6 +128,10 @@
       <HintPath>..\packages\RazorEngine.3.9.1\lib\net45\RazorEngine.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorGenerator.Mvc.2.4.8\lib\net40\RazorGenerator.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
       <Private>True</Private>
@@ -157,6 +161,10 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
       <Private>True</Private>
@@ -2455,6 +2463,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\HangfireStartup.cs" />
+    <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Backend\App_Code\Common.cs" />
@@ -2466,6 +2475,116 @@
     <Compile Include="Areas\Backend\Controllers\ModuleController.cs" />
     <Compile Include="Areas\Backend\Controllers\SysSetController.cs" />
     <Compile Include="Areas\Backend\Injections\MemberInfoInjectionAttribute.cs" />
+    <Compile Include="Areas\Backend\Views\Cache\Detail.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Detail.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\Cache\Select.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Select.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\Default\Console.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Console.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\Default\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\Default\Signin.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Signin.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\Havior\Detail.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Detail.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\Havior\Insert.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Insert.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\Havior\Select.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Select.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\Havior\Update.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Update.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\LoginLog\Detail.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Detail.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\LoginLog\Select.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Select.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\Module\Detail.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Detail.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\Module\Insert.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Insert.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\Module\Select.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Select.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\Module\Update.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Update.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\Shared\_Detail.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Detail.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\Shared\_Form.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Form.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\Shared\_Layout.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Layout.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\Shared\_List.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_List.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\Shared\_ListNoPage.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ListNoPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\SysSet\Detail.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Detail.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\SysSet\Update.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Update.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Services\Controllers\CommonController.cs" />
     <Compile Include="Areas\Services\Controllers\HaviorController.cs" />
     <Compile Include="Areas\Services\Controllers\LoginLogController.cs" />
@@ -2563,31 +2682,97 @@
     <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.3.5\fonts\iconfont.ttf" />
     <Content Include="Areas\Backend\Assets\Vendors\monk.ui-v0.3.5\fonts\iconfont.woff" />
     <Content Include="Areas\Backend\Assets\Vendors\jquery-v3.1.1\jquery-3.1.1.min.map" />
-    <Content Include="Areas\Backend\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Backend\Views\Default\Signin.cshtml" />
+    <Content Include="Areas\Backend\Views\Shared\_Layout.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Layout.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\Default\Signin.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Signin.generated.cs</LastGenOutput>
+    </Content>
     <Content Include="Areas\Backend\Assets\Fonts\iconfont.eot" />
     <Content Include="Areas\Backend\Assets\Fonts\iconfont.ttf" />
     <Content Include="Areas\Backend\Assets\Fonts\iconfont.woff" />
-    <Content Include="Areas\Backend\Views\Default\Index.cshtml" />
-    <Content Include="Areas\Backend\Views\Default\Console.cshtml" />
-    <Content Include="Areas\Backend\Views\Shared\_Detail.cshtml" />
-    <Content Include="Areas\Backend\Views\Shared\_Form.cshtml" />
-    <Content Include="Areas\Backend\Views\SysSet\Detail.cshtml" />
-    <Content Include="Areas\Backend\Views\SysSet\Update.cshtml" />
-    <Content Include="Areas\Backend\Views\Shared\_List.cshtml" />
-    <Content Include="Areas\Backend\Views\LoginLog\Select.cshtml" />
-    <Content Include="Areas\Backend\Views\LoginLog\Detail.cshtml" />
-    <Content Include="Areas\Backend\Views\Module\Select.cshtml" />
-    <Content Include="Areas\Backend\Views\Module\Insert.cshtml" />
-    <Content Include="Areas\Backend\Views\Module\Detail.cshtml" />
-    <Content Include="Areas\Backend\Views\Module\Update.cshtml" />
-    <Content Include="Areas\Backend\Views\Cache\Select.cshtml" />
-    <Content Include="Areas\Backend\Views\Cache\Detail.cshtml" />
-    <Content Include="Areas\Backend\Views\Havior\Select.cshtml" />
-    <Content Include="Areas\Backend\Views\Havior\Insert.cshtml" />
-    <Content Include="Areas\Backend\Views\Havior\Detail.cshtml" />
-    <Content Include="Areas\Backend\Views\Havior\Update.cshtml" />
-    <Content Include="Areas\Backend\Views\Shared\_ListNoPage.cshtml" />
+    <Content Include="Areas\Backend\Views\Default\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\Default\Console.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Console.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\Shared\_Detail.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Detail.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\Shared\_Form.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Form.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\SysSet\Detail.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Detail.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\SysSet\Update.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Update.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\Shared\_List.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_List.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\LoginLog\Select.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Select.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\LoginLog\Detail.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Detail.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\Module\Select.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Select.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\Module\Insert.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Insert.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\Module\Detail.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Detail.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\Module\Update.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Update.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\Cache\Select.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Select.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\Cache\Detail.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Detail.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\Havior\Select.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Select.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\Havior\Insert.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Insert.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\Havior\Detail.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Detail.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\Havior\Update.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Update.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\Shared\_ListNoPage.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ListNoPage.generated.cs</LastGenOutput>
+    </Content>
     <None Include="bundleconfig.json" />
     <None Include="Properties\PublishProfiles\Monk.Soul.pubxml" />
     <None Include="Web.Debug.config">

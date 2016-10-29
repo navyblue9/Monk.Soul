@@ -11,18 +11,23 @@ namespace Monk.Areas.Backend.Injections
             base.OnResultExecuting(filterContext);
             if (filterContext.HttpContext.Session[Keys.SessionKey] != null)
             {
-                var memberInfo = SessionHelper.GetSessionInstance<SessionMemberVM>(Keys.SessionKey);
                 var result = filterContext.Result;
                 if (result is ViewResult)
                 {
                     var vresult = result as ViewResult;
-                    vresult.ViewData[Keys.MemberInfoInjectionKey] = memberInfo;
+                    if (vresult.ViewData[Keys.MemberInfoInjectionKey] == null)
+                    {
+                        vresult.ViewData[Keys.MemberInfoInjectionKey] = SessionHelper.GetSessionInstance<SessionMemberVM>(Keys.SessionKey);
+                    }
                     filterContext.Result = vresult;
                 }
                 else if (result is PartialViewResult)
                 {
                     var presult = result as PartialViewResult;
-                    presult.ViewData[Keys.MemberInfoInjectionKey] = memberInfo;
+                    if (presult.ViewData[Keys.MemberInfoInjectionKey] == null)
+                    {
+                        presult.ViewData[Keys.MemberInfoInjectionKey] = SessionHelper.GetSessionInstance<SessionMemberVM>(Keys.SessionKey);
+                    }
                     filterContext.Result = presult;
                 }
             }

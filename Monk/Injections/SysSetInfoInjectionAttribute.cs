@@ -20,24 +20,32 @@ namespace Monk.Injections
                 var clientResult = restful.Get<JsonData<SysSetVM>>(RouteHelper.RouteUrl(new { controller = "SysSet", action = "Detail" }));
                 HttpRuntimeCacheHelper.Set(Keys.SysSetCacheKey, clientResult.data);
             }
-            filterContext.RouteData.DataTokens.Add(Keys.SysSetInfoInjectionKey, HttpRuntimeCacheHelper.Get<SysSetVM>(Keys.SysSetCacheKey));
+            if (filterContext.RouteData.DataTokens[Keys.SysSetInfoInjectionKey] == null)
+            {
+                filterContext.RouteData.DataTokens.Add(Keys.SysSetInfoInjectionKey, HttpRuntimeCacheHelper.Get<SysSetVM>(Keys.SysSetCacheKey));
+            }
         }
 
         public override void OnResultExecuting(ResultExecutingContext filterContext)
         {
             base.OnResultExecuting(filterContext);
-            var sysSetModel = filterContext.RouteData.DataTokens[Keys.SysSetInfoInjectionKey] as SysSetVM;
             var result = filterContext.Result;
             if (result is ViewResult)
             {
                 var vresult = result as ViewResult;
-                vresult.ViewData[Keys.SysSetInfoInjectionKey] = sysSetModel;
+                if (vresult.ViewData[Keys.SysSetInfoInjectionKey] == null)
+                {
+                    vresult.ViewData[Keys.SysSetInfoInjectionKey] = filterContext.RouteData.DataTokens[Keys.SysSetInfoInjectionKey] as SysSetVM;
+                }
                 filterContext.Result = vresult;
             }
             else if (result is PartialViewResult)
             {
                 var presult = result as PartialViewResult;
-                presult.ViewData[Keys.SysSetInfoInjectionKey] = sysSetModel;
+                if (presult.ViewData[Keys.SysSetInfoInjectionKey] == null)
+                {
+                    presult.ViewData[Keys.SysSetInfoInjectionKey] = filterContext.RouteData.DataTokens[Keys.SysSetInfoInjectionKey] as SysSetVM;
+                }
                 filterContext.Result = presult;
             }
         }

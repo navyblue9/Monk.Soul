@@ -13,11 +13,11 @@ namespace Monk
         {
             var builder = new ContainerBuilder();
             builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly());
-            builder.RegisterControllers(Assembly.GetExecutingAssembly());
-            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+            //builder.RegisterControllers(Assembly.GetExecutingAssembly());
+            //builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             var container = builder.Build();
-            var configuration = GlobalConfiguration.Configuration;
-            configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
+            //var configuration = GlobalConfiguration.Configuration;
+            //configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
         }
     }
