@@ -292,16 +292,14 @@
                     var input = parent.parentNode.querySelector(".monk-form-input");
                     var readonly = input.getAttribute("readonly");
                     if (!readonly) {
-                        if (value != "") {
-                            var lastWrap = this.parentNode.querySelector(".monk-form-option[selected='selected']");
-                            if (lastWrap !== this && lastWrap) {
-                                lastWrap.removeAttribute("selected");
-                            }
-                            this.setAttribute("selected", "selected");
-                            input.value = text;
-                            parent.scrollTop = scrollTop;
-                            select.value = value;
+                        var lastWrap = this.parentNode.querySelector(".monk-form-option[selected='selected']");
+                        if (lastWrap !== this && lastWrap) {
+                            lastWrap.removeAttribute("selected");
                         }
+                        this.setAttribute("selected", "selected");
+                        input.value = text;
+                        parent.scrollTop = scrollTop;
+                        select.value = value;
                     }
                 });
                 ;
