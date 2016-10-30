@@ -2469,6 +2469,7 @@
     <Compile Include="Areas\Backend\App_Code\Common.cs" />
     <Compile Include="Areas\Backend\BackendAreaRegistration.cs" />
     <Compile Include="Areas\Backend\Controllers\CacheController.cs" />
+    <Compile Include="Areas\Backend\Controllers\CommonController.cs" />
     <Compile Include="Areas\Backend\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Backend\Controllers\HaviorController.cs" />
     <Compile Include="Areas\Backend\Controllers\LoginLogController.cs" />
