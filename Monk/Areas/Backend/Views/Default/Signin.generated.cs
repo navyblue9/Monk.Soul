@@ -44,7 +44,7 @@ namespace ASP
             
             #line 2 "..\..\Areas\Backend\Views\Default\Signin.cshtml"
   
-    ViewBag.Title = ViewBag.HaviorInfo.Name;
+    ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
     Layout = ViewBag.HaviorInfo.Layout;
 
             
@@ -89,9 +89,9 @@ WriteLiteral(" title=\"百签软件有限公司\"");
 
 WriteLiteral(">\r\n            <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 333), Tuple.Create("\"", 385)
-, Tuple.Create(Tuple.Create("", 339), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Assets/Images/baisoft-logo.png")
-, 339), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 367), Tuple.Create("\"", 419)
+, Tuple.Create(Tuple.Create("", 373), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Assets/Images/baisoft-logo.png")
+, 373), false)
 );
 
 WriteLiteral(" class=\"display-block\"");

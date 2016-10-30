@@ -44,7 +44,7 @@ namespace ASP
             
             #line 2 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
   
-    ViewBag.Title = ViewBag.HaviorInfo.Name;
+    ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
     Layout = ViewBag.HaviorInfo.Layout;
 
             
@@ -425,18 +425,18 @@ WriteLiteral(" type=\"reset\"");
 
 WriteLiteral(" class=\"monk-input-button peterRiver\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 3179), Tuple.Create("\"", 3247)
-, Tuple.Create(Tuple.Create("", 3189), Tuple.Create("window.location.href", 3189), true)
-, Tuple.Create(Tuple.Create(" ", 3209), Tuple.Create("=", 3210), true)
-, Tuple.Create(Tuple.Create(" ", 3211), Tuple.Create("\'", 3212), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 3213), Tuple.Create("\"", 3281)
+, Tuple.Create(Tuple.Create("", 3223), Tuple.Create("window.location.href", 3223), true)
+, Tuple.Create(Tuple.Create(" ", 3243), Tuple.Create("=", 3244), true)
+, Tuple.Create(Tuple.Create(" ", 3245), Tuple.Create("\'", 3246), true)
             
             #line 95 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
-              , Tuple.Create(Tuple.Create("", 3213), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","LoginLog")
+              , Tuple.Create(Tuple.Create("", 3247), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","LoginLog")
             
             #line default
             #line hidden
-, 3213), false)
-, Tuple.Create(Tuple.Create("", 3245), Tuple.Create("\';", 3245), true)
+, 3247), false)
+, Tuple.Create(Tuple.Create("", 3279), Tuple.Create("\';", 3279), true)
 );
 
 WriteLiteral(" value=\"返回列表\"");

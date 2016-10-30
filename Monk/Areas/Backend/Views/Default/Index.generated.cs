@@ -44,7 +44,7 @@ namespace ASP
             
             #line 1 "..\..\Areas\Backend\Views\Default\Index.cshtml"
   
-    ViewBag.Title = ViewBag.HaviorInfo.Name;
+    ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
     Layout = ViewBag.HaviorInfo.Layout;
 
             
@@ -144,40 +144,40 @@ WriteLiteral(" id=\"backend-logo\"");
 
 WriteLiteral(">\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1140), Tuple.Create("\"", 1171)
+WriteAttribute("href", Tuple.Create(" href=\"", 1174), Tuple.Create("\"", 1205)
             
             #line 20 "..\..\Areas\Backend\Views\Default\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 1147), Tuple.Create<System.Object, System.Int32>(ViewBag.SysSetInfo.Site
+, Tuple.Create(Tuple.Create("", 1181), Tuple.Create<System.Object, System.Int32>(ViewBag.SysSetInfo.Site
             
             #line default
             #line hidden
-, 1147), false)
+, 1181), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
 
 WriteLiteral(" class=\"\"");
 
-WriteAttribute("title", Tuple.Create(" title=\"", 1197), Tuple.Create("\"", 1229)
+WriteAttribute("title", Tuple.Create(" title=\"", 1231), Tuple.Create("\"", 1263)
             
             #line 20 "..\..\Areas\Backend\Views\Default\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 1205), Tuple.Create<System.Object, System.Int32>(ViewBag.SysSetInfo.Name
+, Tuple.Create(Tuple.Create("", 1239), Tuple.Create<System.Object, System.Int32>(ViewBag.SysSetInfo.Name
             
             #line default
             #line hidden
-, 1205), false)
+, 1239), false)
 );
 
 WriteLiteral(">\r\n                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1253), Tuple.Create("\"", 1283)
+WriteAttribute("src", Tuple.Create(" src=\"", 1287), Tuple.Create("\"", 1317)
             
             #line 21 "..\..\Areas\Backend\Views\Default\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 1259), Tuple.Create<System.Object, System.Int32>(ViewBag.SysSetInfo.Logo
+, Tuple.Create(Tuple.Create("", 1293), Tuple.Create<System.Object, System.Int32>(ViewBag.SysSetInfo.Logo
             
             #line default
             #line hidden
-, 1259), false)
+, 1293), false)
 );
 
 WriteLiteral(" class=\"display-block\"");
@@ -200,14 +200,14 @@ WriteLiteral(">\r\n        <iframe");
 
 WriteLiteral(" frameborder=\"0\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1567), Tuple.Create("\"", 1605)
+WriteAttribute("src", Tuple.Create(" src=\"", 1601), Tuple.Create("\"", 1639)
             
             #line 29 "..\..\Areas\Backend\Views\Default\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 1573), Tuple.Create<System.Object, System.Int32>(Url.Action("Console","Default")
+, Tuple.Create(Tuple.Create("", 1607), Tuple.Create<System.Object, System.Int32>(Url.Action("Console","Default")
             
             #line default
             #line hidden
-, 1573), false)
+, 1607), false)
 );
 
 WriteLiteral(" id=\"backend-iframe\"");

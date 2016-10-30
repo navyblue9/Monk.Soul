@@ -44,7 +44,7 @@ namespace ASP
             
             #line 2 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
   
-    ViewBag.Title = ViewBag.HaviorInfo.Name;
+    ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
     Layout = ViewBag.HaviorInfo.Layout;
 
             
@@ -373,14 +373,14 @@ DefineSection("operate", () => {
 
 WriteLiteral("\r\n    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2836), Tuple.Create("\"", 2903)
+WriteAttribute("href", Tuple.Create(" href=\"", 2870), Tuple.Create("\"", 2937)
             
             #line 84 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
-, Tuple.Create(Tuple.Create("", 2843), Tuple.Create<System.Object, System.Int32>(Url.Action("Update", "Module", new { id = Model.ModuleID })
+, Tuple.Create(Tuple.Create("", 2877), Tuple.Create<System.Object, System.Int32>(Url.Action("Update", "Module", new { id = Model.ModuleID })
             
             #line default
             #line hidden
-, 2843), false)
+, 2877), false)
 );
 
 WriteLiteral(" class=\"monk-input-button turquoise\"");
@@ -399,18 +399,18 @@ WriteLiteral(" type=\"reset\"");
 
 WriteLiteral(" class=\"monk-input-button peterRiver\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 3093), Tuple.Create("\"", 3159)
-, Tuple.Create(Tuple.Create("", 3103), Tuple.Create("window.location.href", 3103), true)
-, Tuple.Create(Tuple.Create(" ", 3123), Tuple.Create("=", 3124), true)
-, Tuple.Create(Tuple.Create(" ", 3125), Tuple.Create("\'", 3126), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 3127), Tuple.Create("\"", 3193)
+, Tuple.Create(Tuple.Create("", 3137), Tuple.Create("window.location.href", 3137), true)
+, Tuple.Create(Tuple.Create(" ", 3157), Tuple.Create("=", 3158), true)
+, Tuple.Create(Tuple.Create(" ", 3159), Tuple.Create("\'", 3160), true)
             
             #line 86 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
-              , Tuple.Create(Tuple.Create("", 3127), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Module")
+              , Tuple.Create(Tuple.Create("", 3161), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Module")
             
             #line default
             #line hidden
-, 3127), false)
-, Tuple.Create(Tuple.Create("", 3157), Tuple.Create("\';", 3157), true)
+, 3161), false)
+, Tuple.Create(Tuple.Create("", 3191), Tuple.Create("\';", 3191), true)
 );
 
 WriteLiteral(" value=\"返回列表\"");

@@ -72,7 +72,7 @@ WriteLiteral(">\r\n    <title>");
             
             #line default
             #line hidden
-WriteLiteral(" - 百签软件有限公司</title>\r\n    <meta");
+WriteLiteral("</title>\r\n    <meta");
 
 WriteLiteral(" name=\"author\"");
 
@@ -88,30 +88,30 @@ WriteLiteral(" />\r\n    <meta");
 
 WriteLiteral(" name=\"keywords\"");
 
-WriteAttribute("content", Tuple.Create(" content=\"", 426), Tuple.Create("\"", 467)
+WriteAttribute("content", Tuple.Create(" content=\"", 415), Tuple.Create("\"", 456)
             
             #line 11 "..\..\Areas\Backend\Views\Shared\_ListNoPage.cshtml"
-, Tuple.Create(Tuple.Create("", 436), Tuple.Create<System.Object, System.Int32>(ViewBag.Keywords
+, Tuple.Create(Tuple.Create("", 425), Tuple.Create<System.Object, System.Int32>(ViewBag.Keywords
             
             #line default
             #line hidden
-, 436), false)
-, Tuple.Create(Tuple.Create("", 455), Tuple.Create("百签软件有限公司,百小僧", 455), true)
+, 425), false)
+, Tuple.Create(Tuple.Create("", 444), Tuple.Create("百签软件有限公司,百小僧", 444), true)
 );
 
 WriteLiteral(" />\r\n    <meta");
 
 WriteLiteral(" name=\"description\"");
 
-WriteAttribute("content", Tuple.Create(" content=\"", 501), Tuple.Create("\"", 563)
+WriteAttribute("content", Tuple.Create(" content=\"", 490), Tuple.Create("\"", 552)
             
             #line 12 "..\..\Areas\Backend\Views\Shared\_ListNoPage.cshtml"
-, Tuple.Create(Tuple.Create("", 511), Tuple.Create<System.Object, System.Int32>(ViewBag.Description
+, Tuple.Create(Tuple.Create("", 500), Tuple.Create<System.Object, System.Int32>(ViewBag.Description
             
             #line default
             #line hidden
-, 511), false)
-, Tuple.Create(Tuple.Create("", 533), Tuple.Create("咨询电话：0760-88809987、18676265646", 533), true)
+, 500), false)
+, Tuple.Create(Tuple.Create("", 522), Tuple.Create("咨询电话：0760-88809987、18676265646", 522), true)
 );
 
 WriteLiteral(" />\r\n    <meta");
@@ -124,9 +124,9 @@ WriteLiteral(" />\r\n    <link");
 
 WriteLiteral(" rel=\"shortcut icon\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 652), Tuple.Create("\"", 693)
-, Tuple.Create(Tuple.Create("", 659), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Assets/favicon.ico")
-, 659), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 641), Tuple.Create("\"", 682)
+, Tuple.Create(Tuple.Create("", 648), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Assets/favicon.ico")
+, 648), false)
 );
 
 WriteLiteral(" />\r\n");

@@ -44,7 +44,7 @@ namespace ASP
             
             #line 2 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
   
-    ViewBag.Title = ViewBag.HaviorInfo.Name;
+    ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
     Layout = ViewBag.HaviorInfo.Layout;
 
             
@@ -531,14 +531,14 @@ DefineSection("operate", () => {
 
 WriteLiteral("\r\n    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4192), Tuple.Create("\"", 4259)
+WriteAttribute("href", Tuple.Create(" href=\"", 4226), Tuple.Create("\"", 4293)
             
             #line 120 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
-, Tuple.Create(Tuple.Create("", 4199), Tuple.Create<System.Object, System.Int32>(Url.Action("Update", "Havior", new { id = Model.HaviorID })
+, Tuple.Create(Tuple.Create("", 4233), Tuple.Create<System.Object, System.Int32>(Url.Action("Update", "Havior", new { id = Model.HaviorID })
             
             #line default
             #line hidden
-, 4199), false)
+, 4233), false)
 );
 
 WriteLiteral(" class=\"monk-input-button turquoise\"");
@@ -557,18 +557,18 @@ WriteLiteral(" type=\"reset\"");
 
 WriteLiteral(" class=\"monk-input-button peterRiver\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 4449), Tuple.Create("\"", 4515)
-, Tuple.Create(Tuple.Create("", 4459), Tuple.Create("window.location.href", 4459), true)
-, Tuple.Create(Tuple.Create(" ", 4479), Tuple.Create("=", 4480), true)
-, Tuple.Create(Tuple.Create(" ", 4481), Tuple.Create("\'", 4482), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 4483), Tuple.Create("\"", 4549)
+, Tuple.Create(Tuple.Create("", 4493), Tuple.Create("window.location.href", 4493), true)
+, Tuple.Create(Tuple.Create(" ", 4513), Tuple.Create("=", 4514), true)
+, Tuple.Create(Tuple.Create(" ", 4515), Tuple.Create("\'", 4516), true)
             
             #line 122 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
-              , Tuple.Create(Tuple.Create("", 4483), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Havior")
+              , Tuple.Create(Tuple.Create("", 4517), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Havior")
             
             #line default
             #line hidden
-, 4483), false)
-, Tuple.Create(Tuple.Create("", 4513), Tuple.Create("\';", 4513), true)
+, 4517), false)
+, Tuple.Create(Tuple.Create("", 4547), Tuple.Create("\';", 4547), true)
 );
 
 WriteLiteral(" value=\"返回列表\"");

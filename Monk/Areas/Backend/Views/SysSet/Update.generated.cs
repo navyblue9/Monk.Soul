@@ -44,7 +44,7 @@ namespace ASP
             
             #line 2 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
   
-    ViewBag.Title = ViewBag.HaviorInfo.Name;
+    ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
     Layout = ViewBag.HaviorInfo.Layout;
 
             
@@ -146,14 +146,14 @@ WriteLiteral(" class=\"monk-form-wrap noborder\"");
 
 WriteLiteral(">\r\n        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 786), Tuple.Create("\"", 803)
+WriteAttribute("src", Tuple.Create(" src=\"", 820), Tuple.Create("\"", 837)
             
             #line 26 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
-, Tuple.Create(Tuple.Create("", 792), Tuple.Create<System.Object, System.Int32>(Model.Logo
+, Tuple.Create(Tuple.Create("", 826), Tuple.Create<System.Object, System.Int32>(Model.Logo
             
             #line default
             #line hidden
-, 792), false)
+, 826), false)
 );
 
 WriteLiteral(" id=\"image-view\"");

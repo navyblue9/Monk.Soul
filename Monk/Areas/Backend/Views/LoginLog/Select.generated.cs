@@ -44,7 +44,7 @@ namespace ASP
             
             #line 1 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
   
-    ViewBag.Title = ViewBag.HaviorInfo.Name;
+    ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
     Layout = ViewBag.HaviorInfo.Layout;
 
             
