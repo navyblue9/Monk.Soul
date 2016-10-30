@@ -1,7 +1,11 @@
 ﻿@model SysSetVM
 @{
-    ViewBag.Title = "系统设置";
-    Layout = "~/Areas/Backend/Views/Shared/_Detail.cshtml";
+    ViewBag.Title = ViewBag.HaviorInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
+}
+
+@section head{
+    ViewBag.HaviorInfo.HeadCode
 }
 
 @section crumbs{
@@ -96,3 +100,6 @@
     <a href="@Url.Action("Update", "SysSet", new { id = Model.SetID })" class="monk-input-button turquoise">编辑数据</a>
 }
 
+@section foot{
+    ViewBag.HaviorInfo.FootCode
+}
