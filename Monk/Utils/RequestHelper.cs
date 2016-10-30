@@ -81,12 +81,12 @@ namespace Monk.Utils
             }
         }
 
-        public static string Browser
+        public static string BrowserType
         {
             get
             {
                 var request = HttpContext.Current.Request;
-                return request.Browser.ToString();
+                return request.Browser.Type;
             }
         }
     }

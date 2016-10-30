@@ -1,0 +1,114 @@
+﻿@{
+    ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
+    ViewBag.Keywords = ViewBag.SysSetInfo.Keywords;
+    ViewBag.Description = ViewBag.SysSetInfo.Description;
+    ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
+}
+
+@section head{
+    @ViewBag.HaviorInfo.HeadCode
+}
+
+@section crumbs{
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="数据管理">数据管理</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="缓存管理">缓存管理</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="服务器信息">服务器信息</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="查看服务器信息">查看服务器信息</a>
+}
+
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">客户端浏览器信息</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Request.ServerVariables["HTTP_USER_AGENT"]
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">服务器名称</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Server.MachineName
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">服务器IP地址</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Request.ServerVariables["LOCAL_ADDR"]
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">服务器.NET框架版本</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Environment.Version.ToString()
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">服务器操作系统</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Environment.OSVersion.ToString()
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">服务器IIS版本</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Request.ServerVariables["SERVER_SOFTWARE"]
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">服务器域名</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Request.ServerVariables["SERVER_NAME"]
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">服务器端口</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Request.ServerVariables["SERVER_PORT"]
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">服务器区域语言</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Request.ServerVariables["HTTP_ACCEPT_LANGUAGE"]
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">服务器虚拟目录</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Request.ServerVariables["APPL_PHYSICAL_PATH"]
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">服务器脚本超时时间</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Server.ScriptTimeout
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">服务器CPU数量</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Environment.GetEnvironmentVariable("NUMBER_OF_PROCESSORS")
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">服务器CPU类型</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Environment.GetEnvironmentVariable("PROCESSOR_IDENTIFIER")
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">HTTPS支持情况</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Request.ServerVariables["HTTPS"]
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">当前Session总数</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Session.Keys.Count.ToString()
+    </div>
+</div>
+

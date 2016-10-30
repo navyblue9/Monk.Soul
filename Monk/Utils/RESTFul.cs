@@ -91,7 +91,7 @@ namespace Monk.Utils
             request.AddHeader("AjaxRequest", RequestHelper.AjaxRequest.ToString());
             request.AddHeader("MobileDevice", RequestHelper.MobileDevice.ToString());
             request.AddHeader("Platform", RequestHelper.Platform);
-            request.AddHeader("Browser", RequestHelper.Browser);
+            request.AddHeader("BrowserType", RequestHelper.BrowserType);
             var response = client.Execute<T>(request);
             if (response.ErrorException != null)
             {

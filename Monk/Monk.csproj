@@ -2473,6 +2473,7 @@
     <Compile Include="Areas\Backend\Controllers\HaviorController.cs" />
     <Compile Include="Areas\Backend\Controllers\LoginLogController.cs" />
     <Compile Include="Areas\Backend\Controllers\ModuleController.cs" />
+    <Compile Include="Areas\Backend\Controllers\ServerInfoController.cs" />
     <Compile Include="Areas\Backend\Controllers\SysSetController.cs" />
     <Compile Include="Areas\Backend\Injections\HaviorInfoInjectionAttribute.cs" />
     <Compile Include="Areas\Backend\Injections\MemberInfoInjectionAttribute.cs" />
@@ -2550,6 +2551,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Update.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\ServerInfo\Detail.generated.cs">
+      <DependentUpon>Detail.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Areas\Backend\Views\Shared\_Detail.generated.cs">
       <AutoGen>True</AutoGen>
@@ -2773,6 +2779,10 @@
     <Content Include="Areas\Backend\Views\Shared\_ListNoPage.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_ListNoPage.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\ServerInfo\Detail.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Detail.generated.cs</LastGenOutput>
     </Content>
     <None Include="bundleconfig.json" />
     <None Include="Properties\PublishProfiles\Monk.Soul.pubxml" />

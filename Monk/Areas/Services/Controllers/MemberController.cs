@@ -30,7 +30,7 @@ namespace Monk.Areas.Services.Controllers
             var AjaxRequest = LoopBack == "true" ? Convert.ToBoolean(Request.Headers["AjaxRequest"]) : Request.IsAjaxRequest();
             var MobileDevice = LoopBack == "true" ? Convert.ToBoolean(Request.Headers["MobileDevice"]) : Request.Browser.IsMobileDevice;
             var Platform = LoopBack == "true" ? Request.Headers["Platform"] : Request.Browser.Platform;
-            var Browser = LoopBack == "true" ? Request.Headers["Browser"] : Request.Browser.ToString();
+            var BrowserType = LoopBack == "true" ? Request.Headers["BrowserType"] : Request.Browser.Type;
 
             services.Command((db) =>
             {
@@ -47,7 +47,7 @@ namespace Monk.Areas.Services.Controllers
                     AjaxRequest = AjaxRequest,
                     MobileDevice = MobileDevice,
                     Platform = Platform,
-                    Browser = Browser,
+                    Browser = BrowserType,
                     LogMemberID = default(Guid)
                 });
 
