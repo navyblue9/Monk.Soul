@@ -63,7 +63,7 @@ WriteLiteral("    ");
 
             
             #line 9 "..\..\Areas\Backend\Views\Default\Console.cshtml"
-Write(ViewBag.HaviorInfo.HeadCode);
+Write(Html.Raw(ViewBag.HaviorInfo.HeadCode));
 
             
             #line default
@@ -82,7 +82,7 @@ WriteLiteral("    ");
 
             
             #line 15 "..\..\Areas\Backend\Views\Default\Console.cshtml"
-Write(ViewBag.HaviorInfo.FootCode);
+Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
             #line default

@@ -63,7 +63,7 @@ WriteLiteral("    ");
 
             
             #line 11 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
-Write(ViewBag.HaviorInfo.HeadCode);
+Write(Html.Raw(ViewBag.HaviorInfo.HeadCode));
 
             
             #line default
@@ -428,18 +428,18 @@ WriteLiteral(" type=\"reset\"");
 
 WriteLiteral(" class=\"monk-input-button peterRiver\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 3380), Tuple.Create("\"", 3448)
-, Tuple.Create(Tuple.Create("", 3390), Tuple.Create("window.location.href", 3390), true)
-, Tuple.Create(Tuple.Create(" ", 3410), Tuple.Create("=", 3411), true)
-, Tuple.Create(Tuple.Create(" ", 3412), Tuple.Create("\'", 3413), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 3390), Tuple.Create("\"", 3458)
+, Tuple.Create(Tuple.Create("", 3400), Tuple.Create("window.location.href", 3400), true)
+, Tuple.Create(Tuple.Create(" ", 3420), Tuple.Create("=", 3421), true)
+, Tuple.Create(Tuple.Create(" ", 3422), Tuple.Create("\'", 3423), true)
             
             #line 98 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
-              , Tuple.Create(Tuple.Create("", 3414), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","LoginLog")
+              , Tuple.Create(Tuple.Create("", 3424), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","LoginLog")
             
             #line default
             #line hidden
-, 3414), false)
-, Tuple.Create(Tuple.Create("", 3446), Tuple.Create("\';", 3446), true)
+, 3424), false)
+, Tuple.Create(Tuple.Create("", 3456), Tuple.Create("\';", 3456), true)
 );
 
 WriteLiteral(" value=\"返回列表\"");
@@ -468,7 +468,7 @@ WriteLiteral("    ");
 
             
             #line 103 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
-Write(ViewBag.HaviorInfo.FootCode);
+Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
             #line default

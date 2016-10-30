@@ -8,7 +8,7 @@
 }
 
 @section head{
-    @ViewBag.HaviorInfo.HeadCode
+    @Html.Raw(ViewBag.HaviorInfo.HeadCode)
     @Styles.Render("~/Assets/Backend/Editor.MD/Style")
 }
 
@@ -272,7 +272,7 @@
 @section endForm{@{ Html.EndForm();}}
 
 @section foot{
-    @ViewBag.HaviorInfo.FootCode
+    @Html.Raw(ViewBag.HaviorInfo.FootCode)
     @Scripts.Render("~/Assets/Backend/Editor.MD/Script")
     <script type="text/javascript">
         $(function () {

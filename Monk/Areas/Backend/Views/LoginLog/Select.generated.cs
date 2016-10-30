@@ -63,7 +63,7 @@ WriteLiteral("    ");
 
             
             #line 10 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
-Write(ViewBag.HaviorInfo.HeadCode);
+Write(Html.Raw(ViewBag.HaviorInfo.HeadCode));
 
             
             #line default
@@ -382,7 +382,7 @@ WriteLiteral("    ");
 
             
             #line 110 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
-Write(ViewBag.HaviorInfo.FootCode);
+Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
             #line default

@@ -8,7 +8,7 @@
 }
 
 @section head{
-    @ViewBag.HaviorInfo.HeadCode
+    @Html.Raw(ViewBag.HaviorInfo.HeadCode)
     @Styles.Render("~/Assets/Backend/WebUploader/Style")
 }
 
@@ -255,7 +255,7 @@
 @section endForm{@{ Html.EndForm();}}
 
 @section foot{
-    @ViewBag.HaviorInfo.FootCode
+    @Html.Raw(ViewBag.HaviorInfo.FootCode)
     @Scripts.Render("~/Assets/Backend/WebUploader/Script")
     <script type="text/javascript">
         $(function () {

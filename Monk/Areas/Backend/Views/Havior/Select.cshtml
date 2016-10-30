@@ -7,7 +7,7 @@
 }
 
 @section head{
-    @ViewBag.HaviorInfo.HeadCode
+    @Html.Raw(ViewBag.HaviorInfo.HeadCode)
 }
 
 
@@ -79,7 +79,7 @@
 }
 
 @section foot{
-    @ViewBag.HaviorInfo.FootCode
+    @Html.Raw(ViewBag.HaviorInfo.FootCode)
     <script type="text/javascript">
         function insert() {
             var ids = backend.getCheckIds();

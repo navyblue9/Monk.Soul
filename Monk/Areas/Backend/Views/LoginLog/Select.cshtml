@@ -7,7 +7,7 @@
 }
 
 @section head{
-    @ViewBag.HaviorInfo.HeadCode
+    @Html.Raw(ViewBag.HaviorInfo.HeadCode)
 }
 
 @section crumbs{
@@ -107,7 +107,7 @@
 }
 
 @section foot{
-    @ViewBag.HaviorInfo.FootCode
+    @Html.Raw(ViewBag.HaviorInfo.FootCode)
     <script type="text/javascript">
         function detail(){
             var ids=backend.getCheckIds();

@@ -63,7 +63,7 @@ WriteLiteral("    ");
 
             
             #line 11 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
-Write(ViewBag.HaviorInfo.HeadCode);
+Write(Html.Raw(ViewBag.HaviorInfo.HeadCode));
 
             
             #line default
@@ -126,14 +126,14 @@ WriteLiteral(" class=\"monk-form-wrap monk-form-detail-wrap monk-full\"");
 
 WriteLiteral(">\r\n        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 838), Tuple.Create("\"", 855)
+WriteAttribute("src", Tuple.Create(" src=\"", 848), Tuple.Create("\"", 865)
             
             #line 26 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
-, Tuple.Create(Tuple.Create("", 844), Tuple.Create<System.Object, System.Int32>(Model.Logo
+, Tuple.Create(Tuple.Create("", 854), Tuple.Create<System.Object, System.Int32>(Model.Logo
             
             #line default
             #line hidden
-, 844), false)
+, 854), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -262,14 +262,14 @@ WriteLiteral(" style=\"text-decoration:none;\"");
 
 WriteLiteral(" target=\"_blank\"");
 
-WriteAttribute("title", Tuple.Create(" title=\"", 1959), Tuple.Create("\"", 1981)
+WriteAttribute("title", Tuple.Create(" title=\"", 1969), Tuple.Create("\"", 1991)
             
             #line 56 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
-              , Tuple.Create(Tuple.Create("", 1967), Tuple.Create<System.Object, System.Int32>(Model.Support
+              , Tuple.Create(Tuple.Create("", 1977), Tuple.Create<System.Object, System.Int32>(Model.Support
             
             #line default
             #line hidden
-, 1967), false)
+, 1977), false)
 );
 
 WriteLiteral(">");
@@ -322,14 +322,14 @@ WriteLiteral(" class=\"monk-form-wrap monk-form-detail-wrap monk-full\"");
 
 WriteLiteral(">\r\n        <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2383), Tuple.Create("\"", 2401)
+WriteAttribute("href", Tuple.Create(" href=\"", 2393), Tuple.Create("\"", 2411)
             
             #line 68 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
-, Tuple.Create(Tuple.Create("", 2390), Tuple.Create<System.Object, System.Int32>(Model.Site
+, Tuple.Create(Tuple.Create("", 2400), Tuple.Create<System.Object, System.Int32>(Model.Site
             
             #line default
             #line hidden
-, 2390), false)
+, 2400), false)
 );
 
 WriteLiteral(" style=\"text-decoration:none;\"");
@@ -478,14 +478,14 @@ DefineSection("operate", () => {
 
 WriteLiteral("\r\n    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3617), Tuple.Create("\"", 3681)
+WriteAttribute("href", Tuple.Create(" href=\"", 3627), Tuple.Create("\"", 3691)
             
             #line 103 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
-, Tuple.Create(Tuple.Create("", 3624), Tuple.Create<System.Object, System.Int32>(Url.Action("Update", "SysSet", new { id = Model.SetID })
+, Tuple.Create(Tuple.Create("", 3634), Tuple.Create<System.Object, System.Int32>(Url.Action("Update", "SysSet", new { id = Model.SetID })
             
             #line default
             #line hidden
-, 3624), false)
+, 3634), false)
 );
 
 WriteLiteral(" class=\"monk-input-button turquoise\"");
@@ -504,7 +504,7 @@ WriteLiteral("    ");
 
             
             #line 107 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
-Write(ViewBag.HaviorInfo.FootCode);
+Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
             #line default

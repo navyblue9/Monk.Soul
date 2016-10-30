@@ -63,7 +63,7 @@ WriteLiteral("    ");
 
             
             #line 11 "..\..\Areas\Backend\Views\Havior\Insert.cshtml"
-Write(ViewBag.HaviorInfo.HeadCode);
+Write(Html.Raw(ViewBag.HaviorInfo.HeadCode));
 
             
             #line default
@@ -391,37 +391,37 @@ WriteLiteral(" value=\"\"");
 
 WriteLiteral("></option>\r\n            <option");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 4222), Tuple.Create("\"", 4273)
-, Tuple.Create(Tuple.Create("", 4230), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Views/Shared/_Layout.cshtml")
-, 4230), false)
+WriteAttribute("value", Tuple.Create(" value=\"", 4232), Tuple.Create("\"", 4283)
+, Tuple.Create(Tuple.Create("", 4240), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Views/Shared/_Layout.cshtml")
+, 4240), false)
 );
 
 WriteLiteral(">~/Areas/Backend/Views/Shared/_Layout.cshtml</option>\r\n            <option");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 4348), Tuple.Create("\"", 4397)
-, Tuple.Create(Tuple.Create("", 4356), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Views/Shared/_List.cshtml")
-, 4356), false)
+WriteAttribute("value", Tuple.Create(" value=\"", 4358), Tuple.Create("\"", 4407)
+, Tuple.Create(Tuple.Create("", 4366), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Views/Shared/_List.cshtml")
+, 4366), false)
 );
 
 WriteLiteral(">~/Areas/Backend/Views/Shared/_List.cshtml</option>\r\n            <option");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 4470), Tuple.Create("\"", 4525)
-, Tuple.Create(Tuple.Create("", 4478), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Views/Shared/_ListNoPage.cshtml")
-, 4478), false)
+WriteAttribute("value", Tuple.Create(" value=\"", 4480), Tuple.Create("\"", 4535)
+, Tuple.Create(Tuple.Create("", 4488), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Views/Shared/_ListNoPage.cshtml")
+, 4488), false)
 );
 
 WriteLiteral(">~/Areas/Backend/Views/Shared/_ListNoPage.cshtml</option>\r\n            <option");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 4604), Tuple.Create("\"", 4653)
-, Tuple.Create(Tuple.Create("", 4612), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Views/Shared/_Form.cshtml")
-, 4612), false)
+WriteAttribute("value", Tuple.Create(" value=\"", 4614), Tuple.Create("\"", 4663)
+, Tuple.Create(Tuple.Create("", 4622), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Views/Shared/_Form.cshtml")
+, 4622), false)
 );
 
 WriteLiteral(">~/Areas/Backend/Views/Shared/_Form.cshtml</option>\r\n            <option");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 4726), Tuple.Create("\"", 4777)
-, Tuple.Create(Tuple.Create("", 4734), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Views/Shared/_Detail.cshtml")
-, 4734), false)
+WriteAttribute("value", Tuple.Create(" value=\"", 4736), Tuple.Create("\"", 4787)
+, Tuple.Create(Tuple.Create("", 4744), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Views/Shared/_Detail.cshtml")
+, 4744), false)
 );
 
 WriteLiteral(">~/Areas/Backend/Views/Shared/_Detail.cshtml</option>\r\n        </select>\r\n    </d" +
@@ -895,18 +895,18 @@ WriteLiteral(" type=\"reset\"");
 
 WriteLiteral(" class=\"monk-input-button peterRiver\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 11005), Tuple.Create("\"", 11071)
-, Tuple.Create(Tuple.Create("", 11015), Tuple.Create("window.location.href", 11015), true)
-, Tuple.Create(Tuple.Create(" ", 11035), Tuple.Create("=", 11036), true)
-, Tuple.Create(Tuple.Create(" ", 11037), Tuple.Create("\'", 11038), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 11015), Tuple.Create("\"", 11081)
+, Tuple.Create(Tuple.Create("", 11025), Tuple.Create("window.location.href", 11025), true)
+, Tuple.Create(Tuple.Create(" ", 11045), Tuple.Create("=", 11046), true)
+, Tuple.Create(Tuple.Create(" ", 11047), Tuple.Create("\'", 11048), true)
             
             #line 267 "..\..\Areas\Backend\Views\Havior\Insert.cshtml"
-             , Tuple.Create(Tuple.Create("", 11039), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Havior")
+             , Tuple.Create(Tuple.Create("", 11049), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Havior")
             
             #line default
             #line hidden
-, 11039), false)
-, Tuple.Create(Tuple.Create("", 11069), Tuple.Create("\';", 11069), true)
+, 11049), false)
+, Tuple.Create(Tuple.Create("", 11079), Tuple.Create("\';", 11079), true)
 );
 
 WriteLiteral(" value=\"返回列表\"");
@@ -947,7 +947,7 @@ WriteLiteral("    ");
 
             
             #line 274 "..\..\Areas\Backend\Views\Havior\Insert.cshtml"
-Write(ViewBag.HaviorInfo.FootCode);
+Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
             #line default

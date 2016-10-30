@@ -63,7 +63,7 @@ WriteLiteral("    ");
 
             
             #line 10 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
-Write(ViewBag.HaviorInfo.HeadCode);
+Write(Html.Raw(ViewBag.HaviorInfo.HeadCode));
 
             
             #line default
@@ -274,7 +274,7 @@ WriteLiteral("    ");
 
             
             #line 82 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
-Write(ViewBag.HaviorInfo.FootCode);
+Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
             #line default

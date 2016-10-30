@@ -63,7 +63,7 @@ WriteLiteral("    ");
 
             
             #line 11 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
-Write(ViewBag.HaviorInfo.HeadCode);
+Write(Html.Raw(ViewBag.HaviorInfo.HeadCode));
 
             
             #line default
@@ -149,14 +149,14 @@ WriteLiteral(" class=\"monk-form-wrap noborder\"");
 
 WriteLiteral(">\r\n        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 987), Tuple.Create("\"", 1004)
+WriteAttribute("src", Tuple.Create(" src=\"", 997), Tuple.Create("\"", 1014)
             
             #line 29 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
-, Tuple.Create(Tuple.Create("", 993), Tuple.Create<System.Object, System.Int32>(Model.Logo
+, Tuple.Create(Tuple.Create("", 1003), Tuple.Create<System.Object, System.Int32>(Model.Logo
             
             #line default
             #line hidden
-, 993), false)
+, 1003), false)
 );
 
 WriteLiteral(" id=\"image-view\"");
@@ -850,7 +850,7 @@ WriteLiteral("    ");
 
             
             #line 258 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
-Write(ViewBag.HaviorInfo.FootCode);
+Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
             #line default

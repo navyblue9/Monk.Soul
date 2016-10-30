@@ -63,7 +63,7 @@ WriteLiteral("    ");
 
             
             #line 10 "..\..\Areas\Backend\Views\Default\Signin.cshtml"
-Write(ViewBag.HaviorInfo.HeadCode);
+Write(Html.Raw(ViewBag.HaviorInfo.HeadCode));
 
             
             #line default
@@ -92,9 +92,9 @@ WriteLiteral(" title=\"百签软件有限公司\"");
 
 WriteLiteral(">\r\n            <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 534), Tuple.Create("\"", 586)
-, Tuple.Create(Tuple.Create("", 540), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Assets/Images/baisoft-logo.png")
-, 540), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 544), Tuple.Create("\"", 596)
+, Tuple.Create(Tuple.Create("", 550), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Assets/Images/baisoft-logo.png")
+, 550), false)
 );
 
 WriteLiteral(" class=\"display-block\"");
@@ -258,7 +258,7 @@ WriteLiteral("    ");
 
             
             #line 62 "..\..\Areas\Backend\Views\Default\Signin.cshtml"
-Write(ViewBag.HaviorInfo.FootCode);
+Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
             #line default

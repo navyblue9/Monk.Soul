@@ -6,7 +6,7 @@
     ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
 }
 @section head{
-    @ViewBag.HaviorInfo.HeadCode
+    @Html.Raw(ViewBag.HaviorInfo.HeadCode)
 }
 @section bodyAttr{ class="index-body"}
 <div id="backend-container">
@@ -37,7 +37,7 @@
 </div>
 
 @section foot{
-    @ViewBag.HaviorInfo.FootCode
+    @Html.Raw(ViewBag.HaviorInfo.FootCode)
     @Scripts.Render("~/Assets/Backend/Store/Script", "~/Assets/Backend/Linq/Script", "~/Assets/Backend/Nicescroll/Script")
     <script type="text/html" id="moduleTpl">
         <% for(var i=0; i< list.length;i++) { %>

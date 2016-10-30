@@ -63,7 +63,7 @@ WriteLiteral("    ");
 
             
             #line 11 "..\..\Areas\Backend\Views\Module\Update.cshtml"
-Write(ViewBag.HaviorInfo.HeadCode);
+Write(Html.Raw(ViewBag.HaviorInfo.HeadCode));
 
             
             #line default
@@ -528,18 +528,18 @@ WriteLiteral(" type=\"reset\"");
 
 WriteLiteral(" class=\"monk-input-button peterRiver\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 6087), Tuple.Create("\"", 6153)
-, Tuple.Create(Tuple.Create("", 6097), Tuple.Create("window.location.href", 6097), true)
-, Tuple.Create(Tuple.Create(" ", 6117), Tuple.Create("=", 6118), true)
-, Tuple.Create(Tuple.Create(" ", 6119), Tuple.Create("\'", 6120), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 6097), Tuple.Create("\"", 6163)
+, Tuple.Create(Tuple.Create("", 6107), Tuple.Create("window.location.href", 6107), true)
+, Tuple.Create(Tuple.Create(" ", 6127), Tuple.Create("=", 6128), true)
+, Tuple.Create(Tuple.Create(" ", 6129), Tuple.Create("\'", 6130), true)
             
             #line 150 "..\..\Areas\Backend\Views\Module\Update.cshtml"
-              , Tuple.Create(Tuple.Create("", 6121), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Module")
+              , Tuple.Create(Tuple.Create("", 6131), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Module")
             
             #line default
             #line hidden
-, 6121), false)
-, Tuple.Create(Tuple.Create("", 6151), Tuple.Create("\';", 6151), true)
+, 6131), false)
+, Tuple.Create(Tuple.Create("", 6161), Tuple.Create("\';", 6161), true)
 );
 
 WriteLiteral(" value=\"返回列表\"");
@@ -580,7 +580,7 @@ WriteLiteral("    ");
 
             
             #line 157 "..\..\Areas\Backend\Views\Module\Update.cshtml"
-Write(ViewBag.HaviorInfo.FootCode);
+Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
             #line default

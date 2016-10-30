@@ -7,7 +7,7 @@
 }
 
 @section head{
-    @ViewBag.HaviorInfo.HeadCode
+    @Html.Raw(ViewBag.HaviorInfo.HeadCode)
 }
 
 @section crumbs{
@@ -62,7 +62,7 @@
 </div>
 
 @section foot{
-    @ViewBag.HaviorInfo.FootCode
+    @Html.Raw(ViewBag.HaviorInfo.FootCode)
     @Scripts.Render("~/Assets/Backend/Linq/Script")
     <script type="text/javascript">
         function insert() {

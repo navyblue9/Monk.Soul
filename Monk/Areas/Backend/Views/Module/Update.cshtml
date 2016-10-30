@@ -8,7 +8,7 @@
 }
 
 @section head{
-    @ViewBag.HaviorInfo.HeadCode
+    @Html.Raw(ViewBag.HaviorInfo.HeadCode)
 }
 
 @section crumbs{
@@ -154,7 +154,7 @@
 @section endForm{@{ Html.EndForm();}}
 
 @section foot{
-    @ViewBag.HaviorInfo.FootCode
+    @Html.Raw(ViewBag.HaviorInfo.FootCode)
     <script type="text/javascript">
         $(function () {
             backend.validform(function (data) {

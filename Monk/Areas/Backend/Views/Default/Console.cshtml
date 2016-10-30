@@ -6,11 +6,11 @@
     ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
 }
 @section head{
-    @ViewBag.HaviorInfo.HeadCode
+    @Html.Raw(ViewBag.HaviorInfo.HeadCode)
 }
 
 <h2>控制台管理中心</h2>
 
 @section foot{
-    @ViewBag.HaviorInfo.FootCode
+    @Html.Raw(ViewBag.HaviorInfo.FootCode)
 }

@@ -7,7 +7,7 @@
     ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
 }
 @section head{
-    @ViewBag.HaviorInfo.HeadCode
+    @Html.Raw(ViewBag.HaviorInfo.HeadCode)
 }
 <div class="signin-container">
     <div class="signin-logo">
@@ -59,7 +59,7 @@
 </div>
 
 @section foot{
-    @ViewBag.HaviorInfo.FootCode
+    @Html.Raw(ViewBag.HaviorInfo.FootCode)
     @Scripts.Render("~/Assets/Backend/Validform/Script")
     <script type="text/javascript">
         if (self != top) { top.location = self.location; }
