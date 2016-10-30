@@ -23,6 +23,15 @@ namespace Monk.Areas.Services.Controllers
             Expression<Func<Member, bool>> expression = u => u.Account == account && u.Password == passwordMD5;
             var logid = Guid.NewGuid();
 
+            // 解决内部请求获取客户端信息错误问题
+            var LoopBack = Request.Headers["LoopBack"];
+            var IPAddress = LoopBack == "true" ? Request.Headers["IPAddress"] : RequestHelper.IPAddress;
+            var HttpMethod = LoopBack == "true" ? Request.Headers["HttpMethod"] : Request.HttpMethod;
+            var AjaxRequest = LoopBack == "true" ? Convert.ToBoolean(Request.Headers["AjaxRequest"]) : Request.IsAjaxRequest();
+            var MobileDevice = LoopBack == "true" ? Convert.ToBoolean(Request.Headers["MobileDevice"]) : Request.Browser.IsMobileDevice;
+            var Platform = LoopBack == "true" ? Request.Headers["Platform"] : Request.Browser.Platform;
+            var Browser = LoopBack == "true" ? Request.Headers["Browser"] : Request.Browser.ToString();
+
             services.Command((db) =>
             {
                 // 登录日志
@@ -33,12 +42,12 @@ namespace Monk.Areas.Services.Controllers
                     Password = StringHelper.EncryptPassword(password),
                     InTime = DateTime.Now,
                     Sucessed = false,
-                    IPAddress = RequestHelper.UserAddress,
-                    HttpMethod = Request.HttpMethod,
-                    AjaxRequest = Request.IsAjaxRequest(),
-                    MobileDevice = Request.Browser.IsMobileDevice,
-                    Platform = Request.Browser.Platform,
-                    Browser = Request.Browser.Type,
+                    IPAddress = IPAddress,
+                    HttpMethod = HttpMethod,
+                    AjaxRequest = AjaxRequest,
+                    MobileDevice = MobileDevice,
+                    Platform = Platform,
+                    Browser = Browser,
                     LogMemberID = default(Guid)
                 });
 

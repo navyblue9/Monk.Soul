@@ -85,6 +85,13 @@ namespace Monk.Utils
             {
                 request.AddHeader("SecretKey", _secretKey);
             }
+            request.AddHeader("LoopBack", "true");
+            request.AddHeader("IPAddress", RequestHelper.IPAddress);
+            request.AddHeader("HttpMethod", RequestHelper.HttpMethod);
+            request.AddHeader("AjaxRequest", RequestHelper.AjaxRequest.ToString());
+            request.AddHeader("MobileDevice", RequestHelper.MobileDevice.ToString());
+            request.AddHeader("Platform", RequestHelper.Platform);
+            request.AddHeader("Browser", RequestHelper.Browser);
             var response = client.Execute<T>(request);
             if (response.ErrorException != null)
             {

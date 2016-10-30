@@ -35,7 +35,7 @@ namespace Monk.Utils
             }
         }
 
-        public static string UserAddress
+        public static string IPAddress
         {
             get
             {
@@ -44,6 +44,49 @@ namespace Monk.Utils
                     return HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
                 }
                 return HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+            }
+        }
+
+        public static string HttpMethod
+        {
+            get
+            {
+                return HttpContext.Current.Request.HttpMethod;
+            }
+        }
+        public static bool AjaxRequest
+        {
+            get
+            {
+                var request = HttpContext.Current.Request;
+                return ((request["X-Requested-With"] == "XMLHttpRequest") || ((request.Headers != null) && (request.Headers["X-Requested-With"] == "XMLHttpRequest")));
+            }
+        }
+
+        public static bool MobileDevice
+        {
+            get
+            {
+                var request = HttpContext.Current.Request;
+                return request.Browser.IsMobileDevice;
+            }
+        }
+
+        public static string Platform
+        {
+            get
+            {
+                var request = HttpContext.Current.Request;
+                return request.Browser.Platform;
+            }
+        }
+
+        public static string Browser
+        {
+            get
+            {
+                var request = HttpContext.Current.Request;
+                return request.Browser.ToString();
             }
         }
     }
