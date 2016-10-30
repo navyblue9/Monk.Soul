@@ -459,7 +459,7 @@ WriteLiteral(">\r\n        function deletes() {\r\n            var ids = \"");
             #line hidden
 WriteLiteral(@""";
             if (ids == ""11111111-1111-1111-1111-111111111111"") {
-                backend.errorTip(""根站点栏目属于顶级栏目，禁止删除"");
+                backend.errorTip(""顶级栏目禁止删除"");
             }
             else {
                 backend.confirm(""您确定要执行此操作吗？"", null, function (index) {

@@ -92,7 +92,7 @@
         function deletes() {
             var ids = backend.getCheckIds();
             if (ids.indexOf("11111111-1111-1111-1111-111111111111") > -1) {
-                backend.errorTip("根站点栏目属于顶级栏目，禁止删除");
+                backend.errorTip("顶级栏目禁止删除");
             }
             else {
                 if (ids.length < 1) {
