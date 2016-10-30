@@ -86,6 +86,14 @@ namespace Monk
             bundles.Add(new ScriptBundle("~/Assets/Backend/Editor.MD/Script").Include(
                 "~/Areas/Backend/Assets/Vendors/editor.md-v1.5.0/editormd.min.js"
             ));
+
+            // forum
+            bundles.Add(new StyleBundle("~/Assets/Forum/Style").Include(
+               "~/Areas/Forum/Assets/Styles/forum.min.css"
+           ));
+            bundles.Add(new ScriptBundle("~/Assets/Forum/Script").Include(
+                "~/Areas/Forum/Assets/Scripts/forum.min.js"
+            ));
         }
     }
 }

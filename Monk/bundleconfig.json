@@ -106,5 +106,17 @@
     "inputFiles": [
       "Areas/Backend/Assets/Vendors/pagination-v1.4.4/mricode.pagination.js"
     ]
+  },
+  {
+    "outputFileName": "Areas/Forum/Assets/Scripts/forum.min.js",
+    "inputFiles": [
+      "Areas/Forum/Assets/Scripts/forum.js"
+    ]
+  },
+  {
+    "outputFileName": "Areas/Forum/Assets/Styles/forum.min.css",
+    "inputFiles": [
+      "Areas/Forum/Assets/Styles/forum.css"
+    ]
   }
 ]

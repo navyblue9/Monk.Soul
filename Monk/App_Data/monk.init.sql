@@ -950,6 +950,137 @@ EXEC sp_addextendedproperty N'MS_Description', N'记录会员', N'user', N'dbo',
 GO
 
 
+-- 内容分类
+IF(OBJECT_ID('dbo.[Classify]',N'U') IS NOT NULL)
+	DROP TABLE dbo.[Classify]
+GO
+CREATE TABLE dbo.[Classify]
+(
+	[ClassifyID] UNIQUEIDENTIFIER PRIMARY KEY NOT NULL,	-- ID
+	[Name] NVARCHAR(32) NOT NULL,	-- 名称
+	[Remark] NVARCHAR(200),	-- 描述
+	[Sort] INT NOT NULL DEFAULT(0),	-- 排序
+	[ParentID] UNIQUEIDENTIFIER NOT NULL,	-- 上级ID
+	[Enable] BIT DEFAULT(1) NOT NULL,	-- 启用
+	-- 以下为通用字段，除了UpdateTime，SerialNo，LogMemberID以外，其他禁止插入，禁止更新（但不包含软删除，硬删除）
+	[SerialNo] INT IDENTITY(1,1),	-- 流水号
+	[UpdateTime] DATETIME, -- 更新时间
+	[Default] BIT NOT NULL DEFAULT(0),	-- 默认
+	[Del] BIT NOT NULL DEFAULT(0),	-- 软删除
+	[Destroy] BIT NOT NULL DEFAULT(0),	-- 硬删除
+	[CreateTime] DATETIME NOT NULL DEFAULT(GETDATE()),	-- 创建时间
+	[LogMemberID] UNIQUEIDENTIFIER NOT NULL	-- 记录会员
+)
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'内容分类', N'user', N'dbo', N'table', N'Classify';
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'ID', N'user', N'dbo', N'table', N'Classify', N'column', N'ClassifyID';
+EXEC sp_addextendedproperty N'MS_Description', N'名称', N'user', N'dbo', N'table', N'Classify', N'column', N'Name';
+EXEC sp_addextendedproperty N'MS_Description', N'描述', N'user', N'dbo', N'table', N'Classify', N'column', N'Remark';
+EXEC sp_addextendedproperty N'MS_Description', N'排序', N'user', N'dbo', N'table', N'Classify', N'column', N'Sort';
+EXEC sp_addextendedproperty N'MS_Description', N'上级ID', N'user', N'dbo', N'table', N'Classify', N'column', N'ParentID';
+EXEC sp_addextendedproperty N'MS_Description', N'启用', N'user', N'dbo', N'table', N'Classify', N'column', N'Enable';
+EXEC sp_addextendedproperty N'MS_Description', N'流水号', N'user', N'dbo', N'table', N'Classify', N'column', N'SerialNo';
+EXEC sp_addextendedproperty N'MS_Description', N'更新时间', N'user', N'dbo', N'table', N'Classify', N'column', N'UpdateTime';
+EXEC sp_addextendedproperty N'MS_Description', N'默认', N'user', N'dbo', N'table', N'Classify', N'column', N'Default';
+EXEC sp_addextendedproperty N'MS_Description', N'软删除', N'user', N'dbo', N'table', N'Classify', N'column', N'Del';
+EXEC sp_addextendedproperty N'MS_Description', N'硬删除', N'user', N'dbo', N'table', N'Classify', N'column', N'Destroy';
+EXEC sp_addextendedproperty N'MS_Description', N'创建时间', N'user', N'dbo', N'table', N'Classify', N'column', N'CreateTime';
+EXEC sp_addextendedproperty N'MS_Description', N'记录会员', N'user', N'dbo', N'table', N'Classify', N'column', N'LogMemberID';
+GO
+
+
+-- 内容
+IF(OBJECT_ID('dbo.[Content]',N'U') IS NOT NULL)
+	DROP TABLE dbo.[Content]
+GO
+CREATE TABLE dbo.[Content]
+(
+	[ContentID] UNIQUEIDENTIFIER PRIMARY KEY NOT NULL,	-- ID
+	[Title] NVARCHAR(200) NOT NULL,	-- 标题
+	[HtmlText] TEXT NOT NULL,	-- Html内容
+	[MarkdownText] TEXT,	-- Markdown内容
+	[ClassifyID] UNIQUEIDENTIFIER NOT NULL,	-- 分类ID
+	[Author] NVARCHAR(50),	-- 作者
+	[Source] NVARCHAR(100),	-- 来源
+	[PushTime] DATETIME NOT NULL,	-- 发布时间
+	[IPAddress] NVARCHAR(16) NOT NULL,	-- IP地址
+	[IPDetail] NVARCHAR(100),	-- IP详情
+	[MemberID] UNIQUEIDENTIFIER NOT NULL,	-- 发布人
+	[Pass] BIT NOT NULL DEFAULT(0),	-- 审核状态
+	-- 以下为通用字段，除了UpdateTime，SerialNo，LogMemberID以外，其他禁止插入，禁止更新（但不包含软删除，硬删除）
+	[SerialNo] INT IDENTITY(1,1),	-- 流水号
+	[UpdateTime] DATETIME, -- 更新时间
+	[Default] BIT NOT NULL DEFAULT(0),	-- 默认
+	[Del] BIT NOT NULL DEFAULT(0),	-- 软删除
+	[Destroy] BIT NOT NULL DEFAULT(0),	-- 硬删除
+	[CreateTime] DATETIME NOT NULL DEFAULT(GETDATE()),	-- 创建时间
+	[LogMemberID] UNIQUEIDENTIFIER NOT NULL	-- 记录会员
+)
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'内容', N'user', N'dbo', N'table', N'Content';
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'ID', N'user', N'dbo', N'table', N'Content', N'column', N'ContentID';
+EXEC sp_addextendedproperty N'MS_Description', N'标题', N'user', N'dbo', N'table', N'Content', N'column', N'Title';
+EXEC sp_addextendedproperty N'MS_Description', N'Html内容', N'user', N'dbo', N'table', N'Content', N'column', N'HtmlText';
+EXEC sp_addextendedproperty N'MS_Description', N'Markdown内容', N'user', N'dbo', N'table', N'Content', N'column', N'MarkdownText';
+EXEC sp_addextendedproperty N'MS_Description', N'分类ID', N'user', N'dbo', N'table', N'Content', N'column', N'ClassifyID';
+EXEC sp_addextendedproperty N'MS_Description', N'作者', N'user', N'dbo', N'table', N'Content', N'column', N'Author';
+EXEC sp_addextendedproperty N'MS_Description', N'来源', N'user', N'dbo', N'table', N'Content', N'column', N'Source';
+EXEC sp_addextendedproperty N'MS_Description', N'发布时间', N'user', N'dbo', N'table', N'Content', N'column', N'PushTime';
+EXEC sp_addextendedproperty N'MS_Description', N'IP地址', N'user', N'dbo', N'table', N'Content', N'column', N'IPAddress';
+EXEC sp_addextendedproperty N'MS_Description', N'IP详情', N'user', N'dbo', N'table', N'Content', N'column', N'IPDetail';
+EXEC sp_addextendedproperty N'MS_Description', N'发布人', N'user', N'dbo', N'table', N'Content', N'column', N'MemberID';
+EXEC sp_addextendedproperty N'MS_Description', N'审核状态', N'user', N'dbo', N'table', N'Content', N'column', N'Pass';
+EXEC sp_addextendedproperty N'MS_Description', N'流水号', N'user', N'dbo', N'table', N'Content', N'column', N'SerialNo';
+EXEC sp_addextendedproperty N'MS_Description', N'更新时间', N'user', N'dbo', N'table', N'Content', N'column', N'UpdateTime';
+EXEC sp_addextendedproperty N'MS_Description', N'默认', N'user', N'dbo', N'table', N'Content', N'column', N'Default';
+EXEC sp_addextendedproperty N'MS_Description', N'软删除', N'user', N'dbo', N'table', N'Content', N'column', N'Del';
+EXEC sp_addextendedproperty N'MS_Description', N'硬删除', N'user', N'dbo', N'table', N'Content', N'column', N'Destroy';
+EXEC sp_addextendedproperty N'MS_Description', N'创建时间', N'user', N'dbo', N'table', N'Content', N'column', N'CreateTime';
+EXEC sp_addextendedproperty N'MS_Description', N'记录会员', N'user', N'dbo', N'table', N'Content', N'column', N'LogMemberID';
+GO
+
+-- 内容浏览记录
+IF(OBJECT_ID('dbo.[BrowseLog]',N'U') IS NOT NULL)
+	DROP TABLE dbo.[BrowseLog]
+GO
+CREATE TABLE dbo.[BrowseLog]
+(
+	[LogID] UNIQUEIDENTIFIER PRIMARY KEY NOT NULL,	-- ID
+	[ContentID] UNIQUEIDENTIFIER NOT NULL,	-- 内容ID
+	[MemberID] UNIQUEIDENTIFIER,	-- 会员ID
+	[LogTime] DATETIME NOT NULL,	-- 浏览时间
+	[IPAddress] NVARCHAR(16) NOT NULL,	-- IP地址
+	[IPDetail] NVARCHAR(100),	-- IP详情
+	-- 以下为通用字段，除了UpdateTime，SerialNo，LogMemberID以外，其他禁止插入，禁止更新（但不包含软删除，硬删除）
+	[SerialNo] INT IDENTITY(1,1),	-- 流水号
+	[UpdateTime] DATETIME, -- 更新时间
+	[Default] BIT NOT NULL DEFAULT(0),	-- 默认
+	[Del] BIT NOT NULL DEFAULT(0),	-- 软删除
+	[Destroy] BIT NOT NULL DEFAULT(0),	-- 硬删除
+	[CreateTime] DATETIME NOT NULL DEFAULT(GETDATE()),	-- 创建时间
+	[LogMemberID] UNIQUEIDENTIFIER NOT NULL	-- 记录会员
+)
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'内容', N'user', N'dbo', N'table', N'BrowseLog';
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'ID', N'user', N'dbo', N'table', N'BrowseLog', N'column', N'LogID';
+EXEC sp_addextendedproperty N'MS_Description', N'内容ID', N'user', N'dbo', N'table', N'BrowseLog', N'column', N'ContentID';
+EXEC sp_addextendedproperty N'MS_Description', N'会员ID', N'user', N'dbo', N'table', N'BrowseLog', N'column', N'MemberID';
+EXEC sp_addextendedproperty N'MS_Description', N'浏览时间', N'user', N'dbo', N'table', N'BrowseLog', N'column', N'LogTime';
+EXEC sp_addextendedproperty N'MS_Description', N'IP地址', N'user', N'dbo', N'table', N'BrowseLog', N'column', N'IPAddress';
+EXEC sp_addextendedproperty N'MS_Description', N'IP详情', N'user', N'dbo', N'table', N'BrowseLog', N'column', N'IPDetail';
+EXEC sp_addextendedproperty N'MS_Description', N'流水号', N'user', N'dbo', N'table', N'BrowseLog', N'column', N'SerialNo';
+EXEC sp_addextendedproperty N'MS_Description', N'更新时间', N'user', N'dbo', N'table', N'BrowseLog', N'column', N'UpdateTime';
+EXEC sp_addextendedproperty N'MS_Description', N'默认', N'user', N'dbo', N'table', N'BrowseLog', N'column', N'Default';
+EXEC sp_addextendedproperty N'MS_Description', N'软删除', N'user', N'dbo', N'table', N'BrowseLog', N'column', N'Del';
+EXEC sp_addextendedproperty N'MS_Description', N'硬删除', N'user', N'dbo', N'table', N'BrowseLog', N'column', N'Destroy';
+EXEC sp_addextendedproperty N'MS_Description', N'创建时间', N'user', N'dbo', N'table', N'BrowseLog', N'column', N'CreateTime';
+EXEC sp_addextendedproperty N'MS_Description', N'记录会员', N'user', N'dbo', N'table', N'BrowseLog', N'column', N'LogMemberID';
+GO
+
+
 -- 创建模块视图
 IF ( OBJECT_ID('dbo.[V_Module]', 'V') IS NOT NULL )
     DROP VIEW dbo.[V_Module];

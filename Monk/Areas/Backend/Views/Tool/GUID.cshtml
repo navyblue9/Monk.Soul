@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
+    ViewBag.Keywords = ViewBag.SysSetInfo.Keywords;
+    ViewBag.Description = ViewBag.SysSetInfo.Description;
+    ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
+}
+
+@section head{
+    @Html.Raw(ViewBag.HaviorInfo.HeadCode)
+}
+
+@section crumbs{
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="站长工具">站长工具</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="通用工具">通用工具</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="GUID生成">GUID生成</a>
+    <label class="backend-crumbs-separator">/</label>
+    <a href="#" title="生成GUID">生成GUID</a>
+}
+
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">GUID</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        <input type="text" class="monk-form-input large" readonly="readonly" placeholder="请输入..." value="@ViewBag.GUID" />
+    </div>
+    <div class="monk-form-tip">通常生成的GUID码是唯一的，请放心使用。</div>
+</div>
+
+@section operate{
+    <input type="button" class="monk-input-button turquoise monk-form-submit" value="重新生成" onclick="window.location.reload();">
+}
+
+@section foot{
+    @Html.Raw(ViewBag.HaviorInfo.FootCode)
+}

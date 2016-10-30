@@ -2450,6 +2450,20 @@
     <Content Include="Areas\Backend\Assets\Vendors\webuploader-v0.1.6\examples\requirejs\app.js" />
     <Content Include="Areas\Backend\Assets\Vendors\webuploader-v0.1.6\examples\requirejs\index.html" />
     <Content Include="Areas\Backend\Assets\Vendors\webuploader-v0.1.6\examples\requirejs\require.js" />
+    <Content Include="Areas\Forum\Assets\Fonts\iconfont.eot" />
+    <Content Include="Areas\Forum\Assets\Fonts\iconfont.ttf" />
+    <Content Include="Areas\Forum\Assets\Fonts\iconfont.woff" />
+    <Content Include="Areas\Backend\Views\Tool\GUID.cshtml" />
+    <None Include="Areas\Forum\Assets\_references.js" />
+    <Content Include="Areas\Forum\Assets\favicon.ico" />
+    <Content Include="Areas\Forum\Assets\Fonts\iconfont.svg" />
+    <Content Include="Areas\Forum\Assets\Images\default-pic.jpg" />
+    <Content Include="Areas\Forum\Assets\Images\forum-logo.png" />
+    <Content Include="Areas\Forum\Assets\Scripts\forum.js" />
+    <Content Include="Areas\Forum\Assets\Styles\forum.css" />
+    <Content Include="Areas\Forum\Assets\Styles\forum.min.css">
+      <DependentUpon>forum.css</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="Models\ModelGenerator.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -2476,6 +2490,7 @@
     <Compile Include="Areas\Backend\Controllers\ModuleController.cs" />
     <Compile Include="Areas\Backend\Controllers\ServerInfoController.cs" />
     <Compile Include="Areas\Backend\Controllers\SysSetController.cs" />
+    <Compile Include="Areas\Backend\Controllers\ToolController.cs" />
     <Compile Include="Areas\Backend\Injections\HaviorInfoInjectionAttribute.cs" />
     <Compile Include="Areas\Backend\Injections\MemberInfoInjectionAttribute.cs" />
     <Compile Include="Areas\Backend\ViewModels\MenuVM.cs" />
@@ -2593,6 +2608,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Update.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Forum\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Forum\ForumAreaRegistration.cs" />
+    <Compile Include="Areas\Forum\Views\Shared\_Layout.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Layout.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Filters\AccessVerifyAttribute.cs" />
     <Compile Include="Filters\AnonymousAttribute.cs" />
@@ -2758,6 +2780,12 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Detail.generated.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\Forum\Views\web.config" />
+    <Content Include="Areas\Forum\Views\Shared\_Layout.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Layout.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Forum\Views\Default\Index.cshtml" />
     <None Include="bundleconfig.json" />
     <None Include="Properties\PublishProfiles\Monk.Soul.pubxml" />
     <None Include="Web.Debug.config">
@@ -2769,6 +2797,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Backend\Assets\Users\" />
+    <Folder Include="Areas\Forum\Assets\Users\" />
+    <Folder Include="Areas\Forum\Assets\Vendors\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
