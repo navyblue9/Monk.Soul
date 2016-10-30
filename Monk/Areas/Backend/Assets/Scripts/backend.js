@@ -205,7 +205,7 @@
                     that.errorTip("应用程序异常");
                     return false;
                 }
-                if (data.status == "n" || data.status == "not_allow") {
+                if (data.status == "n") {
                     that.errorTip(data.info);
                     if (data.selector && $(data.selector)) {
                         $(data.selector).focus();
@@ -226,10 +226,6 @@
     // ajax返回结果处理
     exports.ajaxResultHandle = function (data, end) {
         var that = this;
-        if (data.status == "not_allow") {
-            that.errorTip(data.info);
-            return false;
-        }
         if (typeof end == "function") {
             end(data);
         }
@@ -382,10 +378,6 @@
                 $input.val("上传失败：" + file.name).attr("data-fileId", file.id);
                 that.errorTip(response.info);
             }
-            else if (response.status == "not_allow") {
-                $input.val("上传失败：" + file.name).attr("data-fileId", file.id);
-                that.errorTip(response.info);
-            }
             else if (response.status == "y") {
                 $input.val("上传成功：" + file.name).attr("data-fileId", file.id);
                 $clearbtn.removeAttr("disabled");
@@ -516,9 +508,6 @@
                         that.errorTip("应用程序异常");
                     }
                     else if (xhr.responseText.status == "n") {
-                        that.errorTip(xhr.responseText.info);
-                    }
-                    else if (xhr.responseText.status == "not_allow") {
                         that.errorTip(xhr.responseText.info);
                     }
                     else if (result.status == "y") {

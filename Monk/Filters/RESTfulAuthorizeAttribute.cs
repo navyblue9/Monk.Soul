@@ -25,7 +25,7 @@ namespace Monk.Filters
 
         private static JsonResult notAllow = new JsonResult()
         {
-            Data = new JsonData<object>() { info = "禁止未授权操作", status = "not_allow" },
+            Data = new JsonData<object>() { info = "禁止未授权操作", status = "n" },
             JsonRequestBehavior = JsonRequestBehavior.AllowGet
         };
     }
