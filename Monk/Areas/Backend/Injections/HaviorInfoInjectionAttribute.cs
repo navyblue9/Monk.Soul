@@ -21,13 +21,15 @@ namespace Monk.Areas.Backend.Injections
                 var _action = filterContext.RouteData.Values["action"].ToString();
                 var _httpMethod = filterContext.HttpContext.Request.HttpMethod;
 
-                var services = new DbServices();
                 var viewModel = new V_HaviorVM();
-                services.Command((db) =>
+                using (var services = new DbServices())
                 {
-                    Mapper.Initialize(c => c.CreateMap<V_Havior, V_HaviorVM>());
-                    viewModel = Mapper.Map<V_HaviorVM>(db.Queryable<V_Havior>().SingleOrDefault(u => u.Area == _area.ToString() && u.Controller == _controller.ToLower() && u.Action == _action.ToLower() && u.HttpMethod == _httpMethod.ToUpper()));
-                });
+                    services.Command((db) =>
+                    {
+                        Mapper.Initialize(c => c.CreateMap<V_Havior, V_HaviorVM>());
+                        viewModel = Mapper.Map<V_HaviorVM>(db.Queryable<V_Havior>().SingleOrDefault(u => u.Area == _area.ToString() && u.Controller == _controller.ToLower() && u.Action == _action.ToLower() && u.HttpMethod == _httpMethod.ToUpper()));
+                    });
+                }
 
                 var result = filterContext.Result;
                 if (result is ViewResult)

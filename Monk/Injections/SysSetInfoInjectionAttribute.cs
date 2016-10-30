@@ -19,12 +19,14 @@ namespace Monk.Injections
             var cache = HttpRuntimeCacheHelper.Get<SysSetVM>(Keys.SysSetCacheKey);
             if (cache == null)
             {
-                var services = new DbServices();
-                services.Command((db) =>
+                using (var services = new DbServices())
                 {
-                    Mapper.Initialize(c => c.CreateMap<SysSet, SysSetVM>());
-                    viewModel = Mapper.Map<SysSetVM>(db.Queryable<SysSet>().FirstOrDefault());
-                });
+                    services.Command((db) =>
+                    {
+                        Mapper.Initialize(c => c.CreateMap<SysSet, SysSetVM>());
+                        viewModel = Mapper.Map<SysSetVM>(db.Queryable<SysSet>().FirstOrDefault());
+                    });
+                }
                 HttpRuntimeCacheHelper.Set(Keys.SysSetCacheKey, viewModel);
             }
             else viewModel = cache;
