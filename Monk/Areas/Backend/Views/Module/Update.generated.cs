@@ -44,13 +44,32 @@ namespace ASP
             
             #line 2 "..\..\Areas\Backend\Views\Module\Update.cshtml"
   
-    ViewBag.Title = "更新栏目";
-    Layout = "~/Areas/Backend/Views/Shared/_Form.cshtml";
+    ViewBag.Title = ViewBag.HaviorInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n\r\n");
+
+DefineSection("head", () => {
+
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 8 "..\..\Areas\Backend\Views\Module\Update.cshtml"
+Write(ViewBag.HaviorInfo.HeadCode);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+});
+
+WriteLiteral("\r\n");
 
 DefineSection("crumbs", () => {
 
@@ -103,7 +122,7 @@ WriteLiteral("\r\n");
 DefineSection("beginForm", () => {
 
             
-            #line 18 "..\..\Areas\Backend\Views\Module\Update.cshtml"
+            #line 22 "..\..\Areas\Backend\Views\Module\Update.cshtml"
                       Html.BeginForm("Update", "Module", FormMethod.Post, new { @class = "monk-form" });
             
             #line default
@@ -133,7 +152,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 24 "..\..\Areas\Backend\Views\Module\Update.cshtml"
+            #line 28 "..\..\Areas\Backend\Views\Module\Update.cshtml"
    Write(Html.TextBoxFor(u => u.Name,
         new
         {
@@ -188,7 +207,7 @@ WriteLiteral(" placeholder=\"请输入或选择...\"");
 WriteLiteral(" ");
 
             
-            #line 42 "..\..\Areas\Backend\Views\Module\Update.cshtml"
+            #line 46 "..\..\Areas\Backend\Views\Module\Update.cshtml"
                                                                               Write(Html.Raw(Model.ModuleID == Guid.Parse("11111111-1111-1111-1111-111111111111") ? " disabled='disabled' " : ""));
 
             
@@ -221,7 +240,7 @@ WriteLiteral(" errormsg=\"请选择上级栏目\"");
 WriteLiteral(" ");
 
             
-            #line 47 "..\..\Areas\Backend\Views\Module\Update.cshtml"
+            #line 51 "..\..\Areas\Backend\Views\Module\Update.cshtml"
                                                                                                   Write(Html.Raw(Model.ModuleID == Guid.Parse("11111111-1111-1111-1111-111111111111") ? " ignore='ignore' " : ""));
 
             
@@ -236,7 +255,7 @@ WriteLiteral(">请输入或选择...</option>\r\n");
 WriteLiteral("            ");
 
             
-            #line 49 "..\..\Areas\Backend\Views\Module\Update.cshtml"
+            #line 53 "..\..\Areas\Backend\Views\Module\Update.cshtml"
        Write(Html.Raw(ViewData["ModuleList"]));
 
             
@@ -269,7 +288,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 58 "..\..\Areas\Backend\Views\Module\Update.cshtml"
+            #line 62 "..\..\Areas\Backend\Views\Module\Update.cshtml"
    Write(Html.TextAreaFor(u => u.Remark,
         new
         {
@@ -316,7 +335,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 76 "..\..\Areas\Backend\Views\Module\Update.cshtml"
+            #line 80 "..\..\Areas\Backend\Views\Module\Update.cshtml"
    Write(Html.TextBoxFor(u => u.Sort,
         new
         {
@@ -365,7 +384,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 94 "..\..\Areas\Backend\Views\Module\Update.cshtml"
+            #line 98 "..\..\Areas\Backend\Views\Module\Update.cshtml"
    Write(Html.TextAreaFor(u => u.TagAttr,
         new
         {
@@ -412,7 +431,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 112 "..\..\Areas\Backend\Views\Module\Update.cshtml"
+            #line 116 "..\..\Areas\Backend\Views\Module\Update.cshtml"
    Write(Html.TextBoxFor(u => u.Iconfont,
         new
         {
@@ -454,7 +473,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 129 "..\..\Areas\Backend\Views\Module\Update.cshtml"
+            #line 133 "..\..\Areas\Backend\Views\Module\Update.cshtml"
    Write(Html.CheckBoxFor(u => u.Enable,
        new
        {
@@ -478,7 +497,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 140 "..\..\Areas\Backend\Views\Module\Update.cshtml"
+            #line 144 "..\..\Areas\Backend\Views\Module\Update.cshtml"
 Write(Html.HiddenFor(u => u.ModuleID));
 
             
@@ -506,18 +525,18 @@ WriteLiteral(" type=\"reset\"");
 
 WriteLiteral(" class=\"monk-input-button peterRiver\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 5832), Tuple.Create("\"", 5898)
-, Tuple.Create(Tuple.Create("", 5842), Tuple.Create("window.location.href", 5842), true)
-, Tuple.Create(Tuple.Create(" ", 5862), Tuple.Create("=", 5863), true)
-, Tuple.Create(Tuple.Create(" ", 5864), Tuple.Create("\'", 5865), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 5886), Tuple.Create("\"", 5952)
+, Tuple.Create(Tuple.Create("", 5896), Tuple.Create("window.location.href", 5896), true)
+, Tuple.Create(Tuple.Create(" ", 5916), Tuple.Create("=", 5917), true)
+, Tuple.Create(Tuple.Create(" ", 5918), Tuple.Create("\'", 5919), true)
             
-            #line 143 "..\..\Areas\Backend\Views\Module\Update.cshtml"
-              , Tuple.Create(Tuple.Create("", 5866), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Module")
+            #line 147 "..\..\Areas\Backend\Views\Module\Update.cshtml"
+              , Tuple.Create(Tuple.Create("", 5920), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Module")
             
             #line default
             #line hidden
-, 5866), false)
-, Tuple.Create(Tuple.Create("", 5896), Tuple.Create("\';", 5896), true)
+, 5920), false)
+, Tuple.Create(Tuple.Create("", 5950), Tuple.Create("\';", 5950), true)
 );
 
 WriteLiteral(" value=\"返回列表\"");
@@ -541,7 +560,7 @@ WriteLiteral("\r\n");
 DefineSection("endForm", () => {
 
             
-            #line 147 "..\..\Areas\Backend\Views\Module\Update.cshtml"
+            #line 151 "..\..\Areas\Backend\Views\Module\Update.cshtml"
                     Html.EndForm();
             
             #line default
@@ -552,6 +571,17 @@ WriteLiteral("\r\n");
 
 DefineSection("foot", () => {
 
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 154 "..\..\Areas\Backend\Views\Module\Update.cshtml"
+Write(ViewBag.HaviorInfo.FootCode);
+
+            
+            #line default
+            #line hidden
 WriteLiteral("\r\n    <script");
 
 WriteLiteral(" type=\"text/javascript\"");
@@ -560,7 +590,7 @@ WriteLiteral(">\r\n        $(function () {\r\n            backend.validform(func
 "            window.location.href = \"");
 
             
-            #line 153 "..\..\Areas\Backend\Views\Module\Update.cshtml"
+            #line 158 "..\..\Areas\Backend\Views\Module\Update.cshtml"
                                    Write(Url.Action("Detail","Module",new { id=Model.ModuleID}));
 
             

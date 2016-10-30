@@ -44,8 +44,8 @@ namespace ASP
             
             #line 2 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
   
-    ViewBag.Title = "编辑行为";
-    Layout = "~/Areas/Backend/Views/Shared/_Form.cshtml";
+    ViewBag.Title = ViewBag.HaviorInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
 
             
             #line default
@@ -60,6 +60,17 @@ WriteLiteral("    ");
 
             
             #line 8 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+Write(ViewBag.HaviorInfo.HeadCode);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 9 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
 Write(Styles.Render("~/Assets/Backend/Editor.MD/Style"));
 
             
@@ -122,7 +133,7 @@ WriteLiteral("\r\n");
 DefineSection("beginForm", () => {
 
             
-            #line 22 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+            #line 23 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
                       Html.BeginForm("Update", "Havior", FormMethod.Post, new { @class = "monk-form" });
             
             #line default
@@ -188,7 +199,7 @@ WriteLiteral(">请输入或选择...</option>\r\n");
 WriteLiteral("            ");
 
             
-            #line 35 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+            #line 36 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
        Write(Html.Raw(ViewData["ModuleList"]));
 
             
@@ -221,7 +232,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 44 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+            #line 45 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
    Write(Html.TextBoxFor(u => u.Name,
         new
         {
@@ -300,7 +311,7 @@ WriteLiteral(" errormsg=\"请选择请求方式\"");
 WriteLiteral(" data-value=\"");
 
             
-            #line 67 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+            #line 68 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
                                                                                                                Write(Model.HttpMethod);
 
             
@@ -355,7 +366,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 81 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+            #line 82 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
    Write(Html.TextBoxFor(u => u.Layout,
         new
         {
@@ -385,7 +396,7 @@ WriteLiteral(" class=\"monk-select\"");
 WriteLiteral(" data-value=\"");
 
             
-            #line 94 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+            #line 95 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
                                            Write(Model.Layout);
 
             
@@ -399,37 +410,37 @@ WriteLiteral(" value=\"\"");
 
 WriteLiteral("></option>\r\n            <option");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 4046), Tuple.Create("\"", 4097)
-, Tuple.Create(Tuple.Create("", 4054), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Views/Shared/_Layout.cshtml")
-, 4054), false)
+WriteAttribute("value", Tuple.Create(" value=\"", 4079), Tuple.Create("\"", 4130)
+, Tuple.Create(Tuple.Create("", 4087), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Views/Shared/_Layout.cshtml")
+, 4087), false)
 );
 
 WriteLiteral(">~/Areas/Backend/Views/Shared/_Layout.cshtml</option>\r\n            <option");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 4172), Tuple.Create("\"", 4221)
-, Tuple.Create(Tuple.Create("", 4180), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Views/Shared/_List.cshtml")
-, 4180), false)
+WriteAttribute("value", Tuple.Create(" value=\"", 4205), Tuple.Create("\"", 4254)
+, Tuple.Create(Tuple.Create("", 4213), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Views/Shared/_List.cshtml")
+, 4213), false)
 );
 
 WriteLiteral(">~/Areas/Backend/Views/Shared/_List.cshtml</option>\r\n            <option");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 4294), Tuple.Create("\"", 4349)
-, Tuple.Create(Tuple.Create("", 4302), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Views/Shared/_ListNoPage.cshtml")
-, 4302), false)
+WriteAttribute("value", Tuple.Create(" value=\"", 4327), Tuple.Create("\"", 4382)
+, Tuple.Create(Tuple.Create("", 4335), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Views/Shared/_ListNoPage.cshtml")
+, 4335), false)
 );
 
 WriteLiteral(">~/Areas/Backend/Views/Shared/_ListNoPage.cshtml</option>\r\n            <option");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 4428), Tuple.Create("\"", 4477)
-, Tuple.Create(Tuple.Create("", 4436), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Views/Shared/_Form.cshtml")
-, 4436), false)
+WriteAttribute("value", Tuple.Create(" value=\"", 4461), Tuple.Create("\"", 4510)
+, Tuple.Create(Tuple.Create("", 4469), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Views/Shared/_Form.cshtml")
+, 4469), false)
 );
 
 WriteLiteral(">~/Areas/Backend/Views/Shared/_Form.cshtml</option>\r\n            <option");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 4550), Tuple.Create("\"", 4601)
-, Tuple.Create(Tuple.Create("", 4558), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Views/Shared/_Detail.cshtml")
-, 4558), false)
+WriteAttribute("value", Tuple.Create(" value=\"", 4583), Tuple.Create("\"", 4634)
+, Tuple.Create(Tuple.Create("", 4591), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Views/Shared/_Detail.cshtml")
+, 4591), false)
 );
 
 WriteLiteral(">~/Areas/Backend/Views/Shared/_Detail.cshtml</option>\r\n        </select>\r\n    </d" +
@@ -460,7 +471,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 109 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+            #line 110 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
    Write(Html.TextAreaFor(u => u.Remark,
         new
         {
@@ -503,7 +514,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 126 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+            #line 127 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
    Write(Html.CheckBoxFor(u => u.Route,
        new
        {
@@ -541,7 +552,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 139 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+            #line 140 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
    Write(Html.TextBoxFor(u => u.Area,
         new
         {
@@ -587,7 +598,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 157 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+            #line 158 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
    Write(Html.TextBoxFor(u => u.Controller,
         new
         {
@@ -633,7 +644,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 175 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+            #line 176 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
    Write(Html.TextBoxFor(u => u.Action,
         new
         {
@@ -679,7 +690,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 193 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+            #line 194 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
    Write(Html.TextAreaFor(u => u.Parameter,
         new
         {
@@ -726,7 +737,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 211 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+            #line 212 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
    Write(Html.TextBoxFor(u => u.Url,
         new
         {
@@ -772,7 +783,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 228 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+            #line 229 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
    Write(Html.CheckBoxFor(u => u.Index,
        new
        {
@@ -810,7 +821,7 @@ WriteLiteral(" style=\"display:none;\"");
 WriteLiteral(">");
 
             
-            #line 239 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+            #line 240 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
                                                                             Write(Model.HeadCode);
 
             
@@ -847,7 +858,7 @@ WriteLiteral(" style=\"display:none;\"");
 WriteLiteral(">");
 
             
-            #line 244 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+            #line 245 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
                                                                             Write(Model.FootCode);
 
             
@@ -880,7 +891,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 250 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+            #line 251 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
    Write(Html.CheckBoxFor(u => u.Enable,
        new
        {
@@ -904,7 +915,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 261 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+            #line 262 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
 Write(Html.HiddenFor(u => u.HaviorID));
 
             
@@ -932,18 +943,18 @@ WriteLiteral(" type=\"reset\"");
 
 WriteLiteral(" class=\"monk-input-button peterRiver\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 10897), Tuple.Create("\"", 10963)
-, Tuple.Create(Tuple.Create("", 10907), Tuple.Create("window.location.href", 10907), true)
-, Tuple.Create(Tuple.Create(" ", 10927), Tuple.Create("=", 10928), true)
-, Tuple.Create(Tuple.Create(" ", 10929), Tuple.Create("\'", 10930), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 10930), Tuple.Create("\"", 10996)
+, Tuple.Create(Tuple.Create("", 10940), Tuple.Create("window.location.href", 10940), true)
+, Tuple.Create(Tuple.Create(" ", 10960), Tuple.Create("=", 10961), true)
+, Tuple.Create(Tuple.Create(" ", 10962), Tuple.Create("\'", 10963), true)
             
-            #line 264 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
-             , Tuple.Create(Tuple.Create("", 10931), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Havior")
+            #line 265 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+             , Tuple.Create(Tuple.Create("", 10964), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Havior")
             
             #line default
             #line hidden
-, 10931), false)
-, Tuple.Create(Tuple.Create("", 10961), Tuple.Create("\';", 10961), true)
+, 10964), false)
+, Tuple.Create(Tuple.Create("", 10994), Tuple.Create("\';", 10994), true)
 );
 
 WriteLiteral(" value=\"返回列表\"");
@@ -967,7 +978,7 @@ WriteLiteral("\r\n");
 DefineSection("endForm", () => {
 
             
-            #line 268 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+            #line 269 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
                     Html.EndForm();
             
             #line default
@@ -983,7 +994,18 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 271 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+            #line 272 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+Write(ViewBag.HaviorInfo.FootCode);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 273 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
 Write(Scripts.Render("~/Assets/Backend/Editor.MD/Script"));
 
             
@@ -1001,7 +1023,7 @@ WriteLiteral(@">
                 window.location.href = """);
 
             
-            #line 277 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
+            #line 279 "..\..\Areas\Backend\Views\Havior\Update.cshtml"
                                    Write(Url.Action("Detail","Havior",new { id=Model.HaviorID}));
 
             

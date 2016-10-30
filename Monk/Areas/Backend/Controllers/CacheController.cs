@@ -42,6 +42,7 @@ namespace Monk.Areas.Backend.Controllers
             return View();
         }
 
+        [HttpPost]
         public JsonResult Delete(string ids)
         {
             var clientResult = new JsonData<List<object>>();

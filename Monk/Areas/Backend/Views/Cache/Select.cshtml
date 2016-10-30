@@ -1,6 +1,10 @@
 ﻿@{
-    ViewBag.Title = "登录日志";
-    Layout = "~/Areas/Backend/Views/Shared/_ListNoPage.cshtml";
+    ViewBag.Title = ViewBag.HaviorInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
+}
+
+@section head{
+    @ViewBag.HaviorInfo.HeadCode
 }
 
 @section crumbs{
@@ -40,6 +44,7 @@
 </div>
 
 @section foot{
+    @ViewBag.HaviorInfo.FootCode
     <script type="text/javascript">
         function detail() {
             var ids = backend.getCheckIds();

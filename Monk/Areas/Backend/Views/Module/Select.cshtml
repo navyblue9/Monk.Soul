@@ -1,6 +1,10 @@
 ﻿@{
-    ViewBag.Title = "系统模块";
-    Layout = "~/Areas/Backend/Views/Shared/_ListNoPage.cshtml";
+    ViewBag.Title = ViewBag.HaviorInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
+}
+
+@section head{
+    @ViewBag.HaviorInfo.HeadCode
 }
 
 @section crumbs{
@@ -55,6 +59,7 @@
 </div>
 
 @section foot{
+    @ViewBag.HaviorInfo.FootCode
     @Scripts.Render("~/Assets/Backend/Linq/Script")
     <script type="text/javascript">
         function insert() {

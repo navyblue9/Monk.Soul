@@ -1,7 +1,12 @@
 ﻿@{
-    ViewBag.Title = "登录日志";
-    Layout = "~/Areas/Backend/Views/Shared/_List.cshtml";
+    ViewBag.Title = ViewBag.HaviorInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
 }
+
+@section head{
+    @ViewBag.HaviorInfo.HeadCode
+}
+
 
 @section crumbs{
     <label class="backend-crumbs-separator">/</label>
@@ -71,6 +76,7 @@
 }
 
 @section foot{
+    @ViewBag.HaviorInfo.FootCode
     <script type="text/javascript">
         function insert() {
             var ids = backend.getCheckIds();

@@ -1,7 +1,11 @@
 ﻿@model LoginLogVM
 @{
-    ViewBag.Title = "查看日志";
-    Layout = "~/Areas/Backend/Views/Shared/_Detail.cshtml";
+    ViewBag.Title = ViewBag.HaviorInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
+}
+
+@section head{
+    @ViewBag.HaviorInfo.HeadCode
 }
 
 @section crumbs{
@@ -93,6 +97,7 @@
 }
 
 @section foot{
+    @ViewBag.HaviorInfo.FootCode
     <script type="text/javascript">
         function deletes() {
             backend.confirm("您确定要执行此操作吗？", null, function (index) {

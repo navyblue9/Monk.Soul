@@ -1,10 +1,11 @@
 ﻿@model SysSetVM
 @{
-    ViewBag.Title = "系统设置";
-    Layout = "~/Areas/Backend/Views/Shared/_Form.cshtml";
+    ViewBag.Title = ViewBag.HaviorInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
 }
 
 @section head{
+    @ViewBag.HaviorInfo.HeadCode
     @Styles.Render("~/Assets/Backend/WebUploader/Style")
 }
 
@@ -251,6 +252,7 @@
 @section endForm{@{ Html.EndForm();}}
 
 @section foot{
+    @ViewBag.HaviorInfo.FootCode
     @Scripts.Render("~/Assets/Backend/WebUploader/Script")
     <script type="text/javascript">
         $(function () {

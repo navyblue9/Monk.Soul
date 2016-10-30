@@ -41,18 +41,52 @@ namespace ASP
         }
         public override void Execute()
         {
-WriteLiteral("\r\n");
-
             
-            #line 2 "..\..\Areas\Backend\Views\Default\Console.cshtml"
+            #line 1 "..\..\Areas\Backend\Views\Default\Console.cshtml"
   
-    ViewBag.Title = "控制台管理中心";
-    Layout = "~/Areas/Backend/Views/Shared/_Detail.cshtml";
+    ViewBag.Title = ViewBag.HaviorInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n<h2>控制台管理中心</h2>\r\n\r\n");
+WriteLiteral("\r\n");
+
+DefineSection("head", () => {
+
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 6 "..\..\Areas\Backend\Views\Default\Console.cshtml"
+Write(ViewBag.HaviorInfo.HeadCode);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+});
+
+WriteLiteral("\r\n<h2>控制台管理中心</h2>\r\n\r\n");
+
+DefineSection("foot", () => {
+
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 12 "..\..\Areas\Backend\Views\Default\Console.cshtml"
+Write(ViewBag.HaviorInfo.FootCode);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+});
 
         }
     }

@@ -44,13 +44,32 @@ namespace ASP
             
             #line 2 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
   
-    ViewBag.Title = "查看日志";
-    Layout = "~/Areas/Backend/Views/Shared/_Detail.cshtml";
+    ViewBag.Title = ViewBag.HaviorInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n\r\n");
+
+DefineSection("head", () => {
+
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 8 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
+Write(ViewBag.HaviorInfo.HeadCode);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+});
+
+WriteLiteral("\r\n");
 
 DefineSection("crumbs", () => {
 
@@ -107,7 +126,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 19 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
+            #line 23 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
    Write(Model.Account);
 
             
@@ -132,7 +151,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 25 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
+            #line 29 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
    Write(Model.Password);
 
             
@@ -157,7 +176,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 31 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
+            #line 35 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
    Write(Model.InTime);
 
             
@@ -182,7 +201,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 37 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
+            #line 41 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
    Write(Html.Raw(DataToHtmlHelper.StatusHtml(Model.Sucessed)));
 
             
@@ -207,7 +226,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 43 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
+            #line 47 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
    Write(DataToHtmlHelper.NullHtml(Model.OffTime));
 
             
@@ -232,7 +251,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 49 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
+            #line 53 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
    Write(Model.IPAddress);
 
             
@@ -257,7 +276,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 55 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
+            #line 59 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
    Write(DataToHtmlHelper.NullHtml(Model.IPDetail));
 
             
@@ -282,7 +301,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 61 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
+            #line 65 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
    Write(Model.HttpMethod);
 
             
@@ -307,7 +326,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 67 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
+            #line 71 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
    Write(Html.Raw(DataToHtmlHelper.StatusHtml(Model.AjaxRequest)));
 
             
@@ -332,7 +351,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 73 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
+            #line 77 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
    Write(Html.Raw(DataToHtmlHelper.StatusHtml(Model.MobileDevice)));
 
             
@@ -357,7 +376,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 79 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
+            #line 83 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
    Write(Model.Platform);
 
             
@@ -382,7 +401,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 85 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
+            #line 89 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
    Write(Model.Browser);
 
             
@@ -406,18 +425,18 @@ WriteLiteral(" type=\"reset\"");
 
 WriteLiteral(" class=\"monk-input-button peterRiver\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 3127), Tuple.Create("\"", 3195)
-, Tuple.Create(Tuple.Create("", 3137), Tuple.Create("window.location.href", 3137), true)
-, Tuple.Create(Tuple.Create(" ", 3157), Tuple.Create("=", 3158), true)
-, Tuple.Create(Tuple.Create(" ", 3159), Tuple.Create("\'", 3160), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 3179), Tuple.Create("\"", 3247)
+, Tuple.Create(Tuple.Create("", 3189), Tuple.Create("window.location.href", 3189), true)
+, Tuple.Create(Tuple.Create(" ", 3209), Tuple.Create("=", 3210), true)
+, Tuple.Create(Tuple.Create(" ", 3211), Tuple.Create("\'", 3212), true)
             
-            #line 91 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
-              , Tuple.Create(Tuple.Create("", 3161), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","LoginLog")
+            #line 95 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
+              , Tuple.Create(Tuple.Create("", 3213), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","LoginLog")
             
             #line default
             #line hidden
-, 3161), false)
-, Tuple.Create(Tuple.Create("", 3193), Tuple.Create("\';", 3193), true)
+, 3213), false)
+, Tuple.Create(Tuple.Create("", 3245), Tuple.Create("\';", 3245), true)
 );
 
 WriteLiteral(" value=\"返回列表\"");
@@ -440,6 +459,17 @@ WriteLiteral("\r\n");
 
 DefineSection("foot", () => {
 
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 100 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
+Write(ViewBag.HaviorInfo.FootCode);
+
+            
+            #line default
+            #line hidden
 WriteLiteral("\r\n    <script");
 
 WriteLiteral(" type=\"text/javascript\"");
@@ -448,7 +478,7 @@ WriteLiteral(">\r\n        function deletes() {\r\n            backend.confirm(\
 " function (index) {\r\n                backend.post(\"");
 
             
-            #line 99 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
+            #line 104 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
                          Write(Url.Action("Delete","LoginLog",new { }));
 
             
@@ -457,7 +487,7 @@ WriteLiteral(">\r\n        function deletes() {\r\n            backend.confirm(\
 WriteLiteral("\", { ids: \"");
 
             
-            #line 99 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
+            #line 104 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
                                                                             Write(Model.LogID);
 
             
@@ -466,7 +496,7 @@ WriteLiteral("\", { ids: \"");
 WriteLiteral("\" }, function (data) {\r\n                    window.location.href = \"");
 
             
-            #line 100 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
+            #line 105 "..\..\Areas\Backend\Views\LoginLog\Detail.cshtml"
                                        Write(Url.Action("Select","LoginLog"));
 
             

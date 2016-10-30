@@ -44,13 +44,32 @@ namespace ASP
             
             #line 1 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
   
-    ViewBag.Title = "登录日志";
-    Layout = "~/Areas/Backend/Views/Shared/_List.cshtml";
+    ViewBag.Title = ViewBag.HaviorInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n\r\n");
+
+DefineSection("head", () => {
+
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 7 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+Write(ViewBag.HaviorInfo.HeadCode);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+});
+
+WriteLiteral("\r\n");
 
 DefineSection("crumbs", () => {
 
@@ -348,6 +367,17 @@ WriteLiteral("\r\n");
 
 DefineSection("foot", () => {
 
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 104 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+Write(ViewBag.HaviorInfo.FootCode);
+
+            
+            #line default
+            #line hidden
 WriteLiteral("\r\n    <script");
 
 WriteLiteral(" type=\"text/javascript\"");
@@ -356,7 +386,7 @@ WriteLiteral(">\r\n        function detail(){\r\n            var ids=backend.get
 "      if(ids.length==1){\r\n                window.location.href=\"");
 
             
-            #line 104 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+            #line 109 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
                                  Write(Url.Action("Detail","LoginLog",new { }));
 
             
@@ -378,7 +408,7 @@ WriteLiteral(@"/""+ids[0];
                     backend.post(""");
 
             
-            #line 117 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+            #line 122 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
                              Write(Url.Action("Delete","LoginLog",new { }));
 
             
@@ -433,7 +463,7 @@ WriteLiteral(">\r\n        $(function () {\r\n            var render= monk.tppl(
 "ById(\"tpl\").innerHTML);\r\n            backend.pagination(\"");
 
             
-            #line 160 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+            #line 165 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
                            Write(Url.Action("List","LoginLog"));
 
             
@@ -442,7 +472,7 @@ WriteLiteral(">\r\n        $(function () {\r\n            var render= monk.tppl(
 WriteLiteral("\",");
 
             
-            #line 160 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+            #line 165 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
                                                            Write(ViewBag.SysSetInfo.PageSize);
 
             

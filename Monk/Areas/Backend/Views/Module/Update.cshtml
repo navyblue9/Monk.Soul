@@ -1,7 +1,11 @@
 ﻿@model ModuleVM
 @{
-    ViewBag.Title = "更新栏目";
-    Layout = "~/Areas/Backend/Views/Shared/_Form.cshtml";
+    ViewBag.Title = ViewBag.HaviorInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
+}
+
+@section head{
+    @ViewBag.HaviorInfo.HeadCode
 }
 
 @section crumbs{
@@ -147,6 +151,7 @@
 @section endForm{@{ Html.EndForm();}}
 
 @section foot{
+    @ViewBag.HaviorInfo.FootCode
     <script type="text/javascript">
         $(function () {
             backend.validform(function (data) {

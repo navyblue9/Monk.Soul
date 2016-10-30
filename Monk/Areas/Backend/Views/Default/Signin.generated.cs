@@ -44,13 +44,32 @@ namespace ASP
             
             #line 2 "..\..\Areas\Backend\Views\Default\Signin.cshtml"
   
-    ViewBag.Title = "管理入口";
-    Layout = "~/Areas/Backend/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = ViewBag.HaviorInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n<div");
+WriteLiteral("\r\n");
+
+DefineSection("head", () => {
+
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 7 "..\..\Areas\Backend\Views\Default\Signin.cshtml"
+Write(ViewBag.HaviorInfo.HeadCode);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+});
+
+WriteLiteral("<div");
 
 WriteLiteral(" class=\"signin-container\"");
 
@@ -70,9 +89,9 @@ WriteLiteral(" title=\"百签软件有限公司\"");
 
 WriteLiteral(">\r\n            <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 283), Tuple.Create("\"", 335)
-, Tuple.Create(Tuple.Create("", 289), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Assets/Images/baisoft-logo.png")
-, 289), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 333), Tuple.Create("\"", 385)
+, Tuple.Create(Tuple.Create("", 339), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Assets/Images/baisoft-logo.png")
+, 339), false)
 );
 
 WriteLiteral(" class=\"display-block\"");
@@ -84,13 +103,13 @@ WriteLiteral(" title=\"百签软件有限公司\"");
 WriteLiteral(" />\r\n        </a>\r\n    </div>\r\n");
 
             
-            #line 12 "..\..\Areas\Backend\Views\Default\Signin.cshtml"
+            #line 15 "..\..\Areas\Backend\Views\Default\Signin.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 12 "..\..\Areas\Backend\Views\Default\Signin.cshtml"
+            #line 15 "..\..\Areas\Backend\Views\Default\Signin.cshtml"
      using (Html.BeginForm("Signin", "Default", FormMethod.Post, new { @class = "monk-form" }))
     {
 
@@ -120,7 +139,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("                ");
 
             
-            #line 18 "..\..\Areas\Backend\Views\Default\Signin.cshtml"
+            #line 21 "..\..\Areas\Backend\Views\Default\Signin.cshtml"
            Write(Html.TextBoxFor(u => u.Account,
                new
                {
@@ -171,7 +190,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("                ");
 
             
-            #line 36 "..\..\Areas\Backend\Views\Default\Signin.cshtml"
+            #line 39 "..\..\Areas\Backend\Views\Default\Signin.cshtml"
            Write(Html.PasswordFor(u => u.Password,
                new
                {
@@ -220,7 +239,7 @@ WriteLiteral(" value=\"重置表单\"");
 WriteLiteral(">\r\n");
 
             
-            #line 52 "..\..\Areas\Backend\Views\Default\Signin.cshtml"
+            #line 55 "..\..\Areas\Backend\Views\Default\Signin.cshtml"
     }
 
             
@@ -235,7 +254,18 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 56 "..\..\Areas\Backend\Views\Default\Signin.cshtml"
+            #line 59 "..\..\Areas\Backend\Views\Default\Signin.cshtml"
+Write(ViewBag.HaviorInfo.FootCode);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 60 "..\..\Areas\Backend\Views\Default\Signin.cshtml"
 Write(Scripts.Render("~/Assets/Backend/Validform/Script"));
 
             
@@ -250,7 +280,7 @@ WriteLiteral(">\r\n        if (self != top) { top.location = self.location; }\r\
 "n (data) {\r\n                window.location.href = \"");
 
             
-            #line 62 "..\..\Areas\Backend\Views\Default\Signin.cshtml"
+            #line 66 "..\..\Areas\Backend\Views\Default\Signin.cshtml"
                                    Write(Url.Action("Index","Default"));
 
             

@@ -1,7 +1,10 @@
-﻿
-@{
-    ViewBag.Title = "查看缓存";
-    Layout = "~/Areas/Backend/Views/Shared/_Detail.cshtml";
+﻿@{
+    ViewBag.Title = ViewBag.HaviorInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
+}
+
+@section head{
+    @ViewBag.HaviorInfo.HeadCode
 }
 
 @section crumbs{
@@ -35,6 +38,7 @@
 }
 
 @section foot{
+    @ViewBag.HaviorInfo.FootCode
     <script type="text/javascript">
         function deletes() {
             backend.confirm("删除该缓存会导致数据重新加载，您确定要执行此操作吗？", null, function (index) {

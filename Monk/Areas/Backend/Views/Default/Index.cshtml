@@ -1,6 +1,9 @@
 ﻿@{
-    ViewBag.Title = "管理首页";
-    Layout = "~/Areas/Backend/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = ViewBag.HaviorInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
+}
+@section head{
+    @ViewBag.HaviorInfo.HeadCode
 }
 @section bodyAttr{ class="index-body"}
 <div id="backend-container">
@@ -31,6 +34,7 @@
 </div>
 
 @section foot{
+    @ViewBag.HaviorInfo.FootCode
     @Scripts.Render("~/Assets/Backend/Store/Script", "~/Assets/Backend/Linq/Script", "~/Assets/Backend/Nicescroll/Script")
     <script type="text/html" id="moduleTpl">
         <% for(var i=0; i< list.length;i++) { %>
