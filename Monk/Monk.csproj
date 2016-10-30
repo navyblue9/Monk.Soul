@@ -2453,7 +2453,10 @@
     <Content Include="Areas\Forum\Assets\Fonts\iconfont.eot" />
     <Content Include="Areas\Forum\Assets\Fonts\iconfont.ttf" />
     <Content Include="Areas\Forum\Assets\Fonts\iconfont.woff" />
-    <Content Include="Areas\Backend\Views\Tool\GUID.cshtml" />
+    <Content Include="Areas\Backend\Views\Tool\GUID.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GUID.generated.cs</LastGenOutput>
+    </Content>
     <None Include="Areas\Forum\Assets\_references.js" />
     <Content Include="Areas\Forum\Assets\favicon.ico" />
     <Content Include="Areas\Forum\Assets\Fonts\iconfont.svg" />
@@ -2609,8 +2612,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Update.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Areas\Backend\Views\Tool\GUID.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GUID.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Forum\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Forum\ForumAreaRegistration.cs" />
+    <Compile Include="Areas\Forum\Views\Default\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Forum\Views\Shared\_Layout.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2785,7 +2798,10 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>_Layout.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Areas\Forum\Views\Default\Index.cshtml" />
+    <Content Include="Areas\Forum\Views\Default\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
     <None Include="bundleconfig.json" />
     <None Include="Properties\PublishProfiles\Monk.Soul.pubxml" />
     <None Include="Web.Debug.config">
