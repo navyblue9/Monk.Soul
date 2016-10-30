@@ -94,16 +94,6 @@ WriteLiteral(">/</label>\r\n    <a");
 
 WriteLiteral(" href=\"#\"");
 
-WriteLiteral(" title=\"缓存管理\"");
-
-WriteLiteral(">缓存管理</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
 WriteLiteral(" title=\"服务器信息\"");
 
 WriteLiteral(">服务器信息</a>\r\n    <label");
@@ -139,7 +129,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 27 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
+            #line 25 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
    Write(Request.ServerVariables["HTTP_USER_AGENT"]);
 
             
@@ -164,7 +154,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 33 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
+            #line 31 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
    Write(RequestHelper.IPAddress);
 
             
@@ -189,7 +179,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 39 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
+            #line 37 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
    Write(Server.MachineName);
 
             
@@ -214,7 +204,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 45 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
+            #line 43 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
    Write(Request.ServerVariables["LOCAL_ADDR"]);
 
             
@@ -239,7 +229,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 51 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
+            #line 49 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
    Write(Environment.Version.ToString());
 
             
@@ -264,7 +254,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 57 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
+            #line 55 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
    Write(Environment.OSVersion.ToString());
 
             
@@ -289,7 +279,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 63 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
+            #line 61 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
    Write(Request.ServerVariables["SERVER_SOFTWARE"]);
 
             
@@ -314,7 +304,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 69 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
+            #line 67 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
    Write(Request.ServerVariables["SERVER_NAME"]);
 
             
@@ -339,7 +329,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 75 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
+            #line 73 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
    Write(Request.ServerVariables["SERVER_PORT"]);
 
             
@@ -364,7 +354,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 81 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
+            #line 79 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
    Write(Request.ServerVariables["HTTP_ACCEPT_LANGUAGE"]);
 
             
@@ -389,7 +379,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 87 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
+            #line 85 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
    Write(Request.ServerVariables["APPL_PHYSICAL_PATH"]);
 
             
@@ -414,7 +404,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 93 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
+            #line 91 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
    Write(Server.ScriptTimeout);
 
             
@@ -439,7 +429,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 99 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
+            #line 97 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
    Write(Environment.GetEnvironmentVariable("NUMBER_OF_PROCESSORS"));
 
             
@@ -464,7 +454,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 105 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
+            #line 103 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
    Write(Environment.GetEnvironmentVariable("PROCESSOR_IDENTIFIER"));
 
             
@@ -489,7 +479,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 111 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
+            #line 109 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
    Write(Request.ServerVariables["HTTPS"]);
 
             
@@ -514,7 +504,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 117 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
+            #line 115 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
    Write(Session.Keys.Count.ToString());
 
             
@@ -529,7 +519,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 122 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
+            #line 120 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
