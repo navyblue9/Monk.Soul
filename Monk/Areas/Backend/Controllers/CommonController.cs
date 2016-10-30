@@ -54,6 +54,7 @@ namespace Monk.Areas.Backend.Controllers
                         db.Update<LoginLog>(new { Sucessed = true, member.MemberID }, u => u.LogID == loginLogId);
                         Mapper.Initialize(c => c.CreateMap<Member, MemberSessionVM>());
                         var memberVM = Mapper.Map<MemberSessionVM>(member);
+                        memberVM.LogID = loginLogId;
                         Session[Keys.SessionKey] = memberVM;
                         clientResult.SetClientData("y", "登录成功", memberVM);
                     }
