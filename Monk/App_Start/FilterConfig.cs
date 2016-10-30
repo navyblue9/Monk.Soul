@@ -10,6 +10,7 @@ namespace Monk
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             // 注：先进后出
+            filters.Add(new HaviorInfoInjectionAttribute());
             filters.Add(new SysSetInfoInjectionAttribute());
             filters.Add(new MemberInfoInjectionAttribute());
             filters.Add(new AccessVerifyAttribute());

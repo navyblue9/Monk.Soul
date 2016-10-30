@@ -8,6 +8,7 @@ using Monk.Models;
 using Monk.ViewModels;
 using Monk.Utils;
 using System.Collections.Generic;
+using Monk.Injections;
 
 namespace Monk.Areas.Services.Controllers
 {
@@ -49,6 +50,10 @@ namespace Monk.Areas.Services.Controllers
             Mapper.Initialize(u => u.CreateMap<HaviorVM, Havior>());
             var model = Mapper.Map<Havior>(viewModel);
             model.HaviorID = Guid.NewGuid();
+            model.Area = string.IsNullOrEmpty(model.Area) ? model.Area : model.Area.ToLower();
+            model.Action = string.IsNullOrEmpty(model.Action) ? model.Area : model.Action.ToLower();
+            model.Controller = string.IsNullOrEmpty(model.Controller) ? model.Area : model.Controller.ToLower();
+
             services.Command((db) =>
             {
                 if (model.Index == true)
@@ -86,6 +91,9 @@ namespace Monk.Areas.Services.Controllers
         {
             var clientResult = new JsonData<object>() { };
             if (model.HaviorID == null) clientResult.SetClientData("n", "非法参数");
+            model.Area = string.IsNullOrEmpty(model.Area) ? model.Area : model.Area.ToLower();
+            model.Action = string.IsNullOrEmpty(model.Action) ? model.Area : model.Action.ToLower();
+            model.Controller = string.IsNullOrEmpty(model.Controller) ? model.Area : model.Controller.ToLower();
 
             services.Command((db) =>
             {
@@ -119,6 +127,23 @@ namespace Monk.Areas.Services.Controllers
             });
 
             return Json(clientResult);
+        }
+
+        [HttpGet]
+        public JsonResult HaviorInfo(string _area, string _controller, string _action, string _httpMethod)
+        {
+            var clientResult = new JsonData<V_HaviorVM>() { };
+            var model = new V_Havior();
+            services.Command((db) =>
+            {
+                model = db.Queryable<V_Havior>().SingleOrDefault(u => u.Area == _area.ToLower() && u.Controller == _controller.ToLower() && u.Action == _action.ToLower() && u.HttpMethod == _httpMethod.ToUpper());
+            });
+
+            // 此地方需要重点优化，后期使用autofac统一注入
+            Mapper.Initialize(c => c.CreateMap<V_Havior, V_HaviorVM>());
+
+            clientResult.SetClientData("y", "操作成功", Mapper.Map<V_HaviorVM>(model));
+            return Json(clientResult, JsonRequestBehavior.AllowGet);
         }
     }
 }

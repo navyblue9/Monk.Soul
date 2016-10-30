@@ -18,6 +18,7 @@ namespace Monk.Utils
         };
         public const string SessionKey = "Monk.Soul.SessionMember";
         public const string SysSetInfoInjectionKey = "SysSetInfo";
+        public const string HaviorInfoInjectionKey = "HaviorInfo";
         public const string MemberInfoInjectionKey = "MemberInfo";
         public const string SysSetCacheKey = "SysSetInfo_CacheKey";
         public const string ModuleCacheKey = "Module_CacheKey";

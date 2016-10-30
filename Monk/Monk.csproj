@@ -2474,6 +2474,7 @@
     <Compile Include="Areas\Backend\Controllers\LoginLogController.cs" />
     <Compile Include="Areas\Backend\Controllers\ModuleController.cs" />
     <Compile Include="Areas\Backend\Controllers\SysSetController.cs" />
+    <Compile Include="Areas\Backend\Injections\HaviorInfoInjectionAttribute.cs" />
     <Compile Include="Areas\Backend\Injections\MemberInfoInjectionAttribute.cs" />
     <Compile Include="Areas\Backend\Views\Cache\Detail.generated.cs">
       <AutoGen>True</AutoGen>

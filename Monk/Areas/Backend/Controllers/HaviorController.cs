@@ -47,7 +47,7 @@ namespace Monk.Areas.Backend.Controllers
             viewModel.LogMemberID = sessionModel.MemberID;
             if (viewModel.Route == true)
             {
-                viewModel.Url = Url.Action(viewModel.Action, viewModel.Controller, new { area = viewModel.Area, id = viewModel.Parameter });
+                viewModel.Url = Url.Action(viewModel.Action.ToLower(), viewModel.Controller.ToLower(), new { area = viewModel.Area.ToLower(), id = viewModel.Parameter });
             }
 
             var clientResult = restful.Post<JsonData<object>>(Url.Action("Insert", "Havior", new { area = "Services" }), viewModel);
@@ -91,7 +91,7 @@ namespace Monk.Areas.Backend.Controllers
         {
             if (viewModel.Route == true)
             {
-                viewModel.Url = Url.Action(viewModel.Action, viewModel.Controller, new { area = viewModel.Area, id = viewModel.Parameter });
+                viewModel.Url = Url.Action(viewModel.Action.ToLower(), viewModel.Controller.ToLower(), new { area = viewModel.Area.ToLower(), id = viewModel.Parameter });
             }
             var clientResult = restful.Post<JsonData<object>>(Url.Action("Update", "Havior", new { area = "Services" }), viewModel);
             return Json(clientResult);
