@@ -80,6 +80,9 @@
                     退出时间
                 </th>
                 <th align="left" width="10%">
+                    浏览器
+                </th>
+                <th align="left" width="10%">
                     登录IP
                 </th>
                 <th align="center" class="monk-table-status">
@@ -146,6 +149,9 @@
             </td>
             <td>
                 <%=backend.datetimeFormat(data[i].OffTime) %>
+            </td>
+            <td>
+                <%=data[i].Browser %>
             </td>
             <td>
                 <%=data[i].IPAddress %>

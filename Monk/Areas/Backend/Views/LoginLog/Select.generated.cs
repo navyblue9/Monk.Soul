@@ -332,6 +332,12 @@ WriteLiteral(" align=\"left\"");
 
 WriteLiteral(" width=\"10%\"");
 
+WriteLiteral(">\r\n                    浏览器\r\n                </th>\r\n                <th");
+
+WriteLiteral(" align=\"left\"");
+
+WriteLiteral(" width=\"10%\"");
+
 WriteLiteral(">\r\n                    登录IP\r\n                </th>\r\n                <th");
 
 WriteLiteral(" align=\"center\"");
@@ -375,7 +381,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 107 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+            #line 110 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
 Write(ViewBag.HaviorInfo.FootCode);
 
             
@@ -389,7 +395,7 @@ WriteLiteral(">\r\n        function detail(){\r\n            var ids=backend.get
 "      if(ids.length==1){\r\n                window.location.href=\"");
 
             
-            #line 112 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+            #line 115 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
                                  Write(Url.Action("Detail","LoginLog",new { }));
 
             
@@ -411,7 +417,7 @@ WriteLiteral(@"/""+ids[0];
                     backend.post(""");
 
             
-            #line 125 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+            #line 128 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
                              Write(Url.Action("Delete","LoginLog",new { }));
 
             
@@ -444,6 +450,9 @@ WriteLiteral(@">
                 <%=backend.datetimeFormat(data[i].OffTime) %>
             </td>
             <td>
+                <%=data[i].Browser %>
+            </td>
+            <td>
                 <%=data[i].IPAddress %>
             </td>
             <td class=""monk-table-status"">
@@ -466,7 +475,7 @@ WriteLiteral(">\r\n        $(function () {\r\n            var render= monk.tppl(
 "ById(\"tpl\").innerHTML);\r\n            backend.pagination(\"");
 
             
-            #line 168 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+            #line 174 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
                            Write(Url.Action("List","LoginLog"));
 
             
@@ -475,7 +484,7 @@ WriteLiteral(">\r\n        $(function () {\r\n            var render= monk.tppl(
 WriteLiteral("\",");
 
             
-            #line 168 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+            #line 174 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
                                                            Write(ViewBag.SysSetInfo.PageSize);
 
             
