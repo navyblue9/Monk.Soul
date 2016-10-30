@@ -1,4 +1,4 @@
-﻿@model SigninModelVM
+﻿@model SigninVM
 @{
     ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
     Layout = ViewBag.HaviorInfo.Layout;
@@ -15,7 +15,7 @@
             <img src="~/Areas/Backend/Assets/Images/baisoft-logo.png" class="display-block" alt="百签软件有限公司" title="百签软件有限公司" />
         </a>
     </div>
-    @using (Html.BeginForm("Signin", "Default", FormMethod.Post, new { @class = "monk-form" }))
+    @using (Html.BeginForm("Signin", "Common", FormMethod.Post, new { @class = "monk-form" }))
     {
         <div class="monk-form-item">
             <label class="monk-form-label" for="Account">会员账号</label>

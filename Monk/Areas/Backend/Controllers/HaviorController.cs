@@ -1,33 +1,40 @@
-﻿using AutoMapper;
-using Monk.Areas.Backend.App_Code;
-using Monk.Areas.Backend.ViewModels;
-using Monk.Utils;
-using Monk.ViewModels;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using System.Collections.Generic;
+using SqlSugar;
+using AutoMapper;
+using AutoMapper.Configuration;
+using Monk.Models;
+using Monk.Areas.Backend.ViewModels;
+using Monk.DbStore;
+using Monk.Utils;
+using Monk.Areas.Backend.App_Code;
 
 namespace Monk.Areas.Backend.Controllers
 {
-    public class HaviorController : Controller
+    public class HaviorController : BaseController
     {
-        RESTFul restful = new RESTFul(RESTFul.GetSecretKey(Keys.Access_Token));
+        public HaviorController(DbServices services) : base(services) { }
 
         [HttpGet]
-        public ActionResult Select()
-        {
-            return View();
-        }
+        public ActionResult Select() { return View(); }
 
         [HttpGet]
-        public JsonResult List(int pageSize, int pageIndex = 0)
+        public JsonResult List(int? pageSize, int pageIndex = 0)
         {
-            var clientResult = restful.Get<JsonData<List<V_HaviorVM>>>(Url.Action("Select", "Havior", new { area = "Services" }), new
+            var clientResult = new JsonData<List<V_HaviorVM>>();
+            var setVewModel = RouteData.DataTokens[Keys.SysSetInfoInjectionKey] as SysSetVM;
+            pageSize = pageSize == null ? setVewModel.PageSize : pageSize;
+
+            services.Command((db) =>
             {
-                pageSize,
-                pageIndex
+                var query = db.Queryable<V_Havior>().Where(c => true);
+                var total = query.Count();
+                var list = query.OrderBy(u => u.SerialNo, OrderByType.desc).ToPageList(Convert.ToInt32(pageIndex + 1), Convert.ToInt32(pageSize));
+
+                Mapper.Initialize(c => c.CreateMap<V_Havior, V_HaviorVM>());
+                clientResult.SetClientData("y", "获取成功", Mapper.Map<List<V_HaviorVM>>(list), new { pageSize, pageIndex = Convert.ToInt32(pageIndex + 1), total });
             });
             return Json(clientResult, JsonRequestBehavior.AllowGet);
         }
@@ -35,22 +42,46 @@ namespace Monk.Areas.Backend.Controllers
         [HttpGet]
         public ActionResult Insert()
         {
-            ViewData["ModuleList"] = Common.ModuleDropDownList();
-            return View(new HaviorVM() { Enable = true, Route = true, Index = false, Area = "Backend" });
+            var moduleList = new List<V_ModuleVM>();
+            var cache = HttpRuntimeCacheHelper.Get<List<V_ModuleVM>>(Keys.ModuleCacheKey);
+            if (cache == null)
+            {
+                services.Command((db) =>
+                {
+                    Mapper.Initialize(u => u.CreateMap<V_Module, V_ModuleVM>());
+                    moduleList = Mapper.Map<List<V_ModuleVM>>(db.Queryable<V_Module>().Where(c => true).ToList());
+                    HttpRuntimeCacheHelper.Set(Keys.ModuleCacheKey, moduleList);
+                });
+            }
+            else moduleList = cache;
+
+            ViewData["ModuleList"] = Common.ModuleDropDownList(moduleList);
+            return View(new HaviorVM() { Enable = true, Route = true, Index = false, Area = "backend" });
         }
 
         [HttpPost]
         [ValidateInput(false)]
         public JsonResult Insert(HaviorVM viewModel)
         {
-            var sessionModel = Session[Keys.SessionKey] as SessionMemberVM;
+            var clientResult = new JsonData<object>();
+            var sessionModel = Session[Keys.SessionKey] as MemberSessionVM;
             viewModel.LogMemberID = sessionModel.MemberID;
-            if (viewModel.Route == true)
-            {
-                viewModel.Url = Url.Action(viewModel.Action.ToLower(), viewModel.Controller.ToLower(), new { area = viewModel.Area.ToLower(), id = viewModel.Parameter });
-            }
+            viewModel.Area = viewModel.Area.ToLower();
+            viewModel.Action = viewModel.Action.ToLower();
+            viewModel.Controller = viewModel.Controller.ToLower();
+            if (viewModel.Route == true) viewModel.Url = Url.Action(viewModel.Action.ToLower(), viewModel.Controller.ToLower(), new { area = viewModel.Area.ToLower(), id = viewModel.Parameter });
 
-            var clientResult = restful.Post<JsonData<object>>(Url.Action("Insert", "Havior", new { area = "Services" }), viewModel);
+            Mapper.Initialize(u => u.CreateMap<HaviorVM, Havior>());
+            var model = Mapper.Map<Havior>(viewModel);
+            model.HaviorID = Guid.NewGuid();
+
+            services.Command((db) =>
+            {
+                if (model.Index == true) db.Update<Havior>(new { Index = false }, u => u.ModuleID == model.ModuleID);
+                db.Insert<Havior>(model);
+                HttpRuntimeCacheHelper.Remove(Keys.ModuleCacheKey);
+                clientResult.SetClientData("y", "操作成功", new { id = model.HaviorID });
+            });
             return Json(clientResult);
         }
 
@@ -59,11 +90,11 @@ namespace Monk.Areas.Backend.Controllers
         {
             if (id == null) return Content("非法参数");
             var viewModel = new V_HaviorVM();
-            var clientResult = restful.Get<JsonData<V_HaviorVM>>(Url.Action("Detail", "Havior", new { area = "Services" }), new
+            services.Command((db) =>
             {
-                haviorId = id
+                Mapper.Initialize(c => c.CreateMap<V_Havior, V_HaviorVM>());
+                viewModel = Mapper.Map<V_HaviorVM>(db.Queryable<V_Havior>().SingleOrDefault(u => u.HaviorID == id));
             });
-            if (clientResult.status == "y") viewModel = clientResult.data;
             return View(viewModel);
         }
 
@@ -72,16 +103,24 @@ namespace Monk.Areas.Backend.Controllers
         {
             if (id == null) return Content("非法参数");
             var viewModel = new HaviorVM();
-            var clientResult = restful.Get<JsonData<V_HaviorVM>>(Url.Action("Detail", "Havior", new { area = "Services" }), new
+            var moduleList = new List<V_ModuleVM>();
+            var cache = HttpRuntimeCacheHelper.Get<List<V_ModuleVM>>(Keys.ModuleCacheKey);
+            if (cache != null) moduleList = cache;
+            services.Command((db) =>
             {
-                haviorId = id
+                var cfg = new MapperConfigurationExpression();
+                cfg.CreateMap<Havior, HaviorVM>();
+                cfg.CreateMap<V_Module, V_ModuleVM>();
+                Mapper.Initialize(cfg);
+
+                viewModel = Mapper.Map<HaviorVM>(db.Queryable<Havior>().InSingle(id));
+                if (cache == null)
+                {
+                    moduleList = Mapper.Map<List<V_ModuleVM>>(db.Queryable<V_Module>().Where(c => true).ToList());
+                    HttpRuntimeCacheHelper.Set(Keys.ModuleCacheKey, moduleList);
+                }
             });
-            if (clientResult.status == "y")
-            {
-                Mapper.Initialize(c => c.CreateMap<V_HaviorVM, HaviorVM>());
-                viewModel = Mapper.Map<HaviorVM>(clientResult.data);
-            };
-            ViewData["ModuleList"] = Common.ModuleDropDownList(viewModel.ModuleID);
+            ViewData["ModuleList"] = Common.ModuleDropDownList(moduleList, viewModel.ModuleID);
             return View(viewModel);
         }
 
@@ -89,11 +128,39 @@ namespace Monk.Areas.Backend.Controllers
         [ValidateInput(false)]
         public JsonResult Update(HaviorVM viewModel)
         {
-            if (viewModel.Route == true)
+            var clientResult = new JsonData<object>() { };
+            if (viewModel.HaviorID == null) clientResult.SetClientData("n", "非法参数");
+            viewModel.Area = viewModel.Area.ToLower();
+            viewModel.Action = viewModel.Action.ToLower();
+            viewModel.Controller = viewModel.Controller.ToLower();
+            if (viewModel.Route == true) viewModel.Url = Url.Action(viewModel.Action.ToLower(), viewModel.Controller.ToLower(), new { area = viewModel.Area.ToLower(), id = viewModel.Parameter });
+
+            services.Command((db) =>
             {
-                viewModel.Url = Url.Action(viewModel.Action.ToLower(), viewModel.Controller.ToLower(), new { area = viewModel.Area.ToLower(), id = viewModel.Parameter });
-            }
-            var clientResult = restful.Post<JsonData<object>>(Url.Action("Update", "Havior", new { area = "Services" }), viewModel);
+                if (viewModel.Index == true) db.Update<Havior>(new { Index = false }, u => u.ModuleID == viewModel.ModuleID);
+                db.Update<Havior>(new
+                {
+                    viewModel.Action,
+                    viewModel.Area,
+                    viewModel.Controller,
+                    viewModel.FootCode,
+                    viewModel.HeadCode,
+                    viewModel.HttpMethod,
+                    viewModel.Index,
+                    viewModel.Layout,
+                    viewModel.ModuleID,
+                    viewModel.Name,
+                    viewModel.Parameter,
+                    viewModel.Remark,
+                    viewModel.Route,
+                    viewModel.Url,
+                    viewModel.Enable,
+                    UpdateTime = DateTime.Now
+                }, u => u.HaviorID == viewModel.HaviorID);
+
+                HttpRuntimeCacheHelper.Remove(Keys.ModuleCacheKey);
+                clientResult.SetClientData("y", "操作成功");
+            });
             return Json(clientResult);
         }
     }

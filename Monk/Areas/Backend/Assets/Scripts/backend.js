@@ -269,7 +269,7 @@
             options: {
                 auto: false,
                 swf: '/Areas/Backend/Assets/Vendors/webuploader-v0.1.6/dist/Uploader.swf',
-                server: '/Services/Common/UploadImage ',
+                server: '/Backend/Common/UploadImage ',
                 pick: {
                     id: '',
                     multiple: false
@@ -295,7 +295,7 @@
             // 重置按钮
             clearBtn: "#clearUpload",
             data: {},
-            headers: { "SecretKey": "d86c2c08c8c2247ec59c4ddeaaf4598a" },
+            headers: {},
             fileQueued: function (file) {
             },
             fileDequeued: function (file) {

@@ -135,7 +135,7 @@
         $(function () {
             backend.successTip("您好，@ViewBag.MemberInfo.Account");
 
-            backend.get("@Url.Action("Modules","Default")", {}, function (data) {
+            backend.get("@Url.Action("Menus", "Default")", {}, function (data) {
                 renderModule(data.data);
             });
 
@@ -261,7 +261,7 @@
             $("#signout").on({
                 click: function () {
                     backend.loadTip("系统正在注销，请稍后...")
-                    $.post("@Url.Action("Signout", "Default")", {}, function (data) {
+                    $.post("@Url.Action("Signout", "Common")", {}, function (data) {
                         backend.ajaxResultHandle(data, function (data) {
                             if (data.status == "n") {
                                 backend.errorTip(data.info);

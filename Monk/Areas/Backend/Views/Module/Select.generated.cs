@@ -30,7 +30,6 @@ namespace ASP
     using Monk;
     using Monk.Areas.Backend.ViewModels;
     using Monk.Utils;
-    using Monk.ViewModels;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Areas/Backend/Views/Module/Select.cshtml")]
@@ -417,7 +416,7 @@ WriteLiteral(@">
 
             
             #line 167 "..\..\Areas\Backend\Views\Module\Select.cshtml"
-                    Write(Url.Action("Modules","Module"));
+                    Write(Url.Action("List","Module"));
 
             
             #line default

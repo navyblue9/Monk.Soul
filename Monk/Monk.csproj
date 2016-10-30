@@ -2478,6 +2478,7 @@
     <Compile Include="Areas\Backend\Controllers\SysSetController.cs" />
     <Compile Include="Areas\Backend\Injections\HaviorInfoInjectionAttribute.cs" />
     <Compile Include="Areas\Backend\Injections\MemberInfoInjectionAttribute.cs" />
+    <Compile Include="Areas\Backend\ViewModels\MenuVM.cs" />
     <Compile Include="Areas\Backend\Views\Cache\Detail.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2554,9 +2555,9 @@
       <DependentUpon>Update.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Areas\Backend\Views\ServerInfo\Detail.generated.cs">
-      <DependentUpon>Detail.cshtml</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>Detail.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Areas\Backend\Views\Shared\_Detail.generated.cs">
       <AutoGen>True</AutoGen>
@@ -2593,20 +2594,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Update.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Areas\Services\Controllers\CommonController.cs" />
-    <Compile Include="Areas\Services\Controllers\HaviorController.cs" />
-    <Compile Include="Areas\Services\Controllers\LoginLogController.cs" />
-    <Compile Include="Areas\Services\Controllers\ModuleController.cs" />
-    <Compile Include="Areas\Services\Controllers\SysSetController.cs" />
     <Compile Include="Filters\AccessVerifyAttribute.cs" />
     <Compile Include="Filters\AnonymousAttribute.cs" />
-    <Compile Include="Areas\Backend\ViewModels\Default\SessionMemberVM.cs" />
-    <Compile Include="Areas\Backend\ViewModels\Default\SigninModelVM.cs" />
-    <Compile Include="Areas\Services\Controllers\MemberController.cs" />
-    <Compile Include="Areas\Services\ServicesAreaRegistration.cs" />
     <Compile Include="DbStore\DbConfig.cs" />
     <Compile Include="DbStore\DbServices.cs" />
-    <Compile Include="Filters\RESTfulAuthorizeAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2655,32 +2646,14 @@
     <Compile Include="Utils\RouteHelper.cs" />
     <Compile Include="Utils\SessionHelper.cs" />
     <Compile Include="Utils\StringHelper.cs" />
-    <Compile Include="ViewModels\ButtonVM.cs" />
-    <Compile Include="ViewModels\DicDataVM.cs" />
-    <Compile Include="ViewModels\DicTypeVM.cs" />
-    <Compile Include="ViewModels\GroupVM.cs" />
-    <Compile Include="ViewModels\Group_VM.cs" />
-    <Compile Include="ViewModels\Group_HaviorVM.cs" />
-    <Compile Include="ViewModels\Group_ModuleVM.cs" />
-    <Compile Include="ViewModels\Group_RoleVM.cs" />
-    <Compile Include="ViewModels\HaviorVM.cs" />
-    <Compile Include="ViewModels\HttpLogVM.cs" />
-    <Compile Include="ViewModels\LoginLogVM.cs" />
-    <Compile Include="ViewModels\MemberVM.cs" />
-    <Compile Include="ViewModels\Member_ButtonVM.cs" />
-    <Compile Include="ViewModels\Member_HaviorVM.cs" />
-    <Compile Include="ViewModels\Member_ModuleVM.cs" />
-    <Compile Include="ViewModels\Member_RoleVM.cs" />
-    <Compile Include="ViewModels\ModuleVM.cs" />
-    <Compile Include="ViewModels\OperateDetailVM.cs" />
-    <Compile Include="ViewModels\OperateLogVM.cs" />
-    <Compile Include="ViewModels\RoleVM.cs" />
-    <Compile Include="ViewModels\Role_ButtonVM.cs" />
-    <Compile Include="ViewModels\Role_HaviorVM.cs" />
-    <Compile Include="ViewModels\Role_ModuleVM.cs" />
-    <Compile Include="ViewModels\SysSetVM.cs" />
-    <Compile Include="ViewModels\V_HaviorVM.cs" />
-    <Compile Include="ViewModels\V_ModuleVM.cs" />
+    <Compile Include="Areas\Backend\ViewModels\HaviorVM.cs" />
+    <Compile Include="Areas\Backend\ViewModels\LoginLogVM.cs" />
+    <Compile Include="Areas\Backend\ViewModels\MemberSessionVM.cs" />
+    <Compile Include="Areas\Backend\ViewModels\ModuleVM.cs" />
+    <Compile Include="Areas\Backend\ViewModels\SigninVM.cs" />
+    <Compile Include="Areas\Backend\ViewModels\SysSetVM.cs" />
+    <Compile Include="Areas\Backend\ViewModels\V_HaviorVM.cs" />
+    <Compile Include="Areas\Backend\ViewModels\V_ModuleVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

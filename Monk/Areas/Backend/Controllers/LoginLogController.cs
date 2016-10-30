@@ -1,30 +1,39 @@
 ﻿using System;
+using System.Linq;
 using System.Web.Mvc;
-using Monk.ViewModels;
-using Monk.Utils;
 using System.Collections.Generic;
+using SqlSugar;
+using AutoMapper;
+using Monk.Models;
+using Monk.Areas.Backend.ViewModels;
+using Monk.DbStore;
+using Monk.Utils;
 
 namespace Monk.Areas.Backend.Controllers
 {
-    public class LoginLogController : Controller
+    public class LoginLogController : BaseController
     {
-        RESTFul restful = new RESTFul(RESTFul.GetSecretKey(Keys.Access_Token));
+        public LoginLogController(DbServices services) : base(services) { }
 
         [HttpGet]
-        public ActionResult Select()
-        {
-            return View();
-        }
+        public ActionResult Select() { return View(); }
 
         [HttpGet]
-        public JsonResult List(int pageSize, int pageIndex = 0, string account = "", string sucessed = null)
+        public JsonResult List(int? pageSize, int? pageIndex = 0, string account = "", string sucessed = null)
         {
-            var clientResult = restful.Get<JsonData<List<LoginLogVM>>>(Url.Action("Select", "LoginLog", new { area = "Services" }), new
+            var clientResult = new JsonData<List<LoginLogVM>>();
+            var whereStr = "Account like @account and Sucessed like @sucessed";
+            var setVewModel = RouteData.DataTokens[Keys.SysSetInfoInjectionKey] as SysSetVM;
+            pageSize = pageSize == null ? setVewModel.PageSize : pageSize;
+
+            services.Command((db) =>
             {
-                pageSize,
-                pageIndex,
-                account,
-                sucessed
+                var query = db.Queryable<LoginLog>().Where(c => true).Where(whereStr, new { account = "%" + account + "%", sucessed = "%" + sucessed + "%" });
+                var total = query.Count();
+                var list = query.OrderBy(u => u.InTime, OrderByType.desc).ToPageList(Convert.ToInt32(pageIndex + 1), Convert.ToInt32(pageSize));
+
+                Mapper.Initialize(c => c.CreateMap<LoginLog, LoginLogVM>());
+                clientResult.SetClientData("y", "获取成功", Mapper.Map<List<LoginLogVM>>(list), new { pageSize, pageIndex = Convert.ToInt32(pageIndex + 1), total });
             });
             return Json(clientResult, JsonRequestBehavior.AllowGet);
         }
@@ -34,17 +43,36 @@ namespace Monk.Areas.Backend.Controllers
         {
             if (id == null) return Content("非法参数");
             var viewModel = new LoginLogVM();
-            var clientResult = restful.Get<JsonData<LoginLogVM>>(Url.Action("Detail", "LoginLog", new { area = "Services" }), new { logId = id });
-            if (clientResult.status == "y") viewModel = clientResult.data;
+            services.Command((db) =>
+            {
+                Mapper.Initialize(c => c.CreateMap<LoginLog, LoginLogVM>());
+                viewModel = Mapper.Map<LoginLogVM>(db.Queryable<LoginLog>().InSingle(id));
+            });
             return View(viewModel);
         }
 
         [HttpPost]
-        public JsonResult Delete(string ids)
+        public JsonResult Delete(List<Guid> ids)
         {
-            var clientResult = restful.Post<JsonData<List<object>>>(Url.Action("Delete", "LoginLog", new { area = "Services" }), new
+            var clientResult = new JsonData<List<LoginLogVM>>();
+            services.Command((db) =>
             {
-                ids
+                db.BeginTran();
+                try
+                {
+                    db.FalseDelete<LoginLog>("Del", u => ids.Contains(u.LogID));
+                    db.CommitTran();
+                    clientResult.SetClientData("y", "操作成功");
+                }
+                catch (Exception ex)
+                {
+                    db.RollbackTran();
+                    clientResult.SetClientData("n", "操作失败", null, new
+                    {
+                        ex.Message,
+                        ex.Source
+                    });
+                }
             });
             return Json(clientResult);
         }

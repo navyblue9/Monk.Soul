@@ -30,11 +30,10 @@ namespace ASP
     using Monk;
     using Monk.Areas.Backend.ViewModels;
     using Monk.Utils;
-    using Monk.ViewModels;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Areas/Backend/Views/Default/Signin.cshtml")]
-    public partial class _Areas_Backend_Views_Default_Signin_cshtml : System.Web.Mvc.WebViewPage<SigninModelVM>
+    public partial class _Areas_Backend_Views_Default_Signin_cshtml : System.Web.Mvc.WebViewPage<SigninVM>
     {
         public _Areas_Backend_Views_Default_Signin_cshtml()
         {
@@ -92,9 +91,9 @@ WriteLiteral(" title=\"百签软件有限公司\"");
 
 WriteLiteral(">\r\n            <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 544), Tuple.Create("\"", 596)
-, Tuple.Create(Tuple.Create("", 550), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Assets/Images/baisoft-logo.png")
-, 550), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 539), Tuple.Create("\"", 591)
+, Tuple.Create(Tuple.Create("", 545), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Backend/Assets/Images/baisoft-logo.png")
+, 545), false)
 );
 
 WriteLiteral(" class=\"display-block\"");
@@ -113,7 +112,7 @@ WriteLiteral(" />\r\n        </a>\r\n    </div>\r\n");
             #line hidden
             
             #line 18 "..\..\Areas\Backend\Views\Default\Signin.cshtml"
-     using (Html.BeginForm("Signin", "Default", FormMethod.Post, new { @class = "monk-form" }))
+     using (Html.BeginForm("Signin", "Common", FormMethod.Post, new { @class = "monk-form" }))
     {
 
             

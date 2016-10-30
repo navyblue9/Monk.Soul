@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
-using Monk.Areas.Backend.ViewModels;
 using Monk.Utils;
 
 namespace Monk.Areas.Backend.Controllers
@@ -12,10 +10,7 @@ namespace Monk.Areas.Backend.Controllers
     public class CacheController : Controller
     {
         [HttpGet]
-        public ActionResult Select()
-        {
-            return View();
-        }
+        public ActionResult Select() { return View(); }
 
         [HttpGet]
         public JsonResult RuntimeCache()

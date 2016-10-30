@@ -1,96 +1,52 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Mvc;
+using System.Collections.Generic;
+using SqlSugar;
 using AutoMapper;
-using AutoMapper.Configuration;
-using Monk.ViewModels;
+using Monk.Models;
+using Monk.DbStore;
+using Monk.Utils;
 using Monk.Filters;
 using Monk.Areas.Backend.ViewModels;
-using Monk.Utils;
-using System.Collections.Generic;
 
 namespace Monk.Areas.Backend.Controllers
 {
-    public class DefaultController : Controller
+    public class DefaultController : BaseController
     {
-        RESTFul restful = new RESTFul(RESTFul.GetSecretKey(Keys.Access_Token));
+        public DefaultController(DbServices services) : base(services) { }
 
         [HttpGet]
         [Anonymous]
         public ActionResult Signin()
         {
-            if (Session[Keys.SessionKey] != null)
-            {
-                return RedirectToAction("Index");
-            }
-            return View();
-        }
-
-        [HttpPost]
-        [Anonymous]
-        public JsonResult Signin(SigninModelVM viewModel)
-        {
-            var clientResult = restful.Post<JsonData<MemberVM>>(Url.Action("Signin", "Member", new { area = "Services" }), new
-            {
-                account = viewModel.Account.Trim(),
-                password = viewModel.Password.Trim()
-            });
-            if (clientResult.status == "y")
-            {
-                var cfg = new MapperConfigurationExpression();
-                cfg.CreateMap<MemberVM, SessionMemberVM>();
-                cfg.CreateMap<JsonData<MemberVM>, JsonData<SessionMemberVM>>();
-                Mapper.Initialize(cfg);
-                var clientResultDto = Mapper.Map<JsonData<SessionMemberVM>>(clientResult);
-
-                clientResultDto.data.LogID = Guid.Parse(clientResultDto.others.ToString());
-                Session[Keys.SessionKey] = clientResultDto.data;
-
-                return Json(clientResultDto);
-            }
-            else
-            {
-                clientResult.selector = "#Account";
-            }
-            return Json(clientResult);
-        }
-
-        [HttpGet]
-        public ActionResult Index()
-        {
+            if (Session[Keys.SessionKey] != null) return RedirectToAction("Index");
             return View();
         }
 
         [HttpGet]
-        public JsonResult Modules()
+        public ActionResult Index() { return View(); }
+
+        [HttpGet]
+        public JsonResult Menus()
         {
-            var clientResult = restful.Get<JsonData<List<V_ModuleVM>>>(Url.Action("Modules", "Module", new { area = "Services" }));
-            if (clientResult.status == "y")
+            var clientResult = new JsonData<List<MenuVM>>() { };
+            var cache = HttpRuntimeCacheHelper.Get<List<MenuVM>>(Keys.BackendMenus);
+            if (cache == null)
             {
-                clientResult.data = clientResult.data.Where(u => u.Enable == true).ToList();
+                services.Command((db) =>
+                {
+                    var modules = db.Queryable<V_Module>().Where(c => c.Enable == true).ToList();
+                    Mapper.Initialize(c => c.CreateMap<V_Module, MenuVM>());
+                    var menus = Mapper.Map<List<MenuVM>>(modules);
+                    HttpRuntimeCacheHelper.Set(Keys.BackendMenus, menus);
+                    clientResult.SetClientData("y", "获取成功", Mapper.Map<List<MenuVM>>(menus));
+                });
             }
+            else clientResult.SetClientData("y", "获取成功", cache);
             return Json(clientResult, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
-        public ActionResult Console()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public JsonResult Signout()
-        {
-            var sessionModel = SessionHelper.GetSessionInstance<SessionMemberVM>(Keys.SessionKey);
-            var clientResult = restful.Post<JsonData<object>>(Url.Action("Signout", "Member", new { area = "Services" }), new
-            {
-                logid = sessionModel.LogID
-            });
-            if (clientResult.status == "y")
-            {
-                Session[Keys.SessionKey] = null;
-            }
-            return Json(clientResult);
-        }
+        public ActionResult Console() { return View(); }
     }
 }

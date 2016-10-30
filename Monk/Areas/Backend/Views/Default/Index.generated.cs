@@ -30,7 +30,6 @@ namespace ASP
     using Monk;
     using Monk.Areas.Backend.ViewModels;
     using Monk.Utils;
-    using Monk.ViewModels;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Areas/Backend/Views/Default/Index.cshtml")]
@@ -346,7 +345,7 @@ WriteLiteral("\");\r\n\r\n            backend.get(\"");
 
             
             #line 138 "..\..\Areas\Backend\Views\Default\Index.cshtml"
-                    Write(Url.Action("Modules","Default"));
+                    Write(Url.Action("Menus", "Default"));
 
             
             #line default
@@ -451,7 +450,7 @@ WriteLiteral("\" + \"_moduleStatus\";\r\n            if (store.get(moduleStatusK
 
             
             #line 264 "..\..\Areas\Backend\Views\Default\Index.cshtml"
-                       Write(Url.Action("Signout", "Default"));
+                       Write(Url.Action("Signout", "Common"));
 
             
             #line default

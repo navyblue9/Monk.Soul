@@ -14,7 +14,6 @@ namespace Monk
             filters.Add(new SysSetInfoInjectionAttribute());
             filters.Add(new MemberInfoInjectionAttribute());
             filters.Add(new AccessVerifyAttribute());
-            filters.Add(new RESTfulAuthorizeAttribute());
         }
     }
 }

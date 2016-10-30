@@ -164,7 +164,7 @@
         }
 
         $(function () {
-            backend.get("@Url.Action("Modules","Module")", {}, function (data) {
+            backend.get("@Url.Action("List","Module")", {}, function (data) {
                 $(".monk-table table tbody").html(getModuleTreeHtml(data.data));
             });
         });

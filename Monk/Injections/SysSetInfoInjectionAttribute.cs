@@ -1,10 +1,11 @@
-﻿using System;
+﻿using System.Linq;
 using System.Web.Mvc;
-using System.Web.Routing;
-using System.Linq;
+using SqlSugar;
+using AutoMapper;
 using Monk.Utils;
-using Monk.ViewModels;
-
+using Monk.DbStore;
+using Monk.Areas.Backend.ViewModels;
+using Monk.Models;
 
 namespace Monk.Injections
 {
@@ -14,15 +15,22 @@ namespace Monk.Injections
         {
             base.OnActionExecuting(filterContext);
             if (filterContext.ActionDescriptor.IsDefined(typeof(ExemptionInjectionAttribute), false) || filterContext.ActionDescriptor.ControllerDescriptor.IsDefined(typeof(ExemptionInjectionAttribute), false)) { return; }
-            if (HttpRuntimeCacheHelper.Get<SysSetVM>(Keys.SysSetCacheKey) == null)
+            var viewModel = new SysSetVM();
+            var cache = HttpRuntimeCacheHelper.Get<SysSetVM>(Keys.SysSetCacheKey);
+            if (cache == null)
             {
-                var restful = new RESTFul(RESTFul.GetSecretKey(Keys.Access_Token));
-                var clientResult = restful.Get<JsonData<SysSetVM>>(RouteHelper.RouteUrl(new { controller = "SysSet", action = "Detail" }));
-                HttpRuntimeCacheHelper.Set(Keys.SysSetCacheKey, clientResult.data);
+                var services = new DbServices();
+                services.Command((db) =>
+                {
+                    Mapper.Initialize(c => c.CreateMap<SysSet, SysSetVM>());
+                    viewModel = Mapper.Map<SysSetVM>(db.Queryable<SysSet>().FirstOrDefault());
+                });
+                HttpRuntimeCacheHelper.Set(Keys.SysSetCacheKey, viewModel);
             }
+            else viewModel = cache;
             if (filterContext.RouteData.DataTokens[Keys.SysSetInfoInjectionKey] == null)
             {
-                filterContext.RouteData.DataTokens.Add(Keys.SysSetInfoInjectionKey, HttpRuntimeCacheHelper.Get<SysSetVM>(Keys.SysSetCacheKey));
+                filterContext.RouteData.DataTokens.Add(Keys.SysSetInfoInjectionKey, viewModel);
             }
         }
 

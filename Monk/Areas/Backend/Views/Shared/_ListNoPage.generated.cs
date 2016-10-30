@@ -30,7 +30,6 @@ namespace ASP
     using Monk;
     using Monk.Areas.Backend.ViewModels;
     using Monk.Utils;
-    using Monk.ViewModels;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Areas/Backend/Views/Shared/_ListNoPage.cshtml")]
