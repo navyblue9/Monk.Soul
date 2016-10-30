@@ -46,6 +46,9 @@ namespace ASP
   
     ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
     Layout = ViewBag.HaviorInfo.Layout;
+    ViewBag.Keywords = ViewBag.SysSetInfo.Keywords;
+    ViewBag.Description = ViewBag.SysSetInfo.Description;
+    ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
 
             
             #line default
@@ -59,7 +62,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 7 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
+            #line 10 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
 Write(ViewBag.HaviorInfo.HeadCode);
 
             
@@ -136,7 +139,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 24 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
+            #line 27 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
    Write(ViewBag.Key);
 
             
@@ -165,7 +168,7 @@ WriteLiteral(" data-language=\"JSON\"");
 WriteLiteral(">");
 
             
-            #line 30 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
+            #line 33 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
                                                Write(StringHelper.ConvertJsonString(ViewBag.Value.ToString()));
 
             
@@ -189,18 +192,18 @@ WriteLiteral(" type=\"reset\"");
 
 WriteLiteral(" class=\"monk-input-button peterRiver\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 1232), Tuple.Create("\"", 1297)
-, Tuple.Create(Tuple.Create("", 1242), Tuple.Create("window.location.href", 1242), true)
-, Tuple.Create(Tuple.Create(" ", 1262), Tuple.Create("=", 1263), true)
-, Tuple.Create(Tuple.Create(" ", 1264), Tuple.Create("\'", 1265), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 1399), Tuple.Create("\"", 1464)
+, Tuple.Create(Tuple.Create("", 1409), Tuple.Create("window.location.href", 1409), true)
+, Tuple.Create(Tuple.Create(" ", 1429), Tuple.Create("=", 1430), true)
+, Tuple.Create(Tuple.Create(" ", 1431), Tuple.Create("\'", 1432), true)
             
-            #line 36 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
-              , Tuple.Create(Tuple.Create("", 1266), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Cache")
+            #line 39 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
+              , Tuple.Create(Tuple.Create("", 1433), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Cache")
             
             #line default
             #line hidden
-, 1266), false)
-, Tuple.Create(Tuple.Create("", 1295), Tuple.Create("\';", 1295), true)
+, 1433), false)
+, Tuple.Create(Tuple.Create("", 1462), Tuple.Create("\';", 1462), true)
 );
 
 WriteLiteral(" va");
@@ -230,7 +233,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 41 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
+            #line 44 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
 Write(ViewBag.HaviorInfo.FootCode);
 
             
@@ -244,7 +247,7 @@ WriteLiteral(">\r\n        function deletes() {\r\n            backend.confirm(\
 "执行此操作吗？\", null, function (index) {\r\n                backend.post(\"");
 
             
-            #line 45 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
+            #line 48 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
                          Write(Url.Action("Delete","Cache",new { }));
 
             
@@ -253,7 +256,7 @@ WriteLiteral(">\r\n        function deletes() {\r\n            backend.confirm(\
 WriteLiteral("\", { ids: \"");
 
             
-            #line 45 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
+            #line 48 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
                                                                          Write(ViewBag.Key);
 
             
@@ -262,7 +265,7 @@ WriteLiteral("\", { ids: \"");
 WriteLiteral("\" }, function (data) {\r\n                    window.location.href = \"");
 
             
-            #line 46 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
+            #line 49 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
                                        Write(Url.Action("Select", "Cache"));
 
             

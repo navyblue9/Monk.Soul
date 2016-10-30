@@ -46,6 +46,9 @@ namespace ASP
   
     ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
     Layout = ViewBag.HaviorInfo.Layout;
+    ViewBag.Keywords = ViewBag.SysSetInfo.Keywords;
+    ViewBag.Description = ViewBag.SysSetInfo.Description;
+    ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
 
             
             #line default
@@ -59,7 +62,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 7 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+            #line 10 "..\..\Areas\Backend\Views\Module\Select.cshtml"
 Write(ViewBag.HaviorInfo.HeadCode);
 
             
@@ -234,7 +237,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 62 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+            #line 65 "..\..\Areas\Backend\Views\Module\Select.cshtml"
 Write(ViewBag.HaviorInfo.FootCode);
 
             
@@ -245,7 +248,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 63 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+            #line 66 "..\..\Areas\Backend\Views\Module\Select.cshtml"
 Write(Scripts.Render("~/Assets/Backend/Linq/Script"));
 
             
@@ -259,7 +262,7 @@ WriteLiteral(">\r\n        function insert() {\r\n            var ids = backend.
 "         if (ids.length > 0) {\r\n                window.location.href = \"");
 
             
-            #line 68 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+            #line 71 "..\..\Areas\Backend\Views\Module\Select.cshtml"
                                    Write(Url.Action("Insert","Module"));
 
             
@@ -269,7 +272,7 @@ WriteLiteral("/\" + ids[0];\r\n            }\r\n            else {\r\n          
 "href = \"");
 
             
-            #line 71 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+            #line 74 "..\..\Areas\Backend\Views\Module\Select.cshtml"
                                    Write(Url.Action("Insert","Module"));
 
             
@@ -280,7 +283,7 @@ WriteLiteral("\";\r\n            }\r\n        }\r\n        function detail() {\r
 "ow.location.href = \"");
 
             
-            #line 77 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+            #line 80 "..\..\Areas\Backend\Views\Module\Select.cshtml"
                                    Write(Url.Action("Detail","Module",new { }));
 
             
@@ -298,7 +301,7 @@ WriteLiteral(@"/"" + ids[0];
                 window.location.href = """);
 
             
-            #line 86 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+            #line 89 "..\..\Areas\Backend\Views\Module\Select.cshtml"
                                    Write(Url.Action("Update","Module",new { }));
 
             
@@ -324,7 +327,7 @@ WriteLiteral(@"/"" + ids[0];
                         backend.post(""");
 
             
-            #line 103 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+            #line 106 "..\..\Areas\Backend\Views\Module\Select.cshtml"
                                  Write(Url.Action("Delete","Module",new { }));
 
             
@@ -334,7 +337,7 @@ WriteLiteral("\", { ids: ids.toString() }, function (data) {\r\n                
 "d.get(\"");
 
             
-            #line 104 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+            #line 107 "..\..\Areas\Backend\Views\Module\Select.cshtml"
                                     Write(Url.Action("Modules","Module"));
 
             
@@ -413,7 +416,7 @@ WriteLiteral(@">
             backend.get(""");
 
             
-            #line 164 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+            #line 167 "..\..\Areas\Backend\Views\Module\Select.cshtml"
                     Write(Url.Action("Modules","Module"));
 
             

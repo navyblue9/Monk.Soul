@@ -46,6 +46,9 @@ namespace ASP
   
     ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
     Layout = ViewBag.HaviorInfo.Layout;
+    ViewBag.Keywords = ViewBag.SysSetInfo.Keywords;
+    ViewBag.Description = ViewBag.SysSetInfo.Description;
+    ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
 
             
             #line default
@@ -59,7 +62,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 6 "..\..\Areas\Backend\Views\Default\Console.cshtml"
+            #line 9 "..\..\Areas\Backend\Views\Default\Console.cshtml"
 Write(ViewBag.HaviorInfo.HeadCode);
 
             
@@ -78,7 +81,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 12 "..\..\Areas\Backend\Views\Default\Console.cshtml"
+            #line 15 "..\..\Areas\Backend\Views\Default\Console.cshtml"
 Write(ViewBag.HaviorInfo.FootCode);
 
             

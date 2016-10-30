@@ -46,6 +46,9 @@ namespace ASP
   
     ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
     Layout = ViewBag.HaviorInfo.Layout;
+    ViewBag.Keywords = ViewBag.SysSetInfo.Keywords;
+    ViewBag.Description = ViewBag.SysSetInfo.Description;
+    ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
 
             
             #line default
@@ -59,7 +62,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 7 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+            #line 10 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
 Write(ViewBag.HaviorInfo.HeadCode);
 
             
@@ -190,7 +193,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 47 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+            #line 50 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
 Write(ViewBag.HaviorInfo.FootCode);
 
             
@@ -204,7 +207,7 @@ WriteLiteral(">\r\n        function detail() {\r\n            var ids = backend.
 "         if (ids.length == 1) {\r\n                backend.postLocation(\"");
 
             
-            #line 52 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+            #line 55 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
                                  Write(Url.Action("Detail","Cache",new { }));
 
             
@@ -227,7 +230,7 @@ WriteLiteral(@"/"", { id: ids[0] })
                     backend.post(""");
 
             
-            #line 66 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+            #line 69 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
                              Write(Url.Action("Delete","Cache",new { }));
 
             
@@ -237,7 +240,7 @@ WriteLiteral("\", { ids: ids.toString() }, function (data) {\r\n                
 "t(\"");
 
             
-            #line 67 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+            #line 70 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
                                 Write(Url.Action("RuntimeCache", "Cache"));
 
             
@@ -278,7 +281,7 @@ WriteLiteral(">\r\n        var render = monk.tppl(document.getElementById(\"tpl\
 "     $(function () {\r\n            backend.get(\"");
 
             
-            #line 91 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+            #line 94 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
                     Write(Url.Action("RuntimeCache", "Cache"));
 
             

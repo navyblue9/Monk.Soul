@@ -48,7 +48,7 @@ namespace Monk.Areas.Services.Controllers
                     model.Version,
                     model.Keywords,
                     model.Description,
-                    model.CopyRight,
+                    model.Copyright,
                     model.Site,
                     model.ImageMaxSize,
                     model.VideoMaxSize,

@@ -46,6 +46,9 @@ namespace ASP
   
     ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
     Layout = ViewBag.HaviorInfo.Layout;
+    ViewBag.Keywords = ViewBag.SysSetInfo.Keywords;
+    ViewBag.Description = ViewBag.SysSetInfo.Description;
+    ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
 
             
             #line default
@@ -59,7 +62,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 7 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
+            #line 10 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
 Write(ViewBag.HaviorInfo.HeadCode);
 
             
@@ -270,7 +273,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 79 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
+            #line 82 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
 Write(ViewBag.HaviorInfo.FootCode);
 
             
@@ -284,7 +287,7 @@ WriteLiteral(">\r\n        function insert() {\r\n            var ids = backend.
 "         if (ids.length > 0) {\r\n                window.location.href = \"");
 
             
-            #line 84 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
+            #line 87 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
                                    Write(Url.Action("Insert", "Havior"));
 
             
@@ -294,7 +297,7 @@ WriteLiteral("/\" + ids[0];\r\n            }\r\n            else {\r\n          
 "href = \"");
 
             
-            #line 87 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
+            #line 90 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
                                    Write(Url.Action("Insert", "Havior"));
 
             
@@ -305,7 +308,7 @@ WriteLiteral("\";\r\n            }\r\n        }\r\n        function detail(){\r\
 "tion.href=\"");
 
             
-            #line 93 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
+            #line 96 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
                                  Write(Url.Action("Detail","Havior",new { }));
 
             
@@ -323,7 +326,7 @@ WriteLiteral(@"/""+ids[0];
                 window.location.href = """);
 
             
-            #line 102 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
+            #line 105 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
                                    Write(Url.Action("Update", "Havior", new { }));
 
             
@@ -345,7 +348,7 @@ WriteLiteral(@"/"" + ids[0];
                     backend.post(""");
 
             
-            #line 115 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
+            #line 118 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
                              Write(Url.Action("Delete", "Havior", new { }));
 
             
@@ -403,7 +406,7 @@ WriteLiteral(">\r\n        $(function () {\r\n            var render= monk.tppl(
 "ById(\"tpl\").innerHTML);\r\n            backend.pagination(\"");
 
             
-            #line 161 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
+            #line 164 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
                            Write(Url.Action("List","Havior"));
 
             
@@ -412,7 +415,7 @@ WriteLiteral(">\r\n        $(function () {\r\n            var render= monk.tppl(
 WriteLiteral("\",");
 
             
-            #line 161 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
+            #line 164 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
                                                          Write(ViewBag.SysSetInfo.PageSize);
 
             

@@ -2,6 +2,9 @@
 @{
     ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
     Layout = ViewBag.HaviorInfo.Layout;
+    ViewBag.Keywords = ViewBag.SysSetInfo.Keywords;
+    ViewBag.Description = ViewBag.SysSetInfo.Description;
+    ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
 }
 
 @section head{
@@ -56,7 +59,7 @@
 <div class="monk-form-item">
     <label for="" class="monk-form-label">版权所有</label>
     <div class="monk-form-wrap monk-form-detail-wrap monk-full">
-        @Model.CopyRight
+        @Model.Copyright
     </div>
 </div>
 <div class="monk-form-item">

@@ -46,6 +46,9 @@ namespace ASP
   
     ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
     Layout = ViewBag.HaviorInfo.Layout;
+    ViewBag.Keywords = ViewBag.SysSetInfo.Keywords;
+    ViewBag.Description = ViewBag.SysSetInfo.Description;
+    ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
 
             
             #line default
@@ -59,7 +62,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 8 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
+            #line 11 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
 Write(ViewBag.HaviorInfo.HeadCode);
 
             
@@ -123,14 +126,14 @@ WriteLiteral(" class=\"monk-form-wrap monk-form-detail-wrap monk-full\"");
 
 WriteLiteral(">\r\n        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 671), Tuple.Create("\"", 688)
+WriteAttribute("src", Tuple.Create(" src=\"", 838), Tuple.Create("\"", 855)
             
-            #line 23 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
-, Tuple.Create(Tuple.Create("", 677), Tuple.Create<System.Object, System.Int32>(Model.Logo
+            #line 26 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
+, Tuple.Create(Tuple.Create("", 844), Tuple.Create<System.Object, System.Int32>(Model.Logo
             
             #line default
             #line hidden
-, 677), false)
+, 844), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -158,7 +161,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 29 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
+            #line 32 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
    Write(Model.Name);
 
             
@@ -181,7 +184,7 @@ WriteLiteral(" class=\"monk-form-wrap monk-form-detail-wrap monk-full\"");
 WriteLiteral(">\r\n        <text>v</text>");
 
             
-            #line 35 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
+            #line 38 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
                  Write(Model.Version);
 
             
@@ -206,7 +209,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 41 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
+            #line 44 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
    Write(Model.Keywords);
 
             
@@ -231,7 +234,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 47 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
+            #line 50 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
    Write(Model.Description);
 
             
@@ -259,20 +262,20 @@ WriteLiteral(" style=\"text-decoration:none;\"");
 
 WriteLiteral(" target=\"_blank\"");
 
-WriteAttribute("title", Tuple.Create(" title=\"", 1792), Tuple.Create("\"", 1814)
+WriteAttribute("title", Tuple.Create(" title=\"", 1959), Tuple.Create("\"", 1981)
             
-            #line 53 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
-              , Tuple.Create(Tuple.Create("", 1800), Tuple.Create<System.Object, System.Int32>(Model.Support
+            #line 56 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
+              , Tuple.Create(Tuple.Create("", 1967), Tuple.Create<System.Object, System.Int32>(Model.Support
             
             #line default
             #line hidden
-, 1800), false)
+, 1967), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 53 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
+            #line 56 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
                                                                                                          Write(Model.Support);
 
             
@@ -297,8 +300,8 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 59 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
-   Write(Model.CopyRight);
+            #line 62 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
+   Write(Model.Copyright);
 
             
             #line default
@@ -319,14 +322,14 @@ WriteLiteral(" class=\"monk-form-wrap monk-form-detail-wrap monk-full\"");
 
 WriteLiteral(">\r\n        <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2216), Tuple.Create("\"", 2234)
+WriteAttribute("href", Tuple.Create(" href=\"", 2383), Tuple.Create("\"", 2401)
             
-            #line 65 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
-, Tuple.Create(Tuple.Create("", 2223), Tuple.Create<System.Object, System.Int32>(Model.Site
+            #line 68 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
+, Tuple.Create(Tuple.Create("", 2390), Tuple.Create<System.Object, System.Int32>(Model.Site
             
             #line default
             #line hidden
-, 2223), false)
+, 2390), false)
 );
 
 WriteLiteral(" style=\"text-decoration:none;\"");
@@ -338,7 +341,7 @@ WriteLiteral(" title=\"官方网址\"");
 WriteLiteral(">");
 
             
-            #line 65 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
+            #line 68 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
                                                                                     Write(Model.Site);
 
             
@@ -363,7 +366,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 71 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
+            #line 74 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
    Write(Model.PageSize);
 
             
@@ -388,7 +391,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 77 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
+            #line 80 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
    Write(Model.ImageMaxSize);
 
             
@@ -413,7 +416,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 83 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
+            #line 86 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
    Write(Model.VideoMaxSize);
 
             
@@ -438,7 +441,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 89 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
+            #line 92 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
    Write(Model.AttachMaxSize);
 
             
@@ -463,7 +466,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 95 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
+            #line 98 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
    Write(DataToHtmlHelper.NullHtml(Model.UpdateTime));
 
             
@@ -475,14 +478,14 @@ DefineSection("operate", () => {
 
 WriteLiteral("\r\n    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3450), Tuple.Create("\"", 3514)
+WriteAttribute("href", Tuple.Create(" href=\"", 3617), Tuple.Create("\"", 3681)
             
-            #line 100 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
-, Tuple.Create(Tuple.Create("", 3457), Tuple.Create<System.Object, System.Int32>(Url.Action("Update", "SysSet", new { id = Model.SetID })
+            #line 103 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
+, Tuple.Create(Tuple.Create("", 3624), Tuple.Create<System.Object, System.Int32>(Url.Action("Update", "SysSet", new { id = Model.SetID })
             
             #line default
             #line hidden
-, 3457), false)
+, 3624), false)
 );
 
 WriteLiteral(" class=\"monk-input-button turquoise\"");
@@ -500,7 +503,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 104 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
+            #line 107 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
 Write(ViewBag.HaviorInfo.FootCode);
 
             

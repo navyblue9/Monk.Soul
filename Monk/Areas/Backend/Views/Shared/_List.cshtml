@@ -8,9 +8,9 @@
     <title>@ViewBag.Title</title>
     <meta name="author" content="百签软件有限公司,百小僧">
     <meta name="generator" content="Visual Studio" />
-    <meta name="keywords" content="@(ViewBag.Keywords)百签软件有限公司,百小僧" />
-    <meta name="description" content="@(ViewBag.Description)咨询电话：0760-88809987、18676265646" />
-    <meta name="copyright" content="百签软件有限公司,百小僧" />
+    <meta name="keywords" content="@(ViewBag.Keywords)" />
+    <meta name="description" content="@(ViewBag.Description)" />
+    <meta name="copyright" content="@(ViewBag.Copyright)" />
     <link rel="shortcut icon" href="~/Areas/Backend/Assets/favicon.ico" />
     @Scripts.Render("~/Assets/Backend/Pace/Script")
     @Styles.Render("~/Assets/Backend/Pace/Style", "~/Assets/Backend/Monk.UI/Style", "~/Assets/Backend/Pagination/Style", "~/Assets/Backend/Style")
@@ -34,7 +34,7 @@
     <div class="backend-operate">
         @RenderSection("operate", false)
     </div>
-    @Scripts.Render("~/Assets/Backend/Monk.UI/Script", "~/Assets/Backend/JQuery/Script","~/Assets/Backend/Layer/Script", "~/Assets/Backend/Pagination/Script", "~/Assets/Backend/Script")
+    @Scripts.Render("~/Assets/Backend/Monk.UI/Script", "~/Assets/Backend/JQuery/Script", "~/Assets/Backend/Layer/Script", "~/Assets/Backend/Pagination/Script", "~/Assets/Backend/Script")
     @RenderSection("foot", false)
 </body>
 </html>

@@ -2,6 +2,9 @@
 @{
     ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
     Layout = ViewBag.HaviorInfo.Layout;
+    ViewBag.Keywords = ViewBag.SysSetInfo.Keywords;
+    ViewBag.Description = ViewBag.SysSetInfo.Description;
+    ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
 }
 
 @section head{
@@ -133,10 +136,10 @@
     <div class="monk-form-tip">毋庸置疑，只有创造她的人才更懂她~~</div>
 </div>
 <div class="monk-form-item">
-    <label for="CopyRight" class="monk-form-label">版权所有</label>
+    <label for="Copyright" class="monk-form-label">版权所有</label>
     <div class="monk-form-wrap">
         <span class="monk-iconfont border-right icon-monk-input textarea-icon"></span>
-        @Html.TextAreaFor(u => u.CopyRight,
+        @Html.TextAreaFor(u => u.Copyright,
         new
         {
             @class = "monk-form-textarea normal",

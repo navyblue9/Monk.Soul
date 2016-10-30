@@ -46,6 +46,9 @@ namespace ASP
   
     ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
     Layout = ViewBag.HaviorInfo.Layout;
+    ViewBag.Keywords = ViewBag.SysSetInfo.Keywords;
+    ViewBag.Description = ViewBag.SysSetInfo.Description;
+    ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
 
             
             #line default
@@ -59,7 +62,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 6 "..\..\Areas\Backend\Views\Default\Index.cshtml"
+            #line 9 "..\..\Areas\Backend\Views\Default\Index.cshtml"
 Write(ViewBag.HaviorInfo.HeadCode);
 
             
@@ -144,40 +147,40 @@ WriteLiteral(" id=\"backend-logo\"");
 
 WriteLiteral(">\r\n            <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1174), Tuple.Create("\"", 1205)
+WriteAttribute("href", Tuple.Create(" href=\"", 1341), Tuple.Create("\"", 1372)
             
-            #line 20 "..\..\Areas\Backend\Views\Default\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 1181), Tuple.Create<System.Object, System.Int32>(ViewBag.SysSetInfo.Site
+            #line 23 "..\..\Areas\Backend\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 1348), Tuple.Create<System.Object, System.Int32>(ViewBag.SysSetInfo.Site
             
             #line default
             #line hidden
-, 1181), false)
+, 1348), false)
 );
 
 WriteLiteral(" target=\"_blank\"");
 
 WriteLiteral(" class=\"\"");
 
-WriteAttribute("title", Tuple.Create(" title=\"", 1231), Tuple.Create("\"", 1263)
+WriteAttribute("title", Tuple.Create(" title=\"", 1398), Tuple.Create("\"", 1430)
             
-            #line 20 "..\..\Areas\Backend\Views\Default\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 1239), Tuple.Create<System.Object, System.Int32>(ViewBag.SysSetInfo.Name
+            #line 23 "..\..\Areas\Backend\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 1406), Tuple.Create<System.Object, System.Int32>(ViewBag.SysSetInfo.Name
             
             #line default
             #line hidden
-, 1239), false)
+, 1406), false)
 );
 
 WriteLiteral(">\r\n                <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1287), Tuple.Create("\"", 1317)
+WriteAttribute("src", Tuple.Create(" src=\"", 1454), Tuple.Create("\"", 1484)
             
-            #line 21 "..\..\Areas\Backend\Views\Default\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 1293), Tuple.Create<System.Object, System.Int32>(ViewBag.SysSetInfo.Logo
+            #line 24 "..\..\Areas\Backend\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 1460), Tuple.Create<System.Object, System.Int32>(ViewBag.SysSetInfo.Logo
             
             #line default
             #line hidden
-, 1293), false)
+, 1460), false)
 );
 
 WriteLiteral(" class=\"display-block\"");
@@ -200,14 +203,14 @@ WriteLiteral(">\r\n        <iframe");
 
 WriteLiteral(" frameborder=\"0\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1601), Tuple.Create("\"", 1639)
+WriteAttribute("src", Tuple.Create(" src=\"", 1768), Tuple.Create("\"", 1806)
             
-            #line 29 "..\..\Areas\Backend\Views\Default\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 1607), Tuple.Create<System.Object, System.Int32>(Url.Action("Console","Default")
+            #line 32 "..\..\Areas\Backend\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 1774), Tuple.Create<System.Object, System.Int32>(Url.Action("Console","Default")
             
             #line default
             #line hidden
-, 1607), false)
+, 1774), false)
 );
 
 WriteLiteral(" id=\"backend-iframe\"");
@@ -227,7 +230,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 37 "..\..\Areas\Backend\Views\Default\Index.cshtml"
+            #line 40 "..\..\Areas\Backend\Views\Default\Index.cshtml"
 Write(ViewBag.HaviorInfo.FootCode);
 
             
@@ -238,7 +241,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 38 "..\..\Areas\Backend\Views\Default\Index.cshtml"
+            #line 41 "..\..\Areas\Backend\Views\Default\Index.cshtml"
 Write(Scripts.Render("~/Assets/Backend/Store/Script", "~/Assets/Backend/Linq/Script", "~/Assets/Backend/Nicescroll/Script"));
 
             
@@ -295,7 +298,7 @@ WriteLiteral(">\r\n        // 禁止iframe中打开\r\n        if (self != top) 
 "\"");
 
             
-            #line 97 "..\..\Areas\Backend\Views\Default\Index.cshtml"
+            #line 100 "..\..\Areas\Backend\Views\Default\Index.cshtml"
                       Write(ViewBag.MemberInfo.Account);
 
             
@@ -304,7 +307,7 @@ WriteLiteral(">\r\n        // 禁止iframe中打开\r\n        if (self != top) 
 WriteLiteral("\" + \"_moduleId\";\r\n        // 功能客户端缓存的key\r\n        var actionidKey = \"");
 
             
-            #line 99 "..\..\Areas\Backend\Views\Default\Index.cshtml"
+            #line 102 "..\..\Areas\Backend\Views\Default\Index.cshtml"
                       Write(ViewBag.MemberInfo.Account);
 
             
@@ -333,7 +336,7 @@ WriteLiteral("\" + \"_actionId\";\r\n        // 定义渲染模块应用方法\r
 "function () {\r\n            backend.successTip(\"您好，");
 
             
-            #line 133 "..\..\Areas\Backend\Views\Default\Index.cshtml"
+            #line 136 "..\..\Areas\Backend\Views\Default\Index.cshtml"
                               Write(ViewBag.MemberInfo.Account);
 
             
@@ -342,7 +345,7 @@ WriteLiteral("\" + \"_actionId\";\r\n        // 定义渲染模块应用方法\r
 WriteLiteral("\");\r\n\r\n            backend.get(\"");
 
             
-            #line 135 "..\..\Areas\Backend\Views\Default\Index.cshtml"
+            #line 138 "..\..\Areas\Backend\Views\Default\Index.cshtml"
                     Write(Url.Action("Modules","Default"));
 
             
@@ -374,7 +377,7 @@ WriteLiteral(@""", {}, function (data) {
             var moduleStatusKey = """);
 
             
-            #line 158 "..\..\Areas\Backend\Views\Default\Index.cshtml"
+            #line 161 "..\..\Areas\Backend\Views\Default\Index.cshtml"
                               Write(ViewBag.MemberInfo.Account);
 
             
@@ -447,7 +450,7 @@ WriteLiteral("\" + \"_moduleStatus\";\r\n            if (store.get(moduleStatusK
 "                $.post(\"");
 
             
-            #line 261 "..\..\Areas\Backend\Views\Default\Index.cshtml"
+            #line 264 "..\..\Areas\Backend\Views\Default\Index.cshtml"
                        Write(Url.Action("Signout", "Default"));
 
             
@@ -463,7 +466,7 @@ WriteLiteral(@""", {}, function (data) {
                                     window.location.href = '");
 
             
-            #line 268 "..\..\Areas\Backend\Views\Default\Index.cshtml"
+            #line 271 "..\..\Areas\Backend\Views\Default\Index.cshtml"
                                                        Write(Url.Action("Signin", "Default"));
 
             

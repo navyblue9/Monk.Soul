@@ -46,6 +46,9 @@ namespace ASP
   
     ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
     Layout = ViewBag.HaviorInfo.Layout;
+    ViewBag.Keywords = ViewBag.SysSetInfo.Keywords;
+    ViewBag.Description = ViewBag.SysSetInfo.Description;
+    ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
 
             
             #line default
@@ -59,7 +62,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 8 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 11 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
 Write(ViewBag.HaviorInfo.HeadCode);
 
             
@@ -122,7 +125,7 @@ WriteLiteral("\r\n");
 DefineSection("beginForm", () => {
 
             
-            #line 22 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 25 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
                       Html.BeginForm("Insert", "Module", FormMethod.Post, new { @class = "monk-form" });
             
             #line default
@@ -152,7 +155,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 28 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 31 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
    Write(Html.TextBoxFor(u => u.Name,
         new
         {
@@ -237,7 +240,7 @@ WriteLiteral(">请输入或选择...</option>\r\n");
 WriteLiteral("            ");
 
             
-            #line 53 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 56 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
        Write(Html.Raw(ViewData["ModuleList"]));
 
             
@@ -270,7 +273,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 62 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 65 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
    Write(Html.TextAreaFor(u => u.Remark,
         new
         {
@@ -317,7 +320,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 80 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 83 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
    Write(Html.TextBoxFor(u => u.Sort,
         new
         {
@@ -366,7 +369,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 98 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 101 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
    Write(Html.TextAreaFor(u => u.TagAttr,
         new
         {
@@ -413,7 +416,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 116 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 119 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
    Write(Html.TextBoxFor(u => u.Iconfont,
         new
         {
@@ -455,7 +458,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 133 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 136 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
    Write(Html.CheckBoxFor(u => u.Enable,
        new
        {
@@ -496,18 +499,18 @@ WriteLiteral(" type=\"reset\"");
 
 WriteLiteral(" class=\"monk-input-button peterRiver\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 5660), Tuple.Create("\"", 5726)
-, Tuple.Create(Tuple.Create("", 5670), Tuple.Create("window.location.href", 5670), true)
-, Tuple.Create(Tuple.Create(" ", 5690), Tuple.Create("=", 5691), true)
-, Tuple.Create(Tuple.Create(" ", 5692), Tuple.Create("\'", 5693), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 5827), Tuple.Create("\"", 5893)
+, Tuple.Create(Tuple.Create("", 5837), Tuple.Create("window.location.href", 5837), true)
+, Tuple.Create(Tuple.Create(" ", 5857), Tuple.Create("=", 5858), true)
+, Tuple.Create(Tuple.Create(" ", 5859), Tuple.Create("\'", 5860), true)
             
-            #line 146 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
-              , Tuple.Create(Tuple.Create("", 5694), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Module")
+            #line 149 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+              , Tuple.Create(Tuple.Create("", 5861), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Module")
             
             #line default
             #line hidden
-, 5694), false)
-, Tuple.Create(Tuple.Create("", 5724), Tuple.Create("\';", 5724), true)
+, 5861), false)
+, Tuple.Create(Tuple.Create("", 5891), Tuple.Create("\';", 5891), true)
 );
 
 WriteLiteral(" value=\"返回列表\"");
@@ -531,7 +534,7 @@ WriteLiteral("\r\n");
 DefineSection("endForm", () => {
 
             
-            #line 150 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 153 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
                     Html.EndForm();
             
             #line default
@@ -547,7 +550,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 153 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 156 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
 Write(ViewBag.HaviorInfo.FootCode);
 
             
@@ -567,7 +570,7 @@ WriteLiteral(@">
                     window.location.href = """);
 
             
-            #line 161 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 164 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
                                        Write(Url.Action("Detail","Module",new { id=""}));
 
             

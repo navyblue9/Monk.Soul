@@ -468,7 +468,7 @@ CREATE TABLE dbo.[SysSet]
 	[Keywords] NVARCHAR(200) DEFAULT('Monk.Soul,百签软件,百小僧,baisoft,baisoft.org'),	-- 关键字
 	[Description] NVARCHAR(320),	-- 描述
 	[Support] NVARCHAR(100) NOT NULL DEFAULT('百签软件（中山）有限公司'),	-- 技术支持
-	[CopyRight] NVARCHAR(200) NOT NULL DEFAULT('Copyright ©  2016 百签软件（中山）有限公司. All rights reserved.'),	-- 版权所有
+	[Copyright] NVARCHAR(200) NOT NULL DEFAULT('Copyright ©  2016 百签软件（中山）有限公司. All rights reserved.'),	-- 版权所有
 	[Site] NVARCHAR(200),	-- 网址
 	[PageSize] INT NOT NULL DEFAULT(15),	-- 页容量
 	[ImageMaxSize] INT NOT NULL DEFAULT(2),	-- 图片最大上传大小
@@ -493,7 +493,7 @@ EXEC sp_addextendedproperty N'MS_Description', N'版本', N'user', N'dbo', N'tab
 EXEC sp_addextendedproperty N'MS_Description', N'关键字', N'user', N'dbo', N'table', N'SysSet', N'column', N'Keywords';
 EXEC sp_addextendedproperty N'MS_Description', N'描述', N'user', N'dbo', N'table', N'SysSet', N'column', N'Description';
 EXEC sp_addextendedproperty N'MS_Description', N'技术支持', N'user', N'dbo', N'table', N'SysSet', N'column', N'Support';
-EXEC sp_addextendedproperty N'MS_Description', N'版权所有', N'user', N'dbo', N'table', N'SysSet', N'column', N'CopyRight';
+EXEC sp_addextendedproperty N'MS_Description', N'版权所有', N'user', N'dbo', N'table', N'SysSet', N'column', N'Copyright';
 EXEC sp_addextendedproperty N'MS_Description', N'网址', N'user', N'dbo', N'table', N'SysSet', N'column', N'Site';
 EXEC sp_addextendedproperty N'MS_Description', N'页容量', N'user', N'dbo', N'table', N'SysSet', N'column', N'PageSize';
 EXEC sp_addextendedproperty N'MS_Description', N'图片最大上传大小', N'user', N'dbo', N'table', N'SysSet', N'column', N'ImageMaxSize';

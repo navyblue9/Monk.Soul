@@ -46,6 +46,9 @@ namespace ASP
   
     ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
     Layout = ViewBag.HaviorInfo.Layout;
+    ViewBag.Keywords = ViewBag.SysSetInfo.Keywords;
+    ViewBag.Description = ViewBag.SysSetInfo.Description;
+    ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
 
             
             #line default
@@ -59,7 +62,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 7 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+            #line 10 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
 Write(ViewBag.HaviorInfo.HeadCode);
 
             
@@ -372,7 +375,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 104 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+            #line 107 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
 Write(ViewBag.HaviorInfo.FootCode);
 
             
@@ -386,7 +389,7 @@ WriteLiteral(">\r\n        function detail(){\r\n            var ids=backend.get
 "      if(ids.length==1){\r\n                window.location.href=\"");
 
             
-            #line 109 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+            #line 112 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
                                  Write(Url.Action("Detail","LoginLog",new { }));
 
             
@@ -408,7 +411,7 @@ WriteLiteral(@"/""+ids[0];
                     backend.post(""");
 
             
-            #line 122 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+            #line 125 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
                              Write(Url.Action("Delete","LoginLog",new { }));
 
             
@@ -463,7 +466,7 @@ WriteLiteral(">\r\n        $(function () {\r\n            var render= monk.tppl(
 "ById(\"tpl\").innerHTML);\r\n            backend.pagination(\"");
 
             
-            #line 165 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+            #line 168 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
                            Write(Url.Action("List","LoginLog"));
 
             
@@ -472,7 +475,7 @@ WriteLiteral(">\r\n        $(function () {\r\n            var render= monk.tppl(
 WriteLiteral("\",");
 
             
-            #line 165 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+            #line 168 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
                                                            Write(ViewBag.SysSetInfo.PageSize);
 
             

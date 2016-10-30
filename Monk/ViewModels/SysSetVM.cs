@@ -61,7 +61,7 @@ namespace Monk.ViewModels
         /// Default:('Copyright ?  2016 百签软件（中山）有限公司. All rights reserved.')
         /// Nullable:False
         /// </summary>
-        public string CopyRight { get; set; }
+        public string Copyright { get; set; }
 
         /// <summary>
         /// Desc:网址

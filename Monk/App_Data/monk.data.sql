@@ -69,7 +69,7 @@ INSERT  INTO dbo.SysSet
           Keywords ,
           Description ,
           Support ,
-          CopyRight ,
+          Copyright ,
           Site ,
           PageSize ,
           ImageMaxSize ,

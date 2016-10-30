@@ -46,6 +46,9 @@ namespace ASP
   
     ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
     Layout = ViewBag.HaviorInfo.Layout;
+    ViewBag.Keywords = ViewBag.SysSetInfo.Keywords;
+    ViewBag.Description = ViewBag.SysSetInfo.Description;
+    ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
 
             
             #line default
@@ -59,7 +62,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 7 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 10 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
 Write(ViewBag.HaviorInfo.HeadCode);
 
             
@@ -136,7 +139,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 25 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 28 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
    Write(Model.Name);
 
             
@@ -161,7 +164,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 31 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 34 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
    Write(DataToHtmlHelper.NullHtml(Model.ParentName, "无"));
 
             
@@ -186,7 +189,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 37 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 40 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
    Write(DataToHtmlHelper.NullHtml(Model.Remark, "无"));
 
             
@@ -211,7 +214,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 43 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 46 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
    Write(Model.Sort);
 
             
@@ -236,7 +239,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 49 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 52 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
    Write(DataToHtmlHelper.NullHtml(Model.TagAttr, "无"));
 
             
@@ -261,7 +264,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 55 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 58 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
    Write(Html.Raw(DataToHtmlHelper.GetIconfont(Model.Iconfont)));
 
             
@@ -286,7 +289,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 61 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 64 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
    Write(Html.Raw(DataToHtmlHelper.StatusHtml(Model.Enable)));
 
             
@@ -311,7 +314,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 67 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 70 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
    Write(Html.Raw(DataToHtmlHelper.StatusHtml(Model.Default)));
 
             
@@ -336,7 +339,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 73 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 76 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
    Write(DataToHtmlHelper.NullHtml(Model.CreateTime, "无"));
 
             
@@ -361,7 +364,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 79 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 82 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
    Write(DataToHtmlHelper.NullHtml(Model.UpdateTime, "无"));
 
             
@@ -373,14 +376,14 @@ DefineSection("operate", () => {
 
 WriteLiteral("\r\n    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2870), Tuple.Create("\"", 2937)
+WriteAttribute("href", Tuple.Create(" href=\"", 3037), Tuple.Create("\"", 3104)
             
-            #line 84 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
-, Tuple.Create(Tuple.Create("", 2877), Tuple.Create<System.Object, System.Int32>(Url.Action("Update", "Module", new { id = Model.ModuleID })
+            #line 87 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+, Tuple.Create(Tuple.Create("", 3044), Tuple.Create<System.Object, System.Int32>(Url.Action("Update", "Module", new { id = Model.ModuleID })
             
             #line default
             #line hidden
-, 2877), false)
+, 3044), false)
 );
 
 WriteLiteral(" class=\"monk-input-button turquoise\"");
@@ -399,18 +402,18 @@ WriteLiteral(" type=\"reset\"");
 
 WriteLiteral(" class=\"monk-input-button peterRiver\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 3127), Tuple.Create("\"", 3193)
-, Tuple.Create(Tuple.Create("", 3137), Tuple.Create("window.location.href", 3137), true)
-, Tuple.Create(Tuple.Create(" ", 3157), Tuple.Create("=", 3158), true)
-, Tuple.Create(Tuple.Create(" ", 3159), Tuple.Create("\'", 3160), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 3294), Tuple.Create("\"", 3360)
+, Tuple.Create(Tuple.Create("", 3304), Tuple.Create("window.location.href", 3304), true)
+, Tuple.Create(Tuple.Create(" ", 3324), Tuple.Create("=", 3325), true)
+, Tuple.Create(Tuple.Create(" ", 3326), Tuple.Create("\'", 3327), true)
             
-            #line 86 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
-              , Tuple.Create(Tuple.Create("", 3161), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Module")
+            #line 89 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+              , Tuple.Create(Tuple.Create("", 3328), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Module")
             
             #line default
             #line hidden
-, 3161), false)
-, Tuple.Create(Tuple.Create("", 3191), Tuple.Create("\';", 3191), true)
+, 3328), false)
+, Tuple.Create(Tuple.Create("", 3358), Tuple.Create("\';", 3358), true)
 );
 
 WriteLiteral(" value=\"返回列表\"");
@@ -438,7 +441,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 91 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 94 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
 Write(ViewBag.HaviorInfo.FootCode);
 
             
@@ -451,7 +454,7 @@ WriteLiteral(" type=\"text/javascript\"");
 WriteLiteral(">\r\n        function deletes() {\r\n            var ids = \"");
 
             
-            #line 94 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 97 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
                   Write(Model.ModuleID);
 
             
@@ -466,7 +469,7 @@ WriteLiteral(@""";
                     backend.post(""");
 
             
-            #line 100 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 103 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
                              Write(Url.Action("Delete","Module",new { }));
 
             
@@ -475,7 +478,7 @@ WriteLiteral(@""";
 WriteLiteral("\", { ids: \"");
 
             
-            #line 100 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 103 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
                                                                               Write(Model.ModuleID);
 
             
@@ -484,7 +487,7 @@ WriteLiteral("\", { ids: \"");
 WriteLiteral("\" }, function (data) {\r\n                        window.location.href = \"");
 
             
-            #line 101 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 104 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
                                            Write(Url.Action("Select","Module"));
 
             
