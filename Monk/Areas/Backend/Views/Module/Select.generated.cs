@@ -337,7 +337,7 @@ WriteLiteral("\", { ids: ids.toString() }, function (data) {\r\n                
 
             
             #line 107 "..\..\Areas\Backend\Views\Module\Select.cshtml"
-                                    Write(Url.Action("Modules","Module"));
+                                    Write(Url.Action("List","Module"));
 
             
             #line default
