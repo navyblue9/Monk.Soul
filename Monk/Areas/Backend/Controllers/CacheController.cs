@@ -44,7 +44,7 @@ namespace Monk.Areas.Backend.Controllers
             string[] arr = ids.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
             for (int i = 0; i < arr.Length; i++)
             {
-                HttpRuntimeCacheHelper.Remove(arr[i]);
+                CacheManager.Remove(arr[i]);
             }
             clientResult.SetClientData("y", "操作成功");
             return Json(clientResult);

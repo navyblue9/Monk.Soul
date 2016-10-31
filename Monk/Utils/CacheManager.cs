@@ -1,16 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Caching;
 
 namespace Monk.Utils
 {
-    public class HttpRuntimeCacheHelper
+    public class CacheManager
     {
         public static T Get<T>(string key) where T : new()
         {
             return (T)HttpRuntime.Cache.Get(key);
+        }
+
+        public static bool Contains(string key)
+        {
+            return HttpRuntime.Cache.Get(key) != null;
         }
 
         public static void Set(string key, object value)

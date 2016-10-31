@@ -61,7 +61,7 @@ namespace Monk.Areas.Backend.Controllers
                     viewModel.PageSize,
                     UpdateTime = DateTime.Now
                 }, u => u.SetID == viewModel.SetID);
-                HttpRuntimeCacheHelper.Remove(Keys.SysSetCacheKey);
+                CacheManager.Remove(Keys.SysSetCacheKey);
                 clientResult.SetClientData("y", "操作成功");
             });
             return Json(clientResult);

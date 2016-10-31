@@ -43,17 +43,16 @@ namespace Monk.Areas.Backend.Controllers
         public ActionResult Insert()
         {
             var moduleList = new List<V_ModuleVM>();
-            var cache = HttpRuntimeCacheHelper.Get<List<V_ModuleVM>>(Keys.ModuleCacheKey);
-            if (cache == null)
+            if (!CacheManager.Contains(Keys.ModuleCacheKey))
             {
                 services.Command((db) =>
                 {
                     Mapper.Initialize(u => u.CreateMap<V_Module, V_ModuleVM>());
                     moduleList = Mapper.Map<List<V_ModuleVM>>(db.Queryable<V_Module>().Where(c => true).ToList());
-                    HttpRuntimeCacheHelper.Set(Keys.ModuleCacheKey, moduleList);
+                    CacheManager.Set(Keys.ModuleCacheKey, moduleList);
                 });
             }
-            else moduleList = cache;
+            else moduleList = CacheManager.Get<List<V_ModuleVM>>(Keys.ModuleCacheKey);
 
             ViewData["ModuleList"] = Common.ModuleDropDownList(moduleList);
             return View(new HaviorVM() { Enable = true, Route = true, Index = false, Area = "backend" });
@@ -79,7 +78,7 @@ namespace Monk.Areas.Backend.Controllers
             {
                 if (model.Index == true) db.Update<Havior>(new { Index = false }, u => u.ModuleID == model.ModuleID);
                 db.Insert<Havior>(model);
-                HttpRuntimeCacheHelper.Remove(Keys.ModuleCacheKey);
+                CacheManager.Remove(Keys.ModuleCacheKey);
                 clientResult.SetClientData("y", "操作成功", new { id = model.HaviorID });
             });
             return Json(clientResult);
@@ -104,8 +103,8 @@ namespace Monk.Areas.Backend.Controllers
             if (id == null) return Content("非法参数");
             var viewModel = new HaviorVM();
             var moduleList = new List<V_ModuleVM>();
-            var cache = HttpRuntimeCacheHelper.Get<List<V_ModuleVM>>(Keys.ModuleCacheKey);
-            if (cache != null) moduleList = cache;
+            bool any = CacheManager.Contains(Keys.ModuleCacheKey);
+            if (any) moduleList = CacheManager.Get<List<V_ModuleVM>>(Keys.ModuleCacheKey);
             services.Command((db) =>
             {
                 var cfg = new MapperConfigurationExpression();
@@ -114,10 +113,10 @@ namespace Monk.Areas.Backend.Controllers
                 Mapper.Initialize(cfg);
 
                 viewModel = Mapper.Map<HaviorVM>(db.Queryable<Havior>().InSingle(id));
-                if (cache == null)
+                if (!any)
                 {
                     moduleList = Mapper.Map<List<V_ModuleVM>>(db.Queryable<V_Module>().Where(c => true).ToList());
-                    HttpRuntimeCacheHelper.Set(Keys.ModuleCacheKey, moduleList);
+                    CacheManager.Set(Keys.ModuleCacheKey, moduleList);
                 }
             });
             ViewData["ModuleList"] = Common.ModuleDropDownList(moduleList, viewModel.ModuleID);
@@ -158,7 +157,7 @@ namespace Monk.Areas.Backend.Controllers
                     UpdateTime = DateTime.Now
                 }, u => u.HaviorID == viewModel.HaviorID);
 
-                HttpRuntimeCacheHelper.Remove(Keys.ModuleCacheKey);
+                CacheManager.Remove(Keys.ModuleCacheKey);
                 clientResult.SetClientData("y", "操作成功");
             });
             return Json(clientResult);

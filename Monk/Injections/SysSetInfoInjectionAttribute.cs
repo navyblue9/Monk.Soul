@@ -16,8 +16,7 @@ namespace Monk.Injections
             base.OnActionExecuting(filterContext);
             if (filterContext.ActionDescriptor.IsDefined(typeof(ExemptionInjectionAttribute), false) || filterContext.ActionDescriptor.ControllerDescriptor.IsDefined(typeof(ExemptionInjectionAttribute), false)) { return; }
             var viewModel = new SysSetVM();
-            var cache = HttpRuntimeCacheHelper.Get<SysSetVM>(Keys.SysSetCacheKey);
-            if (cache == null)
+            if (!CacheManager.Contains(Keys.SysSetCacheKey))
             {
                 using (var services = new DbServices())
                 {
@@ -27,9 +26,9 @@ namespace Monk.Injections
                         viewModel = Mapper.Map<SysSetVM>(db.Queryable<SysSet>().FirstOrDefault());
                     });
                 }
-                HttpRuntimeCacheHelper.Set(Keys.SysSetCacheKey, viewModel);
+                CacheManager.Set(Keys.SysSetCacheKey, viewModel);
             }
-            else viewModel = cache;
+            else viewModel = CacheManager.Get<SysSetVM>(Keys.SysSetCacheKey);
             if (filterContext.RouteData.DataTokens[Keys.SysSetInfoInjectionKey] == null)
             {
                 filterContext.RouteData.DataTokens.Add(Keys.SysSetInfoInjectionKey, viewModel);

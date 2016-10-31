@@ -30,19 +30,18 @@ namespace Monk.Areas.Backend.Controllers
         public JsonResult Menus()
         {
             var clientResult = new JsonData<List<MenuVM>>() { };
-            var cache = HttpRuntimeCacheHelper.Get<List<MenuVM>>(Keys.BackendMenus);
-            if (cache == null)
+            if (!CacheManager.Contains(Keys.BackendMenus))
             {
                 services.Command((db) =>
                 {
                     var modules = db.Queryable<V_Module>().Where(c => c.Enable == true).ToList();
                     Mapper.Initialize(c => c.CreateMap<V_Module, MenuVM>());
                     var menus = Mapper.Map<List<MenuVM>>(modules);
-                    HttpRuntimeCacheHelper.Set(Keys.BackendMenus, menus);
+                    CacheManager.Set(Keys.BackendMenus, menus);
                     clientResult.SetClientData("y", "获取成功", Mapper.Map<List<MenuVM>>(menus));
                 });
             }
-            else clientResult.SetClientData("y", "获取成功", cache);
+            else clientResult.SetClientData("y", "获取成功", CacheManager.Get<List<MenuVM>>(Keys.BackendMenus));
             return Json(clientResult, JsonRequestBehavior.AllowGet);
         }
 

@@ -25,7 +25,7 @@ namespace Monk.Areas.Backend.Injections
                 var _httpMethod = filterContext.HttpContext.Request.HttpMethod;
 
                 var viewModel = new V_HaviorVM();
-                var moduleList = HttpRuntimeCacheHelper.Get<List<V_ModuleVM>>(Keys.ModuleCacheKey);
+                var moduleList = new List<V_ModuleVM>();
                 using (var services = new DbServices())
                 {
                     services.Command((db) =>
@@ -35,10 +35,10 @@ namespace Monk.Areas.Backend.Injections
                         cfg.CreateMap<V_Module, V_ModuleVM>();
                         Mapper.Initialize(cfg);
                         viewModel = Mapper.Map<V_HaviorVM>(db.Queryable<V_Havior>().SingleOrDefault(u => u.Area == _area.ToString() && u.Controller == _controller.ToLower() && u.Action == _action.ToLower() && u.HttpMethod == _httpMethod.ToUpper()));
-                        if (moduleList == null)
+                        if (!CacheManager.Contains(Keys.ModuleCacheKey))
                         {
                             moduleList = Mapper.Map<List<V_ModuleVM>>(db.Queryable<V_Module>().Where(c => true).ToList());
-                            HttpRuntimeCacheHelper.Set(Keys.ModuleCacheKey, moduleList);
+                            CacheManager.Set(Keys.ModuleCacheKey, moduleList);
                         }
                     });
                 }
