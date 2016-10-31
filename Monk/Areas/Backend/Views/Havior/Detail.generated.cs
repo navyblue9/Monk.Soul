@@ -75,47 +75,18 @@ WriteLiteral("\r\n");
 
 DefineSection("crumbs", () => {
 
-WriteLiteral("\r\n    <label");
+WriteLiteral("\r\n");
 
-WriteLiteral(" class=\"backend-crumbs-separator\"");
+WriteLiteral("    ");
 
-WriteLiteral(">/</label>\r\n    <a");
+            
+            #line 15 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.Crumbs));
 
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"系统管理\"");
-
-WriteLiteral(">系统管理</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"模块管理\"");
-
-WriteLiteral(">模块管理</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"行为管理\"");
-
-WriteLiteral(">行为管理</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"查看行为\"");
-
-WriteLiteral(">查看行为</a>\r\n");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
 
 });
 
@@ -138,7 +109,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 28 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+            #line 21 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
    Write(Model.ModuleName);
 
             
@@ -163,7 +134,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 34 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+            #line 27 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
    Write(Model.Name);
 
             
@@ -188,7 +159,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 40 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+            #line 33 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
    Write(Model.HttpMethod);
 
             
@@ -213,7 +184,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 46 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+            #line 39 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
    Write(DataToHtmlHelper.NullHtml(Model.Layout, "无"));
 
             
@@ -238,7 +209,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 52 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+            #line 45 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
    Write(DataToHtmlHelper.NullHtml(Model.Remark, "无"));
 
             
@@ -263,7 +234,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 58 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+            #line 51 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
    Write(Html.Raw(DataToHtmlHelper.StatusHtml(Model.Route)));
 
             
@@ -288,7 +259,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 64 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+            #line 57 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
    Write(DataToHtmlHelper.NullHtml(Model.Url, "无"));
 
             
@@ -313,7 +284,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 70 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+            #line 63 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
    Write(DataToHtmlHelper.NullHtml(Model.Area, "无"));
 
             
@@ -338,7 +309,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 76 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+            #line 69 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
    Write(DataToHtmlHelper.NullHtml(Model.Controller, "无"));
 
             
@@ -363,7 +334,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 82 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+            #line 75 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
    Write(DataToHtmlHelper.NullHtml(Model.Action, "无"));
 
             
@@ -388,7 +359,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 88 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+            #line 81 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
    Write(DataToHtmlHelper.NullHtml(Model.Parameter, "无"));
 
             
@@ -413,7 +384,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 94 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+            #line 87 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
    Write(Html.Raw(DataToHtmlHelper.StatusHtml(Model.Index)));
 
             
@@ -442,7 +413,7 @@ WriteLiteral(" data-language=\"HTML\"");
 WriteLiteral(">");
 
             
-            #line 100 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+            #line 93 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
                                                Write(Model.HeadCode);
 
             
@@ -471,7 +442,7 @@ WriteLiteral(" data-language=\"HTML\"");
 WriteLiteral(">");
 
             
-            #line 106 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+            #line 99 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
                                                Write(Model.FootCode);
 
             
@@ -496,7 +467,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 112 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+            #line 105 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
    Write(Html.Raw(DataToHtmlHelper.StatusHtml(Model.Enable)));
 
             
@@ -521,7 +492,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 118 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+            #line 111 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
    Write(DataToHtmlHelper.NullHtml(Model.UpdateTime, "无"));
 
             
@@ -533,14 +504,14 @@ DefineSection("operate", () => {
 
 WriteLiteral("\r\n    <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4403), Tuple.Create("\"", 4470)
+WriteAttribute("href", Tuple.Create(" href=\"", 4069), Tuple.Create("\"", 4136)
             
-            #line 123 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
-, Tuple.Create(Tuple.Create("", 4410), Tuple.Create<System.Object, System.Int32>(Url.Action("Update", "Havior", new { id = Model.HaviorID })
+            #line 116 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+, Tuple.Create(Tuple.Create("", 4076), Tuple.Create<System.Object, System.Int32>(Url.Action("Update", "Havior", new { id = Model.HaviorID })
             
             #line default
             #line hidden
-, 4410), false)
+, 4076), false)
 );
 
 WriteLiteral(" class=\"monk-input-button turquoise\"");
@@ -559,18 +530,18 @@ WriteLiteral(" type=\"reset\"");
 
 WriteLiteral(" class=\"monk-input-button peterRiver\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 4660), Tuple.Create("\"", 4726)
-, Tuple.Create(Tuple.Create("", 4670), Tuple.Create("window.location.href", 4670), true)
-, Tuple.Create(Tuple.Create(" ", 4690), Tuple.Create("=", 4691), true)
-, Tuple.Create(Tuple.Create(" ", 4692), Tuple.Create("\'", 4693), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 4326), Tuple.Create("\"", 4392)
+, Tuple.Create(Tuple.Create("", 4336), Tuple.Create("window.location.href", 4336), true)
+, Tuple.Create(Tuple.Create(" ", 4356), Tuple.Create("=", 4357), true)
+, Tuple.Create(Tuple.Create(" ", 4358), Tuple.Create("\'", 4359), true)
             
-            #line 125 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
-              , Tuple.Create(Tuple.Create("", 4694), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Havior")
+            #line 118 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+              , Tuple.Create(Tuple.Create("", 4360), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Havior")
             
             #line default
             #line hidden
-, 4694), false)
-, Tuple.Create(Tuple.Create("", 4724), Tuple.Create("\';", 4724), true)
+, 4360), false)
+, Tuple.Create(Tuple.Create("", 4390), Tuple.Create("\';", 4390), true)
 );
 
 WriteLiteral(" value=\"返回列表\"");
@@ -598,7 +569,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 130 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+            #line 123 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
@@ -612,7 +583,7 @@ WriteLiteral(">\r\n        function deletes() {\r\n            backend.confirm(\
 " function (index) {\r\n                backend.post(\"");
 
             
-            #line 134 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+            #line 127 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
                          Write(Url.Action("Delete","Havior",new { }));
 
             
@@ -621,7 +592,7 @@ WriteLiteral(">\r\n        function deletes() {\r\n            backend.confirm(\
 WriteLiteral("\", { ids: \"");
 
             
-            #line 134 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+            #line 127 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
                                                                           Write(Model.HaviorID);
 
             
@@ -630,7 +601,7 @@ WriteLiteral("\", { ids: \"");
 WriteLiteral("\" }, function (data) {\r\n                    window.location.href = \"");
 
             
-            #line 135 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+            #line 128 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
                                        Write(Url.Action("Select", "Havior"));
 
             

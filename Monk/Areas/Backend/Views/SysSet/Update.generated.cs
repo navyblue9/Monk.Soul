@@ -86,37 +86,18 @@ WriteLiteral("\r\n");
 
 DefineSection("crumbs", () => {
 
-WriteLiteral("\r\n    <label");
+WriteLiteral("\r\n");
 
-WriteLiteral(" class=\"backend-crumbs-separator\"");
+WriteLiteral("    ");
 
-WriteLiteral(">/</label>\r\n    <a");
+            
+            #line 16 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.Crumbs));
 
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"系统管理\"");
-
-WriteLiteral(">系统管理</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"系统设置\"");
-
-WriteLiteral(">系统设置</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"更新设置\"");
-
-WriteLiteral(">更新设置</a>\r\n");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
 
 });
 
@@ -125,7 +106,7 @@ WriteLiteral("\r\n");
 DefineSection("beginForm", () => {
 
             
-            #line 24 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 19 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
                       Html.BeginForm("Update", "SysSet", FormMethod.Post, new { @class = "monk-form" });
             
             #line default
@@ -148,14 +129,14 @@ WriteLiteral(" class=\"monk-form-wrap noborder\"");
 
 WriteLiteral(">\r\n        <img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 997), Tuple.Create("\"", 1014)
+WriteAttribute("src", Tuple.Create(" src=\"", 757), Tuple.Create("\"", 774)
             
-            #line 29 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
-, Tuple.Create(Tuple.Create("", 1003), Tuple.Create<System.Object, System.Int32>(Model.Logo
+            #line 24 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+, Tuple.Create(Tuple.Create("", 763), Tuple.Create<System.Object, System.Int32>(Model.Logo
             
             #line default
             #line hidden
-, 1003), false)
+, 763), false)
 );
 
 WriteLiteral(" id=\"image-view\"");
@@ -171,7 +152,7 @@ WriteLiteral(" />\r\n");
 WriteLiteral("        ");
 
             
-            #line 30 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 25 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
    Write(Html.HiddenFor(u => u.Logo));
 
             
@@ -210,7 +191,7 @@ WriteLiteral(" readonly=\"readonly\"");
 WriteLiteral(" data-src=\"");
 
             
-            #line 38 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 33 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
                                                                                                         Write(Model.Logo);
 
             
@@ -281,7 +262,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 52 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 47 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
    Write(Html.TextBoxFor(u => u.Name,
         new
         {
@@ -330,7 +311,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 70 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 65 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
    Write(Html.TextBoxFor(u => u.Version,
         new
         {
@@ -379,7 +360,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 88 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 83 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
    Write(Html.TextAreaFor(u => u.Keywords,
         new
         {
@@ -426,7 +407,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 106 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 101 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
    Write(Html.TextAreaFor(u => u.Description,
         new
         {
@@ -473,7 +454,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 124 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 119 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
    Write(Html.TextBoxFor(u => u.Support,
         new
         {
@@ -516,7 +497,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 142 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 137 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
    Write(Html.TextAreaFor(u => u.Copyright,
         new
         {
@@ -563,7 +544,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 160 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 155 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
    Write(Html.TextBoxFor(u => u.Site,
         new
         {
@@ -609,7 +590,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 178 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 173 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
    Write(Html.TextBoxFor(u => u.PageSize,
         new
         {
@@ -658,7 +639,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 196 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 191 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
    Write(Html.TextBoxFor(u => u.ImageMaxSize,
         new
         {
@@ -707,7 +688,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 214 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 209 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
    Write(Html.TextBoxFor(u => u.VideoMaxSize,
         new
         {
@@ -756,7 +737,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 232 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 227 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
    Write(Html.TextBoxFor(u => u.AttachMaxSize,
         new
         {
@@ -791,7 +772,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 249 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 244 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
 Write(Html.HiddenFor(u => u.SetID));
 
             
@@ -832,7 +813,7 @@ WriteLiteral("\r\n");
 DefineSection("endForm", () => {
 
             
-            #line 255 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 250 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
                     Html.EndForm();
             
             #line default
@@ -848,7 +829,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 258 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 253 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
@@ -859,7 +840,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 259 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 254 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
 Write(Scripts.Render("~/Assets/Backend/WebUploader/Script"));
 
             
@@ -874,7 +855,7 @@ WriteLiteral(">\r\n        $(function () {\r\n            var src= $(\"#uploadUr
 "         options: {\r\n                    fileSingleSizeLimit : ");
 
             
-            #line 266 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 261 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
                                      Write(ViewBag.SysSetInfo.ImageMaxSize);
 
             
@@ -884,7 +865,7 @@ WriteLiteral(" * 1024 * 1024\r\n                },\r\n                data:{\r\n
 "rea:\"");
 
             
-            #line 269 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 264 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
                      Write(ViewContext.RouteData.DataTokens["area"]);
 
             
@@ -893,7 +874,7 @@ WriteLiteral(" * 1024 * 1024\r\n                },\r\n                data:{\r\n
 WriteLiteral("\",\r\n                    controller:\"");
 
             
-            #line 270 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 265 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
                            Write(ViewContext.RouteData.Values["controller"]);
 
             
@@ -915,7 +896,7 @@ WriteLiteral(@"""
                 window.location.href=""");
 
             
-            #line 283 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 278 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
                                  Write(Url.Action("Detail","SysSet"));
 
             

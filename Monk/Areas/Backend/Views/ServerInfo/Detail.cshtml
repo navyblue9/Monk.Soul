@@ -11,12 +11,7 @@
 }
 
 @section crumbs{
-    <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="数据管理">数据管理</a>
-    <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="服务器信息">服务器信息</a>
-    <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="查看服务器信息">查看服务器信息</a>
+    @Html.Raw(ViewBag.HaviorInfo.Crumbs)
 }
 
 <div class="monk-form-item">

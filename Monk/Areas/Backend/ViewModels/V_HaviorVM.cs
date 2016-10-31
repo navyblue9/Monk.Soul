@@ -29,5 +29,6 @@ namespace Monk.Areas.Backend.ViewModels
         public Guid LogMemberID { get; set; }
         public string ModuleName { get; set; }
         public int? ModuleSort { get; set; }
+        public string Crumbs { get; set; }
     }
 }

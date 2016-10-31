@@ -5,8 +5,13 @@
     ViewBag.Description = ViewBag.SysSetInfo.Description;
     ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
 }
+
 @section head{
     @Html.Raw(ViewBag.HaviorInfo.HeadCode)
+}
+
+@section crumbs{
+    @Html.Raw(ViewBag.HaviorInfo.Crumbs)
 }
 
 <h2>控制台管理中心</h2>

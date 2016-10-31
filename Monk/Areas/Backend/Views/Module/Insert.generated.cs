@@ -75,47 +75,18 @@ WriteLiteral("\r\n");
 
 DefineSection("crumbs", () => {
 
-WriteLiteral("\r\n    <label");
+WriteLiteral("\r\n");
 
-WriteLiteral(" class=\"backend-crumbs-separator\"");
+WriteLiteral("    ");
 
-WriteLiteral(">/</label>\r\n    <a");
+            
+            #line 15 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.Crumbs));
 
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"系统管理\"");
-
-WriteLiteral(">系统管理</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"模块管理\"");
-
-WriteLiteral(">模块管理</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"系统栏目\"");
-
-WriteLiteral(">系统栏目</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"新增栏目\"");
-
-WriteLiteral(">新增栏目</a>\r\n");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
 
 });
 
@@ -124,7 +95,7 @@ WriteLiteral("\r\n");
 DefineSection("beginForm", () => {
 
             
-            #line 25 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 18 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
                       Html.BeginForm("Insert", "Module", FormMethod.Post, new { @class = "monk-form" });
             
             #line default
@@ -154,7 +125,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 31 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 24 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
    Write(Html.TextBoxFor(u => u.Name,
         new
         {
@@ -239,7 +210,7 @@ WriteLiteral(">请输入或选择...</option>\r\n");
 WriteLiteral("            ");
 
             
-            #line 56 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 49 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
        Write(Html.Raw(ViewData["ModuleList"]));
 
             
@@ -272,7 +243,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 65 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 58 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
    Write(Html.TextAreaFor(u => u.Remark,
         new
         {
@@ -319,7 +290,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 83 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 76 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
    Write(Html.TextBoxFor(u => u.Sort,
         new
         {
@@ -368,7 +339,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 101 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 94 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
    Write(Html.TextAreaFor(u => u.TagAttr,
         new
         {
@@ -415,7 +386,7 @@ WriteLiteral("></span>\r\n");
 WriteLiteral("        ");
 
             
-            #line 119 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 112 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
    Write(Html.TextBoxFor(u => u.Iconfont,
         new
         {
@@ -457,7 +428,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 136 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 129 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
    Write(Html.CheckBoxFor(u => u.Enable,
        new
        {
@@ -498,18 +469,18 @@ WriteLiteral(" type=\"reset\"");
 
 WriteLiteral(" class=\"monk-input-button peterRiver\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 5837), Tuple.Create("\"", 5903)
-, Tuple.Create(Tuple.Create("", 5847), Tuple.Create("window.location.href", 5847), true)
-, Tuple.Create(Tuple.Create(" ", 5867), Tuple.Create("=", 5868), true)
-, Tuple.Create(Tuple.Create(" ", 5869), Tuple.Create("\'", 5870), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 5503), Tuple.Create("\"", 5569)
+, Tuple.Create(Tuple.Create("", 5513), Tuple.Create("window.location.href", 5513), true)
+, Tuple.Create(Tuple.Create(" ", 5533), Tuple.Create("=", 5534), true)
+, Tuple.Create(Tuple.Create(" ", 5535), Tuple.Create("\'", 5536), true)
             
-            #line 149 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
-              , Tuple.Create(Tuple.Create("", 5871), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Module")
+            #line 142 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+              , Tuple.Create(Tuple.Create("", 5537), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Module")
             
             #line default
             #line hidden
-, 5871), false)
-, Tuple.Create(Tuple.Create("", 5901), Tuple.Create("\';", 5901), true)
+, 5537), false)
+, Tuple.Create(Tuple.Create("", 5567), Tuple.Create("\';", 5567), true)
 );
 
 WriteLiteral(" value=\"返回列表\"");
@@ -533,7 +504,7 @@ WriteLiteral("\r\n");
 DefineSection("endForm", () => {
 
             
-            #line 153 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 146 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
                     Html.EndForm();
             
             #line default
@@ -549,7 +520,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 156 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 149 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
@@ -569,7 +540,7 @@ WriteLiteral(@">
                     window.location.href = """);
 
             
-            #line 164 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 157 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
                                        Write(Url.Action("Detail","Module",new { id=""}));
 
             

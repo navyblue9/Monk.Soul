@@ -13,12 +13,7 @@
 }
 
 @section crumbs{
-    <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="系统管理">系统管理</a>
-    <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="系统设置">系统设置</a>
-    <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="更新设置">更新设置</a>
+    @Html.Raw(ViewBag.HaviorInfo.Crumbs)
 }
 
 @section beginForm{@{ Html.BeginForm("Update", "SysSet", FormMethod.Post, new { @class = "monk-form" });}}

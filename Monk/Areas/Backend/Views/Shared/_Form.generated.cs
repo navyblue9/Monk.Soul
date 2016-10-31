@@ -180,22 +180,12 @@ WriteLiteral(">\r\n    <div");
 
 WriteLiteral(" class=\"backend-crumbs clear-both\"");
 
-WriteLiteral(">\r\n        <span");
-
-WriteLiteral(" class=\"monk-iconfont icon-backend-crumbs\"");
-
-WriteLiteral("></span>\r\n        <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"管理首页\"");
-
-WriteLiteral(">管理首页</a>\r\n");
+WriteLiteral(">\r\n");
 
 WriteLiteral("        ");
 
             
-            #line 23 "..\..\Areas\Backend\Views\Shared\_Form.cshtml"
+            #line 21 "..\..\Areas\Backend\Views\Shared\_Form.cshtml"
    Write(RenderSection("crumbs", false));
 
             
@@ -206,7 +196,7 @@ WriteLiteral("\r\n    </div>\r\n");
 WriteLiteral("    ");
 
             
-            #line 25 "..\..\Areas\Backend\Views\Shared\_Form.cshtml"
+            #line 23 "..\..\Areas\Backend\Views\Shared\_Form.cshtml"
 Write(RenderSection("beginForm", false));
 
             
@@ -221,7 +211,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 27 "..\..\Areas\Backend\Views\Shared\_Form.cshtml"
+            #line 25 "..\..\Areas\Backend\Views\Shared\_Form.cshtml"
    Write(RenderBody());
 
             
@@ -236,7 +226,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 30 "..\..\Areas\Backend\Views\Shared\_Form.cshtml"
+            #line 28 "..\..\Areas\Backend\Views\Shared\_Form.cshtml"
    Write(RenderSection("operate", false));
 
             
@@ -247,7 +237,7 @@ WriteLiteral("\r\n    </div>\r\n");
 WriteLiteral("    ");
 
             
-            #line 32 "..\..\Areas\Backend\Views\Shared\_Form.cshtml"
+            #line 30 "..\..\Areas\Backend\Views\Shared\_Form.cshtml"
 Write(RenderSection("endForm", false));
 
             
@@ -258,7 +248,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 33 "..\..\Areas\Backend\Views\Shared\_Form.cshtml"
+            #line 31 "..\..\Areas\Backend\Views\Shared\_Form.cshtml"
 Write(Scripts.Render("~/Assets/Backend/Monk.UI/Script", "~/Assets/Backend/JQuery/Script", "~/Assets/Backend/Layer/Script", "~/Assets/Backend/Validform/Script", "~/Assets/Backend/Script"));
 
             
@@ -269,7 +259,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 34 "..\..\Areas\Backend\Views\Shared\_Form.cshtml"
+            #line 32 "..\..\Areas\Backend\Views\Shared\_Form.cshtml"
 Write(RenderSection("foot", false));
 
             

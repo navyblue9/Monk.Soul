@@ -75,47 +75,18 @@ WriteLiteral("\r\n");
 
 DefineSection("crumbs", () => {
 
-WriteLiteral("\r\n    <label");
+WriteLiteral("\r\n");
 
-WriteLiteral(" class=\"backend-crumbs-separator\"");
+WriteLiteral("    ");
 
-WriteLiteral(">/</label>\r\n    <a");
+            
+            #line 14 "..\..\Areas\Backend\Views\Tool\GUID.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.Crumbs));
 
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"站长工具\"");
-
-WriteLiteral(">站长工具</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"通用工具\"");
-
-WriteLiteral(">通用工具</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"GUID生成\"");
-
-WriteLiteral(">GUID生成</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"生成GUID\"");
-
-WriteLiteral(">生成GUID</a>\r\n");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
 
 });
 
@@ -147,14 +118,14 @@ WriteLiteral(" readonly=\"readonly\"");
 
 WriteLiteral(" placeholder=\"请输入...\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 1060), Tuple.Create("\"", 1081)
+WriteAttribute("value", Tuple.Create(" value=\"", 718), Tuple.Create("\"", 739)
             
-            #line 28 "..\..\Areas\Backend\Views\Tool\GUID.cshtml"
-                         , Tuple.Create(Tuple.Create("", 1068), Tuple.Create<System.Object, System.Int32>(ViewBag.GUID
+            #line 21 "..\..\Areas\Backend\Views\Tool\GUID.cshtml"
+                          , Tuple.Create(Tuple.Create("", 726), Tuple.Create<System.Object, System.Int32>(ViewBag.GUID
             
             #line default
             #line hidden
-, 1068), false)
+, 726), false)
 );
 
 WriteLiteral(" />\r\n    </div>\r\n    <div");
@@ -188,7 +159,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 38 "..\..\Areas\Backend\Views\Tool\GUID.cshtml"
+            #line 31 "..\..\Areas\Backend\Views\Tool\GUID.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             

@@ -12,15 +12,9 @@
 
 
 @section crumbs{
-    <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="系统管理">系统管理</a>
-    <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="模块管理">模块管理</a>
-    <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="行为管理">行为管理</a>
-    <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="行为列表">行为列表</a>
+    @Html.Raw(ViewBag.HaviorInfo.Crumbs)
 }
+
 
 @section buttons{
     <span class="list-btn" onclick="backend.checkall(this);"><i class="monk-iconfont icon-backend-quanxuan"></i><label>全选</label></span>

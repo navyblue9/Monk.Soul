@@ -75,47 +75,18 @@ WriteLiteral("\r\n");
 
 DefineSection("crumbs", () => {
 
-WriteLiteral("\r\n    <label");
+WriteLiteral("\r\n");
 
-WriteLiteral(" class=\"backend-crumbs-separator\"");
+WriteLiteral("    ");
 
-WriteLiteral(">/</label>\r\n    <a");
+            
+            #line 14 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.Crumbs));
 
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"数据管理\"");
-
-WriteLiteral(">数据管理</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"缓存管理\"");
-
-WriteLiteral(">缓存管理</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"程序缓存\"");
-
-WriteLiteral(">程序缓存</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"查看缓存\"");
-
-WriteLiteral(">查看缓存</a>\r\n");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
 
 });
 
@@ -138,7 +109,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 27 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
+            #line 20 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
    Write(ViewBag.Key);
 
             
@@ -167,7 +138,7 @@ WriteLiteral(" data-language=\"JSON\"");
 WriteLiteral(">");
 
             
-            #line 33 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
+            #line 26 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
                                                Write(StringHelper.ConvertJsonString(ViewBag.Value.ToString()));
 
             
@@ -191,18 +162,18 @@ WriteLiteral(" type=\"reset\"");
 
 WriteLiteral(" class=\"monk-input-button peterRiver\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 1409), Tuple.Create("\"", 1474)
-, Tuple.Create(Tuple.Create("", 1419), Tuple.Create("window.location.href", 1419), true)
-, Tuple.Create(Tuple.Create(" ", 1439), Tuple.Create("=", 1440), true)
-, Tuple.Create(Tuple.Create(" ", 1441), Tuple.Create("\'", 1442), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 1075), Tuple.Create("\"", 1140)
+, Tuple.Create(Tuple.Create("", 1085), Tuple.Create("window.location.href", 1085), true)
+, Tuple.Create(Tuple.Create(" ", 1105), Tuple.Create("=", 1106), true)
+, Tuple.Create(Tuple.Create(" ", 1107), Tuple.Create("\'", 1108), true)
             
-            #line 39 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
-              , Tuple.Create(Tuple.Create("", 1443), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Cache")
+            #line 32 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
+              , Tuple.Create(Tuple.Create("", 1109), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Cache")
             
             #line default
             #line hidden
-, 1443), false)
-, Tuple.Create(Tuple.Create("", 1472), Tuple.Create("\';", 1472), true)
+, 1109), false)
+, Tuple.Create(Tuple.Create("", 1138), Tuple.Create("\';", 1138), true)
 );
 
 WriteLiteral(" va");
@@ -232,7 +203,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 44 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
+            #line 37 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
@@ -246,7 +217,7 @@ WriteLiteral(">\r\n        function deletes() {\r\n            backend.confirm(\
 "执行此操作吗？\", null, function (index) {\r\n                backend.post(\"");
 
             
-            #line 48 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
+            #line 41 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
                          Write(Url.Action("Delete","Cache",new { }));
 
             
@@ -255,7 +226,7 @@ WriteLiteral(">\r\n        function deletes() {\r\n            backend.confirm(\
 WriteLiteral("\", { ids: \"");
 
             
-            #line 48 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
+            #line 41 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
                                                                          Write(ViewBag.Key);
 
             
@@ -264,7 +235,7 @@ WriteLiteral("\", { ids: \"");
 WriteLiteral("\" }, function (data) {\r\n                    window.location.href = \"");
 
             
-            #line 49 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
+            #line 42 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
                                        Write(Url.Action("Select", "Cache"));
 
             

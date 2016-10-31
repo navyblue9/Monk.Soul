@@ -75,47 +75,18 @@ WriteLiteral("\r\n");
 
 DefineSection("crumbs", () => {
 
-WriteLiteral("\r\n    <label");
+WriteLiteral("\r\n");
 
-WriteLiteral(" class=\"backend-crumbs-separator\"");
+WriteLiteral("    ");
 
-WriteLiteral(">/</label>\r\n    <a");
+            
+            #line 14 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.Crumbs));
 
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"系统管理\"");
-
-WriteLiteral(">系统管理</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"模块管理\"");
-
-WriteLiteral(">模块管理</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"系统栏目\"");
-
-WriteLiteral(">系统栏目</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"栏目列表\"");
-
-WriteLiteral(">栏目列表</a>\r\n");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
 
 });
 
@@ -236,7 +207,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 65 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+            #line 58 "..\..\Areas\Backend\Views\Module\Select.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
@@ -247,7 +218,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 66 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+            #line 59 "..\..\Areas\Backend\Views\Module\Select.cshtml"
 Write(Scripts.Render("~/Assets/Backend/Linq/Script"));
 
             
@@ -261,7 +232,7 @@ WriteLiteral(">\r\n        function insert() {\r\n            var ids = backend.
 "         if (ids.length > 0) {\r\n                window.location.href = \"");
 
             
-            #line 71 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+            #line 64 "..\..\Areas\Backend\Views\Module\Select.cshtml"
                                    Write(Url.Action("Insert","Module"));
 
             
@@ -271,7 +242,7 @@ WriteLiteral("/\" + ids[0];\r\n            }\r\n            else {\r\n          
 "href = \"");
 
             
-            #line 74 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+            #line 67 "..\..\Areas\Backend\Views\Module\Select.cshtml"
                                    Write(Url.Action("Insert","Module"));
 
             
@@ -282,7 +253,7 @@ WriteLiteral("\";\r\n            }\r\n        }\r\n        function detail() {\r
 "ow.location.href = \"");
 
             
-            #line 80 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+            #line 73 "..\..\Areas\Backend\Views\Module\Select.cshtml"
                                    Write(Url.Action("Detail","Module",new { }));
 
             
@@ -300,7 +271,7 @@ WriteLiteral(@"/"" + ids[0];
                 window.location.href = """);
 
             
-            #line 89 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+            #line 82 "..\..\Areas\Backend\Views\Module\Select.cshtml"
                                    Write(Url.Action("Update","Module",new { }));
 
             
@@ -326,7 +297,7 @@ WriteLiteral(@"/"" + ids[0];
                         backend.post(""");
 
             
-            #line 106 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+            #line 99 "..\..\Areas\Backend\Views\Module\Select.cshtml"
                                  Write(Url.Action("Delete","Module",new { }));
 
             
@@ -336,7 +307,7 @@ WriteLiteral("\", { ids: ids.toString() }, function (data) {\r\n                
 "d.get(\"");
 
             
-            #line 107 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+            #line 100 "..\..\Areas\Backend\Views\Module\Select.cshtml"
                                     Write(Url.Action("List","Module"));
 
             
@@ -415,7 +386,7 @@ WriteLiteral(@">
             backend.get(""");
 
             
-            #line 167 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+            #line 160 "..\..\Areas\Backend\Views\Module\Select.cshtml"
                     Write(Url.Action("List","Module"));
 
             

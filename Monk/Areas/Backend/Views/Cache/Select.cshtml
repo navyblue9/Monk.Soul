@@ -11,14 +11,7 @@
 }
 
 @section crumbs{
-    <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="数据管理">数据管理</a>
-    <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="缓存管理">缓存管理</a>
-    <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="程序缓存">程序缓存</a>
-    <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="缓存列表">缓存列表</a>
+    @Html.Raw(ViewBag.HaviorInfo.Crumbs)
 }
 
 @section buttons{

@@ -52,7 +52,7 @@ namespace ASP
             
             #line default
             #line hidden
-WriteLiteral("\r\n");
+WriteLiteral("\r\n\r\n");
 
 DefineSection("head", () => {
 
@@ -61,8 +61,27 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 9 "..\..\Areas\Backend\Views\Default\Console.cshtml"
+            #line 10 "..\..\Areas\Backend\Views\Default\Console.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.HeadCode));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+});
+
+WriteLiteral("\r\n");
+
+DefineSection("crumbs", () => {
+
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 14 "..\..\Areas\Backend\Views\Default\Console.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.Crumbs));
 
             
             #line default
@@ -80,7 +99,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 15 "..\..\Areas\Backend\Views\Default\Console.cshtml"
+            #line 20 "..\..\Areas\Backend\Views\Default\Console.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             

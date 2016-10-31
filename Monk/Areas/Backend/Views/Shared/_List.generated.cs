@@ -180,22 +180,12 @@ WriteLiteral(">\r\n    <div");
 
 WriteLiteral(" class=\"backend-crumbs clear-both\"");
 
-WriteLiteral(">\r\n        <span");
-
-WriteLiteral(" class=\"monk-iconfont icon-backend-crumbs\"");
-
-WriteLiteral("></span>\r\n        <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"管理首页\"");
-
-WriteLiteral(">管理首页</a>\r\n");
+WriteLiteral(">\r\n");
 
 WriteLiteral("        ");
 
             
-            #line 23 "..\..\Areas\Backend\Views\Shared\_List.cshtml"
+            #line 21 "..\..\Areas\Backend\Views\Shared\_List.cshtml"
    Write(RenderSection("crumbs", false));
 
             
@@ -210,7 +200,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 26 "..\..\Areas\Backend\Views\Shared\_List.cshtml"
+            #line 24 "..\..\Areas\Backend\Views\Shared\_List.cshtml"
    Write(RenderSection("buttons", false));
 
             
@@ -225,7 +215,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 29 "..\..\Areas\Backend\Views\Shared\_List.cshtml"
+            #line 27 "..\..\Areas\Backend\Views\Shared\_List.cshtml"
    Write(RenderSection("searchs", false));
 
             
@@ -240,7 +230,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 32 "..\..\Areas\Backend\Views\Shared\_List.cshtml"
+            #line 30 "..\..\Areas\Backend\Views\Shared\_List.cshtml"
    Write(RenderBody());
 
             
@@ -255,7 +245,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 35 "..\..\Areas\Backend\Views\Shared\_List.cshtml"
+            #line 33 "..\..\Areas\Backend\Views\Shared\_List.cshtml"
    Write(RenderSection("operate", false));
 
             
@@ -266,7 +256,7 @@ WriteLiteral("\r\n    </div>\r\n");
 WriteLiteral("    ");
 
             
-            #line 37 "..\..\Areas\Backend\Views\Shared\_List.cshtml"
+            #line 35 "..\..\Areas\Backend\Views\Shared\_List.cshtml"
 Write(Scripts.Render("~/Assets/Backend/Monk.UI/Script", "~/Assets/Backend/JQuery/Script", "~/Assets/Backend/Layer/Script", "~/Assets/Backend/Pagination/Script", "~/Assets/Backend/Script"));
 
             
@@ -277,7 +267,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 38 "..\..\Areas\Backend\Views\Shared\_List.cshtml"
+            #line 36 "..\..\Areas\Backend\Views\Shared\_List.cshtml"
 Write(RenderSection("foot", false));
 
             

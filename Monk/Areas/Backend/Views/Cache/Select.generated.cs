@@ -75,47 +75,18 @@ WriteLiteral("\r\n");
 
 DefineSection("crumbs", () => {
 
-WriteLiteral("\r\n    <label");
+WriteLiteral("\r\n");
 
-WriteLiteral(" class=\"backend-crumbs-separator\"");
+WriteLiteral("    ");
 
-WriteLiteral(">/</label>\r\n    <a");
+            
+            #line 14 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.Crumbs));
 
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"数据管理\"");
-
-WriteLiteral(">数据管理</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"缓存管理\"");
-
-WriteLiteral(">缓存管理</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"程序缓存\"");
-
-WriteLiteral(">程序缓存</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"缓存列表\"");
-
-WriteLiteral(">缓存列表</a>\r\n");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
 
 });
 
@@ -192,7 +163,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 50 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+            #line 43 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
 Write(ViewBag.HaviorInfo.FootCode);
 
             
@@ -206,7 +177,7 @@ WriteLiteral(">\r\n        function detail() {\r\n            var ids = backend.
 "         if (ids.length == 1) {\r\n                backend.postLocation(\"");
 
             
-            #line 55 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+            #line 48 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
                                  Write(Url.Action("Detail","Cache",new { }));
 
             
@@ -229,7 +200,7 @@ WriteLiteral(@"/"", { id: ids[0] })
                     backend.post(""");
 
             
-            #line 69 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+            #line 62 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
                              Write(Url.Action("Delete","Cache",new { }));
 
             
@@ -239,7 +210,7 @@ WriteLiteral("\", { ids: ids.toString() }, function (data) {\r\n                
 "t(\"");
 
             
-            #line 70 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+            #line 63 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
                                 Write(Url.Action("RuntimeCache", "Cache"));
 
             
@@ -280,7 +251,7 @@ WriteLiteral(">\r\n        var render = monk.tppl(document.getElementById(\"tpl\
 "     $(function () {\r\n            backend.get(\"");
 
             
-            #line 94 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+            #line 87 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
                     Write(Url.Action("RuntimeCache", "Cache"));
 
             

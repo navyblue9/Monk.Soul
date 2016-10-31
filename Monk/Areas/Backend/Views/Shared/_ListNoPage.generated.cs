@@ -181,22 +181,12 @@ WriteLiteral(">\r\n    <div");
 
 WriteLiteral(" class=\"backend-crumbs clear-both\"");
 
-WriteLiteral(">\r\n        <span");
-
-WriteLiteral(" class=\"monk-iconfont icon-backend-crumbs\"");
-
-WriteLiteral("></span>\r\n        <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"管理首页\"");
-
-WriteLiteral(">管理首页</a>\r\n");
+WriteLiteral(">\r\n");
 
 WriteLiteral("        ");
 
             
-            #line 27 "..\..\Areas\Backend\Views\Shared\_ListNoPage.cshtml"
+            #line 25 "..\..\Areas\Backend\Views\Shared\_ListNoPage.cshtml"
    Write(RenderSection("crumbs", false));
 
             
@@ -211,7 +201,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 30 "..\..\Areas\Backend\Views\Shared\_ListNoPage.cshtml"
+            #line 28 "..\..\Areas\Backend\Views\Shared\_ListNoPage.cshtml"
    Write(RenderSection("buttons", false));
 
             
@@ -226,7 +216,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 33 "..\..\Areas\Backend\Views\Shared\_ListNoPage.cshtml"
+            #line 31 "..\..\Areas\Backend\Views\Shared\_ListNoPage.cshtml"
    Write(RenderSection("searchs", false));
 
             
@@ -241,7 +231,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 36 "..\..\Areas\Backend\Views\Shared\_ListNoPage.cshtml"
+            #line 34 "..\..\Areas\Backend\Views\Shared\_ListNoPage.cshtml"
    Write(RenderBody());
 
             
@@ -256,7 +246,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 39 "..\..\Areas\Backend\Views\Shared\_ListNoPage.cshtml"
+            #line 37 "..\..\Areas\Backend\Views\Shared\_ListNoPage.cshtml"
    Write(RenderSection("operate", false));
 
             
@@ -267,7 +257,7 @@ WriteLiteral("\r\n    </div>\r\n");
 WriteLiteral("    ");
 
             
-            #line 41 "..\..\Areas\Backend\Views\Shared\_ListNoPage.cshtml"
+            #line 39 "..\..\Areas\Backend\Views\Shared\_ListNoPage.cshtml"
 Write(Scripts.Render("~/Assets/Backend/Monk.UI/Script", "~/Assets/Backend/JQuery/Script", "~/Assets/Backend/Layer/Script", "~/Assets/Backend/Script"));
 
             
@@ -278,7 +268,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 42 "..\..\Areas\Backend\Views\Shared\_ListNoPage.cshtml"
+            #line 40 "..\..\Areas\Backend\Views\Shared\_ListNoPage.cshtml"
 Write(RenderSection("foot", false));
 
             

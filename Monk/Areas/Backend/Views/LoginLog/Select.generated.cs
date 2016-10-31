@@ -75,47 +75,18 @@ WriteLiteral("\r\n");
 
 DefineSection("crumbs", () => {
 
-WriteLiteral("\r\n    <label");
+WriteLiteral("\r\n");
 
-WriteLiteral(" class=\"backend-crumbs-separator\"");
+WriteLiteral("    ");
 
-WriteLiteral(">/</label>\r\n    <a");
+            
+            #line 14 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.Crumbs));
 
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"数据管理\"");
-
-WriteLiteral(">数据管理</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"日志管理\"");
-
-WriteLiteral(">日志管理</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"登录日志\"");
-
-WriteLiteral(">登录日志</a>\r\n    <label");
-
-WriteLiteral(" class=\"backend-crumbs-separator\"");
-
-WriteLiteral(">/</label>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" title=\"日志列表\"");
-
-WriteLiteral(">日志列表</a>\r\n");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
 
 });
 
@@ -380,7 +351,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 110 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+            #line 103 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
@@ -394,7 +365,7 @@ WriteLiteral(">\r\n        function detail(){\r\n            var ids=backend.get
 "      if(ids.length==1){\r\n                window.location.href=\"");
 
             
-            #line 115 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+            #line 108 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
                                  Write(Url.Action("Detail","LoginLog",new { }));
 
             
@@ -416,7 +387,7 @@ WriteLiteral(@"/""+ids[0];
                     backend.post(""");
 
             
-            #line 128 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+            #line 121 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
                              Write(Url.Action("Delete","LoginLog",new { }));
 
             
@@ -474,7 +445,7 @@ WriteLiteral(">\r\n        $(function () {\r\n            var render= monk.tppl(
 "ById(\"tpl\").innerHTML);\r\n            backend.pagination(\"");
 
             
-            #line 174 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+            #line 167 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
                            Write(Url.Action("List","LoginLog"));
 
             
@@ -483,7 +454,7 @@ WriteLiteral(">\r\n        $(function () {\r\n            var render= monk.tppl(
 WriteLiteral("\",");
 
             
-            #line 174 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
+            #line 167 "..\..\Areas\Backend\Views\LoginLog\Select.cshtml"
                                                            Write(ViewBag.SysSetInfo.PageSize);
 
             

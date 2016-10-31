@@ -13,14 +13,7 @@
 }
 
 @section crumbs{
-    <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="系统管理">系统管理</a>
-    <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="模块管理">模块管理</a>
-    <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="行为管理">行为管理</a>
-    <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="编辑行为">编辑行为</a>
+    @Html.Raw(ViewBag.HaviorInfo.Crumbs)
 }
 
 @section beginForm{@{ Html.BeginForm("Update", "Havior", FormMethod.Post, new { @class = "monk-form" });}}

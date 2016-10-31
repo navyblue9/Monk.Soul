@@ -12,12 +12,7 @@
 }
 
 @section crumbs{
-    <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="系统管理">系统管理</a>
-    <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="系统设置">系统设置</a>
-    <label class="backend-crumbs-separator">/</label>
-    <a href="#" title="查看设置">查看设置</a>
+    @Html.Raw(ViewBag.HaviorInfo.Crumbs)
 }
 
 <div class="monk-form-item">
