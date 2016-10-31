@@ -202,16 +202,6 @@ WriteLiteral(">\r\n        <iframe");
 
 WriteLiteral(" frameborder=\"0\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1778), Tuple.Create("\"", 1816)
-            
-            #line 32 "..\..\Areas\Backend\Views\Default\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 1784), Tuple.Create<System.Object, System.Int32>(Url.Action("Console","Default")
-            
-            #line default
-            #line hidden
-, 1784), false)
-);
-
 WriteLiteral(" id=\"backend-iframe\"");
 
 WriteLiteral(" name=\"backend-iframe\"");
