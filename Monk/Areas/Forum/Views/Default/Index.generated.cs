@@ -226,7 +226,15 @@ WriteLiteral(" class=\"forum-item-classify\"");
 
 WriteLiteral(">[技术分享]</a>\r\n                            <a");
 
-WriteLiteral(" href=\"#\"");
+WriteAttribute("href", Tuple.Create(" href=\"", 2007), Tuple.Create("\"", 2044)
+            
+            #line 41 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 2014), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 2014), false)
+);
 
 WriteLiteral(" title=\"#\"");
 
@@ -288,9 +296,9 @@ WriteLiteral(" class=\"forum-display-block\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2930), Tuple.Create("\"", 2979)
-, Tuple.Create(Tuple.Create("", 2936), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
-, 2936), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 2959), Tuple.Create("\"", 3008)
+, Tuple.Create(Tuple.Create("", 2965), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 2965), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -317,7 +325,15 @@ WriteLiteral(" class=\"forum-item-classify\"");
 
 WriteLiteral(">[技术分享]</a>\r\n                            <a");
 
-WriteLiteral(" href=\"#\"");
+WriteAttribute("href", Tuple.Create(" href=\"", 3341), Tuple.Create("\"", 3378)
+            
+            #line 56 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 3348), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 3348), false)
+);
 
 WriteLiteral(" title=\"#\"");
 
@@ -379,9 +395,9 @@ WriteLiteral(" class=\"forum-display-block\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 4235), Tuple.Create("\"", 4284)
-, Tuple.Create(Tuple.Create("", 4241), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
-, 4241), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 4293), Tuple.Create("\"", 4342)
+, Tuple.Create(Tuple.Create("", 4299), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 4299), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -408,7 +424,15 @@ WriteLiteral(" class=\"forum-item-classify\"");
 
 WriteLiteral(">[技术分享]</a>\r\n                            <a");
 
-WriteLiteral(" href=\"#\"");
+WriteAttribute("href", Tuple.Create(" href=\"", 4675), Tuple.Create("\"", 4712)
+            
+            #line 71 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 4682), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 4682), false)
+);
 
 WriteLiteral(" title=\"#\"");
 
@@ -470,9 +494,9 @@ WriteLiteral(" class=\"forum-display-block\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 5540), Tuple.Create("\"", 5589)
-, Tuple.Create(Tuple.Create("", 5546), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
-, 5546), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 5627), Tuple.Create("\"", 5676)
+, Tuple.Create(Tuple.Create("", 5633), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 5633), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -499,7 +523,15 @@ WriteLiteral(" class=\"forum-item-classify\"");
 
 WriteLiteral(">[技术分享]</a>\r\n                            <a");
 
-WriteLiteral(" href=\"#\"");
+WriteAttribute("href", Tuple.Create(" href=\"", 6009), Tuple.Create("\"", 6046)
+            
+            #line 86 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 6016), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 6016), false)
+);
 
 WriteLiteral(" title=\"#\"");
 
@@ -561,9 +593,9 @@ WriteLiteral(" class=\"forum-display-block\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 6845), Tuple.Create("\"", 6894)
-, Tuple.Create(Tuple.Create("", 6851), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
-, 6851), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 6961), Tuple.Create("\"", 7010)
+, Tuple.Create(Tuple.Create("", 6967), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 6967), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -590,7 +622,15 @@ WriteLiteral(" class=\"forum-item-classify\"");
 
 WriteLiteral(">[技术分享]</a>\r\n                            <a");
 
-WriteLiteral(" href=\"#\"");
+WriteAttribute("href", Tuple.Create(" href=\"", 7343), Tuple.Create("\"", 7380)
+            
+            #line 101 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 7350), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 7350), false)
+);
 
 WriteLiteral(" title=\"#\"");
 
@@ -652,9 +692,9 @@ WriteLiteral(" class=\"forum-display-block\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 8150), Tuple.Create("\"", 8199)
-, Tuple.Create(Tuple.Create("", 8156), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
-, 8156), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 8295), Tuple.Create("\"", 8344)
+, Tuple.Create(Tuple.Create("", 8301), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 8301), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -681,7 +721,15 @@ WriteLiteral(" class=\"forum-item-classify\"");
 
 WriteLiteral(">[技术分享]</a>\r\n                            <a");
 
-WriteLiteral(" href=\"#\"");
+WriteAttribute("href", Tuple.Create(" href=\"", 8677), Tuple.Create("\"", 8714)
+            
+            #line 116 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 8684), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 8684), false)
+);
 
 WriteLiteral(" title=\"#\"");
 
@@ -743,9 +791,9 @@ WriteLiteral(" class=\"forum-display-block\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 9455), Tuple.Create("\"", 9504)
-, Tuple.Create(Tuple.Create("", 9461), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
-, 9461), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 9629), Tuple.Create("\"", 9678)
+, Tuple.Create(Tuple.Create("", 9635), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 9635), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -772,7 +820,15 @@ WriteLiteral(" class=\"forum-item-classify\"");
 
 WriteLiteral(">[技术分享]</a>\r\n                            <a");
 
-WriteLiteral(" href=\"#\"");
+WriteAttribute("href", Tuple.Create(" href=\"", 10011), Tuple.Create("\"", 10048)
+            
+            #line 131 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 10018), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 10018), false)
+);
 
 WriteLiteral(" title=\"#\"");
 
@@ -834,9 +890,9 @@ WriteLiteral(" class=\"forum-display-block\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 10760), Tuple.Create("\"", 10809)
-, Tuple.Create(Tuple.Create("", 10766), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
-, 10766), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 10963), Tuple.Create("\"", 11012)
+, Tuple.Create(Tuple.Create("", 10969), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 10969), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -863,7 +919,15 @@ WriteLiteral(" class=\"forum-item-classify\"");
 
 WriteLiteral(">[技术分享]</a>\r\n                            <a");
 
-WriteLiteral(" href=\"#\"");
+WriteAttribute("href", Tuple.Create(" href=\"", 11345), Tuple.Create("\"", 11382)
+            
+            #line 146 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 11352), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 11352), false)
+);
 
 WriteLiteral(" title=\"#\"");
 
@@ -925,9 +989,9 @@ WriteLiteral(" class=\"forum-display-block\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 12065), Tuple.Create("\"", 12114)
-, Tuple.Create(Tuple.Create("", 12071), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
-, 12071), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 12297), Tuple.Create("\"", 12346)
+, Tuple.Create(Tuple.Create("", 12303), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 12303), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -954,7 +1018,15 @@ WriteLiteral(" class=\"forum-item-classify\"");
 
 WriteLiteral(">[技术分享]</a>\r\n                            <a");
 
-WriteLiteral(" href=\"#\"");
+WriteAttribute("href", Tuple.Create(" href=\"", 12679), Tuple.Create("\"", 12716)
+            
+            #line 161 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 12686), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 12686), false)
+);
 
 WriteLiteral(" title=\"#\"");
 
@@ -1016,9 +1088,9 @@ WriteLiteral(" class=\"forum-display-block\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 13370), Tuple.Create("\"", 13419)
-, Tuple.Create(Tuple.Create("", 13376), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
-, 13376), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 13631), Tuple.Create("\"", 13680)
+, Tuple.Create(Tuple.Create("", 13637), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 13637), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -1045,7 +1117,15 @@ WriteLiteral(" class=\"forum-item-classify\"");
 
 WriteLiteral(">[技术分享]</a>\r\n                            <a");
 
-WriteLiteral(" href=\"#\"");
+WriteAttribute("href", Tuple.Create(" href=\"", 14013), Tuple.Create("\"", 14050)
+            
+            #line 176 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 14020), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 14020), false)
+);
 
 WriteLiteral(" title=\"#\"");
 
@@ -1107,9 +1187,9 @@ WriteLiteral(" class=\"forum-display-block\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 14675), Tuple.Create("\"", 14724)
-, Tuple.Create(Tuple.Create("", 14681), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
-, 14681), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 14965), Tuple.Create("\"", 15014)
+, Tuple.Create(Tuple.Create("", 14971), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 14971), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -1136,7 +1216,15 @@ WriteLiteral(" class=\"forum-item-classify\"");
 
 WriteLiteral(">[技术分享]</a>\r\n                            <a");
 
-WriteLiteral(" href=\"#\"");
+WriteAttribute("href", Tuple.Create(" href=\"", 15347), Tuple.Create("\"", 15384)
+            
+            #line 191 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 15354), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 15354), false)
+);
 
 WriteLiteral(" title=\"#\"");
 
@@ -1198,9 +1286,9 @@ WriteLiteral(" class=\"forum-display-block\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 15980), Tuple.Create("\"", 16029)
-, Tuple.Create(Tuple.Create("", 15986), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
-, 15986), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 16299), Tuple.Create("\"", 16348)
+, Tuple.Create(Tuple.Create("", 16305), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 16305), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -1227,7 +1315,15 @@ WriteLiteral(" class=\"forum-item-classify\"");
 
 WriteLiteral(">[技术分享]</a>\r\n                            <a");
 
-WriteLiteral(" href=\"#\"");
+WriteAttribute("href", Tuple.Create(" href=\"", 16681), Tuple.Create("\"", 16718)
+            
+            #line 206 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 16688), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 16688), false)
+);
 
 WriteLiteral(" title=\"#\"");
 
@@ -1289,9 +1385,9 @@ WriteLiteral(" class=\"forum-display-block\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 17285), Tuple.Create("\"", 17334)
-, Tuple.Create(Tuple.Create("", 17291), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
-, 17291), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 17633), Tuple.Create("\"", 17682)
+, Tuple.Create(Tuple.Create("", 17639), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 17639), false)
 );
 
 WriteLiteral(" alt=\"\"");
@@ -1318,7 +1414,708 @@ WriteLiteral(" class=\"forum-item-classify\"");
 
 WriteLiteral(">[技术分享]</a>\r\n                            <a");
 
+WriteAttribute("href", Tuple.Create(" href=\"", 18015), Tuple.Create("\"", 18052)
+            
+            #line 221 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 18022), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 18022), false)
+);
+
+WriteLiteral(" title=\"#\"");
+
+WriteLiteral(" class=\"forum-item-title\"");
+
+WriteLiteral(">百签软件（中山）有限公司国庆放假消息。</a>\r\n                        </div>\r\n                       " +
+" <div");
+
+WriteLiteral(" class=\"forum-article-pushinfo forum-clear-both\"");
+
+WriteLiteral(">\r\n                            <span");
+
+WriteLiteral(" class=\"forum-article-tip\"");
+
+WriteLiteral(">发布者：</span><a");
+
 WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" class=\"forum-article-info\"");
+
+WriteLiteral(">百小僧</a> <span");
+
+WriteLiteral(" class=\"forum-article-tip\"");
+
+WriteLiteral(">2016-09-22，最后回复来自：</span><a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" class=\"forum-article-info\"");
+
+WriteLiteral(">百签软件</a>\r\n                            <div");
+
+WriteLiteral(" class=\"forum-article-record forum-float-right\"");
+
+WriteLiteral("><span");
+
+WriteLiteral(" class=\"forum-iconfont icon-forum-chakan\"");
+
+WriteLiteral(">9</span><span");
+
+WriteLiteral(" class=\"forum-iconfont icon-forum-pinglun\"");
+
+WriteLiteral(">5</span></div>\r\n                        </div>\r\n                    </div>\r\n    " +
+"            </div>\r\n                <div");
+
+WriteLiteral(" class=\"forum-article-item forum-clear-both forum-auto-height\"");
+
+WriteLiteral(">\r\n                    <div");
+
+WriteLiteral(" class=\"forum-article-member forum-float-left\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral("><img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 18967), Tuple.Create("\"", 19016)
+, Tuple.Create(Tuple.Create("", 18973), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 18973), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral(" /></a>\r\n                    </div>\r\n                    <div");
+
+WriteLiteral(" class=\"forum-article-props forum-float-left\"");
+
+WriteLiteral(">\r\n                        <div");
+
+WriteLiteral(" class=\"forum-article-title\"");
+
+WriteLiteral(">\r\n                            <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"#\"");
+
+WriteLiteral(" class=\"forum-item-classify\"");
+
+WriteLiteral(">[技术分享]</a>\r\n                            <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 19349), Tuple.Create("\"", 19386)
+            
+            #line 236 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 19356), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 19356), false)
+);
+
+WriteLiteral(" title=\"#\"");
+
+WriteLiteral(" class=\"forum-item-title\"");
+
+WriteLiteral(">百签软件（中山）有限公司国庆放假消息。</a>\r\n                        </div>\r\n                       " +
+" <div");
+
+WriteLiteral(" class=\"forum-article-pushinfo forum-clear-both\"");
+
+WriteLiteral(">\r\n                            <span");
+
+WriteLiteral(" class=\"forum-article-tip\"");
+
+WriteLiteral(">发布者：</span><a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" class=\"forum-article-info\"");
+
+WriteLiteral(">百小僧</a> <span");
+
+WriteLiteral(" class=\"forum-article-tip\"");
+
+WriteLiteral(">2016-09-22，最后回复来自：</span><a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" class=\"forum-article-info\"");
+
+WriteLiteral(">百签软件</a>\r\n                            <div");
+
+WriteLiteral(" class=\"forum-article-record forum-float-right\"");
+
+WriteLiteral("><span");
+
+WriteLiteral(" class=\"forum-iconfont icon-forum-chakan\"");
+
+WriteLiteral(">9</span><span");
+
+WriteLiteral(" class=\"forum-iconfont icon-forum-pinglun\"");
+
+WriteLiteral(">5</span></div>\r\n                        </div>\r\n                    </div>\r\n    " +
+"            </div>\r\n                <div");
+
+WriteLiteral(" class=\"forum-article-item forum-clear-both forum-auto-height\"");
+
+WriteLiteral(">\r\n                    <div");
+
+WriteLiteral(" class=\"forum-article-member forum-float-left\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral("><img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 20301), Tuple.Create("\"", 20350)
+, Tuple.Create(Tuple.Create("", 20307), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 20307), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral(" /></a>\r\n                    </div>\r\n                    <div");
+
+WriteLiteral(" class=\"forum-article-props forum-float-left\"");
+
+WriteLiteral(">\r\n                        <div");
+
+WriteLiteral(" class=\"forum-article-title\"");
+
+WriteLiteral(">\r\n                            <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"#\"");
+
+WriteLiteral(" class=\"forum-item-classify\"");
+
+WriteLiteral(">[技术分享]</a>\r\n                            <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 20683), Tuple.Create("\"", 20720)
+            
+            #line 251 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 20690), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 20690), false)
+);
+
+WriteLiteral(" title=\"#\"");
+
+WriteLiteral(" class=\"forum-item-title\"");
+
+WriteLiteral(">百签软件（中山）有限公司国庆放假消息。</a>\r\n                        </div>\r\n                       " +
+" <div");
+
+WriteLiteral(" class=\"forum-article-pushinfo forum-clear-both\"");
+
+WriteLiteral(">\r\n                            <span");
+
+WriteLiteral(" class=\"forum-article-tip\"");
+
+WriteLiteral(">发布者：</span><a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" class=\"forum-article-info\"");
+
+WriteLiteral(">百小僧</a> <span");
+
+WriteLiteral(" class=\"forum-article-tip\"");
+
+WriteLiteral(">2016-09-22，最后回复来自：</span><a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" class=\"forum-article-info\"");
+
+WriteLiteral(">百签软件</a>\r\n                            <div");
+
+WriteLiteral(" class=\"forum-article-record forum-float-right\"");
+
+WriteLiteral("><span");
+
+WriteLiteral(" class=\"forum-iconfont icon-forum-chakan\"");
+
+WriteLiteral(">9</span><span");
+
+WriteLiteral(" class=\"forum-iconfont icon-forum-pinglun\"");
+
+WriteLiteral(">5</span></div>\r\n                        </div>\r\n                    </div>\r\n    " +
+"            </div>\r\n                <div");
+
+WriteLiteral(" class=\"forum-article-item forum-clear-both forum-auto-height\"");
+
+WriteLiteral(">\r\n                    <div");
+
+WriteLiteral(" class=\"forum-article-member forum-float-left\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral("><img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 21635), Tuple.Create("\"", 21684)
+, Tuple.Create(Tuple.Create("", 21641), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 21641), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral(" /></a>\r\n                    </div>\r\n                    <div");
+
+WriteLiteral(" class=\"forum-article-props forum-float-left\"");
+
+WriteLiteral(">\r\n                        <div");
+
+WriteLiteral(" class=\"forum-article-title\"");
+
+WriteLiteral(">\r\n                            <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"#\"");
+
+WriteLiteral(" class=\"forum-item-classify\"");
+
+WriteLiteral(">[技术分享]</a>\r\n                            <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 22017), Tuple.Create("\"", 22054)
+            
+            #line 266 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 22024), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 22024), false)
+);
+
+WriteLiteral(" title=\"#\"");
+
+WriteLiteral(" class=\"forum-item-title\"");
+
+WriteLiteral(">百签软件（中山）有限公司国庆放假消息。</a>\r\n                        </div>\r\n                       " +
+" <div");
+
+WriteLiteral(" class=\"forum-article-pushinfo forum-clear-both\"");
+
+WriteLiteral(">\r\n                            <span");
+
+WriteLiteral(" class=\"forum-article-tip\"");
+
+WriteLiteral(">发布者：</span><a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" class=\"forum-article-info\"");
+
+WriteLiteral(">百小僧</a> <span");
+
+WriteLiteral(" class=\"forum-article-tip\"");
+
+WriteLiteral(">2016-09-22，最后回复来自：</span><a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" class=\"forum-article-info\"");
+
+WriteLiteral(">百签软件</a>\r\n                            <div");
+
+WriteLiteral(" class=\"forum-article-record forum-float-right\"");
+
+WriteLiteral("><span");
+
+WriteLiteral(" class=\"forum-iconfont icon-forum-chakan\"");
+
+WriteLiteral(">9</span><span");
+
+WriteLiteral(" class=\"forum-iconfont icon-forum-pinglun\"");
+
+WriteLiteral(">5</span></div>\r\n                        </div>\r\n                    </div>\r\n    " +
+"            </div>\r\n                <div");
+
+WriteLiteral(" class=\"forum-article-item forum-clear-both forum-auto-height\"");
+
+WriteLiteral(">\r\n                    <div");
+
+WriteLiteral(" class=\"forum-article-member forum-float-left\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral("><img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 22969), Tuple.Create("\"", 23018)
+, Tuple.Create(Tuple.Create("", 22975), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 22975), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral(" /></a>\r\n                    </div>\r\n                    <div");
+
+WriteLiteral(" class=\"forum-article-props forum-float-left\"");
+
+WriteLiteral(">\r\n                        <div");
+
+WriteLiteral(" class=\"forum-article-title\"");
+
+WriteLiteral(">\r\n                            <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"#\"");
+
+WriteLiteral(" class=\"forum-item-classify\"");
+
+WriteLiteral(">[技术分享]</a>\r\n                            <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 23351), Tuple.Create("\"", 23388)
+            
+            #line 281 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 23358), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 23358), false)
+);
+
+WriteLiteral(" title=\"#\"");
+
+WriteLiteral(" class=\"forum-item-title\"");
+
+WriteLiteral(">百签软件（中山）有限公司国庆放假消息。</a>\r\n                        </div>\r\n                       " +
+" <div");
+
+WriteLiteral(" class=\"forum-article-pushinfo forum-clear-both\"");
+
+WriteLiteral(">\r\n                            <span");
+
+WriteLiteral(" class=\"forum-article-tip\"");
+
+WriteLiteral(">发布者：</span><a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" class=\"forum-article-info\"");
+
+WriteLiteral(">百小僧</a> <span");
+
+WriteLiteral(" class=\"forum-article-tip\"");
+
+WriteLiteral(">2016-09-22，最后回复来自：</span><a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" class=\"forum-article-info\"");
+
+WriteLiteral(">百签软件</a>\r\n                            <div");
+
+WriteLiteral(" class=\"forum-article-record forum-float-right\"");
+
+WriteLiteral("><span");
+
+WriteLiteral(" class=\"forum-iconfont icon-forum-chakan\"");
+
+WriteLiteral(">9</span><span");
+
+WriteLiteral(" class=\"forum-iconfont icon-forum-pinglun\"");
+
+WriteLiteral(">5</span></div>\r\n                        </div>\r\n                    </div>\r\n    " +
+"            </div>\r\n                <div");
+
+WriteLiteral(" class=\"forum-article-item forum-clear-both forum-auto-height\"");
+
+WriteLiteral(">\r\n                    <div");
+
+WriteLiteral(" class=\"forum-article-member forum-float-left\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral("><img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 24303), Tuple.Create("\"", 24352)
+, Tuple.Create(Tuple.Create("", 24309), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 24309), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral(" /></a>\r\n                    </div>\r\n                    <div");
+
+WriteLiteral(" class=\"forum-article-props forum-float-left\"");
+
+WriteLiteral(">\r\n                        <div");
+
+WriteLiteral(" class=\"forum-article-title\"");
+
+WriteLiteral(">\r\n                            <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"#\"");
+
+WriteLiteral(" class=\"forum-item-classify\"");
+
+WriteLiteral(">[技术分享]</a>\r\n                            <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 24685), Tuple.Create("\"", 24722)
+            
+            #line 296 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 24692), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 24692), false)
+);
+
+WriteLiteral(" title=\"#\"");
+
+WriteLiteral(" class=\"forum-item-title\"");
+
+WriteLiteral(">百签软件（中山）有限公司国庆放假消息。</a>\r\n                        </div>\r\n                       " +
+" <div");
+
+WriteLiteral(" class=\"forum-article-pushinfo forum-clear-both\"");
+
+WriteLiteral(">\r\n                            <span");
+
+WriteLiteral(" class=\"forum-article-tip\"");
+
+WriteLiteral(">发布者：</span><a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" class=\"forum-article-info\"");
+
+WriteLiteral(">百小僧</a> <span");
+
+WriteLiteral(" class=\"forum-article-tip\"");
+
+WriteLiteral(">2016-09-22，最后回复来自：</span><a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" class=\"forum-article-info\"");
+
+WriteLiteral(">百签软件</a>\r\n                            <div");
+
+WriteLiteral(" class=\"forum-article-record forum-float-right\"");
+
+WriteLiteral("><span");
+
+WriteLiteral(" class=\"forum-iconfont icon-forum-chakan\"");
+
+WriteLiteral(">9</span><span");
+
+WriteLiteral(" class=\"forum-iconfont icon-forum-pinglun\"");
+
+WriteLiteral(">5</span></div>\r\n                        </div>\r\n                    </div>\r\n    " +
+"            </div>\r\n                <div");
+
+WriteLiteral(" class=\"forum-article-item forum-clear-both forum-auto-height\"");
+
+WriteLiteral(">\r\n                    <div");
+
+WriteLiteral(" class=\"forum-article-member forum-float-left\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral("><img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 25637), Tuple.Create("\"", 25686)
+, Tuple.Create(Tuple.Create("", 25643), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 25643), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral(" /></a>\r\n                    </div>\r\n                    <div");
+
+WriteLiteral(" class=\"forum-article-props forum-float-left\"");
+
+WriteLiteral(">\r\n                        <div");
+
+WriteLiteral(" class=\"forum-article-title\"");
+
+WriteLiteral(">\r\n                            <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"#\"");
+
+WriteLiteral(" class=\"forum-item-classify\"");
+
+WriteLiteral(">[技术分享]</a>\r\n                            <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 26019), Tuple.Create("\"", 26056)
+            
+            #line 311 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 26026), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 26026), false)
+);
+
+WriteLiteral(" title=\"#\"");
+
+WriteLiteral(" class=\"forum-item-title\"");
+
+WriteLiteral(">百签软件（中山）有限公司国庆放假消息。</a>\r\n                        </div>\r\n                       " +
+" <div");
+
+WriteLiteral(" class=\"forum-article-pushinfo forum-clear-both\"");
+
+WriteLiteral(">\r\n                            <span");
+
+WriteLiteral(" class=\"forum-article-tip\"");
+
+WriteLiteral(">发布者：</span><a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" class=\"forum-article-info\"");
+
+WriteLiteral(">百小僧</a> <span");
+
+WriteLiteral(" class=\"forum-article-tip\"");
+
+WriteLiteral(">2016-09-22，最后回复来自：</span><a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" class=\"forum-article-info\"");
+
+WriteLiteral(">百签软件</a>\r\n                            <div");
+
+WriteLiteral(" class=\"forum-article-record forum-float-right\"");
+
+WriteLiteral("><span");
+
+WriteLiteral(" class=\"forum-iconfont icon-forum-chakan\"");
+
+WriteLiteral(">9</span><span");
+
+WriteLiteral(" class=\"forum-iconfont icon-forum-pinglun\"");
+
+WriteLiteral(">5</span></div>\r\n                        </div>\r\n                    </div>\r\n    " +
+"            </div>\r\n                <div");
+
+WriteLiteral(" class=\"forum-article-item forum-clear-both forum-auto-height\"");
+
+WriteLiteral(">\r\n                    <div");
+
+WriteLiteral(" class=\"forum-article-member forum-float-left\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral("><img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 26971), Tuple.Create("\"", 27020)
+, Tuple.Create(Tuple.Create("", 26977), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 26977), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral(" /></a>\r\n                    </div>\r\n                    <div");
+
+WriteLiteral(" class=\"forum-article-props forum-float-left\"");
+
+WriteLiteral(">\r\n                        <div");
+
+WriteLiteral(" class=\"forum-article-title\"");
+
+WriteLiteral(">\r\n                            <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"#\"");
+
+WriteLiteral(" class=\"forum-item-classify\"");
+
+WriteLiteral(">[技术分享]</a>\r\n                            <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 27353), Tuple.Create("\"", 27390)
+            
+            #line 326 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 27360), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 27360), false)
+);
 
 WriteLiteral(" title=\"#\"");
 
@@ -1368,7 +2165,727 @@ WriteLiteral(" id=\"forum-others\"");
 
 WriteLiteral(" class=\"forum-float-right\"");
 
-WriteLiteral("></div>\r\n    </div>\r\n</div>");
+WriteLiteral(">\r\n            <div");
+
+WriteLiteral(" class=\"forum-user-info\"");
+
+WriteLiteral(">\r\n                <div");
+
+WriteLiteral(" class=\"forum-info-bg\"");
+
+WriteLiteral("></div>\r\n                <div");
+
+WriteLiteral(" class=\"forum-user-prop\"");
+
+WriteLiteral(">\r\n                    <div");
+
+WriteLiteral(" class=\"forum-user-pic\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral(">\r\n                            <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 28463), Tuple.Create("\"", 28512)
+, Tuple.Create(Tuple.Create("", 28469), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 28469), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" />\r\n                        </a>\r\n                    </div>\r\n                  " +
+"  <div");
+
+WriteLiteral(" class=\"forum-user-opera forum-clear-both\"");
+
+WriteLiteral(">\r\n                        <button");
+
+WriteLiteral(" class=\"forum-button\"");
+
+WriteLiteral(">登 录</button>\r\n                        <p>创建账号 | <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(">立即注册</a></p>\r\n                    </div>\r\n                </div>\r\n            </" +
+"div>\r\n            <div");
+
+WriteLiteral(" class=\"forum-operas-buttons forum-clear-both forum-auto-height\"");
+
+WriteLiteral(">\r\n                <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(">发帖</a>\r\n                <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"even\"");
+
+WriteLiteral(">签到</a>\r\n            </div>\r\n            <div");
+
+WriteLiteral(" class=\"forum-hot-article forum-clear-both\"");
+
+WriteLiteral(">\r\n                <div");
+
+WriteLiteral(" class=\"forum-type-title\"");
+
+WriteLiteral(">最近一周热帖</div>\r\n                <div");
+
+WriteLiteral(" class=\"forum-hot-item forum-auto-height\"");
+
+WriteLiteral(">\r\n                    <div");
+
+WriteLiteral(" class=\"forum-hot-img forum-float-left\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(">\r\n                            <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 29406), Tuple.Create("\"", 29455)
+, Tuple.Create(Tuple.Create("", 29412), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 29412), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" />\r\n                        </a>\r\n                    </div>\r\n                  " +
+"  <div");
+
+WriteLiteral(" class=\"forum-hot-title\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 29612), Tuple.Create("\"", 29649)
+            
+            #line 364 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 29619), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 29619), false)
+);
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(">百签软件（中山）有限公司国庆放假消息。</a>\r\n                    </div>\r\n                </div>\r\n   " +
+"             <div");
+
+WriteLiteral(" class=\"forum-hot-item forum-auto-height\"");
+
+WriteLiteral(">\r\n                    <div");
+
+WriteLiteral(" class=\"forum-hot-img forum-float-left\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(">\r\n                            <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 29946), Tuple.Create("\"", 29995)
+, Tuple.Create(Tuple.Create("", 29952), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 29952), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" />\r\n                        </a>\r\n                    </div>\r\n                  " +
+"  <div");
+
+WriteLiteral(" class=\"forum-hot-title\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 30152), Tuple.Create("\"", 30189)
+            
+            #line 374 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 30159), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 30159), false)
+);
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(">百签软件（中山）有限公司国庆放假消息。</a>\r\n                    </div>\r\n                </div>\r\n   " +
+"             <div");
+
+WriteLiteral(" class=\"forum-hot-item forum-auto-height\"");
+
+WriteLiteral(">\r\n                    <div");
+
+WriteLiteral(" class=\"forum-hot-img forum-float-left\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(">\r\n                            <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 30486), Tuple.Create("\"", 30535)
+, Tuple.Create(Tuple.Create("", 30492), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 30492), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" />\r\n                        </a>\r\n                    </div>\r\n                  " +
+"  <div");
+
+WriteLiteral(" class=\"forum-hot-title\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 30692), Tuple.Create("\"", 30729)
+            
+            #line 384 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 30699), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 30699), false)
+);
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(">百签软件（中山）有限公司国庆放假消息。</a>\r\n                    </div>\r\n                </div>\r\n   " +
+"             <div");
+
+WriteLiteral(" class=\"forum-hot-item forum-auto-height\"");
+
+WriteLiteral(">\r\n                    <div");
+
+WriteLiteral(" class=\"forum-hot-img forum-float-left\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(">\r\n                            <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 31026), Tuple.Create("\"", 31075)
+, Tuple.Create(Tuple.Create("", 31032), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 31032), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" />\r\n                        </a>\r\n                    </div>\r\n                  " +
+"  <div");
+
+WriteLiteral(" class=\"forum-hot-title\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 31232), Tuple.Create("\"", 31269)
+            
+            #line 394 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 31239), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 31239), false)
+);
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(">百签软件（中山）有限公司国庆放假消息。</a>\r\n                    </div>\r\n                </div>\r\n   " +
+"             <div");
+
+WriteLiteral(" class=\"forum-hot-item forum-auto-height\"");
+
+WriteLiteral(">\r\n                    <div");
+
+WriteLiteral(" class=\"forum-hot-img forum-float-left\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(">\r\n                            <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 31566), Tuple.Create("\"", 31615)
+, Tuple.Create(Tuple.Create("", 31572), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 31572), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" />\r\n                        </a>\r\n                    </div>\r\n                  " +
+"  <div");
+
+WriteLiteral(" class=\"forum-hot-title\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 31772), Tuple.Create("\"", 31809)
+            
+            #line 404 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 31779), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 31779), false)
+);
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(">百签软件（中山）有限公司国庆放假消息。</a>\r\n                    </div>\r\n                </div>\r\n   " +
+"             <div");
+
+WriteLiteral(" class=\"forum-hot-item forum-auto-height\"");
+
+WriteLiteral(">\r\n                    <div");
+
+WriteLiteral(" class=\"forum-hot-img forum-float-left\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(">\r\n                            <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 32106), Tuple.Create("\"", 32155)
+, Tuple.Create(Tuple.Create("", 32112), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 32112), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" />\r\n                        </a>\r\n                    </div>\r\n                  " +
+"  <div");
+
+WriteLiteral(" class=\"forum-hot-title\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 32312), Tuple.Create("\"", 32349)
+            
+            #line 414 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 32319), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 32319), false)
+);
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(">百签软件（中山）有限公司国庆放假消息。</a>\r\n                    </div>\r\n                </div>\r\n   " +
+"             <div");
+
+WriteLiteral(" class=\"forum-hot-item forum-auto-height\"");
+
+WriteLiteral(">\r\n                    <div");
+
+WriteLiteral(" class=\"forum-hot-img forum-float-left\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(">\r\n                            <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 32646), Tuple.Create("\"", 32695)
+, Tuple.Create(Tuple.Create("", 32652), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 32652), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" />\r\n                        </a>\r\n                    </div>\r\n                  " +
+"  <div");
+
+WriteLiteral(" class=\"forum-hot-title\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 32852), Tuple.Create("\"", 32889)
+            
+            #line 424 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 32859), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 32859), false)
+);
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(">百签软件（中山）有限公司国庆放假消息。</a>\r\n                    </div>\r\n                </div>\r\n   " +
+"             <div");
+
+WriteLiteral(" class=\"forum-hot-item forum-auto-height\"");
+
+WriteLiteral(">\r\n                    <div");
+
+WriteLiteral(" class=\"forum-hot-img forum-float-left\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(">\r\n                            <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 33186), Tuple.Create("\"", 33235)
+, Tuple.Create(Tuple.Create("", 33192), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 33192), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" />\r\n                        </a>\r\n                    </div>\r\n                  " +
+"  <div");
+
+WriteLiteral(" class=\"forum-hot-title\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 33392), Tuple.Create("\"", 33429)
+            
+            #line 434 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 33399), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 33399), false)
+);
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(">百签软件（中山）有限公司国庆放假消息。</a>\r\n                    </div>\r\n                </div>\r\n   " +
+"             <div");
+
+WriteLiteral(" class=\"forum-hot-item forum-auto-height\"");
+
+WriteLiteral(">\r\n                    <div");
+
+WriteLiteral(" class=\"forum-hot-img forum-float-left\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(">\r\n                            <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 33726), Tuple.Create("\"", 33775)
+, Tuple.Create(Tuple.Create("", 33732), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 33732), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" />\r\n                        </a>\r\n                    </div>\r\n                  " +
+"  <div");
+
+WriteLiteral(" class=\"forum-hot-title\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 33932), Tuple.Create("\"", 33969)
+            
+            #line 444 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 33939), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 33939), false)
+);
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(">百签软件（中山）有限公司国庆放假消息。</a>\r\n                    </div>\r\n                </div>\r\n   " +
+"             <div");
+
+WriteLiteral(" class=\"forum-hot-item forum-auto-height\"");
+
+WriteLiteral(">\r\n                    <div");
+
+WriteLiteral(" class=\"forum-hot-img forum-float-left\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(">\r\n                            <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 34266), Tuple.Create("\"", 34315)
+, Tuple.Create(Tuple.Create("", 34272), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 34272), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" />\r\n                        </a>\r\n                    </div>\r\n                  " +
+"  <div");
+
+WriteLiteral(" class=\"forum-hot-title\"");
+
+WriteLiteral(">\r\n                        <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 34472), Tuple.Create("\"", 34509)
+            
+            #line 454 "..\..\Areas\Forum\Views\Default\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 34479), Tuple.Create<System.Object, System.Int32>(Url.Action("Index","Content")
+            
+            #line default
+            #line hidden
+, 34479), false)
+);
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(">百签软件（中山）有限公司国庆放假消息。</a>\r\n                    </div>\r\n                </div>\r\n   " +
+"         </div>\r\n            <div");
+
+WriteLiteral(" class=\"forum-leifen forum-clear-both forum-auto-height\"");
+
+WriteLiteral(">\r\n                <div");
+
+WriteLiteral(" class=\"forum-type-title\"");
+
+WriteLiteral(">雷锋会员</div>\r\n                <div");
+
+WriteLiteral(" class=\"forum-leifen-list\"");
+
+WriteLiteral(">\r\n                    <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral(">\r\n                        <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 34898), Tuple.Create("\"", 34947)
+, Tuple.Create(Tuple.Create("", 34904), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 34904), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" />\r\n                    </a>\r\n                    <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral(">\r\n                        <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 35094), Tuple.Create("\"", 35143)
+, Tuple.Create(Tuple.Create("", 35100), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 35100), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" />\r\n                    </a>\r\n                    <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral(">\r\n                        <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 35290), Tuple.Create("\"", 35339)
+, Tuple.Create(Tuple.Create("", 35296), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 35296), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" />\r\n                    </a>\r\n                    <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral(">\r\n                        <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 35486), Tuple.Create("\"", 35535)
+, Tuple.Create(Tuple.Create("", 35492), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 35492), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" />\r\n                    </a>\r\n                    <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral(">\r\n                        <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 35682), Tuple.Create("\"", 35731)
+, Tuple.Create(Tuple.Create("", 35688), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 35688), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" />\r\n                    </a>\r\n                    <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral(">\r\n                        <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 35878), Tuple.Create("\"", 35927)
+, Tuple.Create(Tuple.Create("", 35884), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 35884), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" />\r\n                    </a>\r\n                    <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral(">\r\n                        <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 36074), Tuple.Create("\"", 36123)
+, Tuple.Create(Tuple.Create("", 36080), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 36080), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" />\r\n                    </a>\r\n                    <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" class=\"forum-display-block\"");
+
+WriteLiteral(">\r\n                        <img");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 36270), Tuple.Create("\"", 36319)
+, Tuple.Create(Tuple.Create("", 36276), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Forum/Assets/Images/default-pic.jpg")
+, 36276), false)
+);
+
+WriteLiteral(" alt=\"\"");
+
+WriteLiteral(" title=\"\"");
+
+WriteLiteral(" />\r\n                    </a>\r\n                </div>\r\n            </div>\r\n      " +
+"      <div");
+
+WriteLiteral(" class=\"forum-total forum-clear-both\"");
+
+WriteLiteral(">\r\n                <div");
+
+WriteLiteral(" class=\"forum-type-title\"");
+
+WriteLiteral(">社区统计信息</div>\r\n                <div");
+
+WriteLiteral(" class=\"forum-toal-detail\"");
+
+WriteLiteral(@">
+                    <p>会员数：<label>1250</label></p>
+                    <p>主题数：<label>50</label></p>
+                    <p>回复数：<label>560</label></p>
+                    <p>浏览量：<label>1560</label></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div");
+
+WriteLiteral(" id=\"forum-foot\"");
+
+WriteLiteral(" class=\"forum-clear-both\"");
+
+WriteLiteral(">\r\n    百签软件（中山）有限公司 版权所有 Copyright © 2012-2016 粤ICP备16077349号-1 站长统计 手机版\r\n</div>");
 
         }
     }

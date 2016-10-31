@@ -2461,6 +2461,7 @@
     <Content Include="Areas\Forum\Assets\favicon.ico" />
     <Content Include="Areas\Forum\Assets\Fonts\iconfont.svg" />
     <Content Include="Areas\Forum\Assets\Images\default-pic.jpg" />
+    <Content Include="Areas\Forum\Assets\Images\forum-info-bg.jpg" />
     <Content Include="Areas\Forum\Assets\Images\forum-logo.png" />
     <Content Include="Areas\Forum\Assets\Scripts\forum.js" />
     <Content Include="Areas\Forum\Assets\Styles\forum.css" />
@@ -2617,6 +2618,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GUID.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Areas\Forum\Controllers\ContentController.cs" />
     <Compile Include="Areas\Forum\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Forum\ForumAreaRegistration.cs" />
     <Compile Include="Areas\Forum\Views\Default\Index.generated.cs">
@@ -2802,6 +2804,7 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Index.generated.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\Forum\Views\Content\Index.cshtml" />
     <None Include="bundleconfig.json" />
     <None Include="Properties\PublishProfiles\Monk.Soul.pubxml" />
     <None Include="Web.Debug.config">

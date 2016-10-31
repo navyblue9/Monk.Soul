@@ -99,6 +99,7 @@ body { font-family: 'Microsoft YaHei','微软雅黑',SimSun,Arial; font-size: 13
 .forum-article-member img { width: 48px; height: 48px; border-radius: 50%; }
 .forum-article-props { margin-left: 15px; width: 747px; }
 .forum-article-title { font-size: 16px; }
+.forum-article-title a:hover { color: #df001f; }
 .forum-item-classify { color: #df001f; text-decoration: none; display: inline-block; margin-right: 5px; }
 .forum-item-title { color: #313131; text-decoration: none; }
 .forum-article-pushinfo { font-size: 12px; margin: 13px 0 0 0; }
@@ -108,3 +109,35 @@ body { font-family: 'Microsoft YaHei','微软雅黑',SimSun,Arial; font-size: 13
 .forum-article-record .forum-iconfont:before { font-size: 18px; vertical-align: middle; padding: 0 3px 0 0; }
 
 #forum-others { width: 330px; }
+.forum-info-bg { height: 140px; background: #ea5413; }
+.forum-user-prop { height: 200px; background: #fff; }
+.forum-user-pic { height: 84px; width: 84px; position: relative; top: -42px; overflow: hidden; border-radius: 50%; margin: 0 auto; }
+.forum-user-pic img { height: 84px; width: 84px; }
+.forum-user-opera { text-align: center; margin-top: -15px; }
+.forum-button { border: none; outline: none; height: 36px; line-height: 36px; text-align: center; color: #fff; background: #df001f; width: 136px; border-radius: 3px; cursor: pointer; font-size: 15px; }
+.forum-user-opera p { color: #5c6670; padding: 10px 0; font-size: 14px; }
+.forum-user-opera a { color: #c3b1ad; text-decoration: none; }
+
+.forum-operas-buttons { margin-top: 15px; background: #fff; padding: 15px; }
+.forum-operas-buttons a { display: block; height: 45px; width: 145px; color: #fff; background: #4fc277; font-size: 16px; text-align: center; line-height: 45px; float: left; margin-right: 10px; text-decoration: none; }
+.forum-operas-buttons a.even { background: #ffa750; margin-right: 0; }
+
+.forum-type-title { height: 50px; border-bottom: 1px solid #eee; background: #f9f9f9; padding: 0 15px; line-height: 50px; font-size: 16px; color: #555555; }
+.forum-hot-article { margin-top: 15px; background: #fff; }
+.forum-hot-item { padding: 15px; border-bottom: 1px solid #eeeeee; }
+.forum-hot-img img { width: 40px; height: 40px; border-radius: 5px; }
+.forum-hot-title { padding-left: 55px; line-height: 20px; }
+.forum-hot-title a { color: #555555; text-decoration: none; font-size: 14px; }
+.forum-hot-title a:hover { color: #df001f; }
+
+.forum-leifen { background: #fff; margin-top: 15px; }
+.forum-leifen-list { padding: 15px; }
+.forum-leifen-list a { float: left; margin: 0 15px 15px 0; }
+.forum-leifen-list a.even { margin-right: 0; }
+.forum-leifen-list img { width: 60px; height: 60px; border-radius: 50%; }
+.forum-total { margin-top: 15px; background: #fff; }
+.forum-toal-detail { padding: 15px; }
+.forum-toal-detail p { color: #c1c1c1; font-size: 14px; margin: 0; padding: 0; line-height: 24px; }
+.forum-toal-detail p label { color: #555; }
+
+#forum-foot { height: 50px; margin-top: 20px; text-align: center; line-height: 50px; background: #fff; color: #555; }
