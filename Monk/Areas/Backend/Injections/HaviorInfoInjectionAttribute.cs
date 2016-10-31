@@ -16,53 +16,54 @@ namespace Monk.Areas.Backend.Injections
     {
         public override void OnResultExecuting(ResultExecutingContext filterContext)
         {
-            base.OnResultExecuting(filterContext);
             var _area = filterContext.RouteData.DataTokens["area"];
-            if (_area != null && Keys.AccessVerifyAreas.Any(u => u.ToLower() == _area.ToString().ToLower()))
+            if (filterContext.Result is ViewResult || filterContext.Result is PartialViewResult)
             {
-                var _controller = filterContext.RouteData.Values["controller"].ToString();
-                var _action = filterContext.RouteData.Values["action"].ToString();
-                var _httpMethod = filterContext.HttpContext.Request.HttpMethod;
-
-                var viewModel = new V_HaviorVM();
-                var moduleList = new List<V_ModuleVM>();
-                using (var services = new DbServices())
+                if (_area != null && Keys.AccessVerifyAreas.Any(u => u.ToLower() == _area.ToString().ToLower()))
                 {
-                    services.Command((db) =>
+                    var _controller = filterContext.RouteData.Values["controller"].ToString();
+                    var _action = filterContext.RouteData.Values["action"].ToString();
+                    var _httpMethod = filterContext.HttpContext.Request.HttpMethod;
+
+                    var viewModel = new V_HaviorVM();
+                    using (var services = new DbServices())
                     {
-                        var cfg = new MapperConfigurationExpression();
-                        cfg.CreateMap<V_Havior, V_HaviorVM>();
-                        cfg.CreateMap<V_Module, V_ModuleVM>();
-                        Mapper.Initialize(cfg);
-                        viewModel = Mapper.Map<V_HaviorVM>(db.Queryable<V_Havior>().SingleOrDefault(u => u.Area == _area.ToString() && u.Controller == _controller.ToLower() && u.Action == _action.ToLower() && u.HttpMethod == _httpMethod.ToUpper()));
-                        if (!CacheManager.Contains(Keys.ModuleCacheKey))
+                        services.Command((db) =>
                         {
-                            moduleList = Mapper.Map<List<V_ModuleVM>>(db.Queryable<V_Module>().Where(c => true).ToList());
-                            CacheManager.Set(Keys.ModuleCacheKey, moduleList);
-                        }
-                    });
-                }
+                            var cfg = new MapperConfigurationExpression();
+                            cfg.CreateMap<V_Havior, V_HaviorVM>();
+                            cfg.CreateMap<V_Module, V_ModuleVM>();
+                            Mapper.Initialize(cfg);
+                            viewModel = Mapper.Map<V_HaviorVM>(db.Queryable<V_Havior>().SingleOrDefault(u => u.Area == _area.ToString() && u.Controller == _controller.ToLower() && u.Action == _action.ToLower() && u.HttpMethod == _httpMethod.ToUpper()));
+                            if (!CacheManager.Contains(Keys.ModuleCacheKey))
+                            {
+                                CacheManager.Set(Keys.ModuleCacheKey, Mapper.Map<List<V_ModuleVM>>(db.Queryable<V_Module>().Where(c => true).ToList()));
+                            }
+                        });
+                    }
 
-                // 生成面包屑导航
-                if (viewModel != null)
-                {
-                    var crumbHtml = string.Empty;
-                    CreateCrumbs(moduleList, viewModel.ModuleID, ref crumbHtml);
-                    viewModel.Crumbs = crumbHtml + "<label class=\"backend-crumbs-separator\">/</label>\r\n<a href=\"" + viewModel.Url + "\" title=\"" + viewModel.Name + "\">" + viewModel.Name + "</a>";
-                }
+                    var moduleList = CacheManager.Get<List<V_ModuleVM>>(Keys.ModuleCacheKey);
+                    // 生成面包屑导航
+                    if (viewModel != null)
+                    {
+                        var crumbHtml = string.Empty;
+                        CreateCrumbs(moduleList, viewModel.ModuleID, ref crumbHtml);
+                        viewModel.Crumbs = crumbHtml + "<label class=\"backend-crumbs-separator\">/</label>\r\n<a href=\"" + viewModel.Url + "\" title=\"" + viewModel.Name + "\">" + viewModel.Name + "</a>";
+                    }
 
-                var result = filterContext.Result;
-                if (result is ViewResult)
-                {
-                    var vresult = result as ViewResult;
-                    vresult.ViewData[Keys.HaviorInfoInjectionKey] = viewModel == null ? new V_HaviorVM() : viewModel;
-                    filterContext.Result = vresult;
-                }
-                else if (result is PartialViewResult)
-                {
-                    var presult = result as PartialViewResult;
-                    presult.ViewData[Keys.HaviorInfoInjectionKey] = viewModel == null ? new V_HaviorVM() : viewModel;
-                    filterContext.Result = presult;
+                    var result = filterContext.Result;
+                    if (result is ViewResult)
+                    {
+                        var vresult = result as ViewResult;
+                        vresult.ViewData[Keys.HaviorInfoInjectionKey] = viewModel == null ? new V_HaviorVM() : viewModel;
+                        filterContext.Result = vresult;
+                    }
+                    else if (result is PartialViewResult)
+                    {
+                        var presult = result as PartialViewResult;
+                        presult.ViewData[Keys.HaviorInfoInjectionKey] = viewModel == null ? new V_HaviorVM() : viewModel;
+                        filterContext.Result = presult;
+                    }
                 }
             }
         }

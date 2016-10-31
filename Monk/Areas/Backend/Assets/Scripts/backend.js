@@ -202,7 +202,7 @@
                     return false;
                 }
                 if (data.status >= 500) {
-                    that.errorTip("应用程序异常");
+                    that.errorTip("应用程序异常，请联系管理员");
                     return false;
                 }
                 if (data.status == "n") {
@@ -236,7 +236,7 @@
                 backend.errorTip("远程地址没找到");
             }
             else if (xhr.status >= 500) {
-                backend.errorTip("应用程序异常");
+                backend.errorTip("应用程序异常，请联系管理员");
             }
             else {
                 if (typeof callback == "function") {
@@ -505,7 +505,7 @@
                         that.errorTip("远程地址没找到");
                     }
                     else if (xhr.status >= 500) {
-                        that.errorTip("应用程序异常");
+                        that.errorTip("应用程序异常，请联系管理员");
                     }
                     else if (xhr.responseText.status == "n") {
                         that.errorTip(xhr.responseText.info);

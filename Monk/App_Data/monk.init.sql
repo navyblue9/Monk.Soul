@@ -378,6 +378,49 @@ EXEC sp_addextendedproperty N'MS_Description', N'创建时间', N'user', N'dbo',
 EXEC sp_addextendedproperty N'MS_Description', N'记录会员', N'user', N'dbo', N'table', N'OperateDetail', N'column', N'LogMemberID';
 GO
 
+-- 错误日志
+IF(OBJECT_ID('dbo.[ErrorLog]',N'U') IS NOT NULL)
+	DROP TABLE dbo.[ErrorLog]
+GO
+CREATE TABLE dbo.[ErrorLog]
+(
+	[LogID] UNIQUEIDENTIFIER PRIMARY KEY NOT NULL,	-- ID
+	[Message] TEXT,	-- 异常消息
+	[Source] TEXT,-- 应用程序
+	[TargetSite] TEXT,	-- 引起异常的方法
+	[StackTrace] TEXT,	-- 异常堆栈信息
+	[HResult] TEXT,	-- 异常编码数字
+	[HelpLink] TEXT,	-- 异常帮助文档
+	[LogTime] DATETIME NOT NULL,	-- 记录时间
+	-- 以下为通用字段，除了UpdateTime，SerialNo，LogMemberID以外，其他禁止插入，禁止更新（但不包含软删除，硬删除）
+	[SerialNo] INT IDENTITY(1,1),	-- 流水号
+	[UpdateTime] DATETIME, -- 更新时间
+	[Default] BIT NOT NULL DEFAULT(0),	-- 默认
+	[Del] BIT NOT NULL DEFAULT(0),	-- 软删除
+	[Destroy] BIT NOT NULL DEFAULT(0),	-- 硬删除
+	[CreateTime] DATETIME NOT NULL DEFAULT(GETDATE()),	-- 创建时间
+	[LogMemberID] UNIQUEIDENTIFIER NOT NULL	-- 记录会员
+)
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'错误日志', N'user', N'dbo', N'table', N'ErrorLog';
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'ID', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'LogID';
+EXEC sp_addextendedproperty N'MS_Description', N'异常消息', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'Message';
+EXEC sp_addextendedproperty N'MS_Description', N'应用程序', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'Source';
+EXEC sp_addextendedproperty N'MS_Description', N'引起异常的方法', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'TargetSite';
+EXEC sp_addextendedproperty N'MS_Description', N'异常堆栈信息', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'StackTrace';
+EXEC sp_addextendedproperty N'MS_Description', N'异常编码数字', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'HResult';
+EXEC sp_addextendedproperty N'MS_Description', N'异常帮助文档', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'HelpLink';
+EXEC sp_addextendedproperty N'MS_Description', N'记录时间', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'LogTime';
+EXEC sp_addextendedproperty N'MS_Description', N'流水号', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'SerialNo';
+EXEC sp_addextendedproperty N'MS_Description', N'更新时间', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'UpdateTime';
+EXEC sp_addextendedproperty N'MS_Description', N'默认', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'Default';
+EXEC sp_addextendedproperty N'MS_Description', N'软删除', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'Del';
+EXEC sp_addextendedproperty N'MS_Description', N'硬删除', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'Destroy';
+EXEC sp_addextendedproperty N'MS_Description', N'创建时间', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'CreateTime';
+EXEC sp_addextendedproperty N'MS_Description', N'记录会员', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'LogMemberID';
+GO
+
 
 -- 字典类别
 IF(OBJECT_ID('dbo.[DicType]',N'U') IS NOT NULL)

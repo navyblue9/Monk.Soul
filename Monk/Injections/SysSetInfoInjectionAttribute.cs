@@ -13,7 +13,6 @@ namespace Monk.Injections
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            base.OnActionExecuting(filterContext);
             if (filterContext.ActionDescriptor.IsDefined(typeof(ExemptionInjectionAttribute), false) || filterContext.ActionDescriptor.ControllerDescriptor.IsDefined(typeof(ExemptionInjectionAttribute), false)) { return; }
             var viewModel = new SysSetVM();
             if (!CacheManager.Contains(Keys.SysSetCacheKey))
@@ -37,7 +36,6 @@ namespace Monk.Injections
 
         public override void OnResultExecuting(ResultExecutingContext filterContext)
         {
-            base.OnResultExecuting(filterContext);
             var result = filterContext.Result;
             if (result is ViewResult)
             {
