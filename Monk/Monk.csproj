@@ -2472,6 +2472,7 @@
     </Content>
     <Content Include="Areas\Backend\Views\ErrorLog\Select.cshtml" />
     <Content Include="Areas\Backend\Views\ErrorLog\Detail.cshtml" />
+    <Content Include="Areas\Backend\Views\Button\Select.cshtml" />
     <None Include="Areas\Forum\Assets\_references.js" />
     <Content Include="Areas\Forum\Assets\favicon.ico" />
     <Content Include="Areas\Forum\Assets\Fonts\iconfont.svg" />
@@ -2501,6 +2502,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Backend\App_Code\Common.cs" />
     <Compile Include="Areas\Backend\BackendAreaRegistration.cs" />
+    <Compile Include="Areas\Backend\Controllers\ButtonController.cs" />
     <Compile Include="Areas\Backend\Controllers\CacheController.cs" />
     <Compile Include="Areas\Backend\Controllers\CommonController.cs" />
     <Compile Include="Areas\Backend\Controllers\DefaultController.cs" />
