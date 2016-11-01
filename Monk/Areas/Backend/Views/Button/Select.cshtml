@@ -66,6 +66,9 @@
 @section foot{
     @Html.Raw(ViewBag.HaviorInfo.FootCode)
     <script type="text/javascript">
+        function insert() {
+            window.location.href = "@Url.Action("Insert", "Button")";
+        }
     </script>
     <script type="text/html" id="tpl">
         <% for(var i=0;i < data.length;i++){ %>

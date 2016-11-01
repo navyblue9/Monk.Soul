@@ -253,32 +253,20 @@ WriteLiteral("\r\n    <script");
 
 WriteLiteral(" type=\"text/javascript\"");
 
-WriteLiteral(">\r\n        function insert() {\r\n            var ids = backend.getCheckIds();\r\n   " +
-"         if (ids.length > 0) {\r\n                window.location.href = \"");
+WriteLiteral(">\r\n        function insert() {\r\n            window.location.href = \"");
 
             
-            #line 81 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
-                                   Write(Url.Action("Insert", "Havior"));
+            #line 79 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
+                               Write(Url.Action("Insert", "Havior"));
 
             
             #line default
             #line hidden
-WriteLiteral("/\" + ids[0];\r\n            }\r\n            else {\r\n                window.location." +
-"href = \"");
+WriteLiteral("\";\r\n        }\r\n        function detail(){\r\n            var ids=backend.getCheckId" +
+"s();\r\n            if(ids.length==1){\r\n                window.location.href=\"");
 
             
             #line 84 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
-                                   Write(Url.Action("Insert", "Havior"));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\";\r\n            }\r\n        }\r\n        function detail(){\r\n            var ids=bac" +
-"kend.getCheckIds();\r\n            if(ids.length==1){\r\n                window.loca" +
-"tion.href=\"");
-
-            
-            #line 90 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
                                  Write(Url.Action("Detail","Havior",new { }));
 
             
@@ -296,7 +284,7 @@ WriteLiteral(@"/""+ids[0];
                 window.location.href = """);
 
             
-            #line 99 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
+            #line 93 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
                                    Write(Url.Action("Update", "Havior", new { }));
 
             
@@ -318,7 +306,7 @@ WriteLiteral(@"/"" + ids[0];
                     backend.post(""");
 
             
-            #line 112 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
+            #line 106 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
                              Write(Url.Action("Delete", "Havior", new { }));
 
             
@@ -376,7 +364,7 @@ WriteLiteral(">\r\n        $(function () {\r\n            var render= monk.tppl(
 "ById(\"tpl\").innerHTML);\r\n            backend.pagination(\"");
 
             
-            #line 158 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
+            #line 152 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
                            Write(Url.Action("List","Havior"));
 
             
@@ -385,7 +373,7 @@ WriteLiteral(">\r\n        $(function () {\r\n            var render= monk.tppl(
 WriteLiteral("\",");
 
             
-            #line 158 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
+            #line 152 "..\..\Areas\Backend\Views\Havior\Select.cshtml"
                                                          Write(ViewBag.SysSetInfo.PageSize);
 
             

@@ -76,13 +76,7 @@
     @Html.Raw(ViewBag.HaviorInfo.FootCode)
     <script type="text/javascript">
         function insert() {
-            var ids = backend.getCheckIds();
-            if (ids.length > 0) {
-                window.location.href = "@Url.Action("Insert", "Havior")/" + ids[0];
-            }
-            else {
-                window.location.href = "@Url.Action("Insert", "Havior")";
-            }
+            window.location.href = "@Url.Action("Insert", "Havior")";
         }
         function detail(){
             var ids=backend.getCheckIds();
