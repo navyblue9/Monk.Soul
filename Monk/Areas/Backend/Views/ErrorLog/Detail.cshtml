@@ -1,0 +1,112 @@
+﻿@model ErrorLogVM
+@{
+    ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
+    ViewBag.Keywords = ViewBag.SysSetInfo.Keywords;
+    ViewBag.Description = ViewBag.SysSetInfo.Description;
+    ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
+}
+
+@section head{
+    @Html.Raw(ViewBag.HaviorInfo.HeadCode)
+}
+
+@section crumbs{
+    @Html.Raw(ViewBag.HaviorInfo.Crumbs)
+}
+
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">记录时间</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.LogTime)
+    </div>
+</div>
+
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">会员ID</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.LogMemberID)
+    </div>
+</div>
+
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">会员账号</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.Account)
+    </div>
+</div>
+
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">应用程序</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.Source
+    </div>
+</div>
+
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">异常地址</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.ErrorUrl
+    </div>
+</div>
+
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">异常描述</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.Message
+    </div>
+</div>
+
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">引起异常的方法</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.TargetSite
+    </div>
+</div>
+
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">异常编码数字</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.HResult
+    </div>
+</div>
+
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">异常堆栈信息</label>
+    <div class="monk-form-wrap monk-form-code-wrap monk-full">
+        <pre class="monk-code" data-language="TEXT">@Model.StackTrace</pre>
+    </div>
+</div>
+
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">异常帮助文档</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.HelpLink)
+    </div>
+</div>
+
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">查看状态</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Html.Raw(DataToHtmlHelper.StatusHtml(Model.View))
+    </div>
+</div>
+
+@section operate{
+    <a href="#" class="monk-input-button alizarin" onclick="deletes();">删除记录</a>
+    <input type="reset" class="monk-input-button peterRiver" onclick="window.location.href = '@Url.Action("Select","ErrorLog")';" value="返回列表">
+    <input type="button" class="monk-input-button orange monk-form-previous" value="返回前页" onclick="history.go(-1);">
+}
+
+@section foot{
+    @Html.Raw(ViewBag.HaviorInfo.FootCode)
+    <script type="text/javascript">
+        function deletes() {
+            backend.confirm("您确定要执行此操作吗？", null, function (index) {
+                backend.post("@Url.Action("Delete","ErrorLog",new { })", { ids: "@Model.LogID" }, function (data) {
+                    window.location.href = "@Url.Action("Select", "ErrorLog")";
+                });
+            });
+        }
+    </script>
+}

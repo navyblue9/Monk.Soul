@@ -22,9 +22,11 @@ namespace Monk.Filters
 
             var sessionModel = filterContext.HttpContext.Session[Keys.SessionKey] as MemberSessionVM;
             Guid logMemberId = default(Guid);
+            var account = string.Empty;
             if (sessionModel != null)
             {
                 logMemberId = sessionModel.MemberID;
+                account = sessionModel.Account;
             }
 
             var logger = new Models.ErrorLog
@@ -37,7 +39,10 @@ namespace Monk.Filters
                 Source = ex.Source,
                 TargetSite = ex.TargetSite.ToString(),
                 HelpLink = ex.HelpLink,
-                HResult = ex.HResult.ToString()
+                HResult = ex.HResult.ToString(),
+                Account = account,
+                ErrorUrl = filterContext.HttpContext.Request.Url.AbsoluteUri,
+                View = false
             };
 
             BackgroundJob.Enqueue(() => StartLog(logger));
@@ -72,11 +77,15 @@ namespace Monk.Filters
                 });
             }
 
-            MailHelper.SendTextEmail("百签软件（中山）有限公司，技术支持", "tech@baisoft.org", "百小僧", "monk@baisoft.org", "应用程序异常通知", @"引起异常用户ID：" + logger.LogMemberID + @"
+            MailHelper.SendTextEmail("百签软件有限公司 技术支持", "tech@baisoft.org", "百小僧", "monk@baisoft.org", "应用程序异常通知", @"引起异常会员ID：" + logger.LogMemberID + @"
 
-异常消息：" + logger.Message + @"
+引起异常会员账号：" + logger.Account + @"
 
 当前异常应用程序：" + logger.Source + @"
+
+引起异常链接地址：" + logger.ErrorUrl + @"
+
+异常消息：" + logger.Message + @"
 
 引起异常的方法：" + logger.TargetSite + @"
 
@@ -89,6 +98,12 @@ namespace Monk.Filters
 异常记录时间：" + logger.LogTime + @"
 
 
+
+
+
+                                                                                                                                        来至：百签软件（中山）有限公司（http://www.baisoft.org/） 异常监控
+
+                                                                                                                                                                                                      " + DateTime.Now + @"
 ");
         }
     }

@@ -2470,6 +2470,8 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>GUID.generated.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\Backend\Views\ErrorLog\Select.cshtml" />
+    <Content Include="Areas\Backend\Views\ErrorLog\Detail.cshtml" />
     <None Include="Areas\Forum\Assets\_references.js" />
     <Content Include="Areas\Forum\Assets\favicon.ico" />
     <Content Include="Areas\Forum\Assets\Fonts\iconfont.svg" />
@@ -2502,6 +2504,7 @@
     <Compile Include="Areas\Backend\Controllers\CacheController.cs" />
     <Compile Include="Areas\Backend\Controllers\CommonController.cs" />
     <Compile Include="Areas\Backend\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Backend\Controllers\ErrorLogController.cs" />
     <Compile Include="Areas\Backend\Controllers\HaviorController.cs" />
     <Compile Include="Areas\Backend\Controllers\LoginLogController.cs" />
     <Compile Include="Areas\Backend\Controllers\ModuleController.cs" />
@@ -2510,6 +2513,7 @@
     <Compile Include="Areas\Backend\Controllers\ToolController.cs" />
     <Compile Include="Areas\Backend\Injections\HaviorInfoInjectionAttribute.cs" />
     <Compile Include="Areas\Backend\Injections\MemberInfoInjectionAttribute.cs" />
+    <Compile Include="Areas\Backend\ViewModels\ErrorLogVM.cs" />
     <Compile Include="Areas\Backend\ViewModels\MenuVM.cs" />
     <Compile Include="Areas\Backend\Views\Cache\Detail.generated.cs">
       <AutoGen>True</AutoGen>

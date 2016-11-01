@@ -64,6 +64,27 @@ namespace Monk.Models
         public DateTime LogTime {get;set;}
 
         /// <summary>
+        /// Desc:账号 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public string Account {get;set;}
+
+        /// <summary>
+        /// Desc:出错地址 
+        /// Default:- 
+        /// Nullable:True 
+        /// </summary>
+        public string ErrorUrl {get;set;}
+
+        /// <summary>
+        /// Desc:查看状态 
+        /// Default:((0)) 
+        /// Nullable:False 
+        /// </summary>
+        public Boolean View {get;set;}
+
+        /// <summary>
         /// Desc:流水号 
         /// Default:- 
         /// Nullable:False 

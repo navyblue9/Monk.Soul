@@ -392,6 +392,9 @@ CREATE TABLE dbo.[ErrorLog]
 	[HResult] TEXT,	-- 异常编码数字
 	[HelpLink] TEXT,	-- 异常帮助文档
 	[LogTime] DATETIME NOT NULL,	-- 记录时间
+	[Account] NVARCHAR(32) NOT NULL,	-- 账号
+	[ErrorUrl] NVARCHAR(500),	-- 出错地址
+	[View] BIT NOT NULL DEFAULT(0),	-- 查看状态
 	-- 以下为通用字段，除了UpdateTime，SerialNo，LogMemberID以外，其他禁止插入，禁止更新（但不包含软删除，硬删除）
 	[SerialNo] INT IDENTITY(1,1),	-- 流水号
 	[UpdateTime] DATETIME, -- 更新时间
@@ -412,6 +415,9 @@ EXEC sp_addextendedproperty N'MS_Description', N'异常堆栈信息', N'user', N
 EXEC sp_addextendedproperty N'MS_Description', N'异常编码数字', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'HResult';
 EXEC sp_addextendedproperty N'MS_Description', N'异常帮助文档', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'HelpLink';
 EXEC sp_addextendedproperty N'MS_Description', N'记录时间', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'LogTime';
+EXEC sp_addextendedproperty N'MS_Description', N'账号', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'Account';
+EXEC sp_addextendedproperty N'MS_Description', N'出错地址', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'ErrorUrl';
+EXEC sp_addextendedproperty N'MS_Description', N'查看状态', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'View';
 EXEC sp_addextendedproperty N'MS_Description', N'流水号', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'SerialNo';
 EXEC sp_addextendedproperty N'MS_Description', N'更新时间', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'UpdateTime';
 EXEC sp_addextendedproperty N'MS_Description', N'默认', N'user', N'dbo', N'table', N'ErrorLog', N'column', N'Default';
