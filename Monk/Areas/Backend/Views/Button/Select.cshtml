@@ -15,10 +15,49 @@
 }
 
 @section buttons{
+    <span class="list-btn" onclick="backend.checkall(this);"><i class="monk-iconfont icon-backend-quanxuan"></i><label>全选</label></span>
+    <span class="list-btn" onclick="insert();"><i class="monk-iconfont icon-backend-insert"></i><label>新增</label></span>
+    <span class="list-btn" onclick="detail(this);"><i class="monk-iconfont icon-backend-details"></i><label>查看</label></span>
+    <span class="list-btn" onclick="update(this);"><i class="monk-iconfont icon-backend-update"></i><label>编辑</label></span>
+    <span class="list-btn" onclick="deletes(this);"><i class="monk-iconfont icon-backend-delete"></i><label>删除</label></span>
+    <span class="list-btn float-right search-btn" onclick="backend.openSearch()"><i class="monk-iconfont icon-backend-search-list"></i><label>搜索</label></span>
 }
 
 @section searchs{
 }
+
+<div class="monk-table">
+    <table>
+        <thead>
+            <tr>
+                <th align="center" class="monk-table-status">
+                    选择
+                </th>
+                <th align="left" width="10%">
+                    账号
+                </th>
+                <th align="left" width="10%">
+                    应用程序
+                </th>
+                <th align="left">
+                    异常地址
+                </th>
+                <th align="left">
+                    简要描述
+                </th>
+                <th align="left" width="12%">
+                    记录时间
+                </th>
+                <th align="center" class="monk-table-status">
+                    查看
+                </th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+        </tfoot>
+    </table>
+</div>
 
 @section operate{
     <div id="page" class="m-pagination"></div>

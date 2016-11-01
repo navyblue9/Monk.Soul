@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
+    ViewBag.Keywords = ViewBag.SysSetInfo.Keywords;
+    ViewBag.Description = ViewBag.SysSetInfo.Description;
+    ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
+}
+
+@section head{
+    @Html.Raw(ViewBag.HaviorInfo.HeadCode)
+}
+
+@section crumbs{
+    @Html.Raw(ViewBag.HaviorInfo.Crumbs)
+}
+
+
+@section operate{
+}
+
+@section foot{
+    @Html.Raw(ViewBag.HaviorInfo.FootCode)
+}

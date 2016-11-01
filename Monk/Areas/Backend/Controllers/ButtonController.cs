@@ -15,6 +15,10 @@ namespace Monk.Areas.Backend.Controllers
     {
         public ButtonController(DbServices services) : base(services) { }
 
+        [HttpGet]
         public ActionResult Select() { return View(); }
+
+        [HttpGet]
+        public ActionResult Insert() { return View(); }
     }
 }

@@ -2473,6 +2473,7 @@
     <Content Include="Areas\Backend\Views\ErrorLog\Select.cshtml" />
     <Content Include="Areas\Backend\Views\ErrorLog\Detail.cshtml" />
     <Content Include="Areas\Backend\Views\Button\Select.cshtml" />
+    <Content Include="Areas\Backend\Views\Button\Insert.cshtml" />
     <None Include="Areas\Forum\Assets\_references.js" />
     <Content Include="Areas\Forum\Assets\favicon.ico" />
     <Content Include="Areas\Forum\Assets\Fonts\iconfont.svg" />
