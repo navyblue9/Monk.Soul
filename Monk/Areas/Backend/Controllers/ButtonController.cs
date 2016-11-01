@@ -19,6 +19,6 @@ namespace Monk.Areas.Backend.Controllers
         public ActionResult Select() { return View(); }
 
         [HttpGet]
-        public ActionResult Insert() { return View(); }
+        public ActionResult Insert() { return View(new ButtonVM() { Enable = true }); }
     }
 }
