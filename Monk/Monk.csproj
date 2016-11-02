@@ -2547,6 +2547,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Select.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Areas\Backend\Views\Button\Update.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Update.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Backend\Views\Cache\Detail.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2881,7 +2886,10 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Detail.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Areas\Backend\Views\Button\Update.cshtml" />
+    <Content Include="Areas\Backend\Views\Button\Update.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Update.generated.cs</LastGenOutput>
+    </Content>
     <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">

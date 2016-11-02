@@ -202,7 +202,7 @@ WriteLiteral(">\r\n                    调用\r\n                </th>\r\n      
 
 WriteLiteral(" align=\"left\"");
 
-WriteLiteral(" class=\"monk-table-status\"");
+WriteLiteral(" width=\"12%\"");
 
 WriteLiteral(">\r\n                    事件\r\n                </th>\r\n                <th");
 
@@ -319,7 +319,7 @@ WriteLiteral(@">
             <td>
                 <%=backend.setNull(data[i].Invoke,""无"") %>
             </td>
-            <td class=""monk-table-status"">
+            <td>
                 <%=data[i].Event %>
             </td>
             <td class=""monk-table-status"">
