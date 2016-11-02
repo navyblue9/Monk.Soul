@@ -235,10 +235,10 @@ WriteLiteral(@">
         <% for(var i=0;i < data.length;i++){ %>
         <tr>
             <td class=""monk-td-radio"">
-                <span class=""monk-iconfont icon-backend-checkbox list-radio"" data-id=""<%=data[i].Current.Key%>""></span>
+                <span class=""monk-iconfont icon-backend-checkbox list-radio"" data-id=""<%=data[i].Key%>""></span>
             </td>
             <td>
-                <%=data[i].Current.Key %>
+                <%=data[i].Key %>
             </td>
         </tr>
         <% } %>

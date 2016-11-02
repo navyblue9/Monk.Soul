@@ -2529,6 +2529,7 @@
     <Compile Include="Areas\Backend\Injections\HaviorInfoInjectionAttribute.cs" />
     <Compile Include="Areas\Backend\Injections\MemberInfoInjectionAttribute.cs" />
     <Compile Include="Areas\Backend\ViewModels\ButtonVM.cs" />
+    <Compile Include="Areas\Backend\ViewModels\CacheVM.cs" />
     <Compile Include="Areas\Backend\ViewModels\ErrorLogVM.cs" />
     <Compile Include="Areas\Backend\ViewModels\MenuVM.cs" />
     <Compile Include="Areas\Backend\ViewModels\V_ButtonVM.cs" />
