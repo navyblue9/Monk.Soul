@@ -269,7 +269,7 @@ WriteLiteral(@">
             <td class=""monk-td-radio"">
                 <span class=""monk-iconfont icon-backend-checkbox list-radio"" data-id=""<%=data[i].LogID%>""></span>
             </td>
-            <td>
+            <td class=""nowrap"">
                 <%=data[i].Account %>
             </td>
             <td>
@@ -281,7 +281,7 @@ WriteLiteral(@">
             <td>
                 <%=data[i].Message %>
             </td>
-            <td>
+            <td class=""nowrap"">
                 <%=backend.datetimeFormat(data[i].LogTime) %>
             </td>
             <td class=""monk-table-status"">
