@@ -592,7 +592,7 @@
             if (language.toLowerCase() == "html" || language.toLowerCase() == "xml") {
                 html = html.replace(/&(?!#?[a-zA-Z0-9]+;)/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/'/g, '&#39;').replace(/"/g, '&quot;')
             }
-            code.innerHTML = '<ol class="monk-code-area"><li><code>' + html.replace(/[\r\t\n]+/g, '</code></li><li><code>') + '</code></li></ol><span class="monk-code-language">' + language + '</span>';
+            code.innerHTML = '<ol class="monk-code-area"><li><code>' + html.replace(/[\r\n]+/g, '</code></li><li><code>') + '</code></li></ol><span class="monk-code-language">' + language + '</span>';
         });
     }();
     // 模板引擎
