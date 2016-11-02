@@ -344,61 +344,29 @@ WriteLiteral("\r\n    </div>\r\n</div>\r\n\r\n");
 
 DefineSection("operate", () => {
 
-WriteLiteral("\r\n    <a");
+WriteLiteral("\r\n");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2713), Tuple.Create("\"", 2780)
+WriteLiteral("    ");
+
             
             #line 80 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
-, Tuple.Create(Tuple.Create("", 2720), Tuple.Create<System.Object, System.Int32>(Url.Action("Update", "Module", new { id = Model.ModuleID })
+Write(Html.HiddenFor(u => u.ModuleID));
+
             
             #line default
             #line hidden
-, 2720), false)
-);
+WriteLiteral("\r\n");
 
-WriteLiteral(" class=\"monk-input-button turquoise\"");
+WriteLiteral("    ");
 
-WriteLiteral(">编辑数据</a>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" class=\"monk-input-button alizarin\"");
-
-WriteLiteral(" onclick=\"deletes();\"");
-
-WriteLiteral(">删除记录</a>\r\n    <input");
-
-WriteLiteral(" type=\"reset\"");
-
-WriteLiteral(" class=\"monk-input-button peterRiver\"");
-
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 2970), Tuple.Create("\"", 3036)
-, Tuple.Create(Tuple.Create("", 2980), Tuple.Create("window.location.href", 2980), true)
-, Tuple.Create(Tuple.Create(" ", 3000), Tuple.Create("=", 3001), true)
-, Tuple.Create(Tuple.Create(" ", 3002), Tuple.Create("\'", 3003), true)
             
-            #line 82 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
-              , Tuple.Create(Tuple.Create("", 3004), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Module")
+            #line 81 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.FormButtons));
+
             
             #line default
             #line hidden
-, 3004), false)
-, Tuple.Create(Tuple.Create("", 3034), Tuple.Create("\';", 3034), true)
-);
-
-WriteLiteral(" value=\"返回列表\"");
-
-WriteLiteral(">\r\n    <input");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(" class=\"monk-input-button orange monk-form-previous\"");
-
-WriteLiteral(" value=\"返回前页\"");
-
-WriteLiteral(" onclick=\"history.go(-1);\"");
-
-WriteLiteral(">\r\n");
+WriteLiteral("\r\n");
 
 });
 
@@ -411,60 +379,13 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 87 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 85 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n    <script");
-
-WriteLiteral(" type=\"text/javascript\"");
-
-WriteLiteral(">\r\n        function deletes() {\r\n            var ids = \"");
-
-            
-            #line 90 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
-                  Write(Model.ModuleID);
-
-            
-            #line default
-            #line hidden
-WriteLiteral(@""";
-            if (ids == ""11111111-1111-1111-1111-111111111111"") {
-                backend.errorTip(""顶级栏目禁止删除"");
-            }
-            else {
-                backend.confirm(""您确定要执行此操作吗？"", null, function (index) {
-                    backend.post(""");
-
-            
-            #line 96 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
-                             Write(Url.Action("Delete","Module",new { }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\", { ids: \"");
-
-            
-            #line 96 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
-                                                                              Write(Model.ModuleID);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\" }, function (data) {\r\n                        window.location.href = \"");
-
-            
-            #line 97 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
-                                           Write(Url.Action("Select","Module"));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\";\r\n                    });\r\n                });\r\n            }\r\n        }\r\n    <" +
-"/script>\r\n");
+WriteLiteral("\r\n");
 
 });
 

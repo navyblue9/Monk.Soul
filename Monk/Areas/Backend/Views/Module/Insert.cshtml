@@ -137,10 +137,7 @@
 </div>
 
 @section operate{
-    <input type="submit" class="monk-input-button turquoise monk-form-submit" value="提交保存">
-    <input type="reset" class="monk-input-button amethyst monk-form-reset" value="重置表单">
-    <input type="reset" class="monk-input-button peterRiver" onclick="window.location.href = '@Url.Action("Select","Module")';" value="返回列表">
-    <input type="button" class="monk-input-button orange monk-form-previous" value="返回前页" onclick="history.go(-1);">
+    @Html.Raw(ViewBag.HaviorInfo.FormButtons)
 }
 
 @section endForm{@{ Html.EndForm();}}

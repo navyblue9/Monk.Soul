@@ -30,6 +30,7 @@ namespace Monk.Areas.Backend.ViewModels
         public string ModuleName { get; set; }
         public int? ModuleSort { get; set; }
         public string Crumbs { get; set; }
-        public string Buttons { get; set; }
+        public string SelectButtons { get; set; }
+        public string FormButtons { get; set; }
     }
 }

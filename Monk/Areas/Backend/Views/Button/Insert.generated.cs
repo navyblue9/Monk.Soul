@@ -407,8 +407,8 @@ WriteLiteral("        ");
         {
             @class = "monk-form-input normal",
             placeholder = "调用方法",
-            datatype = "*1-25",
-            errormsg = "调用方法由1-25位英文字母、数字或符号组成",
+            datatype = "*1-100",
+            errormsg = "调用方法由1-100位英文字母、数字或符号组成",
             nullmsg = "请输入调用方法"
         }));
 
@@ -612,18 +612,18 @@ WriteLiteral(" type=\"reset\"");
 
 WriteLiteral(" class=\"monk-input-button peterRiver\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 7332), Tuple.Create("\"", 7398)
-, Tuple.Create(Tuple.Create("", 7342), Tuple.Create("window.location.href", 7342), true)
-, Tuple.Create(Tuple.Create(" ", 7362), Tuple.Create("=", 7363), true)
-, Tuple.Create(Tuple.Create(" ", 7364), Tuple.Create("\'", 7365), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 7334), Tuple.Create("\"", 7400)
+, Tuple.Create(Tuple.Create("", 7344), Tuple.Create("window.location.href", 7344), true)
+, Tuple.Create(Tuple.Create(" ", 7364), Tuple.Create("=", 7365), true)
+, Tuple.Create(Tuple.Create(" ", 7366), Tuple.Create("\'", 7367), true)
             
             #line 185 "..\..\Areas\Backend\Views\Button\Insert.cshtml"
-              , Tuple.Create(Tuple.Create("", 7366), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Button")
+              , Tuple.Create(Tuple.Create("", 7368), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Button")
             
             #line default
             #line hidden
-, 7366), false)
-, Tuple.Create(Tuple.Create("", 7396), Tuple.Create("\';", 7396), true)
+, 7368), false)
+, Tuple.Create(Tuple.Create("", 7398), Tuple.Create("\';", 7398), true)
 );
 
 WriteLiteral(" value=\"返回列表\"");

@@ -54,8 +54,10 @@ namespace Monk.Areas.Backend.Injections
                         var crumbHtml = string.Empty;
                         CreateCrumbs(moduleList, viewModel.ModuleID, ref crumbHtml);
                         viewModel.Crumbs = crumbHtml + "<label class=\"backend-crumbs-separator\">/</label>\r\n<a href=\"" + viewModel.Url + "\" title=\"" + viewModel.Name + "\">" + viewModel.Name + "</a>";
-                        // 生成按钮
-                        viewModel.Buttons = CreateButtons(buttonlist);
+                        // 生成列表按钮
+                        viewModel.SelectButtons = CreateSelectButtons(buttonlist);
+                        // 生成表单按钮
+                        viewModel.FormButtons = CreateFormButtons(buttonlist);
                     }
 
                     // 生成操作按钮
@@ -87,7 +89,7 @@ namespace Monk.Areas.Backend.Injections
             }
         }
 
-        public string CreateButtons(List<V_ButtonVM> list)
+        public string CreateSelectButtons(List<V_ButtonVM> list)
         {
             var scriptHtml = "\r\n<script type=\"text/javascript\">\r\n";
             var buttonHtml = "";
@@ -95,6 +97,20 @@ namespace Monk.Areas.Backend.Injections
             {
                 scriptHtml += item.Handle + "\r\n";
                 buttonHtml += "<span class=\"list-btn\" " + item.Event + "=\"" + item.Invoke + "\" " + item.TagAttr + " ><i class=\"monk-iconfont " + item.Iconfont + "\"></i><label>" + item.Name + "</label></span>\r\n";
+            }
+            scriptHtml += "\r\n</script>\r\n";
+
+            return scriptHtml + buttonHtml;
+        }
+
+        public string CreateFormButtons(List<V_ButtonVM> list)
+        {
+            var scriptHtml = "\r\n<script type=\"text/javascript\">\r\n";
+            var buttonHtml = "";
+            foreach (var item in list)
+            {
+                scriptHtml += item.Handle + "\r\n";
+                buttonHtml += "<input " + item.Event + "=\"" + item.Invoke + "\" " + item.TagAttr + " value=\"" + item.Name + "\">\r\n";
             }
             scriptHtml += "\r\n</script>\r\n";
 

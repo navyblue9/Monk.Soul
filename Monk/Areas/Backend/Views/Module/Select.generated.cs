@@ -100,7 +100,7 @@ WriteLiteral("    ");
 
             
             #line 19 "..\..\Areas\Backend\Views\Module\Select.cshtml"
-Write(Html.Raw(ViewBag.HaviorInfo.Buttons));
+Write(Html.Raw(ViewBag.HaviorInfo.SelectButtons));
 
             
             #line default

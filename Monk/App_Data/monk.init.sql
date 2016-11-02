@@ -672,9 +672,9 @@ CREATE TABLE dbo.[Button]
 	[Remark] NVARCHAR(200),	-- 描述
 	[Sort] INT NOT NULL DEFAULT(0),	-- 排序
 	[Event] VARCHAR(30) NOT NULL DEFAULT('onclick'),	-- 事件
-	[Invoke] VARCHAR(50),	-- 调用
+	[Invoke] VARCHAR(200),	-- 调用
 	[Handle] TEXT DEFAULT(''),	-- 处理
-	[TagAttr] NVARCHAR(200),	-- 标签属性
+	[TagAttr] NVARCHAR(300),	-- 标签属性
 	[Iconfont] NVARCHAR(100),	-- 字体图标
 	[HaviorID] UNIQUEIDENTIFIER NOT NULL,	-- 行为ID
 	[Enable] BIT DEFAULT(1) NOT NULL,	-- 启用

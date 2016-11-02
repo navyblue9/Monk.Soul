@@ -447,55 +447,18 @@ WriteLiteral(">设置该栏目是否可见</div>\r\n</div>\r\n\r\n");
 
 DefineSection("operate", () => {
 
-WriteLiteral("\r\n    <input");
+WriteLiteral("\r\n");
 
-WriteLiteral(" type=\"submit\"");
+WriteLiteral("    ");
 
-WriteLiteral(" class=\"monk-input-button turquoise monk-form-submit\"");
-
-WriteLiteral(" value=\"提交保存\"");
-
-WriteLiteral(">\r\n    <input");
-
-WriteLiteral(" type=\"reset\"");
-
-WriteLiteral(" class=\"monk-input-button amethyst monk-form-reset\"");
-
-WriteLiteral(" value=\"重置表单\"");
-
-WriteLiteral(">\r\n    <input");
-
-WriteLiteral(" type=\"reset\"");
-
-WriteLiteral(" class=\"monk-input-button peterRiver\"");
-
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 5503), Tuple.Create("\"", 5569)
-, Tuple.Create(Tuple.Create("", 5513), Tuple.Create("window.location.href", 5513), true)
-, Tuple.Create(Tuple.Create(" ", 5533), Tuple.Create("=", 5534), true)
-, Tuple.Create(Tuple.Create(" ", 5535), Tuple.Create("\'", 5536), true)
             
-            #line 142 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
-              , Tuple.Create(Tuple.Create("", 5537), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Module")
+            #line 140 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.FormButtons));
+
             
             #line default
             #line hidden
-, 5537), false)
-, Tuple.Create(Tuple.Create("", 5567), Tuple.Create("\';", 5567), true)
-);
-
-WriteLiteral(" value=\"返回列表\"");
-
-WriteLiteral(">\r\n    <input");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(" class=\"monk-input-button orange monk-form-previous\"");
-
-WriteLiteral(" value=\"返回前页\"");
-
-WriteLiteral(" onclick=\"history.go(-1);\"");
-
-WriteLiteral(">\r\n");
+WriteLiteral("\r\n");
 
 });
 
@@ -504,7 +467,7 @@ WriteLiteral("\r\n");
 DefineSection("endForm", () => {
 
             
-            #line 146 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 143 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
                     Html.EndForm();
             
             #line default
@@ -520,7 +483,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 149 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 146 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
@@ -540,7 +503,7 @@ WriteLiteral(@">
                     window.location.href = """);
 
             
-            #line 157 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 154 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
                                        Write(Url.Action("Detail","Module",new { id=""}));
 
             
