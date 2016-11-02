@@ -16,12 +16,7 @@
 
 
 @section buttons{
-    <span class="list-btn" onclick="backend.checkall(this);"><i class="monk-iconfont icon-backend-quanxuan"></i><label>全选</label></span>
-    <span class="list-btn" onclick="insert();"><i class="monk-iconfont icon-backend-insert"></i><label>新增</label></span>
-    <span class="list-btn" onclick="detail(this);"><i class="monk-iconfont icon-backend-details"></i><label>查看</label></span>
-    <span class="list-btn" onclick="update(this);"><i class="monk-iconfont icon-backend-update"></i><label>编辑</label></span>
-    <span class="list-btn" onclick="deletes(this);"><i class="monk-iconfont icon-backend-delete"></i><label>删除</label></span>
-    <span class="list-btn float-right search-btn" onclick="backend.openSearch()"><i class="monk-iconfont icon-backend-search-list"></i><label>搜索</label></span>
+    @Html.Raw(ViewBag.HaviorInfo.Buttons)
 }
 
 <div class="monk-table">
@@ -57,55 +52,6 @@
 @section foot{
     @Html.Raw(ViewBag.HaviorInfo.FootCode)
     @Scripts.Render("~/Assets/Backend/Linq/Script")
-    <script type="text/javascript">
-        function insert() {
-            var ids = backend.getCheckIds();
-            if (ids.length > 0) {
-                window.location.href = "@Url.Action("Insert","Module")/" + ids[0];
-            }
-            else {
-                window.location.href = "@Url.Action("Insert","Module")";
-            }
-        }
-        function detail() {
-            var ids = backend.getCheckIds();
-            if (ids.length == 1) {
-                window.location.href = "@Url.Action("Detail","Module",new { })/" + ids[0];
-            }
-            else {
-                backend.Tip("只能选择一条数据进行操作");
-            }
-        }
-        function update() {
-            var ids = backend.getCheckIds();
-            if (ids.length == 1) {
-                window.location.href = "@Url.Action("Update","Module",new { })/" + ids[0];
-            }
-            else {
-                backend.Tip("只能选择一条数据进行操作");
-            }
-        }
-        function deletes() {
-            var ids = backend.getCheckIds();
-            if (ids.indexOf("11111111-1111-1111-1111-111111111111") > -1) {
-                backend.errorTip("顶级栏目禁止删除");
-            }
-            else {
-                if (ids.length < 1) {
-                    backend.Tip("至少选择一条进行操作");
-                }
-                else {
-                    backend.confirm("您确定要执行此操作吗？", null, function (index) {
-                        backend.post("@Url.Action("Delete","Module",new { })", { ids: ids.toString() }, function (data) {
-                            backend.get("@Url.Action("List","Module")", {}, function (data) {
-                                $(".monk-table table tbody").html(getModuleTreeHtml(data.data));
-                            });
-                        });
-                    });
-                }
-            }
-        }
-    </script>
     <script type="text/html" id="tpl">
         <tr>
             <td class="monk-td-radio">

@@ -94,67 +94,18 @@ WriteLiteral("\r\n\r\n");
 
 DefineSection("buttons", () => {
 
-WriteLiteral("\r\n    <span");
+WriteLiteral("\r\n");
 
-WriteLiteral(" class=\"list-btn\"");
+WriteLiteral("    ");
 
-WriteLiteral(" onclick=\"backend.checkall(this);\"");
+            
+            #line 19 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.Buttons));
 
-WriteLiteral("><i");
-
-WriteLiteral(" class=\"monk-iconfont icon-backend-quanxuan\"");
-
-WriteLiteral("></i><label>全选</label></span>\r\n    <span");
-
-WriteLiteral(" class=\"list-btn\"");
-
-WriteLiteral(" onclick=\"insert();\"");
-
-WriteLiteral("><i");
-
-WriteLiteral(" class=\"monk-iconfont icon-backend-insert\"");
-
-WriteLiteral("></i><label>新增</label></span>\r\n    <span");
-
-WriteLiteral(" class=\"list-btn\"");
-
-WriteLiteral(" onclick=\"detail(this);\"");
-
-WriteLiteral("><i");
-
-WriteLiteral(" class=\"monk-iconfont icon-backend-details\"");
-
-WriteLiteral("></i><label>查看</label></span>\r\n    <span");
-
-WriteLiteral(" class=\"list-btn\"");
-
-WriteLiteral(" onclick=\"update(this);\"");
-
-WriteLiteral("><i");
-
-WriteLiteral(" class=\"monk-iconfont icon-backend-update\"");
-
-WriteLiteral("></i><label>编辑</label></span>\r\n    <span");
-
-WriteLiteral(" class=\"list-btn\"");
-
-WriteLiteral(" onclick=\"deletes(this);\"");
-
-WriteLiteral("><i");
-
-WriteLiteral(" class=\"monk-iconfont icon-backend-delete\"");
-
-WriteLiteral("></i><label>删除</label></span>\r\n    <span");
-
-WriteLiteral(" class=\"list-btn float-right search-btn\"");
-
-WriteLiteral(" onclick=\"backend.openSearch()\"");
-
-WriteLiteral("><i");
-
-WriteLiteral(" class=\"monk-iconfont icon-backend-search-list\"");
-
-WriteLiteral("></i><label>搜索</label></span>\r\n");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
 
 });
 
@@ -207,7 +158,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 58 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+            #line 53 "..\..\Areas\Backend\Views\Module\Select.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
@@ -218,111 +169,13 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 59 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+            #line 54 "..\..\Areas\Backend\Views\Module\Select.cshtml"
 Write(Scripts.Render("~/Assets/Backend/Linq/Script"));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n    <script");
-
-WriteLiteral(" type=\"text/javascript\"");
-
-WriteLiteral(">\r\n        function insert() {\r\n            var ids = backend.getCheckIds();\r\n   " +
-"         if (ids.length > 0) {\r\n                window.location.href = \"");
-
-            
-            #line 64 "..\..\Areas\Backend\Views\Module\Select.cshtml"
-                                   Write(Url.Action("Insert","Module"));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("/\" + ids[0];\r\n            }\r\n            else {\r\n                window.location." +
-"href = \"");
-
-            
-            #line 67 "..\..\Areas\Backend\Views\Module\Select.cshtml"
-                                   Write(Url.Action("Insert","Module"));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\";\r\n            }\r\n        }\r\n        function detail() {\r\n            var ids = " +
-"backend.getCheckIds();\r\n            if (ids.length == 1) {\r\n                wind" +
-"ow.location.href = \"");
-
-            
-            #line 73 "..\..\Areas\Backend\Views\Module\Select.cshtml"
-                                   Write(Url.Action("Detail","Module",new { }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral(@"/"" + ids[0];
-            }
-            else {
-                backend.Tip(""只能选择一条数据进行操作"");
-            }
-        }
-        function update() {
-            var ids = backend.getCheckIds();
-            if (ids.length == 1) {
-                window.location.href = """);
-
-            
-            #line 82 "..\..\Areas\Backend\Views\Module\Select.cshtml"
-                                   Write(Url.Action("Update","Module",new { }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral(@"/"" + ids[0];
-            }
-            else {
-                backend.Tip(""只能选择一条数据进行操作"");
-            }
-        }
-        function deletes() {
-            var ids = backend.getCheckIds();
-            if (ids.indexOf(""11111111-1111-1111-1111-111111111111"") > -1) {
-                backend.errorTip(""顶级栏目禁止删除"");
-            }
-            else {
-                if (ids.length < 1) {
-                    backend.Tip(""至少选择一条进行操作"");
-                }
-                else {
-                    backend.confirm(""您确定要执行此操作吗？"", null, function (index) {
-                        backend.post(""");
-
-            
-            #line 99 "..\..\Areas\Backend\Views\Module\Select.cshtml"
-                                 Write(Url.Action("Delete","Module",new { }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\", { ids: ids.toString() }, function (data) {\r\n                            backen" +
-"d.get(\"");
-
-            
-            #line 100 "..\..\Areas\Backend\Views\Module\Select.cshtml"
-                                    Write(Url.Action("List","Module"));
-
-            
-            #line default
-            #line hidden
-WriteLiteral(@""", {}, function (data) {
-                                $("".monk-table table tbody"").html(getModuleTreeHtml(data.data));
-                            });
-                        });
-                    });
-                }
-            }
-        }
-    </script>
-    <script");
 
 WriteLiteral(" type=\"text/html\"");
 
@@ -386,7 +239,7 @@ WriteLiteral(@">
             backend.get(""");
 
             
-            #line 160 "..\..\Areas\Backend\Views\Module\Select.cshtml"
+            #line 106 "..\..\Areas\Backend\Views\Module\Select.cshtml"
                     Write(Url.Action("List","Module"));
 
             
