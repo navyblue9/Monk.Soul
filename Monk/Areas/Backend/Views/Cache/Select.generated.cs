@@ -156,6 +156,20 @@ WriteLiteral(">\r\n                    缓存Key\r\n                </th>\r\n   
 "/thead>\r\n        <tbody></tbody>\r\n        <tfoot>\r\n        </tfoot>\r\n    </table" +
 ">\r\n</div>\r\n\r\n");
 
+DefineSection("operate", () => {
+
+WriteLiteral("\r\n    <div");
+
+WriteLiteral(" id=\"page\"");
+
+WriteLiteral(" class=\"m-pagination\"");
+
+WriteLiteral("></div>\r\n");
+
+});
+
+WriteLiteral("\r\n");
+
 DefineSection("foot", () => {
 
 WriteLiteral("\r\n");
@@ -163,7 +177,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 43 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+            #line 47 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
 Write(ViewBag.HaviorInfo.FootCode);
 
             
@@ -177,7 +191,7 @@ WriteLiteral(">\r\n        function detail() {\r\n            var ids = backend.
 "         if (ids.length == 1) {\r\n                backend.postLocation(\"");
 
             
-            #line 48 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+            #line 52 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
                                  Write(Url.Action("Detail","Cache",new { }));
 
             
@@ -200,7 +214,7 @@ WriteLiteral(@"/"", { id: ids[0] })
                     backend.post(""");
 
             
-            #line 62 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+            #line 66 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
                              Write(Url.Action("Delete","Cache",new { }));
 
             
@@ -210,7 +224,7 @@ WriteLiteral("\", { ids: ids.toString() }, function (data) {\r\n                
 "t(\"");
 
             
-            #line 63 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+            #line 67 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
                                 Write(Url.Action("RuntimeCache", "Cache"));
 
             
@@ -248,18 +262,27 @@ WriteLiteral(@">
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral(">\r\n        var render = monk.tppl(document.getElementById(\"tpl\").innerHTML);\r\n   " +
-"     $(function () {\r\n            backend.get(\"");
+"     $(function () {\r\n            backend.pagination(\"");
 
             
-            #line 87 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
-                    Write(Url.Action("RuntimeCache", "Cache"));
+            #line 91 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+                           Write(Url.Action("List","Cache"));
 
             
             #line default
             #line hidden
-WriteLiteral("\", {}, function (data) {\r\n                var html = render(data);\r\n             " +
-"   $(\".monk-table table tbody\").html(html);\r\n            });\r\n        });\r\n    <" +
-"/script>\r\n");
+WriteLiteral("\",");
+
+            
+            #line 91 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+                                                        Write(ViewBag.SysSetInfo.PageSize);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(",{},function(data){\r\n                var html=  render(data);\r\n                $(" +
+"\".monk-table table tbody\").html(html);\r\n            });\r\n        });\r\n    </scri" +
+"pt>\r\n");
 
 });
 

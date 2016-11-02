@@ -39,6 +39,10 @@
     </table>
 </div>
 
+@section operate{
+    <div id="page" class="m-pagination"></div>
+}
+
 @section foot{
     @ViewBag.HaviorInfo.FootCode
     <script type="text/javascript">
@@ -84,8 +88,8 @@
     <script type="text/javascript">
         var render = monk.tppl(document.getElementById("tpl").innerHTML);
         $(function () {
-            backend.get("@Url.Action("RuntimeCache", "Cache")", {}, function (data) {
-                var html = render(data);
+            backend.pagination("@Url.Action("List","Cache")",@ViewBag.SysSetInfo.PageSize,{},function(data){
+                var html=  render(data);
                 $(".monk-table table tbody").html(html);
             });
         });

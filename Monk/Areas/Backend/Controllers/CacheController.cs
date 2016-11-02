@@ -15,20 +15,22 @@ namespace Monk.Areas.Backend.Controllers
         public ActionResult Select() { return View(); }
 
         [HttpGet]
-        public JsonResult RuntimeCache()
+        public JsonResult List(int? pageSize, int pageIndex = 0)
         {
             var clientResult = new JsonData<List<CacheVM>>();
+            var setVewModel = RouteData.DataTokens[Keys.SysSetInfoInjectionKey] as SysSetVM;
+            pageSize = pageSize == null ? setVewModel.PageSize : pageSize;
+
             var list = new List<CacheVM>();
             var caches = HttpRuntime.Cache.GetEnumerator();
             while (caches.MoveNext())
             {
                 list.Add(new CacheVM()
                 {
-                    Key = caches.Key.ToString(),
-                    Value = caches.Value
+                    Key = caches.Key.ToString()
                 });
             }
-            clientResult.SetClientData("y", "获取成功", list.OrderBy(u => u.Key).ToList());
+            clientResult.SetClientData("y", "获取成功", list.OrderBy(u => u.Key).Skip(((pageIndex + 1) - 1) * Convert.ToInt32(pageSize)).Take(Convert.ToInt32(pageSize)).ToList(), new { pageSize, pageIndex = Convert.ToInt32(pageIndex + 1), total = list.Count() });
             return Json(clientResult, JsonRequestBehavior.AllowGet);
         }
 
