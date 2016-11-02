@@ -43,13 +43,444 @@ namespace ASP
             
             #line 2 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
   
-    ViewBag.Title = "Detail";
-    Layout = "~/Areas/Backend/Views/Shared/_Detail.cshtml";
+    ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
+    ViewBag.Keywords = ViewBag.SysSetInfo.Keywords;
+    ViewBag.Description = ViewBag.SysSetInfo.Description;
+    ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n\r\n<h2>Detail</h2>\r\n\r\n");
+WriteLiteral("\r\n\r\n");
+
+DefineSection("head", () => {
+
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 11 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.HeadCode));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+});
+
+WriteLiteral("\r\n");
+
+DefineSection("crumbs", () => {
+
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 15 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.Crumbs));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+});
+
+WriteLiteral("\r\n<div");
+
+WriteLiteral(" class=\"monk-form-item\"");
+
+WriteLiteral(">\r\n    <label");
+
+WriteLiteral(" for=\"\"");
+
+WriteLiteral(" class=\"monk-form-label\"");
+
+WriteLiteral(">所属行为</label>\r\n    <div");
+
+WriteLiteral(" class=\"monk-form-wrap monk-form-detail-wrap monk-full\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("        ");
+
+            
+            #line 21 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
+   Write(Model.HaviorName);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n    </div>\r\n</div>\r\n<div");
+
+WriteLiteral(" class=\"monk-form-item\"");
+
+WriteLiteral(">\r\n    <label");
+
+WriteLiteral(" for=\"\"");
+
+WriteLiteral(" class=\"monk-form-label\"");
+
+WriteLiteral(">按钮名称</label>\r\n    <div");
+
+WriteLiteral(" class=\"monk-form-wrap monk-form-detail-wrap monk-full\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("        ");
+
+            
+            #line 27 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
+   Write(Model.Name);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n    </div>\r\n</div>\r\n<div");
+
+WriteLiteral(" class=\"monk-form-item\"");
+
+WriteLiteral(">\r\n    <label");
+
+WriteLiteral(" for=\"\"");
+
+WriteLiteral(" class=\"monk-form-label\"");
+
+WriteLiteral(">按钮描述</label>\r\n    <div");
+
+WriteLiteral(" class=\"monk-form-wrap monk-form-detail-wrap monk-full\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("        ");
+
+            
+            #line 33 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
+   Write(DataToHtmlHelper.NullHtml(Model.Remark, "无"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n    </div>\r\n</div>\r\n<div");
+
+WriteLiteral(" class=\"monk-form-item\"");
+
+WriteLiteral(">\r\n    <label");
+
+WriteLiteral(" for=\"\"");
+
+WriteLiteral(" class=\"monk-form-label\"");
+
+WriteLiteral(">排序数字</label>\r\n    <div");
+
+WriteLiteral(" class=\"monk-form-wrap monk-form-detail-wrap monk-full\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("        ");
+
+            
+            #line 39 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
+   Write(Model.Sort);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n    </div>\r\n</div>\r\n<div");
+
+WriteLiteral(" class=\"monk-form-item\"");
+
+WriteLiteral(">\r\n    <label");
+
+WriteLiteral(" for=\"\"");
+
+WriteLiteral(" class=\"monk-form-label\"");
+
+WriteLiteral(">绑定事件</label>\r\n    <div");
+
+WriteLiteral(" class=\"monk-form-wrap monk-form-detail-wrap monk-full\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("        ");
+
+            
+            #line 45 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
+   Write(Model.Event);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n    </div>\r\n</div>\r\n<div");
+
+WriteLiteral(" class=\"monk-form-item\"");
+
+WriteLiteral(">\r\n    <label");
+
+WriteLiteral(" for=\"\"");
+
+WriteLiteral(" class=\"monk-form-label\"");
+
+WriteLiteral(">调用方法</label>\r\n    <div");
+
+WriteLiteral(" class=\"monk-form-wrap monk-form-detail-wrap monk-full\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("        ");
+
+            
+            #line 51 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
+   Write(Model.Invoke);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n    </div>\r\n</div>\r\n<div");
+
+WriteLiteral(" class=\"monk-form-item\"");
+
+WriteLiteral(">\r\n    <label");
+
+WriteLiteral(" for=\"\"");
+
+WriteLiteral(" class=\"monk-form-label\"");
+
+WriteLiteral(">方法定义</label>\r\n    <div");
+
+WriteLiteral(" class=\"monk-form-wrap monk-form-code-wrap monk-full\"");
+
+WriteLiteral(">\r\n        <pre");
+
+WriteLiteral(" class=\"monk-code\"");
+
+WriteLiteral(" data-language=\"JAVASCRIPT\"");
+
+WriteLiteral(">");
+
+            
+            #line 57 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
+                                                     Write(Model.Handle);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</pre>\r\n    </div>\r\n</div>\r\n<div");
+
+WriteLiteral(" class=\"monk-form-item\"");
+
+WriteLiteral(">\r\n    <label");
+
+WriteLiteral(" for=\"\"");
+
+WriteLiteral(" class=\"monk-form-label\"");
+
+WriteLiteral(">标签属性</label>\r\n    <div");
+
+WriteLiteral(" class=\"monk-form-wrap monk-form-detail-wrap monk-full\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("        ");
+
+            
+            #line 63 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
+   Write(DataToHtmlHelper.NullHtml(Model.TagAttr, "无"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n    </div>\r\n</div>\r\n<div");
+
+WriteLiteral(" class=\"monk-form-item\"");
+
+WriteLiteral(">\r\n    <label");
+
+WriteLiteral(" for=\"\"");
+
+WriteLiteral(" class=\"monk-form-label\"");
+
+WriteLiteral(">字体图标</label>\r\n    <div");
+
+WriteLiteral(" class=\"monk-form-wrap monk-form-detail-wrap monk-full\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("        ");
+
+            
+            #line 69 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
+   Write(Html.Raw(DataToHtmlHelper.GetIconfont(Model.Iconfont)));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n    </div>\r\n</div>\r\n<div");
+
+WriteLiteral(" class=\"monk-form-item\"");
+
+WriteLiteral(">\r\n    <label");
+
+WriteLiteral(" for=\"\"");
+
+WriteLiteral(" class=\"monk-form-label\"");
+
+WriteLiteral(">开放状态</label>\r\n    <div");
+
+WriteLiteral(" class=\"monk-form-wrap monk-form-detail-wrap monk-full\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("        ");
+
+            
+            #line 75 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
+   Write(Html.Raw(DataToHtmlHelper.StatusHtml(Model.Enable)));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n    </div>\r\n</div>\r\n\r\n<div");
+
+WriteLiteral(" class=\"monk-form-item\"");
+
+WriteLiteral(">\r\n    <label");
+
+WriteLiteral(" for=\"\"");
+
+WriteLiteral(" class=\"monk-form-label\"");
+
+WriteLiteral(">更新时间</label>\r\n    <div");
+
+WriteLiteral(" class=\"monk-form-wrap monk-form-detail-wrap monk-full\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("        ");
+
+            
+            #line 82 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
+   Write(DataToHtmlHelper.NullHtml(Model.UpdateTime, "无"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n    </div>\r\n</div>\r\n\r\n");
+
+DefineSection("operate", () => {
+
+WriteLiteral("\r\n    <a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 2855), Tuple.Create("\"", 2922)
+            
+            #line 87 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
+, Tuple.Create(Tuple.Create("", 2862), Tuple.Create<System.Object, System.Int32>(Url.Action("Update", "Button", new { id = Model.ButtonID })
+            
+            #line default
+            #line hidden
+, 2862), false)
+);
+
+WriteLiteral(" class=\"monk-input-button turquoise\"");
+
+WriteLiteral(">编辑数据</a>\r\n    <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" class=\"monk-input-button alizarin\"");
+
+WriteLiteral(" onclick=\"deletes();\"");
+
+WriteLiteral(">删除记录</a>\r\n    <input");
+
+WriteLiteral(" type=\"reset\"");
+
+WriteLiteral(" class=\"monk-input-button peterRiver\"");
+
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 3112), Tuple.Create("\"", 3178)
+, Tuple.Create(Tuple.Create("", 3122), Tuple.Create("window.location.href", 3122), true)
+, Tuple.Create(Tuple.Create(" ", 3142), Tuple.Create("=", 3143), true)
+, Tuple.Create(Tuple.Create(" ", 3144), Tuple.Create("\'", 3145), true)
+            
+            #line 89 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
+              , Tuple.Create(Tuple.Create("", 3146), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Button")
+            
+            #line default
+            #line hidden
+, 3146), false)
+, Tuple.Create(Tuple.Create("", 3176), Tuple.Create("\';", 3176), true)
+);
+
+WriteLiteral(" value=\"返回列表\"");
+
+WriteLiteral(">\r\n    <input");
+
+WriteLiteral(" type=\"button\"");
+
+WriteLiteral(" class=\"monk-input-button orange monk-form-previous\"");
+
+WriteLiteral(" value=\"返回前页\"");
+
+WriteLiteral(" onclick=\"history.go(-1);\"");
+
+WriteLiteral(">\r\n");
+
+});
+
+WriteLiteral("\r\n");
+
+DefineSection("foot", () => {
+
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 94 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n    <script");
+
+WriteLiteral(" type=\"text/javascript\"");
+
+WriteLiteral(">\r\n        function deletes() {\r\n            backend.confirm(\"您确定要执行此操作吗？\", null," +
+" function (index) {\r\n                backend.post(\"");
+
+            
+            #line 98 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
+                         Write(Url.Action("Delete","Button",new { }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\", { ids: \"");
+
+            
+            #line 98 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
+                                                                          Write(Model.ButtonID);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\" }, function (data) {\r\n                    window.location.href = \"");
+
+            
+            #line 99 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
+                                       Write(Url.Action("Select", "Button"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\";\r\n                });\r\n            });\r\n        }\r\n    </script>\r\n");
+
+});
 
         }
     }

@@ -2887,6 +2887,7 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Detail.generated.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\Backend\Views\Button\Update.cshtml" />
     <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">

@@ -1,0 +1,206 @@
+﻿@model V_ButtonVM
+@{
+    ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
+    ViewBag.Keywords = ViewBag.SysSetInfo.Keywords;
+    ViewBag.Description = ViewBag.SysSetInfo.Description;
+    ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
+}
+
+@section head{
+    @Html.Raw(ViewBag.HaviorInfo.HeadCode)
+    @Styles.Render("~/Assets/Backend/Editor.MD/Style")
+}
+
+@section crumbs{
+    @Html.Raw(ViewBag.HaviorInfo.Crumbs)
+}
+
+@section beginForm{@{ Html.BeginForm("Update", "Button", FormMethod.Post, new { @class = "monk-form" });}}
+
+<div class="monk-form-item">
+    <label for="Havior" class="monk-form-label">所属行为</label>
+    <div class="monk-form-wrap">
+        <input datatype="*" errormsg="请选择所属行为" id="HaviorID" name="HaviorID" nullmsg="请选择所属行为" type="hidden" value="@Model.HaviorID" />
+        <input class="monk-form-input normal" id="Havior" type="text" value="@Model.HaviorName" placeholder="请输入或选择所属行为" />
+        <span class="monk-iconfont icon-monk-required"></span>
+        <span class="monk-iconfont monk-select-arrow icon-backend-search-list border-left"></span>
+    </div>
+    <div class="monk-form-tip">请输入或选择所属行为</div>
+</div>
+
+<div class="monk-form-item">
+    <label for="Name" class="monk-form-label">按钮名称</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        @Html.TextBoxFor(u => u.Name,
+        new
+        {
+            @class = "monk-form-input normal",
+            placeholder = "按钮名称",
+            datatype = "*1-16",
+            errormsg = "按钮名称由1-16位英文字母、数字或符号组成",
+            nullmsg = "请输入按钮名称"
+        })
+        <span class="monk-iconfont icon-monk-required"></span>
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
+    </div>
+    <div class="monk-form-tip">通常按钮名称不宜过长，2-4个字最为恰当</div>
+</div>
+
+<div class="monk-form-item">
+    <label for="Remark" class="monk-form-label">按钮描述</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input textarea-icon"></span>
+        @Html.TextAreaFor(u => u.Remark,
+        new
+        {
+            @class = "monk-form-textarea normal",
+            placeholder = "按钮描述",
+            datatype = "*1-100",
+            ignore = "ignore",
+            errormsg = "按钮描述由1-100位英文字母、数字或符号组成",
+            nullmsg = "请输入按钮描述"
+        })
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input textarea-icon"></span>
+    </div>
+    <div class="monk-form-tip">简单一句话，描述一下该按钮的作用吧。</div>
+</div>
+
+<div class="monk-form-item">
+    <label for="Sort" class="monk-form-label">排序数字</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        @Html.TextBoxFor(u => u.Sort,
+        new
+        {
+            @class = "monk-form-input min",
+            placeholder = "排序数字",
+            datatype = "n",
+            errormsg = "排序数字必须是正整数",
+            nullmsg = "请输入排序数字"
+        })
+        <span class="monk-iconfont icon-monk-required"></span>
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
+    </div>
+    <div class="monk-form-tip">数字越小，越排前面</div>
+</div>
+
+<div class="monk-form-item">
+    <label for="Event" class="monk-form-label">绑定事件</label>
+    <div class="monk-form-wrap monk-form-select-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        <input type="text" class="monk-form-input min" placeholder="请输入或选择..." />
+        <span class="monk-iconfont icon-monk-required"></span>
+        <span class="monk-iconfont monk-select-arrow icon-monk-arrowdown border-left"></span>
+    </div>
+    <div class="monk-form-select monk-none">
+        <select class="monk-select" name="Event" datatype="*" nullmsg="请选择绑定事件" errormsg="请选择绑定事件" data-value="@Model.Event">
+            <option value="">请输入或选择...</option>
+            <option value="onclick">单击</option>
+            <option value="ondblclick">双击</option>
+        </select>
+    </div>
+    <div class="monk-form-tip">为该按钮绑定触发事件类型，通常选择 单击事件（onclick）</div>
+</div>
+
+<div class="monk-form-item">
+    <label for="Invoke" class="monk-form-label">调用方法</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        @Html.TextBoxFor(u => u.Invoke,
+        new
+        {
+            @class = "monk-form-input normal",
+            placeholder = "调用方法",
+            datatype = "*1-25",
+            errormsg = "调用方法由1-25位英文字母、数字或符号组成",
+            nullmsg = "请输入调用方法"
+        })
+        <span class="monk-iconfont icon-monk-required"></span>
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
+    </div>
+    <div class="monk-form-tip">通常格式为：insert(this); ，为了避免标签单双引号冲突问题，规定全部字符串用 <label class="tipcolor">单引号</label></div>
+</div>
+
+<div class="monk-form-item">
+    <label for="Handle" class="monk-form-label">方法定义</label>
+    <div class="monk-editor-code" id="handle-code"><textarea style="display:none;">@Model.Handle</textarea></div>
+    <div class="monk-form-tip">这里写完整的方法定义代码，如：function insert(e){ // 你的代码 };，<label class="tipcolor">按F11可以全屏，ESC可以退出</label></div>
+</div>
+
+<div class="monk-form-item">
+    <label for="TagAttr" class="monk-form-label">标签属性</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input textarea-icon"></span>
+        @Html.TextAreaFor(u => u.TagAttr,
+        new
+        {
+            @class = "monk-form-textarea normal",
+            placeholder = "标签属性",
+            datatype = "*1-100",
+            ignore = "ignore",
+            errormsg = "标签属性由1-100位英文字母、数字或符号组成",
+            nullmsg = "请输入标签属性"
+        })
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input textarea-icon"></span>
+    </div>
+    <div class="monk-form-tip">可以为按钮标签添加HTML属性，如：style="color:#000;" data-name="xxx"</div>
+</div>
+<div class="monk-form-item">
+    <label for="Iconfont" class="monk-form-label">字体图标</label>
+    <div class="monk-form-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        @Html.TextBoxFor(u => u.Iconfont,
+        new
+        {
+            @class = "monk-form-input normal",
+            placeholder = "字体图标",
+            datatype = "*1-50",
+            ignore = "ignore",
+            errormsg = "字体图标由1-50位英文字母、数字或符号组成",
+            nullmsg = "请输入字体图标"
+        })
+        <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
+    </div>
+    <div class="monk-form-tip">目前只支持阿里图标，格式为：icon-图标class，默认为文件字体图标</div>
+</div>
+
+<div class="monk-form-item">
+    <label for="Enable" class="monk-form-label">开放状态</label>
+    <div class="monk-form-switch-list">
+        @Html.CheckBoxFor(u => u.Enable,
+       new
+       {
+           @class = "monk-switch",
+           text = "开放"
+       })
+    </div>
+    <div class="monk-form-tip">设置该按钮是否开放</div>
+</div>
+
+@section operate{
+    @Html.HiddenFor(u => u.ButtonID)
+    <input type="submit" class="monk-input-button turquoise monk-form-submit" value="提交保存">
+    <input type="reset" class="monk-input-button amethyst monk-form-reset" value="重置表单">
+    <input type="reset" class="monk-input-button peterRiver" onclick="window.location.href = '@Url.Action("Select","Button")';" value="返回列表">
+    <input type="button" class="monk-input-button orange monk-form-previous" value="返回前页" onclick="history.go(-1);">
+}
+
+@section endForm{@{ Html.EndForm();}}
+
+@section foot{
+    @Html.Raw(ViewBag.HaviorInfo.FootCode)
+    @Scripts.Render("~/Assets/Backend/Editor.MD/Script", "~/Assets/Backend/AutoComplete/Script")
+    <script type="text/javascript">
+        $(function () {
+            backend.autoComplete('#Havior', '@Url.Action("Haviors", "Button")', function (suggestion) {
+                $("#HaviorID").val(suggestion.data);
+            });
+            var handlecode = backend.codeEditor("handle-code", "Handle", "javascript");
+            backend.validform(function (data) {
+                window.location.href = "@Url.Action("Detail","Button",new { id=Model.ButtonID})";
+            });
+        });
+    </script>
+}

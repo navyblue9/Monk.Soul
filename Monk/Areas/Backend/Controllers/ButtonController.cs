@@ -90,9 +90,51 @@ namespace Monk.Areas.Backend.Controllers
             services.Command((db) =>
             {
                 Mapper.Initialize(c => c.CreateMap<V_Button, V_ButtonVM>());
-                viewModel = Mapper.Map<V_ButtonVM>(db.Queryable<V_Button>().SingleOrDefault(u => u.HaviorID == id));
+                viewModel = Mapper.Map<V_ButtonVM>(db.Queryable<V_Button>().SingleOrDefault(u => u.ButtonID == id));
             });
             return View(viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult Update(Guid? id)
+        {
+            if (id == null) return Content("非法参数");
+            var viewModel = new V_ButtonVM();
+            services.Command((db) =>
+            {
+                Mapper.Initialize(c => c.CreateMap<V_Button, V_ButtonVM>());
+                viewModel = Mapper.Map<V_ButtonVM>(db.Queryable<V_Button>().SingleOrDefault(u => u.ButtonID == id));
+            });
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public JsonResult Update(V_ButtonVM viewModel)
+        {
+            var clientResult = new JsonData<object>() { };
+            if (viewModel.ButtonID == null) clientResult.SetClientData("n", "非法参数");
+
+            services.Command((db) =>
+            {
+                db.Update<Button>(new
+                {
+                    viewModel.HaviorID,
+                    viewModel.Name,
+                    viewModel.Remark,
+                    viewModel.Sort,
+                    viewModel.Event,
+                    viewModel.Invoke,
+                    viewModel.Handle,
+                    viewModel.TagAttr,
+                    viewModel.Iconfont,
+                    viewModel.Enable,
+                    UpdateTime = DateTime.Now
+                }, u => u.ButtonID == viewModel.ButtonID);
+
+                clientResult.SetClientData("y", "操作成功");
+            });
+            return Json(clientResult);
         }
     }
 }

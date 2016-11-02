@@ -108,7 +108,7 @@ WriteLiteral("></i><label>全选</label></span>\r\n    <span");
 
 WriteLiteral(" class=\"list-btn\"");
 
-WriteLiteral(" onclick=\"insert();\"");
+WriteLiteral(" onclick=\"insert(this);\"");
 
 WriteLiteral("><i");
 
@@ -266,7 +266,36 @@ WriteLiteral(">\r\n        function insert() {\r\n            window.location.hr
             
             #line default
             #line hidden
-WriteLiteral("\";\r\n        }\r\n    </script>\r\n    <script");
+WriteLiteral("\";\r\n        }\r\n        function detail(){\r\n            var ids=backend.getCheckId" +
+"s();\r\n            if(ids.length==1){\r\n                window.location.href=\"");
+
+            
+            #line 81 "..\..\Areas\Backend\Views\Button\Select.cshtml"
+                                 Write(Url.Action("Detail", "Button", new { }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral(@"/""+ids[0];
+            }
+            else{
+                backend.Tip(""只能选择一条数据进行操作"");
+            }
+        }
+        function update() {
+            var ids = backend.getCheckIds();
+            if (ids.length == 1) {
+                window.location.href = """);
+
+            
+            #line 90 "..\..\Areas\Backend\Views\Button\Select.cshtml"
+                                   Write(Url.Action("Update", "Button", new { }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("/\" + ids[0];\r\n            }\r\n            else {\r\n                backend.Tip(\"只能选" +
+"择一条数据进行操作\");\r\n            }\r\n        }\r\n    </script>\r\n    <script");
 
 WriteLiteral(" type=\"text/html\"");
 
@@ -276,7 +305,7 @@ WriteLiteral(@">
         <% for(var i=0;i < data.length;i++){ %>
         <tr>
             <td class=""monk-td-radio"">
-                <span class=""monk-iconfont icon-backend-checkbox list-radio"" data-id=""<%=data[i].HaviorID%>""></span>
+                <span class=""monk-iconfont icon-backend-checkbox list-radio"" data-id=""<%=data[i].ButtonID%>""></span>
             </td>
             <td class=""monk-table-status"">
                 <i class=""monk-iconfont <%=data[i].Iconfont %>""></i>
@@ -313,7 +342,7 @@ WriteLiteral(">\r\n        $(function () {\r\n            var render= monk.tppl(
 "ById(\"tpl\").innerHTML);\r\n            backend.pagination(\"");
 
             
-            #line 115 "..\..\Areas\Backend\Views\Button\Select.cshtml"
+            #line 133 "..\..\Areas\Backend\Views\Button\Select.cshtml"
                            Write(Url.Action("List","Button"));
 
             
@@ -322,7 +351,7 @@ WriteLiteral(">\r\n        $(function () {\r\n            var render= monk.tppl(
 WriteLiteral("\",");
 
             
-            #line 115 "..\..\Areas\Backend\Views\Button\Select.cshtml"
+            #line 133 "..\..\Areas\Backend\Views\Button\Select.cshtml"
                                                          Write(ViewBag.SysSetInfo.PageSize);
 
             

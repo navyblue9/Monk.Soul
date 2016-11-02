@@ -1,8 +1,104 @@
 ﻿@model V_ButtonVM
 @{
-    ViewBag.Title = "Detail";
-    Layout = "~/Areas/Backend/Views/Shared/_Detail.cshtml";
+    ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
+    ViewBag.Keywords = ViewBag.SysSetInfo.Keywords;
+    ViewBag.Description = ViewBag.SysSetInfo.Description;
+    ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
 }
 
-<h2>Detail</h2>
+@section head{
+    @Html.Raw(ViewBag.HaviorInfo.HeadCode)
+}
 
+@section crumbs{
+    @Html.Raw(ViewBag.HaviorInfo.Crumbs)
+}
+
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">所属行为</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.HaviorName
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">按钮名称</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.Name
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">按钮描述</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.Remark, "无")
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">排序数字</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.Sort
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">绑定事件</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.Event
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">调用方法</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.Invoke
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">方法定义</label>
+    <div class="monk-form-wrap monk-form-code-wrap monk-full">
+        <pre class="monk-code" data-language="JAVASCRIPT">@Model.Handle</pre>
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">标签属性</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.TagAttr, "无")
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">字体图标</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Html.Raw(DataToHtmlHelper.GetIconfont(Model.Iconfont))
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">开放状态</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Html.Raw(DataToHtmlHelper.StatusHtml(Model.Enable))
+    </div>
+</div>
+
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">更新时间</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.UpdateTime, "无")
+    </div>
+</div>
+
+@section operate{
+    <a href="@Url.Action("Update", "Button", new { id = Model.ButtonID })" class="monk-input-button turquoise">编辑数据</a>
+    <a href="#" class="monk-input-button alizarin" onclick="deletes();">删除记录</a>
+    <input type="reset" class="monk-input-button peterRiver" onclick="window.location.href = '@Url.Action("Select","Button")';" value="返回列表">
+    <input type="button" class="monk-input-button orange monk-form-previous" value="返回前页" onclick="history.go(-1);">
+}
+
+@section foot{
+    @Html.Raw(ViewBag.HaviorInfo.FootCode)
+    <script type="text/javascript">
+        function deletes() {
+            backend.confirm("您确定要执行此操作吗？", null, function (index) {
+                backend.post("@Url.Action("Delete","Button",new { })", { ids: "@Model.ButtonID" }, function (data) {
+                    window.location.href = "@Url.Action("Select", "Button")";
+                });
+            });
+        }
+    </script>
+}

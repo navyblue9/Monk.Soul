@@ -16,7 +16,7 @@
 
 @section buttons{
     <span class="list-btn" onclick="backend.checkall(this);"><i class="monk-iconfont icon-backend-quanxuan"></i><label>全选</label></span>
-    <span class="list-btn" onclick="insert();"><i class="monk-iconfont icon-backend-insert"></i><label>新增</label></span>
+    <span class="list-btn" onclick="insert(this);"><i class="monk-iconfont icon-backend-insert"></i><label>新增</label></span>
     <span class="list-btn" onclick="detail(this);"><i class="monk-iconfont icon-backend-details"></i><label>查看</label></span>
     <span class="list-btn" onclick="update(this);"><i class="monk-iconfont icon-backend-update"></i><label>编辑</label></span>
     <span class="list-btn" onclick="deletes(this);"><i class="monk-iconfont icon-backend-delete"></i><label>删除</label></span>
@@ -75,12 +75,30 @@
         function insert() {
             window.location.href = "@Url.Action("Insert", "Button")";
         }
+        function detail(){
+            var ids=backend.getCheckIds();
+            if(ids.length==1){
+                window.location.href="@Url.Action("Detail", "Button", new { })/"+ids[0];
+            }
+            else{
+                backend.Tip("只能选择一条数据进行操作");
+            }
+        }
+        function update() {
+            var ids = backend.getCheckIds();
+            if (ids.length == 1) {
+                window.location.href = "@Url.Action("Update", "Button", new { })/" + ids[0];
+            }
+            else {
+                backend.Tip("只能选择一条数据进行操作");
+            }
+        }
     </script>
     <script type="text/html" id="tpl">
         <% for(var i=0;i < data.length;i++){ %>
         <tr>
             <td class="monk-td-radio">
-                <span class="monk-iconfont icon-backend-checkbox list-radio" data-id="<%=data[i].HaviorID%>"></span>
+                <span class="monk-iconfont icon-backend-checkbox list-radio" data-id="<%=data[i].ButtonID%>"></span>
             </td>
             <td class="monk-table-status">
                 <i class="monk-iconfont <%=data[i].Iconfont %>"></i>
