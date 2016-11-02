@@ -608,4 +608,33 @@
         var config = $.extend(true, defaults, options);
         return editormd(idSelector, config);
     };
+    // 自动搜索
+    exports.autoComplete = function (idSelector, url, callback, options) {
+        var that = this;
+        options = options || {};
+        var defaults = {
+            serviceUrl: url,
+            onSearchStart: function (query) {
+                if ($.trim(query.query).length > 0) {
+                    that.loadTip("正在搜索关键字 \"" + query.query + "\"");
+                }
+            },
+            onSearchComplete: function (query, suggestions) {
+                if ($.trim(query).length > 0) {
+                    that.successTip("包涵关键字 \"" + query + "\" 共 " + suggestions.length + " 条记录");
+                }
+            },
+            onSearchError: function (query, jqXHR, textStatus, errorThrown) {
+                that.errorTip("搜索关键字 \"" + query + "\" 出现异常，搜索失败");
+            },
+            onSelect: function (suggestion) {
+                if (typeof callback == "function") {
+                    callback(suggestion);
+                }
+            },
+            width: $(idSelector).parent(".monk-form-wrap").outerWidth(true) + "px"
+        };
+        var config = $.extend(true, defaults, options);
+        $(idSelector).autocomplete(config);
+    };
 });

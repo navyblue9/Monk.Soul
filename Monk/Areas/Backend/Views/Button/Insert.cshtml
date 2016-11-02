@@ -19,6 +19,17 @@
 @section beginForm{@{ Html.BeginForm("Insert", "Button", FormMethod.Post, new { @class = "monk-form" });}}
 
 <div class="monk-form-item">
+    <label for="Havior" class="monk-form-label">所属行为</label>
+    <div class="monk-form-wrap">
+        <input datatype="*" errormsg="请选择所属行为" id="HaviorID" name="HaviorID" nullmsg="请选择所属行为" type="hidden" value="" />
+        <input class="monk-form-input normal" id="Havior" name="Havior" type="text" value="" placeholder="请输入或选择所属行为" />
+        <span class="monk-iconfont icon-monk-required"></span>
+        <span class="monk-iconfont monk-select-arrow icon-backend-search-list border-left"></span>
+    </div>
+    <div class="monk-form-tip">请输入或选择所属行为</div>
+</div>
+
+<div class="monk-form-item">
     <label for="Name" class="monk-form-label">按钮名称</label>
     <div class="monk-form-wrap">
         <span class="monk-iconfont border-right icon-monk-input"></span>
@@ -179,9 +190,12 @@
 
 @section foot{
     @Html.Raw(ViewBag.HaviorInfo.FootCode)
-    @Scripts.Render("~/Assets/Backend/Editor.MD/Script")
+    @Scripts.Render("~/Assets/Backend/Editor.MD/Script", "~/Assets/Backend/AutoComplete/Script")
     <script type="text/javascript">
         $(function () {
+            backend.autoComplete('#Havior', '@Url.Action("Haviors", "Button")', function (suggestion) {
+                $("#HaviorID").val(suggestion.data);
+            });
             var handlecode = backend.codeEditor("handle-code", "Handle", "javascript");
             backend.validform(function (data) {
                 backend.confirm(data.info + "，是否继续新增？", {}, function (index) {

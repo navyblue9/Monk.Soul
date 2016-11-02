@@ -20,5 +20,27 @@ namespace Monk.Areas.Backend.Controllers
 
         [HttpGet]
         public ActionResult Insert() { return View(new ButtonVM() { Enable = true }); }
+
+        [HttpGet]
+        public JsonResult Haviors(string query)
+        {
+            var clientResult = new AutoCompleteResult() { query = query, suggestions = new List<Suggestion>() { } };
+            if (!string.IsNullOrEmpty(query))
+            {
+                services.Command((db) =>
+                {
+                    var list = db.Queryable<Havior>().Where(u => u.Name.Contains(query)).ToList();
+                    foreach (var item in list)
+                    {
+                        clientResult.suggestions.Add(new Suggestion()
+                        {
+                            value = item.Name,
+                            data = item.HaviorID
+                        });
+                    }
+                });
+            }
+            return Json(clientResult, JsonRequestBehavior.AllowGet);
+        }
     }
 }
