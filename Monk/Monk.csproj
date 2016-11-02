@@ -2477,10 +2477,22 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>GUID.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Areas\Backend\Views\ErrorLog\Select.cshtml" />
-    <Content Include="Areas\Backend\Views\ErrorLog\Detail.cshtml" />
-    <Content Include="Areas\Backend\Views\Button\Select.cshtml" />
-    <Content Include="Areas\Backend\Views\Button\Insert.cshtml" />
+    <Content Include="Areas\Backend\Views\ErrorLog\Select.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Select.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\ErrorLog\Detail.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Detail.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\Button\Select.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Select.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\Button\Insert.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Insert.generated.cs</LastGenOutput>
+    </Content>
     <Content Include="Areas\Forum\Assets\favicon.ico" />
     <Content Include="Areas\Forum\Assets\Fonts\iconfont.svg" />
     <Content Include="Areas\Forum\Assets\Images\default-pic.jpg" />
@@ -2526,6 +2538,21 @@
     <Compile Include="Areas\Backend\ViewModels\ErrorLogVM.cs" />
     <Compile Include="Areas\Backend\ViewModels\MenuVM.cs" />
     <Compile Include="Areas\Backend\ViewModels\V_ButtonVM.cs" />
+    <Compile Include="Areas\Backend\Views\Button\Detail.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Detail.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\Button\Insert.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Insert.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\Button\Select.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Select.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Backend\Views\Cache\Detail.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2550,6 +2577,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Signin.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\ErrorLog\Detail.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Detail.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Backend\Views\ErrorLog\Select.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Select.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Areas\Backend\Views\Havior\Detail.generated.cs">
       <AutoGen>True</AutoGen>
@@ -2649,6 +2686,11 @@
     <Compile Include="Areas\Forum\Controllers\ContentController.cs" />
     <Compile Include="Areas\Forum\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Forum\ForumAreaRegistration.cs" />
+    <Compile Include="Areas\Forum\Views\Content\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Forum\Views\Default\Index.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2837,8 +2879,14 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Index.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Areas\Forum\Views\Content\Index.cshtml" />
-    <Content Include="Areas\Backend\Views\Button\Detail.cshtml" />
+    <Content Include="Areas\Forum\Views\Content\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Backend\Views\Button\Detail.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Detail.generated.cs</LastGenOutput>
+    </Content>
     <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
