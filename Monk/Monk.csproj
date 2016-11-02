@@ -229,13 +229,7 @@
     <Content Include="Areas\Backend\Assets\Styles\backend.min.css">
       <DependentUpon>backend.css</DependentUpon>
     </Content>
-    <Content Include="Areas\Backend\Assets\Vendors\autocomplete-v1.2.26\jquery.autocomplete.es5.js">
-      <DependentUpon>jquery.autocomplete.js</DependentUpon>
-    </Content>
-    <Content Include="Areas\Backend\Assets\Vendors\autocomplete-v1.2.26\jquery.autocomplete.es5.min.js">
-      <DependentUpon>jquery.autocomplete.es5.js</DependentUpon>
-    </Content>
-    <Content Include="Areas\Backend\Assets\Vendors\autocomplete-v1.2.26\jquery.autocomplete.js" />
+    <Content Include="Areas\Backend\Assets\Vendors\autocomplete-v1.2.26\jquery.autocomplete.min.js" />
     <Content Include="Areas\Backend\Assets\Vendors\editor.md-v1.5.0\css\editormd.css" />
     <Content Include="Areas\Backend\Assets\Vendors\editor.md-v1.5.0\css\editormd.logo.css" />
     <Content Include="Areas\Backend\Assets\Vendors\editor.md-v1.5.0\css\editormd.logo.min.css" />

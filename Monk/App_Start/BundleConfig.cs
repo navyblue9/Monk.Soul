@@ -88,7 +88,7 @@ namespace Monk
             ));
             // AutoComplete
             bundles.Add(new ScriptBundle("~/Assets/Backend/AutoComplete/Script").Include(
-               "~/Areas/Backend/Assets/Vendors/autocomplete-v1.2.26/jquery.autocomplete.es5.min.js"
+               "~/Areas/Backend/Assets/Vendors/autocomplete-v1.2.26/jquery.autocomplete.min.js"
            ));
 
             // forum

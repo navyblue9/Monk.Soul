@@ -1,7 +1,5 @@
 ﻿/// <autosync enabled="true" />
 /// <reference path="Scripts/backend.js" />
-/// <reference path="vendors/autocomplete-v1.2.26/jquery.autocomplete.es5.js" />
-/// <reference path="vendors/autocomplete-v1.2.26/jquery.autocomplete.js" />
 /// <reference path="vendors/autocomplete-v1.2.26/jquery.autocomplete.min.js" />
 /// <reference path="vendors/editor.md-v1.5.0/editormd.amd.js" />
 /// <reference path="vendors/editor.md-v1.5.0/editormd.js" />
