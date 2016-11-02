@@ -2525,6 +2525,7 @@
     <Compile Include="Areas\Backend\ViewModels\ButtonVM.cs" />
     <Compile Include="Areas\Backend\ViewModels\ErrorLogVM.cs" />
     <Compile Include="Areas\Backend\ViewModels\MenuVM.cs" />
+    <Compile Include="Areas\Backend\ViewModels\V_ButtonVM.cs" />
     <Compile Include="Areas\Backend\Views\Cache\Detail.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2698,6 +2699,7 @@
     <Compile Include="Models\Role_Havior.cs" />
     <Compile Include="Models\Role_Module.cs" />
     <Compile Include="Models\SysSet.cs" />
+    <Compile Include="Models\V_Button.cs" />
     <Compile Include="Models\V_Havior.cs" />
     <Compile Include="Models\V_Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -2836,6 +2838,7 @@
       <LastGenOutput>Index.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Areas\Forum\Views\Content\Index.cshtml" />
+    <Content Include="Areas\Backend\Views\Button\Detail.cshtml" />
     <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">

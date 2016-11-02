@@ -52,7 +52,7 @@ namespace Monk.Models
         /// <summary>
         /// Desc:- 
         /// Default:- 
-        /// Nullable:False 
+        /// Nullable:True 
         /// </summary>
         public string Iconfont {get;set;}
 

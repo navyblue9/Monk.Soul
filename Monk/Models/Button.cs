@@ -45,14 +45,14 @@ namespace Monk.Models
         /// <summary>
         /// Desc:调用 
         /// Default:- 
-        /// Nullable:False 
+        /// Nullable:True 
         /// </summary>
         public string Invoke {get;set;}
 
         /// <summary>
         /// Desc:处理 
         /// Default:('') 
-        /// Nullable:False 
+        /// Nullable:True 
         /// </summary>
         public string Handle {get;set;}
 
@@ -66,7 +66,7 @@ namespace Monk.Models
         /// <summary>
         /// Desc:字体图标 
         /// Default:- 
-        /// Nullable:False 
+        /// Nullable:True 
         /// </summary>
         public string Iconfont {get;set;}
 

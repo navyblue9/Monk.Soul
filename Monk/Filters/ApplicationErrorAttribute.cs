@@ -51,7 +51,16 @@ namespace Monk.Filters
             {
                 filterContext.Result = new JsonResult()
                 {
-                    Data = new JsonData<object>() { info = "应用程序异常，请联系管理员", status = "n" },
+                    Data = new JsonData<object>()
+                    {
+                        info = "应用程序异常，请联系管理员",
+                        status = "n",
+                        others = new
+                        {
+                            logger.Message,
+                            logger.Source
+                        }
+                    },
                     JsonRequestBehavior = JsonRequestBehavior.AllowGet
                 };
             }
@@ -59,7 +68,7 @@ namespace Monk.Filters
             {
                 filterContext.Result = new ContentResult()
                 {
-                    Content = "应用程序异常，请联系管理员"
+                    Content = "应用程序异常，请联系管理员，异常简要信息：" + logger.Message
                 };
             }
 

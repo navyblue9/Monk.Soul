@@ -569,7 +569,7 @@ CREATE TABLE dbo.[Module]
 	[Sort] INT NOT NULL DEFAULT(0),	-- 排序
 	[TagAttr] NVARCHAR(200),	-- 标签属性
 	[ParentID] UNIQUEIDENTIFIER NOT NULL,	-- 上级ID
-	[Iconfont] NVARCHAR(100) NOT NULL,	-- 字体图标
+	[Iconfont] NVARCHAR(100),	-- 字体图标
 	[Enable] BIT DEFAULT(1) NOT NULL,	-- 启用
 	-- 以下为通用字段，除了UpdateTime，SerialNo，LogMemberID以外，其他禁止插入，禁止更新（但不包含软删除，硬删除）
 	[SerialNo] INT IDENTITY(1,1),	-- 流水号
@@ -672,10 +672,10 @@ CREATE TABLE dbo.[Button]
 	[Remark] NVARCHAR(200),	-- 描述
 	[Sort] INT NOT NULL DEFAULT(0),	-- 排序
 	[Event] VARCHAR(30) NOT NULL DEFAULT('onclick'),	-- 事件
-	[Invoke] VARCHAR(50) NOT NULL,	-- 调用
-	[Handle] TEXT NOT NULL DEFAULT(''),	-- 处理
+	[Invoke] VARCHAR(50),	-- 调用
+	[Handle] TEXT DEFAULT(''),	-- 处理
 	[TagAttr] NVARCHAR(200),	-- 标签属性
-	[Iconfont] NVARCHAR(100) NOT NULL,	-- 字体图标
+	[Iconfont] NVARCHAR(100),	-- 字体图标
 	[HaviorID] UNIQUEIDENTIFIER NOT NULL,	-- 行为ID
 	[Enable] BIT DEFAULT(1) NOT NULL,	-- 启用
 	-- 以下为通用字段，除了UpdateTime，SerialNo，LogMemberID以外，其他禁止插入，禁止更新（但不包含软删除，硬删除）
@@ -1143,19 +1143,25 @@ AS
             havior.HttpMethod ,
             havior.Url
     FROM    dbo.Module module
-            LEFT JOIN ( SELECT  *
+            LEFT JOIN ( SELECT  ModuleID ,
+                                HaviorID ,
+                                Name ,
+                                HttpMethod ,
+                                Url
                         FROM    dbo.Havior
                         WHERE   Del = 0
                                 AND Destroy = 0
                                 AND [Enable] = 1
                                 AND [Index] = 1
                       ) havior ON module.ModuleID = havior.ModuleID
-            LEFT JOIN ( SELECT  *
+            LEFT JOIN ( SELECT  ModuleID ,
+                                Name
                         FROM    dbo.Module
                         WHERE   Del = 0
                                 AND Destroy = 0
                       ) parentModule ON module.ParentID = parentModule.ModuleID;
 GO
+
 -- 创建行为视图
 IF ( OBJECT_ID('dbo.[V_Havior]', 'V') IS NOT NULL )
     DROP VIEW dbo.[V_Havior];
@@ -1166,8 +1172,26 @@ AS
             module.Name AS ModuleName ,
             module.Sort AS ModuleSort
     FROM    dbo.Havior havior
-            LEFT JOIN ( SELECT  *
+            LEFT JOIN ( SELECT  Name ,
+                                Sort ,
+                                ModuleID
                         FROM    dbo.Module
                         WHERE   Del = 0
                                 AND Destroy = 0
                       ) module ON havior.ModuleID = module.ModuleID;
+GO
+-- 创建按钮视图
+IF ( OBJECT_ID('dbo.[V_Button]', 'V') IS NOT NULL )
+    DROP VIEW dbo.[V_Button];
+GO
+CREATE VIEW dbo.[V_Button]
+AS
+SELECT  button.* ,
+        havior.Name AS HaviorName
+FROM    dbo.Button button
+        LEFT JOIN ( SELECT  HaviorID ,
+                            Name
+                    FROM    dbo.V_Havior
+                    WHERE   Del = 0
+                            AND Destroy = 0
+                  ) havior ON button.HaviorID = havior.HaviorID;

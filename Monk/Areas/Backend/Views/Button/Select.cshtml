@@ -33,23 +33,29 @@
                 <th align="center" class="monk-table-status">
                     选择
                 </th>
-                <th align="left" width="10%">
-                    账号
+                <th align="center" class="monk-table-status">
+                    图标
                 </th>
-                <th align="left" width="10%">
-                    应用程序
+                <th align="left" width="8%">
+                    名称
+                </th>
+                <th align="left" width="15%">
+                    所属行为
                 </th>
                 <th align="left">
-                    异常地址
+                    调用
                 </th>
-                <th align="left">
-                    简要描述
+                <th align="left" class="monk-table-status">
+                    事件
                 </th>
-                <th align="left" width="12%">
-                    记录时间
+                <th align="left" class="monk-table-status">
+                    排序
                 </th>
                 <th align="center" class="monk-table-status">
-                    查看
+                    开放
+                </th>
+                <th align="center" class="monk-table-status">
+                    默认
                 </th>
             </tr>
         </thead>
@@ -72,8 +78,44 @@
     </script>
     <script type="text/html" id="tpl">
         <% for(var i=0;i < data.length;i++){ %>
+        <tr>
+            <td class="monk-td-radio">
+                <span class="monk-iconfont icon-backend-checkbox list-radio" data-id="<%=data[i].HaviorID%>"></span>
+            </td>
+            <td class="monk-table-status">
+                <i class="monk-iconfont <%=data[i].Iconfont %>"></i>
+            </td>
+            <td>
+                <%=data[i].Name %>
+            </td>
+            <td>
+                <%=data[i].HaviorName %>
+            </td>
+            <td>
+                <%=backend.setNull(data[i].Invoke,"无") %>
+            </td>
+            <td class="monk-table-status">
+                <%=data[i].Event %>
+            </td>
+            <td class="monk-table-status">
+                <input type="number" class="list-textbox-sort" value="<%=data[i].Sort %>" onkeyup="this.value=this.value.replace(/!^[0-9]*$/g,'')" onafterpaste="this.value=this.value.replace(/!^[0-9]*$/g,'')" />
+            </td>
+            <td class="monk-table-status">
+                <%=backend.setStatus(data[i].Enable) %>
+            </td>
+            <td class="monk-table-status">
+                <%=backend.setStatus(data[i].Default) %>
+            </td>
+        </tr>
         <% } %>
     </script>
     <script type="text/javascript">
+        $(function () {
+            var render= monk.tppl(document.getElementById("tpl").innerHTML);
+            backend.pagination("@Url.Action("List","Button")",@ViewBag.SysSetInfo.PageSize,{},function(data){
+                var html=  render(data);
+                $(".monk-table table tbody").html(html);
+            });
+        });
     </script>
 }
