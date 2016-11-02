@@ -25,42 +25,48 @@ namespace Monk.Areas.Backend.Injections
                     var _action = filterContext.RouteData.Values["action"].ToString();
                     var _httpMethod = filterContext.HttpContext.Request.HttpMethod;
 
+                    var key = _area.ToString() + "_" + _controller + "_" + _action + "_" + _httpMethod;
+
                     var viewModel = new V_HaviorVM();
                     var buttonlist = new List<V_ButtonVM>();
-                    using (var services = new DbServices())
+                    var moduleList = new List<V_ModuleVM>();
+                    if (!CacheManager.Contains(key))
                     {
-                        services.Command((db) =>
+                        var cfg = new MapperConfigurationExpression();
+                        cfg.CreateMap<V_Havior, V_HaviorVM>();
+                        cfg.CreateMap<V_Module, V_ModuleVM>();
+                        cfg.CreateMap<V_Button, V_ButtonVM>();
+                        Mapper.Initialize(cfg);
+                        using (var services = new DbServices())
                         {
-                            var cfg = new MapperConfigurationExpression();
-                            cfg.CreateMap<V_Havior, V_HaviorVM>();
-                            cfg.CreateMap<V_Module, V_ModuleVM>();
-                            cfg.CreateMap<V_Button, V_ButtonVM>();
-                            Mapper.Initialize(cfg);
-                            viewModel = Mapper.Map<V_HaviorVM>(db.Queryable<V_Havior>().SingleOrDefault(u => u.Area == _area.ToString() && u.Controller == _controller.ToLower() && u.Action == _action.ToLower() && u.HttpMethod == _httpMethod.ToUpper()));
-                            if (!CacheManager.Contains(Keys.ModuleCacheKey))
+                            services.Command((db) =>
                             {
-                                CacheManager.Set(Keys.ModuleCacheKey, Mapper.Map<List<V_ModuleVM>>(db.Queryable<V_Module>().Where(c => true).ToList()));
-                            }
+                                viewModel = Mapper.Map<V_HaviorVM>(db.Queryable<V_Havior>().SingleOrDefault(u => u.Area == _area.ToString() && u.Controller == _controller.ToLower() && u.Action == _action.ToLower() && u.HttpMethod == _httpMethod.ToUpper()));
+                                if (!CacheManager.Contains(Keys.ModuleCacheKey))
+                                {
+                                    CacheManager.Set(Keys.ModuleCacheKey, Mapper.Map<List<V_ModuleVM>>(db.Queryable<V_Module>().Where(c => true).ToList()));
+                                }
 
-                            buttonlist = Mapper.Map<List<V_ButtonVM>>(db.Queryable<V_Button>().Where(b => b.HaviorID == viewModel.HaviorID && b.Enable == true).OrderBy(u => u.Sort).OrderBy(u => u.ButtonID).ToList());
-                        });
+                                buttonlist = Mapper.Map<List<V_ButtonVM>>(db.Queryable<V_Button>().Where(b => b.HaviorID == viewModel.HaviorID && b.Enable == true).OrderBy(u => u.Sort).OrderBy(u => u.ButtonID).ToList());
+                            });
+                        }
+                        moduleList = CacheManager.Get<List<V_ModuleVM>>(Keys.ModuleCacheKey);
+
+                        if (viewModel != null)
+                        {
+                            // 生成面包屑导航
+                            var crumbHtml = string.Empty;
+                            CreateCrumbs(moduleList, viewModel.ModuleID, ref crumbHtml);
+                            viewModel.Crumbs = crumbHtml + "<label class=\"backend-crumbs-separator\">/</label>\r\n<a href=\"" + viewModel.Url + "\" title=\"" + viewModel.Name + "\">" + viewModel.Name + "</a>";
+                            // 生成列表按钮
+                            viewModel.SelectButtons = CreateSelectButtons(buttonlist);
+                            // 生成表单按钮
+                            viewModel.FormButtons = CreateFormButtons(buttonlist);
+
+                            CacheManager.Set(key, viewModel);
+                        }
                     }
-
-                    var moduleList = CacheManager.Get<List<V_ModuleVM>>(Keys.ModuleCacheKey);
-
-                    if (viewModel != null)
-                    {
-                        // 生成面包屑导航
-                        var crumbHtml = string.Empty;
-                        CreateCrumbs(moduleList, viewModel.ModuleID, ref crumbHtml);
-                        viewModel.Crumbs = crumbHtml + "<label class=\"backend-crumbs-separator\">/</label>\r\n<a href=\"" + viewModel.Url + "\" title=\"" + viewModel.Name + "\">" + viewModel.Name + "</a>";
-                        // 生成列表按钮
-                        viewModel.SelectButtons = CreateSelectButtons(buttonlist);
-                        // 生成表单按钮
-                        viewModel.FormButtons = CreateFormButtons(buttonlist);
-                    }
-
-                    // 生成操作按钮
+                    else viewModel = CacheManager.Get<V_HaviorVM>(key);
 
                     var result = filterContext.Result;
                     if (result is ViewResult)
