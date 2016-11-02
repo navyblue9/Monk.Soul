@@ -42,7 +42,7 @@ namespace Monk.Areas.Backend.Injections
                                 CacheManager.Set(Keys.ModuleCacheKey, Mapper.Map<List<V_ModuleVM>>(db.Queryable<V_Module>().Where(c => true).ToList()));
                             }
 
-                            buttonlist = Mapper.Map<List<V_ButtonVM>>(db.Queryable<V_Button>().Where(b => b.HaviorID == viewModel.HaviorID).OrderBy(u => u.Sort).OrderBy(u => u.ButtonID).ToList());
+                            buttonlist = Mapper.Map<List<V_ButtonVM>>(db.Queryable<V_Button>().Where(b => b.HaviorID == viewModel.HaviorID && b.Enable == true).OrderBy(u => u.Sort).OrderBy(u => u.ButtonID).ToList());
                         });
                     }
 
