@@ -476,55 +476,18 @@ Write(Html.HiddenFor(u => u.ModuleID));
             
             #line default
             #line hidden
-WriteLiteral("\r\n    <input");
+WriteLiteral("\r\n");
 
-WriteLiteral(" type=\"submit\"");
+WriteLiteral("    ");
 
-WriteLiteral(" class=\"monk-input-button turquoise monk-form-submit\"");
-
-WriteLiteral(" value=\"提交保存\"");
-
-WriteLiteral(">\r\n    <input");
-
-WriteLiteral(" type=\"reset\"");
-
-WriteLiteral(" class=\"monk-input-button amethyst monk-form-reset\"");
-
-WriteLiteral(" value=\"重置表单\"");
-
-WriteLiteral(">\r\n    <input");
-
-WriteLiteral(" type=\"reset\"");
-
-WriteLiteral(" class=\"monk-input-button peterRiver\"");
-
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 5763), Tuple.Create("\"", 5829)
-, Tuple.Create(Tuple.Create("", 5773), Tuple.Create("window.location.href", 5773), true)
-, Tuple.Create(Tuple.Create(" ", 5793), Tuple.Create("=", 5794), true)
-, Tuple.Create(Tuple.Create(" ", 5795), Tuple.Create("\'", 5796), true)
             
-            #line 143 "..\..\Areas\Backend\Views\Module\Update.cshtml"
-              , Tuple.Create(Tuple.Create("", 5797), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Module")
+            #line 141 "..\..\Areas\Backend\Views\Module\Update.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.FormButtons));
+
             
             #line default
             #line hidden
-, 5797), false)
-, Tuple.Create(Tuple.Create("", 5827), Tuple.Create("\';", 5827), true)
-);
-
-WriteLiteral(" value=\"返回列表\"");
-
-WriteLiteral(">\r\n    <input");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(" class=\"monk-input-button orange monk-form-previous\"");
-
-WriteLiteral(" value=\"返回前页\"");
-
-WriteLiteral(" onclick=\"history.go(-1);\"");
-
-WriteLiteral(">\r\n");
+WriteLiteral("\r\n");
 
 });
 
@@ -533,7 +496,7 @@ WriteLiteral("\r\n");
 DefineSection("endForm", () => {
 
             
-            #line 147 "..\..\Areas\Backend\Views\Module\Update.cshtml"
+            #line 144 "..\..\Areas\Backend\Views\Module\Update.cshtml"
                     Html.EndForm();
             
             #line default
@@ -549,7 +512,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 150 "..\..\Areas\Backend\Views\Module\Update.cshtml"
+            #line 147 "..\..\Areas\Backend\Views\Module\Update.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
@@ -563,7 +526,7 @@ WriteLiteral(">\r\n        $(function () {\r\n            backend.validform(func
 "            window.location.href = \"");
 
             
-            #line 154 "..\..\Areas\Backend\Views\Module\Update.cshtml"
+            #line 151 "..\..\Areas\Backend\Views\Module\Update.cshtml"
                                    Write(Url.Action("Detail","Module",new { id=Model.ModuleID}));
 
             
