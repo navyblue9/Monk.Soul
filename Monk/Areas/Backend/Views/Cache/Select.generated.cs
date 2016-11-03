@@ -220,26 +220,9 @@ WriteLiteral(@"/"", { id: ids[0] })
             
             #line default
             #line hidden
-WriteLiteral("\", { ids: ids.toString() }, function (data) {\r\n                        backend.ge" +
-"t(\"");
-
-            
-            #line 67 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
-                                Write(Url.Action("RuntimeCache", "Cache"));
-
-            
-            #line default
-            #line hidden
-WriteLiteral(@""", {}, function (data) {
-                            var html = render(data);
-                            $("".monk-table table tbody"").html(html);
-                        });
-                    });
-                });
-            }
-        }
-    </script>
-    <script");
+WriteLiteral("\", { ids: ids.toString() }, function (data) {\r\n                        $(\"#page\")" +
+".pagination(\'remote\');\r\n                    });\r\n                });\r\n          " +
+"  }\r\n        }\r\n    </script>\r\n    <script");
 
 WriteLiteral(" type=\"text/html\"");
 
@@ -265,7 +248,7 @@ WriteLiteral(">\r\n        var render = monk.tppl(document.getElementById(\"tpl\
 "     $(function () {\r\n            backend.pagination(\"");
 
             
-            #line 91 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+            #line 88 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
                            Write(Url.Action("List","Cache"));
 
             
@@ -274,7 +257,7 @@ WriteLiteral(">\r\n        var render = monk.tppl(document.getElementById(\"tpl\
 WriteLiteral("\",");
 
             
-            #line 91 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+            #line 88 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
                                                         Write(ViewBag.SysSetInfo.PageSize);
 
             

@@ -38,7 +38,7 @@ namespace Monk.Areas.Backend.Controllers
         }
 
         [HttpGet]
-        public ActionResult Insert() { return View(new ButtonVM() { Enable = true }); }
+        public ActionResult Insert() { return View(new ButtonVM() { Enable = true, Event = "onclick" }); }
 
         [HttpGet]
         public JsonResult Haviors(string query)

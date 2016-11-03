@@ -2663,11 +2663,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_List.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Areas\Backend\Views\Shared\_ListNoPage.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_ListNoPage.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="Areas\Backend\Views\SysSet\Detail.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2861,10 +2856,6 @@
     <Content Include="Areas\Backend\Views\Havior\Update.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Update.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Backend\Views\Shared\_ListNoPage.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>_ListNoPage.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Areas\Backend\Views\ServerInfo\Detail.cshtml">
       <Generator>RazorGenerator</Generator>

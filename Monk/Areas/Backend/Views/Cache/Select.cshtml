@@ -64,10 +64,7 @@
             else {
                 backend.confirm("删除该缓存会导致数据重新加载，您确定要执行此操作吗？", null, function (index) {
                     backend.post("@Url.Action("Delete","Cache",new { })", { ids: ids.toString() }, function (data) {
-                        backend.get("@Url.Action("RuntimeCache", "Cache")", {}, function (data) {
-                            var html = render(data);
-                            $(".monk-table table tbody").html(html);
-                        });
+                        $("#page").pagination('remote');
                     });
                 });
             }
