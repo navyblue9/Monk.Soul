@@ -15,10 +15,7 @@ namespace Monk.Filters
             Exception ex = filterContext.Exception;
 
             Exception innerEx = ex.InnerException == null ? ex : ex.InnerException;
-            while (innerEx.InnerException != null)
-            {
-                innerEx = innerEx.InnerException;
-            }
+            while (innerEx.InnerException != null) innerEx = innerEx.InnerException;
 
             var sessionModel = filterContext.HttpContext.Session[Keys.SessionKey] as MemberSessionVM;
             Guid logMemberId = default(Guid);
