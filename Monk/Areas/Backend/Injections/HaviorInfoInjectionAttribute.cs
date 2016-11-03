@@ -27,7 +27,7 @@ namespace Monk.Areas.Backend.Injections
                         var _action = filterContext.RouteData.Values["action"].ToString();
                         var _httpMethod = filterContext.HttpContext.Request.HttpMethod;
 
-                        var key = _area.ToString() + "_" + _controller + "_" + _action + "_" + _httpMethod;
+                        var key = (_area.ToString() + "_" + _controller + "_" + _action + "_" + _httpMethod).ToLower();
 
                         var viewModel = new V_HaviorVM();
                         var buttonlist = new List<V_ButtonVM>();
