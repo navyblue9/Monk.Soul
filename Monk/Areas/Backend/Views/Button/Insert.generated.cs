@@ -370,6 +370,8 @@ WriteLiteral(">请输入或选择...</option>\r\n            <option");
 
 WriteLiteral(" value=\"onclick\"");
 
+WriteLiteral(" selected=\"selected\"");
+
 WriteLiteral(">单击</option>\r\n            <option");
 
 WriteLiteral(" value=\"ondblclick\"");
@@ -612,18 +614,18 @@ WriteLiteral(" type=\"reset\"");
 
 WriteLiteral(" class=\"monk-input-button peterRiver\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 7334), Tuple.Create("\"", 7400)
-, Tuple.Create(Tuple.Create("", 7344), Tuple.Create("window.location.href", 7344), true)
-, Tuple.Create(Tuple.Create(" ", 7364), Tuple.Create("=", 7365), true)
-, Tuple.Create(Tuple.Create(" ", 7366), Tuple.Create("\'", 7367), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 7354), Tuple.Create("\"", 7420)
+, Tuple.Create(Tuple.Create("", 7364), Tuple.Create("window.location.href", 7364), true)
+, Tuple.Create(Tuple.Create(" ", 7384), Tuple.Create("=", 7385), true)
+, Tuple.Create(Tuple.Create(" ", 7386), Tuple.Create("\'", 7387), true)
             
             #line 185 "..\..\Areas\Backend\Views\Button\Insert.cshtml"
-              , Tuple.Create(Tuple.Create("", 7368), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Button")
+              , Tuple.Create(Tuple.Create("", 7388), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Button")
             
             #line default
             #line hidden
-, 7368), false)
-, Tuple.Create(Tuple.Create("", 7398), Tuple.Create("\';", 7398), true)
+, 7388), false)
+, Tuple.Create(Tuple.Create("", 7418), Tuple.Create("\';", 7418), true)
 );
 
 WriteLiteral(" value=\"返回列表\"");

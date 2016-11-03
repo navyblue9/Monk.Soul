@@ -492,7 +492,7 @@ WriteLiteral("        ");
             #line hidden
 WriteLiteral("\r\n    </div>\r\n</div>\r\n\r\n");
 
-DefineSection("foot", () => {
+DefineSection("operate", () => {
 
 WriteLiteral("\r\n");
 
@@ -500,6 +500,25 @@ WriteLiteral("    ");
 
             
             #line 115 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.FormButtons));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
+
+});
+
+WriteLiteral("\r\n");
+
+DefineSection("foot", () => {
+
+WriteLiteral("\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 119 "..\..\Areas\Backend\Views\ServerInfo\Detail.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             

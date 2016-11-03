@@ -95,7 +95,8 @@
 </div>
 
 @section operate{
-    <a href="@Url.Action("Update", "SysSet", new { id = Model.SetID })" class="monk-input-button turquoise">编辑数据</a>
+    @Html.HiddenFor(u => u.SetID)
+    @Html.Raw(ViewBag.HaviorInfo.FormButtons)
 }
 
 @section foot{

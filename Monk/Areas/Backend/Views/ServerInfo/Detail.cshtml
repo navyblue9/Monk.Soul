@@ -111,6 +111,10 @@
     </div>
 </div>
 
+@section operate{
+    @Html.Raw(ViewBag.HaviorInfo.FormButtons)
+}
+
 @section foot{
     @Html.Raw(ViewBag.HaviorInfo.FootCode)
 }

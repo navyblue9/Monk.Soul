@@ -778,33 +778,18 @@ Write(Html.HiddenFor(u => u.SetID));
             
             #line default
             #line hidden
-WriteLiteral("\r\n    <input");
+WriteLiteral("\r\n");
 
-WriteLiteral(" type=\"submit\"");
+WriteLiteral("    ");
 
-WriteLiteral(" class=\"monk-input-button turquoise monk-form-submit\"");
+            
+            #line 245 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.FormButtons));
 
-WriteLiteral(" value=\"提交保存\"");
-
-WriteLiteral(">\r\n    <input");
-
-WriteLiteral(" type=\"reset\"");
-
-WriteLiteral(" class=\"monk-input-button amethyst monk-form-reset\"");
-
-WriteLiteral(" value=\"重置表单\"");
-
-WriteLiteral(">\r\n    <input");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(" class=\"monk-input-button orange monk-form-previous\"");
-
-WriteLiteral(" value=\"返回前页\"");
-
-WriteLiteral(" onclick=\"history.go(-1);\"");
-
-WriteLiteral(">\r\n");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
 
 });
 
@@ -813,7 +798,7 @@ WriteLiteral("\r\n");
 DefineSection("endForm", () => {
 
             
-            #line 250 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 248 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
                     Html.EndForm();
             
             #line default
@@ -829,7 +814,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 253 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 251 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
@@ -840,7 +825,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 254 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 252 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
 Write(Scripts.Render("~/Assets/Backend/WebUploader/Script"));
 
             
@@ -855,7 +840,7 @@ WriteLiteral(">\r\n        $(function () {\r\n            var src= $(\"#uploadUr
 "         options: {\r\n                    fileSingleSizeLimit : ");
 
             
-            #line 261 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 259 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
                                      Write(ViewBag.SysSetInfo.ImageMaxSize);
 
             
@@ -865,7 +850,7 @@ WriteLiteral(" * 1024 * 1024\r\n                },\r\n                data:{\r\n
 "rea:\"");
 
             
-            #line 264 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 262 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
                      Write(ViewContext.RouteData.DataTokens["area"]);
 
             
@@ -874,7 +859,7 @@ WriteLiteral(" * 1024 * 1024\r\n                },\r\n                data:{\r\n
 WriteLiteral("\",\r\n                    controller:\"");
 
             
-            #line 265 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 263 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
                            Write(ViewContext.RouteData.Values["controller"]);
 
             
@@ -896,7 +881,7 @@ WriteLiteral(@"""
                 window.location.href=""");
 
             
-            #line 278 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
+            #line 276 "..\..\Areas\Backend\Views\SysSet\Update.cshtml"
                                  Write(Url.Action("Detail","SysSet"));
 
             

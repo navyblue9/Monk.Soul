@@ -456,21 +456,29 @@ WriteLiteral("\r\n    </div>\r\n</div>\r\n\r\n");
 
 DefineSection("operate", () => {
 
-WriteLiteral("\r\n    <a");
+WriteLiteral("\r\n");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3387), Tuple.Create("\"", 3451)
+WriteLiteral("    ");
+
             
             #line 98 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
-, Tuple.Create(Tuple.Create("", 3394), Tuple.Create<System.Object, System.Int32>(Url.Action("Update", "SysSet", new { id = Model.SetID })
+Write(Html.HiddenFor(u => u.SetID));
+
             
             #line default
             #line hidden
-, 3394), false)
-);
+WriteLiteral("\r\n");
 
-WriteLiteral(" class=\"monk-input-button turquoise\"");
+WriteLiteral("    ");
 
-WriteLiteral(">编辑数据</a>\r\n");
+            
+            #line 99 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.FormButtons));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
 
 });
 
@@ -483,7 +491,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 102 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
+            #line 103 "..\..\Areas\Backend\Views\SysSet\Detail.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
