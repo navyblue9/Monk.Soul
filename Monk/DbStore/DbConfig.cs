@@ -1,8 +1,8 @@
-﻿using Monk.Utils;
-using SqlSugar;
+﻿using SqlSugar;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using Monk.Utils;
 
 namespace Monk.DbStore
 {
