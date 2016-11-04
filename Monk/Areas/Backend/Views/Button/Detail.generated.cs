@@ -373,61 +373,29 @@ WriteLiteral("\r\n    </div>\r\n</div>\r\n\r\n");
 
 DefineSection("operate", () => {
 
-WriteLiteral("\r\n    <a");
+WriteLiteral("\r\n");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 2855), Tuple.Create("\"", 2922)
+WriteLiteral("    ");
+
             
             #line 87 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
-, Tuple.Create(Tuple.Create("", 2862), Tuple.Create<System.Object, System.Int32>(Url.Action("Update", "Button", new { id = Model.ButtonID })
+Write(Html.HiddenFor(u => u.ButtonID));
+
             
             #line default
             #line hidden
-, 2862), false)
-);
+WriteLiteral("\r\n");
 
-WriteLiteral(" class=\"monk-input-button turquoise\"");
+WriteLiteral("    ");
 
-WriteLiteral(">编辑数据</a>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" class=\"monk-input-button alizarin\"");
-
-WriteLiteral(" onclick=\"deletes();\"");
-
-WriteLiteral(">删除记录</a>\r\n    <input");
-
-WriteLiteral(" type=\"reset\"");
-
-WriteLiteral(" class=\"monk-input-button peterRiver\"");
-
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 3112), Tuple.Create("\"", 3178)
-, Tuple.Create(Tuple.Create("", 3122), Tuple.Create("window.location.href", 3122), true)
-, Tuple.Create(Tuple.Create(" ", 3142), Tuple.Create("=", 3143), true)
-, Tuple.Create(Tuple.Create(" ", 3144), Tuple.Create("\'", 3145), true)
             
-            #line 89 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
-              , Tuple.Create(Tuple.Create("", 3146), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Button")
+            #line 88 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.FormButtons));
+
             
             #line default
             #line hidden
-, 3146), false)
-, Tuple.Create(Tuple.Create("", 3176), Tuple.Create("\';", 3176), true)
-);
-
-WriteLiteral(" value=\"返回列表\"");
-
-WriteLiteral(">\r\n    <input");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(" class=\"monk-input-button orange monk-form-previous\"");
-
-WriteLiteral(" value=\"返回前页\"");
-
-WriteLiteral(" onclick=\"history.go(-1);\"");
-
-WriteLiteral(">\r\n");
+WriteLiteral("\r\n");
 
 });
 
@@ -440,45 +408,13 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 94 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
+            #line 92 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n    <script");
-
-WriteLiteral(" type=\"text/javascript\"");
-
-WriteLiteral(">\r\n        function deletes() {\r\n            backend.confirm(\"您确定要执行此操作吗？\", null," +
-" function (index) {\r\n                backend.post(\"");
-
-            
-            #line 98 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
-                         Write(Url.Action("Delete","Button",new { }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\", { ids: \"");
-
-            
-            #line 98 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
-                                                                          Write(Model.ButtonID);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\" }, function (data) {\r\n                    window.location.href = \"");
-
-            
-            #line 99 "..\..\Areas\Backend\Views\Button\Detail.cshtml"
-                                       Write(Url.Action("Select", "Button"));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\";\r\n                });\r\n            });\r\n        }\r\n    </script>\r\n");
+WriteLiteral("\r\n");
 
 });
 

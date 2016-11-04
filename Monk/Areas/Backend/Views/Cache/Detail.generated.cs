@@ -115,7 +115,25 @@ WriteLiteral("        ");
             
             #line default
             #line hidden
-WriteLiteral("\r\n    </div>\r\n</div>\r\n<div");
+WriteLiteral("\r\n        <input");
+
+WriteLiteral(" type=\"hidden\"");
+
+WriteLiteral(" name=\"Key\"");
+
+WriteLiteral(" id=\"Key\"");
+
+WriteAttribute("value", Tuple.Create(" value=\"", 650), Tuple.Create("\"", 670)
+            
+            #line 21 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
+, Tuple.Create(Tuple.Create("", 658), Tuple.Create<System.Object, System.Int32>(ViewBag.Key
+            
+            #line default
+            #line hidden
+, 658), false)
+);
+
+WriteLiteral(" />\r\n    </div>\r\n</div>\r\n<div");
 
 WriteLiteral(" class=\"monk-form-item\"");
 
@@ -138,7 +156,7 @@ WriteLiteral(" data-language=\"JSON\"");
 WriteLiteral(">");
 
             
-            #line 26 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
+            #line 27 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
                                                Write(StringHelper.ConvertJsonString(ViewBag.Value.ToString()));
 
             
@@ -148,49 +166,18 @@ WriteLiteral("</pre>\r\n    </div>\r\n</div>\r\n\r\n");
 
 DefineSection("operate", () => {
 
-WriteLiteral("\r\n    <a");
+WriteLiteral("\r\n");
 
-WriteLiteral(" href=\"#\"");
+WriteLiteral("    ");
 
-WriteLiteral(" class=\"monk-input-button alizarin\"");
-
-WriteLiteral(" onclick=\"deletes();\"");
-
-WriteLiteral(">删除记录</a>\r\n    <input");
-
-WriteLiteral(" type=\"reset\"");
-
-WriteLiteral(" class=\"monk-input-button peterRiver\"");
-
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 1075), Tuple.Create("\"", 1140)
-, Tuple.Create(Tuple.Create("", 1085), Tuple.Create("window.location.href", 1085), true)
-, Tuple.Create(Tuple.Create(" ", 1105), Tuple.Create("=", 1106), true)
-, Tuple.Create(Tuple.Create(" ", 1107), Tuple.Create("\'", 1108), true)
             
             #line 32 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
-              , Tuple.Create(Tuple.Create("", 1109), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Cache")
+Write(Html.Raw(ViewBag.HaviorInfo.FormButtons));
+
             
             #line default
             #line hidden
-, 1109), false)
-, Tuple.Create(Tuple.Create("", 1138), Tuple.Create("\';", 1138), true)
-);
-
-WriteLiteral(" va");
-
-WriteLiteral(" value=\"返回列表\"");
-
-WriteLiteral(">\r\n    <input");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(" class=\"monk-input-button orange monk-form-previous\"");
-
-WriteLiteral(" value=\"返回前页\"");
-
-WriteLiteral(" onclick=\"history.go(-1);\"");
-
-WriteLiteral(">\r\n");
+WriteLiteral("\r\n");
 
 });
 
@@ -203,45 +190,13 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 37 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
+            #line 36 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n    <script");
-
-WriteLiteral(" type=\"text/javascript\"");
-
-WriteLiteral(">\r\n        function deletes() {\r\n            backend.confirm(\"删除该缓存会导致数据重新加载，您确定要" +
-"执行此操作吗？\", null, function (index) {\r\n                backend.post(\"");
-
-            
-            #line 41 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
-                         Write(Url.Action("Delete","Cache",new { }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\", { ids: \"");
-
-            
-            #line 41 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
-                                                                         Write(ViewBag.Key);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\" }, function (data) {\r\n                    window.location.href = \"");
-
-            
-            #line 42 "..\..\Areas\Backend\Views\Cache\Detail.cshtml"
-                                       Write(Url.Action("Select", "Cache"));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\";\r\n                });\r\n            });\r\n        }\r\n    </script>\r\n");
+WriteLiteral("\r\n");
 
 });
 

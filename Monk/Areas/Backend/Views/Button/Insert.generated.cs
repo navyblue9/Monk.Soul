@@ -589,55 +589,18 @@ WriteLiteral(">设置该按钮是否开放</div>\r\n</div>\r\n\r\n");
 
 DefineSection("operate", () => {
 
-WriteLiteral("\r\n    <input");
+WriteLiteral("\r\n");
 
-WriteLiteral(" type=\"submit\"");
+WriteLiteral("    ");
 
-WriteLiteral(" class=\"monk-input-button turquoise monk-form-submit\"");
-
-WriteLiteral(" value=\"提交保存\"");
-
-WriteLiteral(">\r\n    <input");
-
-WriteLiteral(" type=\"reset\"");
-
-WriteLiteral(" class=\"monk-input-button amethyst monk-form-reset\"");
-
-WriteLiteral(" value=\"重置表单\"");
-
-WriteLiteral(">\r\n    <input");
-
-WriteLiteral(" type=\"reset\"");
-
-WriteLiteral(" class=\"monk-input-button peterRiver\"");
-
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 7320), Tuple.Create("\"", 7386)
-, Tuple.Create(Tuple.Create("", 7330), Tuple.Create("window.location.href", 7330), true)
-, Tuple.Create(Tuple.Create(" ", 7350), Tuple.Create("=", 7351), true)
-, Tuple.Create(Tuple.Create(" ", 7352), Tuple.Create("\'", 7353), true)
             
-            #line 185 "..\..\Areas\Backend\Views\Button\Insert.cshtml"
-              , Tuple.Create(Tuple.Create("", 7354), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Button")
+            #line 183 "..\..\Areas\Backend\Views\Button\Insert.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.FormButtons));
+
             
             #line default
             #line hidden
-, 7354), false)
-, Tuple.Create(Tuple.Create("", 7384), Tuple.Create("\';", 7384), true)
-);
-
-WriteLiteral(" value=\"返回列表\"");
-
-WriteLiteral(">\r\n    <input");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(" class=\"monk-input-button orange monk-form-previous\"");
-
-WriteLiteral(" value=\"返回前页\"");
-
-WriteLiteral(" onclick=\"history.go(-1);\"");
-
-WriteLiteral(">\r\n");
+WriteLiteral("\r\n");
 
 });
 
@@ -646,7 +609,7 @@ WriteLiteral("\r\n");
 DefineSection("endForm", () => {
 
             
-            #line 189 "..\..\Areas\Backend\Views\Button\Insert.cshtml"
+            #line 186 "..\..\Areas\Backend\Views\Button\Insert.cshtml"
                     Html.EndForm();
             
             #line default
@@ -662,7 +625,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 192 "..\..\Areas\Backend\Views\Button\Insert.cshtml"
+            #line 189 "..\..\Areas\Backend\Views\Button\Insert.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
@@ -673,7 +636,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 193 "..\..\Areas\Backend\Views\Button\Insert.cshtml"
+            #line 190 "..\..\Areas\Backend\Views\Button\Insert.cshtml"
 Write(Scripts.Render("~/Assets/Backend/Editor.MD/Script", "~/Assets/Backend/AutoComplete/Script"));
 
             
@@ -686,7 +649,7 @@ WriteLiteral(" type=\"text/javascript\"");
 WriteLiteral(">\r\n        $(function () {\r\n            backend.autoComplete(\'#Havior\', \'");
 
             
-            #line 196 "..\..\Areas\Backend\Views\Button\Insert.cshtml"
+            #line 193 "..\..\Areas\Backend\Views\Button\Insert.cshtml"
                                         Write(Url.Action("Haviors", "Button"));
 
             
@@ -704,7 +667,7 @@ WriteLiteral(@"', function (suggestion) {
                     window.location.href = """);
 
             
-            #line 205 "..\..\Areas\Backend\Views\Button\Insert.cshtml"
+            #line 202 "..\..\Areas\Backend\Views\Button\Insert.cshtml"
                                        Write(Url.Action("Detail","Button",new { id=""}));
 
             

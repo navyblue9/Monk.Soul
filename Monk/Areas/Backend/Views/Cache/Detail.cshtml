@@ -18,6 +18,7 @@
     <label for="" class="monk-form-label">缓存Key</label>
     <div class="monk-form-wrap monk-form-detail-wrap monk-full">
         @ViewBag.Key
+        <input type="hidden" name="Key" id="Key" value="@ViewBag.Key" />
     </div>
 </div>
 <div class="monk-form-item">
@@ -28,20 +29,9 @@
 </div>
 
 @section operate{
-    <a href="#" class="monk-input-button alizarin" onclick="deletes();">删除记录</a>
-    <input type="reset" class="monk-input-button peterRiver" onclick="window.location.href = '@Url.Action("Select","Cache")';" va value="返回列表">
-    <input type="button" class="monk-input-button orange monk-form-previous" value="返回前页" onclick="history.go(-1);">
+    @Html.Raw(ViewBag.HaviorInfo.FormButtons)
 }
 
 @section foot{
     @Html.Raw(ViewBag.HaviorInfo.FootCode)
-    <script type="text/javascript">
-        function deletes() {
-            backend.confirm("删除该缓存会导致数据重新加载，您确定要执行此操作吗？", null, function (index) {
-                backend.post("@Url.Action("Delete","Cache",new { })", { ids: "@ViewBag.Key" }, function (data) {
-                    window.location.href = "@Url.Action("Select", "Cache")";
-                });
-            });
-        }
-    </script>
 }

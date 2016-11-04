@@ -94,67 +94,18 @@ WriteLiteral("\r\n");
 
 DefineSection("buttons", () => {
 
-WriteLiteral("\r\n    <span");
+WriteLiteral("\r\n");
 
-WriteLiteral(" class=\"list-btn\"");
+WriteLiteral("    ");
 
-WriteLiteral(" onclick=\"backend.checkall(this);\"");
+            
+            #line 18 "..\..\Areas\Backend\Views\Button\Select.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.SelectButtons));
 
-WriteLiteral("><i");
-
-WriteLiteral(" class=\"monk-iconfont icon-backend-quanxuan\"");
-
-WriteLiteral("></i><label>全选</label></span>\r\n    <span");
-
-WriteLiteral(" class=\"list-btn\"");
-
-WriteLiteral(" onclick=\"insert(this);\"");
-
-WriteLiteral("><i");
-
-WriteLiteral(" class=\"monk-iconfont icon-backend-insert\"");
-
-WriteLiteral("></i><label>新增</label></span>\r\n    <span");
-
-WriteLiteral(" class=\"list-btn\"");
-
-WriteLiteral(" onclick=\"detail(this);\"");
-
-WriteLiteral("><i");
-
-WriteLiteral(" class=\"monk-iconfont icon-backend-details\"");
-
-WriteLiteral("></i><label>查看</label></span>\r\n    <span");
-
-WriteLiteral(" class=\"list-btn\"");
-
-WriteLiteral(" onclick=\"update(this);\"");
-
-WriteLiteral("><i");
-
-WriteLiteral(" class=\"monk-iconfont icon-backend-update\"");
-
-WriteLiteral("></i><label>编辑</label></span>\r\n    <span");
-
-WriteLiteral(" class=\"list-btn\"");
-
-WriteLiteral(" onclick=\"deletes(this);\"");
-
-WriteLiteral("><i");
-
-WriteLiteral(" class=\"monk-iconfont icon-backend-delete\"");
-
-WriteLiteral("></i><label>删除</label></span>\r\n    <span");
-
-WriteLiteral(" class=\"list-btn float-right search-btn\"");
-
-WriteLiteral(" onclick=\"backend.openSearch()\"");
-
-WriteLiteral("><i");
-
-WriteLiteral(" class=\"monk-iconfont icon-backend-search-list\"");
-
-WriteLiteral("></i><label>搜索</label></span>\r\n");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
 
 });
 
@@ -247,55 +198,13 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 73 "..\..\Areas\Backend\Views\Button\Select.cshtml"
+            #line 68 "..\..\Areas\Backend\Views\Button\Select.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n    <script");
-
-WriteLiteral(" type=\"text/javascript\"");
-
-WriteLiteral(">\r\n        function insert() {\r\n            window.location.href = \"");
-
-            
-            #line 76 "..\..\Areas\Backend\Views\Button\Select.cshtml"
-                               Write(Url.Action("Insert", "Button"));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\";\r\n        }\r\n        function detail(){\r\n            var ids=backend.getCheckId" +
-"s();\r\n            if(ids.length==1){\r\n                window.location.href=\"");
-
-            
-            #line 81 "..\..\Areas\Backend\Views\Button\Select.cshtml"
-                                 Write(Url.Action("Detail", "Button", new { }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral(@"/""+ids[0];
-            }
-            else{
-                backend.Tip(""只能选择一条数据进行操作"");
-            }
-        }
-        function update() {
-            var ids = backend.getCheckIds();
-            if (ids.length == 1) {
-                window.location.href = """);
-
-            
-            #line 90 "..\..\Areas\Backend\Views\Button\Select.cshtml"
-                                   Write(Url.Action("Update", "Button", new { }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("/\" + ids[0];\r\n            }\r\n            else {\r\n                backend.Tip(\"只能选" +
-"择一条数据进行操作\");\r\n            }\r\n        }\r\n    </script>\r\n    <script");
 
 WriteLiteral(" type=\"text/html\"");
 
@@ -342,7 +251,7 @@ WriteLiteral(">\r\n        $(function () {\r\n            var render= monk.tppl(
 "ById(\"tpl\").innerHTML);\r\n            backend.pagination(\"");
 
             
-            #line 133 "..\..\Areas\Backend\Views\Button\Select.cshtml"
+            #line 105 "..\..\Areas\Backend\Views\Button\Select.cshtml"
                            Write(Url.Action("List","Button"));
 
             
@@ -351,7 +260,7 @@ WriteLiteral(">\r\n        $(function () {\r\n            var render= monk.tppl(
 WriteLiteral("\",");
 
             
-            #line 133 "..\..\Areas\Backend\Views\Button\Select.cshtml"
+            #line 105 "..\..\Areas\Backend\Views\Button\Select.cshtml"
                                                          Write(ViewBag.SysSetInfo.PageSize);
 
             

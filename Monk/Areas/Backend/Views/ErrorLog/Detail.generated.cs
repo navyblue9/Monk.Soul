@@ -373,47 +373,29 @@ WriteLiteral("\r\n    </div>\r\n</div>\r\n\r\n");
 
 DefineSection("operate", () => {
 
-WriteLiteral("\r\n    <a");
+WriteLiteral("\r\n");
 
-WriteLiteral(" href=\"#\"");
+WriteLiteral("    ");
 
-WriteLiteral(" class=\"monk-input-button alizarin\"");
-
-WriteLiteral(" onclick=\"deletes();\"");
-
-WriteLiteral(">删除记录</a>\r\n    <input");
-
-WriteLiteral(" type=\"reset\"");
-
-WriteLiteral(" class=\"monk-input-button peterRiver\"");
-
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 2997), Tuple.Create("\"", 3065)
-, Tuple.Create(Tuple.Create("", 3007), Tuple.Create("window.location.href", 3007), true)
-, Tuple.Create(Tuple.Create(" ", 3027), Tuple.Create("=", 3028), true)
-, Tuple.Create(Tuple.Create(" ", 3029), Tuple.Create("\'", 3030), true)
             
-            #line 97 "..\..\Areas\Backend\Views\ErrorLog\Detail.cshtml"
-              , Tuple.Create(Tuple.Create("", 3031), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","ErrorLog")
+            #line 96 "..\..\Areas\Backend\Views\ErrorLog\Detail.cshtml"
+Write(Html.HiddenFor(u => u.LogID));
+
             
             #line default
             #line hidden
-, 3031), false)
-, Tuple.Create(Tuple.Create("", 3063), Tuple.Create("\';", 3063), true)
-);
+WriteLiteral("\r\n");
 
-WriteLiteral(" value=\"返回列表\"");
+WriteLiteral("    ");
 
-WriteLiteral(">\r\n    <input");
+            
+            #line 97 "..\..\Areas\Backend\Views\ErrorLog\Detail.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.FormButtons));
 
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(" class=\"monk-input-button orange monk-form-previous\"");
-
-WriteLiteral(" value=\"返回前页\"");
-
-WriteLiteral(" onclick=\"history.go(-1);\"");
-
-WriteLiteral(">\r\n");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
 
 });
 
@@ -426,45 +408,13 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 102 "..\..\Areas\Backend\Views\ErrorLog\Detail.cshtml"
+            #line 101 "..\..\Areas\Backend\Views\ErrorLog\Detail.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n    <script");
-
-WriteLiteral(" type=\"text/javascript\"");
-
-WriteLiteral(">\r\n        function deletes() {\r\n            backend.confirm(\"您确定要执行此操作吗？\", null," +
-" function (index) {\r\n                backend.post(\"");
-
-            
-            #line 106 "..\..\Areas\Backend\Views\ErrorLog\Detail.cshtml"
-                         Write(Url.Action("Delete","ErrorLog",new { }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\", { ids: \"");
-
-            
-            #line 106 "..\..\Areas\Backend\Views\ErrorLog\Detail.cshtml"
-                                                                            Write(Model.LogID);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\" }, function (data) {\r\n                    window.location.href = \"");
-
-            
-            #line 107 "..\..\Areas\Backend\Views\ErrorLog\Detail.cshtml"
-                                       Write(Url.Action("Select", "ErrorLog"));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\";\r\n                });\r\n            });\r\n        }\r\n    </script>\r\n");
+WriteLiteral("\r\n");
 
 });
 

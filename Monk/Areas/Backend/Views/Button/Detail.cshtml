@@ -84,21 +84,10 @@
 </div>
 
 @section operate{
-    <a href="@Url.Action("Update", "Button", new { id = Model.ButtonID })" class="monk-input-button turquoise">编辑数据</a>
-    <a href="#" class="monk-input-button alizarin" onclick="deletes();">删除记录</a>
-    <input type="reset" class="monk-input-button peterRiver" onclick="window.location.href = '@Url.Action("Select","Button")';" value="返回列表">
-    <input type="button" class="monk-input-button orange monk-form-previous" value="返回前页" onclick="history.go(-1);">
+    @Html.HiddenFor(u => u.ButtonID)
+    @Html.Raw(ViewBag.HaviorInfo.FormButtons)
 }
 
 @section foot{
     @Html.Raw(ViewBag.HaviorInfo.FootCode)
-    <script type="text/javascript">
-        function deletes() {
-            backend.confirm("您确定要执行此操作吗？", null, function (index) {
-                backend.post("@Url.Action("Delete","Button",new { })", { ids: "@Model.ButtonID" }, function (data) {
-                    window.location.href = "@Url.Action("Select", "Button")";
-                });
-            });
-        }
-    </script>
 }

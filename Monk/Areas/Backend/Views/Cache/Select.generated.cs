@@ -94,47 +94,18 @@ WriteLiteral("\r\n");
 
 DefineSection("buttons", () => {
 
-WriteLiteral("\r\n    <span");
+WriteLiteral("\r\n");
 
-WriteLiteral(" class=\"list-btn\"");
+WriteLiteral("    ");
 
-WriteLiteral(" onclick=\"backend.checkall(this);\"");
+            
+            #line 18 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.SelectButtons));
 
-WriteLiteral("><i");
-
-WriteLiteral(" class=\"monk-iconfont icon-backend-quanxuan\"");
-
-WriteLiteral("></i><label>全选</label></span>\r\n    <span");
-
-WriteLiteral(" class=\"list-btn\"");
-
-WriteLiteral(" onclick=\"detail(this);\"");
-
-WriteLiteral("><i");
-
-WriteLiteral(" class=\"monk-iconfont icon-backend-details\"");
-
-WriteLiteral("></i><label>查看</label></span>\r\n    <span");
-
-WriteLiteral(" class=\"list-btn\"");
-
-WriteLiteral(" onclick=\"deletes(this);\"");
-
-WriteLiteral("><i");
-
-WriteLiteral(" class=\"monk-iconfont icon-backend-delete\"");
-
-WriteLiteral("></i><label>删除</label></span>\r\n    <span");
-
-WriteLiteral(" class=\"list-btn float-right search-btn\"");
-
-WriteLiteral(" onclick=\"backend.openSearch()\"");
-
-WriteLiteral("><i");
-
-WriteLiteral(" class=\"monk-iconfont icon-backend-search-list\"");
-
-WriteLiteral("></i><label>搜索</label></span>\r\n");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
 
 });
 
@@ -177,52 +148,13 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 47 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+            #line 44 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
 Write(ViewBag.HaviorInfo.FootCode);
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n    <script");
-
-WriteLiteral(" type=\"text/javascript\"");
-
-WriteLiteral(">\r\n        function detail() {\r\n            var ids = backend.getCheckIds();\r\n   " +
-"         if (ids.length == 1) {\r\n                backend.postLocation(\"");
-
-            
-            #line 52 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
-                                 Write(Url.Action("Detail","Cache",new { }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral(@"/"", { id: ids[0] })
-            }
-            else {
-                backend.Tip(""只能选择一条数据进行操作"");
-            }
-        }
-
-        function deletes() {
-            var ids = backend.getCheckIds();
-            if (ids.length < 1) {
-                backend.Tip(""至少选择一条进行操作"");
-            }
-            else {
-                backend.confirm(""删除该缓存会导致数据重新加载，您确定要执行此操作吗？"", null, function (index) {
-                    backend.post(""");
-
-            
-            #line 66 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
-                             Write(Url.Action("Delete","Cache",new { }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\", { ids: ids.toString() }, function (data) {\r\n                        $(\"#page\")" +
-".pagination(\'remote\');\r\n                    });\r\n                });\r\n          " +
-"  }\r\n        }\r\n    </script>\r\n    <script");
 
 WriteLiteral(" type=\"text/html\"");
 
@@ -248,7 +180,7 @@ WriteLiteral(">\r\n        var render = monk.tppl(document.getElementById(\"tpl\
 "     $(function () {\r\n            backend.pagination(\"");
 
             
-            #line 88 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+            #line 60 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
                            Write(Url.Action("List","Cache"));
 
             
@@ -257,7 +189,7 @@ WriteLiteral(">\r\n        var render = monk.tppl(document.getElementById(\"tpl\
 WriteLiteral("\",");
 
             
-            #line 88 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
+            #line 60 "..\..\Areas\Backend\Views\Cache\Select.cshtml"
                                                         Write(ViewBag.SysSetInfo.PageSize);
 
             
