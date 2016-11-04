@@ -1,5 +1,5 @@
-﻿using MailKit.Net.Smtp;
-using MimeKit;
+﻿using MimeKit;
+using MailKit.Net.Smtp;
 
 namespace Monk.Utils
 {
