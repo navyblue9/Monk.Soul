@@ -138,7 +138,7 @@
         that.ajaxError();
     };
     // 打开搜索
-    exports.openSearch = function () {
+    exports.openSearch = function (e) {
         var speed = 200;
         var $search = $(".backend-searchs");
         var width = $search.outerWidth(true);

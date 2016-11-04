@@ -836,55 +836,18 @@ WriteLiteral(">设置该行为是否开放</div>\r\n</div>\r\n\r\n");
 
 DefineSection("operate", () => {
 
-WriteLiteral("\r\n    <input");
+WriteLiteral("\r\n");
 
-WriteLiteral(" type=\"submit\"");
+WriteLiteral("    ");
 
-WriteLiteral(" class=\"monk-input-button turquoise monk-form-submit\"");
-
-WriteLiteral(" value=\"提交保存\"");
-
-WriteLiteral(">\r\n    <input");
-
-WriteLiteral(" type=\"reset\"");
-
-WriteLiteral(" class=\"monk-input-button amethyst monk-form-reset\"");
-
-WriteLiteral(" value=\"重置表单\"");
-
-WriteLiteral(">\r\n    <input");
-
-WriteLiteral(" type=\"reset\"");
-
-WriteLiteral(" class=\"monk-input-button peterRiver\"");
-
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 10547), Tuple.Create("\"", 10613)
-, Tuple.Create(Tuple.Create("", 10557), Tuple.Create("window.location.href", 10557), true)
-, Tuple.Create(Tuple.Create(" ", 10577), Tuple.Create("=", 10578), true)
-, Tuple.Create(Tuple.Create(" ", 10579), Tuple.Create("\'", 10580), true)
             
-            #line 259 "..\..\Areas\Backend\Views\Havior\Insert.cshtml"
-             , Tuple.Create(Tuple.Create("", 10581), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Havior")
+            #line 257 "..\..\Areas\Backend\Views\Havior\Insert.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.FormButtons));
+
             
             #line default
             #line hidden
-, 10581), false)
-, Tuple.Create(Tuple.Create("", 10611), Tuple.Create("\';", 10611), true)
-);
-
-WriteLiteral(" value=\"返回列表\"");
-
-WriteLiteral(">\r\n    <input");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(" class=\"monk-input-button orange monk-form-previous\"");
-
-WriteLiteral(" value=\"返回前页\"");
-
-WriteLiteral(" onclick=\"history.go(-1);\"");
-
-WriteLiteral(">\r\n");
+WriteLiteral("\r\n");
 
 });
 
@@ -893,7 +856,7 @@ WriteLiteral("\r\n");
 DefineSection("endForm", () => {
 
             
-            #line 263 "..\..\Areas\Backend\Views\Havior\Insert.cshtml"
+            #line 260 "..\..\Areas\Backend\Views\Havior\Insert.cshtml"
                     Html.EndForm();
             
             #line default
@@ -909,7 +872,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 266 "..\..\Areas\Backend\Views\Havior\Insert.cshtml"
+            #line 263 "..\..\Areas\Backend\Views\Havior\Insert.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
@@ -920,7 +883,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 267 "..\..\Areas\Backend\Views\Havior\Insert.cshtml"
+            #line 264 "..\..\Areas\Backend\Views\Havior\Insert.cshtml"
 Write(Scripts.Render("~/Assets/Backend/Editor.MD/Script"));
 
             
@@ -942,7 +905,7 @@ WriteLiteral(@">
                     window.location.href = """);
 
             
-            #line 277 "..\..\Areas\Backend\Views\Havior\Insert.cshtml"
+            #line 274 "..\..\Areas\Backend\Views\Havior\Insert.cshtml"
                                        Write(Url.Action("Detail","Havior",new { id=""}));
 
             

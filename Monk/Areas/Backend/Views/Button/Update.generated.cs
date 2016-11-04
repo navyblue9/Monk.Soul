@@ -435,6 +435,7 @@ WriteLiteral("        ");
             @class = "monk-form-input normal",
             placeholder = "调用方法",
             datatype = "*1-100",
+            ignore = "ignore",
             errormsg = "调用方法由1-100位英文字母、数字或符号组成",
             nullmsg = "请输入调用方法"
         }));
@@ -443,10 +444,6 @@ WriteLiteral("        ");
             #line default
             #line hidden
 WriteLiteral("\r\n        <span");
-
-WriteLiteral(" class=\"monk-iconfont icon-monk-required\"");
-
-WriteLiteral("></span>\r\n        <span");
 
 WriteLiteral(" class=\"monk-iconfont border-left icon-monk-dacha monk-clear-input\"");
 
@@ -659,18 +656,18 @@ WriteLiteral(" type=\"reset\"");
 
 WriteLiteral(" class=\"monk-input-button peterRiver\"");
 
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 7445), Tuple.Create("\"", 7511)
-, Tuple.Create(Tuple.Create("", 7455), Tuple.Create("window.location.href", 7455), true)
-, Tuple.Create(Tuple.Create(" ", 7475), Tuple.Create("=", 7476), true)
-, Tuple.Create(Tuple.Create(" ", 7477), Tuple.Create("\'", 7478), true)
+WriteAttribute("onclick", Tuple.Create(" onclick=\"", 7413), Tuple.Create("\"", 7479)
+, Tuple.Create(Tuple.Create("", 7423), Tuple.Create("window.location.href", 7423), true)
+, Tuple.Create(Tuple.Create(" ", 7443), Tuple.Create("=", 7444), true)
+, Tuple.Create(Tuple.Create(" ", 7445), Tuple.Create("\'", 7446), true)
             
             #line 186 "..\..\Areas\Backend\Views\Button\Update.cshtml"
-              , Tuple.Create(Tuple.Create("", 7479), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Button")
+              , Tuple.Create(Tuple.Create("", 7447), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Button")
             
             #line default
             #line hidden
-, 7479), false)
-, Tuple.Create(Tuple.Create("", 7509), Tuple.Create("\';", 7509), true)
+, 7447), false)
+, Tuple.Create(Tuple.Create("", 7477), Tuple.Create("\';", 7477), true)
 );
 
 WriteLiteral(" value=\"返回列表\"");

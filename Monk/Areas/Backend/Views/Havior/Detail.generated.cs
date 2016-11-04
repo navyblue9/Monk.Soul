@@ -502,61 +502,29 @@ WriteLiteral("\r\n    </div>\r\n</div>\r\n\r\n");
 
 DefineSection("operate", () => {
 
-WriteLiteral("\r\n    <a");
+WriteLiteral("\r\n");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 4069), Tuple.Create("\"", 4136)
+WriteLiteral("    ");
+
             
             #line 116 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
-, Tuple.Create(Tuple.Create("", 4076), Tuple.Create<System.Object, System.Int32>(Url.Action("Update", "Havior", new { id = Model.HaviorID })
+Write(Html.HiddenFor(u => u.HaviorID));
+
             
             #line default
             #line hidden
-, 4076), false)
-);
+WriteLiteral("\r\n");
 
-WriteLiteral(" class=\"monk-input-button turquoise\"");
+WriteLiteral("    ");
 
-WriteLiteral(">编辑数据</a>\r\n    <a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(" class=\"monk-input-button alizarin\"");
-
-WriteLiteral(" onclick=\"deletes();\"");
-
-WriteLiteral(">删除记录</a>\r\n    <input");
-
-WriteLiteral(" type=\"reset\"");
-
-WriteLiteral(" class=\"monk-input-button peterRiver\"");
-
-WriteAttribute("onclick", Tuple.Create(" onclick=\"", 4326), Tuple.Create("\"", 4392)
-, Tuple.Create(Tuple.Create("", 4336), Tuple.Create("window.location.href", 4336), true)
-, Tuple.Create(Tuple.Create(" ", 4356), Tuple.Create("=", 4357), true)
-, Tuple.Create(Tuple.Create(" ", 4358), Tuple.Create("\'", 4359), true)
             
-            #line 118 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
-              , Tuple.Create(Tuple.Create("", 4360), Tuple.Create<System.Object, System.Int32>(Url.Action("Select","Havior")
+            #line 117 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.FormButtons));
+
             
             #line default
             #line hidden
-, 4360), false)
-, Tuple.Create(Tuple.Create("", 4390), Tuple.Create("\';", 4390), true)
-);
-
-WriteLiteral(" value=\"返回列表\"");
-
-WriteLiteral(">\r\n    <input");
-
-WriteLiteral(" type=\"button\"");
-
-WriteLiteral(" class=\"monk-input-button orange monk-form-previous\"");
-
-WriteLiteral(" value=\"返回前页\"");
-
-WriteLiteral(" onclick=\"history.go(-1);\"");
-
-WriteLiteral(">\r\n");
+WriteLiteral("\r\n");
 
 });
 
@@ -569,45 +537,13 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 123 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
+            #line 121 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n    <script");
-
-WriteLiteral(" type=\"text/javascript\"");
-
-WriteLiteral(">\r\n        function deletes() {\r\n            backend.confirm(\"您确定要执行此操作吗？\", null," +
-" function (index) {\r\n                backend.post(\"");
-
-            
-            #line 127 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
-                         Write(Url.Action("Delete","Havior",new { }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\", { ids: \"");
-
-            
-            #line 127 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
-                                                                          Write(Model.HaviorID);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\" }, function (data) {\r\n                    window.location.href = \"");
-
-            
-            #line 128 "..\..\Areas\Backend\Views\Havior\Detail.cshtml"
-                                       Write(Url.Action("Select", "Havior"));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\";\r\n                });\r\n            });\r\n        }\r\n    </script>\r\n");
+WriteLiteral("\r\n");
 
 });
 
