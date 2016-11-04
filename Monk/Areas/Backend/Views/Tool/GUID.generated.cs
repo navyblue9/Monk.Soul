@@ -136,17 +136,18 @@ WriteLiteral(">通常生成的GUID码是唯一的，请放心使用。</div>\r\n
 
 DefineSection("operate", () => {
 
-WriteLiteral("\r\n    <input");
+WriteLiteral("\r\n");
 
-WriteLiteral(" type=\"button\"");
+WriteLiteral("    ");
 
-WriteLiteral(" class=\"monk-input-button turquoise monk-form-submit\"");
+            
+            #line 27 "..\..\Areas\Backend\Views\Tool\GUID.cshtml"
+Write(Html.Raw(ViewBag.HaviorInfo.FormButtons));
 
-WriteLiteral(" value=\"重新生成\"");
-
-WriteLiteral(" onclick=\"window.location.reload();\"");
-
-WriteLiteral(">\r\n");
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n");
 
 });
 

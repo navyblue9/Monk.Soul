@@ -24,7 +24,7 @@
 </div>
 
 @section operate{
-    <input type="button" class="monk-input-button turquoise monk-form-submit" value="重新生成" onclick="window.location.reload();">
+    @Html.Raw(ViewBag.HaviorInfo.FormButtons)
 }
 
 @section foot{
