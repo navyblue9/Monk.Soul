@@ -216,6 +216,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\monk.data-20161105.sql" />
     <Content Include="App_Data\monk.data.sql" />
     <Content Include="App_Data\monk.init.sql" />
     <Content Include="Areas\Backend\Assets\favicon.ico" />
