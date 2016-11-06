@@ -24,36 +24,22 @@ namespace Monk.Areas.Backend.Controllers
         public JsonResult List()
         {
             var clientResult = new JsonData<List<V_ModuleVM>>();
-            if (!CacheManager.Contains(Keys.ModuleCacheKey))
+            services.Command((db) =>
             {
-                services.Command((db) =>
-                {
-                    Mapper.Initialize(u => u.CreateMap<V_Module, V_ModuleVM>());
-                    var list = Mapper.Map<List<V_ModuleVM>>(db.Queryable<V_Module>().Where(c => true).ToList());
-                    CacheManager.Set(Keys.ModuleCacheKey, list);
-                    clientResult.SetClientData("y", "获取成功", list);
-                });
-            }
-            else clientResult.SetClientData("y", "获取成功", CacheManager.Get<List<V_ModuleVM>>(Keys.ModuleCacheKey));
+                Mapper.Initialize(u => u.CreateMap<V_Module, V_ModuleVM>());
+                clientResult.SetClientData("y", "获取成功", Mapper.Map<List<V_ModuleVM>>(db.Queryable<V_Module>().Where(c => true).ToList()));
+            });
             return Json(clientResult, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
         public ActionResult Insert(Guid? id)
         {
-            var moduleList = new List<V_ModuleVM>();
-            if (!CacheManager.Contains(Keys.ModuleCacheKey))
+            services.Command((db) =>
             {
-                services.Command((db) =>
-                {
-                    Mapper.Initialize(u => u.CreateMap<V_Module, V_ModuleVM>());
-                    moduleList = Mapper.Map<List<V_ModuleVM>>(db.Queryable<V_Module>().Where(c => true).ToList());
-                    CacheManager.Set(Keys.ModuleCacheKey, moduleList);
-                });
-            }
-            else moduleList = CacheManager.Get<List<V_ModuleVM>>(Keys.ModuleCacheKey);
-
-            ViewData["ModuleList"] = Common.ModuleDropDownList(moduleList, id);
+                Mapper.Initialize(u => u.CreateMap<V_Module, V_ModuleVM>());
+                ViewData["ModuleList"] = Common.ModuleDropDownList(Mapper.Map<List<V_ModuleVM>>(db.Queryable<V_Module>().Where(c => true).ToList()), id);
+            });
             return View(new ModuleVM() { Enable = true, Iconfont = "icon-backend-file", Sort = 0 });
         }
 
@@ -73,7 +59,6 @@ namespace Monk.Areas.Backend.Controllers
             services.Command((db) =>
             {
                 db.Insert<Module>(model);
-                CacheManager.Remove(Keys.ModuleCacheKey);
                 clientResult.SetClientData("y", "操作成功", new { id = model.ModuleID });
             });
             return Json(clientResult);
@@ -97,9 +82,6 @@ namespace Monk.Areas.Backend.Controllers
         {
             if (id == null) return Content("非法参数");
             var viewModel = new ModuleVM();
-            var moduleList = new List<V_ModuleVM>();
-            bool any = CacheManager.Contains(Keys.ModuleCacheKey);
-            if (any) moduleList = CacheManager.Get<List<V_ModuleVM>>(Keys.ModuleCacheKey);
             services.Command((db) =>
             {
                 var cfg = new MapperConfigurationExpression();
@@ -108,13 +90,8 @@ namespace Monk.Areas.Backend.Controllers
                 Mapper.Initialize(cfg);
 
                 viewModel = Mapper.Map<ModuleVM>(db.Queryable<Module>().InSingle(id));
-                if (!any)
-                {
-                    moduleList = Mapper.Map<List<V_ModuleVM>>(db.Queryable<V_Module>().Where(c => true).ToList());
-                    CacheManager.Set(Keys.ModuleCacheKey, moduleList);
-                }
+                ViewData["ModuleList"] = Common.ModuleDropDownList(Mapper.Map<List<V_ModuleVM>>(db.Queryable<V_Module>().Where(c => true).ToList()), viewModel.ParentID);
             });
-            ViewData["ModuleList"] = Common.ModuleDropDownList(moduleList, viewModel.ParentID);
             return View(viewModel);
         }
 
@@ -142,7 +119,6 @@ namespace Monk.Areas.Backend.Controllers
                         viewModel.TagAttr,
                         UpdateTime = DateTime.Now
                     }, u => u.ModuleID == viewModel.ModuleID);
-                    CacheManager.Remove(Keys.ModuleCacheKey);
                     clientResult.SetClientData("y", "操作成功");
                 });
             }
@@ -170,7 +146,6 @@ namespace Monk.Areas.Backend.Controllers
 
                         db.FalseDelete<Module>("Del", u => filterList.Contains(u.ModuleID));
                         db.CommitTran();
-                        CacheManager.Remove(Keys.ModuleCacheKey);
                         if (ids.Count() == filterList.Count()) clientResult.SetClientData("y", "操作成功");
                         else clientResult.SetClientData("y", "操作成功，但不包括默认数据");
                     }

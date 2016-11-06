@@ -1,0 +1,29 @@
+﻿@model ButtonVM
+@{
+    ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
+    ViewBag.Keywords = ViewBag.SysSetInfo.Keywords;
+    ViewBag.Description = ViewBag.SysSetInfo.Description;
+    ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
+}
+
+@section head{
+    @Html.Raw(ViewBag.HaviorInfo.HeadCode)
+    @Styles.Render("~/Assets/Backend/Editor.MD/Style")
+}
+
+@section crumbs{
+    @Html.Raw(ViewBag.HaviorInfo.Crumbs)
+}
+
+@section beginForm{@{ Html.BeginForm("Insert", "Group", FormMethod.Post, new { @class = "monk-form" });}}
+
+@section operate{
+    @Html.Raw(ViewBag.HaviorInfo.FormButtons)
+}
+
+@section endForm{@{ Html.EndForm();}}
+
+@section foot{
+    @Html.Raw(ViewBag.HaviorInfo.FootCode)
+}

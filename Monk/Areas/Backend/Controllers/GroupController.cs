@@ -34,6 +34,9 @@ namespace Monk.Areas.Backend.Controllers
         }
 
         [HttpGet]
-        public ActionResult Insert() { return View(); }
+        public ActionResult Insert()
+        {
+            return View();
+        }
     }
 }

@@ -2895,6 +2895,7 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Select.generated.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\Backend\Views\Group\Insert.cshtml" />
     <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">

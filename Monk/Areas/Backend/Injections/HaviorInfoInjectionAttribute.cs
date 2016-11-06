@@ -1,14 +1,14 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Web.Mvc;
+using System.Collections.Generic;
 using SqlSugar;
 using AutoMapper;
+using AutoMapper.Configuration;
 using Monk.Utils;
 using Monk.DbStore;
 using Monk.Areas.Backend.ViewModels;
 using Monk.Models;
-using System.Collections.Generic;
-using AutoMapper.Configuration;
-using System;
 
 namespace Monk.Areas.Backend.Injections
 {
@@ -43,15 +43,10 @@ namespace Monk.Areas.Backend.Injections
                                 services.Command((db) =>
                                 {
                                     viewModel = Mapper.Map<V_HaviorVM>(db.Queryable<V_Havior>().SingleOrDefault(u => u.Area == _area.ToString() && u.Controller == _controller.ToLower() && u.Action == _action.ToLower() && u.HttpMethod == _httpMethod.ToUpper()));
-                                    if (!CacheManager.Contains(Keys.ModuleCacheKey))
-                                    {
-                                        CacheManager.Set(Keys.ModuleCacheKey, Mapper.Map<List<V_ModuleVM>>(db.Queryable<V_Module>().Where(c => true).ToList()));
-                                    }
-
+                                    moduleList = Mapper.Map<List<V_ModuleVM>>(db.Queryable<V_Module>().Where(c => true).ToList());
                                     buttonlist = Mapper.Map<List<V_ButtonVM>>(db.Queryable<V_Button>().Where(b => b.HaviorID == viewModel.HaviorID && b.Enable == true).OrderBy(u => u.Sort).OrderBy(u => u.ButtonID).ToList());
                                 });
                             }
-                            moduleList = CacheManager.Get<List<V_ModuleVM>>(Keys.ModuleCacheKey);
 
                             if (viewModel != null)
                             {
