@@ -71,6 +71,31 @@ VALUES  ( 'fb50d615-5a5e-4e2e-8bf2-5c33aab9355c' , -- MemberID - uniqueidentifie
           '00000000-0000-0000-0000-000000000000'  -- LogMemberID - uniqueidentifier
         );
 GO
+INSERT INTO dbo.[Group]
+        ( GroupID ,
+          Name ,
+          Remark ,
+          ParentID ,
+          Enable ,
+          UpdateTime ,
+          [Default] ,
+          Del ,
+          Destroy ,
+          CreateTime ,
+          LogMemberID
+        )
+VALUES  ( '11111111-1111-1111-1111-111111111111' , -- GroupID - uniqueidentifier
+          N'根管理组' , -- Name - nvarchar(32)
+          N'' , -- Remark - nvarchar(200)
+          '00000000-0000-0000-0000-000000000000' , -- ParentID - uniqueidentifier
+          1 , -- Enable - bit
+          GETDATE() , -- UpdateTime - datetime
+          1 , -- Default - bit
+          0 , -- Del - bit
+          0 , -- Destroy - bit
+          GETDATE() , -- CreateTime - datetime
+          '00000000-0000-0000-0000-000000000000'  -- LogMemberID - uniqueidentifier
+        );
 INSERT  INTO dbo.[Group]
         ( GroupID ,
           Name ,
@@ -87,7 +112,7 @@ INSERT  INTO dbo.[Group]
 VALUES  ( 'cbd35057-2b4e-4578-b08f-5c9ccd65dab5' , -- GroupID - uniqueidentifier
           N'超级管理组' , -- Name - nvarchar(32)
           N'超级管理组' , -- Remark - nvarchar(200)
-          '00000000-0000-0000-0000-000000000000' , -- ParentID - uniqueidentifier
+          '11111111-1111-1111-1111-111111111111' , -- ParentID - uniqueidentifier
           1 , -- Enable - bit
           GETDATE() , -- UpdateTime - datetime
           1 , -- Default - bit
@@ -112,7 +137,7 @@ INSERT  INTO dbo.[Group]
 VALUES  ( '6b13eb34-04a5-4b20-af81-abbf181896e3' , -- GroupID - uniqueidentifier
           N'社区组' , -- Name - nvarchar(32)
           N'社区组' , -- Remark - nvarchar(200)
-          '00000000-0000-0000-0000-000000000000' , -- ParentID - uniqueidentifier
+          '11111111-1111-1111-1111-111111111111' , -- ParentID - uniqueidentifier
           1 , -- Enable - bit
           GETDATE() , -- UpdateTime - datetime
           1 , -- Default - bit

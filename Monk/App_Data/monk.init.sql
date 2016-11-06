@@ -1195,3 +1195,19 @@ FROM    dbo.Button button
                     WHERE   Del = 0
                             AND Destroy = 0
                   ) havior ON button.HaviorID = havior.HaviorID;
+GO
+-- 创建会员组视图
+IF ( OBJECT_ID('dbo.[V_Group]', 'V') IS NOT NULL )
+    DROP VIEW dbo.[V_Group];
+GO
+CREATE VIEW dbo.[V_Group]
+AS
+    SELECT  [_group].* ,
+            [_pgroup].Name AS ParentName
+    FROM    dbo.[Group] _group
+            LEFT JOIN ( SELECT  Name ,
+                                GroupID
+                        FROM    dbo.[Group]
+                        WHERE   Del = 0
+                                AND Destroy = 0
+                      ) _pgroup ON _group.ParentID = [_pgroup].GroupID;

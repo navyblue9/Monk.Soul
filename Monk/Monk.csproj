@@ -2534,6 +2534,7 @@
     <Compile Include="Areas\Backend\ViewModels\ErrorLogVM.cs" />
     <Compile Include="Areas\Backend\ViewModels\MenuVM.cs" />
     <Compile Include="Areas\Backend\ViewModels\V_ButtonVM.cs" />
+    <Compile Include="Areas\Backend\ViewModels\V_GroupVM.cs" />
     <Compile Include="Areas\Backend\Views\Button\Detail.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2738,6 +2739,7 @@
     <Compile Include="Models\Role_Module.cs" />
     <Compile Include="Models\SysSet.cs" />
     <Compile Include="Models\V_Button.cs" />
+    <Compile Include="Models\V_Group.cs" />
     <Compile Include="Models\V_Havior.cs" />
     <Compile Include="Models\V_Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
