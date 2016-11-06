@@ -1,5 +1,6 @@
 ﻿using MimeKit;
 using MailKit.Net.Smtp;
+using MimeKit.Text;
 
 namespace Monk.Utils
 {
@@ -11,7 +12,7 @@ namespace Monk.Utils
             message.From.Add(new MailboxAddress(fromName, fromEMail));
             message.To.Add(new MailboxAddress(toName, toEMail));
             message.Subject = subject;
-            message.Body = new TextPart("plain")
+            message.Body = new TextPart(TextFormat.Html)
             {
                 Text = text
             };

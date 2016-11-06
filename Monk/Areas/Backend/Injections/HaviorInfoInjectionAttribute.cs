@@ -43,8 +43,11 @@ namespace Monk.Areas.Backend.Injections
                                 services.Command((db) =>
                                 {
                                     viewModel = Mapper.Map<V_HaviorVM>(db.Queryable<V_Havior>().SingleOrDefault(u => u.Area == _area.ToString() && u.Controller == _controller.ToLower() && u.Action == _action.ToLower() && u.HttpMethod == _httpMethod.ToUpper()));
-                                    moduleList = Mapper.Map<List<V_ModuleVM>>(db.Queryable<V_Module>().Where(c => true).ToList());
-                                    buttonlist = Mapper.Map<List<V_ButtonVM>>(db.Queryable<V_Button>().Where(b => b.HaviorID == viewModel.HaviorID && b.Enable == true).OrderBy(u => u.Sort).OrderBy(u => u.SerialNo).ToList());
+                                    if (viewModel != null)
+                                    {
+                                        moduleList = Mapper.Map<List<V_ModuleVM>>(db.Queryable<V_Module>().Where(c => true).ToList());
+                                        buttonlist = Mapper.Map<List<V_ButtonVM>>(db.Queryable<V_Button>().Where(b => b.HaviorID == viewModel.HaviorID && b.Enable == true).OrderBy(u => u.Sort).OrderBy(u => u.SerialNo).ToList());
+                                    }
                                 });
                             }
 

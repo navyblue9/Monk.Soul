@@ -83,34 +83,30 @@ namespace Monk.Filters
                 });
             }
 
-            MailHelper.SendTextEmail("百签软件有限公司 技术支持", "tech@baisoft.org", "百小僧", "monk@baisoft.org", "应用程序异常通知", @"引起异常会员ID：" + logger.LogMemberID + @"
+            MailHelper.SendTextEmail("百签软件有限公司 技术支持", "tech@baisoft.org", "百小僧", "monk@baisoft.org", "应用程序异常通知",
+            @"<p>引起异常会员ID：" + logger.LogMemberID + @"</p>
 
-引起异常会员账号：" + logger.Account + @"
+            <p>引起异常会员账号：" + logger.Account + @"</p>
 
-当前异常应用程序：" + logger.Source + @"
+            <p>当前异常应用程序：" + logger.Source + @"</p>
 
-引起异常链接地址：" + logger.ErrorUrl + @"
+            <p>引起异常链接地址：" + logger.ErrorUrl + @"</p>
 
-异常消息：" + logger.Message + @"
+            <p>异常消息：" + logger.Message + @"</p>
 
-引起异常的方法：" + logger.TargetSite + @"
+            <p>引起异常的方法：" + logger.TargetSite + @"</p>
 
-异常堆栈信息：" + logger.StackTrace + @"
+            <p>异常堆栈信息：<pre>" + logger.StackTrace + @"</pre></p>
 
-异常编码数字：" + logger.HResult + @"
+            <p>异常编码数字：" + logger.HResult + @"</p>
 
-异常帮助文档：" + logger.HelpLink + @"
+            <p>异常帮助文档：" + logger.HelpLink + @"</p>
 
-异常记录时间：" + logger.LogTime + @"
+            <p>异常记录时间：" + logger.LogTime + @"</p>
 
+            <p style='text-align:right;'><br /><br />来至：<a title='百签软件（中山）有限公司' href='http://www.baisoft.org/'>百签软件（中山）有限公司</a> 异常监控
 
-
-
-
-                                                                                                                                        来至：百签软件（中山）有限公司（http://www.baisoft.org/） 异常监控
-
-                                                                                                                                                                                                      " + DateTime.Now + @"
-");
+           <br />" + DateTime.Now + @"</p>");
         }
     }
 }
