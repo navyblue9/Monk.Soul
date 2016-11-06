@@ -14,6 +14,114 @@
     @Html.Raw(ViewBag.HaviorInfo.Crumbs)
 }
 
+<div class="monk-table">
+    <table>
+        <thead>
+            <tr>
+                <th align="left">
+                    模块
+                </th>
+                <th align="left">
+                    行为
+                </th>
+                <th align="left">
+                    按钮
+                </th>
+                <th align="center" class="monk-table-status">
+                    操作
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="5">
+                    <input type="checkbox" class="check-row" /> <label class="p-name">系统栏目</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check-row" /> <label class="p-name">系统栏目列表</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check-row" /> <label class="p-name">全选</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">新增</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">查看</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">编辑</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">删除</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">搜索</label>
+                </td>
+                <td class="monk-table-status">
+                    <input type="checkbox" class="check-row-all" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" class="check-row" /> <label class="p-name">新增栏目列表</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check-row" /> <label class="p-name">全选</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">新增</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">查看</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">编辑</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">删除</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">搜索</label>
+                </td>
+                <td class="monk-table-status">
+                    <input type="checkbox" class="check-row-all" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" class="check-row" /> <label class="p-name">查看栏目列表</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check-row" /> <label class="p-name">全选</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">新增</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">查看</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">编辑</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">删除</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">搜索</label>
+                </td>
+                <td class="monk-table-status">
+                    <input type="checkbox" class="check-row-all" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" class="check-row" /> <label class="p-name">编辑栏目列表</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check-row" /> <label class="p-name">全选</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">新增</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">查看</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">编辑</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">删除</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">搜索</label>
+                </td>
+                <td class="monk-table-status">
+                    <input type="checkbox" class="check-row-all" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" class="check-row" /> <label class="p-name">删除栏目列表</label>
+                </td>
+                <td>
+                    <input type="checkbox" class="check-row" /> <label class="p-name">全选</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">新增</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">查看</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">编辑</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">删除</label>
+                    <input type="checkbox" class="check-row" /><label class="p-name">搜索</label>
+                </td>
+                <td class="monk-table-status">
+                    <input type="checkbox" class="check-row-all" />
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+        </tfoot>
+    </table>
+</div>
+
 
 @section buttons{
     @Html.Raw(ViewBag.HaviorInfo.SelectButtons)
