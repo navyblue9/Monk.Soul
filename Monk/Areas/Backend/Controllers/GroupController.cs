@@ -32,5 +32,8 @@ namespace Monk.Areas.Backend.Controllers
             });
             return Json(clientResult, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpGet]
+        public ActionResult Insert() { return View(); }
     }
 }
