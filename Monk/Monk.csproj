@@ -2591,6 +2591,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Select.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Areas\Backend\Views\Group\Select.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Select.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Backend\Views\Havior\Detail.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2886,7 +2891,10 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Update.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Areas\Backend\Views\Group\Select.cshtml" />
+    <Content Include="Areas\Backend\Views\Group\Select.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Select.generated.cs</LastGenOutput>
+    </Content>
     <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
