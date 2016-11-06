@@ -57,10 +57,13 @@ namespace Monk.Areas.Backend.Controllers
             var clientResult = new JsonData<object>();
             var sessionModel = Session[Keys.SessionKey] as MemberSessionVM;
             viewModel.LogMemberID = sessionModel.MemberID;
-            viewModel.Area = viewModel.Area.ToLower();
-            viewModel.Action = viewModel.Action.ToLower();
-            viewModel.Controller = viewModel.Controller.ToLower();
-            if (viewModel.Route == true) viewModel.Url = Url.Action(viewModel.Action.ToLower(), viewModel.Controller.ToLower(), new { area = viewModel.Area.ToLower(), id = viewModel.Parameter });
+            if (viewModel.Route == true)
+            {
+                viewModel.Area = string.IsNullOrEmpty(viewModel.Area) ? "" : viewModel.Area.ToLower();
+                viewModel.Controller = string.IsNullOrEmpty(viewModel.Controller) ? "" : viewModel.Controller.ToLower();
+                viewModel.Action = string.IsNullOrEmpty(viewModel.Action) ? "" : viewModel.Action.ToLower();
+                viewModel.Url = Url.Action(viewModel.Action, viewModel.Controller, new { area = viewModel.Area, id = viewModel.Parameter });
+            }
 
             Mapper.Initialize(u => u.CreateMap<HaviorVM, Havior>());
             var model = Mapper.Map<Havior>(viewModel);
@@ -112,10 +115,13 @@ namespace Monk.Areas.Backend.Controllers
         {
             var clientResult = new JsonData<object>() { };
             if (viewModel.HaviorID == null) clientResult.SetClientData("n", "非法参数");
-            viewModel.Area = viewModel.Area.ToLower();
-            viewModel.Action = viewModel.Action.ToLower();
-            viewModel.Controller = viewModel.Controller.ToLower();
-            if (viewModel.Route == true) viewModel.Url = Url.Action(viewModel.Action.ToLower(), viewModel.Controller.ToLower(), new { area = viewModel.Area.ToLower(), id = viewModel.Parameter });
+            if (viewModel.Route == true)
+            {
+                viewModel.Area = string.IsNullOrEmpty(viewModel.Area) ? "" : viewModel.Area.ToLower();
+                viewModel.Controller = string.IsNullOrEmpty(viewModel.Controller) ? "" : viewModel.Controller.ToLower();
+                viewModel.Action = string.IsNullOrEmpty(viewModel.Action) ? "" : viewModel.Action.ToLower();
+                viewModel.Url = Url.Action(viewModel.Action, viewModel.Controller, new { area = viewModel.Area, id = viewModel.Parameter });
+            }
 
             services.Command((db) =>
             {
