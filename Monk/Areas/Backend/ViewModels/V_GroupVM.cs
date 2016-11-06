@@ -17,5 +17,6 @@ namespace Monk.Areas.Backend.ViewModels
         public DateTime CreateTime { get; set; }
         public Guid LogMemberID { get; set; }
         public string ParentName { get; set; }
+        public int Total { get; set; }
     }
 }

@@ -98,5 +98,12 @@ namespace Monk.Models
         /// </summary>
         public string ParentName {get;set;}
 
+        /// <summary>
+        /// Desc:- 
+        /// Default:- 
+        /// Nullable:False 
+        /// </summary>
+        public int Total {get;set;}
+
     }
 }

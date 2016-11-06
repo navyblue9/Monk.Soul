@@ -2521,6 +2521,7 @@
     <Compile Include="Areas\Backend\Controllers\CommonController.cs" />
     <Compile Include="Areas\Backend\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Backend\Controllers\ErrorLogController.cs" />
+    <Compile Include="Areas\Backend\Controllers\GroupController.cs" />
     <Compile Include="Areas\Backend\Controllers\HaviorController.cs" />
     <Compile Include="Areas\Backend\Controllers\LoginLogController.cs" />
     <Compile Include="Areas\Backend\Controllers\ModuleController.cs" />
@@ -2885,6 +2886,7 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>Update.generated.cs</LastGenOutput>
     </Content>
+    <Content Include="Areas\Backend\Views\Group\Select.cshtml" />
     <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">

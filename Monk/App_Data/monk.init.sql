@@ -1203,11 +1203,19 @@ GO
 CREATE VIEW dbo.[V_Group]
 AS
     SELECT  [_group].* ,
-            [_pgroup].Name AS ParentName
+            [_pgroup].Name AS ParentName ,
+            ISNULL([_total].Total, 0) AS Total
     FROM    dbo.[Group] _group
             LEFT JOIN ( SELECT  Name ,
                                 GroupID
                         FROM    dbo.[Group]
                         WHERE   Del = 0
                                 AND Destroy = 0
-                      ) _pgroup ON _group.ParentID = [_pgroup].GroupID;
+                      ) _pgroup ON _group.ParentID = [_pgroup].GroupID
+            LEFT JOIN ( SELECT  GroupID ,
+                                COUNT(GroupID) AS Total
+                        FROM    dbo.Member
+                        WHERE   Del = 0
+                                AND Destroy = 0
+                        GROUP BY GroupID
+                      ) _total ON [_group].GroupID = [_total].GroupID;
