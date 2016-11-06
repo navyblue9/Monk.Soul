@@ -225,22 +225,26 @@ WriteLiteral(" for=\"\"");
 
 WriteLiteral(" class=\"monk-form-label\"");
 
-WriteLiteral(">异常描述</label>\r\n    <div");
+WriteLiteral(">异常堆栈信息</label>\r\n    <div");
 
-WriteLiteral(" class=\"monk-form-wrap monk-form-detail-wrap monk-full\"");
+WriteLiteral(" class=\"monk-form-wrap monk-form-code-wrap monk-full\"");
 
-WriteLiteral(">\r\n");
+WriteLiteral(">\r\n        <pre");
 
-WriteLiteral("        ");
+WriteLiteral(" class=\"monk-code\"");
+
+WriteLiteral(" data-language=\"TEXT\"");
+
+WriteLiteral(">");
 
             
             #line 56 "..\..\Areas\Backend\Views\ErrorLog\Detail.cshtml"
-   Write(Model.Message);
+                                               Write(Model.Message);
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n    </div>\r\n</div>\r\n\r\n<div");
+WriteLiteral("</pre>\r\n    </div>\r\n</div>\r\n\r\n<div");
 
 WriteLiteral(" class=\"monk-form-item\"");
 
@@ -250,22 +254,26 @@ WriteLiteral(" for=\"\"");
 
 WriteLiteral(" class=\"monk-form-label\"");
 
-WriteLiteral(">引起异常的方法</label>\r\n    <div");
+WriteLiteral(">异常堆栈信息</label>\r\n    <div");
 
-WriteLiteral(" class=\"monk-form-wrap monk-form-detail-wrap monk-full\"");
+WriteLiteral(" class=\"monk-form-wrap monk-form-code-wrap monk-full\"");
 
-WriteLiteral(">\r\n");
+WriteLiteral(">\r\n        <pre");
 
-WriteLiteral("        ");
+WriteLiteral(" class=\"monk-code\"");
+
+WriteLiteral(" data-language=\"C#\"");
+
+WriteLiteral(">");
 
             
             #line 63 "..\..\Areas\Backend\Views\ErrorLog\Detail.cshtml"
-   Write(Model.TargetSite);
+                                             Write(Model.TargetSite);
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n    </div>\r\n</div>\r\n\r\n<div");
+WriteLiteral("</pre>\r\n    </div>\r\n</div>\r\n\r\n<div");
 
 WriteLiteral(" class=\"monk-form-item\"");
 

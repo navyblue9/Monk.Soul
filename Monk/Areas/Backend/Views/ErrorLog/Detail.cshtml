@@ -51,16 +51,16 @@
 </div>
 
 <div class="monk-form-item">
-    <label for="" class="monk-form-label">异常描述</label>
-    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
-        @Model.Message
+    <label for="" class="monk-form-label">异常堆栈信息</label>
+    <div class="monk-form-wrap monk-form-code-wrap monk-full">
+        <pre class="monk-code" data-language="TEXT">@Model.Message</pre>
     </div>
 </div>
 
 <div class="monk-form-item">
-    <label for="" class="monk-form-label">引起异常的方法</label>
-    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
-        @Model.TargetSite
+    <label for="" class="monk-form-label">异常堆栈信息</label>
+    <div class="monk-form-wrap monk-form-code-wrap monk-full">
+        <pre class="monk-code" data-language="C#">@Model.TargetSite</pre>
     </div>
 </div>
 
