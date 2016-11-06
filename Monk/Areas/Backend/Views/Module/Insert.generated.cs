@@ -108,55 +108,6 @@ WriteLiteral(" class=\"monk-form-item\"");
 
 WriteLiteral(">\r\n    <label");
 
-WriteLiteral(" for=\"Name\"");
-
-WriteLiteral(" class=\"monk-form-label\"");
-
-WriteLiteral(">栏目名称</label>\r\n    <div");
-
-WriteLiteral(" class=\"monk-form-wrap\"");
-
-WriteLiteral(">\r\n        <span");
-
-WriteLiteral(" class=\"monk-iconfont border-right icon-monk-input\"");
-
-WriteLiteral("></span>\r\n");
-
-WriteLiteral("        ");
-
-            
-            #line 24 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
-   Write(Html.TextBoxFor(u => u.Name,
-        new
-        {
-            @class = "monk-form-input normal",
-            placeholder = "栏目名称",
-            datatype = "*1-16",
-            errormsg = "栏目名称由1-16位英文字母、数字或符号组成",
-            nullmsg = "请输入栏目名称"
-        }));
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n        <span");
-
-WriteLiteral(" class=\"monk-iconfont icon-monk-required\"");
-
-WriteLiteral("></span>\r\n        <span");
-
-WriteLiteral(" class=\"monk-iconfont border-left icon-monk-dacha monk-clear-input\"");
-
-WriteLiteral("></span>\r\n    </div>\r\n    <div");
-
-WriteLiteral(" class=\"monk-form-tip\"");
-
-WriteLiteral(">通常栏目名称不宜过长，4-6个字最为恰当</div>\r\n</div>\r\n<div");
-
-WriteLiteral(" class=\"monk-form-item\"");
-
-WriteLiteral(">\r\n    <label");
-
 WriteLiteral(" for=\"ParentID\"");
 
 WriteLiteral(" class=\"monk-form-label\"");
@@ -210,7 +161,7 @@ WriteLiteral(">请输入或选择...</option>\r\n");
 WriteLiteral("            ");
 
             
-            #line 49 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+            #line 31 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
        Write(Html.Raw(ViewData["ModuleList"]));
 
             
@@ -221,6 +172,55 @@ WriteLiteral("\r\n        </select>\r\n    </div>\r\n    <div");
 WriteLiteral(" class=\"monk-form-tip\"");
 
 WriteLiteral(">选择将该模块添加到指定栏目下面</div>\r\n</div>\r\n<div");
+
+WriteLiteral(" class=\"monk-form-item\"");
+
+WriteLiteral(">\r\n    <label");
+
+WriteLiteral(" for=\"Name\"");
+
+WriteLiteral(" class=\"monk-form-label\"");
+
+WriteLiteral(">栏目名称</label>\r\n    <div");
+
+WriteLiteral(" class=\"monk-form-wrap\"");
+
+WriteLiteral(">\r\n        <span");
+
+WriteLiteral(" class=\"monk-iconfont border-right icon-monk-input\"");
+
+WriteLiteral("></span>\r\n");
+
+WriteLiteral("        ");
+
+            
+            #line 40 "..\..\Areas\Backend\Views\Module\Insert.cshtml"
+   Write(Html.TextBoxFor(u => u.Name,
+        new
+        {
+            @class = "monk-form-input normal",
+            placeholder = "栏目名称",
+            datatype = "*1-16",
+            errormsg = "栏目名称由1-16位英文字母、数字或符号组成",
+            nullmsg = "请输入栏目名称"
+        }));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n        <span");
+
+WriteLiteral(" class=\"monk-iconfont icon-monk-required\"");
+
+WriteLiteral("></span>\r\n        <span");
+
+WriteLiteral(" class=\"monk-iconfont border-left icon-monk-dacha monk-clear-input\"");
+
+WriteLiteral("></span>\r\n    </div>\r\n    <div");
+
+WriteLiteral(" class=\"monk-form-tip\"");
+
+WriteLiteral(">通常栏目名称不宜过长，4-6个字最为恰当</div>\r\n</div>\r\n<div");
 
 WriteLiteral(" class=\"monk-form-item\"");
 

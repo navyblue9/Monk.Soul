@@ -2533,6 +2533,7 @@
     <Compile Include="Areas\Backend\ViewModels\ButtonVM.cs" />
     <Compile Include="Areas\Backend\ViewModels\CacheVM.cs" />
     <Compile Include="Areas\Backend\ViewModels\ErrorLogVM.cs" />
+    <Compile Include="Areas\Backend\ViewModels\GroupVM.cs" />
     <Compile Include="Areas\Backend\ViewModels\MenuVM.cs" />
     <Compile Include="Areas\Backend\ViewModels\V_ButtonVM.cs" />
     <Compile Include="Areas\Backend\ViewModels\V_GroupVM.cs" />
@@ -2896,6 +2897,8 @@
       <LastGenOutput>Select.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Areas\Backend\Views\Group\Insert.cshtml" />
+    <Content Include="Areas\Backend\Views\Group\Detail.cshtml" />
+    <Content Include="Areas\Backend\Views\Group\Update.cshtml" />
     <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">

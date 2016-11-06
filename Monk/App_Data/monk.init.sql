@@ -64,7 +64,7 @@ CREATE TABLE dbo.[Group]
 	[GroupID] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,	-- ID
 	[Name] NVARCHAR(32) NOT NULL,	-- 名称
 	[Remark] NVARCHAR(200),	-- 描述
-	[ParentID] UNIQUEIDENTIFIER,	-- 上级ID
+	[ParentID] UNIQUEIDENTIFIER NOT NULL,	-- 上级ID
 	[Enable] BIT NOT NULL DEFAULT(1),	-- 启用
 	-- 以下为通用字段，除了UpdateTime，SerialNo，LogMemberID以外，其他禁止插入，禁止更新（但不包含软删除，硬删除）
 	[SerialNo] INT IDENTITY(1,1),	-- 流水号

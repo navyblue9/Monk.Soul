@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Linq;
+using System.Text;
 
 namespace Monk.Areas.Backend.ViewModels
 {
-    public class V_GroupVM
+    public class GroupVM
     {
         public Guid GroupID { get; set; }
         public string Name { get; set; }
@@ -16,7 +18,5 @@ namespace Monk.Areas.Backend.ViewModels
         public Boolean Destroy { get; set; }
         public DateTime CreateTime { get; set; }
         public Guid LogMemberID { get; set; }
-        public string ParentName { get; set; }
-        public int Total { get; set; }
     }
 }

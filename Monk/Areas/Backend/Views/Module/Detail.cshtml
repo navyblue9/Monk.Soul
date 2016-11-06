@@ -16,15 +16,16 @@
 }
 
 <div class="monk-form-item">
-    <label for="" class="monk-form-label">栏目名称</label>
-    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
-        @Model.Name
-    </div>
-</div>
-<div class="monk-form-item">
     <label for="" class="monk-form-label">上级栏目</label>
     <div class="monk-form-wrap monk-form-detail-wrap monk-full">
         @DataToHtmlHelper.NullHtml(Model.ParentName, "无")
+    </div>
+</div>
+
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">栏目名称</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.Name
     </div>
 </div>
 <div class="monk-form-item">

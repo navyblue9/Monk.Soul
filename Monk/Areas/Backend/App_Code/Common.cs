@@ -30,5 +30,29 @@ namespace Monk.Areas.Backend.App_Code
             }
             level = 0;
         }
+
+        public static string GroupDropDownList(List<V_GroupVM> list, Guid? selectID = null)
+        {
+            var selectHtml = string.Empty;
+            CreateGroupDropDownList(list, selectID, default(Guid), ref selectHtml);
+            return selectHtml;
+        }
+
+        private static void CreateGroupDropDownList(List<V_GroupVM> list, Guid? selectID, Guid? parentID, ref string selectHTML, int level = 0)
+        {
+            var querylist = list.Where(u => u.ParentID == parentID);
+            if (querylist.Count() > 0)
+            {
+                level++;
+                string space = "";
+                for (var i = 0; i < level - 1; i++) space += "　";
+                foreach (var item in querylist)
+                {
+                    selectHTML += "<option value='" + item.GroupID + "' " + (item.GroupID == selectID ? " selected=\"selected\" " : "") + ">" + space + "├ " + item.Name + "</option>";
+                    CreateGroupDropDownList(list, selectID, item.GroupID, ref selectHTML, level);
+                }
+            }
+            level = 0;
+        }
     }
 }

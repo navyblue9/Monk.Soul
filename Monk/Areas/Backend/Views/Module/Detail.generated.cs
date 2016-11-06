@@ -100,31 +100,6 @@ WriteLiteral(" for=\"\"");
 
 WriteLiteral(" class=\"monk-form-label\"");
 
-WriteLiteral(">栏目名称</label>\r\n    <div");
-
-WriteLiteral(" class=\"monk-form-wrap monk-form-detail-wrap monk-full\"");
-
-WriteLiteral(">\r\n");
-
-WriteLiteral("        ");
-
-            
-            #line 21 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
-   Write(Model.Name);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("\r\n    </div>\r\n</div>\r\n<div");
-
-WriteLiteral(" class=\"monk-form-item\"");
-
-WriteLiteral(">\r\n    <label");
-
-WriteLiteral(" for=\"\"");
-
-WriteLiteral(" class=\"monk-form-label\"");
-
 WriteLiteral(">上级栏目</label>\r\n    <div");
 
 WriteLiteral(" class=\"monk-form-wrap monk-form-detail-wrap monk-full\"");
@@ -134,8 +109,33 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 27 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 21 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
    Write(DataToHtmlHelper.NullHtml(Model.ParentName, "无"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n    </div>\r\n</div>\r\n\r\n<div");
+
+WriteLiteral(" class=\"monk-form-item\"");
+
+WriteLiteral(">\r\n    <label");
+
+WriteLiteral(" for=\"\"");
+
+WriteLiteral(" class=\"monk-form-label\"");
+
+WriteLiteral(">栏目名称</label>\r\n    <div");
+
+WriteLiteral(" class=\"monk-form-wrap monk-form-detail-wrap monk-full\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("        ");
+
+            
+            #line 28 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+   Write(Model.Name);
 
             
             #line default
@@ -159,7 +159,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 33 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 34 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
    Write(DataToHtmlHelper.NullHtml(Model.Remark, "无"));
 
             
@@ -184,7 +184,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 39 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 40 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
    Write(Model.Sort);
 
             
@@ -209,7 +209,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 45 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 46 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
    Write(DataToHtmlHelper.NullHtml(Model.TagAttr, "无"));
 
             
@@ -234,7 +234,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 51 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 52 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
    Write(Html.Raw(DataToHtmlHelper.GetIconfont(Model.Iconfont)));
 
             
@@ -259,7 +259,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 57 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 58 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
    Write(Html.Raw(DataToHtmlHelper.StatusHtml(Model.Enable)));
 
             
@@ -284,7 +284,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 63 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 64 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
    Write(Html.Raw(DataToHtmlHelper.StatusHtml(Model.Default)));
 
             
@@ -309,7 +309,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 69 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 70 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
    Write(DataToHtmlHelper.NullHtml(Model.CreateTime, "无"));
 
             
@@ -334,7 +334,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 75 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 76 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
    Write(DataToHtmlHelper.NullHtml(Model.UpdateTime, "无"));
 
             
@@ -349,7 +349,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 80 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 81 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
 Write(Html.HiddenFor(u => u.ModuleID));
 
             
@@ -360,7 +360,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 81 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 82 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FormButtons));
 
             
@@ -379,7 +379,7 @@ WriteLiteral("\r\n");
 WriteLiteral("    ");
 
             
-            #line 85 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
+            #line 86 "..\..\Areas\Backend\Views\Module\Detail.cshtml"
 Write(Html.Raw(ViewBag.HaviorInfo.FootCode));
 
             

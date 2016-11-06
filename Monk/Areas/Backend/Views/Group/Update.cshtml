@@ -16,18 +16,18 @@
     @Html.Raw(ViewBag.HaviorInfo.Crumbs)
 }
 
-@section beginForm{@{ Html.BeginForm("Insert", "Group", FormMethod.Post, new { @class = "monk-form" });}}
+@section beginForm{@{ Html.BeginForm("Update", "Group", FormMethod.Post, new { @class = "monk-form" });}}
 
 <div class="monk-form-item">
     <label for="ParentID" class="monk-form-label">上级会员组</label>
     <div class="monk-form-wrap monk-form-select-wrap">
         <span class="monk-iconfont border-right icon-monk-input"></span>
-        <input type="text" class="monk-form-input middle" placeholder="请输入或选择..." />
+        <input type="text" class="monk-form-input middle" placeholder="请输入或选择..." @(Html.Raw(Model.GroupID == Guid.Parse("11111111-1111-1111-1111-111111111111") ? " disabled='disabled' " : "")) />
         <span class="monk-iconfont icon-monk-required"></span>
         <span class="monk-iconfont monk-select-arrow icon-monk-arrowdown border-left"></span>
     </div>
     <div class="monk-form-select monk-none">
-        <select class="monk-select" name="ParentID" datatype="*" nullmsg="请选择上级会员组" errormsg="请选择上级会员组">
+        <select class="monk-select" name="ParentID" datatype="*" nullmsg="请选择上级会员组" errormsg="请选择上级会员组" @(Html.Raw(Model.GroupID == Guid.Parse("11111111-1111-1111-1111-111111111111") ? " ignore='ignore' " : ""))>
             <option value="">请输入或选择...</option>
             @Html.Raw(ViewData["GroupList"])
         </select>
@@ -84,6 +84,7 @@
 </div>
 
 @section operate{
+    @Html.HiddenFor(u => u.GroupID)
     @Html.Raw(ViewBag.HaviorInfo.FormButtons)
 }
 
@@ -94,12 +95,7 @@
     <script type="text/javascript">
         $(function () {
             backend.validform(function (data) {
-                backend.confirm(data.info + "，是否继续新增？", {}, function (index) {
-                    backend.layer().close(index);
-                    window.location.reload();
-                }, function () {
-                    window.location.href = "@Url.Action("Detail","Group",new { id=""})/" + data.data.id;
-                });
+                window.location.href = "@Url.Action("Detail","Group",new { id=Model.GroupID})";
             });
         });
     </script>

@@ -31,9 +31,9 @@ namespace Monk.Models
         /// <summary>
         /// Desc:- 
         /// Default:- 
-        /// Nullable:True 
+        /// Nullable:False 
         /// </summary>
-        public Guid? ParentID {get;set;}
+        public Guid ParentID {get;set;}
 
         /// <summary>
         /// Desc:- 

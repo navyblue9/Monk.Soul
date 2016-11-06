@@ -1,0 +1,52 @@
+﻿@model V_GroupVM
+@{
+    ViewBag.Title = ViewBag.HaviorInfo.Name + " - " + ViewBag.SysSetInfo.Name;
+    Layout = ViewBag.HaviorInfo.Layout;
+    ViewBag.Keywords = ViewBag.SysSetInfo.Keywords;
+    ViewBag.Description = ViewBag.SysSetInfo.Description;
+    ViewBag.Copyright = ViewBag.SysSetInfo.Copyright;
+}
+@section head{
+    @Html.Raw(ViewBag.HaviorInfo.HeadCode)
+}
+
+
+@section crumbs{
+    @Html.Raw(ViewBag.HaviorInfo.Crumbs)
+}
+
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">上级会员组</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.ParentName, "无")
+    </div>
+</div>
+
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">会员组名称</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Model.Name
+    </div>
+</div>
+
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">会员组描述</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @DataToHtmlHelper.NullHtml(Model.Remark, "无")
+    </div>
+</div>
+<div class="monk-form-item">
+    <label for="" class="monk-form-label">开放状态</label>
+    <div class="monk-form-wrap monk-form-detail-wrap monk-full">
+        @Html.Raw(DataToHtmlHelper.StatusHtml(Model.Enable))
+    </div>
+</div>
+
+@section operate{
+    @Html.HiddenFor(u => u.GroupID)
+    @Html.Raw(ViewBag.HaviorInfo.FormButtons)
+}
+
+@section foot{
+    @Html.Raw(ViewBag.HaviorInfo.FootCode)
+}

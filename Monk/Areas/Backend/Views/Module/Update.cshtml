@@ -18,6 +18,22 @@
 @section beginForm{@{ Html.BeginForm("Update", "Module", FormMethod.Post, new { @class = "monk-form" });}}
 
 <div class="monk-form-item">
+    <label for="ParentID" class="monk-form-label">上级栏目</label>
+    <div class="monk-form-wrap monk-form-select-wrap">
+        <span class="monk-iconfont border-right icon-monk-input"></span>
+        <input type="text" class="monk-form-input middle" placeholder="请输入或选择..." @(Html.Raw(Model.ModuleID == Guid.Parse("11111111-1111-1111-1111-111111111111") ? " disabled='disabled' " : "")) />
+        <span class="monk-iconfont icon-monk-required"></span>
+        <span class="monk-iconfont monk-select-arrow icon-monk-arrowdown border-left"></span>
+    </div>
+    <div class="monk-form-select monk-none">
+        <select class="monk-select" name="ParentID" datatype="*" nullmsg="请选择上级栏目" errormsg="请选择上级栏目" @(Html.Raw(Model.ModuleID == Guid.Parse("11111111-1111-1111-1111-111111111111") ? " ignore='ignore' " : ""))>
+            <option value="">请输入或选择...</option>
+            @Html.Raw(ViewData["ModuleList"])
+        </select>
+    </div>
+    <div class="monk-form-tip">选择将该模块添加到指定栏目下面</div>
+</div>
+<div class="monk-form-item">
     <label for="Name" class="monk-form-label">栏目名称</label>
     <div class="monk-form-wrap">
         <span class="monk-iconfont border-right icon-monk-input"></span>
@@ -34,22 +50,6 @@
         <span class="monk-iconfont border-left icon-monk-dacha monk-clear-input"></span>
     </div>
     <div class="monk-form-tip">通常栏目名称不宜过长，4-6个字最为恰当</div>
-</div>
-<div class="monk-form-item">
-    <label for="ParentID" class="monk-form-label">上级栏目</label>
-    <div class="monk-form-wrap monk-form-select-wrap">
-        <span class="monk-iconfont border-right icon-monk-input"></span>
-        <input type="text" class="monk-form-input middle" placeholder="请输入或选择..." @(Html.Raw(Model.ModuleID == Guid.Parse("11111111-1111-1111-1111-111111111111") ? " disabled='disabled' " : "")) />
-        <span class="monk-iconfont icon-monk-required"></span>
-        <span class="monk-iconfont monk-select-arrow icon-monk-arrowdown border-left"></span>
-    </div>
-    <div class="monk-form-select monk-none">
-        <select class="monk-select" name="ParentID" datatype="*" nullmsg="请选择上级栏目" errormsg="请选择上级栏目" @(Html.Raw(Model.ModuleID == Guid.Parse("11111111-1111-1111-1111-111111111111") ? " ignore='ignore' " : ""))>
-            <option value="">请输入或选择...</option>
-            @Html.Raw(ViewData["ModuleList"])
-        </select>
-    </div>
-    <div class="monk-form-tip">选择将该模块添加到指定栏目下面</div>
 </div>
 <div class="monk-form-item">
     <label for="Remark" class="monk-form-label">栏目描述</label>
