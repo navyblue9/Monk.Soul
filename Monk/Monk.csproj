@@ -2525,6 +2525,7 @@
     <Compile Include="Areas\Backend\Controllers\HaviorController.cs" />
     <Compile Include="Areas\Backend\Controllers\LoginLogController.cs" />
     <Compile Include="Areas\Backend\Controllers\ModuleController.cs" />
+    <Compile Include="Areas\Backend\Controllers\PermissionController.cs" />
     <Compile Include="Areas\Backend\Controllers\ServerInfoController.cs" />
     <Compile Include="Areas\Backend\Controllers\SysSetController.cs" />
     <Compile Include="Areas\Backend\Controllers\ToolController.cs" />
@@ -2899,6 +2900,7 @@
     <Content Include="Areas\Backend\Views\Group\Insert.cshtml" />
     <Content Include="Areas\Backend\Views\Group\Detail.cshtml" />
     <Content Include="Areas\Backend\Views\Group\Update.cshtml" />
+    <Content Include="Areas\Backend\Views\Permission\Group.cshtml" />
     <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
