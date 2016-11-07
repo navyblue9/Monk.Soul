@@ -23,17 +23,20 @@ namespace Monk.Areas.Backend.Controllers
         public JsonResult GroupPermission()
         {
             var clientResult = new JsonData<object>();
+            var cfg = new MapperConfigurationExpression();
+            cfg.CreateMap<V_Module, V_ModuleVM>();
+            cfg.CreateMap<V_Havior, V_HaviorVM>();
+            cfg.CreateMap<V_Button, V_ButtonVM>();
             services.Command((db) =>
             {
-                var cfg = new MapperConfigurationExpression();
-                cfg.CreateMap<V_Module, V_ModuleVM>();
-                cfg.CreateMap<V_Havior, V_HaviorVM>();
-                cfg.CreateMap<V_Button, V_ButtonVM>();
+                var modules = db.Queryable<V_Module>().Where(c => true).ToList();
+                var haviors = db.Queryable<V_Havior>().Where(c => true).ToList();
+                var buttons = db.Queryable<V_Button>().Where(c => true).ToList();
                 clientResult.SetClientData("y", "获取成功", new
                 {
-                    modules = Mapper.Map<List<V_ModuleVM>>(db.Queryable<V_Module>().Where(c => true).ToList()),
-                    haviors = Mapper.Map<List<V_HaviorVM>>(db.Queryable<V_Havior>().Where(c => true).ToList()),
-                    buttons = Mapper.Map<List<V_ButtonVM>>(db.Queryable<V_Button>().Where(c => true).ToList())
+                    modules = Mapper.Map<List<V_ModuleVM>>(modules),
+                    haviors = Mapper.Map<List<V_HaviorVM>>(haviors),
+                    buttons = Mapper.Map<List<V_ButtonVM>>(buttons)
                 });
             });
             return Json(clientResult, JsonRequestBehavior.AllowGet);
