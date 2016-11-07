@@ -14,120 +14,86 @@
     @Html.Raw(ViewBag.HaviorInfo.Crumbs)
 }
 
-<div class="monk-table">
-    <table>
-        <thead>
-            <tr>
-                <th align="left">
-                    模块
-                </th>
-                <th align="left">
-                    行为
-                </th>
-                <th align="left">
-                    按钮
-                </th>
-                <th align="center" class="monk-table-status">
-                    操作
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td rowspan="5">
-                    <input type="checkbox" class="check-row" /> <label class="p-name">系统栏目</label>
-                </td>
-                <td>
-                    <input type="checkbox" class="check-row" /> <label class="p-name">系统栏目列表</label>
-                </td>
-                <td>
-                    <input type="checkbox" class="check-row" /> <label class="p-name">全选</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">新增</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">查看</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">编辑</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">删除</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">搜索</label>
-                </td>
-                <td class="monk-table-status">
-                    <input type="checkbox" class="check-row-all" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="checkbox" class="check-row" /> <label class="p-name">新增栏目列表</label>
-                </td>
-                <td>
-                    <input type="checkbox" class="check-row" /> <label class="p-name">全选</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">新增</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">查看</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">编辑</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">删除</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">搜索</label>
-                </td>
-                <td class="monk-table-status">
-                    <input type="checkbox" class="check-row-all" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="checkbox" class="check-row" /> <label class="p-name">查看栏目列表</label>
-                </td>
-                <td>
-                    <input type="checkbox" class="check-row" /> <label class="p-name">全选</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">新增</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">查看</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">编辑</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">删除</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">搜索</label>
-                </td>
-                <td class="monk-table-status">
-                    <input type="checkbox" class="check-row-all" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="checkbox" class="check-row" /> <label class="p-name">编辑栏目列表</label>
-                </td>
-                <td>
-                    <input type="checkbox" class="check-row" /> <label class="p-name">全选</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">新增</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">查看</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">编辑</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">删除</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">搜索</label>
-                </td>
-                <td class="monk-table-status">
-                    <input type="checkbox" class="check-row-all" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="checkbox" class="check-row" /> <label class="p-name">删除栏目列表</label>
-                </td>
-                <td>
-                    <input type="checkbox" class="check-row" /> <label class="p-name">全选</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">新增</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">查看</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">编辑</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">删除</label>
-                    <input type="checkbox" class="check-row" /><label class="p-name">搜索</label>
-                </td>
-                <td class="monk-table-status">
-                    <input type="checkbox" class="check-row-all" />
-                </td>
-            </tr>
-        </tbody>
-        <tfoot>
-        </tfoot>
-    </table>
-</div>
-
-
 @section buttons{
     @Html.Raw(ViewBag.HaviorInfo.SelectButtons)
 }
 
+<div class="monk-table" id="top-table">
+</div>
+
 @section foot{
     @Html.Raw(ViewBag.HaviorInfo.FootCode)
     @Scripts.Render("~/Assets/Backend/Linq/Script")
+    <script type="text/html" id="tpl">
+        <table>
+            <thead>
+                <tr>
+                    <th align="center">
+                        <input type="checkbox" class="p-checkbox-module" style="vertical-align:middle; margin-right:3px;position:relative;top:-1px;" /><label><%=obj.Name %></label><span class="module-link">[ <%=backend.setNull(obj.Url,"无") %> ]</span>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+        <% if(haviors&&haviors.length>0){ %>
+        <table class="monk-table">
+            <thead>
+                <tr style="background:none;">
+                    <th align="center">
+                        行为
+                    </th>
+                    <th align="center">
+                        按钮
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i=0; i < haviors.length;i++){ %>
+                <tr>
+                    <td style="text-align:center;" width="50%"><input type="checkbox" class="p-checkbox-havior" style="vertical-align:middle; margin-right:3px;position:relative;top:-1px;" /><label><%=haviors[i].Name %></label><span class="havior-link">[ <%=haviors[i].Url %>，<%=haviors[i].HttpMethod %> ]</span></td>
+                    <td style="text-align:center;" width="50%">
+                        <% if(buttons&&buttons.length>0){ %>
+                        <% var _buttons=Enumerable.from(buttons).where(function (b) { return b.HaviorID == haviors[i].HaviorID; }).orderBy(function(b){return b.Sort;}).toArray(); %>
+                        <% if(_buttons&&_buttons.length>0){ %>
+                        <% for(var n=0; n < _buttons.length;n++){ %>
+                        <input type="checkbox" class="p-checkbox-button" style="vertical-align:middle; margin-right:3px;position:relative;top:-1px;" /><label style="margin-right:10px;"><%=_buttons[n].Name %></label>
+                        <% } %>
+                        <% } %>
+                        <% } %>
+                    </td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+        <% } %>
+    </script>
+    <script type="text/javascript">
+        // 递归生成树
+        var render = monk.tppl(document.getElementById("tpl").innerHTML);
+        function getModuleTreeHtml(data) {
+            var treeHtml = "";
+            function core(parentId, level) {
+                var queryResult = Enumerable.from(data.modules).where(function (x) { return x.ParentID == parentId; }).orderBy(function (x) { return x.Sort; }).toArray();
+                if (queryResult.length > 0) {
+                    queryResult.forEach(function (x) {
+                        var merge = {
+                            obj: x,
+                            haviors: Enumerable.from(data.haviors).where(function (h) { return h.ModuleID == x.ModuleID; }).toArray(),
+                            buttons: data.buttons
+                        }
+                        treeHtml += render(merge);
+                        core(x.ModuleID, level);
+                    });
+                }
+                level = 0;
+            }
+            core("00000000-0000-0000-0000-000000000000", 0);
+            return treeHtml;
+        }
+
+        $(function () {
+            backend.get("@Url.Action("GroupPermission", "Permission")", {}, function (data) {
+                $("#top-table").html(getModuleTreeHtml(data.data));
+            });
+        });
+    </script>
 }
