@@ -23,12 +23,12 @@ namespace Monk.Areas.Backend.Controllers
         public JsonResult GroupPermission()
         {
             var clientResult = new JsonData<object>();
-            var cfg = new MapperConfigurationExpression();
-            cfg.CreateMap<V_Module, V_ModuleVM>();
-            cfg.CreateMap<V_Havior, V_HaviorVM>();
-            cfg.CreateMap<V_Button, V_ButtonVM>();
             services.Command((db) =>
             {
+                var cfg = new MapperConfigurationExpression();
+                cfg.CreateMap<V_Module, V_ModuleVM>();
+                cfg.CreateMap<V_Havior, V_HaviorVM>();
+                cfg.CreateMap<V_Button, V_ButtonVM>();
                 clientResult.SetClientData("y", "获取成功", new
                 {
                     modules = Mapper.Map<List<V_ModuleVM>>(db.Queryable<V_Module>().Where(c => true).ToList()),
